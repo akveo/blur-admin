@@ -1,0 +1,157 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_socicon.scss";
+@import "_layout.scss";
+
+html, body {
+  height: 100%;
+}
+
+html {
+  min-height: 520px;
+}
+
+.auth-main {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.auth-block {
+  width: 540px;
+  margin: 0 auto;
+  @include bg-translucent-dark(0.7);
+  color: #fff;
+  padding: 32px;
+  h1 {
+    font-weight: 100;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  p {
+    font-size: 16px;
+  }
+  a {
+    text-decoration: none;
+    outline: none;
+    transition: all 0.5s ease;
+    color: $primary;
+    &:hover {
+      color: $warning;
+    }
+  }
+
+  input[type="text"] {
+    outline: none;
+    border-radius: 0;
+  }
+
+  .form-control {
+    border-radius: 0;
+    height: 36px;
+    outline: none;
+  }
+
+  .control-label {
+    padding-top: 11px;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+}
+
+.auth-input {
+  width: 300px;
+  margin-bottom: 24px;
+  input {
+    display: block;
+    width: 100%;
+    border: none;
+    background: rgba(255, 255, 255, 1);;
+    color: $default-text;
+    font-size: 16px;
+    padding: 4px 10px;
+    outline: none;
+  }
+}
+
+a.forgot-pass {
+  display: block;
+  text-align: right;
+  margin-top: 4px;
+  margin-bottom: -20px;
+  float: right;
+  z-index: 2;
+  position: relative;
+}
+
+.auth-link {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 33px;
+}
+
+.auth-sep {
+  margin-top: 36px;
+  margin-bottom: 24px;
+  line-height: 20px;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  position: relative;
+  & > span {
+    display: table-cell;
+    width: 30%;
+    white-space: nowrap;
+    padding: 0 24px;
+    color: $help-text;
+    & > span {
+      margin-top: -12px;
+      display: block;
+    }
+  }
+  &:before, &:after {
+    border-top: solid 1px #949494;
+    content: "";
+    height: 1px;
+    width: 35%;
+    display: table-cell;
+  }
+}
+
+.al-share-auth {
+  text-align: center;
+  .al-share {
+    float: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    li {
+      margin-left: 24px;
+      &:first-child {
+        margin-left: 0;
+      }
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.btn-auth {
+  background: $primary;
+  color: #ffffff;
+  border-radius: 0;
+  border-color: $primary;
+  padding: 7px 12px;
+  transition: all 0.1s ease;
+  &:hover {
+    color: #ffffff;
+    background: $primary;
+    border-color: $primary;
+    transform: scale(1.2);
+  }
+}

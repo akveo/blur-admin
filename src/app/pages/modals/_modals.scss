@@ -1,0 +1,90 @@
+.modal-buttons {
+  margin-top: -12px;
+  margin-right: -24px;
+  button {
+    float: left;
+    margin-right: 24px;
+    margin-top: 12px;
+  }
+  &.same-width {
+    button {
+      width: 160px;
+      text-align: center;
+    }
+  }
+}
+
+.modal {
+  text-align: center;
+  .modal-dialog {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .modal-header {
+    border: none;
+  }
+  .modal-footer {
+    border: none;
+    padding-top: 0;
+  }
+  .sn-link-close {
+    color: #949494;
+    &:hover {
+      color: $danger;
+    }
+  }
+}
+
+@media screen and (min-width: $resM) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.message-modal {
+  .modal-header {
+    text-align: center;
+    i {
+      font-size: 32px;
+    }
+  }
+  .modal-title {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 12px;
+    margin-top: 18px;
+  }
+  .modal-body {
+    text-align: center;
+    padding: 0;
+    font-size: 14px;
+  }
+  .modal-footer {
+    margin: 24px 0 12px;
+    text-align: center;
+  }
+}
+
+@mixin message-modal-color($color) {
+  .modal-header {
+    color: #ffffff;
+    background: $color;
+  }
+}
+
+.success-modal {
+  @include message-modal-color($success);
+}
+.info-modal {
+  @include message-modal-color($info);
+}
+.warning-modal {
+  @include message-modal-color($warning);
+}
+.danger-modal {
+  @include message-modal-color($danger);
+}

@@ -1,0 +1,61 @@
+.admin-chart {
+  width: 100%;
+  height: 500px;
+  font-size: 11px;
+}
+
+.amcharts-export-menu-top-right {
+  top: 10px;
+  right: 0;
+}
+
+#funnelChart, #lineChart {
+  height: 360px;
+}
+
+#pieChart {
+  height: 400px;
+}
+
+#pieChart {
+  max-width: 1120px;
+}
+
+.amcharts-pie-slice {
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition-duration: 0.3s;
+  transition: all .3s ease-out;
+  cursor: pointer;
+  box-shadow: 0 0 30px 0 #000;
+}
+
+.amcharts-pie-slice:hover {
+  transform: scale(1.1);
+  filter: url(#shadow);
+}
+
+.amChartsButtonSelected {
+  background-color: #CC0000;
+  border: 1px solid #CC0000;
+  color: #FFFFFF;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 1px;
+}
+
+.amChartsButton {
+  background-color: #EEEEEE;
+  border: 1px solid #CCCCCC;
+  color: #000000;
+  border-radius: 5px;
+  margin: 1px;
+}
+
+.amChartsCompareList {
+  border: 1px solid #CCCCCC;
+}
+
+.pie-chart-panel {
+  padding: 0;
+}

@@ -1,0 +1,301 @@
+$sidebar-width: 180px;
+$angle-left: "\f100";
+$angle-right: "\f101";
+
+.al-sidebar {
+  width: $sidebar-width;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 904;
+  display: block;
+  min-height: 100%;
+  @include bg-translucent-dark(0.5);
+  transition: width 0.5s ease;
+}
+
+a.collapse-menu-link {
+  padding: 0px 0 0px 18px;
+  font-size: 13px;
+  color: $success;
+  @include bg-translucent-dark(0.5);
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  line-height: 42px;
+  white-space: nowrap;
+  overflow: hidden;
+  &:hover {
+    text-decoration: none;
+    color: $warning;
+  }
+  i {
+    float: left;
+    margin-right: 18px;
+    width: 16px;
+    text-align: center;
+    line-height: 42px;
+  }
+}
+
+.al-sidebar-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.al-sidebar-list-item {
+  display: block;
+  position: relative;
+  float: none;
+  padding: 0;
+  &.selected {
+    a.al-sidebar-list-link {
+      color: $primary;
+      b {
+        color: $primary;
+      }
+    }
+  }
+}
+
+a.al-sidebar-list-link {
+  display: block;
+  height: 42px;
+  padding-left: 18px;
+  text-shadow: none;
+  font-size: 13px;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 42px;
+  white-space: nowrap;
+  overflow: hidden;
+  &:hover {
+    color: $primary;
+    b {
+      color: $primary;
+    }
+  }
+  i {
+    margin-right: 18px;
+    width: 16px;
+    display: inline-block;
+  }
+  b {
+    display: block;
+    opacity: 1;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    text-shadow: none;
+    font-size: 18px;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    padding: 0;
+    text-align: center;
+    color: #cccccc;
+  }
+}
+
+@mixin default-sublist() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  display: none;
+  &.expanded {
+    display: block;
+  }
+  li {
+    display: block;
+    float: none;
+    padding: 0;
+    border-bottom: none;
+    position: relative;
+    a {
+      display: block;
+      text-shadow: none;
+      font-size: 13px;
+      text-decoration: none;
+      color: #ffffff;
+      padding-left: 52px;
+      height: auto;
+      line-height: 29px;
+      &:hover {
+        color: $primary;
+      }
+    }
+    &.selected {
+      a {
+        color: $primary;
+        border: none;
+      }
+    }
+  }
+}
+
+.al-sidebar-sublist {
+  @include default-sublist();
+}
+
+.sidebar-hover-elem, .sidebar-select-elem {
+  width: 4px;
+  background: $primary;
+  position: absolute;
+  top: 0;
+  left: 176px;
+  height: 42px;
+  display: none;
+  transition: all 0.3s ease;
+  &.show-hover-elem {
+    height: 42px;
+    display: block;
+  }
+}
+
+.sidebar-select-elem {
+  display: block;
+  top: 94px;
+}
+
+@mixin sidebar-collapsed() {
+  .al-sidebar {
+    width: 52px;
+
+    .al-logo {
+      padding-left: 18px;
+      span {
+        padding-left: 18px;
+      }
+    }
+
+    .fa-angle-down, .fa-angle-up {
+      opacity: 0;
+    }
+
+    .al-sidebar-sublist {
+      position: absolute;
+      top: -1px;
+      left: 52px;
+      @include bg-translucent-dark(0.8);
+      width: 0;
+      display: block;
+      overflow: hidden;
+      transition: width 0.5s ease;
+      &.slide-right {
+        width: 135px;
+      }
+      &:before {
+        display: none;
+      }
+      li {
+        &:before {
+          display: none;
+        }
+        a {
+          padding-left: 18px;
+          padding-right: 18px;
+          min-width: 130px;
+          white-space: nowrap;
+        }
+      }
+    }
+    .collapse-menu-link {
+      .fa-angle-double-left:before {
+        content: $angle-right;
+      }
+    }
+
+    .sidebar-hover-elem, .sidebar-select-elem {
+      left: 48px;
+    }
+  }
+}
+
+@mixin sidebar-hidden() {
+  .al-sidebar {
+    width: 0;
+    .al-logo {
+      width: 180px;
+    }
+    a.collapse-menu-link {
+      display: block;
+      width: 18px;
+      position: relative;
+      cursor: pointer;
+      padding-left: 0px;
+      .fa-angle-double-left:before {
+        content: $angle-right;
+      }
+    }
+    .al-sidebar-list-block {
+      display: none;
+    }
+  }
+}
+
+.collapsed-sidebar {
+  @include layout-collapsed();
+  @include sidebar-collapsed();
+}
+
+@media (max-width: 1120px) and (min-width: $resXS) {
+  body {
+    @include layout-collapsed();
+  }
+  @include sidebar-collapsed();
+}
+
+@media (max-width: $resXS) {
+  @include sidebar-hidden();
+  .collapsed-sidebar {
+    @include sidebar-hidden();
+  }
+}
+
+.sidebar-full-width {
+  width: $sidebar-width;
+  .al-logo {
+    padding-left: 17px;
+    span {
+      padding-left: 0;
+    }
+  }
+  .fa-angle-down, .fa-angle-up {
+    opacity: 1;
+  }
+
+  .al-sidebar-list-block {
+    display: block;
+  }
+
+  .al-sidebar-sublist {
+    @include default-sublist();
+    top: auto;
+    left: auto;
+    background: none;
+    width: auto;
+    overflow: visible;
+    transition: none;
+  }
+
+  a.collapse-menu-link {
+    width: 100%;
+    position: relative;
+    padding-left: 18px;
+
+    .fa-angle-double-left:before {
+      content: $angle-left;
+    }
+  }
+
+  .sidebar-hover-elem, .sidebar-select-elem {
+    left: $sidebar-width - 4;
+  }
+}
+
+.sidebar-overlap {
+  background: rgba(0, 0, 0, .75);
+  @extend .sidebar-full-width;
+}

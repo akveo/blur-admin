@@ -1,0 +1,215 @@
+$left-space: 198px;
+
+@include scrollbars(.5em, #f4f4f4, #142840);
+
+html {
+  position: relative;
+  min-width: 320px;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font: 12px/16px $font-family;
+  color: $default-text;
+  @include main-background();
+}
+
+a {
+  transition: all 0.5s ease;
+  outline: 0 !important;
+}
+
+.al-header {
+  display: block;
+  height: 49px;
+  margin: 0;
+  padding: 0 13px 0 0;
+  background-repeat: repeat-x;
+  position: relative;
+  z-index: 905;
+  color: #444444;
+}
+
+a.al-logo {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 18px 8px 17px;
+  display: block;
+  font: 100 24px/34px $font-family;
+  text-decoration: none;
+  white-space: nowrap;
+  text-shadow: 0 0 2px;
+  overflow: hidden;
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+  &:active, &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+
+  i {
+    margin-right: 12px;
+    color: $primary;
+    font-size: 20px;
+    line-height: 34px;
+    float: left;
+  }
+  span {
+    transition: padding-left 0.5s ease;
+  }
+}
+
+.al-main {
+  margin-left: $left-space;
+  padding: 0 0 34px 0;
+  min-height: 500px;
+  transition: margin-left 0.5s ease;
+}
+
+.al-footer {
+  height: 34px;
+  padding: 0px 18px 0 $left-space;
+  width: 100%;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  font-size: 13px;
+  color: #ffffff;
+  transition: padding-left 0.5s ease;
+}
+
+.al-footer-main {
+  float: left;
+  margin-left: 15px;
+}
+
+.al-copy {
+  float: left;
+}
+
+.al-footer-right {
+  float: right;
+  margin-right: 12px;
+  i {
+    margin: 0 4px;
+    color: $warning;
+    font-size: 12px;
+  }
+  a {
+    margin-left: 4px;
+    color: #ffffff;
+    &:hover {
+      color: $warning;
+    }
+  }
+}
+
+.al-share {
+  margin: -6px 0 0 12px;
+  padding: 0;
+  list-style: none;
+  float: left;
+  li {
+    list-style: none;
+    float: left;
+    margin-left: 16px;
+    i {
+      cursor: pointer;
+      transition: all 0.1s ease;
+      color: #ffffff;
+      padding: 6px;
+      box-sizing: content-box;
+      font-size: 16px;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    i.fa-facebook-square {
+      color: $facebook-color;
+    }
+    i.fa-twitter-square {
+      color: $twitter-color;
+    }
+    i.fa-google-plus-square {
+      color: $google-color;
+    }
+  }
+}
+
+.al-content {
+  padding: 8px 15px;
+}
+
+.vis-hidden {
+  visibility: hidden;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.icon-up, .icon-down {
+  width: 5px;
+  height: 13px;
+  display: block;
+}
+
+.icon-up {
+  background: url(/release/img/arrow-green-up.svg) no-repeat 0 0;
+}
+
+.icon-down {
+  background: url(/release/img/arrow-red-down.svg) no-repeat 0 0;
+}
+
+.disable-text-selection {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.align-right {
+  text-align: right
+}
+
+.amcharts-chart-div > a {
+  font-size: 6px !important;
+}
+
+.content-panel {
+  padding-left: 22px;
+  padding-top: 26px;
+}
+
+@media (max-width: 590px) {
+  .al-footer-right {
+    float: none;
+    margin-bottom: 19px;
+    margin-right: 0;
+  }
+  .al-footer {
+    height: 76px;
+    text-align: center;
+  }
+  .al-main {
+    padding-bottom: 76px;
+  }
+  .al-footer-main {
+    float: none;
+    display: inline-block;
+  }
+}
+
+@media (max-width: $resXS) {
+  body, .collapsed-sidebar {
+    .al-main {
+      margin-left: 0;
+    }
+    .al-footer {
+      padding-left: 0;
+    }
+  }
+}

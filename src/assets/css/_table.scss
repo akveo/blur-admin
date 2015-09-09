@@ -1,0 +1,54 @@
+.table {
+  margin-bottom: 0px;
+  & > thead {
+    & > tr {
+      & > th {
+        border-bottom: 1px solid $border-light;
+        white-space: nowrap;
+        &:first-child {
+          text-align: center;
+        }
+        &:last-child {
+          padding-right: 16px;
+        }
+      }
+    }
+  }
+  & > tbody {
+    & > tr {
+      & > tr:first-child {
+        padding-top: 1px;
+      }
+      & > td {
+        padding: 0px 8px;
+        line-height: 35px;
+        border-top: 1px solid $border-light;
+        &:first-child {
+          text-align: center;
+        }
+        &:last-child {
+          padding-right: 16px !important;
+        }
+      }
+    }
+  }
+  &.table-bordered th {
+    border-color: $border !important;
+  }
+}
+
+.table-arr {
+  width: 5px;
+  padding: 10px 8px 8px 0 !important;
+}
+
+.table-no-borders {
+  border: none;
+  td, th, tr {
+    border: none !important;
+  }
+}
+
+.browser-icons {
+  width: 41px;
+}

@@ -1,0 +1,450 @@
+.form-horizontal {
+  label {
+    line-height: 34px;
+    margin-bottom: 0;
+    padding-top: 0 !important;
+  }
+}
+
+.form-group {
+  label {
+    margin-bottom: 5px;
+    color: $default-text;
+    font-weight: normal;
+    font-size: 13px;
+  }
+}
+
+.form-control {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  &:focus {
+    box-shadow: none;
+    border-color: $input-border-focus;
+    background: #ffffff;
+  }
+}
+
+select.form-control {
+  padding-left: 8px;
+}
+
+textarea.form-control {
+  height: 96px;
+}
+
+.modal-form-btn {
+  text-align: center;
+}
+
+.form-inline {
+  .form-group {
+    input {
+      width: 100%;
+    }
+    label {
+      margin-right: 12px;
+    }
+  }
+
+  button[type="submit"] {
+    margin-left: 12px;
+  }
+
+  label.custom-checkbox > span {
+    display: block;
+    margin-top: -13px;
+    margin-right: 10px;
+  }
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+@mixin setSwitchBorder($color) {
+  .bootstrap-switch.bootstrap-switch-on {
+    border-color: $color;
+  }
+}
+
+.switch-container {
+  display: inline-block;
+  &.primary {
+    @include setSwitchBorder($primary);
+  }
+  &.success {
+    @include setSwitchBorder($success);
+  }
+  &.warning {
+    @include setSwitchBorder($warning);
+  }
+  &.danger {
+    @include setSwitchBorder($danger);
+  }
+  &.info {
+    @include setSwitchBorder($primary-light);
+  }
+}
+
+.bootstrap-switch {
+  border-radius: 0;
+  border: 1px solid $input-border;
+  transition: border-color ease-in-out .7s, box-shadow ease-in-out .7s;
+  &:focus {
+    outline: none;
+  }
+  &.bootstrap-switch-off {
+    border-color: $input-border;
+  }
+  &.bootstrap-switch-focused {
+    box-shadow: none;
+    border-color: $input-border-focus;
+    &.bootstrap-switch-off {
+      border-color: $input-border;
+    }
+  }
+  .bootstrap-switch-container {
+    border-radius: 0;
+    &:focus {
+      outline: none;
+    }
+  }
+  .bootstrap-switch-handle-on {
+    border-radius: 0;
+    &.bootstrap-switch-default {
+      background: $input-border;
+    }
+    &.bootstrap-switch-success {
+      background: $success;
+    }
+    &.bootstrap-switch-primary {
+      background: $primary;
+    }
+    &.bootstrap-switch-warning {
+      background: $warning;
+    }
+    &.bootstrap-switch-danger {
+      background: $danger;
+    }
+    &.bootstrap-switch-info {
+      background: $primary-light;
+    }
+  }
+  .bootstrap-switch-handle-off {
+    border-radius: 0;
+  }
+
+  .bootstrap-switch-label {
+    background: transparent;
+  }
+
+  &.bootstrap-switch-animate .bootstrap-switch-container {
+    transition: margin-left .2s;
+  }
+}
+
+.switches {
+  margin-left: -12px;
+  margin-bottom: -12px;
+  .switch-container {
+    float: left;
+    margin-left: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 15px;
+  & > span {
+    border-radius: 0;
+  }
+}
+
+label.custom-checkbox {
+  padding-right: 0;
+  padding-left: 0;
+  margin-bottom: 0;
+  & > input {
+    height: 0;
+    z-index: -100 !important;
+    opacity: 0;
+    position: absolute;
+    &:checked {
+      & + span {
+        &:before {
+          content: "\f00c";
+        }
+      }
+    }
+    &:disabled {
+      & + span {
+        color: $disabled;
+        &:before {
+          border-color: $disabled-bg !important;
+        }
+      }
+    }
+  }
+  & > span {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    line-height: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    padding-left: 22px;
+    width: 100%;
+    &:before {
+      cursor: pointer;
+      font-family: fontAwesome;
+      font-weight: 400;
+      font-size: 12px;
+      color: $input-border-focus;
+      content: "\a0";
+      background-color: transparent;
+      border: 1px solid #c8c8c8;
+      border-radius: 0;
+      display: inline-block;
+      text-align: center;
+      height: 16px;
+      line-height: 14px;
+      min-width: 16px;
+      margin-right: 6px;
+      position: relative;
+      top: 0;
+      margin-left: -22px;
+      float: left;
+    }
+    &:hover {
+      &:before {
+        border-color: $input-border-focus;
+      }
+    }
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.cut-with-dots {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+label.custom-radio {
+  @extend .custom-checkbox;
+  & > input {
+    &:checked {
+      & + span {
+        &:before {
+          content: "\f111";
+        }
+      }
+    }
+  }
+  & > span {
+    &:before {
+      border-radius: 16px;
+      font-size: 9px;
+    }
+  }
+}
+
+@mixin customInput($color) {
+  & > span {
+    &:before {
+      color: $color;
+    }
+    &:hover {
+      &:before {
+        border-color: $color;
+      }
+    }
+  }
+}
+
+label.custom-input-primary {
+  @include customInput($primary);
+}
+
+label.custom-input-success {
+  @include customInput($success);
+}
+
+label.custom-input-warning {
+  @include customInput($warning)
+}
+
+label.custom-input-danger {
+  @include customInput($danger)
+}
+
+.form-horizontal {
+  .radio, .checkbox, .radio-inline, .checkbox-inline {
+    padding-top: 0px;
+  }
+}
+
+@mixin validationState($color, $focusColor) {
+  .control-label {
+    color: $color;
+  }
+  .form-control {
+    border-color: $color;
+    &:focus {
+      box-shadow: none;
+      border-color: $focusColor;
+    }
+  }
+
+  label.custom-checkbox {
+    color: $color;
+    & > span {
+      &:before {
+        color: $color;
+      }
+      &:hover {
+        &:before {
+          border-color: $color;
+        }
+      }
+    }
+  }
+  .form-control-feedback {
+    color: $color;
+  }
+  .input-group-addon {
+    background-color: $color;
+    color: #ffffff;
+  }
+}
+
+.has-success {
+  @include validationState($success, $success-dark);
+}
+
+.has-warning {
+  @include validationState($warning-dark, #4f571a);
+}
+
+.has-error {
+  @include validationState($danger, $danger-dark);
+}
+
+.has-feedback label ~ .form-control-feedback {
+  top: 21px;
+  font-size: 18px;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background: transparent;
+  color: $disabled;
+  border-color: $disabled-bg;
+  @include placeholderStyle($disabled);
+}
+
+.form-control-rounded {
+  border-radius: 16px;
+}
+
+.help-block {
+  color: $help-text;
+}
+
+@mixin groupAddon($color) {
+  background: $color;
+  color: #ffffff;
+  border-color: $color;
+}
+
+.input-group-addon-danger {
+  @include groupAddon($danger);
+}
+
+.input-group-addon-warning {
+  @include groupAddon($warning);
+}
+
+.input-group-addon-success {
+  @include groupAddon($success);
+}
+
+.input-group-addon-primary {
+  @include groupAddon($primary);
+}
+
+.checkbox-demo-row {
+  margin-bottom: 12px;
+}
+
+.dropdown-menu {
+  border-radius: 0;
+}
+
+.bootstrap-select {
+  .btn-default {
+    background: transparent;
+    border-color: $input-border;
+    color: #555555;
+    &:focus {
+      background: #ffffff;
+      border: 1px solid $input-border-focus;
+      box-shadow: none;
+      outline: 0 !important;
+    }
+    &:active {
+      border-color: $input-border;
+      box-shadow: none;
+      background: #ffffff;
+    }
+  }
+  &.open {
+    .btn-default.dropdown-toggle {
+      box-shadow: none;
+      background-color: #ffffff;
+      border-color: $input-border-focus;
+    }
+  }
+}
+
+.bootstrap-tagsinput {
+  background-color: transparent;
+  border: 1px solid $input-border;
+  box-shadow: none;
+  border-radius: 0;
+  color: #555555;
+  max-width: 100%;
+  font-size: 14px;
+  width: 100%;
+  &.form-control {
+    display: block;
+    width: 100%;
+  }
+  .tag {
+    border-radius: 0;
+    font-size: 11px;
+    padding: 4px 8px;
+    & [data-role="remove"]:hover {
+      box-shadow: none;
+    }
+  }
+  input {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: $resM) {
+  .form-inline {
+    .checkbox {
+      margin-left: 15px;
+    }
+    label.custom-checkbox > span, label.custom-radio > span {
+      display: inline-block;
+    }
+  }
+}

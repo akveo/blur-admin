@@ -1,0 +1,1 @@
+<i class="fa fa-angle-up back-top" id="backTop" title="Back to Top"></i>

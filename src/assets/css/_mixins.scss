@@ -1,0 +1,60 @@
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin main-background() {
+  background: url(/release/img/green-bg.jpg) no-repeat top center fixed;
+  background-size: cover;
+}
+
+@mixin bg-translucent-dark($opacity) {
+  background: rgba(0, 0, 0, $opacity);
+}
+
+@mixin placeholderStyle($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: $color;
+  }
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin layout-collapsed() {
+  .al-main {
+    margin-left: 70px;
+  }
+
+  .al-footer {
+    padding-left: 83px
+  }
+
+  .back-top {
+    left: 0;
+  }
+}

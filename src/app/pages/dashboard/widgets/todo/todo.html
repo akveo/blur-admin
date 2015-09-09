@@ -1,0 +1,21 @@
+<input type="text" value="" class="form-control task-todo" placeholder="Task to do" ng-keyup="addToDoItem($event)" ng-model="newTodoText"/>
+<ul class="todo-list" blur-todo ui-sortable ng-model="todoList">
+  <li ng-repeat="item in todoList" ng-if="!item.deleted" ng-class="{checked: isChecked}" class="{{ getMarkColor(item.markId) }}">
+    <i class="mark" ng-click="changeColor(item)"></i>
+    <label class="todo-checkbox custom-checkbox custom-input-success">
+      <input type="checkbox" ng-model="isChecked">
+      <span></span>
+    </label>
+
+    <span class="todo-text cut-with-dots nowrap">
+      <span ng-show="!item.edit" ng-click="item.edit = true">{{ item.text }}</span>
+      <input type="text"
+             ng-class="{'vis-hidden': !item.edit}"
+             ng-model="item.text"
+             ng-blur="item.edit = false"
+             auto-focus="item.edit"
+             ng-keydown="blurOnEnter($event, item)">
+    </span>
+    <i class="remove-todo ion-ios-close-empty" ng-click="item.deleted = true"></i>
+  </li>
+</ul>

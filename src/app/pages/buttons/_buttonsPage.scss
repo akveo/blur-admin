@@ -1,0 +1,78 @@
+.basic-btns {
+  padding-top: 8px;
+  margin-bottom: -8px;
+  h5 {
+    line-height: 35px;
+    font-size: 12px;
+    &.row-sm {
+      line-height: 30px;
+    }
+    &.row-xs {
+      line-height: 22px;
+    }
+  }
+  & > .row {
+    padding-bottom: 4px;
+  }
+}
+
+.btns-row {
+  & > div {
+    margin-bottom: 12px;
+  }
+}
+
+.btns-same-width-sm {
+  .btn {
+    width: 48px;
+  }
+}
+
+.btns-same-width-md {
+  .btn {
+    width: 79px;
+  }
+}
+
+.btns-same-width-lg {
+  .btn {
+    width: 112px;
+  }
+}
+
+ul.btn-list {
+  margin: 0 0 0 -18px;
+  padding: 0;
+  padding-top: 6px;
+  clear: both;
+  li {
+    margin: 0px 0 12px 18px;
+    padding: 0;
+    list-style: none;
+    float: left;
+  }
+}
+
+.btn-group-wrapper {
+  margin-bottom: 12px;
+}
+
+$btn-icon-size: 34px;
+.btn-icon {
+  width: $btn-icon-size;
+  height: $btn-icon-size;
+  line-height: $btn-icon-size;
+  padding: 0;
+  text-align: center;
+}
+
+.btn-group-example {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 12px;
+}
+
+.btn-toolbar-example {
+  float: left;
+}
+

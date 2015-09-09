@@ -1,0 +1,35 @@
+$height: 52px;
+
+.back-top {
+  width: $height;
+  height: $height;
+  cursor: pointer;
+  z-index: 9999;
+  display: none;
+  text-decoration: none;
+  left: (180px - $height) / 2;
+  right: auto !important;
+  bottom: 20px !important;
+  font-size: 45px;
+  line-height: $height;
+  text-align: center;
+  opacity: 0.5;
+  color: $primary;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@media (max-width: $resS) {
+  .back-top {
+    left: 0;
+  }
+}
+
+@media (max-width: $resXS) {
+  .back-top {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
+    line-height: 46px;
+  }
+}

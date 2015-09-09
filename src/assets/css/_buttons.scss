@@ -1,0 +1,110 @@
+$hover: 24;
+.btn:focus, .btn:active:focus, .btn.active:focus,
+.btn.focus, .btn:active.focus, .btn.active.focus {
+  outline: none;
+}
+
+.btn {
+  border-radius: 0;
+  transition: all 0.1s ease;
+}
+
+.btn:hover {
+  transform: scale(1.2);
+}
+
+@mixin styleButton($color) {
+  background: $color;
+  border-color: $color;
+}
+
+@mixin buttonColor($color) {
+  @include styleButton($color);
+
+  &.disabled, &[disabled], fieldset[disabled] &, &.disabled:hover, &[disabled]:hover,
+  fieldset[disabled] &:hover, &.disabled:focus, &[disabled]:focus, fieldset[disabled] &:focus,
+  &.disabled.focus, &[disabled].focus, fieldset[disabled] &.focus, &.disabled:active,
+  &[disabled]:active, fieldset[disabled] &:active, &.disabled.active, &[disabled].active,
+  fieldset[disabled] &.active {
+    @include styleButton($color + $hover/2);
+  }
+
+  &:hover, &:focus, &.focus, &:active, &.active {
+    @include styleButton($color - $hover);
+  }
+}
+
+.open > .dropdown-toggle {
+  &.btn-primary {
+    @include styleButton($primary - $hover);
+  }
+  &.btn-default {
+    @include styleButton($default - $hover);
+  }
+  &.btn-success {
+    @include styleButton($success - $hover);
+  }
+  &.btn-info {
+    @include styleButton($info - $hover);
+  }
+  &.btn-warning {
+    @include styleButton($warning - $hover);
+  }
+  &.btn-danger {
+    @include styleButton($danger - $hover);
+  }
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+
+.btn-primary {
+  @include buttonColor($primary);
+}
+
+.btn-default {
+  @include buttonColor($default);
+}
+
+.btn-success {
+  @include buttonColor($success);
+}
+
+.btn-info {
+  @include buttonColor($info);
+}
+
+.btn-warning {
+  @include buttonColor($warning);
+}
+
+.btn-danger {
+  @include buttonColor($danger);
+}
+
+.btn-with-icon {
+  i {
+    margin-right: 10px;
+  }
+}
+
+.btn-group, .btn-toolbar {
+  :hover {
+    transform: none;
+  }
+}
+
+.btn-group {
+  .dropdown-menu {
+    margin-top: 0px;
+  }
+}
+
+.btn-toolbar {
+  display: inline-block;
+}
+
+.btn .caret {
+  margin-left: 2px;
+}

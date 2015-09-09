@@ -1,0 +1,205 @@
+h3.with-line {
+  border-bottom: 1px solid $border;
+  color: $default-text;
+  padding-top: 30px;
+  margin-bottom: 14px;
+  line-height: 39px;
+  width: 100%;
+}
+
+.panel .panel-body h3 {
+  &.with-line {
+    margin-bottom: 14px;
+    margin-top: 0;
+  }
+}
+
+.profile-block {
+  background: #fff;
+
+  .nav-tabs > li {
+    & > a {
+      border-radius: 0;
+      transition: background, 0s, ease !important;
+    }
+  }
+
+  .progress {
+    border-radius: 0;
+    margin-bottom: 6px;
+  }
+
+  .progress-info {
+    margin-bottom: 8px;
+    margin-top: -2px;
+  }
+
+  .tab-content {
+    padding: 15px 15px 25px;
+  }
+
+  .progress-bar-success {
+    background-color: $success-light;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+    label {
+      text-align: right;
+    }
+  }
+
+  .form-control {
+    font-size: 13px;
+  }
+}
+
+.notification {
+  .form-group {
+    label {
+      text-align: left;
+      padding-left: 26px;
+    }
+  }
+}
+
+.userpic {
+  border: 1px dashed #b8b8b8;
+  width: 202px;
+  height: 202px;
+  position: relative;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
+  i {
+    display: none;
+    position: absolute;
+    top: -15px;
+    right: -13px;
+    font-size: 32px;
+    background: #ffffff;
+    cursor: pointer;
+    color: $success;
+    &:hover {
+      color: $danger;
+    }
+  }
+  a.change-userpic {
+    display: none;
+    width: 202px;
+    background: rgba(0, 0, 0, 0.7);
+    transition: all 200ms ease-in-out;
+    color: #ffffff;
+    text-decoration: none;
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    line-height: 32px;
+    text-align: center;
+  }
+  &:hover {
+    i {
+      display: block;
+    }
+    .change-userpic {
+      display: block;
+    }
+  }
+}
+
+.save-profile {
+  margin: 23px 0 12px 12px;
+}
+
+$snColor: $success;
+$snPadding: 8px;
+a.sn-link {
+  transition: none;
+  display: block;
+  background-color: #fff;
+  padding: $snPadding;
+  color: $default-text;
+  border: 1px solid $border;
+  margin-bottom: 23px;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  text-decoration: none !important;
+  i.socicon {
+    padding: 6px;
+    border-radius: 50%;
+    width: auto;
+    font-size: 17px;
+    margin-right: 8px;
+    background-color: #666666;
+    color: #fff;
+  }
+  span {
+
+  }
+
+  span {
+    font-size: 14px;
+    line-height: 29px;
+  }
+
+  @mixin activeSn() {
+    border-color: $snColor;
+    border-width: 2px;
+    padding: $snPadding - 1;
+    span {
+      color: $snColor;
+    }
+    i {
+      background: $snColor;
+    }
+  }
+
+  &.connected {
+    @include activeSn();
+    em {
+      display: block;
+    }
+  }
+  &:hover {
+    @include activeSn();
+  }
+
+  .socicon {
+    background: transparent;
+  }
+}
+
+.close {
+  opacity: 1;
+  box-shadow: none;
+  outline: none !important;
+  &:hover, &:focus, &:active {
+    opacity: 1;
+  }
+}
+
+.sn-link-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 32px;
+  color: $snColor;
+  transition: all 0.1s ease;
+  outline: none;
+  &:hover {
+    color: $danger;
+    transform: scale(1.2);
+  }
+}
+
+.social-profiles {
+  padding-top: 3px;
+  margin-bottom: -3px;
+  padding-left: 12px;
+}
+

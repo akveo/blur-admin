@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BlurAdmin">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blur Admin</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+  <link rel="icon" type="image/png" href="release/img/favicon_16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="release/img/favicon_32x32.png" sizes="32x32">
+
+  <link rel="stylesheet" href="release/css/index.min.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="assets/js/lib/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!--[if lte IE 8]>
+  <script language="javascript" type="text/javascript" src="assets/js/lib/excanvas.min.js"></script>
+  <![endif]-->
+</head>
+<body ng-controller="mainCtrl">
+
+<main ng-if="finishLoading">
+  <sidebar></sidebar>
+
+  <div class="al-main">
+    <page-top></page-top>
+    <div class="al-content">
+      <div ng-view></div>
+    </div>
+  </div>
+
+  <footer class="al-footer clearfix">
+    <div class="al-footer-right">Create with <i class="ion-heart"></i> by <a href="http://akveo.com/" target="_blank">Akveo</a></div>
+    <div class="al-footer-main clearfix">
+      <div class="al-copy">Blur Admin © 2015</div>
+      <ul class="al-share clearfix">
+        <li><i class="socicon socicon-facebook"></i></li>
+        <li><i class="socicon socicon-twitter"></i></li>
+        <li><i class="socicon socicon-google"></i></li>
+        <li><a href="https://github.com/akveo" target="_blank"><i class="socicon socicon-github"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <back-top></back-top>
+</main>
+
+<div id="preloader" ng-show="!finishLoading">
+  <div></div>
+</div>
+
+<script src="release/js/lib.min.js"></script>
+<script src="release/js/bundle.min.js"></script>
+
+</body>
+</html>

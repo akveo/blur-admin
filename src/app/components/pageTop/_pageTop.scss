@@ -1,0 +1,162 @@
+.page-top {
+  padding: 12px 15px 0px;
+  position: relative;
+}
+
+.top-area {
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-top-main {
+  margin-bottom: 19px;
+}
+
+.al-breadcrumb {
+  background: none;
+  color: #ffffff;
+  padding: 12px 0 0;
+  float: left;
+  margin-bottom: 0;
+}
+
+@media (max-width: $resXS) {
+  .al-breadcrumb {
+    display: none;
+  }
+}
+
+h1.al-title {
+  font-weight: 100;
+  color: #ffffff;
+  float: left;
+  width: auto;
+  margin: 7px 0 0;
+}
+
+.quick-stat-block {
+  margin-left: 20px;
+  padding: 0px 9px;
+  text-align: right;
+  color: #ffffff;
+  float: right;
+  display: table;
+  .quick-stat-row {
+    display: table-row;
+    & > div {
+      display: table-cell;
+      padding-left: 7px;
+      line-height: 21px;
+      padding-bottom: 2px;
+    }
+    i.icon-small {
+      display: none;
+      margin-right: 4px;
+      font-size: 18px;
+      margin-top: -1px;
+    }
+    .quick-stat-name {
+      font-weight: normal;
+      text-align: right;
+      line-height: 21px;
+    }
+    .quick-stat-val {
+      font-size: 15px;
+    }
+  }
+
+  .fa-long-arrow-up {
+    color: $success;
+  }
+  .fa-long-arrow-down {
+    color: $danger;
+  }
+
+  .quick-stat-up, .quick-stat-down {
+    height: 0;
+    transition: height 0.3s ease;
+  }
+  .show-arr {
+    height: 13px;
+  }
+}
+
+@media (max-width: $resL) {
+  .quick-stat-block {
+    display: block;
+    margin-top: 24px;
+    .quick-stat-row {
+      display: table;
+      float: left;
+    }
+  }
+}
+
+@media (max-width: 612px) {
+  .quick-stat-block .quick-stat-row {
+    i.icon-small {
+      display: block;
+    }
+    .quick-stat-name {
+      display: none;
+    }
+  }
+}
+
+.user-profile {
+  float: right;
+  min-width: 220px;
+}
+
+.al-user-profile {
+  float: right;
+  margin-right: 12px;
+  transition: all .15s ease-in-out;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  opacity: 1;
+  position: relative;
+  a {
+    display: block;
+  }
+  img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+a.refresh-data {
+  color: #ffffff;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: normal;
+  float: right;
+  margin-top: 9px;
+
+  &:hover {
+    color: $warning !important;
+  }
+}
+
+@media (max-width: $resXXS) {
+  h1.al-title {
+    font-size: 28px;
+  }
+  .top-area {
+    margin-bottom: 22px;
+  }
+  .page-top-main {
+    margin-bottom: 8px;
+  }
+  .quick-stat-block {
+    margin-top: 22px;
+    .quick-stat-row {
+      .quick-stat-val {
+        font-size: 13px;
+      }
+    }
+  }
+}

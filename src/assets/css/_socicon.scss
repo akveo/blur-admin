@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'socicon';
+  src: url('/release/fonts/socicon.eot');
+  src: url('/release/fonts/socicon.eot?#iefix') format('embedded-opentype'),
+  url('/release/fonts/socicon.woff') format('woff'),
+  url('/release/fonts/socicon.woff2') format('woff2'),
+  url('/release/fonts/socicon.ttf') format('truetype'),
+  url('/release/fonts/socicon.svg#sociconregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  text-transform: initial;
+}
+
+.socicon {
+  font-family: 'socicon' !important;
+}
+
+.socicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'socicon';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.socicon:empty {
+  width: 1em;
+}
+
+@mixin socicon($background, $content) {
+  background-color: $background;
+  &:before {
+    content: $content;
+  }
+}
+
+.socicon-twitter {
+  @include socicon($twitter-color, "a");
+}
+
+.socicon-facebook {
+  @include socicon($facebook-color, "b");
+}
+
+.socicon-google {
+  @include socicon($google-color, "c");
+}
+
+.socicon-linkedin {
+  @include socicon($linkedin-color, "j");
+}
+
+.socicon-github {
+  @include socicon($github-color, "Q");
+}
+
+.socicon-stackoverflow {
+  @include socicon($stackoverflow-color, "(");
+}
+
+.socicon-dribble {
+  @include socicon($dribble-color, "D");
+}
+
+.socicon-behace {
+  @include socicon($behace-color, "H");
+}

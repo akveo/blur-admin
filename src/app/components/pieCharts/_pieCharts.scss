@@ -1,0 +1,79 @@
+.pie-charts {
+  white-space: nowrap;
+  min-width: 84px * 4;
+  padding: 0 300px 0;
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 100%;
+  .pie-chart-item {
+    text-align: center;
+    display: inline-block;
+    width: 25%;
+    &:first-child {
+      margin-left: 0;
+    }
+    h6 {
+      text-transform: none;
+      color: #ffffff;
+      margin-top: 13px;
+      width: 100%;
+    }
+  }
+  .chart {
+    position: relative;
+    display: inline-block;
+    width: 84px;
+    height: 84px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .chart canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .percent {
+    display: inline-block;
+    line-height: 84px;
+    z-index: 2;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  .percent:after {
+    content: '%';
+    margin-left: 0.1em;
+    font-size: .8em;
+  }
+  .angular {
+    margin-top: 100px;
+  }
+  .angular .chart {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: $resXXL) and (min-width: $resL), (max-width: $resS) {
+  .pie-charts {
+    padding: 0 250px;
+  }
+}
+
+@media (max-width: $resL) {
+  .pie-charts {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: $resXXS) {
+  .pie-charts {
+    white-space: normal;
+    .pie-chart-item {
+      width: 49%;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<div class="page-top clearfix">
+
+  <div class="top-area clearfix">
+    <div class="user-profile clearfix">
+      <div class="al-user-profile dropdown">
+        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+          <img src="release/img/00.png">
+        </a>
+        <div class="dropdown-menu top-dropdown-menu profile-dropdown">
+          <i class="dropdown-arr"></i>
+          <a href="javascript:void(0)"><i class="fa fa-user"></i>Profile</a>
+          <a href="javascript:void(0)"><i class="fa fa-cog"></i>Settings</a>
+          <a href="javascript:void(0)" class="signout"><i class="fa fa-power-off"></i>Sign out</a>
+        </div>
+      </div>
+      <msg-center></msg-center>
+      <a href="javascript:void(0)" class="refresh-data"><i class="fa fa-refresh"></i></a>
+    </div>
+
+    <ul class="breadcrumb al-breadcrumb">
+      <li>
+        <a href="#/dashboard">Home</a></li>
+      <li>{{ activePageTitle }}</li>
+    </ul>
+  </div>
+
+  <pie-charts></pie-charts>
+
+  <div class="page-top-main clearfix">
+    <div class="quick-stat-block">
+      <div class="quick-stat-row">
+        <div><i class="icon-small ion-ios-download-outline"></i></div>
+        <div class="quick-stat-name">Daily Downloads:</div>
+        <div class="quick-stat-val" animated-change new-value="982">509</div>
+        <div><i class="icon-up quick-stat-up"></i></div>
+      </div>
+      <div class="quick-stat-row">
+        <div><i class="icon-small ion-ios-people-outline"></i></div>
+        <div class="quick-stat-name">Active Users:</div>
+        <div class="quick-stat-val" animated-change new-value="611">971</div>
+        <div><i class="icon-down quick-stat-down"></i></div>
+      </div>
+    </div>
+
+    <h1 class="al-title">{{ activePageTitle }}</h1>
+  </div>
+</div>
