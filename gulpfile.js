@@ -8,43 +8,35 @@ var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 var stripDebug = require('gulp-strip-debug');
 var uglify = require('gulp-uglify');
+var eventStream = require('event-stream');
 
-gulp.task('sass-404', function () {
-  return gulp.src(['./src/assets/css/404.scss'])
-      .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./src/release/css/'));
-});
+gulp.task("minify-404-css", function () {
+  var vendorFiles = gulp.src("./src/assets/css/lib/bootstrap.min.css");
+  var appFiles = gulp.src('./src/assets/css/404.scss').pipe(sass({ style: 'compressed' }).on('error', sass.logError));
 
-gulp.task("minify-404-css", ['sass-404'], function () {
-  return gulp.src(["./src/assets/css/lib/bootstrap.min.css", "./src/release/css/404.css"])
-      .pipe(concat("404.min.css"))
-      .pipe(autoprefix('last 2 versions'))
+  return eventStream.concat(vendorFiles, appFiles)
+      .pipe(concat('404.min.css'))
+      .pipe(autoprefix('last 4 version'))
       .pipe(minifyCSS())
-      .pipe(gulp.dest("./src/release/css/"))
+      .pipe(gulp.dest("./src/release/css/"));
 });
 
-gulp.task('sass-auth', function () {
-  return gulp.src(['./src/assets/css/auth.scss'])
-      .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./src/release/css/'));
-});
+gulp.task("minify-auth-css", function () {
+  var vendorFiles = gulp.src("./src/assets/css/lib/bootstrap.min.css");
+  var appFiles = gulp.src('./src/assets/css/auth.scss').pipe(sass({ style: 'compressed' }).on('error', sass.logError));
 
-gulp.task("minify-auth-css", ['sass-auth'], function () {
-  return gulp.src(["./src/assets/css/lib/bootstrap.min.css", "./src/release/css/auth.css"])
+  return eventStream.concat(vendorFiles, appFiles)
       .pipe(concat("auth.min.css"))
-      .pipe(autoprefix('last 2 versions'))
+      .pipe(autoprefix('last 4 versions'))
       .pipe(minifyCSS())
       .pipe(gulp.dest("./src/release/css/"))
 });
 
-gulp.task('sass', function () {
-  return gulp.src(['./src/assets/css/main.scss'])
-      .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./src/release/css/'));
-});
+gulp.task("minify-css", ['minify-404-css', 'minify-auth-css'], function () {
+  var vendorFiles = gulp.src("./src/assets/css/lib/*.css");
+  var appFiles = gulp.src('./src/assets/css/main.scss').pipe(sass({ style: 'compressed' }).on('error', sass.logError));
 
-gulp.task("minify-css", ['minify-404-css', 'minify-auth-css', 'sass'], function () {
-  return gulp.src(["./src/assets/css/lib/*.css", "./src/release/css/main.css"])
+  return eventStream.concat(vendorFiles, appFiles)
       .pipe(concat("index.min.css"))
       .pipe(autoprefix('last 2 versions'))
       .pipe(minifyCSS())
@@ -60,6 +52,7 @@ var imgSrc = [
   './src/assets/js/lib/amChart/images/*',
   './src/app/pages/maps/widgets/leaflet/images/*',
 ];
+
 gulp.task('imagemin', function () {
   var imgDst = './src/release/img/';
   gulp.src(imgSrc).pipe(changed(imgDst)).pipe(imagemin()).pipe(gulp.dest(imgDst));
@@ -147,7 +140,7 @@ gulp.task('js', function () {
   gulp.src(src).pipe(concat('bundle.min.js')).pipe(uglify()).pipe(gulp.dest(dst));
 });
 
-gulp.task('font', function() {
+gulp.task('font', function () {
   var fontSrc = './src/assets/css/fonts/*';
   var fontDst = './src/release/fonts/';
 
