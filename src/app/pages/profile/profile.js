@@ -12,7 +12,7 @@ angular.module('BlurAdmin.profilePage', ['ngRoute'])
       $scope.picture = "release/img/photo.png";
 
       $scope.removePicture = function () {
-        $scope.picture = "/release/img/no-photo.png";
+        $scope.picture = "release/img/no-photo.png";
         $scope.noPicture = true;
       };
 

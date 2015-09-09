@@ -444,7 +444,7 @@ app.controller('mapBubblesCtrl', [function () {
     unlistedAreasAlpha: 0.1
   };
   map.imagesSettings.balloonText = "<span style='font-size:14px;'><b>[[title]]</b>: [[value]]</span>";
-  map.pathToImages = "/release/img/";
+  map.pathToImages = "release/img/";
 
   var dataProvider = {
     mapVar: AmCharts.maps.worldLow,

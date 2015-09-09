@@ -48,7 +48,7 @@ var imgSrc = [
   './src/assets/pictures/*',
   './src/app/pages/dashboard/widgets/timeline/img/*',
   './src/app/pages/profile/img/*',
-  './src/app/pages/icons/widgets/kameleon/*',
+  './src/app/pages/icons/widgets/kameleon-img/*',
   './src/assets/js/lib/amChart/images/*',
   './src/app/pages/maps/widgets/leaflet/images/*',
 ];

@@ -1,51 +1,6 @@
-<div class="row clearfix">
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg success"><img src="/release/img/Apartment.svg"><span>Apartment</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg warning"><img src="/release/img/Bus.svg"><span>Bus</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg primary"><img src="/release/img/Checklist.svg"><span>Checklist</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg warning"><img src="/release/img/Desert.svg"><span>Desert</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg danger"><img src="/release/img/Laptop-Signal.svg"><span>Laptop Signal</span>
-    </div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg info"><img src="/release/img/Love-Letter.svg"><span>Love Letter</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg success"><img src="/release/img/Makeup.svg"><span>Makeup</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg primary"><img src="/release/img/Santa.svg"><span>Santa</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg success"><img src="/release/img/Surfer.svg"><span>Surfer</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg info"><img src="/release/img/Vector.svg"><span>Vector</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg warning"><img
-        src="/release/img/Money-Increase.svg"><span>Money Increase</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg info"><img src="/release/img/Alien.svg"><span>Alien</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg danger"><img
-        src="/release/img/Online-Shopping.svg"><span>Online Shopping</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg warning"><img src="/release/img/Euro-Coin.svg"><span>Euro</span></div>
-  </div>
-  <div class="kameleon-row">
-    <div class="kameleon-icon with-round-bg info"><img src="/release/img/Boss-3.svg"><span>Boss</span></div>
+<div class="row clearfix" ng-controller="iconsPageCtrl">
+  <div class="kameleon-row" ng-repeat="icon in icons.kameleonRoundedIcons">
+    <div class="kameleon-icon with-round-bg {{icon.color}}"><img ng-src="release/img/{{icon.img}}"><span>{{ icon.name }}</span></div>
   </div>
 </div>
 

@@ -260,6 +260,6 @@ app.controller('mapLinesCtrl', [function () {
     "export": {
       "enabled": true
     },
-    "pathToImages": '/release/img/'
+    "pathToImages": 'release/img/'
   } );
 }]);

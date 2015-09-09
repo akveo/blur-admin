@@ -254,10 +254,10 @@ app.controller('amMapCtrl', ['$scope', '$timeout', '$element', function ($scope,
         }
       ]
     },
-    "export": {
-      "enabled": true
+    export: {
+      enabled: true
     },
-    "creditsPosition": "bottom-right",
-    "pathToImages": '/release/img/'
+    creditsPosition: "bottom-right",
+    pathToImages: "release/img/"
   });
 }]);
