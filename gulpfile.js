@@ -60,83 +60,20 @@ gulp.task('imagemin', function () {
 
 gulp.task('js', function () {
   var libSrc = [
-    "./src/assets/js/global-variables.js",
     "./src/assets/js/lib/jquery.min.js",
-    "./src/assets/js/lib/jquery-ui.min.js",
     "./src/assets/js/lib/angular.min.js",
-    "./src/assets/js/lib/angular-route.js",
-    "./src/assets/js/lib/bootstrap.min.js",
-    "./src/assets/js/lib/sortable.js",
-    "./src/assets/js/lib/highlight.js",
-    "./src/assets/js/lib/bootstrap-switch.min.js",
-    "./src/assets/js/lib/bootstrap-select.js",
-    "./src/assets/js/lib/bootstrap-tagsinput.js",
-    "./src/assets/js/lib/amChart/amcharts.js",
-    "./src/assets/js/lib/amChart/serial.js",
-    "./src/assets/js/lib/amChart/funnel.js",
-    "./src/assets/js/lib/amChart/pie.js",
-    "./src/assets/js/lib/amChart/amstock.js",
-    "./src/assets/js/lib/amChart/ammap.js",
-    "./src/assets/js/lib/amChart/worldLow.js",
-    "./src/assets/js//lib/amChart/blur.js",
-    "./src/app/pages/maps/widgets/leaflet/lib/leaflet.js",
-    "./src/app/pages/maps/widgets/google-maps/lib/google-maps.js",
-    "./src/app/pages/modals/widgets/notifications/lib/angular-toastr.tpls.js"
+    "./src/assets/js/global-variables.js",
+    "./src/assets/js/lib/**/*.js",
+    "./src/app/**/lib/**/*.js"
   ];
+
   var src = [
-    "./src/app/app.js",
-    "./src/app/components/widgets/widgets.js",
-    "./src/app/components/sidebar/sidebar.js",
-    "./src/app/components/pageTop/pageTop.js",
-    "./src/app/pages/dashboard/dashboard.js",
-    "./src/app/pages/buttons/buttons.js",
-    "./src/app/pages/charts/charts.js",
-    "./src/app/pages/icons/icons.js",
-    "./src/app/pages/profile/profile.js",
-    "./src/app/pages/tables/tables.js",
-    "./src/app/pages/typography/typography.js",
-    "./src/app/pages/form/layouts/layouts.js",
-    "./src/app/pages/form/inputs/inputs.js",
-    "./src/app/common/directives/autoFocus.js",
-    "./src/app/common/directives/autoExpand.js",
-    "./src/app/common/directives/animatedChange.js",
-    "./src/app/common/directives/zoomIn.js",
-    "./src/app/pages/dashboard/widgets/calendar/lib/moment.min.js",
-    "./src/app/pages/dashboard/widgets/calendar/lib/fullcalendar.min.js",
-    "./src/app/pages/dashboard/widgets/calendar/calendar.js",
-    "./src/app/pages/dashboard/widgets/todo/todo.js",
-    "./src/app/components/pieCharts/lib/jquery.easing.min.js",
-    "./src/app/components/pieCharts/lib/jquery.easypiechart.min.js",
-    "./src/app/components/pieCharts/pieCharts.js",
-    "./src/app/pages/dashboard/widgets/amChart/amChart.js",
-    "./src/app/components/backTop/lib/jquery.backTop.js",
-    "./src/app/components/backTop/backTop.js",
-    "./src/app/components/msgCenter/msgCenter.js",
-    "./src/app/pages/dashboard/widgets/amChartMap/amChartMap.js",
-    "./src/app/pages/dashboard/widgets/timeline/timeline.js",
-    "./src/app/pages/dashboard/widgets/chart/lib/Chart.min.js",
-    "./src/app/pages/dashboard/widgets/chart/chart.js",
-    "./src/app/pages/charts/widgets/areaChart/areaChart.js",
-    "./src/app/pages/charts/widgets/barChart/barChart.js",
-    "./src/app/pages/charts/widgets/funnelChart/funnelChart.js",
-    "./src/app/pages/charts/widgets/lineChart/lineChart.js",
-    "./src/app/pages/charts/widgets/pieChart/pieChart.js",
-    "./src/app/pages/form/inputs/widgets/switch/switch.js",
-    "./src/app/pages/form/inputs/widgets/select/select.js",
-    "./src/app/pages/form/inputs/widgets/tagsInput/tagsInput.js",
-    "./src/app/pages/profile/profileModal/profileModal.js",
-    "./src/app/common/controllers/mainCtrl.js",
-    "./src/app/pages/maps/maps.js",
-    "./src/app/pages/maps/widgets/leaflet/leaflet.js",
-    "./src/app/pages/maps/widgets/google-maps/google-maps.js",
-    "./src/app/pages/maps/widgets/map-bubbles/map-bubbles.js",
-    "./src/app/pages/maps/widgets/map-lines/map-lines.js",
-    "./src/app/pages/modals/modals.js",
-    "./src/app/pages/modals/widgets/notifications/notifications.js"
+    "./src/app/**/*.js",
+    "!./src/app/**/lib/**/*.js"
   ];
   var dst = './src/release/js/';
 
-  gulp.src(libSrc).pipe(concat('lib.min.js')).pipe(uglify()).pipe(gulp.dest(dst));
+  gulp.src(libSrc).pipe(concat('lib.min.js')).pipe(stripDebug()).pipe(uglify()).pipe(gulp.dest(dst));
   gulp.src(src).pipe(concat('bundle.min.js')).pipe(uglify()).pipe(gulp.dest(dst));
 });
 

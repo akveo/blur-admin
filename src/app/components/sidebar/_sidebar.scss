@@ -35,6 +35,8 @@ a.collapse-menu-link {
     width: 16px;
     text-align: center;
     line-height: 42px;
+    transition: transform 0.5s ease-in;
+    transform: rotate(0deg);
   }
 }
 
@@ -201,9 +203,9 @@ a.al-sidebar-list-link {
         }
       }
     }
-    .collapse-menu-link {
-      .fa-angle-double-left:before {
-        content: $angle-right;
+    a.collapse-menu-link {
+      i {
+        transform: rotate(540deg);
       }
     }
 
@@ -225,8 +227,8 @@ a.al-sidebar-list-link {
       position: relative;
       cursor: pointer;
       padding-left: 0px;
-      .fa-angle-double-left:before {
-        content: $angle-right;
+      i {
+        transform: rotate(540deg);
       }
     }
     .al-sidebar-list-block {
@@ -284,9 +286,8 @@ a.al-sidebar-list-link {
     width: 100%;
     position: relative;
     padding-left: 18px;
-
-    .fa-angle-double-left:before {
-      content: $angle-left;
+    i {
+      transform: rotate(0deg);
     }
   }
 

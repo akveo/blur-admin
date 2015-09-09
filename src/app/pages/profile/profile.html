@@ -21,8 +21,7 @@
                 <div class="userpic">
                   <img ng-src="{{ picture }}" ng-click="uploadPicture()">
                   <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="!noPicture"></i>
-                  <a href="javascript:void(0)" class="change-userpic" ng-click="uploadPicture()">Change Profile
-                    Picture</a>
+                  <a href class="change-userpic" ng-click="uploadPicture()">Change Profile Picture</a>
                   <input type="file" ng-show="false" id="uploadFile">
                 </div>
               </div>
@@ -66,8 +65,7 @@
               <label for="inputOccupation" class="col-sm-3 control-label">Occupation</label>
 
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="inputOccupation" placeholder=""
-                       value="Front End Web Developer">
+                <input type="text" class="form-control" id="inputOccupation" placeholder="" value="Front End Web Developer">
               </div>
             </div>
           </div>
@@ -142,11 +140,16 @@
 
         <div class="social-profiles row clearfix">
           <div class="col-md-3 col-sm-4" ng-repeat="item in socialProfiles">
-            <a class="sn-link" ng-class="{connected: item.connected}" target=" {{ item.connected ? '_blank' : ''}}"
-               href="{{ item.href }}" ng-click="showModalOrLink(item)">
+
+            <a class="sn-link" href ng-click="showModal()" ng-if="!item.href">
               <i class="socicon socicon-facebook"></i>
               <span>{{ item.name }}</span>
-              <em class="ion-ios-close-empty sn-link-close" ng-if="item.connected" ng-mousedown="unconnect(item)"></em>
+            </a>
+
+            <a class="sn-link connected" href="{{ item.href }}" target="_blank" ng-if="item.href">
+              <i class="socicon socicon-facebook"></i>
+              <span>{{ item.name }}</span>
+              <em class="ion-ios-close-empty sn-link-close" ng-mousedown="unconnect(item)"></em>
             </a>
           </div>
         </div>

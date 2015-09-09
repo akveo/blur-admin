@@ -1,32 +1,31 @@
-@import "_variables.scss";
-@import "_mixins.scss";
-@import "_blur-admin-theme.scss";
-@import "../../app/pages/typography/_typography.scss";
-@import "_preloader.scss";
-@import "_socicon.scss";
-@import "_buttons.scss";
-@import "_table.scss";
-@import "_layout.scss";
-@import "../../app/components/widgets/_widgets.scss";
-@import "../../app/pages/buttons/_buttonsPage.scss";
-@import "../../app/pages/icons/_iconsPage.scss";
-@import "../../app/pages/charts/_chartsPage.scss";
-@import "../../app/pages/profile/_profile.scss";
-@import "../../app/pages/form/_form.scss";
-@import "../../app/components/pageTop/_pageTop.scss";
-@import "../../app/components/sidebar/_sidebar.scss";
-@import "../../app/components/backTop/_backTop.scss";
-@import "../../app/components/msgCenter/_msgCenter.scss";
-@import "../../app/pages/dashboard/widgets/calendar/_calendar.scss";
-@import "../../app/components/pieCharts/_pieCharts.scss";
-@import "../../app/pages/dashboard/widgets/amChart/_amChart.scss";
-@import "../../app/pages/dashboard/widgets/todo/_todo.scss";
-@import "../../app/pages/dashboard/widgets/amChartMap/_amChartMap.scss";
-@import "../../app/pages/dashboard/widgets/timeline/_timeline.scss";
-@import "../../app/pages/dashboard/widgets/chart/_chart.scss";
-@import "../../app/pages/maps/widgets/leaflet/_leaflet.scss";
-@import "../../app/pages/maps/widgets/google-maps/_google-maps.scss";
-@import "../../app/pages/maps/widgets/map-bubbles/_map-bubbles.scss";
-@import "../../app/pages/maps/widgets/map-lines/_map-lines.scss";
-@import "../../app/pages/modals/_modals.scss";
-@import "../../app/pages/modals/widgets/notifications/_toastr.scss";
+@import "variables.scss",
+"mixins.scss",
+"../../app/pages/typography/typography.scss",
+"preloader.scss",
+"socicon.scss",
+"buttons.scss",
+"table.scss",
+"layout.scss",
+"../../app/components/widgets/widgets.scss",
+"../../app/pages/buttons/buttonsPage.scss",
+"../../app/pages/icons/iconsPage.scss",
+"../../app/pages/charts/chartsPage.scss",
+"../../app/pages/profile/profile.scss",
+"../../app/pages/form/form.scss",
+"../../app/components/pageTop/pageTop.scss",
+"../../app/components/sidebar/sidebar.scss",
+"../../app/components/backTop/backTop.scss",
+"../../app/components/msgCenter/msgCenter.scss",
+"../../app/pages/dashboard/widgets/calendar/calendar.scss",
+"../../app/components/pieCharts/pieCharts.scss",
+"../../app/pages/dashboard/widgets/amChart/amChart.scss",
+"../../app/pages/dashboard/widgets/todo/todo.scss",
+"../../app/pages/dashboard/widgets/amChartMap/amChartMap.scss",
+"../../app/pages/dashboard/widgets/timeline/timeline.scss",
+"../../app/pages/dashboard/widgets/chart/chart.scss",
+"../../app/pages/maps/widgets/leaflet/leaflet.scss",
+"../../app/pages/maps/widgets/google-maps/google-maps.scss",
+"../../app/pages/maps/widgets/map-bubbles/map-bubbles.scss",
+"../../app/pages/maps/widgets/map-lines/map-lines.scss",
+"../../app/pages/modals/modals.scss",
+"../../app/pages/modals/widgets/notifications/notifications.scss";

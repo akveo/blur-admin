@@ -91,6 +91,9 @@ ul.todo-list {
   width: 100%;
   padding-right: 25px;
   cursor: text;
+  span {
+    display: block;
+  }
   input {
     border: none;
     background: transparent;

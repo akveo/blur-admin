@@ -1,3 +1,11 @@
+@keyframes fadeInNotification {
+  0% {opacity: 0;}
+  20% {opacity: 1;}
+  70% {opacity: 1;}
+  90% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
 .toast-title {
   font-weight: bold;
 }
@@ -105,9 +113,9 @@ button.toast-close-button {
     color: #ffffff;
     opacity: 0.9;
     cursor: pointer;
-  }
-  &:hover {
-    & > div {
+    animation-name: fadeInNotification;
+    animation-duration: 5.5s;
+    &:hover {
       opacity: 1 !important;
     }
   }
