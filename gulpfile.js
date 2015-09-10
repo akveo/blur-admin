@@ -55,7 +55,11 @@ var imgSrc = [
 
 gulp.task('imagemin', function () {
   var imgDst = './src/release/img/';
-  gulp.src(imgSrc).pipe(changed(imgDst)).pipe(imagemin()).pipe(gulp.dest(imgDst));
+  return gulp
+      .src(imgSrc)
+      .pipe(changed(imgDst))
+      .pipe(imagemin())
+      .pipe(gulp.dest(imgDst));
 });
 
 gulp.task('js', function () {
@@ -91,3 +95,5 @@ gulp.task("watch", function () {
 });
 
 gulp.task("init", ["minify-css", "imagemin", "js", "font"]);
+
+gulp.task('default', ['init']);
