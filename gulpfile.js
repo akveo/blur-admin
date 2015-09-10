@@ -9,6 +9,8 @@ var imagemin = require('gulp-imagemin');
 var stripDebug = require('gulp-strip-debug');
 var uglify = require('gulp-uglify');
 var eventStream = require('event-stream');
+var templateCache = require('gulp-angular-templatecache');
+var minifyHTML = require('gulp-minify-html');
 
 gulp.task("minify-404-css", function () {
   var vendorFiles = gulp.src("./src/assets/css/lib/bootstrap.min.css");
@@ -88,12 +90,19 @@ gulp.task('font', function () {
   gulp.src(fontSrc).pipe(gulp.dest(fontDst));
 });
 
+gulp.task('templateCache', function() {
+  return gulp.src('src/app/**/*.html')
+      .pipe(minifyHTML({ conditionals: true, spare: true }))
+      .pipe(templateCache({ root: '/app/', module: 'BlurAdmin' }))
+      .pipe(gulp.dest('src/release/js'));
+});
+
 gulp.task("watch", function () {
   gulp.watch(["./src/app/**/*.css", "./src/assets/**/*.css", "./**/*.scss "], ["minify-css"]);
   gulp.watch(imgSrc, ["imagemin"]);
   gulp.watch(["./src/app/**/*.js", "./src/assets/**/*.js"], ["js"]);
 });
 
-gulp.task("init", ["minify-css", "imagemin", "js", "font"]);
+gulp.task("init", ["minify-css", "imagemin", "js", "font", 'templateCache']);
 
 gulp.task('default', ['init']);
