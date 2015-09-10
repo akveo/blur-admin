@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('amChartCtrl', ['$scope', '$timeout', '$element', function ($scope, $timeout, $element) {
+blurAdminApp.controller('amChartCtrl', ['$scope', '$timeout', '$element', function ($scope, $timeout, $element) {
   var chartData = [
     { date: new Date(2011, 0), value: -30700},
     { date: new Date(2011, 1), value: -16800},

@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('pieCharts', function () {
+blurAdminApp.directive('pieCharts', function () {
   return {
     restrict: 'E',
     controller: ["$scope", "$element", "$window", "$timeout", function ($scope, $element, $window, $timeout) {

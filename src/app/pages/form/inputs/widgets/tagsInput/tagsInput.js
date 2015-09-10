@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('tagInput', [function() {
+blurAdminApp.directive('tagInput', [function() {
   return {
     restrict: 'A',
     link: function( $scope, elem, attr) {

@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('profileModal', [function () {
+blurAdminApp.directive('profileModal', [function () {
   return {
     restrict: 'EA',
     replace: true,

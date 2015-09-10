@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('barChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
+blurAdminApp.controller('barChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
   var id = $element[0].getAttribute('id');
   var barChart = AmCharts.makeChart(id, {
     type: "serial",

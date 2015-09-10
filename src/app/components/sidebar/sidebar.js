@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('sidebar', function () {
+blurAdminApp.directive('sidebar', function () {
   return {
     restrict: 'E',
     templateUrl: '/app/components/sidebar/sidebar.html',

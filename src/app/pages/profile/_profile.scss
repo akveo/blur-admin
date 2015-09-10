@@ -69,18 +69,28 @@ h3.with-line {
   height: 202px;
   position: relative;
   cursor: pointer;
+  .userpic-wrapper {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
   img {
     width: 100%;
   }
   i {
     display: none;
     position: absolute;
-    top: -15px;
-    right: -13px;
     font-size: 32px;
     background: #ffffff;
     cursor: pointer;
     color: $success;
+    top: -11px;
+    right: -11px;
+    height: 26px;
+    border-radius: 50%;
+    &:before {
+      line-height: 26px;
+    }
     &:hover {
       color: $danger;
     }

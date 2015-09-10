@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('googleMapsCtrl', ["$timeout", function ($timeout) {
+blurAdminApp.controller('googleMapsCtrl', ["$timeout", function ($timeout) {
   function initialize() {
     var mapCanvas = document.getElementById('google-maps');
     var mapOptions = {

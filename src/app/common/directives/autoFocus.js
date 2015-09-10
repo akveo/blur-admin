@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('autoFocus', ["$timeout", "$parse", function ($timeout, $parse) {
+blurAdminApp.directive('autoFocus', ["$timeout", "$parse", function ($timeout, $parse) {
   return {
     link: function (scope, element, attrs) {
       var model = $parse(attrs.autoFocus);

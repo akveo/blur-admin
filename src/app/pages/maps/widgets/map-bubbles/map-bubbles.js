@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('mapBubblesCtrl', [function () {
+blurAdminApp.controller('mapBubblesCtrl', [function () {
 
   var latlong = {};
   latlong["AD"] = {"latitude": 42.5, "longitude": 1.5};

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('amMapCtrl', ['$scope', '$timeout', '$element', function ($scope, $timeout, $element) {
+blurAdminApp.controller('amMapCtrl', ['$scope', '$timeout', '$element', function ($scope, $timeout, $element) {
   var id = $element[0].getAttribute('id');
   var map = AmCharts.makeChart(id, {
 
@@ -109,7 +109,7 @@ app.controller('amMapCtrl', ['$scope', '$timeout', '$element', function ($scope,
           id: "NL",
           color: colorPrimary,
           customData: "1 213",
-          groupId: "before2004"
+          groupId: "1"
         },
         {
           title: "Portugal",

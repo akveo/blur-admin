@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('funnelChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
+blurAdminApp.controller('funnelChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
   var id = $element[0].getAttribute('id');
   var funnelChart = AmCharts.makeChart(id, {
     type: "funnel",

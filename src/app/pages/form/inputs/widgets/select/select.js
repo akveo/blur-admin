@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('selectpicker', [function() {
+blurAdminApp.directive('selectpicker', [function() {
   return {
     restrict: 'A',
     link: function( $scope, elem) {

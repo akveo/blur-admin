@@ -4,7 +4,7 @@
 
 'use strict';
 
-app.directive('animatedChange', ["$timeout", function ($timeout) {
+blurAdminApp.directive('animatedChange', ["$timeout", function ($timeout) {
   return {
     link: function (scope, element) {
       $timeout(function () {

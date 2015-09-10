@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('notificationsCtrl', ["$scope", "toastr", function ($scope, toastr) {
+blurAdminApp.controller('notificationsCtrl', ["$scope", "toastr", function ($scope, toastr) {
 
   $scope.showSuccessMsg = function() {
     toastr.success('Your information has been saved successfully!');

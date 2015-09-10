@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('switch', ['$timeout', function ($timeout) {
+blurAdminApp.directive('switch', ['$timeout', function ($timeout) {
   return {
     restrict: 'EA',
     replace: true,

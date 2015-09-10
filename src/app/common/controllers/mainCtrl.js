@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('mainCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+blurAdminApp.controller('mainCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
   $timeout(function () {
     $scope.finishLoading = true;
   }, 1000);

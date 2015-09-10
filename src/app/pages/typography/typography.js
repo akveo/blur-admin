@@ -8,6 +8,6 @@ angular.module('BlurAdmin.typographyPage', ['ngRoute'])
         controller: 'typographyPageCtrl'
       });
     }])
-    .controller('typographyPageCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+    .controller('typographyPageCtrl', [function () {
 
     }]);

@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('BlurAdmin', [
+var blurAdminApp = angular.module('BlurAdmin', [
   'ui.sortable',
   'ngRoute',
   'BlurAdmin.dashboard',

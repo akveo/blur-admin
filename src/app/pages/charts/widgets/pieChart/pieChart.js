@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('pieChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
+blurAdminApp.controller('pieChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
   var id = $element[0].getAttribute('id');
   var pieChart = AmCharts.makeChart(id, {
     type: "pie",

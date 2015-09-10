@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('trafficChartCtrl', [function () {
+blurAdminApp.controller('trafficChartCtrl', [function () {
 
   var doughnutData = [
     {

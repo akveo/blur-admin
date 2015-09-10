@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('widgets', function () {
+blurAdminApp.directive('widgets', function () {
   return {
     restrict: 'EA',
     scope: {

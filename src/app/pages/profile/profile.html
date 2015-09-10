@@ -19,10 +19,12 @@
 
               <div class="col-sm-9">
                 <div class="userpic">
-                  <img ng-src="{{ picture }}" ng-click="uploadPicture()">
+                  <div class="userpic-wrapper">
+                    <img ng-src="{{ picture }}" ng-click="uploadPicture()">
+                  </div>
                   <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="!noPicture"></i>
                   <a href class="change-userpic" ng-click="uploadPicture()">Change Profile Picture</a>
-                  <input type="file" ng-show="false" id="uploadFile">
+                  <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
                 </div>
               </div>
             </div>

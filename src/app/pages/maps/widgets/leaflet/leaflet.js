@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('leafletCtrl', ["$timeout", function ($timeout) {
+blurAdminApp.controller('leafletCtrl', ["$timeout", function ($timeout) {
   var map = L.map('leaflet-map').setView([51.505, -0.09], 13);
 
   L.Icon.Default.imagePath = 'release/img';

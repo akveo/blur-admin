@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('backTop', function () {
+blurAdminApp.directive('backTop', function () {
   return {
     restrict: 'E',
     controller: [function () {

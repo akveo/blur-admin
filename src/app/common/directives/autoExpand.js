@@ -3,7 +3,7 @@
  */
 'use strict';
 
-app.directive('autoExpand', function () {
+blurAdminApp.directive('autoExpand', function () {
   return {
     restrict: 'A',
     link: function ($scope, elem) {

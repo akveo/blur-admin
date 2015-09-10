@@ -8,7 +8,7 @@ angular.module('BlurAdmin.profilePage', ['ngRoute'])
         controller: 'profilePageCtrl'
       });
     }])
-    .controller('profilePageCtrl', ['$scope', function ($scope) {
+    .controller('profilePageCtrl', ['$scope', 'fileReader', function ($scope, fileReader) {
       $scope.picture = "release/img/pic-profile.png";
 
       $scope.removePicture = function () {
@@ -19,6 +19,7 @@ angular.module('BlurAdmin.profilePage', ['ngRoute'])
       $scope.uploadPicture = function () {
         var fileInput = document.getElementById('uploadFile');
         fileInput.click();
+
       };
 
       $scope.socialProfiles = [
@@ -65,6 +66,13 @@ angular.module('BlurAdmin.profilePage', ['ngRoute'])
 
       $scope.showModal = function () {
         $('#profileModal').modal('show');
+      };
+
+      $scope.getFile = function () {
+        fileReader.readAsDataUrl($scope.file, $scope)
+            .then(function (result) {
+              $scope.picture = result;
+            });
       };
 
       $scope.switches = [true, true, false, true, true, false];

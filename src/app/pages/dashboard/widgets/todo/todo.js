@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('blurTodo', function () {
+blurAdminApp.directive('blurTodo', function () {
   return {
     restrict: 'A',
     controller: ["$scope", function ($scope) {

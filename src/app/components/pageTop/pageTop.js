@@ -1,6 +1,6 @@
 'use strict';
 
-app.directive('pageTop', ["$location", function ($location) {
+blurAdminApp.directive('pageTop', ["$location", function ($location) {
   return {
     restrict: 'E',
     templateUrl: '/app/components/pageTop/pageTop.html',

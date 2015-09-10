@@ -4,7 +4,7 @@
 
 'use strict';
 
-app.directive('zoomIn', ['$timeout', function ($timeout) {
+blurAdminApp.directive('zoomIn', ['$timeout', function ($timeout) {
   return {
     restrict: 'A',
     link: function ($scope, elem) {

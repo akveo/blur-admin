@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('timelineCtrl', [function () {
+blurAdminApp.controller('timelineCtrl', [function () {
   var timelineBlocks = $('.cd-timeline-block'),
       offset = 0.8;
 

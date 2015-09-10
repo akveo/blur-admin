@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('calendarCtrl', ['$scope', '$timeout', '$element', function ($scope, $timeout, $element) {
+blurAdminApp.controller('calendarCtrl', ['$scope', '$timeout', '$element', function ($scope, $timeout, $element) {
   $element.fullCalendar({
     header: {
       left: 'prev,next today',
