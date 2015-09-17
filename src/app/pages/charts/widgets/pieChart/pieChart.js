@@ -3,81 +3,81 @@
 blurAdminApp.controller('pieChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
   var id = $element[0].getAttribute('id');
   var pieChart = AmCharts.makeChart(id, {
-    type: "pie",
+    type: 'pie',
     startDuration: 0,
-    theme: "blur",
+    theme: 'blur',
     addClassNames: true,
     legend: {
-      position: "right",
+      position: 'right',
       marginRight: 100,
       autoMargins: false
     },
-    innerRadius: "40%",
+    innerRadius: '40%',
     defs: {
       filter: [
         {
-          id: "shadow",
-          width: "200%",
-          height: "200%",
+          id: 'shadow',
+          width: '200%',
+          height: '200%',
           feOffset: {
-            result: "offOut",
-            in: "SourceAlpha",
+            result: 'offOut',
+            in: 'SourceAlpha',
             dx: 0,
             dy: 0
           },
           feGaussianBlur: {
-            result: "blurOut",
-            in: "offOut",
+            result: 'blurOut',
+            in: 'offOut',
             stdDeviation: 5
           },
           feBlend: {
-            in: "SourceGraphic",
-            in2: "blurOut",
-            mode: "normal"
+            in: 'SourceGraphic',
+            in2: 'blurOut',
+            mode: 'normal'
           }
         }
       ]
     },
     dataProvider: [
       {
-        country: "Lithuania",
+        country: 'Lithuania',
         litres: 501.9
       },
       {
-        country: "Czech Republic",
+        country: 'Czech Republic',
         litres: 301.9
       },
       {
-        country: "Ireland",
+        country: 'Ireland',
         litres: 201.1
       },
       {
-        country: "Germany",
+        country: 'Germany',
         litres: 165.8
       },
       {
-        country: "Australia",
+        country: 'Australia',
         litres: 139.9
       },
       {
-        country: "Austria",
+        country: 'Austria',
         litres: 128.3
       },
       {
-        country: "UK",
+        country: 'UK',
         litres: 99
       },
       {
-        country: "Belgium",
+        country: 'Belgium',
         litres: 60
       }
     ],
-    valueField: "litres",
-    titleField: "country",
+    valueField: 'litres',
+    titleField: 'country',
     export: {
       enabled: true
     },
-    creditsPosition: "bottom-left",
+    creditsPosition: 'bottom-left',
 
     autoMargins: false,
     marginTop: 10,
@@ -85,17 +85,17 @@ blurAdminApp.controller('pieChartCtrl', ['$scope', '$timeout', '$element', funct
     marginLeft: 0,
     marginRight: 0,
     pullOutRadius: 0,
-    pathToImages: "release/img/"
+    pathToImages: 'img/'
   });
 
-  pieChart.addListener("init", handleInit);
+  pieChart.addListener('init', handleInit);
 
-  pieChart.addListener("rollOverSlice", function (e) {
+  pieChart.addListener('rollOverSlice', function (e) {
     handleRollOver(e);
   });
 
   function handleInit() {
-    pieChart.legend.addListener("rollOverItem", handleRollOver);
+    pieChart.legend.addListener('rollOverItem', handleRollOver);
   }
 
   function handleRollOver(e) {

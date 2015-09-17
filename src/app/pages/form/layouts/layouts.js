@@ -4,7 +4,7 @@ angular.module('BlurAdmin.formLayoutsPage', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/form-layouts', {
-        templateUrl: '/app/pages/form/layouts/layouts.html',
+        templateUrl: 'app/pages/form/layouts/layouts.html',
         controller: 'formLayoutsPageCtrl'
       });
     }])
@@ -15,7 +15,7 @@ angular.module('BlurAdmin.formLayoutsPage', ['ngRoute'])
             [
               {
                 title: 'Inline Form',
-                url: "/app/pages/form/layouts/widgets/inlineForm.html"
+                url: 'app/pages/form/layouts/widgets/inlineForm.html'
               }
             ]
           ]
@@ -24,22 +24,22 @@ angular.module('BlurAdmin.formLayoutsPage', ['ngRoute'])
           widgets: [
             [
               {
-                title: "Basic Form",
-                url: "/app/pages/form/layouts/widgets/basicForm.html"
+                title: 'Basic Form',
+                url: 'app/pages/form/layouts/widgets/basicForm.html'
               },
               {
-                title: "Block Form",
-                url: "/app/pages/form/layouts/widgets/blockForm.html"
+                title: 'Block Form',
+                url: 'app/pages/form/layouts/widgets/blockForm.html'
               }
             ],
             [
               {
-                title: "Horizontal Form",
-                url: "/app/pages/form/layouts/widgets/horizontalForm.html"
+                title: 'Horizontal Form',
+                url: 'app/pages/form/layouts/widgets/horizontalForm.html'
               },
               {
-                title: "Form Without Labels",
-                url: "/app/pages/form/layouts/widgets/formWithoutLabels.html"
+                title: 'Form Without Labels',
+                url: 'app/pages/form/layouts/widgets/formWithoutLabels.html'
               }
             ]
           ]

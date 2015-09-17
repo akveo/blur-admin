@@ -1,7 +1,7 @@
 (function (blurAdminApp) {
 
-  blurAdminApp.factory("fileReader", fileReader);
-  fileReader.$inject = ["$q"];
+  blurAdminApp.factory('fileReader', fileReader);
+  fileReader.$inject = ['$q'];
 
   function fileReader ($q) {
     var onLoad = function(reader, deferred, scope) {
@@ -22,7 +22,7 @@
 
     var onProgress = function(reader, scope) {
       return function (event) {
-        scope.$broadcast("fileProgress",
+        scope.$broadcast('fileProgress',
             {
               total: event.total,
               loaded: event.loaded

@@ -4,11 +4,11 @@
 
 'use strict';
 
-blurAdminApp.directive('animatedChange', ["$timeout", function ($timeout) {
+blurAdminApp.directive('animatedChange', ['$timeout', function ($timeout) {
   return {
     link: function (scope, element) {
       $timeout(function () {
-        var newValue = element.attr("new-value");
+        var newValue = element.attr('new-value');
         var oldvalue = parseInt(element.html());
 
         function changeValue(val) {
@@ -27,7 +27,7 @@ blurAdminApp.directive('animatedChange', ["$timeout", function ($timeout) {
           }
         }
         $timeout(function () {
-          element.next().find("i").addClass("show-arr");
+          element.next().find('i').addClass('show-arr');
         }, 500);
       }, 3500);
     }

@@ -3,54 +3,54 @@
 blurAdminApp.controller('funnelChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
   var id = $element[0].getAttribute('id');
   var funnelChart = AmCharts.makeChart(id, {
-    type: "funnel",
-    theme: "blur",
+    type: 'funnel',
+    theme: 'blur',
     dataProvider: [
       {
-        title: "Website visits",
+        title: 'Website visits',
         value: 300
       },
       {
-        title: "Downloads",
+        title: 'Downloads',
         value: 123
       },
       {
-        title: "Requested prices",
+        title: 'Requested prices',
         value: 98
       },
       {
-        title: "Contaced",
+        title: 'Contaced',
         value: 72
       },
       {
-        title: "Purchased",
+        title: 'Purchased',
         value: 35
       },
       {
-        title: "Asked for support",
+        title: 'Asked for support',
         value: 25
       },
       {
-        title: "Purchased more",
+        title: 'Purchased more',
         value: 18
       }
     ],
-    titleField: "title",
+    titleField: 'title',
     marginRight: 160,
     marginLeft: 15,
-    labelPosition: "right",
+    labelPosition: 'right',
     funnelAlpha: 0.9,
-    valueField: "value",
+    valueField: 'value',
     startX: 0,
-    neckWidth: "0%",
+    neckWidth: '0%',
     startAlpha: 0,
     outlineThickness: 1,
-    neckHeight: "0%",
-    balloonText: "[[title]]:<b>[[value]]</b>",
+    neckHeight: '0%',
+    balloonText: '[[title]]:<b>[[value]]</b>',
     export: {
       enabled: true
     },
-    creditsPosition: "bottom-left",
-    pathToImages: "release/img/"
+    creditsPosition: 'bottom-left',
+    pathToImages: 'img/'
   });
 }]);

@@ -3,37 +3,37 @@
 blurAdminApp.controller('barChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
   var id = $element[0].getAttribute('id');
   var barChart = AmCharts.makeChart(id, {
-    type: "serial",
-    theme: "blur",
+    type: 'serial',
+    theme: 'blur',
     dataProvider: [
       {
-        country: "USA",
+        country: 'USA',
         visits: 3025,
         color: colorPrimary
       },
       {
-        country: "China",
+        country: 'China',
         visits: 1882,
         color: colorDanger
 
       },
       {
-        country: "Japan",
+        country: 'Japan',
         visits: 1809,
         color: colorPrimaryLight
       },
       {
-        country: "Germany",
+        country: 'Germany',
         visits: 1322,
         color: colorSuccess
       },
       {
-        country: "UK",
+        country: 'UK',
         visits: 1122,
         color: colorWarning
       },
       {
-        country: "France",
+        country: 'France',
         visits: 1114,
         color: colorDefault
       }
@@ -41,19 +41,19 @@ blurAdminApp.controller('barChartCtrl', ['$scope', '$timeout', '$element', funct
     valueAxes: [
       {
         axisAlpha: 0,
-        position: "left",
-        title: "Visitors from country"
+        position: 'left',
+        title: 'Visitors from country'
       }
     ],
     startDuration: 1,
     graphs: [
       {
-        balloonText: "<b>[[category]]: [[value]]</b>",
-        fillColorsField: "color",
+        balloonText: '<b>[[category]]: [[value]]</b>',
+        fillColorsField: 'color',
         fillAlphas: 0.9,
         lineAlpha: 0.2,
-        type: "column",
-        valueField: "visits"
+        type: 'column',
+        valueField: 'visits'
       }
     ],
     chartCursor: {
@@ -61,15 +61,15 @@ blurAdminApp.controller('barChartCtrl', ['$scope', '$timeout', '$element', funct
       cursorAlpha: 0,
       zoomable: false
     },
-    categoryField: "country",
+    categoryField: 'country',
     categoryAxis: {
-      gridPosition: "start",
+      gridPosition: 'start',
       labelRotation: 45
     },
     export: {
       enabled: true
     },
-    creditsPosition: "top-right",
-    pathToImages: "release/img/"
+    creditsPosition: 'top-right',
+    pathToImages: 'img/'
   });
 }]);

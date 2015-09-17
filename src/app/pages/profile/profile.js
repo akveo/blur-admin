@@ -4,15 +4,15 @@ angular.module('BlurAdmin.profilePage', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/profile', {
-        templateUrl: '/app/pages/profile/profile.html',
+        templateUrl: 'app/pages/profile/profile.html',
         controller: 'profilePageCtrl'
       });
     }])
     .controller('profilePageCtrl', ['$scope', 'fileReader', function ($scope, fileReader) {
-      $scope.picture = "release/img/pic-profile.png";
+      $scope.picture = 'img/pic-profile.png';
 
       $scope.removePicture = function () {
-        $scope.picture = "release/img/no-photo.png";
+        $scope.picture = 'img/no-photo.png';
         $scope.noPicture = true;
       };
 
@@ -24,39 +24,39 @@ angular.module('BlurAdmin.profilePage', ['ngRoute'])
 
       $scope.socialProfiles = [
         {
-          name: "Facebook",
-          href: "https://www.facebook.com/nasta.kartul",
-          icon: "socicon-facebook"
+          name: 'Facebook',
+          href: 'https://www.facebook.com/nasta.kartul',
+          icon: 'socicon-facebook'
         },
         {
-          name: "Twitter",
-          icon: "socicon-twitter"
+          name: 'Twitter',
+          icon: 'socicon-twitter'
         },
         {
-          name: "Google",
-          icon: "socicon-google"
+          name: 'Google',
+          icon: 'socicon-google'
         },
         {
-          name: "LinkedIn",
-          href: "https://www.linkedin.com/profile/view?id=177497038",
-          icon: "socicon-linkedin"
+          name: 'LinkedIn',
+          href: 'https://www.linkedin.com/profile/view?id=177497038',
+          icon: 'socicon-linkedin'
         },
         {
-          name: "GitHub",
-          href: "https://github.com/1itvinka",
-          icon: "socicon-github"
+          name: 'GitHub',
+          href: 'https://github.com/1itvinka',
+          icon: 'socicon-github'
         },
         {
-          name: "StackOverflow",
-          icon: "socicon-stackoverflow"
+          name: 'StackOverflow',
+          icon: 'socicon-stackoverflow'
         },
         {
-          name: "Dribbble",
-          icon: "socicon-dribble"
+          name: 'Dribbble',
+          icon: 'socicon-dribble'
         },
         {
-          name: "Behance",
-          icon: "socicon-behace"
+          name: 'Behance',
+          icon: 'socicon-behace'
         }
       ];
 

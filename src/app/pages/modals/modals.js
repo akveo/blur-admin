@@ -4,7 +4,7 @@ angular.module('BlurAdmin.modalsPage', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/modals', {
-        templateUrl: '/app/pages/modals/modals.html',
+        templateUrl: 'app/pages/modals/modals.html',
         controller: 'modalsPageCtrl'
       });
     }])
@@ -15,8 +15,8 @@ angular.module('BlurAdmin.modalsPage', ['ngRoute'])
           widgets: [
             [
               {
-                title: "Modals",
-                url: "/app/pages/modals/widgets/modals.html"
+                title: 'Modals',
+                url: 'app/pages/modals/widgets/modals.html'
               }
             ]
           ]
@@ -25,14 +25,14 @@ angular.module('BlurAdmin.modalsPage', ['ngRoute'])
           widgets: [
             [
               {
-                title: "Message Modals",
-                url: "/app/pages/modals/widgets/message-modals.html"
+                title: 'Message Modals',
+                url: 'app/pages/modals/widgets/message-modals.html'
               }
             ],
             [
               {
-                title: "Notifications",
-                url: "/app/pages/modals/widgets/notifications/notifications.html"
+                title: 'Notifications',
+                url: 'app/pages/modals/widgets/notifications/notifications.html'
               }
             ]
           ]

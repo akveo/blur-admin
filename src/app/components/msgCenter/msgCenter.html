@@ -15,57 +15,11 @@
         <a href>Settings</a>
       </div>
       <div class="msg-list">
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-vova.png"></div>
+        <a href class="clearfix" ng-repeat="msg in notifications">
+          <div class="img-area"><img ng-src="{{ users[msg.userId].image || msg.image }}"></div>
           <div class="msg-area">
-            <div><strong>Vladimir</strong> posted a new article.</div>
-            <span>1 min ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-kostia.png"></div>
-          <div class="msg-area">
-            <div><strong>Konstantin</strong> changed his contact information.</div>
-            <span>2 hrs ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area">
-            <div class="orders"><i class="fa fa-shopping-cart"></i></div>
-          </div>
-          <div class="msg-area">
-            <div>New orders received.</div>
-            <span>5 hrs ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-andrey.png"></div>
-          <div class="msg-area">
-            <div><strong>Andrey</strong> replied to your comment.</div>
-            <span>1 day ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-nasta.png"></div>
-          <div class="msg-area">
-            <div>Today is <strong>Anastasiya</strong>'s birthday.</div>
-            <span>2 days ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area">
-            <div class="comments"><i class="fa fa-comments-o"></i></div>
-          </div>
-          <div class="msg-area">
-            <div>New comments on your post.</div>
-            <span>3 days ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-kostia.png"></div>
-          <div class="msg-area">
-            <div><strong>Konstantin</strong> invited you to join the event.</div>
-            <span>1 week ago</span>
+            <div ng-bind-html="getMessage(msg)"></div>
+            <span>{{ msg.time }}</span>
           </div>
         </a>
       </div>
@@ -75,67 +29,21 @@
   <li class="dropdown">
     <a href class="msg dropdown-toggle" data-toggle="dropdown">
       <i class="fa fa-envelope-o"></i><span>5</span>
-
       <div class="notification-ring"></div>
     </a>
-
     <div class="dropdown-menu top-dropdown-menu">
       <i class="dropdown-arr"></i>
-
       <div class="header clearfix">
         <strong>Messages</strong>
         <a href>Mark All as Read</a>
         <a href>Settings</a>
       </div>
       <div class="msg-list">
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-nasta.png"></div>
+        <a href class="clearfix" ng-repeat="msg in messages">
+          <div class="img-area"><img ng-src="{{ users[msg.userId].image || msg.image }}"></div>
           <div class="msg-area">
-            <div>After you get up and running, you can place Font Awesome icons just about...
-            </div>
-            <span>1 min ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-vova.png"></div>
-          <div class="msg-area">
-            <div>You asked, Font Awesome delivers with 40 shiny new icons in version 4.2.</div>
-            <span>2 hrs ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-kostia.png"></div>
-          <div class="msg-area">
-            <div>Want to request new icons? Here's how. Need vectors or want to use on the...</div>
-            <span>10 hrs ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-andrey.png"></div>
-          <div class="msg-area">
-            <div>Explore your passions and discover new ones by getting involved. Stretch your...</div>
-            <span>1 day ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-nasta.png"></div>
-          <div class="msg-area">
-            <div>Get to know who we are - from the inside out. From our history and culture, to the...</div>
-            <span>5 mins ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-kostia.png"></div>
-          <div class="msg-area">
-            <div>Need some support to reach your goals? Apply for scholarships across a variety of...</div>
-            <span>2 days ago</span>
-          </div>
-        </a>
-        <a href class="clearfix">
-          <div class="img-area"><img src="release/img/pic-vova.png"></div>
-          <div class="msg-area">
-            <div>Wrap the dropdown's trigger and the dropdown menu within .dropdown, or...</div>
-            <span>1 week ago</span>
+            <div>{{ msg.text }}</div>
+            <span>{{ msg.time }}</span>
           </div>
         </a>
       </div>

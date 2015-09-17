@@ -72,6 +72,7 @@ a.al-sidebar-list-link {
   line-height: 42px;
   white-space: nowrap;
   overflow: hidden;
+  cursor: pointer;
   &:hover {
     color: $primary;
     b {

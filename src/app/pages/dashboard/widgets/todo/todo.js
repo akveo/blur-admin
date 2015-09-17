@@ -3,7 +3,7 @@
 blurAdminApp.directive('blurTodo', function () {
   return {
     restrict: 'A',
-    controller: ["$scope", function ($scope) {
+    controller: ['$scope', function ($scope) {
 
       $scope.marks = [
         {
@@ -30,37 +30,37 @@ blurAdminApp.directive('blurTodo', function () {
 
       $scope.todoList = [
         {
-          text: "Check me out",
+          text: 'Check me out',
           edit: false, // todo: remove edit
           markId: 4
         },
         {
-          text: "Lorem ipsum dolor sit amet, possit denique oportere at his, etiam corpora deseruisse te pro",
+          text: 'Lorem ipsum dolor sit amet, possit denique oportere at his, etiam corpora deseruisse te pro',
           edit: false,
           markId: 3
         },
         {
-          text: "Ex has semper alterum, expetenda dignissim",
+          text: 'Ex has semper alterum, expetenda dignissim',
           edit: false,
           markId: 2
         },
         {
-          text: "Vim an eius ocurreret abhorreant, id nam aeque persius ornatus.",
+          text: 'Vim an eius ocurreret abhorreant, id nam aeque persius ornatus.',
           edit: false,
           markId: 1
         },
         {
-          text: "Simul erroribus ad usu",
+          text: 'Simul erroribus ad usu',
           edit: false,
           markId: 0
         },
         {
-          text: "Ei cum solet appareat, ex est graeci mediocritatem",
+          text: 'Ei cum solet appareat, ex est graeci mediocritatem',
           edit: false,
           markId: 4
         },
         {
-          text: "Lorem ipsum dolor sit amet, possit denique oportere at his, etiam corpora deseruisse te pro. Eirmod prompta usu ex, meliore oporteat est ad.",
+          text: 'Lorem ipsum dolor sit amet, possit denique oportere at his, etiam corpora deseruisse te pro. Eirmod prompta usu ex, meliore oporteat est ad.',
           edit: false,
           markId: 3
         }
@@ -88,7 +88,7 @@ blurAdminApp.directive('blurTodo', function () {
         }
       };
 
-      $scope.newTodoText = "";
+      $scope.newTodoText = '';
 
       $scope.addToDoItem = function (event) {
         if (event.which === 13) {
@@ -97,7 +97,7 @@ blurAdminApp.directive('blurTodo', function () {
             edit: false,
             markId: 0
           });
-          $scope.newTodoText = "";
+          $scope.newTodoText = '';
         }
       };
     }],

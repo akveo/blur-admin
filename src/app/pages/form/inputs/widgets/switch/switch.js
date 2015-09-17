@@ -5,14 +5,14 @@ blurAdminApp.directive('switch', ['$timeout', function ($timeout) {
     restrict: 'EA',
     replace: true,
     scope: {
-      ngModel: "="
+      ngModel: '='
     },
     template: '<div class="switch-container {{color}}"><input type="checkbox" ng-model="ngModel"></div>',
     link: function (scope, elem, attr) {
       $timeout(function(){
         scope.color = attr.color;
         $(elem).find('input').bootstrapSwitch({
-          size: "small",
+          size: 'small',
           onColor: attr.color
         });
       });

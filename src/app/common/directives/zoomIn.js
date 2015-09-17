@@ -15,8 +15,8 @@ blurAdminApp.directive('zoomIn', ['$timeout', function ($timeout) {
       }
 
       $timeout(function () {
-        elem.removeClass("invisible");
-        elem.addClass("animated zoomIn");
+        elem.removeClass('invisible');
+        elem.addClass('animated zoomIn');
       }, delay);
     }
   };

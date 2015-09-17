@@ -9,6 +9,6 @@ blurAdminApp.directive('backTop', function () {
         'speed': 500
       });
     }],
-    templateUrl: '/app/components/backTop/backTop.html'
+    templateUrl: 'app/components/backTop/backTop.html'
   };
 });

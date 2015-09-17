@@ -4,7 +4,7 @@ angular.module('BlurAdmin.tablesPage', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/tables', {
-        templateUrl: '/app/pages/tables/tables.html',
+        templateUrl: 'app/pages/tables/tables.html',
         controller: 'tablesPageCtrl'
       });
     }])
@@ -14,8 +14,8 @@ angular.module('BlurAdmin.tablesPage', ['ngRoute'])
           widgets: [
             [
               {
-                title: "Basic Table",
-                url: "/app/pages/tables/widgets/basicTable.html"
+                title: 'Basic Table',
+                url: 'app/pages/tables/widgets/basicTable.html'
               }
             ]
           ]
@@ -24,22 +24,22 @@ angular.module('BlurAdmin.tablesPage', ['ngRoute'])
           widgets: [
             [
               {
-                title: "Striped Rows",
-                url: "/app/pages/tables/widgets/stripedRows.html"
+                title: 'Striped Rows',
+                url: 'app/pages/tables/widgets/stripedRows.html'
               },
               {
-                title: "Bordered table",
-                url: "/app/pages/tables/widgets/borderedTable.html"
+                title: 'Bordered table',
+                url: 'app/pages/tables/widgets/borderedTable.html'
               }
             ],
             [
               {
-                title: "Hover rows",
-                url: "/app/pages/tables/widgets/hoverRows.html"
+                title: 'Hover rows',
+                url: 'app/pages/tables/widgets/hoverRows.html'
               },
               {
-                title: "Condensed table",
-                url: "/app/pages/tables/widgets/condensedTable.html"
+                title: 'Condensed table',
+                url: 'app/pages/tables/widgets/condensedTable.html'
               }
             ]
           ]

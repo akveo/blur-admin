@@ -3,7 +3,7 @@
 blurAdminApp.directive('sidebar', function () {
   return {
     restrict: 'E',
-    templateUrl: '/app/components/sidebar/sidebar.html',
+    templateUrl: 'app/components/sidebar/sidebar.html',
     controller: ['$scope', '$element', '$window', '$timeout', '$location', function ($scope, $element, $window, $timeout, $location) {
 
       var resWidthCollapseSidebar = 1200;
@@ -13,75 +13,75 @@ blurAdminApp.directive('sidebar', function () {
 
       $scope.menuItems = [
         {
-          title: "Dashboard",
-          icon: "ion-android-home",
-          root: "#/dashboard"
+          title: 'Dashboard',
+          icon: 'ion-android-home',
+          root: '#/dashboard'
         },
         {
-          title: "Charts",
-          icon: "ion-stats-bars",
-          root: "#/charts"
+          title: 'Charts',
+          icon: 'ion-stats-bars',
+          root: '#/charts'
         },
         {
-          title: "Tables",
-          icon: "ion-grid",
-          root: "#/tables"
+          title: 'Tables',
+          icon: 'ion-grid',
+          root: '#/tables'
         },
         {
-          title: "Form Elements",
-          icon: "ion-compose",
+          title: 'Form Elements',
+          icon: 'ion-compose',
           subMenu: [
             {
-              title: "Inputs",
-              root: "#/form-inputs"
+              title: 'Inputs',
+              root: '#/form-inputs'
             },
             {
-              title: "Form Layouts",
-              root: "#/form-layouts"
+              title: 'Form Layouts',
+              root: '#/form-layouts'
             }
           ]
         },
         {
-          title: "UI Elements",
-          icon: "ion-android-laptop",
+          title: 'UI Elements',
+          icon: 'ion-android-laptop',
           subMenu: [
             {
-              title: "Typography",
-              root: "#/typography"
+              title: 'Typography',
+              root: '#/typography'
             },
             {
-              title: "Buttons",
-              root: "#/buttons"
+              title: 'Buttons',
+              root: '#/buttons'
             },
             {
-              title: "Icons",
-              root: "#/icons"
+              title: 'Icons',
+              root: '#/icons'
             },
             {
-              title: "Modals",
-              root: "#/modals"
+              title: 'Modals',
+              root: '#/modals'
             }
           ]
         },
         {
-          title: "Maps",
-          icon: "ion-ios-location-outline",
-          root: "#/maps"
+          title: 'Maps',
+          icon: 'ion-ios-location-outline',
+          root: '#/maps'
         },
         {
-          title: "User Profile",
-          icon: "ion-person",
-          root: "#/profile"
+          title: 'User Profile',
+          icon: 'ion-person',
+          root: '#/profile'
         },
         {
-          title: "Login Page",
-          icon: "ion-log-out",
-          root: "auth.html"
+          title: 'Login Page',
+          icon: 'ion-log-out',
+          root: 'auth.html'
         },
         {
-          title: "404 Page",
-          icon: "ion-document",
-          root: "404.html"
+          title: '404 Page',
+          icon: 'ion-document',
+          root: '404.html'
         }
       ];
 
@@ -96,12 +96,12 @@ blurAdminApp.directive('sidebar', function () {
 
       function selectMenuItem() {
         $.each($scope.menuItems, function (index, value) {
-          value.selected = value.root === "#" + $location.$$url;
+          value.selected = value.root === '#' + $location.$$url;
 
           if (value.subMenu) {
             var hasSelectedSubmenu = false;
             $.each(value.subMenu, function (subIndex, subValue) {
-              subValue.selected = subValue.root === "#" + $location.$$url;
+              subValue.selected = subValue.root === '#' + $location.$$url;
               if (subValue.selected) {
                 hasSelectedSubmenu = true;
               }

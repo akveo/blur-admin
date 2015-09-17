@@ -4,7 +4,7 @@ angular.module('BlurAdmin.buttonsPage', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/buttons', {
-        templateUrl: '/app/pages/buttons/buttons.html',
+        templateUrl: 'app/pages/buttons/buttons.html',
         controller: 'buttonsPageCtrl'
       });
     }])
@@ -14,7 +14,7 @@ angular.module('BlurAdmin.buttonsPage', ['ngRoute'])
           widgets: [
             [
               {
-                url: "/app/pages/buttons/widgets/buttons.html"
+                url: 'app/pages/buttons/widgets/buttons.html'
               }
             ]
           ]
@@ -23,22 +23,22 @@ angular.module('BlurAdmin.buttonsPage', ['ngRoute'])
           widgets: [
             [
               {
-                title: "Icon Buttons",
-                url: "/app/pages/buttons/widgets/iconButtons.html"
+                title: 'Icon Buttons',
+                url: 'app/pages/buttons/widgets/iconButtons.html'
               },
               {
-                title: "Large Buttons",
-                url: "/app/pages/buttons/widgets/largeButtons.html"
+                title: 'Large Buttons',
+                url: 'app/pages/buttons/widgets/largeButtons.html'
               }
             ],
             [
               {
-                title: "Button Dropdowns",
-                url: "/app/pages/buttons/widgets/dropdowns.html"
+                title: 'Button Dropdowns',
+                url: 'app/pages/buttons/widgets/dropdowns.html'
               },
               {
-                title: "Button Groups",
-                url: "/app/pages/buttons/widgets/buttonGroups.html"
+                title: 'Button Groups',
+                url: 'app/pages/buttons/widgets/buttonGroups.html'
               }
             ]
           ]

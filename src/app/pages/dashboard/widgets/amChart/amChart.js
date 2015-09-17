@@ -62,8 +62,8 @@ blurAdminApp.controller('amChartCtrl', ['$scope', '$timeout', '$element', functi
 
   var id = $element[0].getAttribute('id');
   var chart = AmCharts.makeChart(id, {
-    type: "serial",
-    theme: "blur",
+    type: 'serial',
+    theme: 'blur',
     marginTop: 0,
     marginRight: 15,
     dataProvider: chartData,
@@ -74,46 +74,46 @@ blurAdminApp.controller('amChartCtrl', ['$scope', '$timeout', '$element', functi
     ],
     graphs: [
       {
-        id: "g1",
-        bullet: "round",
+        id: 'g1',
+        bullet: 'round',
         bulletSize: 8,
         useLineColorForBulletBorder: true,
         lineColor: colorSuccess,
         lineThickness: 1,
         negativeLineColor: colorDanger,
-        type: "smoothedLine",
-        valueField: "value",
+        type: 'smoothedLine',
+        valueField: 'value',
         fillAlphas: 0.3,
-        fillColorsField: "lineColor"
+        fillColorsField: 'lineColor'
       }
     ],
     chartScrollbar: {
-      graph: "g1",
+      graph: 'g1',
       gridAlpha: 0,
-      color: "#888888",
+      color: '#888888',
       scrollbarHeight: 55,
       backgroundAlpha: 0,
       selectedBackgroundAlpha: 0.1,
-      selectedBackgroundColor: "#ffffff",
+      selectedBackgroundColor: '#ffffff',
       graphFillAlpha: 0,
       autoGridCount: true,
       selectedGraphFillAlpha: 0,
       graphLineAlpha: 0.2,
-      graphLineColor: "#c2c2c2",
-      selectedGraphLineColor: "#888888",
+      graphLineColor: '#c2c2c2',
+      selectedGraphLineColor: '#888888',
       selectedGraphLineAlpha: 1
     },
     chartCursor: {
-      categoryBalloonDateFormat: "MM YYYY",
-      categoryBalloonColor: "#4285F4",
+      categoryBalloonDateFormat: 'MM YYYY',
+      categoryBalloonColor: '#4285F4',
       categoryBalloonAlpha: 0.7,
       cursorAlpha: 0,
       valueLineEnabled: true,
       valueLineBalloonEnabled: true,
       valueLineAlpha: 0.5
     },
-    dataDateFormat: "MM YYYY",
-    categoryField: "date",
+    dataDateFormat: 'MM YYYY',
+    categoryField: 'date',
     categoryAxis: {
       parseDates: true,
       gridAlpha: 0
@@ -121,20 +121,20 @@ blurAdminApp.controller('amChartCtrl', ['$scope', '$timeout', '$element', functi
     export: {
       enabled: true
     },
-    creditsPosition: "bottom-right",
+    creditsPosition: 'bottom-right',
     zoomOutButton: {
       backgroundColor: '#fff',
       backgroundAlpha: 0
     },
-    zoomOutText: "",
-    pathToImages: "release/img/"
+    zoomOutText: '',
+    pathToImages: 'img/'
   });
 
   function zoomChart() {
     chart.zoomToDates(new Date(2013, 3), new Date(2013, 10));
   }
 
-  chart.addListener("rendered", zoomChart);
+  chart.addListener('rendered', zoomChart);
   zoomChart();
   if (chart.zoomChart) {
     chart.zoomChart();
