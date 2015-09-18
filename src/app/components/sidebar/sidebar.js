@@ -6,7 +6,7 @@ blurAdminApp.directive('sidebar', function () {
     templateUrl: 'app/components/sidebar/sidebar.html',
     controller: ['$scope', '$element', '$window', '$timeout', '$location', function ($scope, $element, $window, $timeout, $location) {
 
-      var resWidthCollapseSidebar = 1200;
+      var resWidthCollapseSidebar = 1120;
       var resWidthHideSidebar = 500;
       var body = $('body');
       var collapsedClass = 'collapsed-sidebar';

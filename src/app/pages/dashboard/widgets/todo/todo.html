@@ -4,18 +4,10 @@
     <i class="mark" ng-click="changeColor(item)"></i>
     <label class="todo-checkbox custom-checkbox custom-input-success">
       <input type="checkbox" ng-model="isChecked">
-      <span></span>
+      <span class="cut-with-dots">{{ item.text }}</span>
     </label>
 
-    <span class="todo-text cut-with-dots nowrap">
-      <span ng-show="!item.edit" ng-click="item.edit = true">{{ item.text }}</span>
-      <input type="text"
-             ng-class="{'vis-hidden': !item.edit}"
-             ng-model="item.text"
-             ng-blur="item.edit = false"
-             auto-focus="item.edit"
-             ng-keydown="blurOnEnter($event, item)">
-    </span>
+    <!--<span class="todo-text cut-with-dots nowrap">{{ item.text }}</span>-->
     <i class="remove-todo ion-ios-close-empty" ng-click="item.deleted = true"></i>
   </li>
 </ul>

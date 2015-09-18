@@ -16,6 +16,7 @@ ul.todo-list {
     position: relative;
     border: 1px solid $input-border;
     cursor: grab;
+    height: 42px;
     &.ui-sortable-helper {
       background: #ffffff;
     }
@@ -82,23 +83,13 @@ ul.todo-list {
   }
 }
 
-.todo-checkbox {
-  position: absolute;
-}
-
-.todo-text {
-  padding-left: 25px;
+label.todo-checkbox {
   width: 100%;
   padding-right: 25px;
-  cursor: text;
+  min-height: 16px;
+  cursor: pointer;
   span {
-    display: block;
-  }
-  input {
-    border: none;
-    background: transparent;
-    outline: none;
-    padding: 0;
-    width: 100%;
+    white-space: nowrap;
+    height: 16px;
   }
 }

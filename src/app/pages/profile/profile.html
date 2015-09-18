@@ -1,7 +1,7 @@
 <div class="widgets">
   <div class="widgets-block">
     <div class="panel panel-default invisible" zoom-in>
-      <div class="panel-body content-panel">
+      <div class="panel-body content-panel profile-page">
 
         <div class="progress-info">Your profile is 70% Complete</div>
         <div class="progress">
@@ -144,12 +144,12 @@
           <div class="col-md-3 col-sm-4" ng-repeat="item in socialProfiles">
 
             <a class="sn-link" href ng-click="showModal()" ng-if="!item.href">
-              <i class="socicon socicon-facebook"></i>
+              <i class="socicon {{ item.icon }}"></i>
               <span>{{ item.name }}</span>
             </a>
 
             <a class="sn-link connected" href="{{ item.href }}" target="_blank" ng-if="item.href">
-              <i class="socicon socicon-facebook"></i>
+              <i class="socicon {{ item.icon }}"></i>
               <span>{{ item.name }}</span>
               <em class="ion-ios-close-empty sn-link-close" ng-mousedown="unconnect(item)"></em>
             </a>

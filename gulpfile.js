@@ -12,8 +12,10 @@ var eventStream = require('event-stream');
 var templateCache = require('gulp-angular-templatecache');
 var minifyHTML = require('gulp-minify-html');
 
+var bootstrapCssSrc = 'bower_components/bootstrap/dist/css/bootstrap.min.css';
+
 gulp.task('minify-404-css', function () {
-  var vendorFiles = gulp.src('src/assets/css/lib/bootstrap.min.css');
+  var vendorFiles = gulp.src(bootstrapCssSrc);
   var appFiles = gulp.src('src/assets/css/404.scss').pipe(sass({ style: 'compressed' }).on('error', sass.logError));
 
   return eventStream.concat(vendorFiles, appFiles)
@@ -24,7 +26,7 @@ gulp.task('minify-404-css', function () {
 });
 
 gulp.task('minify-auth-css', function () {
-  var vendorFiles = gulp.src('src/assets/css/lib/bootstrap.min.css');
+  var vendorFiles = gulp.src(bootstrapCssSrc);
   var appFiles = gulp.src('src/assets/css/auth.scss').pipe(sass({ style: 'compressed' }).on('error', sass.logError));
 
   return eventStream.concat(vendorFiles, appFiles)
@@ -35,7 +37,15 @@ gulp.task('minify-auth-css', function () {
 });
 
 gulp.task('minify-css', ['minify-404-css', 'minify-auth-css'], function () {
-  var vendorFiles = gulp.src('src/assets/css/lib/*.css');
+  var vendorFiles = gulp.src([
+    bootstrapCssSrc,
+    'bower_components/bootstrap-select/dist/css/bootstrap-select.min.css',
+    'bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css',
+    'bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css',
+    'bower_components/Ionicons/css/ionicons.min.css',
+    'bower_components/font-awesome/css/font-awesome.min.css',
+    'bower_components/animate.css/animate.min.css'
+  ]);
   var appFiles = gulp.src('src/assets/css/main.scss').pipe(sass({ style: 'compressed' }).on('error', sass.logError));
 
   return eventStream.concat(vendorFiles, appFiles)
@@ -107,20 +117,25 @@ gulp.task('js', function () {
 });
 
 gulp.task('font', function () {
-  var fontSrc = 'src/assets/css/fonts/*';
+  var fontSrc = [
+    'src/assets/css/fonts/*',
+    'bower_components/bootstrap/fonts/*',
+    'bower_components/font-awesome/fonts/*',
+    'bower_components/Ionicons/fonts/*',
+  ];
   var fontDst = 'release/fonts/';
 
   gulp.src(fontSrc).pipe(gulp.dest(fontDst));
 });
 
-gulp.task('templateCache', function() {
+gulp.task('templateCache', function () {
   return gulp.src('src/app/**/*.html')
       .pipe(minifyHTML({ conditionals: true, spare: true, empty: true }))
       .pipe(templateCache({ root: 'app/', module: 'BlurAdmin' }))
       .pipe(gulp.dest('release/js'));
 });
 
-gulp.task('html', function(){
+gulp.task('html', function () {
   return gulp.src('src/*.html')
       .pipe(minifyHTML({ conditionals: true, spare: true, empty: true }))
       .pipe(gulp.dest('release/'));
