@@ -50,3 +50,5 @@ gulp.1
 build
 
 /src/release
+/release
+/bower_components

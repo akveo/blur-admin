@@ -20,7 +20,7 @@ gulp.task('minify-404-css', function () {
       .pipe(concat('404.min.css'))
       .pipe(autoprefix('last 4 version'))
       .pipe(minifyCSS())
-      .pipe(gulp.dest('src/release/css/'));
+      .pipe(gulp.dest('release/css/'));
 });
 
 gulp.task('minify-auth-css', function () {
@@ -31,7 +31,7 @@ gulp.task('minify-auth-css', function () {
       .pipe(concat('auth.min.css'))
       .pipe(autoprefix('last 4 versions'))
       .pipe(minifyCSS())
-      .pipe(gulp.dest('src/release/css/'))
+      .pipe(gulp.dest('release/css/'))
 });
 
 gulp.task('minify-css', ['minify-404-css', 'minify-auth-css'], function () {
@@ -42,7 +42,7 @@ gulp.task('minify-css', ['minify-404-css', 'minify-auth-css'], function () {
       .pipe(concat('index.min.css'))
       .pipe(autoprefix('last 2 versions'))
       .pipe(minifyCSS())
-      .pipe(gulp.dest('src/release/css/'))
+      .pipe(gulp.dest('release/css/'))
 });
 
 var imgSrc = [
@@ -51,12 +51,13 @@ var imgSrc = [
   'src/app/pages/dashboard/widgets/timeline/img/*',
   'src/app/pages/profile/img/*',
   'src/app/pages/icons/widgets/kameleon-img/*',
-  'src/assets/js/lib/amChart/images/*',
-  'src/app/pages/maps/widgets/leaflet/images/*',
+  'bower_components/amcharts/dist/amcharts/images/*',
+  'bower_components/ammap/dist/ammap/images/*',
+  'bower_components/leaflet/dist/images/*'
 ];
 
 gulp.task('imagemin', function () {
-  var imgDst = 'src/release/img/';
+  var imgDst = 'release/img/';
   return gulp
       .src(imgSrc)
       .pipe(changed(imgDst))
@@ -66,18 +67,40 @@ gulp.task('imagemin', function () {
 
 gulp.task('js', function () {
   var libSrc = [
-    'src/assets/js/lib/jquery.min.js',
-    'src/assets/js/lib/angular.min.js',
+    'bower_components/jquery/dist/jquery.min.js',
+    'bower_components/angular/angular.min.js',
     'src/assets/js/global-variables.js',
-    'src/assets/js/lib/**/*.js',
-    'src/app/**/lib/**/*.js'
+    'bower_components/angular-route/angular-route.min.js',
+    'bower_components/jquery-ui/jquery-ui.min.js',
+    'bower_components/bootstrap/dist/js/bootstrap.min.js',
+    'bower_components/highlight/src/highlight.js',
+    'bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js',
+    'bower_components/bootstrap-select/dist/js/bootstrap-select.min.js',
+    'bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js',
+    'bower_components/moment/min/moment.min.js',
+    'bower_components/amcharts/dist/amcharts/amcharts.js',
+    'bower_components/amcharts/dist/amcharts/serial.js',
+    'bower_components/amcharts/dist/amcharts/funnel.js',
+    'bower_components/amcharts/dist/amcharts/pie.js',
+    'bower_components/amcharts-stock/dist/amcharts/amstock.js',
+    'bower_components/ammap/dist/ammap/ammap.js',
+    'bower_components/ammap/dist/ammap/maps/js/worldLow.js',
+    'bower_components/jquery.easing/js/jquery.easing.min.js',
+    'bower_components/angular-ui-sortable/sortable.js',
+    'bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js',
+    'bower_components/fullcalendar/dist/fullcalendar.min.js',
+    'bower_components/Chart.js/Chart.min.js',
+    'bower_components/leaflet/dist/leaflet.js',
+    'bower_components/angular-toastr/dist/angular-toastr.tpls.min.js',
+    'src/app/components/backTop/lib/jquery.backTop.min.js'
   ];
 
   var src = [
+    'src/assets/js/amcharts-blur-theme.js',
     'src/app/**/*.js',
     '!src/app/**/lib/**/*.js'
   ];
-  var dst = 'src/release/js/';
+  var dst = 'release/js/';
 
   gulp.src(libSrc).pipe(concat('lib.min.js')).pipe(stripDebug()).pipe(uglify()).pipe(gulp.dest(dst));
   gulp.src(src).pipe(concat('bundle.min.js')).pipe(uglify()).pipe(gulp.dest(dst));
@@ -85,7 +108,7 @@ gulp.task('js', function () {
 
 gulp.task('font', function () {
   var fontSrc = 'src/assets/css/fonts/*';
-  var fontDst = 'src/release/fonts/';
+  var fontDst = 'release/fonts/';
 
   gulp.src(fontSrc).pipe(gulp.dest(fontDst));
 });
@@ -94,13 +117,13 @@ gulp.task('templateCache', function() {
   return gulp.src('src/app/**/*.html')
       .pipe(minifyHTML({ conditionals: true, spare: true, empty: true }))
       .pipe(templateCache({ root: 'app/', module: 'BlurAdmin' }))
-      .pipe(gulp.dest('src/release/js'));
+      .pipe(gulp.dest('release/js'));
 });
 
 gulp.task('html', function(){
   return gulp.src('src/*.html')
       .pipe(minifyHTML({ conditionals: true, spare: true, empty: true }))
-      .pipe(gulp.dest('src/release/'));
+      .pipe(gulp.dest('release/'));
 });
 
 gulp.task('watch', function () {

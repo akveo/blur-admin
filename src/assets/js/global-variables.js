@@ -18,7 +18,6 @@ var colorPrimaryBg = '#C5ECF9';
 var colorSuccessBg = '#C1DBD7';
 var colorDangerBg = '#E1C8DD';
 
-
 var colorDefaultText = '#585858';
 
 var pageLoaded = false;
