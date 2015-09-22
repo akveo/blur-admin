@@ -89,6 +89,7 @@ gulp.task('js', function () {
     'bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js',
     'bower_components/moment/min/moment.min.js',
     'bower_components/amcharts/dist/amcharts/amcharts.js',
+    'bower_components/amcharts/dist/amcharts/plugins/responsive/responsive.js',
     'bower_components/amcharts/dist/amcharts/serial.js',
     'bower_components/amcharts/dist/amcharts/funnel.js',
     'bower_components/amcharts/dist/amcharts/pie.js',
@@ -102,6 +103,9 @@ gulp.task('js', function () {
     'bower_components/Chart.js/Chart.min.js',
     'bower_components/leaflet/dist/leaflet.js',
     'bower_components/angular-toastr/dist/angular-toastr.tpls.min.js',
+    'bower_components/angular-smart-table/dist/smart-table.min.js',
+    'bower_components/slimScroll/jquery.slimscroll.min.js',
+    'bower_components/angular-slimscroll/angular-slimscroll.js',
     'src/app/components/backTop/lib/jquery.backTop.min.js'
   ];
 

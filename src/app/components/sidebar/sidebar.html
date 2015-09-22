@@ -5,15 +5,14 @@
 
   <a href class="collapse-menu-link clearfix" ng-click="menuExpand()">
     <i class="fa fa-angle-double-left"></i>
-    <span>Collapse Menu</span>
   </a>
 
   <div class="al-sidebar-list-block" ng-mouseleave="hideHoverElement()">
-    <ul class="al-sidebar-list">
+    <ul class="al-sidebar-list" slimscroll="{height: '100%'}">
       <li ng-repeat="item in menuItems" class="al-sidebar-list-item"
           ng-class="{'selected': item.selected, 'with-sub-menu': item.subMenu}" ng-mouseover="hoverItem($event, item)">
 
-        <a href="{{ item.root }}" ng-if="!item.subMenu" class="al-sidebar-list-link">
+        <a href="{{ item.root }}" ng-if="!item.subMenu" class="al-sidebar-list-link" ng-click="collapseSidebar()">
           <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
         </a>
 
@@ -26,7 +25,7 @@
 
         <ul ng-if="item.subMenu" class="al-sidebar-sublist" ng-class="{expanded: item.selected, 'slide-right': item.slideRight}">
           <li ng-repeat="subitem in item.subMenu" ng-class="{selected: subitem.selected}">
-            <a href="{{ subitem.root }}">{{ subitem.title }}</a>
+            <a href="{{ subitem.root }}" ng-click="collapseSidebar()">{{ subitem.title }}</a>
           </li>
         </ul>
       </li>

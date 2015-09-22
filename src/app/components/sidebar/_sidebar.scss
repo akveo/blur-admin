@@ -4,7 +4,6 @@ $angle-right: "\f101";
 
 .al-sidebar {
   width: $sidebar-width;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: 904;
@@ -12,12 +11,12 @@ $angle-right: "\f101";
   min-height: 100%;
   @include bg-translucent-dark(0.5);
   transition: width 0.5s ease;
+  height: 100%;
+  position: fixed;
 }
 
 a.collapse-menu-link {
-  padding: 0px 0 0px 18px;
   font-size: 13px;
-  color: $success;
   @include bg-translucent-dark(0.5);
   cursor: pointer;
   display: block;
@@ -25,6 +24,13 @@ a.collapse-menu-link {
   line-height: 42px;
   white-space: nowrap;
   overflow: hidden;
+  color: #fff;
+  width: 18px;
+  position: absolute;
+  top: 52px;
+  right: -18px;
+  padding: 0;
+
   &:hover {
     text-decoration: none;
     color: $warning;
@@ -38,6 +44,15 @@ a.collapse-menu-link {
     transition: transform 0.5s ease-in;
     transform: rotate(0deg);
   }
+}
+
+.al-sidebar-list-block {
+  position: absolute;
+  height: 100%;
+  top: 52px;
+  left: 0;
+  width: 100%;
+  padding-bottom: 10px;
 }
 
 .al-sidebar-list {
@@ -223,11 +238,6 @@ a.al-sidebar-list-link {
       width: 180px;
     }
     a.collapse-menu-link {
-      display: block;
-      width: 18px;
-      position: relative;
-      cursor: pointer;
-      padding-left: 0px;
       i {
         transform: rotate(540deg);
       }
@@ -284,9 +294,7 @@ a.al-sidebar-list-link {
   }
 
   a.collapse-menu-link {
-    width: 100%;
-    position: relative;
-    padding-left: 18px;
+    @include bg-translucent-dark(0.75);
     i {
       transform: rotate(0deg);
     }
@@ -300,4 +308,9 @@ a.al-sidebar-list-link {
 .sidebar-overlap {
   background: rgba(0, 0, 0, .75);
   @extend .sidebar-full-width;
+}
+
+.slimScrollBar, .slimScrollRail {
+  border-radius: 0px !important;
+  width: 4px !important;
 }

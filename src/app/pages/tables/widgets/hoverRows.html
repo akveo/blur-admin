@@ -1,4 +1,4 @@
-<div class="horizontal-scroll">
+<div class="horizontal-scroll" ng-controller="tablesPageCtrl">
   <table class="table table-hover">
     <thead>
     <tr>
@@ -13,55 +13,15 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td><img src="img/chrome.svg" width="20" height="20"></td>
-      <td class="nowrap">Google Chrome</td>
-      <td class="align-right">10,392</td>
-      <td class="table-arr"><i class="icon-up"></i></td>
-      <td class="align-right">4,214</td>
-      <td class="table-arr"><i class="icon-up"></i></td>
-      <td class="align-right">45%</td>
-      <td class="table-arr"><i class="icon-up"></i></td>
-    </tr>
-    <tr>
-      <td><img src="img/firefox.svg" width="20" height="20"></td>
-      <td class="nowrap">Mozilla Firefox</td>
-      <td class="align-right">7,873</td>
-      <td class="table-arr"><i class="icon-down"></i></td>
-      <td class="align-right">3,031</td>
-      <td class="table-arr"><i class="icon-up"></i></td>
-      <td class="align-right">28%</td>
-      <td class="table-arr"><i class="icon-up"></i></td>
-    </tr>
-    <tr>
-      <td><img src="img/ie.svg" width="20" height="20"></td>
-      <td class="nowrap">Internet Explorer</td>
-      <td class="align-right">5,890</td>
-      <td class="table-arr"><i class="icon-down"></i></td>
-      <td class="align-right">2,102</td>
-      <td class="table-arr"><i class="icon-down"></i></td>
-      <td class="align-right">17%</td>
-      <td class="table-arr"><i class="icon-down"></i></td>
-    </tr>
-    <tr>
-      <td><img src="img/safari.svg" width="20" height="20"></td>
-      <td class="nowrap">Safari</td>
-      <td class="align-right">4,001</td>
-      <td class="table-arr"><i class="icon-up"></i></td>
-      <td class="align-right">1,001</td>
-      <td class="table-arr"><i class="icon-down"></i></td>
-      <td class="align-right">14%</td>
-      <td class="table-arr"><i class="icon-down"></i></td>
-    </tr>
-    <tr>
-      <td><img src="img/opera.svg" width="20" height="20"></td>
-      <td class="nowrap">Opera</td>
-      <td class="align-right">1,833</td>
-      <td class="table-arr"><i class="icon-up"></i></td>
-      <td class="align-right">83</td>
-      <td class="table-arr"><i class="icon-up"></i></td>
-      <td class="align-right">5%</td>
-      <td class="table-arr"><i class="icon-up"></i></td>
+    <tr ng-repeat="item in metricsTableData">
+      <td><img ng-src="{{item.image}}" width="20" height="20"></td>
+      <td ng-class="nowrap">{{item.browser}}</td>
+      <td class="align-right">{{item.visits}}</td>
+      <td class="table-arr"><i ng-class="{'icon-up': item.isVisitsUp, 'icon-down': !item.isVisitsUp }"></i></td>
+      <td class="align-right">{{item.purchases}}</td>
+      <td class="table-arr"><i ng-class="{'icon-up': item.isPurchasesUp, 'icon-down': !item.isPurchasesUp }"></i></td>
+      <td class="align-right">{{item.percent}}</td>
+      <td class="table-arr"><i ng-class="{'icon-up': item.isPercentUp, 'icon-down': !item.isPercentUp }"></i></td>
     </tr>
     </tbody>
   </table>

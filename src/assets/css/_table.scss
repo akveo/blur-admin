@@ -37,6 +37,11 @@
   }
 }
 
+.table-id {
+  text-align: left !important;
+  width: 40px;
+}
+
 .table-arr {
   width: 5px;
   padding: 10px 8px 8px 0 !important;
@@ -51,4 +56,57 @@
 
 .browser-icons {
   width: 41px;
+}
+
+.st-sort-ascent, .st-sort-descent {
+  position: relative;
+}
+.st-sort-ascent:after, .st-sort-descent:after {
+  width: 0;
+  height: 0;
+  border-bottom: 4px solid $default-text;
+  border-top: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  margin-bottom: 2px;
+}
+
+.st-sort-descent:after {
+  transform:rotate(-180deg);
+  margin-bottom: -2px;
+}
+
+.sortable {
+  th {
+    cursor: pointer;
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      margin-left: 8px;
+    }
+  }
+}
+
+a.email-link {
+  color: $default-text;
+  &:hover {
+    color: $danger;
+  }
+}
+
+input.search-input {
+  margin-left: -8px;
+  padding-left: 8px;
+}
+
+.table .pagination {
+  margin: 4px 0 -12px 0;
+  a {
+    cursor: pointer;
+  }
+}
+
+.vertical-scroll {
+  max-height: 210px;
 }

@@ -176,6 +176,13 @@ blurAdminApp.directive('sidebar', function () {
       $scope.hideHoverElement = function () {
         $scope.showHoverElem = false;
       };
+
+      $scope.collapseSidebar = function() {
+        if (window.innerWidth <= resWidthCollapseSidebar) {
+          console.log('test');
+          $scope.showSidebar = false;
+        }
+      };
     }]
   };
 });

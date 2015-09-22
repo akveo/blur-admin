@@ -43,6 +43,9 @@ a.al-logo {
   white-space: nowrap;
   text-shadow: 0 0 2px;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
   &:hover {
     color: $primary;
     text-decoration: none;

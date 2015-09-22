@@ -22,6 +22,8 @@
     "ammap": "~3.14.5",
     "angular": "~1.4.6",
     "angular-route": "~1.4.6",
+    "angular-slimscroll": "~1.1.5",
+    "angular-smart-table": "~2.1.3",
     "angular-toastr": "~1.5.0",
     "angular-ui-sortable": "~0.13.4",
     "animate.css": "~3.4.0",
@@ -37,6 +39,7 @@
     "jquery.easing": "~1.3.1",
     "jquery.easy-pie-chart": "~2.1.6",
     "leaflet": "~0.7.5",
-    "moment": "~2.10.6"
+    "moment": "~2.10.6",
+    "slimScroll": "jquery-slimscroll#~1.3.6"
   }
 }
