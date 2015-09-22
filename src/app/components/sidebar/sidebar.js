@@ -138,11 +138,14 @@ blurAdminApp.directive('sidebar', function () {
         }
       };
 
+      function isSidebarCollapsed() {
+        return body.hasClass(collapsedClass) || (!$scope.showSidebar && window.innerWidth <= resWidthCollapseSidebar && window.innerWidth > resWidthHideSidebar);
+      }
+
       $scope.toggleSubMenu = function ($event, item) {
         var submenu = $($event.currentTarget).next();
 
-        var isCollapsedSidebar = body.hasClass(collapsedClass) || (!$scope.showSidebar && window.innerWidth <= resWidthCollapseSidebar && window.innerWidth > resWidthHideSidebar);
-        if (isCollapsedSidebar) {
+        if (isSidebarCollapsed()) {
           if (!item.slideRight) {
             $timeout(function () {
               item.slideRight = true;
@@ -170,7 +173,8 @@ blurAdminApp.directive('sidebar', function () {
 
       $scope.hoverItem = function ($event) {
         $scope.showHoverElem = true;
-        $scope.hoverElemTop = ($event.currentTarget.getBoundingClientRect().top + $window.scrollY);
+        var menuTopValue = 88;
+        $scope.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - menuTopValue;
       };
 
       $scope.hideHoverElement = function () {
@@ -179,10 +183,35 @@ blurAdminApp.directive('sidebar', function () {
 
       $scope.collapseSidebar = function() {
         if (window.innerWidth <= resWidthCollapseSidebar) {
-          console.log('test');
           $scope.showSidebar = false;
         }
       };
+
+      function focusSearchInput() {
+        document.getElementById("searchInput").focus();
+      }
+
+      $scope.startSearch = function() {
+        if (window.innerWidth <= resWidthCollapseSidebar) {
+          $scope.showSidebar = true;
+        }
+        if (body.hasClass(collapsedClass)) {
+          console.log('collapsed');
+          body.removeClass(collapsedClass);
+          $timeout(function(){
+            focusSearchInput();
+          }, 1000);
+        } else {
+          console.log('else');
+          focusSearchInput();
+        }
+      };
+
+      $scope.search = function(event) {
+        if (event.which === 13) {
+          $scope.collapseSidebar();
+        }
+      }
     }]
   };
 });

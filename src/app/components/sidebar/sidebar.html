@@ -7,6 +7,12 @@
     <i class="fa fa-angle-double-left"></i>
   </a>
 
+  <div class="search">
+    <!--<label for="searchInput" ng-click="openSidebar()"><i class="ion-ios-search-strong"></i></label>-->
+    <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
+    <input id="searchInput" type="text" placeholder="Search for..." ng-keypress="search($event)" ng-blur="collapseSidebar()">
+  </div>
+
   <div class="al-sidebar-list-block" ng-mouseleave="hideHoverElement()">
     <ul class="al-sidebar-list" slimscroll="{height: '100%'}">
       <li ng-repeat="item in menuItems" class="al-sidebar-list-item"

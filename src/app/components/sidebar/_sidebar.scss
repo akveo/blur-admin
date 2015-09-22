@@ -27,7 +27,7 @@ a.collapse-menu-link {
   color: #fff;
   width: 18px;
   position: absolute;
-  top: 52px;
+  top: 47px;
   right: -18px;
   padding: 0;
 
@@ -49,7 +49,7 @@ a.collapse-menu-link {
 .al-sidebar-list-block {
   position: absolute;
   height: 100%;
-  top: 52px;
+  top: 88px;
   left: 0;
   width: 100%;
   padding-bottom: 10px;
@@ -113,6 +113,46 @@ a.al-sidebar-list-link {
     padding: 0;
     text-align: center;
     color: #cccccc;
+  }
+}
+
+.sidebar-overlap {
+  background: rgba(0, 0, 0, .75);
+  @extend .sidebar-full-width;
+}
+
+.slimScrollBar, .slimScrollRail {
+  border-radius: 0px !important;
+  width: 4px !important;
+}
+
+.search {
+  position: absolute;
+  left: 18px;
+  top: 54px;
+  text-shadow: none;
+  color: #fff;
+  font-size: 13px;
+  line-height: 25px;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 162px;
+  label {
+    cursor: pointer;
+  }
+  i {
+    margin-right: 18px;
+    width: 16px;
+    display: inline-block;
+  }
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    width: 120px;
+    padding: 0;
+    margin: 0 0 0 -3px;
   }
 }
 
@@ -182,9 +222,9 @@ a.al-sidebar-list-link {
     width: 52px;
 
     .al-logo {
-      padding-left: 18px;
+      padding-left: 16px;
       span {
-        padding-left: 18px;
+        padding-left: 20px;
       }
     }
 
@@ -227,6 +267,10 @@ a.al-sidebar-list-link {
 
     .sidebar-hover-elem, .sidebar-select-elem {
       left: 48px;
+    }
+
+    .search {
+      width: 32px;
     }
   }
 }
@@ -303,14 +347,8 @@ a.al-sidebar-list-link {
   .sidebar-hover-elem, .sidebar-select-elem {
     left: $sidebar-width - 4;
   }
-}
 
-.sidebar-overlap {
-  background: rgba(0, 0, 0, .75);
-  @extend .sidebar-full-width;
-}
-
-.slimScrollBar, .slimScrollRail {
-  border-radius: 0px !important;
-  width: 4px !important;
+  .search {
+    width: 162px;
+  }
 }
