@@ -8,7 +8,7 @@ blurAdminApp.directive('widgets', function () {
     },
     templateUrl: 'app/components/widgets/widgets.html',
     replace: true,
-    link: function (scope, element, attrs, ctrls) {
+    link: function () {
     }
   };
 });

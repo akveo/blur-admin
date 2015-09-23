@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
+    "AngularHammer": "ryanmullins-angular-hammer#~2.1.10",
     "Chart.js": "~1.0.2",
     "Ionicons": "ionicons#~2.0.1",
     "amcharts": "~3.15.2",
@@ -33,6 +34,7 @@
     "bootstrap-tagsinput": "~0.5.0",
     "font-awesome": "fontawesome#~4.4.0",
     "fullcalendar": "~2.4.0",
+    "hammerjs": "hammer.js#~2.0.4",
     "highlight": "~8.8.0",
     "jquery": "~2.1.4",
     "jquery-ui": "~1.11.4",

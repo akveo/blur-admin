@@ -106,6 +106,8 @@ gulp.task('js', function () {
     'bower_components/angular-smart-table/dist/smart-table.min.js',
     'bower_components/slimScroll/jquery.slimscroll.min.js',
     'bower_components/angular-slimscroll/angular-slimscroll.js',
+    'bower_components/hammerjs/hammer.min.js',
+    'bower_components/AngularHammer/angular.hammer.min.js',
     'src/app/components/backTop/lib/jquery.backTop.min.js'
   ];
 

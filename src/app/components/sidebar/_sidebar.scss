@@ -52,7 +52,7 @@ a.collapse-menu-link {
   top: 88px;
   left: 0;
   width: 100%;
-  padding-bottom: 10px;
+  padding-bottom: 52px;
 }
 
 .al-sidebar-list {
@@ -145,6 +145,7 @@ a.al-sidebar-list-link {
     margin-right: 18px;
     width: 16px;
     display: inline-block;
+    cursor: pointer;
   }
   input {
     background: none;
@@ -278,8 +279,8 @@ a.al-sidebar-list-link {
 @mixin sidebar-hidden() {
   .al-sidebar {
     width: 0;
-    .al-logo {
-      width: 180px;
+    a.al-logo {
+      display: none;
     }
     a.collapse-menu-link {
       i {
@@ -289,6 +290,12 @@ a.al-sidebar-list-link {
     .al-sidebar-list-block {
       display: none;
     }
+  }
+  .search {
+    width: 0;
+  }
+  a.al-logo-small-rez {
+    display: block;
   }
 }
 
@@ -313,11 +320,14 @@ a.al-sidebar-list-link {
 
 .sidebar-full-width {
   width: $sidebar-width;
-  .al-logo {
-    padding-left: 17px;
+  a.al-logo {
+    display: block;
     span {
       padding-left: 0;
     }
+  }
+  a.al-logo-small-rez {
+    display: none;
   }
   .fa-angle-down, .fa-angle-up {
     opacity: 1;

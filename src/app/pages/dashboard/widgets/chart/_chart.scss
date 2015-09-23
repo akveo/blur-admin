@@ -1,5 +1,25 @@
+.channels-block {
+  width: 100%;
+  position: relative;
+}
+
+.channels-info {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  margin-top: -23px;
+  & > div {
+    padding: 0 0 0 540px;
+  }
+}
+
+
 .traffic-chart {
+  width: 500px;
+  margin-left: -100%;
+  position: relative;
   min-height: 300px;
+  float: left;
   .canvas-holder {
     width: 300px;
     height: 300px;
@@ -45,6 +65,17 @@
   }
 }
 
+.channel-change {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.channel-progress {
+  height: 16px;
+  border-radius: 0;
+  width: 100%;
+}
+
 @mixin doughnut-center() {
   .traffic-chart {
     ul.doughnut-legend {
@@ -74,5 +105,16 @@
       width: $size;
       height: $size;
     }
+  }
+}
+
+@media (max-width: 1800px) {
+  .channels-info {
+    display: none;
+  }
+  .traffic-chart {
+    width: auto;
+    margin: 0;
+    float: none;
   }
 }

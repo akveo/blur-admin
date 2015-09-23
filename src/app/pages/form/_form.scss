@@ -472,3 +472,16 @@ label.custom-input-danger {
     }
   }
 }
+
+.progress-bar-primary {
+  background-color: $primary;
+}
+.progress-bar-success {
+  background-color: $success-light;
+}
+.progress-bar-warning {
+  background-color: $warning;
+}
+.progress-bar-danger {
+  background-color: $danger;
+}

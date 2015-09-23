@@ -192,18 +192,20 @@ blurAdminApp.directive('sidebar', function () {
       }
 
       $scope.startSearch = function() {
-        if (window.innerWidth <= resWidthCollapseSidebar) {
+        if (window.innerWidth <= resWidthCollapseSidebar && window.innerWidth > resWidthHideSidebar) {
           $scope.showSidebar = true;
-        }
-        if (body.hasClass(collapsedClass)) {
-          console.log('collapsed');
-          body.removeClass(collapsedClass);
           $timeout(function(){
             focusSearchInput();
-          }, 1000);
+          }, 900);
         } else {
-          console.log('else');
-          focusSearchInput();
+          if (body.hasClass(collapsedClass)) {
+            body.removeClass(collapsedClass);
+            $timeout(function(){
+              focusSearchInput();
+            }, 900);
+          } else {
+            focusSearchInput();
+          }
         }
       };
 
