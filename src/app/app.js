@@ -3,6 +3,7 @@
 var blurAdminApp = angular.module('BlurAdmin', [
   'ui.sortable',
   'ngRoute',
+  'ngTouch',
   'BlurAdmin.dashboard',
   'BlurAdmin.buttonsPage',
   'BlurAdmin.chartsPage',
@@ -16,8 +17,7 @@ var blurAdminApp = angular.module('BlurAdmin', [
   'BlurAdmin.typographyPage',
   'toastr',
   'smart-table',
-  'ui.slimscroll',
-  'hmTouchEvents'
+  'ui.slimscroll'
 ]).config(['$routeProvider', 'toastrConfig', function ($routeProvider, toastrConfig) {
   $routeProvider.otherwise({redirectTo: '/dashboard'});
 

@@ -7,12 +7,18 @@
   width: 100%;
   float: left;
   overflow: hidden;
-  margin-top: -23px;
+  margin-top: -11px;
   & > div {
     padding: 0 0 0 540px;
   }
 }
 
+.channels-info-item {
+  margin-bottom: 19px;
+  p {
+    margin-bottom: 9px;
+  }
+}
 
 .traffic-chart {
   width: 500px;
@@ -67,13 +73,14 @@
 
 .channel-change {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .channel-progress {
   height: 16px;
   border-radius: 0;
   width: 100%;
+  margin-bottom: 0;
 }
 
 @mixin doughnut-center() {

@@ -210,14 +210,3 @@ a.al-logo-small-rez {
     display: inline-block;
   }
 }
-
-@media (max-width: $resXS) {
-  body, .collapsed-sidebar {
-    .al-main {
-      margin-left: 0;
-    }
-    .al-footer {
-      padding-left: 0;
-    }
-  }
-}

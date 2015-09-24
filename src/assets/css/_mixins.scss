@@ -44,17 +44,3 @@
     color: $color;
   }
 }
-
-@mixin layout-collapsed() {
-  .al-main {
-    margin-left: 70px;
-  }
-
-  .al-footer {
-    padding-left: 83px
-  }
-
-  .back-top {
-    left: 0;
-  }
-}

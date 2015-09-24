@@ -21,3 +21,6 @@ var colorDangerBg = '#E1C8DD';
 var colorDefaultText = '#585858';
 
 var pageLoaded = false;
+
+var resWidthCollapseSidebar = 1120;
+var resWidthHideSidebar = 500;

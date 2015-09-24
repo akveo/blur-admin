@@ -116,11 +116,6 @@ a.al-sidebar-list-link {
   }
 }
 
-.sidebar-overlap {
-  background: rgba(0, 0, 0, .75);
-  @extend .sidebar-full-width;
-}
-
 .slimScrollBar, .slimScrollRail {
   border-radius: 0px !important;
   width: 4px !important;
@@ -154,6 +149,20 @@ a.al-sidebar-list-link {
     width: 120px;
     padding: 0;
     margin: 0 0 0 -3px;
+  }
+}
+
+@mixin layout-collapsed() {
+  .al-main {
+    margin-left: 70px;
+  }
+
+  .al-footer {
+    padding-left: 83px
+  }
+
+  .back-top {
+    left: 0;
   }
 }
 
@@ -299,66 +308,84 @@ a.al-sidebar-list-link {
   }
 }
 
-.collapsed-sidebar {
-  @include layout-collapsed();
-  @include sidebar-collapsed();
+@mixin sidebar-overlap() {
+  .al-sidebar {
+    width: $sidebar-width;
+    background: rgba(0, 0, 0, .75);
+    a.al-logo {
+      display: block;
+      span {
+        padding-left: 0;
+      }
+    }
+    a.al-logo-small-rez {
+      display: none;
+    }
+    .fa-angle-down, .fa-angle-up {
+      opacity: 1;
+    }
+
+    .al-sidebar-list-block {
+      display: block;
+    }
+
+    .al-sidebar-sublist {
+      @include default-sublist();
+      top: auto;
+      left: auto;
+      background: none;
+      width: auto;
+      overflow: visible;
+      transition: none;
+    }
+
+    a.collapse-menu-link {
+      @include bg-translucent-dark(0.75);
+      i {
+        transform: rotate(0deg);
+      }
+    }
+
+    .sidebar-hover-elem, .sidebar-select-elem {
+      left: $sidebar-width - 4;
+    }
+
+    .search {
+      width: 162px;
+    }
+  }
+}
+
+@media (min-width: 1120px) {
+  .menu-collapsed {
+    @include layout-collapsed();
+  }
+}
+
+@media (min-width: $resXS) {
+  .menu-collapsed {
+    @include sidebar-collapsed();
+  }
 }
 
 @media (max-width: 1120px) and (min-width: $resXS) {
-  body {
-    @include layout-collapsed();
+  @include layout-collapsed();
+}
+
+@media (max-width: 1120px) {
+  .menu-expand {
+    @include sidebar-overlap();
   }
-  @include sidebar-collapsed();
 }
 
 @media (max-width: $resXS) {
-  @include sidebar-hidden();
-  .collapsed-sidebar {
+  .menu-collapsed {
     @include sidebar-hidden();
   }
-}
-
-.sidebar-full-width {
-  width: $sidebar-width;
-  a.al-logo {
-    display: block;
-    span {
-      padding-left: 0;
-    }
+  .al-main {
+    margin-left: 0;
   }
-  a.al-logo-small-rez {
-    display: none;
-  }
-  .fa-angle-down, .fa-angle-up {
-    opacity: 1;
-  }
-
-  .al-sidebar-list-block {
-    display: block;
-  }
-
-  .al-sidebar-sublist {
-    @include default-sublist();
-    top: auto;
-    left: auto;
-    background: none;
-    width: auto;
-    overflow: visible;
-    transition: none;
-  }
-
-  a.collapse-menu-link {
-    @include bg-translucent-dark(0.75);
-    i {
-      transform: rotate(0deg);
-    }
-  }
-
-  .sidebar-hover-elem, .sidebar-select-elem {
-    left: $sidebar-width - 4;
-  }
-
-  .search {
-    width: 162px;
+  .al-footer {
+    padding-left: 0;
   }
 }

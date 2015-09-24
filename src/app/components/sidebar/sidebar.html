@@ -1,16 +1,15 @@
-<aside class="al-sidebar" ng-class="{'sidebar-overlap': showSidebar}">
+<aside class="al-sidebar" ng-swipe-right="menuExpand()" ng-swipe-left="menuCollapse()">
   <a href="#/dashboard" class="al-logo clearfix">
     B<span>lur Admin</span>
   </a>
 
-  <a href class="collapse-menu-link clearfix" ng-click="menuExpand()">
+  <a href class="collapse-menu-link clearfix" ng-click="menuToggle()">
     <i class="fa fa-angle-double-left"></i>
   </a>
 
   <div class="search">
-    <!--<label for="searchInput" ng-click="openSidebar()"><i class="ion-ios-search-strong"></i></label>-->
     <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
-    <input id="searchInput" type="text" placeholder="Search for..." ng-keypress="search($event)" ng-blur="collapseSidebar()">
+    <input id="searchInput" type="text" placeholder="Search for..." ng-keypress="search($event)" ng-blur="collapseSidebarIfSmallRes()">
   </div>
 
   <div class="al-sidebar-list-block" ng-mouseleave="hideHoverElement()">
@@ -18,7 +17,7 @@
       <li ng-repeat="item in menuItems" class="al-sidebar-list-item"
           ng-class="{'selected': item.selected, 'with-sub-menu': item.subMenu}" ng-mouseover="hoverItem($event, item)">
 
-        <a href="{{ item.root }}" ng-if="!item.subMenu" class="al-sidebar-list-link" ng-click="collapseSidebar()">
+        <a href="{{ item.root }}" ng-if="!item.subMenu" class="al-sidebar-list-link" ng-click="collapseSidebarIfSmallRes()">
           <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
         </a>
 
@@ -31,7 +30,7 @@
 
         <ul ng-if="item.subMenu" class="al-sidebar-sublist" ng-class="{expanded: item.selected, 'slide-right': item.slideRight}">
           <li ng-repeat="subitem in item.subMenu" ng-class="{selected: subitem.selected}">
-            <a href="{{ subitem.root }}" ng-click="collapseSidebar()">{{ subitem.title }}</a>
+            <a href="{{ subitem.root }}" ng-click="collapseSidebarIfSmallRes()">{{ subitem.title }}</a>
           </li>
         </ul>
       </li>

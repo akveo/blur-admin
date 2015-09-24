@@ -85,7 +85,35 @@ blurAdminApp.controller('pieChartCtrl', ['$scope', '$timeout', '$element', funct
     marginLeft: 0,
     marginRight: 0,
     pullOutRadius: 0,
-    pathToImages: 'img/'
+    pathToImages: 'img/',
+    responsive: {
+      enabled: true,
+      rules: [
+        // at 900px wide, we hide legend
+        {
+          maxWidth: 900,
+          overrides: {
+            legend: {
+              enabled: false
+            }
+          }
+        },
+
+        // at 200 px we hide value axis labels altogether
+        {
+          maxWidth: 200,
+          overrides: {
+            valueAxes: {
+              labelsEnabled: false
+            },
+            marginTop: 30,
+            marginBottom: 30,
+            marginLeft: 30,
+            marginRight: 30
+          }
+        }
+      ]
+    }
   });
 
   pieChart.addListener('init', handleInit);

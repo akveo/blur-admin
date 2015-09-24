@@ -8,4 +8,6 @@ blurAdminApp.controller('mainCtrl', ['$scope', '$timeout', function ($scope, $ti
   $timeout(function () {
     pageLoaded = true;
   }, 4000);
+
+  $scope.isMenuCollapsed = window.innerWidth <= resWidthCollapseSidebar;
 }]);

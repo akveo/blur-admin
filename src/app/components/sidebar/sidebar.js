@@ -4,13 +4,10 @@ blurAdminApp.directive('sidebar', function () {
   return {
     restrict: 'E',
     templateUrl: 'app/components/sidebar/sidebar.html',
+    scope: {
+      isMenuCollapsed: '='
+    },
     controller: ['$scope', '$element', '$window', '$timeout', '$location', function ($scope, $element, $window, $timeout, $location) {
-
-      var resWidthCollapseSidebar = 1120;
-      var resWidthHideSidebar = 500;
-      var body = $('body');
-      var collapsedClass = 'collapsed-sidebar';
-
       $scope.menuItems = [
         {
           title: 'Dashboard',
@@ -118,34 +115,33 @@ blurAdminApp.directive('sidebar', function () {
         selectMenuItem();
       });
 
-      $scope.menuExpand = function () {
-        if (window.innerWidth > resWidthCollapseSidebar) {
-          body.toggleClass(collapsedClass);
-          $scope.showSidebar = false;
-        } else {
-          body.removeClass(collapsedClass);
-          if (!$scope.selectElemTop) {
-            changeSelectElemTopValue();
-          }
+      $scope.menuExpand = function() {
+        $scope.isMenuCollapsed = false;
+      };
 
-          if ($scope.showSidebar) {
-            $scope.showSidebar = false;
-          } else {
-            $timeout(function () {
-              $scope.showSidebar = true;
-            }, 20);
-          }
+      $scope.menuCollapse = function() {
+        $scope.isMenuCollapsed = true;
+      };
+
+      $scope.menuToggle = function () {
+        $scope.isMenuCollapsed = !$scope.isMenuCollapsed;
+
+        if (!$scope.isMenuCollapsed && !$scope.selectElemTop) {
+          changeSelectElemTopValue();
         }
       };
 
-      function isSidebarCollapsed() {
-        return body.hasClass(collapsedClass) || (!$scope.showSidebar && window.innerWidth <= resWidthCollapseSidebar && window.innerWidth > resWidthHideSidebar);
-      }
+      // watch window resize to change menu collapsed state if needed
+      $(window).resize(function(){
+        $scope.$apply(function(){
+          $scope.isMenuCollapsed = $(window).width() <= resWidthCollapseSidebar;
+        });
+      });
 
       $scope.toggleSubMenu = function ($event, item) {
         var submenu = $($event.currentTarget).next();
 
-        if (isSidebarCollapsed()) {
+        if ($scope.isMenuCollapsed) {
           if (!item.slideRight) {
             $timeout(function () {
               item.slideRight = true;
@@ -181,9 +177,9 @@ blurAdminApp.directive('sidebar', function () {
         $scope.showHoverElem = false;
       };
 
-      $scope.collapseSidebar = function() {
+      $scope.collapseSidebarIfSmallRes = function() {
         if (window.innerWidth <= resWidthCollapseSidebar) {
-          $scope.showSidebar = false;
+          $scope.isMenuCollapsed = true;
         }
       };
 
@@ -192,26 +188,19 @@ blurAdminApp.directive('sidebar', function () {
       }
 
       $scope.startSearch = function() {
-        if (window.innerWidth <= resWidthCollapseSidebar && window.innerWidth > resWidthHideSidebar) {
-          $scope.showSidebar = true;
+        if ($scope.isMenuCollapsed) {
+          $scope.isMenuCollapsed = false;
           $timeout(function(){
             focusSearchInput();
           }, 900);
         } else {
-          if (body.hasClass(collapsedClass)) {
-            body.removeClass(collapsedClass);
-            $timeout(function(){
-              focusSearchInput();
-            }, 900);
-          } else {
-            focusSearchInput();
-          }
+          focusSearchInput();
         }
       };
 
       $scope.search = function(event) {
         if (event.which === 13) {
-          $scope.collapseSidebar();
+          $scope.collapseSidebarIfSmallRes();
         }
       }
     }]
