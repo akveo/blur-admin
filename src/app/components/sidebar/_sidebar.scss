@@ -141,6 +141,7 @@ a.al-sidebar-list-link {
     width: 16px;
     display: inline-block;
     cursor: pointer;
+    padding-left: 1px;
   }
   input {
     background: none;
@@ -149,6 +150,7 @@ a.al-sidebar-list-link {
     width: 120px;
     padding: 0;
     margin: 0 0 0 -3px;
+    height: 27px;
   }
 }
 
@@ -159,10 +161,6 @@ a.al-sidebar-list-link {
 
   .al-footer {
     padding-left: 83px
-  }
-
-  .back-top {
-    left: 0;
   }
 }
 
@@ -362,7 +360,7 @@ a.al-sidebar-list-link {
   }
 }
 
-@media (min-width: $resXS) {
+@media (min-width: $resXS + 1) {
   .menu-collapsed {
     @include sidebar-collapsed();
   }
@@ -373,9 +371,7 @@ a.al-sidebar-list-link {
 }
 
 @media (max-width: 1120px) {
-  .menu-expand {
-    @include sidebar-overlap();
-  }
+  @include sidebar-overlap();
 }
 
 @media (max-width: $resXS) {

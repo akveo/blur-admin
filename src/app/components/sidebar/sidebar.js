@@ -115,11 +115,11 @@ blurAdminApp.directive('sidebar', function () {
         selectMenuItem();
       });
 
-      $scope.menuExpand = function() {
+      $scope.menuExpand = function () {
         $scope.isMenuCollapsed = false;
       };
 
-      $scope.menuCollapse = function() {
+      $scope.menuCollapse = function () {
         $scope.isMenuCollapsed = true;
       };
 
@@ -132,8 +132,8 @@ blurAdminApp.directive('sidebar', function () {
       };
 
       // watch window resize to change menu collapsed state if needed
-      $(window).resize(function(){
-        $scope.$apply(function(){
+      $(window).resize(function () {
+        $scope.$apply(function () {
           $scope.isMenuCollapsed = $(window).width() <= resWidthCollapseSidebar;
         });
       });
@@ -158,7 +158,7 @@ blurAdminApp.directive('sidebar', function () {
         $timeout(function () {
 
           if ($scope.anySlideRight) {
-            $scope.menuItems.map(function(val){
+            $scope.menuItems.map(function (val) {
               return val.slideRight = false;
             });
             $scope.anySlideRight = false;
@@ -177,7 +177,7 @@ blurAdminApp.directive('sidebar', function () {
         $scope.showHoverElem = false;
       };
 
-      $scope.collapseSidebarIfSmallRes = function() {
+      $scope.collapseSidebarIfSmallRes = function () {
         if (window.innerWidth <= resWidthCollapseSidebar) {
           $scope.isMenuCollapsed = true;
         }
@@ -187,10 +187,10 @@ blurAdminApp.directive('sidebar', function () {
         document.getElementById("searchInput").focus();
       }
 
-      $scope.startSearch = function() {
+      $scope.startSearch = function () {
         if ($scope.isMenuCollapsed) {
           $scope.isMenuCollapsed = false;
-          $timeout(function(){
+          $timeout(function () {
             focusSearchInput();
           }, 900);
         } else {
@@ -198,7 +198,7 @@ blurAdminApp.directive('sidebar', function () {
         }
       };
 
-      $scope.search = function(event) {
+      $scope.search = function (event) {
         if (event.which === 13) {
           $scope.collapseSidebarIfSmallRes();
         }

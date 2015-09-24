@@ -75,11 +75,10 @@ gulp.task('imagemin', function () {
       .pipe(gulp.dest(imgDst));
 });
 
-gulp.task('js', function () {
+gulp.task('js-lib', function(){
   var libSrc = [
     'bower_components/jquery/dist/jquery.min.js',
     'bower_components/angular/angular.min.js',
-    'src/assets/js/global-variables.js',
     'bower_components/angular-route/angular-route.min.js',
     'bower_components/angular-touch/angular-touch.min.js',
     'bower_components/jquery-ui/jquery-ui.min.js',
@@ -112,15 +111,22 @@ gulp.task('js', function () {
     'src/app/components/backTop/lib/jquery.backTop.min.js'
   ];
 
+  return gulp.src(libSrc)
+      .pipe(concat('lib.min.js'))
+      .pipe(stripDebug())
+      .pipe(uglify())
+      .pipe(gulp.dest('release/js/'));
+});
+
+gulp.task('js', function () {
   var src = [
+    'src/assets/js/global-variables.js',
     'src/assets/js/amcharts-blur-theme.js',
     'src/app/**/*.js',
     '!src/app/**/lib/**/*.js'
   ];
-  var dst = 'release/js/';
 
-  gulp.src(libSrc).pipe(concat('lib.min.js')).pipe(stripDebug()).pipe(uglify()).pipe(gulp.dest(dst));
-  gulp.src(src).pipe(concat('bundle.min.js')).pipe(uglify()).pipe(gulp.dest(dst));
+  gulp.src(src).pipe(concat('bundle.min.js')).pipe(uglify()).pipe(gulp.dest('release/js/'));
 });
 
 gulp.task('font', function () {
@@ -156,6 +162,6 @@ gulp.task('watch', function () {
   gulp.watch(['src/*.html'], ['html']);
 });
 
-gulp.task('init', ['minify-css', 'imagemin', 'js', 'font', 'templateCache', 'html']);
+gulp.task('init', ['minify-css', 'imagemin', 'js-lib', 'js', 'font', 'templateCache', 'html']);
 
 gulp.task('default', ['init']);
