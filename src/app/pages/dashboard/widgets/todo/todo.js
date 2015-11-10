@@ -2,7 +2,7 @@
 
 blurAdminApp.directive('blurTodo', function () {
   return {
-    restrict: 'A',
+    restrict: 'EA',
     controller: ['$scope', function ($scope) {
 
       $scope.marks = [
@@ -101,7 +101,6 @@ blurAdminApp.directive('blurTodo', function () {
         }
       };
     }],
-    link: function ($scope, $element, $attrs) {
-    }
+    templateUrl: 'app/pages/dashboard/widgets/todo/todo.html'
   };
 });

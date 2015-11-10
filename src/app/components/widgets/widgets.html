@@ -1,14 +1,9 @@
 <div class="widgets">
   <div ng-repeat="widgetBlock in ngModel" ng-class="{'row': widgetBlock.widgets.length > 1}">
     <div ng-repeat="widgetCol in widgetBlock.widgets" ng-class="{'col-md-6': widgetBlock.widgets.length === 2}" ng-model="widgetCol" class="widgets-block">
-      <div ng-repeat="widget in widgetCol" class="panel panel-default invisible" zoom-in>
-        <div class="panel-heading clearfix" ng-if="widget.title">
-          <h3 class="panel-title">{{ widget.title }}</h3>
-        </div>
-        <div class="panel-body">
-          <div ng-include="widget.url"></div>
-        </div>
-      </div>
+      <blur-panel title="widget.title" ng-repeat="widget in widgetCol" >
+        <div ng-include="widget.url"></div>
+      </blur-panel>
     </div>
   </div>
 </div>

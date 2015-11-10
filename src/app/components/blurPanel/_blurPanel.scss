@@ -1,0 +1,32 @@
+.panel {
+  border-radius: 0px;
+  background-color: $panel-bg;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+
+  &:hover {
+    background: $panel-bg-hover;
+  }
+
+  &.animated {
+    animation-duration: 0.5s;
+  }
+}
+
+.panel-heading, .panel-default > .panel-heading {
+  background-color: transparent;
+  border: none;
+  padding: 7px 22px 0px;
+  margin-bottom: -5px;
+  color: $default-text;
+}
+
+.panel-title {
+  font-weight: normal;
+}
+
+.panel-body {
+  padding: 16px 22px;
+  @include scrollbars(.5em, #ccc, #fff);
+}

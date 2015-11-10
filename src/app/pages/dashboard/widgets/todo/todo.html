@@ -1,5 +1,5 @@
 <input type="text" value="" class="form-control task-todo" placeholder="Task to do" ng-keyup="addToDoItem($event)" ng-model="newTodoText"/>
-<ul class="todo-list" blur-todo ui-sortable ng-model="todoList">
+<ul class="todo-list" ui-sortable ng-model="todoList">
   <li ng-repeat="item in todoList" ng-if="!item.deleted" ng-class="{checked: isChecked}" class="{{ getMarkColor(item.markId) }}">
     <i class="mark" ng-click="changeColor(item)"></i>
     <label class="todo-checkbox custom-checkbox custom-input-success">

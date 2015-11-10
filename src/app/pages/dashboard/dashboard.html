@@ -1,3 +1,50 @@
-<widgets ng-model="widgetBlocks"></widgets>
+<pie-charts></pie-charts>
 
-<!--<pie-charts></pie-charts>-->
+<div>
+  <blur-panel>
+    <div class="row">
+      <div class="col-sm-6">
+        <h3>Acquisition Channels</h3>
+        <traffic-chart></traffic-chart>
+      </div>
+      <div class="col-sm-6">
+        <h3>Users by country</h3>
+        <am-chart-map></am-chart-map>
+      </div>
+    </div>
+  </blur-panel>
+</div>
+
+<div class="row">
+  <div class="col-sm-9">
+    <div class="row">
+      <div class="col-sm-8">
+        <blur-panel title="Revenue">
+          <am-chart></am-chart>
+        </blur-panel>
+      </div>
+      <div class="col-sm-4">
+        <blur-panel>
+          <popular-app></popular-app>
+        </blur-panel>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <blur-panel title="ToDo List">
+          <blur-todo></blur-todo>
+        </blur-panel>
+      </div>
+      <div class="col-sm-8">
+        <blur-panel title="Calenar">
+          <blur-calendar></blur-calendar>
+        </blur-panel>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <blur-panel title="Feed">
+      <blur-feed></blur-feed>
+    </blur-panel>
+  </div>
+</div>
