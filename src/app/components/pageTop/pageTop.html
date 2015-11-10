@@ -1,47 +1,25 @@
 <div class="page-top clearfix">
+  <a href="#/dashboard" class="al-logo clearfix"><span>Blur</span>Admin</a>
+  <a href class="collapse-menu-link ion-navicon" ng-click="menuToggle()"></a>
 
-  <div class="top-area clearfix">
-    <div class="user-profile clearfix">
-      <div class="al-user-profile dropdown">
-        <a href class="dropdown-toggle" data-toggle="dropdown">
-          <img src="img/pic-profile-small.png">
-        </a>
-        <div class="dropdown-menu top-dropdown-menu profile-dropdown">
-          <i class="dropdown-arr"></i>
-          <a href="#/profile"><i class="fa fa-user"></i>Profile</a>
-          <a href><i class="fa fa-cog"></i>Settings</a>
-          <a href class="signout"><i class="fa fa-power-off"></i>Sign out</a>
-        </div>
-      </div>
-      <msg-center></msg-center>
-      <a href class="refresh-data"><i class="fa fa-refresh"></i></a>
-    </div>
-
-    <ul class="breadcrumb al-breadcrumb">
-      <li>
-        <a href="#/dashboard">Home</a></li>
-      <li>{{ activePageTitle }}</li>
-    </ul>
+  <div class="search">
+    <i class="ion-ios-search-strong" ng-click="startSearch()"></i>
+    <input id="searchInput" type="text" placeholder="Search for...">
   </div>
 
-  <pie-charts></pie-charts>
-
-  <div class="page-top-main clearfix">
-    <div class="quick-stat-block">
-      <div class="quick-stat-row">
-        <div><i class="icon-small ion-ios-download-outline"></i></div>
-        <div class="quick-stat-name">Daily Downloads:</div>
-        <div class="quick-stat-val" animated-change new-value="982">509</div>
-        <div><i class="icon-up quick-stat-up"></i></div>
-      </div>
-      <div class="quick-stat-row">
-        <div><i class="icon-small ion-ios-people-outline"></i></div>
-        <div class="quick-stat-name">Active Users:</div>
-        <div class="quick-stat-val" animated-change new-value="611">971</div>
-        <div><i class="icon-down quick-stat-down"></i></div>
+  <div class="user-profile clearfix">
+    <div class="al-user-profile dropdown">
+      <a href class="dropdown-toggle" data-toggle="dropdown">
+        <img src="img/pic-profile-small.png">
+      </a>
+      <div class="dropdown-menu top-dropdown-menu profile-dropdown">
+        <i class="dropdown-arr"></i>
+        <a href="#/profile"><i class="fa fa-user"></i>Profile</a>
+        <a href><i class="fa fa-cog"></i>Settings</a>
+        <a href class="signout"><i class="fa fa-power-off"></i>Sign out</a>
       </div>
     </div>
-
-    <h1 class="al-title">{{ activePageTitle }}</h1>
+    <msg-center></msg-center>
+    <a href class="refresh-data"><i class="fa fa-refresh"></i></a>
   </div>
 </div>

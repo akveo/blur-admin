@@ -1,112 +1,36 @@
 .page-top {
-  padding: 12px 15px 0px;
+  @include bg-translucent-dark(0.5);
+  padding: 0;
   position: relative;
+  z-index: 904;
+  box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.5);
+  height: 66px;
 }
 
-.top-area {
-  margin-bottom: 32px;
-  position: relative;
-  z-index: 1;
-}
-
-.page-top-main {
-  margin-bottom: 19px;
-}
-
-.al-breadcrumb {
-  background: none;
+a.al-logo {
   color: #ffffff;
-  padding: 12px 0 0;
+  text-decoration: none;
+  padding-right: 4px;
+  display: block;
+  font-size: 24px;
+  font-family: $font-family;
+  white-space: nowrap;
   float: left;
-  margin-bottom: 0;
-}
+  outline: none !important;
+  width: 180px;
+  text-align: center;
+  line-height: 60px;
 
-@media (max-width: $resXS) {
-  .al-breadcrumb {
-    display: none;
-  }
-}
-
-h1.al-title {
-  font-weight: 100;
-  color: #ffffff;
-  float: left;
-  width: auto;
-  margin: 7px 0 0;
-}
-
-.quick-stat-block {
-  margin-left: 20px;
-  padding: 0px 9px;
-  text-align: right;
-  color: #ffffff;
-  float: right;
-  display: table;
-  .quick-stat-row {
-    display: table-row;
-    & > div {
-      display: table-cell;
-      padding-left: 7px;
-      line-height: 21px;
-      padding-bottom: 2px;
-    }
-    i.icon-small {
-      display: none;
-      margin-right: 4px;
-      font-size: 18px;
-      margin-top: -1px;
-    }
-    .quick-stat-name {
-      font-weight: normal;
-      text-align: right;
-      line-height: 21px;
-    }
-    .quick-stat-val {
-      font-size: 15px;
-    }
-  }
-
-  .fa-long-arrow-up {
-    color: $success;
-  }
-  .fa-long-arrow-down {
-    color: $danger;
-  }
-
-  .quick-stat-up, .quick-stat-down {
-    height: 0;
-    transition: height 0.3s ease;
-  }
-  .show-arr {
-    height: 13px;
-  }
-}
-
-@media (max-width: $resL) {
-  .quick-stat-block {
-    display: block;
-    margin-top: 24px;
-    .quick-stat-row {
-      display: table;
-      float: left;
-    }
-  }
-}
-
-@media (max-width: 612px) {
-  .quick-stat-block .quick-stat-row {
-    i.icon-small {
-      display: block;
-    }
-    .quick-stat-name {
-      display: none;
-    }
+  span {
+    color: #41bee9;
   }
 }
 
 .user-profile {
   float: right;
   min-width: 220px;
+  margin-top: 10px;
+  margin-right: 31px;
 }
 
 .al-user-profile {
@@ -123,8 +47,9 @@ h1.al-title {
     display: block;
   }
   img {
-    width: 36px;
-    height: 36px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
   }
 }
 
@@ -134,29 +59,64 @@ a.refresh-data {
   text-decoration: none;
   font-weight: normal;
   float: right;
-  margin-top: 9px;
+  margin-top: 13px;
+  margin-right: 26px;
 
   &:hover {
     color: $warning !important;
   }
 }
 
-@media (max-width: $resXXS) {
-  h1.al-title {
-    font-size: 28px;
+a.collapse-menu-link {
+  font-size: 31px;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  line-height: 42px;
+  color: #fff;
+  width: 18px;
+  padding: 0;
+  float: left;
+  margin-left: 9px;
+  margin-top: 11px;
+
+  &:hover {
+    text-decoration: none;
+    color: $warning;
   }
-  .top-area {
-    margin-bottom: 22px;
+}
+
+.search {
+  text-shadow: none;
+  color: #fff;
+  font-size: 13px;
+  line-height: 25px;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 162px;
+  float: left;
+  margin-left: 49px;
+  margin-top: 20px;
+
+  label {
+    cursor: pointer;
   }
-  .page-top-main {
-    margin-bottom: 8px;
+  i {
+    width: 16px;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 1px;
+    font-size: 16px;
+    margin-right: 13px;
   }
-  .quick-stat-block {
-    margin-top: 22px;
-    .quick-stat-row {
-      .quick-stat-val {
-        font-size: 13px;
-      }
-    }
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    width: 120px;
+    padding: 0;
+    margin: 0 0 0 -3px;
+    height: 27px;
   }
 }

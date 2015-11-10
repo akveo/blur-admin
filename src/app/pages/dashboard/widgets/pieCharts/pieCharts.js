@@ -46,6 +46,6 @@ blurAdminApp.directive('pieCharts', function () {
         updatePieCharts();
       }, 2000);
     }],
-    templateUrl: 'app/components/pieCharts/pieCharts.html'
+    templateUrl: 'app/pages/dashboard/widgets/pieCharts/pieCharts.html'
   };
 });

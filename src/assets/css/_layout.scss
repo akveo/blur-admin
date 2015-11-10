@@ -1,4 +1,4 @@
-$left-space: 198px;
+$left-space: 180px;
 
 @include scrollbars(.5em, #f4f4f4, #142840);
 
@@ -31,45 +31,6 @@ a {
   position: relative;
   z-index: 905;
   color: #444444;
-}
-
-a.al-logo {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 10px 18px 8px 16px;
-  display: block;
-  font: 100 24px/34px $font-family;
-  text-decoration: none;
-  white-space: nowrap;
-  text-shadow: 0 0 2px;
-  overflow: hidden;
-  &:hover {
-    color: $primary;
-    text-decoration: none;
-  }
-  &:active, &:focus {
-    text-decoration: none;
-    outline: none;
-  }
-
-  i {
-    margin-right: 12px;
-    color: $primary;
-    font-size: 20px;
-    line-height: 34px;
-    float: left;
-  }
-  span {
-    transition: padding-left 0.5s ease;
-  }
-}
-
-a.al-logo-small-rez {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 180px !important;
 }
 
 .al-main {
@@ -150,7 +111,7 @@ a.al-logo-small-rez {
 }
 
 .al-content {
-  padding: 8px 15px;
+  padding: 8px 32px 8px 40px;
 }
 
 .vis-hidden {

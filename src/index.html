@@ -17,12 +17,13 @@
 <body ng-controller="mainCtrl">
 
 <main ng-if="finishLoading" ng-class="{ 'menu-collapsed': isMenuCollapsed }">
-  <a href="#/dashboard" class="al-logo al-logo-small-rez">Blur Admin</a>
+
   <sidebar is-menu-collapsed="isMenuCollapsed"></sidebar>
+  <page-top></page-top>
 
   <div class="al-main">
-    <page-top></page-top>
     <div class="al-content">
+      <content-top></content-top>
       <div ng-view></div>
     </div>
   </div>

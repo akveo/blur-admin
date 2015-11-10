@@ -17,11 +17,15 @@
   float: right;
   padding: 0;
   list-style: none;
-  margin: 9px 57px 0 0;
+  margin: 13px 47px 0 0;
+
   li {
     list-style: none;
     float: left;
     margin-left: 30px;
+    &:first-child {
+      margin-left: 0;
+    }
     & > a {
       color: #ffffff;
       text-decoration: none;

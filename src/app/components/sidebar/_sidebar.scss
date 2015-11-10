@@ -4,7 +4,7 @@ $angle-right: "\f101";
 
 .al-sidebar {
   width: $sidebar-width;
-  top: 0;
+  top: $top-height;
   left: 0;
   z-index: 904;
   display: block;
@@ -15,49 +15,9 @@ $angle-right: "\f101";
   position: fixed;
 }
 
-a.collapse-menu-link {
-  font-size: 13px;
-  @include bg-translucent-dark(0.5);
-  cursor: pointer;
-  display: block;
-  text-decoration: none;
-  line-height: 42px;
-  white-space: nowrap;
-  overflow: hidden;
-  color: #fff;
-  width: 18px;
-  position: absolute;
-  top: 47px;
-  right: -18px;
-  padding: 0;
-
-  &:hover {
-    text-decoration: none;
-    color: $warning;
-  }
-  i {
-    float: left;
-    margin-right: 18px;
-    width: 16px;
-    text-align: center;
-    line-height: 42px;
-    transition: transform 0.5s ease-in;
-    transform: rotate(0deg);
-  }
-}
-
-.al-sidebar-list-block {
-  position: absolute;
-  height: 100%;
-  top: 88px;
-  left: 0;
-  width: 100%;
-  padding-bottom: 52px;
-}
-
 .al-sidebar-list {
   margin: 0;
-  padding: 0;
+  padding: 18px 0 0 0;
   list-style: none;
 }
 
@@ -119,39 +79,6 @@ a.al-sidebar-list-link {
 .slimScrollBar, .slimScrollRail {
   border-radius: 0px !important;
   width: 4px !important;
-}
-
-.search {
-  position: absolute;
-  left: 18px;
-  top: 54px;
-  text-shadow: none;
-  color: #fff;
-  font-size: 13px;
-  line-height: 25px;
-  transition: all 0.5s ease;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 162px;
-  label {
-    cursor: pointer;
-  }
-  i {
-    margin-right: 18px;
-    width: 16px;
-    display: inline-block;
-    cursor: pointer;
-    padding-left: 1px;
-  }
-  input {
-    background: none;
-    border: none;
-    outline: none;
-    width: 120px;
-    padding: 0;
-    margin: 0 0 0 -3px;
-    height: 27px;
-  }
 }
 
 @mixin layout-collapsed() {
@@ -229,13 +156,6 @@ a.al-sidebar-list-link {
   .al-sidebar {
     width: 52px;
 
-    .al-logo {
-      padding-left: 16px;
-      span {
-        padding-left: 20px;
-      }
-    }
-
     .fa-angle-down, .fa-angle-up {
       opacity: 0;
     }
@@ -267,18 +187,9 @@ a.al-sidebar-list-link {
         }
       }
     }
-    a.collapse-menu-link {
-      i {
-        transform: rotate(540deg);
-      }
-    }
 
     .sidebar-hover-elem, .sidebar-select-elem {
       left: 48px;
-    }
-
-    .search {
-      width: 32px;
     }
   }
 }
@@ -286,23 +197,6 @@ a.al-sidebar-list-link {
 @mixin sidebar-hidden() {
   .al-sidebar {
     width: 0;
-    a.al-logo {
-      display: none;
-    }
-    a.collapse-menu-link {
-      i {
-        transform: rotate(540deg);
-      }
-    }
-    .al-sidebar-list-block {
-      display: none;
-    }
-  }
-  .search {
-    width: 0;
-  }
-  a.al-logo-small-rez {
-    display: block;
   }
 }
 
@@ -310,21 +204,9 @@ a.al-sidebar-list-link {
   .al-sidebar {
     width: $sidebar-width;
     background: rgba(0, 0, 0, .75);
-    a.al-logo {
-      display: block;
-      span {
-        padding-left: 0;
-      }
-    }
-    a.al-logo-small-rez {
-      display: none;
-    }
+
     .fa-angle-down, .fa-angle-up {
       opacity: 1;
-    }
-
-    .al-sidebar-list-block {
-      display: block;
     }
 
     .al-sidebar-sublist {
@@ -337,19 +219,8 @@ a.al-sidebar-list-link {
       transition: none;
     }
 
-    a.collapse-menu-link {
-      @include bg-translucent-dark(0.75);
-      i {
-        transform: rotate(0deg);
-      }
-    }
-
     .sidebar-hover-elem, .sidebar-select-elem {
       left: $sidebar-width - 4;
-    }
-
-    .search {
-      width: 162px;
     }
   }
 }

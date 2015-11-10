@@ -169,12 +169,8 @@ blurAdminApp.directive('sidebar', function () {
 
       $scope.hoverItem = function ($event) {
         $scope.showHoverElem = true;
-        var menuTopValue = 88;
+        var menuTopValue = 66;
         $scope.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - menuTopValue;
-      };
-
-      $scope.hideHoverElement = function () {
-        $scope.showHoverElem = false;
       };
 
       $scope.collapseSidebarIfSmallRes = function () {
@@ -182,27 +178,6 @@ blurAdminApp.directive('sidebar', function () {
           $scope.isMenuCollapsed = true;
         }
       };
-
-      function focusSearchInput() {
-        document.getElementById("searchInput").focus();
-      }
-
-      $scope.startSearch = function () {
-        if ($scope.isMenuCollapsed) {
-          $scope.isMenuCollapsed = false;
-          $timeout(function () {
-            focusSearchInput();
-          }, 900);
-        } else {
-          focusSearchInput();
-        }
-      };
-
-      $scope.search = function (event) {
-        if (event.which === 13) {
-          $scope.collapseSidebarIfSmallRes();
-        }
-      }
     }]
   };
 });
