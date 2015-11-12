@@ -1,16 +1,18 @@
 .pie-charts {
+  color: $default-text;
+
   .pie-chart-item {
-    text-align: center;
-    display: inline-block;
-    width: 25%;
-    &:first-child {
-      margin-left: 0;
+    position: relative;
+    .chart-icon {
+      position: absolute;
+      right: 0px;
+      top: 3px;
     }
-    h6 {
-      text-transform: none;
-      color: #ffffff;
-      margin-top: 13px;
-      width: 100%;
+  }
+  @media screen and (max-width: 1650px) {
+    //todo: add other cases when on the one row two or one chart
+    .chart-icon {
+      display: none;
     }
   }
   .chart {
@@ -19,7 +21,7 @@
     width: 84px;
     height: 84px;
     text-align: center;
-    color: #ffffff;
+    float: left;
   }
   .chart canvas {
     position: absolute;
@@ -31,12 +33,19 @@
     line-height: 84px;
     z-index: 2;
     font-size: 16px;
-    color: #ffffff;
   }
   .percent:after {
     content: '%';
     margin-left: 0.1em;
     font-size: .8em;
+  }
+  .description {
+    display: inline-block;
+    padding: 20px 0 0 20px;
+    .description-stats {
+      padding-top: 4px;
+      font-size: 24px;
+    }
   }
   .angular {
     margin-top: 100px;

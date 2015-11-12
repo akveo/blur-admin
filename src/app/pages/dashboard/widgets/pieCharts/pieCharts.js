@@ -20,7 +20,9 @@ blurAdminApp.directive('pieCharts', function () {
             trackColor: 'rgba(0,0,0,0)',
             size: 84,
             scaleLength: 0,
-            animation: 2000
+            animation: 2000,
+            lineWidth: 9,
+            lineCap: 'square',
           });
         });
 
@@ -34,17 +36,16 @@ blurAdminApp.directive('pieCharts', function () {
         var chart2 = window.chart = $('#chart2').find('.chart').data('easyPieChart');
         var chart3 = window.chart = $('#chart3').find('.chart').data('easyPieChart');
         var chart4 = window.chart = $('#chart4').find('.chart').data('easyPieChart');
-        chart1.update(getRandomArbitrary(60, 100));
-        chart2.update(getRandomArbitrary(60, 100));
-        chart3.update(getRandomArbitrary(60, 100));
-        chart4.update(getRandomArbitrary(60, 100));
+        chart1.update(getRandomArbitrary(60, 90));
+        chart2.update(getRandomArbitrary(60, 90));
+        chart3.update(getRandomArbitrary(60, 90));
+        chart4.update(getRandomArbitrary(60, 90));
       }
 
-      loadPieCharts();
-
       $timeout(function () {
+        loadPieCharts();
         updatePieCharts();
-      }, 2000);
+      }, 1000);
     }],
     templateUrl: 'app/pages/dashboard/widgets/pieCharts/pieCharts.html'
   };
