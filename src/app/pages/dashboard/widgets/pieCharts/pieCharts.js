@@ -4,6 +4,30 @@ blurAdminApp.directive('pieCharts', function () {
   return {
     restrict: 'E',
     controller: ['$scope', '$element', '$window', '$timeout', function ($scope, $element, $window, $timeout) {
+
+      $scope.charts = [{
+          color: '#41bee9',
+          description: 'New Visits',
+          stats: '57,820',
+          icon: 'person',
+        }, {
+          color: '#9D498C',
+          description: 'New Purchases',
+          stats: '$ 89,745',
+          icon: 'money',
+        }, {
+          color: '#bbcb50',
+          description: 'Active Users',
+          stats: '178,391',
+          icon: 'face',
+        }, {
+          color: '#5FBCBB',
+          description: 'Returned Visitors',
+          stats: '32,592',
+          icon: 'refresh',
+        }
+      ];
+
       function getRandomArbitrary(min, max) {
         return Math.random() * (max - min) + min;
       }
@@ -32,14 +56,9 @@ blurAdminApp.directive('pieCharts', function () {
       }
 
       function updatePieCharts() {
-        var chart1 = window.chart = $('#chart1').find('.chart').data('easyPieChart');
-        var chart2 = window.chart = $('#chart2').find('.chart').data('easyPieChart');
-        var chart3 = window.chart = $('#chart3').find('.chart').data('easyPieChart');
-        var chart4 = window.chart = $('#chart4').find('.chart').data('easyPieChart');
-        chart1.update(getRandomArbitrary(60, 90));
-        chart2.update(getRandomArbitrary(60, 90));
-        chart3.update(getRandomArbitrary(60, 90));
-        chart4.update(getRandomArbitrary(60, 90));
+        $('.pie-charts .chart').each(function(index, chart) {
+          $(chart).data('easyPieChart').update(getRandomArbitrary(60, 90));
+        });
       }
 
       $timeout(function () {

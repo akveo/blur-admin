@@ -1,20 +1,46 @@
 .pie-charts {
   color: $default-text;
 
+  .pie-chart-item-container {
+    position: relative;
+    padding: 0 15px;
+    float: left;
+    box-sizing: border-box;
+  }
+  @media screen and (min-width: 1325px) {
+    .pie-chart-item-container {
+      width: 25%;
+    }
+  }
+  @media screen and (min-width: 700px) and (max-width: 1325px)  {
+    .pie-chart-item-container {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: 700px)  {
+    .pie-chart-item-container {
+      width: 100%;
+    }
+  }
+
   .pie-chart-item {
     position: relative;
     .chart-icon {
       position: absolute;
       right: 0px;
       top: 3px;
+      z-index: -1;
     }
   }
-  @media screen and (max-width: 1650px) {
-    //todo: add other cases when on the one row two or one chart
+  @media screen and
+    (min-width: 1325px) and (max-width: 1650px),
+    (min-width: 700px) and (max-width: 830px),
+    (max-width: 400px) {
     .chart-icon {
       display: none;
     }
   }
+
   .chart {
     position: relative;
     display: inline-block;
