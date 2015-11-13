@@ -83,7 +83,7 @@ a.al-sidebar-list-link {
 
 @mixin layout-collapsed() {
   .al-main {
-    margin-left: 70px;
+    margin-left: 50px;
   }
 
   .al-footer {
@@ -140,7 +140,7 @@ a.al-sidebar-list-link {
   left: 176px;
   height: 42px;
   display: none;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   &.show-hover-elem {
     height: 42px;
     display: block;

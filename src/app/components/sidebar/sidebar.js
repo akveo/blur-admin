@@ -123,13 +123,11 @@ blurAdminApp.directive('sidebar', function () {
         $scope.isMenuCollapsed = true;
       };
 
-      $scope.menuToggle = function () {
-        $scope.isMenuCollapsed = !$scope.isMenuCollapsed;
-
-        if (!$scope.isMenuCollapsed && !$scope.selectElemTop) {
+      $scope.$watch('isMenuCollapsed', function(newValue) {
+        if (!newValue && !$scope.selectElemTop) {
           changeSelectElemTopValue();
         }
-      };
+      })
 
       // watch window resize to change menu collapsed state if needed
       $(window).resize(function () {
