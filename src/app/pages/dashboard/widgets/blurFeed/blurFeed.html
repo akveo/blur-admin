@@ -1,3 +1,21 @@
 <div class="blur-feed">
-
+  <div class="feed-message" ng-repeat="message in feed" ng-class="{'left': $index%2==0, 'right': $index%2==1}">
+    <img ng-src="img/{{ ::message.author }}.png">
+    <div class="text-block" ng-class="message.type">
+      <div class="message-header">
+        <span class="author">{{ ::message.author }}</span>{{ ::message.header }}
+      </div>
+      <div class="message-content">
+        {{::message.text}}
+      </div>
+    </div>
+    <div class="message-time">
+      <div class="post-time">
+        {{::message.time}}
+      </div>
+      <div class="ago-time">
+        {{::message.ago}}
+      </div>
+    </div>
+  </div>
 </div>

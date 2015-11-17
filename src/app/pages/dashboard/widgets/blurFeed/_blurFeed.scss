@@ -1,3 +1,118 @@
 .blur-feed {
   height: 983px;
 }
+
+.feed-message {
+  $text-message-color: $default;
+  $video-message-color: $danger;
+  $image-message-color: $success;
+  $geo-message-color: $primary;
+
+  min-height: 90px;
+  clear: both;
+  padding: 15px 0;
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  img {
+    float: left;
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .text-block {
+    position: relative;
+    border-radius: 5px;
+    margin: 0 0 0 80px;
+    padding: 7px 10px;
+    color: #fff;
+
+    &:before {
+      display: none;
+      content: '';
+      position: absolute;
+      top: 8px;
+      right: 100%;
+      height: 0;
+      width: 0;
+      border: 7px solid transparent;
+      border-right: 7px solid #fff;
+    }
+
+    &.text-message {
+      background: $text-message-color;
+      &:before { border-right-color: $text-message-color; }
+      color: $default-text;
+      font-size: 12px;
+      &:before {
+        display: block;
+      }
+      .message-content {
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+    &.video-message {
+      background: $video-message-color;
+      &:before { border-right-color: $video-message-color; }
+    }
+    &.image-message {
+      background: $image-message-color;
+      &:before { border-right-color: $image-message-color; }
+    }
+    &.geo-message {
+      background: $geo-message-color;
+      &:before { border-right-color: $geo-message-color; }
+    }
+  }
+
+  .message-header {
+    padding-bottom: 5px;
+    .author {
+      font-weight: 600;
+      padding-right: 5px;
+    }
+  }
+
+  .message-content {
+    font-size: 18px;
+    line-height: 20px;
+  }
+
+  .message-time {
+    font-size: 11px;
+    margin: 0 0 0 80px;
+    padding-top: 5px;
+    color: $help-text;
+    .post-time {
+      display: inline-block;
+      width: 50%;
+    }
+    .ago-time {
+      display: inline-block;
+      width: 50%;
+      text-align: right;
+    }
+  }
+
+  &.right {
+    img {
+      float: right;
+    }
+    .text-block {
+      margin: 0 80px 0 0;
+      &:before {
+        left: calc(100% - 2px);
+        transform: rotate(180deg);
+      }
+    }
+    .message-time {
+      margin: 0 80px 0 0;
+    }
+  }
+}
