@@ -5,13 +5,10 @@
   $geo-message-color: $primary;
 
   min-height: 90px;
-  clear: both;
-  padding: 15px 0;
+  overflow: hidden;
+  padding: 15px 0 30px;
   &:first-child {
     padding-top: 0;
-  }
-  &:last-child {
-    padding-bottom: 0;
   }
 
   img {
@@ -27,6 +24,8 @@
     margin: 0 0 0 80px;
     padding: 7px 10px;
     color: #fff;
+    width: 280px;
+    height: 70px;
 
     &:before {
       display: none;
@@ -45,6 +44,9 @@
       &:before { border-right-color: $text-message-color; }
       color: $default-text;
       font-size: 12px;
+      width: inherit;
+      max-width: calc(100% - 80px);
+      height: inherit;
       &:before {
         display: block;
       }
@@ -65,6 +67,20 @@
       background: $geo-message-color;
       &:before { border-right-color: $geo-message-color; }
     }
+    &.small-message {
+      width: 155px;
+      height: 145px;
+      .preview {
+        bottom: 0;
+        top: initial;
+        height: 87px;
+        img {
+          width: 155px;
+          height: 87px;
+          border-radius: 0 0 5px 5px;
+        }
+      }
+    }
   }
 
   .message-header {
@@ -79,10 +95,27 @@
     font-size: 18px;
     line-height: 20px;
   }
+  
+  .preview {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    height: 70px;
+    img {
+      width: 125px;
+      height: 70px;
+      border-radius: 0 5px 5px 0;
+      float: none!important;
+    }
+  }
 
   .message-time {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -22px;
     font-size: 11px;
-    margin: 0 0 0 80px;
     padding-top: 5px;
     color: $help-text;
     .post-time {
@@ -101,14 +134,12 @@
       float: right;
     }
     .text-block {
-      margin: 0 80px 0 0;
+      float: right;
+      margin: 0 20px 0 0;
       &:before {
         left: calc(100% - 2px);
         transform: rotate(180deg);
       }
-    }
-    .message-time {
-      margin: 0 80px 0 0;
     }
   }
 }

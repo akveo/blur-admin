@@ -225,7 +225,7 @@ a.al-sidebar-list-link {
   }
 }
 
-@media (min-width: $resXL) {
+@media (min-width: 1200px) {
   .menu-collapsed {
     @include layout-collapsed();
   }
@@ -237,11 +237,11 @@ a.al-sidebar-list-link {
   }
 }
 
-@media (max-width: $resXL) and (min-width: $resXS) {
+@media (max-width: 1200px) and (min-width: $resXS) {
   @include layout-collapsed();
 }
 
-@media (max-width: $resXL) {
+@media (max-width: 1200px) {
   @include sidebar-overlap();
 }
 
