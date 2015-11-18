@@ -6,7 +6,7 @@ blurAdminApp.directive('backTop', function () {
     controller: [function () {
       $('#backTop').backTop({
         'position': 200,
-        'speed': 500
+        'speed': 100
       });
     }],
     templateUrl: 'app/components/backTop/backTop.html'

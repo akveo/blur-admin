@@ -6,6 +6,7 @@
 
   ::-webkit-scrollbar-thumb {
     background: $foreground-color;
+    border-radius: 5px;
   }
 
   ::-webkit-scrollbar-track {

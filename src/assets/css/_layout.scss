@@ -1,6 +1,6 @@
 $left-space: 180px;
 
-@include scrollbars(.5em, #f4f4f4, #142840);
+@include scrollbars(.5em, #d9d9d9, rgba(0,0,0,0));
 
 html {
   position: relative;
