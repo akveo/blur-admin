@@ -59,11 +59,6 @@ blurAdminApp.directive('blurTodo', function () {
           edit: false,
           markId: 4
         },
-        {
-          text: 'Lorem ipsum dolor sit amet, possit denique oportere at his, etiam corpora deseruisse te pro. Eirmod prompta usu ex, meliore oporteat est ad.',
-          edit: false,
-          markId: 3
-        }
       ];
 
       $scope.getMarkColor = function (id) {

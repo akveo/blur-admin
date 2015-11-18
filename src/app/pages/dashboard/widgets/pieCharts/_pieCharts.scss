@@ -6,6 +6,10 @@
     padding: 0 15px;
     float: left;
     box-sizing: border-box;
+
+    .panel {
+      height: $small-panel-height;
+    }
   }
   @media screen and (min-width: 1325px) {
     .pie-chart-item-container {

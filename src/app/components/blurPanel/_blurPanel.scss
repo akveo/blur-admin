@@ -4,13 +4,23 @@
   position: relative;
   transition: all 0.2s ease;
   margin-bottom: 24px;
-
   &:hover {
     background: $panel-bg-hover;
   }
-
   &.animated {
     animation-duration: 0.5s;
+  }
+  &.small-panel {
+    height: $small-panel-height;
+  }
+  &.medium-panel {
+    height: $medium-panel-height;
+  }
+  &.large-panel {
+    height: $large-panel-height;
+  }
+  &.with-scroll {
+    overflow-y: auto;
   }
 }
 

@@ -35,7 +35,7 @@ blurAdminApp.directive('blurFeed', function () {
           ago: 'a day ago',
         }, {
           type: 'geo-message',
-          author: 'Kolya',
+          author: 'Nick',
           header: 'posted location',
           text: 'New York, NY, USA',
           time: 'Yesterday 11:37 am',

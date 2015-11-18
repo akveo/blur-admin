@@ -5,7 +5,8 @@ blurAdminApp.directive('blurPanel', function () {
     restrict: 'E',
     transclude: true,
     scope: {
-      title: '@'
+      title: '@',
+      classContainer: '@'
     },
     controller: ['$scope', function ($scope) {
     }],
