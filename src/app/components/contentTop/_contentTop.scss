@@ -25,3 +25,12 @@ h1.al-title {
     font-weight: 100;
   }
 }
+
+.al-look {
+  float: right;
+  margin-right: 10px;
+  padding-top: 10px;
+  > a {
+    font-size: 19px;
+  }
+}

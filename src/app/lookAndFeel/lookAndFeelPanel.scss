@@ -1,0 +1,14 @@
+.look-and-feel-panel {
+  width: 300px;
+  .look-and-feel-option {
+    padding: 10px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $primary;
+    }
+  }
+  .skin-thumbnail {
+    width: 100%;
+  }
+}
