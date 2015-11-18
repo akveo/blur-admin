@@ -22,5 +22,5 @@ var colorDefaultText = '#585858';
 
 var pageLoaded = false;
 
-var resWidthCollapseSidebar = 1120;
+var resWidthCollapseSidebar = 1170;
 var resWidthHideSidebar = 500;

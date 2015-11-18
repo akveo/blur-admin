@@ -131,9 +131,13 @@ blurAdminApp.directive('sidebar', function () {
 
       // watch window resize to change menu collapsed state if needed
       $(window).resize(function () {
-        $scope.$apply(function () {
-          $scope.isMenuCollapsed = $(window).width() <= resWidthCollapseSidebar;
-        });
+        var isMenuShouldCollapsed = $(window).width() <= resWidthCollapseSidebar;
+        if ($scope.isMenuShouldCollapsed !== isMenuShouldCollapsed) {
+          $scope.$apply(function () {
+            $scope.isMenuCollapsed = isMenuShouldCollapsed;
+          });
+        }
+        $scope.isMenuShouldCollapsed = isMenuShouldCollapsed;
       });
 
       $scope.toggleSubMenu = function ($event, item) {

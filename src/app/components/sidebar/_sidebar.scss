@@ -10,7 +10,6 @@ $angle-right: "\f101";
   display: block;
   min-height: 100%;
   @include bg-translucent-dark(0.5);
-  transition: width 0.5s ease;
   height: 100%;
   position: fixed;
 }
@@ -140,7 +139,6 @@ a.al-sidebar-list-link {
   left: 176px;
   height: 42px;
   display: none;
-  transition: all 0.5s ease;
   &.show-hover-elem {
     height: 42px;
     display: block;
@@ -204,6 +202,7 @@ a.al-sidebar-list-link {
   .al-sidebar {
     width: $sidebar-width;
     @include bg-translucent-dark(0.75);
+    transition: width 0.5s ease;
 
     .fa-angle-down, .fa-angle-up {
       opacity: 1;
@@ -221,11 +220,12 @@ a.al-sidebar-list-link {
 
     .sidebar-hover-elem, .sidebar-select-elem {
       left: $sidebar-width - 4;
+      transition: all 0.5s ease;
     }
   }
 }
 
-@media (min-width: 1120px) {
+@media (min-width: $resXL) {
   .menu-collapsed {
     @include layout-collapsed();
   }
@@ -237,11 +237,11 @@ a.al-sidebar-list-link {
   }
 }
 
-@media (max-width: 1120px) and (min-width: $resXS) {
+@media (max-width: $resXL) and (min-width: $resXS) {
   @include layout-collapsed();
 }
 
-@media (max-width: 1120px) {
+@media (max-width: $resXL) {
   @include sidebar-overlap();
 }
 
