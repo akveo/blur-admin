@@ -139,6 +139,7 @@ a.al-sidebar-list-link {
   left: 176px;
   height: 42px;
   display: none;
+  transition: top 0.5s ease;
   &.show-hover-elem {
     height: 42px;
     display: block;
@@ -220,7 +221,6 @@ a.al-sidebar-list-link {
 
     .sidebar-hover-elem, .sidebar-select-elem {
       left: $sidebar-width - 4;
-      transition: all 0.5s ease;
     }
   }
 }

@@ -1,7 +1,9 @@
-<aside class="al-sidebar" ng-swipe-right="menuExpand()" ng-swipe-left="menuCollapse()">
+<aside class="al-sidebar" ng-swipe-right="menuExpand()" ng-swipe-left="menuCollapse()"
+       ng-mouseleave="hoverElemTop=selectElemTop">
   <ul class="al-sidebar-list" slimscroll="{height: '100%'}">
     <li ng-repeat="item in menuItems" class="al-sidebar-list-item"
-        ng-class="{'selected': item.selected, 'with-sub-menu': item.subMenu}" ng-mouseover="hoverItem($event, item)">
+        ng-class="{'selected': item.selected, 'with-sub-menu': item.subMenu}"
+        ng-mouseenter="hoverItem($event, item)">
 
       <a href="{{ item.root }}" ng-if="!item.subMenu" class="al-sidebar-list-link"
          ng-click="collapseSidebarIfSmallRes()">
