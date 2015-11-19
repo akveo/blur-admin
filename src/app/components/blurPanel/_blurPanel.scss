@@ -1,3 +1,5 @@
+$panel-title-height: 35px;
+
 .panel {
   border: none;
   border-radius: 0px;
@@ -21,22 +23,26 @@
     height: $large-panel-height;
   }
   &.with-scroll {
-    overflow-y: auto;
+    .panel-body {
+      overflow-y: auto;
+      height: calc(100% - #{$panel-title-height});
+    }
   }
 }
 
 .panel-heading, .panel-default > .panel-heading {
   background-color: transparent;
   border: none;
-  padding: 7px 22px 0px;
-  margin-bottom: -5px;
+  padding: 0 22px;
   color: $default-text;
 }
 
 .panel-title {
-  font-weight: normal;
+  height: $panel-title-height;
+  line-height: 20px;
+  padding-top: 15px;
 }
 
 .panel-body {
-  padding: 16px 22px;
+  padding: 15px 22px;
 }

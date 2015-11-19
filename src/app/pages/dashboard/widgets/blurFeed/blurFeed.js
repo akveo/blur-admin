@@ -50,7 +50,7 @@ blurAdminApp.directive('blurFeed', function () {
           type: 'text-message',
           author: 'Vlad',
           header: 'posted new message',
-          text: "First snake:I hope I'm not poisonous. Second snake:Why? First snake:Because I bit my lip!",
+          text: "First snake: I hope I'm not poisonous. Second snake: Why? First snake: Because I bit my lip!",
           time: '12.11.2015',
           ago: '3 days ago',
         }, {
