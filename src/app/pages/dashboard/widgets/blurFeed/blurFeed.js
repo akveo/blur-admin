@@ -16,7 +16,7 @@ blurAdminApp.directive('blurFeed', function () {
           type: 'video-message',
           author: 'Andrey',
           header: 'added new video',
-          text: 'Vaider and Me',
+          text: 'Vader and Me',
           preview: 'vader-and-me-preview',
           link: 'https://www.youtube.com/watch?v=IfcpzBbbamk',
           time: 'Today 9:30 pm',
