@@ -89,10 +89,13 @@
 
 @media (max-width: $resXXS) {
   .al-msg-center {
-    margin-right: 32px;
-  }
-  .al-msg-center li:first-child {
-    margin-left: 20px;
+    margin-right: 20px;
+    li {
+      margin-left: 20px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
   }
 }
 

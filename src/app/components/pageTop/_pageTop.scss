@@ -1,25 +1,22 @@
 .page-top {
   @include bg-translucent-dark(0.85);
-  padding: 0;
   position: fixed;
   z-index: 904;
   box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.5);
   height: 66px;
   width: 100%;
+  min-width: $resMin;
+  padding: 0 32px 0 40px;
 }
 
 a.al-logo {
   color: #ffffff;
-  text-decoration: none;
-  padding-right: 4px;
   display: block;
   font-size: 24px;
   font-family: $font-family;
   white-space: nowrap;
   float: left;
   outline: none !important;
-  width: 180px;
-  text-align: center;
   line-height: 60px;
 
   span {
@@ -29,9 +26,8 @@ a.al-logo {
 
 .user-profile {
   float: right;
-  min-width: 220px;
+  min-width: 190px;
   margin-top: 10px;
-  margin-right: 31px;
 }
 
 .al-user-profile {
@@ -75,11 +71,9 @@ a.collapse-menu-link {
   text-decoration: none;
   line-height: 42px;
   color: #fff;
-  width: 18px;
   padding: 0;
   float: left;
-  margin-left: 9px;
-  margin-top: 11px;
+  margin: 11px 0 0 25px;
 
   &:hover {
     text-decoration: none;
@@ -97,8 +91,7 @@ a.collapse-menu-link {
   overflow: hidden;
   width: 162px;
   float: left;
-  margin-left: 49px;
-  margin-top: 20px;
+  margin: 20px 0 0 30px;
 
   label {
     cursor: pointer;
@@ -119,5 +112,29 @@ a.collapse-menu-link {
     padding: 0;
     margin: 0 0 0 -3px;
     height: 27px;
+  }
+}
+
+@media screen and (max-width: $resS) {
+  .search {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $resXS) {
+  .page-top {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: $resXXS) {
+  .user-profile{
+    min-width: 136px;
+  }
+  a.refresh-data {
+    margin-right: 10px;
+  }
+  a.collapse-menu-link {
+    margin-left: 10px;
   }
 }

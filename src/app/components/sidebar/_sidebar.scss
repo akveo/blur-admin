@@ -197,6 +197,9 @@ a.al-sidebar-list-link {
   .al-sidebar {
     width: 0;
   }
+  .sidebar-hover-elem, .sidebar-select-elem {
+    display: none;
+  }
 }
 
 @mixin sidebar-overlap() {
@@ -221,6 +224,7 @@ a.al-sidebar-list-link {
 
     .sidebar-hover-elem, .sidebar-select-elem {
       left: $sidebar-width - 4;
+      transition: left 0.5s ease;
     }
   }
 }
