@@ -6,10 +6,10 @@
   'use strict';
 
   blurAdminApp
-      .service('lookAndFeelOptions', lookAndFeelOptions);
+      .service('tplSkinManager', tplSkinManager);
 
-  lookAndFeelOptions.$inject = ['$document', 'skinClassPrefix'];
-  function lookAndFeelOptions($document, skinClassPrefix) {
+  tplSkinManager.$inject = ['$document', 'tplSkinClassPrefix'];
+  function tplSkinManager($document, tplSkinClassPrefix) {
 
     var activeSkin = null;
 
@@ -25,7 +25,7 @@
       var body = $document[0].body;
       var $body = angular.element(body);
       body.className.split(/\s+/).forEach(function(className) {
-        if (className.indexOf(skinClassPrefix) === 0) {
+        if (className.indexOf(tplSkinClassPrefix) === 0) {
           $body.removeClass(className);
         }
       });

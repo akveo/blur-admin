@@ -1,11 +1,16 @@
-.look-and-feel-panel {
+.tpl-skin-panel {
   width: 300px;
-  .look-and-feel-option {
+  .tpl-skin-option {
     padding: 10px;
+    line-height: 83px;
 
     &:hover {
       cursor: pointer;
       background-color: $primary;
+      color: white;
+    }
+    + .tpl-skin-option {
+      border-top: 1px solid #999;
     }
   }
   .skin-thumbnail {

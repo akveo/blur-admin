@@ -46,7 +46,7 @@
   ];
 
   blurAdminApp
-      .constant('skinClassPrefix', SKIN_CLASS_PREFIX)
-      .constant('lookAndFeelEnum', ADMIN_STYLES);
+      .constant('tplSkinClassPrefix', SKIN_CLASS_PREFIX)
+      .constant('tplSkinEnum', ADMIN_STYLES);
 
 })();
