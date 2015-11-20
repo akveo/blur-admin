@@ -1,0 +1,10 @@
+<div class="tpl-skin-panel">
+  <div class="tpl-skin-option" ng-repeat="skin in skins" ng-click="setActiveSkin(skin)">
+    <div class="row">
+      <div class="col-xs-6">
+        <img class="skin-thumbnail" ng-src="{{ skin.thumbnailUrl }}" />
+      </div>
+      <div class="col-xs-6 text-col" ng-bind="skin.name"></div>
+    </div>
+  </div>
+</div>

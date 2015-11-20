@@ -58,6 +58,7 @@ gulp.task('minify-css', ['minify-404-css', 'minify-auth-css'], function () {
 var imgSrc = [
   'src/assets/img/*',
   'src/assets/pictures/*',
+  'src/app/lookAndFeel/thumbs/*',
   'src/app/pages/dashboard/widgets/timeline/img/*',
   'src/app/pages/profile/img/*',
   'src/app/pages/icons/widgets/kameleon-img/*',

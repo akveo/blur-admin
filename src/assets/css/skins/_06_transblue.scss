@@ -1,0 +1,12 @@
+body.badmin-transblue {
+  background-image: url(../img/transblue-bg.jpg);
+
+  .page-top {
+    background-color: rgba(0,0,0,.5);
+  }
+
+  .panel, .panel:hover {
+    border-color: rgba(80, 80, 80, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
