@@ -6,15 +6,34 @@
   'use strict';
 
   blurAdminApp
-      .factory('lookAndFeelOptions', lookAndFeelOptions);
+      .service('lookAndFeelOptions', lookAndFeelOptions);
 
-  lookAndFeelOptions.$inject = ['lookAndFeelEnum'];
-  function lookAndFeelOptions(lookAndFeelEnum) {
+  lookAndFeelOptions.$inject = ['$document', 'skinClassPrefix'];
+  function lookAndFeelOptions($document, skinClassPrefix) {
 
-    var model = {
-      adminStyles: lookAndFeelEnum
+    var activeSkin = null;
+
+    this.setActiveSkin = function(skin) {
+      activeSkin = skin;
+      if (activeSkin) {
+        _removeSkinBodyClassIfPresent();
+        _addSkinBodyClass(activeSkin);
+      }
     };
-    return model;
+
+    function _removeSkinBodyClassIfPresent() {
+      var body = $document[0].body;
+      var $body = angular.element(body);
+      body.className.split(/\s+/).forEach(function(className) {
+        if (className.indexOf(skinClassPrefix) === 0) {
+          $body.removeClass(className);
+        }
+      });
+    }
+
+    function _addSkinBodyClass(skin) {
+      angular.element($document[0].body).addClass(skin.bodyClass);
+    }
   }
 
 })();

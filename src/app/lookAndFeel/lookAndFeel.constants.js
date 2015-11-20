@@ -5,6 +5,8 @@
 (function() {
   'use strict';
 
+  var SKIN_CLASS_PREFIX = 'badmin';
+
   var ADMIN_STYLES = [
     {
       name: 'Default',
@@ -13,37 +15,38 @@
     },
     {
       name: 'Transparent',
-      bodyClass: 'badmin-transparent',
+      bodyClass: SKIN_CLASS_PREFIX + '-transparent',
       thumbnailUrl: 'img/02_transparent.jpg'
     },
     {
       name: 'Blue',
-      bodyClass: 'badmin-blue',
+      bodyClass: SKIN_CLASS_PREFIX + '-blue',
       thumbnailUrl: 'img/03_blue.jpg'
     },
     {
       name: 'Peachy',
-      bodyClass: 'badmin-peachy',
+      bodyClass: SKIN_CLASS_PREFIX + '-peachy',
       thumbnailUrl: 'img/04_peachy.jpg'
     },
     {
       name: 'Material',
-      bodyClass: 'badmin-material',
+      bodyClass: SKIN_CLASS_PREFIX + '-material',
       thumbnailUrl: 'img/05_material.jpg'
     },
     {
       name: 'Transblue',
-      bodyClass: 'badmin-transblue',
+      bodyClass: SKIN_CLASS_PREFIX + '-transblue',
       thumbnailUrl: 'img/06_transblue.jpg'
     },
     {
       name: 'Grey',
-      bodyClass: 'badmin-grey',
+      bodyClass: SKIN_CLASS_PREFIX + '-grey',
       thumbnailUrl: 'img/07_grey.jpg'
     }
   ];
 
   blurAdminApp
+      .constant('skinClassPrefix', SKIN_CLASS_PREFIX)
       .constant('lookAndFeelEnum', ADMIN_STYLES);
 
 })();

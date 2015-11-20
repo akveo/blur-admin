@@ -1,5 +1,5 @@
 <div class="look-and-feel-panel">
-  <div class="look-and-feel-option" ng-repeat="option in lookAndFeels">
+  <div class="look-and-feel-option" ng-repeat="option in lookAndFeels" ng-click="setActiveSkin(option)">
     <div class="row">
       <div class="col-xs-6">
         <img class="skin-thumbnail" ng-src="{{ option.thumbnailUrl }}" />
