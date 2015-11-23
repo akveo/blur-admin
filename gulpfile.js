@@ -44,7 +44,8 @@ gulp.task('minify-css', ['minify-404-css', 'minify-auth-css'], function () {
     'bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css',
     'bower_components/Ionicons/css/ionicons.min.css',
     'bower_components/font-awesome/css/font-awesome.min.css',
-    'bower_components/animate.css/animate.min.css'
+    'bower_components/animate.css/animate.min.css',
+    'bower_components/angular-progress-button-styles/dist/angular-progress-button-styles.min.css'
   ]);
   var appFiles = gulp.src('src/assets/css/main.scss').pipe(sass({ style: 'compressed' }).on('error', sass.logError));
 
@@ -109,6 +110,7 @@ gulp.task('js-lib', function(){
     'bower_components/angular-slimscroll/angular-slimscroll.js',
     'bower_components/hammerjs/hammer.min.js',
     'bower_components/AngularHammer/angular.hammer.min.js',
+    'bower_components/angular-progress-button-styles/dist/angular-progress-button-styles.min.js',
     'src/app/components/backTop/lib/jquery.backTop.min.js'
   ];
 

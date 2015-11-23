@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('BlurAdmin.buttonsPage', ['ngRoute'])
+angular.module('BlurAdmin.buttonsPage', ['ngRoute', 'angular-progress-button-styles'])
 
     .config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/buttons', {
@@ -8,7 +8,11 @@ angular.module('BlurAdmin.buttonsPage', ['ngRoute'])
         controller: 'buttonsPageCtrl'
       });
     }])
-    .controller('buttonsPageCtrl', ['$scope', function ($scope) {
+    .controller('buttonsPageCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+      $scope.progressFunction = function() {
+        return $timeout(function() {}, 3000);
+      };
+
       $scope.widgetBlocks = [
         {
           widgets: [
@@ -39,6 +43,16 @@ angular.module('BlurAdmin.buttonsPage', ['ngRoute'])
               {
                 title: 'Button Groups',
                 url: 'app/pages/buttons/widgets/buttonGroups.html'
+              }
+            ]
+          ]
+        },
+        {
+          widgets: [
+            [
+              {
+                title: 'Progress Buttons',
+                url: 'app/pages/buttons/widgets/progressButtons.html'
               }
             ]
           ]

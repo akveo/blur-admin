@@ -41,6 +41,7 @@
     "jquery.easy-pie-chart": "~2.1.6",
     "leaflet": "~0.7.5",
     "moment": "~2.10.6",
-    "slimScroll": "jquery-slimscroll#~1.3.6"
+    "slimScroll": "jquery-slimscroll#~1.3.6",
+    "angular-progress-button-styles": "~0.1.0"
   }
 }
