@@ -49,8 +49,9 @@ $panel-title-height: 35px;
 }
 
 .panel-body {
+  padding: 0;
+}
+.panel-content {
   padding: 15px 22px;
-  .panel-content {
-    height: 100%;
-  }
+  height: 100%;
 }
