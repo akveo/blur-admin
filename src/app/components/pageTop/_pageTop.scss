@@ -30,7 +30,7 @@ a.al-logo {
 
 .user-profile {
   float: right;
-  min-width: 190px;
+  min-width: 230px;
   margin-top: 10px;
 }
 
@@ -83,6 +83,26 @@ a.collapse-menu-link {
     text-decoration: none;
     color: $warning;
   }
+}
+
+.al-skin-dropdown {
+  float: right;
+  margin-top: 14px;
+  margin-right: 26px;
+
+  .tpl-skin-panel {
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+.icon-palette {
+  display: inline-block;
+  width: 14px;
+  height: 13px;
+  background: url(../img/palette.png);
+  background-size: cover;
 }
 
 .search {
@@ -140,5 +160,9 @@ a.collapse-menu-link {
   }
   a.collapse-menu-link {
     margin-left: 10px;
+  }
+
+  .al-skin-dropdown {
+    display: none;
   }
 }
