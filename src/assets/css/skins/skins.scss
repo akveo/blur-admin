@@ -1,3 +1,32 @@
+@mixin overrideColors($color) {
+  color: $color;
+
+  p,.pie-charts,.panel-heading>.dropdown .dropdown-toggle, .panel-title, .panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a,.traffic-text span {
+    color: $color;
+  }
+  .traffic-text {
+    color: $warning;
+  }
+  .feed-message .message-time, .text-muted {
+    color: darken($color, 20);
+  }
+}
+
+@mixin overridePanelBg($color, $borderColor, $dropdownColor) {
+  .panel, .panel:hover {
+    border-color: $borderColor;
+    background-color: $color;
+  }
+
+  .progress {
+    background: $color;
+  }
+
+  .dropdown-menu {
+    background-color: $dropdownColor;
+  }
+}
+
 @import '02_transparent';
 @import '03_blue';
 @import '04_peachy';

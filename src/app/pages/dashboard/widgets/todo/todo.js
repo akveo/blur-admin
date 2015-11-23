@@ -59,6 +59,21 @@ blurAdminApp.directive('blurTodo', function () {
           edit: false,
           markId: 4
         },
+        {
+          text: 'Get in touch with akveo team',
+          edit: false,
+          markId: 1
+        },
+        {
+          text: 'Write email to contact@akveo.com',
+          edit: false,
+          markId: 3
+        },
+        {
+          text: 'Have fun with blur admin',
+          edit: false,
+          markId: 2
+        },
       ];
 
       $scope.getMarkColor = function (id) {

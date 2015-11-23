@@ -19,13 +19,18 @@ $panel-title-height: 35px;
   &.medium-panel {
     height: $medium-panel-height;
   }
+  &.xmedium-panel {
+    height: $extra-medium-panel-height;
+  }
   &.large-panel {
     height: $large-panel-height;
   }
   &.with-scroll {
     .panel-body {
-      overflow-y: auto;
       height: calc(100% - #{$panel-title-height});
+      .panel-content {
+        overflow-y: auto;
+      }
     }
   }
 }
@@ -45,4 +50,7 @@ $panel-title-height: 35px;
 
 .panel-body {
   padding: 15px 22px;
+  .panel-content {
+    height: 100%;
+  }
 }

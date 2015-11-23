@@ -40,6 +40,7 @@ blurAdminApp.directive('trafficChart', function () {
 
       var ctx = document.getElementById('chart-area').getContext('2d');
       window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
+        segmentShowStroke: false,
         responsive: true,
         legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend clearfix">' +
         '<% for (var i=0; i<segments.length; i++){%>' +

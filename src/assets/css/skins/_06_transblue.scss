@@ -5,8 +5,6 @@ body.badmin-transblue {
     background-color: rgba(0,0,0,.5);
   }
 
-  .panel, .panel:hover {
-    border-color: rgba(80, 80, 80, 0.5);
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+  @include overrideColors(#fff);
+  @include overridePanelBg(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
 }
