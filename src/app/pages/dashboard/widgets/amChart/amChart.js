@@ -16,7 +16,7 @@ blurAdminApp.directive('amChart', function () {
         { date: new Date(2013, 5), value: 31000},
         { date: new Date(2013, 6), value: 40000},
         { date: new Date(2013, 7), value: 37000},
-        { date: new Date(2013, 8), value: 20000},
+        { date: new Date(2013, 8), value: 18000},
         { date: new Date(2013, 9), value: 5000},
         { date: new Date(2013, 10), value: 40000},
         { date: new Date(2013, 11), value: 20000},
@@ -51,8 +51,8 @@ blurAdminApp.directive('amChart', function () {
         graphs: [
           {
             id: 'g1',
-            bullet: 'round',
-            bulletSize: 8,
+            bullet: 'none',
+            //bulletSize: 8,
             useLineColorForBulletBorder: true,
             lineColor: colorPrimary,
             lineThickness: 1,
