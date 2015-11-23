@@ -4,12 +4,12 @@
 }
 
 .channels-info {
-  width: 100%;
-  float: left;
-  overflow: hidden;
-  margin-top: -11px;
-  & > div {
-    padding: 0 0 0 540px;
+  display: inline-block;
+  width: calc(100% - 500px);
+}
+.small-container {
+  .channels-info {
+    display: none;
   }
 }
 
@@ -22,36 +22,44 @@
 
 .traffic-chart {
   width: 500px;
-  margin-left: -100%;
   position: relative;
   min-height: 300px;
   float: left;
-  .canvas-holder {
-    width: 300px;
-    height: 300px;
+}
+
+.traffic-legend {
+  display: inline-block;
+  padding: 70px 0 0 10px;
+  width: 160px;
+}
+
+ul.doughnut-legend {
+  li {
+    list-style: none;
+    font-size: 12px;
+    margin-bottom: 12px;
+    line-height: 16px;
     position: relative;
-  }
-  ul.doughnut-legend {
-    padding: 0 0 0 350px;
-    margin: -250px 0 0 0;
-    li {
-      list-style: none;
-      font-size: 12px;
-      margin-bottom: 12px;
-      line-height: 16px;
-      position: relative;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      span {
-        float: left;
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        margin-right: 10px;
-      }
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 120px;
+    span {
+      float: left;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
     }
   }
+}
+
+.canvas-holder {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  float: left;
 }
 
 .traffic-text {
@@ -83,28 +91,7 @@
   margin-bottom: 0;
 }
 
-@mixin doughnut-center() {
-  .traffic-chart {
-    ul.doughnut-legend {
-      padding: 0;
-      margin: 40px 0 0 0;
-      li {
-        width: 50%;
-        float: left;
-      }
-    }
-    .canvas-holder {
-      margin: 0 auto;
-    }
-  }
-}
-
-@media (max-width: $resXXL) and (min-width: $resL), (max-width: $resS) {
-  @include doughnut-center();
-}
-
-@media (max-width: 380px) {
-  $size: 250px;
+@mixin doughnut-size($size) {
   .traffic-chart .canvas-holder {
     width: $size;
     height: $size;
@@ -115,13 +102,26 @@
   }
 }
 
-@media (max-width: 1800px) {
-  .channels-info {
-    display: none;
-  }
-  .traffic-chart {
-    width: auto;
-    margin: 0 0 20px 0;
+@media (max-width: $resS) {
+  @include doughnut-size(250px);
+  .canvas-holder {
     float: none;
   }
+  .traffic-legend {
+    display: block;
+    padding: 10px 0 0;
+    width: 300px;
+  }
+  ul.doughnut-legend {
+    padding-left: 20px;
+    li {
+      &:nth-child(2n-1) {
+        float: left;
+      }
+    }
+  }
+}
+
+@media (max-width: $resMin) {
+  @include doughnut-size(200px);
 }

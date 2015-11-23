@@ -1,38 +1,5 @@
-<div class="channels-block">
-
-  <div class="channels-info">
-    <div>
-        <div class="channels-info-item">
-          <p>Direct Traffic</p>
-          <span class="text-muted channel-change">70% growth in last mont</span>
-          <div class="progress progress-sm channel-progress">
-            <div class="progress-bar progress-bar-success" role="progressbar"
-                 aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-            </div>
-          </div>
-        </div>
-
-        <div class="channels-info-item">
-          <p>Search engines</p>
-          <span class="text-muted channel-change">42% growth in last month</span>
-          <div class="progress progress-sm channel-progress">
-            <div class="progress-bar progress-bar-danger" role="progressbar"
-                 aria-valuenow="22" aria-valuemin="0" aria-valuemax="100" style="width: 42%">
-            </div>
-          </div>
-        </div>
-
-        <div class="channels-info-item">
-          <p>Ad Campaigns</p>
-          <span class="text-muted channel-change">87% growth in last mont</span>
-          <div class="progress progress-sm channel-progress">
-            <div class="progress-bar progress-bar-primary" role="progressbar"
-                 aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%">
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
+<div class="channels-block" track-width="smallContainerWidth" min-width="640"
+     ng-class="{'small-container': smallContainerWidth}">
 
   <div class="traffic-chart" id="trafficChart">
     <div class="canvas-holder">
@@ -43,6 +10,40 @@
       </div>
     </div>
     <div class="traffic-legend"></div>
+  </div>
+
+  <div class="channels-info">
+    <div>
+      <div class="channels-info-item">
+        <p>Direct Traffic</p>
+        <span class="text-muted channel-change">70% growth in last mont</span>
+        <div class="progress progress-sm channel-progress">
+          <div class="progress-bar progress-bar-success" role="progressbar"
+               aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+          </div>
+        </div>
+      </div>
+
+      <div class="channels-info-item">
+        <p>Search engines</p>
+        <span class="text-muted channel-change">42% growth in last month</span>
+        <div class="progress progress-sm channel-progress">
+          <div class="progress-bar progress-bar-danger" role="progressbar"
+               aria-valuenow="22" aria-valuemin="0" aria-valuemax="100" style="width: 42%">
+          </div>
+        </div>
+      </div>
+
+      <div class="channels-info-item">
+        <p>Ad Campaigns</p>
+        <span class="text-muted channel-change">87% growth in last mont</span>
+        <div class="progress progress-sm channel-progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar"
+               aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>
