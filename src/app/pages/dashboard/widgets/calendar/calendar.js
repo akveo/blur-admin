@@ -4,7 +4,8 @@ blurAdminApp.directive('blurCalendar', function () {
   return {
     restrict: 'E',
     controller: ['$scope', function ($scope) {
-      $('#calendar').fullCalendar({
+      var $element = $('#calendar').fullCalendar({
+        //height: 335,
         header: {
           left: 'prev,next today',
           center: 'title',
