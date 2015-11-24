@@ -108,3 +108,71 @@ $hover: 24;
 .btn .caret {
   margin-left: 2px;
 }
+
+@mixin progressButtonColor($btnColor) {
+  .content {
+    &:after, &:before {
+      color: darken($btnColor, 40);
+    }
+  }
+
+  &.progress-button-style-move-up, &.progress-button-style-slide-down {
+    .content {
+      background-color: darken($btnColor, 10);
+    }
+  }
+
+  &.progress-button-style-lateral-lines .progress-inner {
+    border-color: darken($btnColor, 10);
+    background: 0 0;
+  }
+
+  .progress {
+    background-color: darken($btnColor, 10);
+    box-shadow: 0 1px 0 darken($btnColor, 10);
+  }
+
+  .progress-inner {
+    background-color: darken($btnColor, 20);
+  }
+  &.progress-button-perspective  {
+    background: none;
+    .content {
+      background-color: $btnColor;
+    }
+  }
+}
+
+.progress-button {
+  .progress {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  &:hover {
+    transform: none;
+  }
+
+  &.btn-primary {
+    @include progressButtonColor($primary);
+  }
+
+  &.btn-default {
+    @include progressButtonColor($default);
+  }
+
+  &.btn-success {
+    @include progressButtonColor($success);
+  }
+
+  &.btn-info {
+    @include progressButtonColor($info);
+  }
+
+  &.btn-warning {
+    @include progressButtonColor($warning);
+  }
+
+  &.btn-danger {
+    @include progressButtonColor($danger);
+  }
+}
