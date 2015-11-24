@@ -1,10 +1,6 @@
 body.badmin-transblue {
   background-image: url(../img/transblue-bg.jpg);
 
-  .page-top {
-    background-color: rgba(0,0,0,.5);
-  }
-
   @include overrideColors(#fff);
   @include overridePanelBg(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
 }
