@@ -1,0 +1,14 @@
+<h5 class="font50up">
+    {{geoData.geoplugin_countryName | uppercase}} - {{geoData.geoplugin_city}} <span class="rightHeading">{{ date | date : 'EEEE h:mm'}}</span>
+</h5>
+<table class="font50up">
+    <tr>
+        <td><i class="font-x3 {{weatherIcons[weatherData.weather[0].icon]}}"></i></td>
+        <td><span class="weather-info">{{weatherData.weather[0].main}} - {{weatherData.weather[0].description}}</span></td>
+    </tr>
+    <tr>
+        <td class="center"><i class="font-x2 ion-thermometer"></i></td>
+        <td><span class="weather-info">{{weatherData.main.temp}} °C | <a href>°F</a></span></td>
+    </tr>
+</table>
+
