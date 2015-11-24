@@ -23,7 +23,11 @@ blurAdminApp.directive('contentTop', ['$location', function ($location) {
         '/tables': 'Tables',
         '/typography': 'Typography',
         '/form-layouts': 'Form Layouts',
-        '/form-inputs': 'Form Inputs'
+        '/form-inputs': 'Form Inputs',
+        '/maps/gmap': 'Google Map',
+        '/maps/leaflet': 'Leaflet Map',
+        '/maps/line': 'Line Map',
+        '/maps/bubble': 'Bubble Map'
       };
 
       $scope.$watch(function () {
