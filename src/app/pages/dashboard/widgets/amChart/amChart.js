@@ -40,11 +40,12 @@ blurAdminApp.directive('amChart', function () {
       var chart = AmCharts.makeChart('amchart', {
         type: 'serial',
         theme: 'blur',
-        marginTop: 0,
+        marginTop: 15,
         marginRight: 15,
         dataProvider: chartData,
         valueAxes: [
           {
+            minVerticalGap: 50,
             gridAlpha: 0
           }
         ],
