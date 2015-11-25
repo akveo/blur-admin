@@ -92,6 +92,7 @@ ul.todo-list {
           margin-right: 20px;
           transition: margin-right 0.1s ease-out;
           transition-delay: 0.2s;
+          float: none;
         }
       }
       label.todo-checkbox>input:checked+span:before {
