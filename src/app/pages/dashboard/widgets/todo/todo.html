@@ -1,13 +1,13 @@
 <input type="text" value="" class="form-control task-todo" placeholder="Task to do" ng-keyup="addToDoItem($event)" ng-model="newTodoText"/>
 <ul class="todo-list" ui-sortable ng-model="todoList">
-  <li ng-repeat="item in todoList" ng-if="!item.deleted" ng-class="{checked: isChecked}" class="{{ getMarkColor(item.markId) }}">
-    <i class="mark" ng-click="changeColor(item)"></i>
+  <li ng-repeat="item in todoList" ng-if="!item.deleted" ng-init="activeItem=false"
+      ng-class="{checked: isChecked, active: activeItem}" class="{{ getMarkColor(item.markId) }}"
+      ng-mouseenter="activeItem=true" ng-mouseleave="activeItem=false">
+    <i class="mark"></i>
     <label class="todo-checkbox custom-checkbox custom-input-success">
       <input type="checkbox" ng-model="isChecked">
       <span class="cut-with-dots">{{ item.text }}</span>
     </label>
-
-    <!--<span class="todo-text cut-with-dots nowrap">{{ item.text }}</span>-->
     <i class="remove-todo ion-ios-close-empty" ng-click="item.deleted = true"></i>
   </li>
 </ul>
