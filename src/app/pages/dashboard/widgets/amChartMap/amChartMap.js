@@ -8,6 +8,7 @@ blurAdminApp.directive('amChartMap', function () {
       var map = AmCharts.makeChart('amChartMap', {
         type: 'map',
         theme: 'blur',
+        zoomControl: { zoomControlEnabled: false, panControlEnabled: false },
 
         dataProvider: {
           map: 'worldLow',

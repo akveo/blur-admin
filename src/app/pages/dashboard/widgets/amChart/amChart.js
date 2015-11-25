@@ -40,11 +40,12 @@ blurAdminApp.directive('amChart', function () {
       var chart = AmCharts.makeChart('amchart', {
         type: 'serial',
         theme: 'blur',
-        marginTop: 0,
+        marginTop: 15,
         marginRight: 15,
         dataProvider: chartData,
         valueAxes: [
           {
+            minVerticalGap: 50,
             gridAlpha: 0
           }
         ],
@@ -63,10 +64,10 @@ blurAdminApp.directive('amChart', function () {
             fillColorsField: 'lineColor'
           }
         ],
-        chartScrollbar: {
+/*        chartScrollbar: {
           graph: 'g1',
           gridAlpha: 0,
-          color: '#888888',
+          color: '#FF0000',
           scrollbarHeight: 55,
           backgroundAlpha: 0,
           selectedBackgroundAlpha: 0.1,
@@ -78,7 +79,7 @@ blurAdminApp.directive('amChart', function () {
           graphLineColor: '#c2c2c2',
           selectedGraphLineColor: '#888888',
           selectedGraphLineAlpha: 1
-        },
+        },*/
         chartCursor: {
           categoryBalloonDateFormat: 'MM YYYY',
           categoryBalloonColor: '#4285F4',
