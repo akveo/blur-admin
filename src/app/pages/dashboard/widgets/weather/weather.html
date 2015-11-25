@@ -1,14 +1,42 @@
-<h5 class="font50up">
-    {{geoData.geoplugin_countryName | uppercase}} - {{geoData.geoplugin_city}} <span class="rightHeading">{{ date | date : 'EEEE h:mm'}}</span>
-</h5>
-<table class="font50up">
-    <tr>
-        <td><i class="font-x3 {{weatherIcons[weatherData.weather[0].icon]}}"></i></td>
-        <td><span class="weather-info">{{weatherData.weather[0].main}} - {{weatherData.weather[0].description}}</span></td>
-    </tr>
-    <tr>
-        <td class="center"><i class="font-x2 ion-thermometer"></i></td>
-        <td><span class="weather-info">{{weatherData.main.temp}} °C | <a href>°F</a></span></td>
-    </tr>
-</table>
-
+<div class="weather-wrapper">
+    <div class="weather-main-info">
+        <h5 class="font-x1dot5">
+            {{geoData.geoplugin_city}} - {{geoData.geoplugin_countryName | uppercase}}<span class="rightHeading">{{ date | date : 'EEEE h:mm'}}</span>
+        </h5>
+        <table class="font-x1dot5">
+            <tr>
+                <td><i class="font-x3 {{weatherIcons[weather.days[weather.current].icon]}}"></i></td>
+                <td>
+                    <span class="weather-info">{{weather.days[weather.current].main}} - {{weather.days[weather.current].description}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="center"><i class="font-x2 ion-thermometer"></i></td>
+                <td>
+            <span class="weather-info" ng-switch on="units">
+                <span ng-switch-when="metric">{{weather.days[weather.current].temp}} °C | <a
+                        ng-click="switchUnits('imperial')" href>°F</a></span>
+                <span ng-switch-when="imperial">{{weather.days[weather.current].temp}} °F | <a
+                        ng-click="switchUnits('metric')" href>°C</a></span>
+            </span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="tempChart" class="temp-by-time"></div>
+    <div class="select-day">
+        <div class="day" ng-repeat="day in weather.days" ng-click="switchDay($index)">
+            <div>
+                <span class="font-x1dot25">{{day.temp}}</span>
+            </div>
+            <div>
+                <i class="weatherIcon font-x2 {{weatherIcons[day.icon]}}"></i></td>
+                <span>{{day.main}}</span>
+            </div>
+            <div>
+                <span>{{day.date | date : 'EEE'}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
