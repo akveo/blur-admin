@@ -25,6 +25,10 @@ $panel-title-height: 35px;
   &.large-panel {
     height: $large-panel-height;
   }
+  &.viewport100 {
+    height: calc(100vh - 212px);
+  }
+
   &.with-scroll {
     .panel-body {
       height: calc(100% - #{$panel-title-height});

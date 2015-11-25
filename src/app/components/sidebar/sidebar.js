@@ -63,7 +63,24 @@ blurAdminApp.directive('sidebar', function () {
         {
           title: 'Maps',
           icon: 'ion-ios-location-outline',
-          root: '#/maps'
+          subMenu: [
+            {
+              title: 'Google Maps',
+              root: '#/maps/gmap'
+            },
+            {
+              title: 'Leaflet',
+              root: '#/maps/leaflet'
+            },
+            {
+              title: 'Bubble Map',
+              root: '#/maps/bubble'
+            },
+            {
+              title: 'Line Map',
+              root: '#/maps/line'
+            }
+          ]
         },
         {
           title: 'User Profile',
