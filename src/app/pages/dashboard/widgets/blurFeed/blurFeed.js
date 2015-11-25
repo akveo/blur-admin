@@ -9,7 +9,7 @@ blurAdminApp.directive('blurFeed', function () {
           type: 'text-message',
           author: 'Kostya',
           header: 'posted new message',
-          text: 'Guys, check this out: \nA robber was robbing a house when he heard a voice. "Jesus is watching you!" "who is there?" The robber said But no sound was heard. So he kept going and he heard it two more times when he spotted a parrot. "What is your name," the robber asked. "Cocodora" said the parrot. "Now, what kind of idiot would name a bird Cocodora" said the robber. "The same idiot who named the rotweiler Jesus", said the parrot.',
+          text: 'Guys, check this out: \nA police officer found a perfect hiding place for watching for speeding motorists. One day, the officer was amazed when everyone was under the speed limit, so he investigated and found the problem. A 10 years old boy was standing on the side of the road with a huge hand painted sign which said "Radar Trap Ahead." A little more investigative work led the officer to the boy\'s accomplice: another boy about 100 yards beyond the radar trap with a sign reading "TIPS" and a bucket at his feet full of change.',
           time: 'Today 11:55 pm',
           ago: '25 minutes ago',
         }, {
