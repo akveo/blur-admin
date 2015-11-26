@@ -3,7 +3,7 @@
 blurAdminApp.directive('amChart', function () {
   return {
     restrict: 'E',
-    controller: ['$scope', function ($scope) {
+    controller: ['$scope', 'tplSkinManager', function ($scope, tplSkinManager) {
       var chartData = [
         { date: new Date(2012, 11), value: 0, value0: 0 },
         { date: new Date(2013, 0), value: 15000, value0: 19000},
@@ -37,16 +37,36 @@ blurAdminApp.directive('amChart', function () {
         { date: new Date(2015, 1), value: 49800, value0: 13000}
       ];
 
+      var chartColorProfile = tplSkinManager.getChartColorProfile();
+
+      $scope.$on('tplSkinChanged', function() {
+        chartColorProfile = tplSkinManager.getChartColorProfile();
+        chart.categoryAxis.color = chartColorProfile.fontColors;
+        chart.categoryAxis.axisColor = chartColorProfile.axisColors;
+        chart.valueAxes[0].color = chartColorProfile.fontColors;
+        chart.valueAxes[0].axisColor = chartColorProfile.axisColors;
+        chart.drawChart();
+      });
+
       var chart = AmCharts.makeChart('amchart', {
         type: 'serial',
         theme: 'blur',
         marginTop: 15,
         marginRight: 15,
         dataProvider: chartData,
+        categoryField: 'date',
+        categoryAxis: {
+          parseDates: true,
+          gridAlpha: 0,
+          color: chartColorProfile.fontColors,
+          axisColor: chartColorProfile.axisColors
+        },
         valueAxes: [
           {
             minVerticalGap: 50,
-            gridAlpha: 0
+            gridAlpha: 0,
+            color: chartColorProfile.fontColors,
+            axisColor: chartColorProfile.axisColors
           }
         ],
         graphs: [
@@ -75,22 +95,6 @@ blurAdminApp.directive('amChart', function () {
             fillColorsField: 'lineColor'
           }
         ],
-/*        chartScrollbar: {
-          graph: 'g1',
-          gridAlpha: 0,
-          color: '#FF0000',
-          scrollbarHeight: 55,
-          backgroundAlpha: 0,
-          selectedBackgroundAlpha: 0.1,
-          selectedBackgroundColor: '#ffffff',
-          graphFillAlpha: 0,
-          autoGridCount: true,
-          selectedGraphFillAlpha: 0,
-          graphLineAlpha: 0.2,
-          graphLineColor: '#c2c2c2',
-          selectedGraphLineColor: '#888888',
-          selectedGraphLineAlpha: 1
-        },*/
         chartCursor: {
           categoryBalloonDateFormat: 'MM YYYY',
           categoryBalloonColor: '#4285F4',
@@ -101,11 +105,6 @@ blurAdminApp.directive('amChart', function () {
           valueLineAlpha: 0.5
         },
         dataDateFormat: 'MM YYYY',
-        categoryField: 'date',
-        categoryAxis: {
-          parseDates: true,
-          gridAlpha: 0
-        },
         export: {
           enabled: true
         },

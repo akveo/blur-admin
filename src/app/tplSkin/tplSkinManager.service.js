@@ -8,17 +8,22 @@
   blurAdminApp
       .service('tplSkinManager', tplSkinManager);
 
-  tplSkinManager.$inject = ['$document', 'tplSkinClassPrefix'];
-  function tplSkinManager($document, tplSkinClassPrefix) {
+  tplSkinManager.$inject = ['$rootScope', '$document', 'tplSkinClassPrefix', 'tplSkinChartColors', 'tplSkinEnum'];
+  function tplSkinManager($rootScope, $document, tplSkinClassPrefix, tplSkinChartColors, tplSkinEnum) {
 
-    var activeSkin = null;
+    var activeSkin = tplSkinEnum[0];
 
     this.setActiveSkin = function(skin) {
       activeSkin = skin;
       if (activeSkin) {
         _removeSkinBodyClassIfPresent();
         _addSkinBodyClass(activeSkin);
+        $rootScope.$broadcast('tplSkinChanged');
       }
+    };
+
+    this.getChartColorProfile = function() {
+      return tplSkinChartColors[activeSkin.chartColorProfile];
     };
 
     function _removeSkinBodyClassIfPresent() {
