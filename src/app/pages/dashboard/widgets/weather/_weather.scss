@@ -3,11 +3,22 @@
   height: 100%;
 
   .weather-main-info {
-    height: 140px;
+    min-height: 140px;
+
+    div i {
+      display: inline-block;
+      width: 48px;
+      text-align: center;
+    }
+
+    .city-date {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 
   .temp-by-time {
-    min-height: 120px;
     height: calc(100% - 210px);
   }
 
@@ -16,14 +27,19 @@
     table-layout: fixed;
     width: 100%;
     height: 70px;
+
     .day {
       display: table-cell;
-      padding: 5px;
       line-height: 1;
       text-align: center;
       cursor: pointer;
+
       i.weatherIcon {
-        transition: all 0.5s ease;
+        transition: color 0.5s ease;
+      }
+
+      .select-day-info {
+        vertical-align: super;
       }
     }
 
@@ -39,12 +55,9 @@
     float: right;
   }
 
-  .center {
-    text-align: center;
-  }
-
   .weather-info {
-    padding-left: 15px;
+    display: inline-block;
+    vertical-align: super;
   }
 
   .font-x1dot25 {
@@ -63,9 +76,6 @@
     font-size: 3em;
   }
 
-  .font-x4 {
-    font-size: 4em;
-  }
 }
 
 
