@@ -1,4 +1,3 @@
-
 @media screen and (min-width: 1200px) {
   .row.shift-up {
     > div {
@@ -7,7 +6,7 @@
   }
 }
 
-@media screen and (max-width: $resXXL) {
+@media screen and (max-width: 1200px) {
  .panel.feed-panel {
    height: 824px;
  }
