@@ -15,21 +15,15 @@
       chartColorProfile: 'whitePanel'
     },
     {
-      name: 'Transparent',
-      bodyClass: SKIN_CLASS_PREFIX + '-transparent',
-      thumbnailUrl: 'img/02_transparent.jpg',
-      chartColorProfile: 'transparent'
+      name: 'Peachy',
+      bodyClass: SKIN_CLASS_PREFIX + '-peachy',
+      thumbnailUrl: 'img/04_peachy.jpg',
+      chartColorProfile: 'whitePanel'
     },
     {
       name: 'Blue',
       bodyClass: SKIN_CLASS_PREFIX + '-blue',
       thumbnailUrl: 'img/03_blue.jpg',
-      chartColorProfile: 'whitePanel'
-    },
-    {
-      name: 'Peachy',
-      bodyClass: SKIN_CLASS_PREFIX + '-peachy',
-      thumbnailUrl: 'img/04_peachy.jpg',
       chartColorProfile: 'whitePanel'
     },
     {
@@ -39,16 +33,16 @@
       chartColorProfile: 'whitePanel'
     },
     {
-      name: 'Transblue',
+      name: 'Transblue (beta)',
       bodyClass: SKIN_CLASS_PREFIX + '-transblue',
       thumbnailUrl: 'img/06_transblue.jpg',
       chartColorProfile: 'transparent'
     },
     {
-      name: 'Grey',
-      bodyClass: SKIN_CLASS_PREFIX + '-grey',
-      thumbnailUrl: 'img/07_grey.jpg',
-      chartColorProfile: 'whitePanel'
+      name: 'Transparent (beta)',
+      bodyClass: SKIN_CLASS_PREFIX + '-transparent',
+      thumbnailUrl: 'img/02_transparent.jpg',
+      chartColorProfile: 'transparent'
     }
   ];
 
