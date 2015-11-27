@@ -55,7 +55,7 @@
   var SKIN_CHART_COLORS = {
     whitePanel: {
       fontColors: undefined,
-      axisColors: '#000000'
+      axisColors: '#7b7b7b'
     },
     transparent: {
       fontColors: '#FFFFFF',
