@@ -3,7 +3,7 @@
 blurAdminApp.directive('amChart', function () {
   return {
     restrict: 'E',
-    controller: ['$scope', 'tplSkinManager', function ($scope, tplSkinManager) {
+    controller: ['$scope', 'tplSkinManager', 'tplSkinChartWatcherHelper', function ($scope, tplSkinManager, tplSkinChartWatcherHelper) {
       var chartData = [
         { date: new Date(2012, 11), value: 0, value0: 0 },
         { date: new Date(2013, 0), value: 15000, value0: 19000},
@@ -38,15 +38,6 @@ blurAdminApp.directive('amChart', function () {
       ];
 
       var chartColorProfile = tplSkinManager.getChartColorProfile();
-
-      $scope.$on('tplSkinChanged', function() {
-        chartColorProfile = tplSkinManager.getChartColorProfile();
-        chart.categoryAxis.color = chartColorProfile.fontColors;
-        chart.categoryAxis.axisColor = chartColorProfile.axisColors;
-        chart.valueAxes[0].color = chartColorProfile.fontColors;
-        chart.valueAxes[0].axisColor = chartColorProfile.axisColors;
-        chart.drawChart();
-      });
 
       var chart = AmCharts.makeChart('amchart', {
         type: 'serial',
@@ -116,6 +107,8 @@ blurAdminApp.directive('amChart', function () {
         zoomOutText: '',
         pathToImages: 'img/'
       });
+
+      tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, chart);
 
       function zoomChart() {
         chart.zoomToDates(new Date(2013, 3), new Date(2014, 0));

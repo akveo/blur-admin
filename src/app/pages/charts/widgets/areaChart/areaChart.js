@@ -1,6 +1,6 @@
 'use strict';
 
-blurAdminApp.controller('areaChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
+blurAdminApp.controller('areaChartCtrl', ['$scope', '$timeout', '$element', 'tplSkinChartWatcherHelper', function($scope, $timeout, $element, tplSkinChartWatcherHelper) {
   var id = $element[0].getAttribute('id');
   var areaChart = AmCharts.makeChart(id, {
     type: 'serial',
@@ -124,6 +124,8 @@ blurAdminApp.controller('areaChartCtrl', ['$scope', '$timeout', '$element', func
     },
     pathToImages: 'img/'
   });
+
+  tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, areaChart);
 
   areaChart.addListener('dataUpdated', zoomAreaChart);
 

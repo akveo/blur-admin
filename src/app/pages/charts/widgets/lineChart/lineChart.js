@@ -1,6 +1,6 @@
 'use strict';
 
-blurAdminApp.controller('lineChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
+blurAdminApp.controller('lineChartCtrl', ['$scope', '$timeout', '$element', 'tplSkinChartWatcherHelper', function($scope, $timeout, $element, tplSkinChartWatcherHelper) {
   var id = $element[0].getAttribute('id');
   var lineChart = AmCharts.makeChart(id, {
     type: 'serial',
@@ -130,6 +130,8 @@ blurAdminApp.controller('lineChartCtrl', ['$scope', '$timeout', '$element', func
     creditsPosition: 'bottom-right',
     pathToImages: 'img/'
   });
+
+  tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, lineChart);
 
   lineChart.addListener('rendered', zoomChart);
   if (lineChart.zoomChart) {

@@ -1,6 +1,6 @@
 'use strict';
 
-blurAdminApp.controller('funnelChartCtrl', ['$scope', '$timeout', '$element', function($scope, $timeout, $element) {
+blurAdminApp.controller('funnelChartCtrl', ['$scope', '$timeout', '$element', 'tplSkinChartWatcherHelper', function($scope, $timeout, $element, tplSkinChartWatcherHelper) {
   var id = $element[0].getAttribute('id');
   var funnelChart = AmCharts.makeChart(id, {
     type: 'funnel',
@@ -53,4 +53,6 @@ blurAdminApp.controller('funnelChartCtrl', ['$scope', '$timeout', '$element', fu
     creditsPosition: 'bottom-left',
     pathToImages: 'img/'
   });
+
+  tplSkinChartWatcherHelper.watchFunnelChanges($scope, funnelChart);
 }]);

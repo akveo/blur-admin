@@ -1,7 +1,7 @@
 @mixin overrideColors($color) {
   color: $color;
 
-  p,.pie-charts,.panel-heading>.dropdown .dropdown-toggle, .panel-title, .panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a,.traffic-text span {
+  p,.pie-charts,.panel-heading>.dropdown .dropdown-toggle, .panel-title, .panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a,.traffic-text span, .form-group label {
     color: $color;
   }
   .traffic-text {
