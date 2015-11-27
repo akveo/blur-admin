@@ -72,9 +72,10 @@ ul.doughnut-legend {
   line-height: 24px;
   text-align: center;
   font-size: 18px;
-  color: $danger;
+  //color: $danger;
   span {
     display: block;
+    font-size: 12px;
     color: $default-text;
   }
 }
