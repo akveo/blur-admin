@@ -1,0 +1,45 @@
+<div class="weather-wrapper">
+  <div class="weather-main-info">
+    <h5 class="city-date font-x1dot5">
+      <div>
+        {{geoData.geoplugin_city}} - {{geoData.geoplugin_countryName | uppercase}}
+      </div>
+      <div>
+        {{ weather.days[weather.current].date | date : 'EEEE h:mm'}}
+      </div>
+    </h5>
+    <div class="weather-description font-x1dot5">
+      <i class="font-x3 {{weatherIcons[weather.days[weather.current].icon]}}"></i>
+
+      <div class="weather-info">{{weather.days[weather.current].main}} -
+        {{weather.days[weather.current].description}}
+      </div>
+    </div>
+    <div class="weather-temp font-x1dot5">
+      <i class="font-x2 ion-thermometer"></i>
+
+      <div class="weather-info" ng-switch on="units">
+                <span ng-switch-when="metric">{{weather.days[weather.current].temp}} °C | <a
+                    ng-click="switchUnits('imperial')" href>°F</a></span>
+                <span ng-switch-when="imperial">{{weather.days[weather.current].temp}} °F | <a
+                    ng-click="switchUnits('metric')" href>°C</a></span>
+      </div>
+    </div>
+  </div>
+  <div id="tempChart" class="temp-by-time"></div>
+  <div class="select-day">
+    <div class="day" ng-repeat="day in weather.days" ng-click="switchDay($index)">
+      <div>
+        <span class="font-x1dot25">{{day.temp}}</span>
+      </div>
+      <div>
+        <i class="weatherIcon font-x2 {{weatherIcons[day.icon]}}"></i></td>
+        <span class="select-day-info">{{day.main}}</span>
+      </div>
+      <div>
+        <span>{{day.date | date : 'EEE'}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
