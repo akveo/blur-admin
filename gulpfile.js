@@ -11,6 +11,9 @@ var uglify = require('gulp-uglify');
 var eventStream = require('event-stream');
 var templateCache = require('gulp-angular-templatecache');
 var minifyHTML = require('gulp-minify-html');
+var zip = require('gulp-zip');
+var prompt = require('gulp-prompt');
+var rename = require('gulp-rename');
 
 var bootstrapCssSrc = 'bower_components/bootstrap/dist/css/bootstrap.min.css';
 
@@ -166,5 +169,24 @@ gulp.task('watch', function () {
 });
 
 gulp.task('init', ['minify-css', 'imagemin', 'js-lib', 'js', 'font', 'templateCache', 'html']);
+
+gulp.task('marketplace-release', ['init'], function() {
+  return gulp.src('')
+      .pipe(prompt.prompt({
+        type: 'input',
+        name: 'version',
+        message: 'Please enter release version (x.x.x)'
+      }, function(res){
+        var nameAndVersion = 'blur-admin-' + res.version;
+        return gulp
+            .src(['src/**', 'release/**', 'bower.json', 'package.json', 'README.md', '.gitignore'], { base : "." })
+            .pipe(rename(function (path) {
+              path.dirname = nameAndVersion + '/' + path.dirname;
+            }))
+            .pipe(zip(nameAndVersion + '.zip'))
+            .pipe(gulp.dest('.'));
+      }));
+
+});
 
 gulp.task('default', ['init']);

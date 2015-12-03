@@ -2,6 +2,7 @@
   "name": "blur_admin",
   "version": "0.0.1",
   "devDependencies": {
+    "bower": "^1.5.2",
     "event-stream": "^3.3.1",
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.7.0",
@@ -11,10 +12,12 @@
     "gulp-imagemin": "^2.3.0",
     "gulp-minify-css": "^1.2.1",
     "gulp-minify-html": "^1.0.4",
+    "gulp-prompt": "^0.1.2",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
     "gulp-strip-debug": "^1.0.2",
     "gulp-uglify": "^1.4.0",
-    "bower": "^1.5.2"
+    "gulp-zip": "^3.0.2"
   },
   "scripts": {
     "postinstall": "bower install"
