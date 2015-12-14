@@ -61,6 +61,10 @@ blurAdminApp.directive('sidebar', function () {
             {
               title: 'Grid',
               root: '#/grid'
+            },
+            {
+              title: 'Alerts',
+              root: '#/alerts'
             }
           ]
         },
