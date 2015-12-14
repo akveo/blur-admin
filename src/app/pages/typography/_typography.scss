@@ -53,225 +53,116 @@ h5 {
 .typography-document-samples {
 
 
-  .typography-document{
-  }
-
   p {
     margin: 0;
   }
 
   .typography-widget {
+    height: 100%;
 
-    div.panel{
+    .panel {
       height: 620px;
     }
-    height: 100%;
     .panel-body {
       padding: 15px 30px 0 30px;
     }
 
-    .typography-widget-header {
-      text-align: center;
-      margin: 0;
-      width: 100%;
+  }
+
+}
+
+.typography-widget-header {
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  font-weight: 100;
+}
+
+.heading-widget {
+  text-align: center;
+
+  h1, h2, h3, h4, h5, h6 {
+    width: 100%;
+    font-weight: 100;
+  }
+
+  p {
+    line-height: 16px;
+    font-weight: 100;
+  }
+}
+
+.more-text-widget {
+  text-align: center;
+  font-size: 14px;
+
+  p {
+    line-height: 17px;
+  }
+
+  .gray {
+    color: #767676;
+  }
+
+  .black {
+    color: #585858;
+  }
+
+  .light-text {
+    font-weight: 100;
+  }
+
+  .regular-text {
+    font-weight: 600;
+  }
+
+  .upper-text {
+    text-transform: uppercase;
+  }
+
+  .bold-text {
+    font-weight: 900;
+  }
+
+  .small-text {
+    padding: 5px 0 0 0;
+    p {
+      font-size: 9px;
       font-weight: 100;
+      line-height: 10px;
     }
+  }
+}
 
-    .heading-widget {
-      text-align: center;
+.color-widget {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  p {
+    line-height: 17px;
+  }
 
-      h1, h2, h3, h4, h5, h6 {
-        width: 100%;
-        font-weight: 100;
-      }
+  .section-block {
+    margin: 14px 0;
+  }
 
-      p {
-        line-height: 16px;
-        font-weight: 100;
-      }
+  .red-text p {
+    color: $dribble-color;
+  }
+
+  .blue-text p {
+    color: $primary;
+  }
+
+  .links {
+    h3 {
+      margin-bottom: 10px;
     }
-
-    .more-text-widget {
-      text-align: center;
-      font-size: 14px;
-
-      p {
-        line-height: 17px;
-      }
-
-      .gray {
-        color: #767676;
-      }
-
-      .black {
-        color: #585858;
-      }
-
-      .light-text {
-        font-weight: 100;
-      }
-
-      .regular-text {
-        font-weight: 600;
-      }
-
-      .upper-text {
-        text-transform: uppercase;
-      }
-
-      .bold-text {
-        font-weight: 900;
-      }
-
-      .small-text {
-        padding: 5px 0 24px 0;
-        p {
-          font-size: 9px;
-          font-weight: 100;
-          line-height: 10px;
-        }
-      }
-    }
-
-
-
-    .color-widget {
-      text-align: center;
-      font-size: 14px;
-      font-weight: 300;
-      p {
-        line-height: 17px;
-      }
-
-      .section-block{
-        margin: 14px 0;
-      }
-
-      .red-text p{
-        color: $dribble-color;
-      }
-
-      .blue-text p{
-        color: $primary;
-      }
-
-      .links {
-        h3 {
-          margin-bottom: 10px;
-        }
-        p {
-          margin-bottom: 0;
-          &.hovered {
-            a {
-              color: $danger;
-            }
-          }
-        }
-      }
-
-    }
-
-    .lists-widget{
-
-
-      font-weight: 100;
-      .list-header{
-        width: 100%;
-        font-weight: 100;
-        text-align: center;
-      }
-
-      .accent {
-        margin-top: 44px;
-        color: $dribble-color;
-        line-height: 14px;
-        font-size: 14px;
-        margin-bottom: 36px;
-        padding-left: 11px;
-        border-left: 4px solid $dribble-color;
-        margin-left: 13px;
-      }
-
-      ul.blur, ol.blur {
-        padding-left: 13px;
-        margin-bottom: 19px;
-        list-style: none;
-        padding-top: 1px;
-        li {
-          margin-top: 5px;
-          color: $default-text;
-          font-size: 14px;
-          ul, ol {
-            padding-left: 20px;
-            margin-bottom: 0;
-            list-style: none;
-          }
-        }
-      }
-
-      ul.blur {
-        li {
-          &:before {
-            content: "• ";
-            color: $dribble-color;
-            width: 10px;
-            display: inline-block;
-          }
-        }
-      }
-
-      ol.blur {
-        counter-reset: section;
-        li {
-          color: $dribble-color;
-          padding-left: 0;
-          line-height: 14px;
-          position: relative;
-          span {
-            color: $default-text;
-            display: block;
-          }
-          ol {
-            padding-left: 0;
-            margin-left: 12px;
-          }
-          &:before {
-            content: counters(section, ".") ".";
-            counter-increment: section;
-            width: 19px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-          }
-        }
-        & > li {
-          span {
-            padding-left: 14px;
-          }
-        }
-        ol {
-          counter-reset: section;
-          & > li {
-            &:before {
-              width: 30px;
-            }
-            span {
-              padding-left: 27px
-            }
-          }
-          ol {
-            & > li {
-              &:before {
-                width: 40px;
-              }
-              span {
-                padding-left: 40px;
-              }
-            }
-          }
+    p {
+      margin-bottom: 0;
+      &.hovered {
+        a {
+          color: $danger;
         }
       }
     }
@@ -279,7 +170,110 @@ h5 {
 
 }
 
-.columns-section{
+.lists-widget {
+
+  font-weight: 100;
+  .list-header {
+    width: 100%;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .accent {
+    margin-top: 30px;
+    color: $dribble-color;
+    line-height: 14px;
+    font-size: 14px;
+    padding-left: 11px;
+    border-left: 4px solid $dribble-color;
+    margin-left: 13px;
+  }
+
+  ul.blur, ol.blur {
+    padding-left: 13px;
+    margin-bottom: 19px;
+    list-style: none;
+    padding-top: 1px;
+    li {
+      margin-top: 5px;
+      color: $default-text;
+      font-size: 14px;
+      ul, ol {
+        padding-left: 20px;
+        margin-bottom: 0;
+        list-style: none;
+      }
+    }
+  }
+
+  ul.blur {
+    li {
+      &:before {
+        content: "• ";
+        color: $dribble-color;
+        width: 10px;
+        display: inline-block;
+      }
+    }
+  }
+
+  ol.blur {
+    counter-reset: section;
+    li {
+      color: $dribble-color;
+      padding-left: 0;
+      line-height: 14px;
+      position: relative;
+      span {
+        color: $default-text;
+        display: block;
+      }
+      ol {
+        padding-left: 0;
+        margin-left: 12px;
+      }
+      &:before {
+        content: counters(section, ".") ".";
+        counter-increment: section;
+        width: 19px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    & > li {
+      span {
+        padding-left: 14px;
+      }
+    }
+    ol {
+      counter-reset: section;
+      & > li {
+        &:before {
+          width: 30px;
+        }
+        span {
+          padding-left: 27px
+        }
+      }
+      ol {
+        & > li {
+          &:before {
+            width: 40px;
+          }
+          span {
+            padding-left: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.columns-section {
   background-color: white;
 }
 
@@ -296,8 +290,6 @@ p.small-text {
   line-height: 16px;
   margin-bottom: 8px;
 }
-
-
 
 .cols-two {
   margin-bottom: 50px;
@@ -343,8 +335,6 @@ a.learn-more {
 .cols-three p {
   margin-bottom: 10px;
 }
-
-
 
 .banner {
   position: relative;
@@ -395,11 +385,11 @@ a.learn-more {
   .banner-text {
     padding: 55px 60px 30px;
     min-width: 0;
-    h1{
+    h1 {
       font-size: 24px;
     }
 
-    p{
+    p {
       font-size: 16px;
     }
   }
@@ -426,8 +416,6 @@ a.learn-more {
   }
 }
 
-
-
 .section-block {
   padding-bottom: 12px;
 }
@@ -444,8 +432,20 @@ a.learn-more {
   padding: 0 20px 50px 20px;
 }
 
-div.banner-column-panel{
+.panel.banner-column-panel {
   padding: 0;
   margin-bottom: 50px;
+
+  .panel-body{
+    padding: 0;
+  }
 }
 
+
+
+
+  @media screen and (min-width: 1700px) {
+    .col-xlg-3{
+      width: 25%;
+    }
+  }

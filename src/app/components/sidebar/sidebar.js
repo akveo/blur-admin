@@ -57,8 +57,17 @@ blurAdminApp.directive('sidebar', function () {
             {
               title: 'Modals',
               root: '#/modals'
+            },
+            {
+              title: 'Grid',
+              root: '#/grid'
             }
           ]
+        },
+        {
+          title: 'Mail',
+          icon: 'ion-ios-email-outline',
+          root: '#/mail'
         },
         {
           title: 'Maps',
