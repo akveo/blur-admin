@@ -11,7 +11,16 @@ var $ = require('gulp-load-plugins')();
 var wiredep = require('wiredep').stream;
 var _ = require('lodash');
 
-gulp.task('styles', function () {
+gulp.task('styles-reload', ['styles'], function() {
+  return buildStyles()
+    .pipe(browserSync.stream());
+});
+
+gulp.task('styles', function() {
+  return buildStyles();
+});
+
+var buildStyles = function() {
   var sassOptions = {
     style: 'expanded'
   };
@@ -41,6 +50,5 @@ gulp.task('styles', function () {
     .pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')))
-    .pipe(browserSync.reload({ stream: true }));
-});
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
+};
