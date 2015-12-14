@@ -16,6 +16,7 @@ blurAdminApp.directive('contentTop', ['$location', function ($location) {
         '/charts': 'Charts',
         '/grid': 'Grid',
         '/alerts': 'Alerts',
+        '/progressBars': 'Progress Bars',
         '/icons': 'Icons',
         '/login': 'Authentication',
         '/maps': 'Maps',

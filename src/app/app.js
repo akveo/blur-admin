@@ -14,6 +14,7 @@ var blurAdminApp = angular.module('BlurAdmin', [
   'BlurAdmin.formLayoutsPage',
   'BlurAdmin.iconsPage',
   'BlurAdmin.mapsPage',
+  'BlurAdmin.progressBarsPage',
   'BlurAdmin.modalsPage',
   'BlurAdmin.profilePage',
   'BlurAdmin.tablesPage',
