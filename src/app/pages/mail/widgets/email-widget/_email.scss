@@ -1,0 +1,365 @@
+.mail-navigation-container {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding: 15px 0;
+  .mail-navigation {
+    cursor: pointer;
+    display: table-cell;
+    line-height: 1;
+    text-align: center;
+    font-weight: 100;
+    font-size: 18px;
+    &.active {
+      color: $dribble-color;
+    }
+    transition: transform .5s ease;
+    &:hover{
+      transform: skew(-10deg);
+    }
+  }
+}
+
+.message-container, .side-message-navigation{
+  float: left;
+  padding: 0 15px;
+  position: relative;
+  min-height: 1px;
+  height: 650px;
+  overflow: scroll;
+}
+
+@media (max-width: 1400px) {
+
+  .side-message-navigation{
+    width: 249px;
+  }
+
+  .message-container{
+    width: calc(100% - 250px);
+  }
+
+  .additional-info{
+    display: none;
+    &.date{
+      display: table-cell;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .additional-info{
+    &.date{
+      display: none;
+    }
+  }
+
+  .side-message-navigation{
+    width: 180px;
+  }
+
+  .message-container{
+    width: calc(100% - 180px);
+  }
+}
+
+@media (min-width: 1400px) {
+
+  .side-message-navigation{
+    width: 380px;
+  }
+
+  .message-container{
+    width: calc(100% - 380px);
+  }
+
+}
+
+
+
+.control-container {
+  background-color: #ebebeb;
+  padding-left: 15px;
+  margin-bottom: 30px;
+  .compose-button {
+    color: white;
+    font-size: 16px;
+    font-weight: 100;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: $dribble-color;
+  }
+
+  .icon-buttons {
+    margin-left: -10px;
+  }
+  .btn-icon {
+    background-color: $dribble-color;
+    color: white;
+    height: 35px;
+    width: 35px;
+    font-size: 16px;
+    margin-left: -3px;
+  }
+
+  .btn.btn-icon.dropdown-toggle {
+    width: 50px;
+    &.margin-left {
+      margin-left: 10px;
+    }
+  }
+  .dropdown-menu {
+    margin-left: 10px;
+  }
+
+  .more-button {
+    font-size: 12px;
+    font-weight: 100;
+  }
+}
+
+.little-human {
+  cursor: pointer;
+  transition: border-left 1.5s ease;
+  .little-human-picture {
+    width: 45px;
+    height: 45px;
+    border-radius: 23px;
+    margin: 0 10px 10px 0;
+    transition: all .2s ease-in-out;
+  }
+  .name {
+    font-size: 14px;
+    vertical-align: super;
+  }
+  .date {
+    text-align: right;
+    span {
+      vertical-align: super;
+      padding-rigth: 5px;
+    }
+  }
+  .tag {
+    vertical-align: super;
+    margin: 0 3px;
+  }
+  .subject {
+    vertical-align: super;
+    margin-right: 3px;
+  }
+
+  &:hover {
+    .little-human-picture {
+      transform: rotate(5deg);
+    }
+  }
+
+  &.active {
+    .name {
+      color: $dribble-color;
+    }
+  }
+
+}
+
+.tag {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 100;
+  cursor: pointer;
+  &.label {
+    padding: .3em .6em;
+  }
+  &.work {
+    background-color: $primary;
+  }
+
+  &.study {
+    background-color: $success;
+  }
+
+  &.family {
+    background-color: $warning;
+  }
+
+  &.friend {
+    background-color: $danger;
+  }
+}
+
+.messages {
+  overflow: auto;
+  table {
+    width: 100%;
+  }
+}
+
+.important {
+  color: $warning;
+}
+
+.message-control-icon {
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.person-info {
+  padding:0 15px;
+  .human-picture {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+    margin-top: -43px;
+  }
+
+  .name {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 5px;
+    h2 {
+      margin-bottom: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.contact-info {
+  display: inline-block;
+  div {
+    margin-top: 10px;
+  }
+  &.phone-email {
+    .ion-iphone {
+      font-size: 32px;
+      width: 27px;
+      display: inline-block;
+    }
+    .phone {
+      font-size: 19px;
+      font-weight: 200;
+      vertical-align: super;
+    }
+    .ion-email {
+      font-size: 24px;
+      width: 27px;
+      display: inline-block;
+    }
+    .email {
+      font-size: 16px;
+      font-weight: 200;
+      vertical-align: super;
+    }
+  }
+
+  &.position-address {
+    div {
+      margin-top: 17px;
+    }
+    .position {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .address {
+      font-size: 16px;
+      font-weight: 100;
+    }
+  }
+}
+
+.message-details {
+  margin: 5px 0;
+  .subject {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  .control-icons {
+    float: right;
+    font-size: 20px;
+    margin-right: 40px;
+    i {
+      cursor: pointer;
+    }
+  }
+}
+
+.message-body {
+  margin: 20px 0;
+  width: 85%;
+  font-weight: 100;
+  line-height: 18px;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.attachment {
+
+  margin: 5px 0;
+
+  .file-icon {
+    font-size: 30px;
+  }
+
+  .file-name {
+    font-size: 16px;
+    vertical-align: super;
+    margin-left: 10px;
+  }
+
+  .file-link {
+    font-size: 25px;
+    border-bottom: solid 3px;
+    float: right;
+    cursor: pointer;
+  }
+}
+
+.tag-line {
+  margin: 15px;
+  .tag{
+    margin-left: 10px;
+  }
+}
+
+.line {
+  height: 1px;
+  background-color: $input-border;
+  opacity: 0.3;
+}
+
+.answer-button {
+  margin-left: 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: 100;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: $dribble-color;
+  &:hover {
+    color: white;
+  }
+  &:focus {
+    color: white;
+  }
+  &.focus {
+    color: white;
+  }
+}
+
+.answer-container {
+  margin-top: 30px;
+}
+
+.answer-area {
+  width: 60%;
+  float: left;
+}
