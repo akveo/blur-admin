@@ -26,13 +26,13 @@ var buildStyles = function() {
   };
 
   var injectFiles = gulp.src([
-    path.join(conf.paths.src, '/sass/**/_*.scss')
+    path.join(conf.paths.src, '/sass/**/_*.scss'),
+    '!' + path.join(conf.paths.src, '/sass/theme/conf/**/*.scss')
   ], { read: false });
 
   var injectOptions = {
     transform: function(filePath) {
       filePath = filePath.replace(conf.paths.src + '/sass/', '');
-      console.log(filePath);
       return '@import "' + filePath + '";';
     },
     starttag: '// injector',
