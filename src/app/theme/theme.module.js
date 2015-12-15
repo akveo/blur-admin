@@ -6,7 +6,9 @@
   'use strict';
 
   angular.module('BlurAdmin.theme', [
-    'toastr'
+      'toastr',
+
+      'BlurAdmin.theme.components'
   ]);
 
 })();
