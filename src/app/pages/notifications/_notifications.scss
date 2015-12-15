@@ -1,0 +1,25 @@
+.control{
+  margin-bottom: 10px;
+  .form-control{
+    width: 75%;
+  }
+  span{
+    white-space: pre-line;
+  }
+}
+
+.toastr-radio-setup{
+  margin-left: 22px;
+}
+.radio-header{
+
+  margin-bottom: 0;
+  &.position-header{
+    margin-top: 15px;
+  }
+}
+
+.result-toastr{
+  margin-top: 15px;
+  border-radius: 0;
+}

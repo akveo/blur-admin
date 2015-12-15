@@ -69,6 +69,10 @@ blurAdminApp.directive('sidebar', function () {
             {
               title: 'Progress Bars',
               root: '#/progressBars'
+            },
+            {
+              title: 'Notifications',
+              root: '#/notifications'
             }
           ]
         },

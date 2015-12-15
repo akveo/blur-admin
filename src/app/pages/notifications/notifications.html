@@ -1,0 +1,151 @@
+<blur-panel class-container="with-scroll">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="control">
+        <label for="title">Title</label>
+        <input ng-model="options.title" type="text" class="form-control" id="title" placeholder="Enter a title ...">
+      </div>
+      <div class="control">
+        <label for="message">Message</label>
+        <textarea ng-model="options.msg" class="form-control" id="message" rows="3"
+                  placeholder="Enter a message ..."></textarea>
+      </div>
+      <div class="control-group">
+        <div class="control">
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input ng-model="options.closeButton" type="checkbox" id="closeButton">
+            <span>Close Button</span>
+          </label>
+        </div>
+        <div class="control">
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input ng-model="options.html" type="checkbox" id="html">
+            <span>Allow html</span>
+          </label>
+        </div>
+        <div class="control">
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input ng-model="options.progressBar" type="checkbox" id="progressBar">
+            <span>Progress bar</span>
+          </label>
+        </div>
+        <div class="control">
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input ng-model="options.position" type="checkbox" id="preventDuplicates">
+            <span>Prevent duplicates</span>
+          </label>
+        </div>
+        <div class="control">
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input ng-model="options.preventOpenDuplicates" type="checkbox" id="preventOpenDuplicates">
+            <span>Prevent open duplicates</span>
+          </label>
+        </div>
+        <div class="control">
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input ng-model="options.tapToDismiss" type="checkbox" id="tapToDismiss">
+            <span>Tap to dismiss</span>
+          </label>
+        </div>
+        <div class="control">
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input ng-model="options.newestOnTop" type="checkbox" id="newestOnTop">
+            <span>Newest on top</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 toastr-radio-setup">
+      <div id="toastTypeGroup">
+        <div class="controls">
+          <label class="radio-header">Toast Type</label>
+          <label class="radio">
+            <input type="radio" ng-model="options.type" name="toasts" value="success"/>Success
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="options.type" name="toasts" value="info"/>Info
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="options.type" name="toasts" value="warning"/>Warning
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="options.type" name="toasts" value="error"/>Error
+          </label>
+        </div>
+      </div>
+      <div id="positionGroup">
+        <div class="controls">
+          <label class="radio-header position-header">Position</label>
+          <label class="radio">
+            <input type="radio" ng-model="options.position" name="positions" value="toast-top-right"/>
+            Top Right
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="options.position" name="positions" value="toast-bottom-right"/>
+            Bottom Right
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="options.position" name="positions" value="toast-bottom-left"/>
+            Bottom Left
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="options.position" name="positions" value="toast-top-left"/>
+            Top Left
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="options.position" name="positions" value="toast-top-full-width"/>
+            Top Full Width
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="options.position" name="positions" value="toast-bottom-full-width"/>
+            Bottom Full Width
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="options.position" name="positions" value="toast-top-center"/>
+            Top Center
+          </label>
+          <label class="radio">
+            <input type="radio" ng-model="options.position" name="positions" value="toast-bottom-center"/>
+            Bottom Center
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="control">
+        <label for="timeOut">Time out</label>
+        <input type="text" class="form-control" id="timeOut" ng-model="options.timeout" placeholder="ms">
+        <label for="timeOut">If you set it to 0, it will stick</label>
+      </div>
+      <div class="control">
+        <label for="extendedTimeOut">Extended time out</label>
+        <input type="text" class="form-control" id="extendedTimeOut" ng-model="options.extendedTimeout"
+               placeholder="ms">
+      </div>
+      <div class="control">
+        <label for="maxOpened">Maximum number of toasts</label>
+        <input type="text" class="form-control" id="maxOpened" ng-model="options.maxOpened" value="0">
+        <label for="timeOut">0 means no limit</label>
+      </div>
+      <div class="control">
+        <label class="checkbox-inline custom-checkbox nowrap">
+          <input ng-model="options.autoDismiss" type="checkbox" id="autoDismiss">
+          <span>Auto dismiss</span>
+        </label>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <pre class="result-toastr" id='toastrOptions'>{{optionsStr}}</pre>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <button ng-click="openToast()" class="btn btn-primary">Open Toast</button>
+      <button ng-click="openRandomToast()" class="btn btn-primary">Open Random Toast</button>
+      <button ng-click="clearToasts()" class="btn btn-danger">Clear Toasts</button>
+      <button ng-click="clearLastToast()" class="btn btn-danger">Clear Last Toast</button>
+    </div>
+  </div>
+
+</blur-panel>

@@ -14,17 +14,21 @@ angular.module('BlurAdmin.alertsPage', ['ngRoute'])
         widgets: [
           [
             {
+              title: 'Basic',
               url: 'app/pages/alerts/widgets/default.html'
             },
             {
+              title: 'Dismissible alerts',
               url: 'app/pages/alerts/widgets/closeable.html'
             }
           ],
           [
             {
+              title: 'Links in alerts',
               url: 'app/pages/alerts/widgets/link.html'
             },
             {
+              title: 'Composite alerts',
               url: 'app/pages/alerts/widgets/composite.html'
             }
           ]
