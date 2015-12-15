@@ -63,6 +63,12 @@
         "./dist/ammap/maps/js/worldLow.js"
       ]
     },
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    },
     "slimScroll": {
       "main": "./jquery.slimscroll.js"
     }
