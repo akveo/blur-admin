@@ -162,7 +162,7 @@
     $scope.toggleSubMenu = function ($event, item) {
       var submenu = $($event.currentTarget).next();
 
-      if (isMenuCollapsed.$isMenuCollapsed) {
+      if ($rootScope.$isMenuCollapsed) {
         if (!item.slideRight) {
           $timeout(function () {
             item.slideRight = true;
