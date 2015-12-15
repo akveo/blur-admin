@@ -1,6 +1,6 @@
 <blur-panel class-container="with-scroll">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3 col-sm-4">
       <div class="control">
         <label for="title">Title</label>
         <input ng-model="options.title" type="text" class="form-control" id="title" placeholder="Enter a title ...">
@@ -55,7 +55,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-2 toastr-radio-setup">
+    <div class="col-md-2 col-sm-3 toastr-radio-setup">
       <div id="toastTypeGroup">
         <div class="controls">
           <label class="radio-header">Toast Type</label>
@@ -111,7 +111,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-sm-3">
       <div class="control">
         <label for="timeOut">Time out</label>
         <input type="text" class="form-control" id="timeOut" ng-model="options.timeout" placeholder="ms">
@@ -134,15 +134,16 @@
         </label>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-5 col-sm-12">
+      <label>Result:</label>
       <pre class="result-toastr" id='toastrOptions'>{{optionsStr}}</pre>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 button-row">
       <button ng-click="openToast()" class="btn btn-primary">Open Toast</button>
-      <button ng-click="openRandomToast()" class="btn btn-primary">Open Random Toast</button>
+      <button ng-click="openRandomToast()" class="btn btn-primary">Random Toast</button>
       <button ng-click="clearToasts()" class="btn btn-danger">Clear Toasts</button>
       <button ng-click="clearLastToast()" class="btn btn-danger">Clear Last Toast</button>
     </div>
