@@ -72,5 +72,8 @@
     "slimScroll": {
       "main": "./jquery.slimscroll.js"
     }
+  },
+  "devDependencies": {
+    "angular-ui-router": "~0.2.15"
   }
 }

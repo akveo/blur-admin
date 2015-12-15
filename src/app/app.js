@@ -4,6 +4,7 @@ var blurAdminApp = angular.module('BlurAdmin', [
   'ui.sortable',
   'ngRoute',
   'ngTouch',
+  'BlurAdmin.layout',
   'BlurAdmin.dashboard',
   'BlurAdmin.buttonsPage',
   'BlurAdmin.chartsPage',

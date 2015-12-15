@@ -21,8 +21,13 @@
   }
 }
 
+@mixin bg-nr($relativeUrl) {
+  background: url($images-root + $relativeUrl) no-repeat 0 0;
+}
+
 @mixin main-background() {
-  background: url(../img/green-bg.jpg) no-repeat top center fixed;
+  $mainBgUrl: $images-root + 'green-bg.jpg';
+  background: url($mainBgUrl) no-repeat top center fixed;
   background-size: cover;
 }
 

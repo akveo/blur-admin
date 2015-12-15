@@ -133,11 +133,11 @@ a {
 }
 
 .icon-up {
-  background: url(../img/arrow-green-up.svg) no-repeat 0 0;
+  @include bg-nr('arrow-green-up.svg');
 }
 
 .icon-down {
-  background: url(../img/arrow-red-down.svg) no-repeat 0 0;
+  @include bg-nr('arrow-red-down.svg');
 }
 
 .disable-text-selection {

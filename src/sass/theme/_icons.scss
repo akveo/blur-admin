@@ -1,5 +1,3 @@
-$images-root: '../img/';
-
 @mixin svg-icon($url, $width:'', $height:'') {
   display: inline-block;
   background: url($url) no-repeat center;
