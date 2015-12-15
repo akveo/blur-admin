@@ -1,7 +1,11 @@
-(function(blurAdminApp) {
+(function () {
   'use strict';
 
-  blurAdminApp.directive('trackWidth', [function () {
+  angular.module('BlurAdmin.theme')
+      .directive('trackWidth', trackWidth);
+
+  /** @ngInject */
+  function trackWidth() {
     return {
       scope: {
         trackWidth: '=',
@@ -22,5 +26,6 @@
         });
       }
     };
-  }]);
-})(blurAdminApp);
+  }
+
+})();

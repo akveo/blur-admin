@@ -1,9 +1,15 @@
-(function (blurAdminApp) {
+/**
+ * @author v.lugovksy
+ * created on 16.12.2015
+ */
+(function () {
+  'use strict';
 
-  blurAdminApp.factory('fileReader', fileReader);
-  fileReader.$inject = ['$q'];
+  angular.module('BlurAdmin.theme')
+      .service('fileReader', fileReader);
 
-  function fileReader ($q) {
+  /** @ngInject */
+  function fileReader($q) {
     var onLoad = function(reader, deferred, scope) {
       return function () {
         scope.$apply(function () {
@@ -51,5 +57,4 @@
       readAsDataUrl: readAsDataURL
     };
   }
-
-}(blurAdminApp));
+})();

@@ -1,11 +1,15 @@
-(function(blurAdminApp) {
+(function () {
   'use strict';
 
-  blurAdminApp.directive('scrollPosition', [function () {
+  angular.module('BlurAdmin.theme')
+      .directive('scrollPosition', scrollPosition);
+
+  /** @ngInject */
+  function scrollPosition() {
     return {
       scope: {
         scrollPosition: '=',
-        maxHeight: '=',
+        maxHeight: '='
       },
       link: function (scope) {
         $(window).on('scroll', function() {
@@ -19,5 +23,6 @@
         });
       }
     };
-  }]);
-})(blurAdminApp);
+  }
+
+})();
