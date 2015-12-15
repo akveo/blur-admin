@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.layout')
+  angular.module('BlurAdmin.theme')
       .config(amChartConfig);
 
   /** @ngInject */

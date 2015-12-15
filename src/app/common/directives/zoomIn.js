@@ -4,13 +4,13 @@
 
 'use strict';
 
-blurAdminApp.directive('zoomIn', ['$timeout', function ($timeout) {
+blurAdminApp.directive('zoomIn', ['$timeout', '$rootScope', function ($timeout, $rootScope) {
   return {
     restrict: 'A',
     link: function ($scope, elem) {
       var delay = 1000;
 
-      if (pageLoaded) {
+      if ($rootScope.$pageLoaded) {
         delay = 100;
       }
 

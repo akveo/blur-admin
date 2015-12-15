@@ -24,11 +24,11 @@
   <!-- endinject -->
   <!-- endbuild -->
 </head>
-<body ng-controller="mainCtrl">
+<body>
 
-<main ng-if="finishLoading" ng-class="{ 'menu-collapsed': isMenuCollapsed }">
+<main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $isMenuCollapsed }">
 
-  <sidebar is-menu-collapsed="isMenuCollapsed"></sidebar>
+  <sidebar></sidebar>
   <page-top></page-top>
 
   <div class="al-main">
@@ -54,7 +54,7 @@
   <back-top></back-top>
 </main>
 
-<div id="preloader" ng-show="!finishLoading">
+<div id="preloader" ng-show="!$pageFinishedLoading">
   <div></div>
 </div>
 

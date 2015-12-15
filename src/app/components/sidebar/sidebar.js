@@ -4,10 +4,7 @@ blurAdminApp.directive('sidebar', function () {
   return {
     restrict: 'E',
     templateUrl: 'app/components/sidebar/sidebar.html',
-    scope: {
-      isMenuCollapsed: '='
-    },
-    controller: ['$scope', '$element', '$window', '$timeout', '$location', function ($scope, $element, $window, $timeout, $location) {
+    controller: ['$scope', '$element', '$window', '$timeout', '$location', '$rootScope', 'layoutSizes', function ($scope, $element, $window, $timeout, $location, $rootScope, layoutSizes) {
       $scope.menuItems = [
         {
           title: 'Dashboard',
@@ -133,14 +130,14 @@ blurAdminApp.directive('sidebar', function () {
       });
 
       $scope.menuExpand = function () {
-        $scope.isMenuCollapsed = false;
+        $rootScope.$isMenuCollapsed = false;
       };
 
       $scope.menuCollapse = function () {
-        $scope.isMenuCollapsed = true;
+        $rootScope.$isMenuCollapsed = true;
       };
 
-      $scope.$watch('isMenuCollapsed', function(newValue) {
+      $rootScope.$watch('$isMenuCollapsed', function(newValue) {
         if (!newValue && !$scope.selectElemTop) {
           changeSelectElemTopValue();
         }
@@ -148,10 +145,10 @@ blurAdminApp.directive('sidebar', function () {
 
       // watch window resize to change menu collapsed state if needed
       $(window).resize(function () {
-        var isMenuShouldCollapsed = $(window).width() <= resWidthCollapseSidebar;
+        var isMenuShouldCollapsed = $(window).width() <= layoutSizes.resWidthCollapseSidebar;
         if ($scope.isMenuShouldCollapsed !== isMenuShouldCollapsed) {
           $scope.$apply(function () {
-            $scope.isMenuCollapsed = isMenuShouldCollapsed;
+            $rootScope.$isMenuCollapsed = isMenuShouldCollapsed;
           });
         }
         $scope.isMenuShouldCollapsed = isMenuShouldCollapsed;
@@ -160,7 +157,7 @@ blurAdminApp.directive('sidebar', function () {
       $scope.toggleSubMenu = function ($event, item) {
         var submenu = $($event.currentTarget).next();
 
-        if ($scope.isMenuCollapsed) {
+        if (isMenuCollapsed.$isMenuCollapsed) {
           if (!item.slideRight) {
             $timeout(function () {
               item.slideRight = true;
@@ -193,8 +190,8 @@ blurAdminApp.directive('sidebar', function () {
       };
 
       $scope.collapseSidebarIfSmallRes = function () {
-        if (window.innerWidth <= resWidthCollapseSidebar) {
-          $scope.isMenuCollapsed = true;
+        if (window.innerWidth <= layoutSizes.resWidthCollapseSidebar) {
+          $rootScope.$isMenuCollapsed = true;
         }
       };
     }]

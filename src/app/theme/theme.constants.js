@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.layout')
+  angular.module('BlurAdmin.theme')
       .constant('layoutColors', {
         primary:        '#41bee9',
         info:           '#5bc0de',
