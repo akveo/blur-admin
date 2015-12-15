@@ -1,0 +1,25 @@
+.alert{
+  font-size: 13px;
+  .close{
+    margin-top: -3px;
+  }
+  //a{
+  //  font-weight: 900;
+  //  color: #3C3C3B;
+  //  &:hover{
+  //    border-bottom: 1px solid $github-color;
+  //  }
+  //}
+  .control-alert{
+    padding-top:10px ;
+    button{
+      margin-right: 10px;
+    }
+  }
+}
+
+.closeable{
+  button{
+    color: $input-border;
+  }
+}

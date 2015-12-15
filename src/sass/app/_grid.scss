@@ -1,0 +1,19 @@
+.show-grid [class^=col-] {
+
+  padding: 10px;
+  box-sizing: border-box;
+  div {
+    text-align: center;
+    font-size: 18px;
+    background-color: $border-light;;
+    padding: 12px 5px;
+  }
+}
+
+.grid-h{
+  margin-top: 10px;
+  margin-bottom: 0;
+  &:first-child{
+    margin-top: 0;
+  }
+}

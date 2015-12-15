@@ -1,0 +1,156 @@
+<div class="mail-container">
+  <div class="row">
+    <div class="mail-navigation-container">
+      <div ng-repeat="t in tabs" class="mail-navigation {{tab == $index ? 'active' : ''}}" ng-click="selectTab($index)">
+        {{t.name}}
+      </div>
+    </div>
+  </div>
+  <div class="control-container row clearfix">
+    <div class="col-lg-4 col-sm-4 col-xs-4">
+      <button type="button" class="btn compose-button">
+        Compose
+      </button>
+    </div>
+    <div class="col-lg-8 col-sm-8 col-xs-8 icon-buttons">
+      <button type="button" class="btn btn-icon"><i class="ion-android-download"></i></button>
+      <button type="button" class="btn btn-icon" ng-click="mail.important = !mail.important">
+        <i title="Important" class="ion-ios-star{{mail.important ? '' : '-outline'}}"></i>
+      </button>
+      <button type="button" class="btn btn-icon" ng-click="mail.trash = !mail.trash">
+        <i title="Trash" class="ion-ios-trash{{mail.trash ? '' : '-outline'}}"></i>
+      </button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-icon dropdown-toggle margin-left" data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
+          <i title="Folder" class="ion-android-folder-open"> </i><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href>Action</a></li>
+          <li><a href>Another action</a></li>
+          <li><a href>Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href>Separated link</a></li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-icon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+          <i title="Folder" class="ion-link"> </i><span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href>Action</a></li>
+          <li><a href>Another action</a></li>
+          <li><a href>Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href>Separated link</a></li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-icon dropdown-toggle more-button" data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">More<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href>Action</a></li>
+          <li><a href>Another action</a></li>
+          <li><a href>Something else here</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href>Separated link</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row inbox-layout">
+    <div class="side-message-navigation">
+      <div class="messages">
+        <table>
+          <tr ng-repeat="m in currentMessages | orderBy:'-date'" class="little-human {{m == mail ? 'active' : ''}}"
+              ng-click="selectMail(m)">
+            <td><img ng-src="{{m.pic}}" class="little-human-picture"></td>
+            <td><span class="name">{{m.name.split(' ')[0] + ' ' + m.name.split(' ')[1][0]}}.</span></td>
+            <td class="additional-info"><span class="tag label label-primary {{m.tag}}">{{m.tag}}</span></td>
+            <td class="additional-info"><span class="subject">{{m.subject}}</span></td>
+            <td class="date additional-info"><span>{{m.date | date : 'MMM d HH:mm'}}</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="message-container with-scroll">
+      <div class="message" ng-show="mail">
+        <div class="person-info row">
+          <div class="col-lg-4 col-sm-4 col-xs-12 no-padding">
+            <img ng-src="{{mail.pic}}" class="human-picture">
+
+            <div class="name">
+              <h2>{{mail.name.split(' ')[0]}}</h2>
+
+              <h2>{{mail.name.split(' ')[1]}}</h2>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-4 col-xs-12 no-padding">
+            <div class="contact-info phone-email">
+              <div>
+                <i class="ion-iphone"></i>
+                <span class="phone">777-777-7777</span>
+              </div>
+              <div>
+                <i class="ion-email"></i>
+                <span class="email">{{mail.email}}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-4 col-xs-12 no-padding">
+            <div class="contact-info position-address">
+              <div>
+                <span class="position">{{mail.position}}</span>
+              </div>
+              <div>
+                <span class="address">12 Nezavisimosti st. Vilnius, Lithuania</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-sm-4 col-xs-12 no-padding">
+
+          </div>
+          <div class="col-lg-8 col-sm-8 col-xs-12 no-padding">
+            <div class="tag-line">
+              <span class="tag label work">Work</span>
+              <span class="tag label family">Family</span>
+              <span class="tag label friend">Friend</span>
+              <span class="tag label study">Study</span>
+            </div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <div class="message-details">
+          <span class="subject">{{mail.subject}} </span>
+          <span class="date">• {{mail.date | date : 'h:mm a MMMM d '}}</span>
+        </div>
+        <div class="line"></div>
+        <div ng-bind-html="mail.body" class="message-body">
+
+        </div>
+        <div class="line"></div>
+        <div class="attachment" ng-show="mail.attachment">
+          <i class="file-icon ion-document"></i>
+          <span class="file-name">{{mail.attachment}}</span>
+          <i class="file-link ion-arrow-down-a"></i>
+        </div>
+        <div class="line" ng-show="mail.attachment"></div>
+        <div class="answer-container" ng-show="tab != 1">
+          <textarea ng-show="tab != 3" placeholder="Type.." class="form-control answer-area"></textarea>
+          <button type="button" class="btn answer-button">Send</button>
+        </div>
+
+      </div>
+      <div ng-show="!mail">
+        <h5 ng-class="text-center">Nothing to show</h5>
+      </div>
+    </div>
+  </div>
+</div>
