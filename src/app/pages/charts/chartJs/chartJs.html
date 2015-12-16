@@ -1,0 +1,53 @@
+<div class="row">
+
+  <div class="col-md-6" ng-controller="chartJs2DCtrl">
+    <blur-panel title="Line" class-container="with-scroll">
+      <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
+              chart-legend="false" chart-series="series" chart-click="changeData"></canvas>
+    </blur-panel>
+  </div>
+
+  <div class="col-md-6" ng-controller="chartJs2DCtrl">
+    <blur-panel title="Bars" class-container="with-scroll">
+      <canvas id="bar" class="chart chart-bar"
+                chart-data="data" chart-labels="labels" chart-series="series" chart-click="changeData">
+      </canvas>
+    </blur-panel>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-6" ng-controller="chartJs1DCtrl">
+    <blur-panel title="Pie" class-container="with-scroll">
+      <canvas id="pie" class="chart chart-pie"
+              chart-legend="true" chart-data="data" chart-labels="labels" chart-click="changeData">
+      </canvas>
+    </blur-panel>
+  </div>
+  <div class="col-md-6" ng-controller="chartJs1DCtrl">
+    <blur-panel title="Doughnut" class-container="with-scroll">
+      <canvas id="doughnut" class="chart chart-doughnut"
+              chart-legend="true"  chart-data="data" chart-labels="labels" chart-click="changeData">
+      </canvas>
+    </blur-panel>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6" ng-controller="chartJs1DCtrl">
+    <blur-panel title="Polar" class-container="with-scroll chart-panel">
+      <canvas id="polar-area" class="chart chart-polar-area"
+              chart-data="data" chart-labels="labels" chart-legend="true" chart-click="changeData">
+      </canvas>
+    </blur-panel>
+  </div>
+
+  <div class="col-md-6" ng-controller="chartJs2DCtrl">
+    <blur-panel title="Radar" class-container="with-scroll chart-panel">
+      <canvas id="radar" class="chart chart-radar"
+              chart-data="data" chart-labels="labels" chart-click="changeData">
+      </canvas>
+    </blur-panel>
+  </div>
+</div>
