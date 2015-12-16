@@ -1,1 +1,31 @@
-<widgets ng-model="widgetBlocks"></widgets>
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-md-6">
+      <blur-panel title="Standard Fields" class-container="with-scroll">
+        <div ng-include="'app/pages/form/inputs/widgets/standardFields.html'"></div>
+      </blur-panel>
+      <blur-panel title="Tags Input" class-container="with-scroll">
+        <div ng-include="'app/pages/form/inputs/widgets/tagsInput/tagsInput.html'"></div>
+      </blur-panel>
+      <blur-panel title="Input Groups" class-container="with-scroll">
+        <div ng-include="'app/pages/form/inputs/widgets/inputGroups.html'"></div>
+      </blur-panel>
+      <blur-panel title="Checkboxes & Radios" class-container="with-scroll">
+        <div ng-include="'app/pages/form/inputs/widgets/checkboxesRadios.html'"></div>
+      </blur-panel>
+    </div>
+    <div class="col-md-6">
+      <blur-panel title="Validation States" class-container="with-scroll" >
+        <div ng-include="'app/pages/form/inputs/widgets/validationStates.html'"></div>
+      </blur-panel>
+      <blur-panel title="Selects" class-container="with-scroll">
+        <div ng-include="'app/pages/form/inputs/widgets/select/select.html'"></div>
+      </blur-panel>
+      <blur-panel title="On/Off Switches" class-container="with-scroll" >
+        <div ng-include="'app/pages/form/inputs/widgets/switch/switch.html'"></div>
+      </blur-panel>
+    </div>
+  </div>
+
+</div>

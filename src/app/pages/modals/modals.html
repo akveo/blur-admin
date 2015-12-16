@@ -1,4 +1,29 @@
-<widgets ng-model="widgetBlocks"></widgets>
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-md-12">
+      <blur-panel title="Modals" class-container="with-scroll">
+        <div ng-include="'app/pages/modals/widgets/modals.html'"></div>
+      </blur-panel>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <blur-panel title="Message Modals" class-container="with-scroll">
+        <div ng-include="'app/pages/modals/widgets/message-modals.html'"></div>
+      </blur-panel>
+    </div>
+    <div class="col-md-6">
+      <blur-panel title="Notifications" class-container="with-scroll" >
+        <div ng-include="'app/pages/modals/widgets/notifications/notifications.html'"></div>
+      </blur-panel>
+    </div>
+  </div>
+
+</div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

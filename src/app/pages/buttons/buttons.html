@@ -1,1 +1,37 @@
-<widgets ng-model="widgetBlocks"></widgets>
+<div class="widgets">
+  <div class="row">
+    <div class="col-md-12">
+      <blur-panel class-container="with-scroll" >
+        <div ng-include="'app/pages/buttons/widgets/buttons.html'"></div>
+      </blur-panel>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <blur-panel title="Icon Buttons" class-container="with-scroll">
+        <div ng-include="'app/pages/buttons/widgets/iconButtons.html'"></div>
+      </blur-panel>
+      <blur-panel title="Large Buttons" class-container="with-scroll">
+        <div ng-include="'app/pages/buttons/widgets/largeButtons.html'"></div>
+      </blur-panel>
+    </div>
+    <div class="col-md-6">
+      <blur-panel title="Button Dropdowns" class-container="with-scroll" >
+        <div ng-include="'app/pages/buttons/widgets/dropdowns.html'"></div>
+      </blur-panel>
+      <blur-panel title="Button Groups" class-container="with-scroll">
+        <div ng-include="'app/pages/buttons/widgets/buttonGroups.html'"></div>
+      </blur-panel>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <blur-panel title="Progress Buttons" class-container="with-scroll">
+        <div ng-include="'app/pages/buttons/widgets/progressButtons.html'"></div>
+      </blur-panel>
+    </div>
+  </div>
+
+</div>

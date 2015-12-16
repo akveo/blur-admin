@@ -1,0 +1,27 @@
+/**
+ * @author v.lugovsky
+ * created on 16.12.2015
+ */
+(function () {
+  'use strict';
+
+  angular.module('BlurAdmin.pages', [
+    'ui.router',
+
+    'BlurAdmin.pages.alerts',
+    'BlurAdmin.pages.buttons',
+    'BlurAdmin.pages.dashboard',
+    'BlurAdmin.pages.form',
+    'BlurAdmin.pages.grid',
+    'BlurAdmin.pages.icons',
+    'BlurAdmin.pages.mail',
+    'BlurAdmin.pages.maps',
+    'BlurAdmin.pages.modals',
+    'BlurAdmin.pages.notifications',
+    'BlurAdmin.pages.profile',
+    'BlurAdmin.pages.progressBars',
+    'BlurAdmin.pages.tables',
+    'BlurAdmin.pages.typography'
+  ]);
+
+})();
