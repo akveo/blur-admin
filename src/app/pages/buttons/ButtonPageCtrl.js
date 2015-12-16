@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.buttons')
-      .service('ButtonPageCtrl', ButtonPageCtrl);
+      .controller('ButtonPageCtrl', ButtonPageCtrl);
 
   /** @ngInject */
   function ButtonPageCtrl($scope) {

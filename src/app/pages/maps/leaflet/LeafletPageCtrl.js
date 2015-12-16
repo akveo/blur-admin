@@ -9,18 +9,25 @@
       .controller('LeafletPageCtrl', LeafletPageCtrl);
 
   /** @ngInject */
-  function LeafletPageCtrl() {
-    var map = L.map('leaflet-map').setView([51.505, -0.09], 13);
+  function LeafletPageCtrl($timeout) {
+    function initialize() {
+      var map = L.map(document.getElementById('leaflet-map')).setView([51.505, -0.09], 13);
 
-    L.Icon.Default.imagePath = 'img';
+      L.Icon.Default.imagePath = 'img';
 
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
 
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
+      L.marker([51.5, -0.09]).addTo(map)
+          .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+          .openPopup();
+    }
+
+    $timeout(function(){
+      initialize();
+    }, 100);
+
   }
 
 })();

@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.icons')
-      .service('IconsPageCtrl', IconsPageCtrl);
+      .controller('IconsPageCtrl', IconsPageCtrl);
 
   /** @ngInject */
   function IconsPageCtrl($scope) {

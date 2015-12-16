@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.tables')
-      .service('TablesPageCtrl', TablesPageCtrl);
+      .controller('TablesPageCtrl', TablesPageCtrl);
 
   /** @ngInject */
   function TablesPageCtrl($scope) {

@@ -9,7 +9,7 @@
       .controller('MapBubblePageCtrl', MapBubblePageCtrl);
 
   /** @ngInject */
-  function MapBubblePageCtrl(layoutColors) {
+  function MapBubblePageCtrl(layoutColors, $timeout) {
     var latlong = {};
     latlong['AD'] = {'latitude': 42.5, 'longitude': 1.5};
     latlong['AE'] = {'latitude': 24, 'longitude': 54};
@@ -492,7 +492,9 @@
       enabled: true
     };
 
-    map.write('map-bubbles');
+    $timeout(function() {
+      map.write('map-bubbles');
+    }, 100);
   }
 
 })();
