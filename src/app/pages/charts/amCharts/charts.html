@@ -1,1 +1,30 @@
-<widgets ng-model="widgetBlocks"></widgets>
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-md-6">
+      <blur-panel title="Bar Chart" class-container="with-scroll">
+        <div ng-include="'app/pages/charts/amCharts/barChart/barChart.html'"></div>
+      </blur-panel>
+      <blur-panel title="Line Chart" class-container="with-scroll">
+        <div ng-include="'app/pages/charts/amCharts/lineChart/lineChart.html'"></div>
+      </blur-panel>
+    </div>
+    <div class="col-md-6">
+      <blur-panel title="Area Chart" class-container="with-scroll" >
+        <div ng-include="'app/pages/charts/amCharts/areaChart/areaChart.html'"></div>
+      </blur-panel>
+      <blur-panel title="Funnel Chart" class-container="with-scroll">
+        <div ng-include="'app/pages/charts/amCharts/funnelChart/funnelChart.html'"></div>
+      </blur-panel>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <blur-panel title="Pie Chart" class-container="with-scroll">
+        <div ng-include="'app/pages/charts/amCharts/pieChart/pieChart.html'"></div>
+      </blur-panel>
+    </div>
+  </div>
+
+</div>

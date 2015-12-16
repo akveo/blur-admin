@@ -22,11 +22,11 @@
         subMenu: [
           {
             title: 'amCharts',
-            root: '#/amCharts'
+            root: '#/charts/amCharts'
           },
           {
             title: 'Chart.js',
-            root: '#/chartJs'
+            root: '#/charts/chartJs'
           }
         ]
       },

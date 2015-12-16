@@ -10,6 +10,7 @@
 
     'BlurAdmin.pages.alerts',
     'BlurAdmin.pages.buttons',
+    'BlurAdmin.pages.charts',
     'BlurAdmin.pages.dashboard',
     'BlurAdmin.pages.form',
     'BlurAdmin.pages.grid',
