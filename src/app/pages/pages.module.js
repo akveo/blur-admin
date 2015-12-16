@@ -23,6 +23,12 @@
     'BlurAdmin.pages.progressBars',
     'BlurAdmin.pages.tables',
     'BlurAdmin.pages.typography'
-  ]);
+  ])
+      .config(routeConfig);
+
+  /** @ngInject */
+  function routeConfig($urlRouterProvider) {
+    $urlRouterProvider.otherwise('/dashboard');
+  }
 
 })();

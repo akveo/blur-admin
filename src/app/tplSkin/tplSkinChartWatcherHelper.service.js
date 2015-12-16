@@ -5,7 +5,7 @@
 (function() {
   'use strict';
 
-  blurAdminApp
+  angular.module('BlurAdmin.tplSkin')
       .service('tplSkinChartWatcherHelper', tplSkinChartWatcherHelper);
 
   tplSkinChartWatcherHelper.$inject = ['tplSkinManager'];

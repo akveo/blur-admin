@@ -5,7 +5,7 @@
 (function() {
   'use strict';
 
-  blurAdminApp
+  angular.module('BlurAdmin.tplSkin')
       .service('tplSkinManager', tplSkinManager);
 
   tplSkinManager.$inject = ['$rootScope', '$document', 'tplSkinClassPrefix', 'tplSkinChartColors', 'tplSkinEnum'];

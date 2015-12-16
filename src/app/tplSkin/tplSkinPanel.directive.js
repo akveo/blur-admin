@@ -5,7 +5,7 @@
 (function() {
   'use strict';
 
-  blurAdminApp
+  angular.module('BlurAdmin.tplSkin')
       .directive('tplSkinPanel', tplSkinPanel);
 
   tplSkinPanel.$inject = ['tplSkinEnum', 'tplSkinManager'];

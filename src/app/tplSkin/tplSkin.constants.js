@@ -57,7 +57,7 @@
     }
   };
 
-  blurAdminApp
+  angular.module('BlurAdmin.tplSkin')
       .constant('tplSkinClassPrefix', SKIN_CLASS_PREFIX)
       .constant('tplSkinEnum', ADMIN_STYLES)
       .constant('tplSkinChartColors', SKIN_CHART_COLORS);
