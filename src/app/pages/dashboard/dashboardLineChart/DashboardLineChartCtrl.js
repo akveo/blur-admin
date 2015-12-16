@@ -9,7 +9,7 @@
       .controller('DashboardLineChartCtrl', DashboardLineChartCtrl);
 
   /** @ngInject */
-  function DashboardLineChartCtrl($scope, tplSkinManager, tplSkinChartWatcherHelper) {
+  function DashboardLineChartCtrl($scope, tplSkinManager, tplSkinChartWatcherHelper, layoutColors) {
     var chartData = [
       { date: new Date(2012, 11), value: 0, value0: 0 },
       { date: new Date(2013, 0), value: 15000, value0: 19000},
@@ -71,9 +71,9 @@
           id: 'g0',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: colorDefault,
+          lineColor: layoutColors.default,
           lineThickness: 1,
-          negativeLineColor: colorDanger,
+          negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',
           valueField: 'value0',
           fillAlphas: 1,
@@ -83,9 +83,9 @@
           id: 'g1',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: colorPrimary,
+          lineColor: layoutColors.primary,
           lineThickness: 1,
-          negativeLineColor: colorDanger,
+          negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',
           valueField: 'value',
           fillAlphas: 1,

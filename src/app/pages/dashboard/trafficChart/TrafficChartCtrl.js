@@ -9,36 +9,36 @@
       .controller('TrafficChartCtrl', TrafficChartCtrl);
 
   /** @ngInject */
-  function TrafficChartCtrl() {
+  function TrafficChartCtrl(layoutColors) {
     var doughnutData = [
       {
         value: 2000,
-        color: colorPrimary,
-        highlight: colorPrimaryDark,
+        color: layoutColors.primary,
+        highlight: layoutColors.primaryDark,
         label: 'Ad Campaigns'
       },
       {
         value: 1500,
-        color: colorDanger,
-        highlight: colorDangerDark,
+        color: layoutColors.danger,
+        highlight: layoutColors.dangerDark,
         label: 'Search engines'
       },
       {
         value: 1000,
-        color: colorSuccessLight,
+        color: layoutColors.successLight,
         highlight: '#6c9c3f',
         label: 'Direct Traffic'
       },
       {
         value: 1200,
-        color: colorSuccess,
-        highlight: colorSuccessDark,
+        color: layoutColors.success,
+        highlight: layoutColors.successDark,
         label: 'Referral Traffic'
       },
       {
         value: 400,
-        color: colorWarning,
-        highlight: colorWarningDark,
+        color: layoutColors.warning,
+        highlight: layoutColors.warningDark,
         label: 'Other'
       }
     ];

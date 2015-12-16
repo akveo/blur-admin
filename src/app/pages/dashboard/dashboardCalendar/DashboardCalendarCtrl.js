@@ -9,7 +9,7 @@
       .controller('DashboardCalendarCtrl', DashboardCalendarCtrl);
 
   /** @ngInject */
-  function DashboardCalendarCtrl($scope) {
+  function DashboardCalendarCtrl(layoutColors) {
     var $element = $('#calendar').fullCalendar({
       //height: 335,
       header: {
@@ -44,7 +44,7 @@
           title: 'Long Event',
           start: '2015-07-07',
           end: '2015-07-10',
-          color: colorDanger
+          color: layoutColors.danger
         },
         {
           id: 999,
@@ -60,28 +60,28 @@
           title: 'Conference',
           start: '2015-07-11',
           end: '2015-07-13',
-          color: colorSuccessLight
+          color: layoutColors.successLight
         },
         {
           title: 'Meeting',
           start: '2015-07-12T10:30:00',
           end: '2015-07-12T12:30:00',
-          color: colorDanger
+          color: layoutColors.danger
         },
         {
           title: 'Meeting',
           start: '2015-07-14T14:30:00',
-          color: colorSuccessLight
+          color: layoutColors.successLight
         },
         {
           title: 'Dinner',
           start: '2015-07-14T20:00:00',
-          color: colorSuccess
+          color: layoutColors.success
         },
         {
           title: 'Birthday Party',
           start: '2015-07-13T07:00:00',
-          color: colorSuccess
+          color: layoutColors.success
         },
         {
           title: 'Click for Google',
