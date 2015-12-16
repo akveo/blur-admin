@@ -17,9 +17,18 @@
         root: '#/dashboard'
       },
       {
-        title: 'Charts',
         icon: 'ion-stats-bars',
-        root: '#/charts'
+        title: 'Charts',
+        subMenu: [
+          {
+            title: 'amCharts',
+            root: '#/amCharts'
+          },
+          {
+            title: 'Chart.js',
+            root: '#/chartJs'
+          }
+        ]
       },
       {
         title: 'Tables',

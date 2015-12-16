@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('BlurAdmin.chartsPage', ['ngRoute'])
+angular.module('BlurAdmin.amChartsPage', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
-      $routeProvider.when('/charts', {
-        templateUrl: 'app/pages/charts/charts.html',
+      $routeProvider.when('/amCharts', {
+        templateUrl: 'app/pages/charts/amCharts/charts.html',
         controller: 'chartsPageCtrl'
       });
     }])
@@ -15,21 +15,21 @@ angular.module('BlurAdmin.chartsPage', ['ngRoute'])
             [
               {
                 title: 'Bar Chart',
-                url: 'app/pages/charts/widgets/barChart/barChart.html'
+                url: 'app/pages/charts/amCharts/widgets/barChart/barChart.html'
               },
               {
                 title: 'Line Chart',
-                url: 'app/pages/charts/widgets/lineChart/lineChart.html'
+                url: 'app/pages/charts/amCharts/widgets/lineChart/lineChart.html'
               }
             ],
             [
               {
                 title: 'Area Chart',
-                url: 'app/pages/charts/widgets/areaChart/areaChart.html'
+                url: 'app/pages/charts/amCharts/widgets/areaChart/areaChart.html'
               },
               {
                 title: 'Funnel Chart',
-                url: 'app/pages/charts/widgets/funnelChart/funnelChart.html'
+                url: 'app/pages/charts/amCharts/widgets/funnelChart/funnelChart.html'
               }
             ]
           ]
@@ -39,7 +39,7 @@ angular.module('BlurAdmin.chartsPage', ['ngRoute'])
             [
               {
                 title: 'Pie Chart',
-                url: 'app/pages/charts/widgets/pieChart/pieChart.html'
+                url: 'app/pages/charts/amCharts/widgets/pieChart/pieChart.html'
               }
             ]
           ]
