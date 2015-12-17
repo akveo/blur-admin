@@ -9,7 +9,7 @@
       .controller('DashboardLineChartCtrl', DashboardLineChartCtrl);
 
   /** @ngInject */
-  function DashboardLineChartCtrl($scope, tplSkinManager, tplSkinChartWatcherHelper, layoutColors) {
+  function DashboardLineChartCtrl($scope, tplSkinManager, tplSkinChartWatcherHelper, layoutColors, layoutPaths) {
     var chartData = [
       { date: new Date(2012, 11), value: 0, value0: 0 },
       { date: new Date(2013, 0), value: 15000, value0: 19000},
@@ -111,7 +111,7 @@
         backgroundAlpha: 0
       },
       zoomOutText: '',
-      pathToImages: 'img/'
+      pathToImages: layoutPaths.images.amChart
     });
 
     tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, chart);

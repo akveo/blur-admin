@@ -9,7 +9,7 @@
       .controller('PieChartCtrl', PieChartCtrl);
 
   /** @ngInject */
-  function PieChartCtrl($scope, $element, tplSkinChartWatcherHelper) {
+  function PieChartCtrl($scope, $element, tplSkinChartWatcherHelper, layoutPaths) {
     var id = $element[0].getAttribute('id');
     var pieChart = AmCharts.makeChart(id, {
       type: 'pie',
@@ -94,7 +94,7 @@
       marginLeft: 0,
       marginRight: 0,
       pullOutRadius: 0,
-      pathToImages: 'img/',
+      pathToImages: layoutPaths.images.amChart,
       responsive: {
         enabled: true,
         rules: [

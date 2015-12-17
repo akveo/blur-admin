@@ -5,6 +5,8 @@
 (function () {
   'use strict';
 
+  var IMAGES_ROOT = 'assets/img/';
+
   angular.module('BlurAdmin.theme')
       .constant('layoutColors', {
         primary:        '#41bee9',
@@ -30,6 +32,13 @@
       .constant('layoutSizes', {
         resWidthCollapseSidebar: 1200,
         resWidthHideSidebar: 500
+      })
+      .constant('layoutPaths', {
+        images: {
+          root: IMAGES_ROOT,
+          profile: IMAGES_ROOT + 'app/profile/',
+          amChart: 'bower_components/amcharts/dist/amcharts/images/'
+        }
       });
 
 })();

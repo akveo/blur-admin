@@ -101,7 +101,7 @@ a.collapse-menu-link {
   display: inline-block;
   width: 14px;
   height: 13px;
-  background: url(../img/palette.png);
+  @include bg-image('theme/palette.png');
   background-size: cover;
 }
 

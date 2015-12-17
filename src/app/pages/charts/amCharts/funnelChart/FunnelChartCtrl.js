@@ -9,7 +9,7 @@
       .controller('FunnelChartCtrl', FunnelChartCtrl);
 
   /** @ngInject */
-  function FunnelChartCtrl($scope, $element, tplSkinChartWatcherHelper) {
+  function FunnelChartCtrl($scope, $element, tplSkinChartWatcherHelper, layoutPaths) {
     var id = $element[0].getAttribute('id');
     var funnelChart = AmCharts.makeChart(id, {
       type: 'funnel',
@@ -60,7 +60,7 @@
         enabled: true
       },
       creditsPosition: 'bottom-left',
-      pathToImages: 'img/'
+      pathToImages: layoutPaths
     });
 
     tplSkinChartWatcherHelper.watchFunnelChanges($scope, funnelChart);

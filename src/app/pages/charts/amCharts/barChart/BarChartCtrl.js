@@ -9,7 +9,7 @@
       .controller('BarChartCtrl', BarChartCtrl);
 
   /** @ngInject */
-  function BarChartCtrl($scope, layoutColors, $element, tplSkinChartWatcherHelper) {
+  function BarChartCtrl($scope, layoutColors, $element, tplSkinChartWatcherHelper, layoutPaths) {
     var id = $element[0].getAttribute('id');
     var barChart = AmCharts.makeChart(id, {
       type: 'serial',
@@ -79,7 +79,7 @@
         enabled: true
       },
       creditsPosition: 'top-right',
-      pathToImages: 'img/'
+      pathToImages: layoutPaths.images.amChart
     });
 
     tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, barChart);

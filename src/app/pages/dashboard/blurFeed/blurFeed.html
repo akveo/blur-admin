@@ -2,11 +2,11 @@
 <div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
   <div class="feed-message" ng-repeat="message in feed" ng-class="{'left': $index%2==0, 'right': $index%2==1}">
     <div class="message-icon" ng-if="message.type == 'text-message'">
-      <img class="photo-icon" ng-src="img/{{ ::message.author }}.png">
+      <img class="photo-icon" ng-src="{{::( message.author | profilePicture )}}">
     </div>
     <div class="message-icon" ng-if="message.type != 'text-message'">
       <span class="media-icon" ng-class="::message.type"></span>
-      <img class="sub-photo-icon" ng-src="img/{{ ::message.author }}.png">
+      <img class="sub-photo-icon" ng-src="{{::( message.author | profilePicture )}}">
     </div>
     <div class="text-block" ng-class="{'small-message': smallContainerWidth && message.type != 'text-message', '{{::message.type}}': true}">
       <div class="message-header">
@@ -17,7 +17,7 @@
       </div>
       <div class="preview" ng-if="message.preview">
         <a href="{{::message.link}}" target="_blank">
-          <img ng-src="img/{{ ::message.preview }}.png">
+          <img ng-src="{{ ::( message.preview | appImage )}}">
         </a>
       </div>
       <div class="message-time">

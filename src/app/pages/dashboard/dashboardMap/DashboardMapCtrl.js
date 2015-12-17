@@ -9,7 +9,7 @@
       .controller('DashboardMapCtrl', DashboardMapCtrl);
 
   /** @ngInject */
-  function DashboardMapCtrl(layoutColors) {
+  function DashboardMapCtrl(layoutColors, layoutPaths) {
     var map = AmCharts.makeChart('amChartMap', {
       type: 'map',
       theme: 'blur',
@@ -96,7 +96,7 @@
         enabled: true
       },
       creditsPosition: 'bottom-right',
-      pathToImages: 'img/'
+      pathToImages: layoutPaths.images.amChart
     });
   }
 })();

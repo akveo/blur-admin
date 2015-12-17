@@ -9,11 +9,11 @@
       .controller('ProfilePageCtrl', ProfilePageCtrl);
 
   /** @ngInject */
-  function ProfilePageCtrl($scope, fileReader) {
-    $scope.picture = 'img/pic-profile.png';
+  function ProfilePageCtrl($scope, fileReader, $filter) {
+    $scope.picture = $filter('profilePicture')('Nasta');
 
     $scope.removePicture = function () {
-      $scope.picture = 'img/no-photo.png';
+      $scope.picture = $filter('appImage')('theme/no-photo.png');
       $scope.noPicture = true;
     };
 

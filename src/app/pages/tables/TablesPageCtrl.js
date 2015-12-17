@@ -178,7 +178,7 @@
 
     $scope.metricsTableData = [
       {
-        image: 'img/chrome.svg',
+        image: 'app/browsers/chrome.svg',
         browser: 'Google Chrome',
         visits: '10,392',
         isVisitsUp: true,
@@ -188,7 +188,7 @@
         isPercentUp: true
       },
       {
-        image: 'img/firefox.svg',
+        image: 'app/browsers/firefox.svg',
         browser: 'Mozilla Firefox',
         visits: '7,873',
         isVisitsUp: true,
@@ -198,7 +198,7 @@
         isPercentUp: true
       },
       {
-        image: 'img/ie.svg',
+        image: 'app/browsers/ie.svg',
         browser: 'Internet Explorer',
         visits: '5,890',
         isVisitsUp: false,
@@ -208,7 +208,7 @@
         isPercentUp: false
       },
       {
-        image: 'img/safari.svg',
+        image: 'app/browsers/safari.svg',
         browser: 'Safari',
         visits: '4,001',
         isVisitsUp: false,
@@ -218,7 +218,7 @@
         isPercentUp: true
       },
       {
-        image: 'img/opera.svg',
+        image: 'app/browsers/opera.svg',
         browser: 'Opera',
         visits: '1,833',
         isVisitsUp: true,
