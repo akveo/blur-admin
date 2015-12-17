@@ -68,7 +68,7 @@
         <table>
           <tr ng-repeat="m in currentMessages | orderBy:'-date'" class="little-human {{m == mail ? 'active' : ''}}"
               ng-click="selectMail(m)">
-            <td><img ng-src="{{m.pic}}" class="little-human-picture"></td>
+            <td><img ng-src="{{m.name.split(' ')[0] | profilePicture}}" class="little-human-picture"></td>
             <td><span class="name">{{m.name.split(' ')[0] + ' ' + m.name.split(' ')[1][0]}}.</span></td>
             <td class="additional-info"><span class="tag label label-primary {{m.tag}}">{{m.tag}}</span></td>
             <td class="additional-info"><span class="subject">{{m.subject}}</span></td>
@@ -81,7 +81,7 @@
       <div class="message" ng-show="mail">
         <div class="person-info row">
           <div class="col-lg-4 col-sm-4 col-xs-12 no-padding">
-            <img ng-src="{{mail.pic}}" class="human-picture">
+            <img ng-src="{{mail.name.split(' ')[0] | profilePicture}}" class="human-picture">
 
             <div class="name">
               <h2>{{mail.name.split(' ')[0]}}</h2>

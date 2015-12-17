@@ -9,12 +9,11 @@
       .controller('MailCtrl', MailCtrl);
 
   /** @ngInject */
-  function MailCtrl($scope, $routeParams, $location, $sce) {
-    console.log($routeParams);
+  function MailCtrl($scope, $location, $sce) {
     $scope.messages = [
       {
         "id": "4563faass",
-        "name": "Anastasiya Tyshkavets",
+        "name": "Nasta Tyshkavets",
         "subject": "Great text",
         "date": "2015-08-28T07:57:09",
         "important": true,
@@ -29,7 +28,7 @@
       },
       {
         "id": "4563fdfvd",
-        "name": "Anastasiya Tyshkavets",
+        "name": "Nasta Tyshkavets",
         "subject": "Lores ipsum",
         "date": "2015-11-19T03:30:45",
         "important": false,
@@ -44,7 +43,7 @@
       },
       {
         "id": "4563zxcss",
-        "name": "Anastasiya Tyshkavets",
+        "name": "Nasta Tyshkavets",
         "subject": "Lores ipsum",
         "date": "2015-10-19T03:30:45",
         "important": false,
@@ -58,7 +57,7 @@
       },
       {
         "id": "8955sddf",
-        "name": "Nikolass Cat",
+        "name": "Nick Cat",
         "subject": "New Design",
         "date": "2015-05-05T12:59:45",
         "important": true,
@@ -74,7 +73,7 @@
       },
       {
         "id": "8955sdfcc",
-        "name": "Nikolass Cat",
+        "name": "Nick Cat",
         "subject": "Gift card",
         "date": "2015-07-18T10:19:01",
         "important": false,
@@ -88,7 +87,7 @@
       },
       {
         "id": "8955asewf",
-        "name": "Nikolass Cat",
+        "name": "Nick Cat",
         "subject": "Some news",
         "date": "2015-09-23T03:04:10",
         "important": true,
@@ -102,7 +101,7 @@
       },
       {
         "id": "2334uudsa",
-        "name": "Konstantin Danovsky",
+        "name": "Kostya Danovsky",
         "subject": "Street Art",
         "date": "2015-11-22T10:05:09",
         "important": false,
@@ -121,7 +120,7 @@
       },
       {
         "id": "2334aefvv",
-        "name": "Konstantin Danovsky",
+        "name": "Kostya Danovsky",
         "subject": "New product",
         "date": "2015-06-22T06:26:10",
         "important": true,
@@ -139,7 +138,7 @@
       },
       {
         "id": "8223xzxfn",
-        "name": "Andrei Hrabouski",
+        "name": "Andrey Hrabouski",
         "subject": "Skype moji",
         "date": "2015-07-16T06:47:53",
         "important": false,
@@ -154,7 +153,7 @@
       },
       {
         "id": "8223sdffn",
-        "name": "Andrei Hrabouski",
+        "name": "Andrey Hrabouski",
         "subject": "My App",
         "date": "2015-06-20T07:05:02",
         "important": false,
@@ -170,7 +169,7 @@
       },
       {
         "id": "9391xdsff",
-        "name": "Vladimir Lugovsky",
+        "name": "Vlad Lugovsky",
         "subject": "Cool",
         "date": "2015-03-31T11:52:58",
         "important": false,
@@ -187,7 +186,7 @@
       },
       {
         "id": "9391xdsff",
-        "name": "Vladimir Lugovsky",
+        "name": "Vlad Lugovsky",
         "subject": "Whan next",
         "date": "2015-03-31T11:52:58",
         "important": false,
@@ -292,9 +291,9 @@
       return i === $scope.currentMessages.length ? 0 : i;
     }
 
-    $scope.tab = findTabByLabel($routeParams.label);
+    $scope.tab = findTabByLabel(0);
     $scope.currentMessages = $scope.tabs[$scope.tab].filter($scope.messages);
-    $scope.mail = $scope.currentMessages[findMessageById($routeParams.id)];
+    $scope.mail = $scope.currentMessages[findMessageById(0)];
   }
 
 })();
