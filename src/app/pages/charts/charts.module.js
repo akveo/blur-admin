@@ -7,7 +7,8 @@
 
   angular.module('BlurAdmin.pages.charts', [
       'BlurAdmin.pages.charts.amCharts',
-      'BlurAdmin.pages.charts.chartJs'
+      'BlurAdmin.pages.charts.chartJs',
+      'BlurAdmin.pages.charts.chartist'
   ])
       .config(routeConfig);
 

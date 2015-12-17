@@ -7,7 +7,8 @@
 
   angular.module('BlurAdmin.theme', [
       'toastr',
-      "chart.js",
+      'chart.js',
+      'angular-chartist',
       'BlurAdmin.theme.components'
   ]);
 

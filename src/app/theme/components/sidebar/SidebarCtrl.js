@@ -27,6 +27,10 @@
           {
             title: 'Chart.js',
             root: '#/charts/chartJs'
+          },
+          {
+            title: 'Chartist',
+            root: '#/charts/chartist'
           }
         ]
       },
