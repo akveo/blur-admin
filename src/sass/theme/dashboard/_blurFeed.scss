@@ -36,7 +36,7 @@
       &.video-message {
         background: $video-message-color;
         &:after {
-          background-image: url(../img/feed-video.svg);
+          @include bg-image('theme/icon/feed/feed-video.svg');
         }
       }
       &.image-message {
@@ -45,7 +45,7 @@
         &:after {
           width: 30px;
           height: 30px;
-          background-image: url(../img/feed-image.svg);
+          @include bg-image('theme/icon/feed/feed-image.svg');
         }
       }
       &.geo-message {
@@ -54,7 +54,7 @@
         &:after {
           width: 30px;
           height: 30px;
-          background-image: url(../img/feed-location.svg);
+          @include bg-image('theme/icon/feed/feed-location.svg');
         }
       }
     }

@@ -1,6 +1,6 @@
 <div class="row clearfix">
   <div class="kameleon-row" ng-repeat="icon in icons.kameleonRoundedIcons">
-    <div class="kameleon-icon with-round-bg {{icon.color}}"><img ng-src="img/{{icon.img}}"><span>{{ icon.name }}</span></div>
+    <div class="kameleon-icon with-round-bg {{icon.color}}"><img ng-src="{{::( icon.img | kameleonImg )}}"><span>{{ icon.name }}</span></div>
   </div>
 </div>
 

@@ -9,7 +9,7 @@
       .controller('LineChartCtrl', LineChartCtrl);
 
   /** @ngInject */
-  function LineChartCtrl($scope, layoutColors, $element, tplSkinChartWatcherHelper) {
+  function LineChartCtrl($scope, layoutColors, $element, tplSkinChartWatcherHelper, layoutPaths) {
     var id = $element[0].getAttribute('id');
     var lineChart = AmCharts.makeChart(id, {
       type: 'serial',
@@ -137,7 +137,7 @@
         enabled: true
       },
       creditsPosition: 'bottom-right',
-      pathToImages: 'img/'
+      pathToImages: layoutPaths.images.amChart
     });
 
     tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, lineChart);

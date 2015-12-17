@@ -14,7 +14,7 @@
     </thead>
     <tbody>
     <tr ng-repeat="item in metricsTableData">
-      <td><img ng-src="{{item.image}}" width="20" height="20"></td>
+      <td><img ng-src="{{::( item.image | appImage )}}" width="20" height="20"></td>
       <td ng-class="nowrap">{{item.browser}}</td>
       <td class="align-right">{{item.visits}}</td>
       <td class="table-arr"><i ng-class="{'icon-up': item.isVisitsUp, 'icon-down': !item.isVisitsUp }"></i></td>

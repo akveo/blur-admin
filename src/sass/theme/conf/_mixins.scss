@@ -24,6 +24,13 @@
 @mixin bg-nr($relativeUrl) {
   background: url($images-root + $relativeUrl) no-repeat 0 0;
 }
+@mixin bg($relativeUrl) {
+  background: url($images-root + $relativeUrl);
+}
+
+@mixin bg-image($relativeUrl) {
+  background-image: url($images-root + $relativeUrl);
+}
 
 @mixin main-background() {
   $mainBgUrl: $images-root + 'green-bg.jpg';

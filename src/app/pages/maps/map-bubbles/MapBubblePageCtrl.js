@@ -9,7 +9,7 @@
       .controller('MapBubblePageCtrl', MapBubblePageCtrl);
 
   /** @ngInject */
-  function MapBubblePageCtrl(layoutColors, $timeout) {
+  function MapBubblePageCtrl(layoutColors, $timeout, layoutPaths) {
     var latlong = {};
     latlong['AD'] = {'latitude': 42.5, 'longitude': 1.5};
     latlong['AE'] = {'latitude': 24, 'longitude': 54};
@@ -452,7 +452,7 @@
       unlistedAreasAlpha: 0.1
     };
     map.imagesSettings.balloonText = '<span style="font-size:14px;"><b>[[title]]</b>: [[value]]</span>';
-    map.pathToImages = 'img/';
+    map.pathToImages = layoutPaths.images.amChart;
 
     var dataProvider = {
       mapVar: AmCharts.maps.worldLow,
