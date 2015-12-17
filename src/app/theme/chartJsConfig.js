@@ -9,10 +9,10 @@
     .config(chartJsConfig);
 
   /** @ngInject */
-  function chartJsConfig(ChartJsProvider) {
+  function chartJsConfig(ChartJsProvider, layoutColors) {
     // Configure all charts
     ChartJsProvider.setOptions({
-      colours: ['#FF5252', '#FF8A80'],
+      colours: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg, layoutColors.info],
       responsive: true
     });
     // Configure all line charts
