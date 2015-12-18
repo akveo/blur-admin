@@ -31,6 +31,10 @@
           {
             title: 'Chartist',
             root: '#/charts/chartist'
+          },
+          {
+            title: 'Morris',
+            root: '#/charts/morris'
           }
         ]
       },
