@@ -10,6 +10,7 @@
       'chart.js',
       'angular-chartist',
       'angular.morris-chart',
+      'ui.tree',
       'BlurAdmin.theme.components'
   ]);
 

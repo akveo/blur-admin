@@ -46,7 +46,8 @@
     "angular-ui-router": "~0.2.15",
     "angular-chart.js": "~0.8.8",
     "angular-chartist.js": "~3.3.12",
-    "angular-morris-chart": "~1.1.0"
+    "angular-morris-chart": "~1.1.0",
+    "angular-ui-tree": "~2.12.0"
   },
   "overrides": {
     "amcharts": {

@@ -1,0 +1,37 @@
+.tree-node{
+  line-height: 25px;
+  cursor: pointer;
+  &.selected{
+    background-color: $border-light ;
+  }
+  .control{
+    cursor: pointer;
+    font-size: 16px;
+    padding-left: 5px;
+  }
+  &:hover{
+    background-color: $input-border;
+  }
+}
+
+.control-side > div {
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  .btn{
+    width: 100px;
+  }
+}
+
+#tree-root{
+  border-left: 1px solid $border-light;
+  padding-left: 10px;
+}
+
+.tree-panel{
+  height: 500px;
+}
+
+.search-container{
+  margin-top: 10px;
+}

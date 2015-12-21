@@ -22,6 +22,7 @@
     'BlurAdmin.pages.profile',
     'BlurAdmin.pages.progressBars',
     'BlurAdmin.pages.tables',
+    'BlurAdmin.pages.tree',
     'BlurAdmin.pages.typography'
   ])
       .config(routeConfig);

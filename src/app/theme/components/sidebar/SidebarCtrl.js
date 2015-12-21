@@ -92,6 +92,10 @@
           {
             title: 'Notifications',
             root: '#/notifications'
+          },
+          {
+            title: 'Tree View',
+            root: '#/tree'
           }
         ]
       },
