@@ -92,6 +92,10 @@
           {
             title: 'Notifications',
             root: '#/notifications'
+          },
+          {
+            title: 'Tabs and Accordions',
+            root: '#/tabs'
           }
         ]
       },

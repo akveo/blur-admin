@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('BlurAdmin', [
+  'ui.bootstrap',
   'ui.sortable',
   'ui.router',
   'ngTouch',

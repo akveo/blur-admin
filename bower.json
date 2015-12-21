@@ -46,7 +46,8 @@
     "angular-ui-router": "~0.2.15",
     "angular-chart.js": "~0.8.8",
     "angular-chartist.js": "~3.3.12",
-    "angular-morris-chart": "~1.1.0"
+    "angular-morris-chart": "~1.1.0",
+    "angular-bootstrap": "~0.14.3"
   },
   "overrides": {
     "amcharts": {
@@ -79,8 +80,5 @@
     "font-awesome": {
       "main": "css/font-awesome.css"
     }
-  },
-  "devDependencies": {
-    "angular-ui-router": "~0.2.15"
   }
 }
