@@ -73,19 +73,19 @@
 
 .ct-series-c {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $warning;
+    stroke: $danger;
   }
   .ct-slice-pie, .ct-area{
-    fill: $warning;
+    fill: $danger;
   }
 }
 
 .ct-series-d {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $danger;
+    stroke: $warning;
   }
   .ct-slice-pie, .ct-area{
-    fill: $danger;
+    fill: $warning;
   }
 
 }
@@ -97,6 +97,17 @@
   .ct-slice-pie, .ct-area{
     fill: $info;
   }
+}
+@media screen and (min-width: 992px) {
+  .row.morris-up {
+    > div {
+      margin-top: -434px;
+    }
+  }
+}
+
+.area-morris-header{
+  margin-top: 20px;
 }
 
 .stacked-bar .ct-bar{

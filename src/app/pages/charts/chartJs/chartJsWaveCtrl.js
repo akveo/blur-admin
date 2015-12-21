@@ -9,13 +9,13 @@
     .controller('chartJsWaveCtrl', chartJsWaveCtrl);
 
   /** @ngInject */
-  function chartJsWaveCtrl($scope, $interval) {
+  function chartJsWaveCtrl($scope, $interval, stopableInterval) {
     $scope.labels =["April", "May", "June", "Jule", "August", "September", "October", "November", "December"];
     $scope.data = [[1, 9, 3, 4, 5, 6, 7, 8, 2].map(function(e){
       return Math.sin(e) * 25 +25;
     })];
 
-    $interval(function(){
+    stopableInterval.start($interval, function(){
       $scope.data[0].unshift($scope.data[0].pop());
     }, 300)
   }
