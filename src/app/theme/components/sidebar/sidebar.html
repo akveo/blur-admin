@@ -20,7 +20,19 @@
       <ul ng-if="item.subMenu" class="al-sidebar-sublist"
           ng-class="{expanded: item.selected, 'slide-right': item.slideRight}">
         <li ng-repeat="subitem in item.subMenu" ng-class="{selected: subitem.selected}">
-          <a href="{{ subitem.root }}" ng-click="collapseSidebarIfSmallRes()">{{ subitem.title }}</a>
+          <a ng-if="subitem.subMenu" href ng-click="toggleSubMenu($event, subitem); subitem.expanded = !subitem.expanded"
+             class="al-sidebar-list-link subitem-submenu-link"><span>{{ subitem.title }}</span>
+            <b class="fa" ng-class="{'fa-angle-up': subitem.expanded, 'fa-angle-down': !subitem.expanded}"
+               ng-if="subitem.subMenu"></b>
+          </a>
+          <ul ng-if="subitem.subMenu" class="al-sidebar-sublist subitem-submenu-list"
+              ng-class="{expanded: subitem.selected, 'slide-right': subitem.slideRight}">
+            <li ng-repeat="subSubitem in subitem.subMenu" ng-class="{selected: subitem.selected}">
+              <a href="{{ subSubitem.root }}" ng-click="collapseSidebarIfSmallRes()">{{
+                subSubitem.title }}</a>
+            </li>
+          </ul>
+          <a ng-if="!subitem.subMenu" href="{{ subitem.root }}" ng-click="collapseSidebarIfSmallRes()">{{ subitem.title}}</a>
         </li>
       </ul>
     </li>

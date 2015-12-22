@@ -20,6 +20,16 @@ $angle-right: "\f101";
   list-style: none;
 }
 
+.al-sidebar-sublist .subitem-submenu-list{
+  padding-left: 15px;
+}
+
+.subitem-submenu-link{
+  .fa{
+    top: 7px;
+  }
+}
+
 .al-sidebar-list-item {
   display: block;
   position: relative;
