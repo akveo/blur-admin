@@ -57,7 +57,8 @@
         "./dist/amcharts/plugins/responsive/responsive.min.js",
         "./dist/amcharts/serial.js",
         "./dist/amcharts/funnel.js",
-        "./dist/amcharts/pie.js"
+        "./dist/amcharts/pie.js",
+        "./dist/amcharts/gantt.js"
       ]
     },
     "amcharts-stock": {

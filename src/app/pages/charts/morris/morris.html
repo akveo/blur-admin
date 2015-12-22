@@ -1,28 +1,30 @@
 <section ng-controller="morrisCtrl">
   <div class="row">
-      <div class="col-md-6">
-        <blur-panel title="Line Charts" class-container="with-scroll">
-          <h5>Simple Line Chart</h5>
-          <div
-              line-chart
-              line-data='lineData'
-              line-xkey='y'
-              line-ykeys='["a", "b"]'
-              line-labels='["Serie A", "Serie B"]'
-              line-colors='colors'>
-          </div>
-          <h5 class="area-morris-header">Area Chart</h5>
-          <div
-            area-chart
-            area-data='areaData'
-            area-xkey='y'
-            area-ykeys='["a", "b"]'%
-            area-labels='["Serie A", "Serie B"]'
+    <div class="col-md-12">
+      <blur-panel title="Line Chart" class-container="with-scroll">
+        <div
+            line-chart
+            line-data='lineData'
+            line-xkey='y'
+            line-ykeys='["a", "b"]'
+            line-labels='["Serie A", "Serie B"]'
             line-colors='colors'>
         </div>
       </blur-panel>
     </div>
-    <div class="col-md-6 col-sm-12">
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <blur-panel title="Donut" class-container="with-scroll">
+        <div
+            donut-chart
+            donut-data='donutData'
+            donut-colors='colors'
+            donut-formatter='"currency"'>
+        </div>
+      </blur-panel>
+    </div>
+    <div class="col-md-8">
       <blur-panel title="Bar Chart" class-container="with-scroll ">
         <div
             bar-chart
@@ -35,14 +37,16 @@
       </blur-panel>
     </div>
   </div>
-  <div class="row morris-up">
-    <div class="col-md-6 col-md-offset-6 col-sd-offset-0 col-sm-12">
-      <blur-panel title="Donut Chart" class-container="with-scroll ">
+  <div class="row">
+    <div class="col-md-12">
+      <blur-panel title="Area Chart" class-container="with-scroll">
         <div
-            donut-chart
-            donut-data='donutData'
-            donut-colors='colors'
-            donut-formatter='"currency"'>
+            area-chart
+            area-data='areaData'
+            area-xkey='y'
+            area-ykeys='["a", "b"]' %
+            area-labels='["Serie A", "Serie B"]'
+            line-colors='colors'>
         </div>
       </blur-panel>
     </div>

@@ -10,12 +10,10 @@
 }
 
 #funnelChart, #lineChart {
-  height: 360px;
 }
 
 #pieChart {
   max-width: 1120px;
-  height: 400px;
 }
 
 .amcharts-pie-slice {
@@ -124,4 +122,24 @@
 
 .chart-panel{
   height: 495px;
+}
+
+#filterChart {
+  width		: 96%;
+  font-size	: 11px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:15px;
+}
+
+.amcharts-graph-g1 .amcharts-graph-fill {
+  filter: url(#blur);
+}
+
+.amcharts-graph-g2 .amcharts-graph-fill {
+  filter: url(#blur);
+}
+
+.amcharts-cursor-fill {
+  filter: url(#shadow);
 }
