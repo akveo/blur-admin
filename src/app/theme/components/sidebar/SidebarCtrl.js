@@ -96,6 +96,10 @@
           {
             title: 'Tree View',
             root: '#/tree'
+          },
+          {
+            title: 'Sliders',
+            root: '#/slider'
           }
         ]
       },
