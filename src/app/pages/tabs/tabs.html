@@ -1,32 +1,126 @@
 <div>
   <div class="row">
     <div class="col-md-6">
-      <blur-panel>
-        <uib-tabset>
-          <uib-tab heading="Static title">
+      <uib-tabset>
+        <uib-tab heading="Start">
+          <p>
+            Take up one idea. Make that one idea your life--think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success.
+          </p>
+          <p>
+            People who succeed have momentum. The more they succeed, the more they want to succeed, and the more they find a way to succeed. Similarly, when someone is failing, the tendency is to get on a downward spiral that can even become a self-fulfilling prophecy.
+          </p>
+        </uib-tab>
+        <uib-tab heading="Getting Done" >
+          <p>
+            You can't connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something--your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.
+          </p>
+          <p>
+            The reason most people never reach their goals is that they don't define them, or ever seriously consider them as believable or achievable. Winners can tell you where they are going, what they plan to do along the way, and who will be sharing the adventure with them.
+          </p>
+        </uib-tab>
+        <uib-tab ng-init="$dropdownTabActive = 1" class="with-dropdown">
+          <uib-tab-heading uib-dropdown>
+             <a uib-dropdown-toggle ng-click="$event.stopPropagation()">
+               Dropdown tab <i class="caret"></i>
+             </a>
+             <ul class="uib-dropdown-menu">
+               <li><a ng-click="$dropdownTabActive = 1">Tab 1</a></li>
+               <li><a ng-click="$dropdownTabActive = 2">Tab 2</a></li>
+             </ul>
+          </uib-tab-heading>
+          <div ng-show="$dropdownTabActive == 1">
             <p>
-              Take up one idea. Make that one idea your life--think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success.
+              Success is ... knowing your purpose in life, growing to reach your maximum potential, and sowing seeds that benefit others.
             </p>
+            <p>Failure is the condiment that gives success its flavor.</p>
+          </div>
+          <div ng-show="$dropdownTabActive == 2">
             <p>
-              People who succeed have momentum. The more they succeed, the more they want to succeed, and the more they find a way to succeed. Similarly, when someone is failing, the tendency is to get on a downward spiral that can even become a self-fulfilling prophecy.
+              <button class="btn btn-danger">I'm just a dummy button</button>
             </p>
-            <p>
-              You can't connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something--your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.
-            </p>
-          </uib-tab>
-          <uib-tab heading="1111" >
-            Hellooooo
-          </uib-tab>
-          <uib-tab>
-            <uib-tab-heading>
-              <i class="glyphicon glyphicon-bell"></i> Alert!
-            </uib-tab-heading>
-            I've got an HTML heading, and a select callback. Pretty cool!
-          </uib-tab>
-        </uib-tabset>
-      </blur-panel>
+          </div>
+        </uib-tab>
+      </uib-tabset>
+    </div>
+    <div class="col-md-6 tabset-group">
+      <uib-tabset class="tabs-left">
+        <uib-tab heading="Start">
+          <p>
+            Take up one idea. Make that one idea your life--think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success.
+          </p>
+          <p>
+            People who succeed have momentum. The more they succeed, the more they want to succeed, and the more they find a way to succeed. Similarly, when someone is failing, the tendency is to get on a downward spiral that can even become a self-fulfilling prophecy.
+          </p>
+        </uib-tab>
+        <uib-tab heading="Get it done" >
+          <p>
+            You can't connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something--your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.
+          </p>
+          <p>
+            The reason most people never reach their goals is that they don't define them, or ever seriously consider them as believable or achievable. Winners can tell you where they are going, what they plan to do along the way, and who will be sharing the adventure with them.
+          </p>
+        </uib-tab>
+        <uib-tab heading="Achieve">
+          <p>
+            Success is ... knowing your purpose in life, growing to reach your maximum potential, and sowing seeds that benefit others.
+          </p>
+          <p>Failure is the condiment that gives success its flavor.</p>
+        </uib-tab>
+      </uib-tabset>
+
+      <uib-tabset class="tabs-right">
+        <uib-tab heading="Start">
+          <p>
+            Take up one idea. Make that one idea your life--think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success.
+          </p>
+          <p>
+            People who succeed have momentum. The more they succeed, the more they want to succeed, and the more they find a way to succeed. Similarly, when someone is failing, the tendency is to get on a downward spiral that can even become a self-fulfilling prophecy.
+          </p>
+        </uib-tab>
+        <uib-tab heading="Get it done" >
+          <p>
+            You can't connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future. You have to trust in something--your gut, destiny, life, karma, whatever. This approach has never let me down, and it has made all the difference in my life.
+          </p>
+          <p>
+            The reason most people never reach their goals is that they don't define them, or ever seriously consider them as believable or achievable. Winners can tell you where they are going, what they plan to do along the way, and who will be sharing the adventure with them.
+          </p>
+        </uib-tab>
+        <uib-tab heading="Achieve">
+          <p>
+            Success is ... knowing your purpose in life, growing to reach your maximum potential, and sowing seeds that benefit others.
+          </p>
+          <p>Failure is the condiment that gives success its flavor.</p>
+        </uib-tab>
+      </uib-tabset>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <uib-accordion close-others="oneAtATime">
+        <uib-accordion-group heading="Static Header, initially expanded">
+          This content is straight in the template.
+        </uib-accordion-group>
+        <uib-accordion-group heading="Dynamic Body Content">
+          <p>The body of the uib-accordion group grows to fit the contents</p>
+          <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Custom template">
+          Hello
+        </uib-accordion-group>
+        <uib-accordion-group heading="Delete account" panel-class="panel-danger">
+          <p>Please, to delete your account, click the button below</p>
+          <button class="btn btn-danger">Delete</button>
+        </uib-accordion-group>
+        <uib-accordion-group>
+          <uib-accordion-heading>
+            I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+          </uib-accordion-heading>
+          This is just some content to illustrate fancy headings.
+        </uib-accordion-group>
+      </uib-accordion>
+    </div>
+    <div class="col-md-6">
 
     </div>
-    <div class="col-md-6"></div>
   </div>
 </div>
