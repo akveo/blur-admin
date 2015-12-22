@@ -63,8 +63,13 @@ h5 {
     .panel {
       height: 620px;
     }
-    .panel-body {
-      padding: 15px 30px 0 30px;
+
+    .panel.with-scroll .panel-body{
+      height: 100%;
+    }
+
+    .panel-content{
+      padding: 15px 22px 5px 22px;
     }
 
   }
@@ -436,7 +441,7 @@ a.learn-more {
   padding: 0;
   margin-bottom: 50px;
 
-  .panel-body{
+  .panel-content{
     padding: 0;
   }
 }
@@ -444,7 +449,7 @@ a.learn-more {
 
 
 
-  @media screen and (min-width: 1700px) {
+  @media screen and (min-width: 1620px) {
     .col-xlg-3{
       width: 25%;
     }
