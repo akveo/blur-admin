@@ -21,6 +21,7 @@
     'BlurAdmin.pages.notifications',
     'BlurAdmin.pages.profile',
     'BlurAdmin.pages.progressBars',
+    'BlurAdmin.pages.slider',
     'BlurAdmin.pages.tables',
     'BlurAdmin.pages.tree',
     'BlurAdmin.pages.typography'

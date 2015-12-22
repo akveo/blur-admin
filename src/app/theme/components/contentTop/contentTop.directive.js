@@ -35,6 +35,7 @@
           '/profile': 'User Profile',
           '/tables': 'Tables',
           '/tree': 'Tree View',
+          '/slider': 'Sliders',
           '/typography': 'Typography',
           '/form-layouts': 'Form Layouts',
           '/form-inputs': 'Form Inputs',
