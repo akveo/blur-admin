@@ -54,6 +54,10 @@
           {
             title: 'Form Layouts',
             root: '#/form-layouts'
+          },
+          {
+            title: 'From Wizard',
+            root: '#/form-wizard'
           }
         ]
       },

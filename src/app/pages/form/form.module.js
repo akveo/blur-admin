@@ -19,6 +19,12 @@
           url: '/form-layouts',
           templateUrl: 'app/pages/form/layouts/layouts.html'
         })
+        .state('form-wizard',
+        {
+          url: '/form-wizard',
+          templateUrl: 'app/pages/form/wizard/wizard.html',
+          controller: 'WizardCtrl'
+        })
   }
 
 })();
