@@ -17,7 +17,7 @@
         title: '@',
         classContainer: '@'
       },
-      templateUrl: 'app/theme/components/blurPanel/blurPanel.html'
+      templateUrl: 'app/theme/components/baPanel/blurPanel.html'
     };
   }
 
