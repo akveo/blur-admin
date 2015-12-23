@@ -58,6 +58,9 @@ $medium-panel-height: 400px;
 $extra-medium-panel-height: 550px;
 $large-panel-height: 974px;
 
+$default-animation-duration: 0.2s;
+$default-animation-style: ease-out;
+
 $assets-root: '../assets/';
 $images-root: $assets-root + 'img/';
 $fonts-root: $assets-root + 'fonts/';

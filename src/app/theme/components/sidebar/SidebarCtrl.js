@@ -94,6 +94,10 @@
             root: '#/notifications'
           },
           {
+            title: 'Tabs and Accordions',
+            root: '#/tabs'
+          },
+          {
             title: 'Tree View',
             root: '#/tree'
           },
