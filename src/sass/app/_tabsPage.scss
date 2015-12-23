@@ -1,5 +1,9 @@
 .tabset-group {
-  > div {
+  > div + div {
     margin-top: 15px;
   }
+}
+
+.accordions-row {
+  margin-top: 30px;
 }
