@@ -499,3 +499,25 @@ label.custom-input-danger {
     float: right;
   }
 }
+
+.wizard-navigation-container {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding: 15px 0;
+  .wizard-navigation {
+    cursor: pointer;
+    display: table-cell;
+    line-height: 1;
+    text-align: center;
+    font-weight: 100;
+    font-size: 18px;
+    &.active {
+      color: $dribble-color;
+    }
+    transition: transform .5s ease;
+    &:hover{
+      transform: skew(-10deg);
+    }
+  }
+}
