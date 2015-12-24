@@ -1,95 +1,190 @@
+.letter-layout{
+  margin-top: -15px;
+}
+
+.mail-panel {
+  .panel-content {
+    padding: 15px 22px 0 0;
+  }
+}
+
 .mail-navigation-container {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  padding: 15px 0;
+  width: 300px;
   .mail-navigation {
     cursor: pointer;
-    display: table-cell;
-    line-height: 1;
-    text-align: center;
     font-weight: 100;
-    font-size: 18px;
-    &.active {
-      color: $dribble-color;
+    font-size: 16px;
+    padding: 10px;
+    margin-left: 22px;
+    .new-mails {
+      display: inline-block;
+      float: right;
+      color: white;
+      background-color: $primary-light;
+      padding: 1px 6px;
+      margin-top: -2px;
+      font-size: 12px;
+      margin-right: 5px;
+      border-radius: 10px;
     }
-    transition: transform .5s ease;
-    &:hover{
-      transform: skew(-10deg);
+    &.active {
+      background-color: $primary-light;
+      color: white;
+      &:hover {
+        background-color: $primary-light;
+      }
+      .new-mails {
+        color: $primary-light;
+        background-color: white;
+      }
+      transition: background-color .2s ease;
+    }
+    &:hover {
+      background-color: $border-light;
+    }
+  }
+  .compose-button {
+    margin: 7px 0;
+    .btn {
+      width: 150px;
+      color: white;
+      font-weight: 100;
+      background-color: $dribble-color;
     }
   }
 }
 
-.message-container, .side-message-navigation{
+.labels, .add-label-container{
+  margin-top: 16px;
+  margin-left: 22px;
+}
+
+.labels-title{
+  padding-left: 10px;
+  border-bottom: 1px solid $border-light;
+  .label-header{
+    line-height: 24px;
+  }
+}
+
+.label-item{
+  margin: 10px 0 0 10px;
+}
+
+.add-label-container{
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 100;
+  .label-input-stub{
+    margin-left: 5px;
+  }
+  i{
+    cursor: pointer;
+  }
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.messages-control{
+  padding: 10px;
+
+  .dropdown-menu {
+    margin-left: 10px;
+  }
+
+  .btn{
+    background-color: transparent;
+    border: 1px solid $border-light;
+  }
+
+  .more-button {
+    width: 60px;
+
+    font-size: 12px;
+    font-weight: 100;
+  }
+
+  span.select-all-label{
+    font-size: 13px;
+    font-weight: 100;
+  }
+}
+
+
+.message-container, .side-message-navigation, .mail-navigation-container {
   float: left;
   padding: 0 15px;
   position: relative;
-  min-height: 1px;
-  height: 650px;
+  min-height: 650px;
   overflow: scroll;
 }
 
-@media (max-width: 1400px) {
+.side-message-navigation{
+  padding: 10px 0 0 0;
+  width: calc(100% - 300px);
+  box-shadow: -4px 0 7px -2px  $input-border;
+  .side-message-navigation-item{
+    border-bottom: 1px solid $input-border;
+    &.work {
+      border-left:4px solid $primary-light;
+    }
 
-  .side-message-navigation{
-    width: 249px;
-  }
+    &.study {
+      border-left:4px solid $google-color;
+    }
 
-  .message-container{
-    width: calc(100% - 250px);
-  }
+    &.family {
+      border-left:4px solid $warning;
+    }
 
-  .additional-info{
-    display: none;
-    &.date{
-      display: table-cell;
+    &.friend {
+      border-left:4px solid $danger;
     }
   }
 }
 
-@media (max-width: 1100px) {
-
-  .additional-info{
-    &.date{
-      display: none;
-    }
-  }
-
-  .side-message-navigation{
-    width: 180px;
-  }
-
-  .message-container{
-    width: calc(100% - 180px);
-  }
+.mail-body-part{
+  text-overflow: ellipsis;
+  height: 16px;
+  overflow: hidden;
+  margin-top: 3px;
+  margin-left: 5px;
 }
 
-@media (min-width: 1400px) {
 
-  .side-message-navigation{
-    width: 380px;
-  }
 
-  .message-container{
-    width: calc(100% - 380px);
-  }
+.border-tag{
 
 }
 
+.mail-tag.tag.label{
+  display: inline-block;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  width: 65px;
+}
+
+.phone-email{
+  i{
+    color:$primary-dark;
+  }
+}
+
+.message-container {
+  width: calc(100% - 320px);
+  padding: 15px 0 10px 30px;
+  box-shadow: -4px 0 7px -2px $input-border;
+  overflow: inherit;
+}
 
 
 .control-container {
   background-color: #ebebeb;
   padding-left: 15px;
   margin-bottom: 30px;
-  .compose-button {
-    color: white;
-    font-size: 16px;
-    font-weight: 100;
-    padding-left: 40px;
-    padding-right: 40px;
-    background-color: $dribble-color;
-  }
 
   .icon-buttons {
     margin-left: -10px;
@@ -126,57 +221,64 @@
     width: 45px;
     height: 45px;
     border-radius: 23px;
-    margin: 0 10px 10px 0;
+    margin: 7px 0 7px 7px;
     transition: all .2s ease-in-out;
   }
   .name {
     font-size: 14px;
     vertical-align: super;
+    white-space: nowrap;
+  }
+  .name-wrap{
+    margin-left: 10px;
   }
   .date {
-    text-align: right;
-    span {
-      vertical-align: super;
-      padding-rigth: 5px;
-    }
+    float: right;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+    white-space: nowrap;
   }
   .tag {
     vertical-align: super;
-    margin: 0 3px;
   }
   .subject {
-    vertical-align: super;
-    margin-right: 3px;
+    font-size: 14px;
+    white-space: nowrap;
   }
-
   &:hover {
     .little-human-picture {
       transform: rotate(5deg);
     }
-  }
-
-  &.active {
-    .name {
       color: $dribble-color;
-    }
   }
+}
 
+.mail-checkbox{
+  margin-top: 5px;
+  margin-left: 6px;
 }
 
 .tag {
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-size: 11px;
   font-weight: 100;
+  width: 45px;
   cursor: pointer;
+  display: inline-block;
   &.label {
-    padding: .3em .6em;
+    padding: .2em .5em;
+    border-radius: 2px;
+    line-height: 1.1;
   }
   &.work {
-    background-color: $primary;
+    background-color: $primary-light;
   }
 
   &.study {
-    background-color: $success;
+    background-color: $google-color;
   }
 
   &.family {
@@ -206,12 +308,13 @@
 }
 
 .person-info {
-  padding:0 15px;
+  padding: 0 0 10px 15px;
+  margin-top: 10px;
   .human-picture {
-    width: 90px;
-    height: 90px;
-    border-radius: 45px;
-    margin-top: -43px;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin-top: -115px;
   }
 
   .name {
@@ -221,7 +324,6 @@
     h2 {
       margin-bottom: 0;
       font-size: 24px;
-      font-weight: bold;
     }
   }
 
@@ -265,7 +367,7 @@
     }
     .position {
       font-size: 20px;
-      font-weight: bold;
+      font-weight: 100;
     }
 
     .address {
@@ -280,6 +382,7 @@
   .subject {
     font-size: 20px;
     margin-right: 10px;
+    font-weight: 100;
   }
   .control-icons {
     float: right;
@@ -293,7 +396,6 @@
 
 .message-body {
   margin: 20px 0;
-  width: 85%;
   font-weight: 100;
   line-height: 18px;
   p {
@@ -302,31 +404,22 @@
 }
 
 .attachment {
-
   margin: 5px 0;
-
   .file-icon {
-    font-size: 30px;
+    font-size: 24px;
+    cursor: pointer;
   }
 
   .file-name {
-    font-size: 16px;
-    vertical-align: super;
-    margin-left: 10px;
+    font-size: 14px;
+    margin-left: 3px;
+    position: relative;
+    top: -3px;
+    font-weight: 100;
   }
 
-  .file-link {
-    font-size: 25px;
-    border-bottom: solid 3px;
-    float: right;
-    cursor: pointer;
-  }
-}
-
-.tag-line {
-  margin: 15px;
-  .tag{
-    margin-left: 10px;
+  .file-links {
+    font-size: 14px;
   }
 }
 
@@ -356,10 +449,150 @@
 }
 
 .answer-container {
-  margin-top: 30px;
+  float: right;
+  margin-top: 10px;
+  .btn{
+    margin-top: 3px;
+    background-color: $primary-light;
+    border: none;
+    color: white;
+    width: 100px;
+    transition: none;
+    &:hover{
+      transform: none;
+      background-color: $danger;
+    }
+  }
 }
 
-.answer-area {
-  width: 60%;
-  float: left;
+.second-name {
+  margin-top: -7px;
 }
+@media screen and (max-width: 1199px) {
+  .name-h{
+    display: inline;
+  }
+  .person-info .human-picture {
+    margin-top: -45px;
+  }
+  .second-name {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .mail-navigation-container{
+    width: 200px
+  }
+
+  .side-message-navigation {
+    width: calc(100% - 200px);
+  }
+
+  .message-container {
+    width: calc(100% - 220px);
+  }
+
+  .person-info .human-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    margin: 5px auto;
+    display: block;
+
+  }
+
+  .person-info{
+    padding-left: 0;
+  }
+
+  .message-container{
+    padding-left: 15px;
+  }
+
+  .back-button, .contact-info{
+    margin-left: 15px;
+  }
+
+  .additional-info{
+    display: none;
+  }
+
+  .little-human .date {
+    font-size: 10px;
+  }
+
+  .margin-left{
+    margin-left: 5px;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+
+  .mail-navigation-container{
+    width: 175px
+  }
+
+  .side-message-navigation {
+    width: calc(100% - 175px);
+  }
+
+  .message-container {
+    width: calc(100% - 185px);
+  }
+
+  .mail-body-part{
+    display: none;
+  }
+  .little-human .little-human-picture{
+    display: none;
+  }
+  .messages-control .more-button {
+    width: 50px;
+  }
+}
+@media screen and (max-width: 470px) {
+
+
+  .mail-navigation-container{
+    width: 155px
+  }
+
+  .side-message-navigation {
+    width: calc(100% - 155px);
+  }
+
+  .message-container {
+    width: calc(100% - 165px);
+  }
+
+  .mail-navigation-container .compose-button .btn {
+    width: 110px;
+  }
+
+  .mail-navigation-container .mail-navigation {
+    font-size: 14px;
+  }
+
+  .mail-navigation-container .mail-navigation .new-mails{
+    padding: 0px 5px;
+    margin-top: 0px;
+    font-size: 12px;
+  }
+
+  .mail-navigation-container .mail-navigation, .labels {
+    margin-left: 10px;
+  }
+
+  .add-label-container {
+     padding-left: 0;
+    font-size: 13px;
+    font-weight: 100;
+  }
+
+}
+
+
+
+

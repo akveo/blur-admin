@@ -10,14 +10,17 @@
 
   /** @ngInject */
   function MailCtrl($scope, $location, $sce) {
+
+    $scope.showMail = false;
+
     $scope.messages = [
       {
         "id": "4563faass",
-        "name": "Nasta Tyshkavets",
+        "name": "Nasta Linnie",
         "subject": "Great text",
         "date": "2015-08-28T07:57:09",
         "important": true,
-        "body": $sce.trustAsHtml("<p>Hey John,</p><p>Check out this cool text.</p>"),
+        "body": $sce.trustAsHtml("<p>Hey John, </p><p>Check out this cool text.</p>"),
         "pic": "img/Nasta.png",
         "email": "petraramsey@mail.com",
         "attachment": "poem.txt",
@@ -28,26 +31,26 @@
       },
       {
         "id": "4563fdfvd",
-        "name": "Nasta Tyshkavets",
+        "name": "Nasta Linnie",
         "subject": "Lores ipsum",
         "date": "2015-11-19T03:30:45",
         "important": false,
-        "body": $sce.trustAsHtml("<p>Hey John,</p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ex mauris, ultrices vel lectus quis, scelerisque hendrerit ipsum. Suspendisse ullamcorper turpis neque, eget dapibus magna placerat ac. Suspendisse rhoncus ligula ac mi tempus varius ut sed lacus. Sed et commodo nulla, et placerat leo. Nam rhoncus vulputate sem non pharetra. Praesent fringilla massa in laoreet convallis. Aliquam lobortis dui a congue facilisis. Aenean dapibus semper semper. Quisque aliquam, nibh dapibus interdum condimentum, ex velit tempor tortor, at vestibulum magna leo quis leo. Morbi pulvinar varius erat ac rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst.</p>" +
+        "body": $sce.trustAsHtml("<p>Hey John, </p><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ex mauris, ultrices vel lectus quis, scelerisque hendrerit ipsum. Suspendisse ullamcorper turpis neque, eget dapibus magna placerat ac. Suspendisse rhoncus ligula ac mi tempus varius ut sed lacus. Sed et commodo nulla, et placerat leo. Nam rhoncus vulputate sem non pharetra. Praesent fringilla massa in laoreet convallis. Aliquam lobortis dui a congue facilisis. Aenean dapibus semper semper. Quisque aliquam, nibh dapibus interdum condimentum, ex velit tempor tortor, at vestibulum magna leo quis leo. Morbi pulvinar varius erat ac rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In hac habitasse platea dictumst.</p>" +
             "<br><p>Cras rhoncus quam ipsum, vel dignissim nisl egestas sed. Aliquam erat volutpat. Integer eu nisl elit. Donec malesuada diam vitae tellus luctus tincidunt. Donec tempus blandit neque, rutrum egestas ipsum sagittis tempor. Curabitur volutpat ligula enim, nec vehicula purus molestie at. Sed a facilisis enim, nec molestie magna. Donec in augue non est viverra dapibus vel tempus risus. Nam porttitor purus sit amet hendrerit ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>"),
         "pic": "img/Nasta.png",
         "email": "petraramsey@mail.com",
         "position": "Great Employee",
-        "tag": "work",
+        "tag": "study",
         "draft": false,
         "trash": false
       },
       {
         "id": "4563zxcss",
-        "name": "Nasta Tyshkavets",
+        "name": "Nasta Linnie",
         "subject": "Lores ipsum",
         "date": "2015-10-19T03:30:45",
         "important": false,
-        "body": $sce.trustAsHtml("<p>Hey John,</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>"),
+        "body": $sce.trustAsHtml("<p>Hey John, </p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>"),
         "pic": "img/Nasta.png",
         "email": "petraramsey@mail.com",
         "position": "Great Employee",
@@ -77,7 +80,21 @@
         "subject": "Gift card",
         "date": "2015-07-18T10:19:01",
         "important": false,
-        "body": $sce.trustAsHtml("<p>Hey John,</p><br><p>Consectetur adipiscing elit, Lorem ipsum dolor sit amet</p>"),
+        "body": $sce.trustAsHtml("<p>Hey John, </p><br><p>Consectetur adipiscing elit, Lorem ipsum dolor sit amet</p>"),
+        "pic": "img/Nick.png",
+        "email": "barlowshort@mail.com",
+        "position": "Graphical designer",
+        "draft": false,
+        "trash": false,
+        "tag": "study"
+      },
+      {
+        "id": "8955asewf",
+        "name": "Nick Cat",
+        "subject": "Some news",
+        "date": "2015-09-23T03:04:10",
+        "important": true,
+        "body": $sce.trustAsHtml("<p>Hey John, </p><br><p>Integer eu nisl elit. Donec malesuada diam vitae tellus luctus tincidunt. Donec tempus blandit neque, rutrum egestas ipsum sagittis tempor. Curabitur volutpat ligula enim, nec vehicula purus molestie at. Sed a facilisis enim, nec molestie magna. Donec in augue non est viverra dapibus vel tempus risus. Nam porttitor purus sit amet hendrerit ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>"),
         "pic": "img/Nick.png",
         "email": "barlowshort@mail.com",
         "position": "Graphical designer",
@@ -86,16 +103,16 @@
         "tag": "work"
       },
       {
-        "id": "8955asewf",
+        "id": "8955asdff",
         "name": "Nick Cat",
-        "subject": "Some news",
+        "subject": "Some news ",
         "date": "2015-09-23T03:04:10",
-        "important": true,
-        "body": $sce.trustAsHtml("<p>Hey John,</p><br><p>Integer eu nisl elit. Donec malesuada diam vitae tellus luctus tincidunt. Donec tempus blandit neque, rutrum egestas ipsum sagittis tempor. Curabitur volutpat ligula enim, nec vehicula purus molestie at. Sed a facilisis enim, nec molestie magna. Donec in augue non est viverra dapibus vel tempus risus. Nam porttitor purus sit amet hendrerit ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>"),
+        "important": false,
+        "body": $sce.trustAsHtml("<p>Hey John, </p><br><p>Integer eu nisl elit. Donec malesuada diam vitae tellus luctus tincidunt. Donec tempus blandit neque, rutrum egestas ipsum sagittis tempor. Curabitur volutpat ligula enim, nec vehicula purus molestie at. Sed a facilisis enim, nec molestie magna. Donec in augue non est viverra dapibus vel tempus risus. Nam porttitor purus sit amet hendrerit ullamcorper. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>"),
         "pic": "img/Nick.png",
         "email": "barlowshort@mail.com",
         "position": "Graphical designer",
-        "draft": false,
+        "draft": true,
         "trash": false,
         "tag": "work"
       },
@@ -105,7 +122,7 @@
         "subject": "Street Art",
         "date": "2015-11-22T10:05:09",
         "important": false,
-        "body": $sce.trustAsHtml("<p>Hey John,</p><p>Aliquam eu facilisis eros, quis varius est.</p>" +
+        "body": $sce.trustAsHtml("<p>Hey John, </p><p>Aliquam eu facilisis eros, quis varius est.</p>" +
             "<p>Consectetur adipiscing elit. Aliquam sodales sem in nibh pellentesque, ac dignissim mi dapibus.</p>" +
             "<p>Lorem ipsum dolor sit amet! Nullam imperdiet justo a ipsum laoreet euismod.</p>" +
             "<br><p>Cras tincidunt fermentum lectus, quis scelerisque lorem volutpat sed." +
@@ -116,7 +133,7 @@
         "draft": false,
         "attachment": "file.doc",
         "trash": false,
-        "tag" : "work"
+        "tag" : "family"
       },
       {
         "id": "2334aefvv",
@@ -124,7 +141,7 @@
         "subject": "New product",
         "date": "2015-06-22T06:26:10",
         "important": true,
-        "body": $sce.trustAsHtml("<p>Hello John,</p><p>Lorem ipsum dolor sit amet!</p>" +
+        "body": $sce.trustAsHtml("<p>Hello John, </p><p>Lorem ipsum dolor sit amet!</p>" +
             "<p>Consectetur adipiscing elit. Aliquam sodales sem in nibh pellentesque, ac dignissim mi dapibus.</p>" +
             "<p>Aliquam eu facilisis eros, quis varius est. Nullam imperdiet justo a ipsum laoreet euismod.</p>" +
             "<br><p>Nulla facilisi. Nulla congue, arcu eget blandit lacinia, leo ante ullamcorper lectus, vel pulvinar justo ipsum vitae justo." +
@@ -134,7 +151,7 @@
         "position": "Technical Chef",
         "draft": false,
         "trash": false,
-        "tag" : "work"
+        "tag" : "family"
       },
       {
         "id": "8223xzxfn",
@@ -142,7 +159,7 @@
         "subject": "Skype moji",
         "date": "2015-07-16T06:47:53",
         "important": false,
-        "body": $sce.trustAsHtml("<p>Hello John,</p><p>Aliquam sodales sem in nibh pellentesque</p>" +
+        "body": $sce.trustAsHtml("<p>Hello John, </p><p>Aliquam sodales sem in nibh pellentesque</p>" +
             "<p>Lorem ipsum dolor I find moji in skype sit amet!.</p>"),
         "pic": "img/Andrey.png",
         "email": "lakeishaphillips@mail.com",
@@ -157,7 +174,7 @@
         "subject": "My App",
         "date": "2015-06-20T07:05:02",
         "important": false,
-        "body": $sce.trustAsHtml("<p>Hey Vlad.</p><p>Lorem ipsum dolor sit amet!</p>" +
+        "body": $sce.trustAsHtml("<p>Hey Vlad. </p><p>Lorem ipsum dolor sit amet!</p>" +
             "<p>Consectetur My Falasson App elit. Aliquam sodales sem in nibh pellentesque, ac dignissim mi dapibus.</p>"),
         "pic": "img/Andrey.png",
         "email": "lakeishaphillips@mail.com",
@@ -173,7 +190,7 @@
         "subject": "Cool",
         "date": "2015-03-31T11:52:58",
         "important": false,
-        "body": $sce.trustAsHtml("<p>Hey Vlad.</p><p>Aliquam sodales sem in nibh pellentesque</p>" +
+        "body": $sce.trustAsHtml("<p>Hey Vlad. </p><p>Aliquam sodales sem in nibh pellentesque</p>" +
             "<p>Cras tincidunt fermentum lectus, quis scelerisque lorem volutpat sed.</p>"),
         "pic": "img/Vlad.png",
         "email": "carlsongoodman@mail.com",
@@ -187,10 +204,10 @@
       {
         "id": "9391xdsff",
         "name": "Vlad Lugovsky",
-        "subject": "Whan next",
+        "subject": "What next",
         "date": "2015-03-31T11:52:58",
         "important": false,
-        "body": $sce.trustAsHtml("<p>Hey Vlad.</p><p>Lorem ipsum dolor sit amet!</p>" +
+        "body": $sce.trustAsHtml("<p>Hey Vlad. </p><p>Lorem ipsum dolor sit amet!</p>" +
             "<p>Esse esse labore tempor ullamco ullamco. Id veniam laborum c.</p>"),
         "pic": "img/Vlad.png",
         "email": "carlsongoodman@mail.com",
@@ -210,6 +227,7 @@
       {
         label: 'inbox',
         name: 'Inbox',
+        "newMails" : 7,
         filter: function (messages) {
           return messages.filter(function (m) {
             return !m.trash && !m.draft && !m.spam && !m.my
@@ -237,6 +255,7 @@
       {
         label: 'draft',
         name: 'Draft',
+        "newMails" : 2,
         filter: function (messages) {
           return messages.filter(function (m) {
             return m.draft && !m.trash
@@ -266,12 +285,14 @@
       $scope.tab = tab;
       $scope.currentMessages = $scope.tabs[tab].filter($scope.messages);
       $scope.mail = $scope.currentMessages[0];
+      $scope.showMail = false;
       //var mailId = $scope.mail ? $scope.mail.id : '';
       //$location.path("/mail/"+$scope.tabs[tab].label+"/"+ mailId);
     };
 
     $scope.selectMail = function (mail) {
       $scope.mail = mail;
+      $scope.showMail = true;
       //$location.path("/mail/"+$scope.tabs[$scope.tab].label+"/"+ mail.id);
     };
 
