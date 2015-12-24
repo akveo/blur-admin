@@ -104,6 +104,10 @@
           {
             title: 'Sliders',
             root: '#/slider'
+          },
+          {
+            title: 'Panels',
+            root: '#/panels'
           }
         ]
       },
