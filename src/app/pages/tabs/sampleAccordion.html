@@ -1,0 +1,22 @@
+<uib-accordion>
+  <uib-accordion-group heading="Static Header, initially expanded">
+    This content is straight in the template.
+  </uib-accordion-group>
+  <uib-accordion-group heading="Dynamic Body Content">
+    <p>The body of the uib-accordion group grows to fit the contents</p>
+    <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+  </uib-accordion-group>
+  <uib-accordion-group heading="Custom template">
+    Hello
+  </uib-accordion-group>
+  <uib-accordion-group heading="Delete account" panel-class="panel-danger">
+    <p>Please, to delete your account, click the button below</p>
+    <button class="btn btn-danger">Delete</button>
+  </uib-accordion-group>
+  <uib-accordion-group is-open="status.open">
+    <uib-accordion-heading>
+      I can have markup, too! <b class="fa pull-right" ng-class="{'fa-angle-up': status.open, 'fa-angle-down': !status.open}"></b>
+    </uib-accordion-heading>
+    This is just some content to illustrate fancy headings.
+  </uib-accordion-group>
+</uib-accordion>

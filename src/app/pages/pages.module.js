@@ -24,6 +24,7 @@
     'BlurAdmin.pages.slider',
     'BlurAdmin.pages.tables',
     'BlurAdmin.pages.tree',
+    'BlurAdmin.pages.tabs',
     'BlurAdmin.pages.typography'
   ])
       .config(routeConfig);

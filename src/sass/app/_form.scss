@@ -485,3 +485,17 @@ label.custom-input-danger {
 .progress-bar-danger {
   background-color: $danger;
 }
+
+.progress-wizard {
+  margin-top: 10px;
+  height: 10px;
+}
+
+.wizard-pager {
+  .previous {
+    float: left;
+  }
+  .next {
+    float: right;
+  }
+}

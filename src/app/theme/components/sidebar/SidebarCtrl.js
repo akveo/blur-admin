@@ -54,6 +54,10 @@
           {
             title: 'Form Layouts',
             root: '#/form-layouts'
+          },
+          {
+            title: 'From Wizard',
+            root: '#/form-wizard'
           }
         ]
       },
@@ -92,6 +96,10 @@
           {
             title: 'Notifications',
             root: '#/notifications'
+          },
+          {
+            title: 'Tabs and Accordions',
+            root: '#/tabs'
           },
           {
             title: 'Tree View',
