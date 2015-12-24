@@ -513,11 +513,7 @@ label.custom-input-danger {
     font-weight: 100;
     font-size: 18px;
     &.active {
-      color: $dribble-color;
-    }
-    transition: transform .5s ease;
-    &:hover{
-      transform: skew(-10deg);
+      color: $primary-dark;
     }
   }
 }
