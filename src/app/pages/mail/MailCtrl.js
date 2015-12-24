@@ -9,7 +9,7 @@
       .controller('MailCtrl', MailCtrl);
 
   /** @ngInject */
-  function MailCtrl($scope, $location, $sce) {
+  function MailCtrl($scope, $location, $sce, composeModal) {
 
     $scope.showMail = false;
 
@@ -315,6 +315,13 @@
     $scope.tab = findTabByLabel(0);
     $scope.currentMessages = $scope.tabs[$scope.tab].filter($scope.messages);
     $scope.mail = $scope.currentMessages[findMessageById(0)];
+
+    $scope.showCompose = function(){
+      composeModal.open({
+        subject : "hello world"
+      })
+    }
+
   }
 
 })();
