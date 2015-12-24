@@ -1,28 +1,30 @@
 <div class="widgets">
 
   <div class="row">
-    <div class="col-md-12">
-      <blur-panel title="Modals" class-container="with-scroll">
-        <div ng-include="'app/pages/modals/modalsPanel.html'"></div>
-      </blur-panel>
+    <div class="col-md-12"
+         ba-panel
+         ba-panel-title="Modals"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/modals/modalsPanel.html'"></div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-6">
-      <blur-panel title="Message Modals" class-container="with-scroll">
-        <div ng-include="'app/pages/modals/message-modals.html'"></div>
-      </blur-panel>
+    <div class="col-md-6"
+         ba-panel
+         ba-panel-title="Message Modals"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/modals/message-modals.html'"></div>
     </div>
-    <div class="col-md-6">
-      <blur-panel title="Notifications" class-container="with-scroll" >
-        <div ng-include="'app/pages/modals/notifications/notifications.html'"></div>
-      </blur-panel>
+    <div class="col-md-6"
+         ba-panel
+         ba-panel-title="Notifications"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/modals/notifications/notifications.html'"></div>
     </div>
   </div>
 
 </div>
-
 
 
 <!-- Modal -->
@@ -92,7 +94,8 @@
 </div>
 
 <!-- Success modal -->
-<div class="modal fade message-modal success-modal" id="successModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade message-modal success-modal" id="successModal" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -108,7 +111,8 @@
 </div>
 
 <!-- Info modal -->
-<div class="modal fade message-modal info-modal" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade message-modal info-modal" id="infoModal" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -124,7 +128,8 @@
 </div>
 
 <!-- Warning modal -->
-<div class="modal fade message-modal warning-modal" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade message-modal warning-modal" id="warningModal" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -140,7 +145,8 @@
 </div>
 
 <!-- Danger modal -->
-<div class="modal fade message-modal danger-modal" id="dangerModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div class="modal fade message-modal danger-modal" id="dangerModal" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">

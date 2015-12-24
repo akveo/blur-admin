@@ -1,7 +1,7 @@
 <section ng-controller="morrisCtrl">
   <div class="row">
     <div class="col-md-12">
-      <blur-panel title="Line Chart" class-container="with-scroll">
+      <div ba-panel ba-panel-title="Line Chart" ba-panel-class="with-scroll">
         <div
             line-chart
             line-data='lineData'
@@ -10,22 +10,22 @@
             line-labels='["Serie A", "Serie B"]'
             line-colors='colors'>
         </div>
-      </blur-panel>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-4">
-      <blur-panel title="Donut" class-container="with-scroll">
+      <div ba-panel ba-panel-title="Donut" ba-panel-class="with-scroll">
         <div
             donut-chart
             donut-data='donutData'
             donut-colors='colors'
             donut-formatter='"currency"'>
         </div>
-      </blur-panel>
+      </div>
     </div>
     <div class="col-md-8">
-      <blur-panel title="Bar Chart" class-container="with-scroll ">
+      <div ba-panel ba-panel-title="Bar Chart" ba-panel-class="with-scroll ">
         <div
             bar-chart
             bar-data='barData'
@@ -34,12 +34,12 @@
             bar-labels='["Series A", "Series B"]'
             bar-colors='colors'>
         </div>
-      </blur-panel>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <blur-panel title="Area Chart" class-container="with-scroll">
+      <div ba-panel ba-panel-title="Area Chart" ba-panel-class="with-scroll">
         <div
             area-chart
             area-data='areaData'
@@ -48,7 +48,7 @@
             area-labels='["Serie A", "Serie B"]'
             line-colors='colors'>
         </div>
-      </blur-panel>
+      </div>
     </div>
   </div>
 </section>

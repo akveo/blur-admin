@@ -19,7 +19,7 @@
 
   <div class="row">
     <div class="col-md-6">
-      <blur-panel class-container="with-scroll tree-panel" title="Basic Action">
+      <div ba-panel ba-panel-title="Basic Action" ba-panel-class="with-scroll tree-panel">
         <div class="row" ng-controller="treeCtrl">
           <div class="col-sm-4">
             <div class="control-side text-center">
@@ -55,18 +55,18 @@
             </div>
           </div>
         </div>
-      </blur-panel>
+      </div>
     </div>
     <div class="col-md-6">
-      <blur-panel class-container="with-scroll tree-panel" title="Drag & Drop">
+      <div ba-panel ba-panel-title="Drag & Drop" ba-panel-class="with-scroll tree-panel">
         <div data-ui-tree="treeOptions" data-drag-enabled="true" id="tree-root-drag" ng-controller="treeCtrl">
           <ol data-ui-tree-nodes ng-model="dragData">
             <li data-ng-repeat="node in dragData" data-ui-tree-node ng-include="'nodes_renderer.html'"></li>
           </ol>
         </div>
-      </blur-panel>
+      </div>
     </div>
   </div>
-  </blur-panel>
+  </div>
 
 </div>

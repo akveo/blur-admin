@@ -1,7 +1,7 @@
 <section ng-controller="chartistCtrl">
   <div class="row">
     <div class="col-md-6 ">
-      <blur-panel title="Lines" class-container="with-scroll ">
+      <div ba-panel ba-panel-title="Lines" ba-panel-class="with-scroll ">
         <h5>Simple line chart</h5>
         <chartist class="ct-chart" chartist-data="simpleLineData" chartist-chart-type="Line"
                   chartist-chart-options="simpleLineOptions"></chartist>
@@ -11,11 +11,11 @@
         <h5>Bi-polar line chart with area only</h5>
         <chartist class="ct-chart" chartist-data="biLineData" chartist-chart-type="Line"
                   chartist-chart-options="biLineOptions"></chartist>
-      </blur-panel>
+      </div>
     </div>
 
     <div class="col-md-6 ">
-      <blur-panel title="Bars" class-container="with-scroll ">
+      <div ba-panel ba-panel-title="Bars" ba-panel-class="with-scroll ">
         <h5>Simple bar chart</h5>
         <chartist class="ct-chart" chartist-data="simpleBarData" chartist-chart-type="Bar"
                   chartist-chart-options="simpleBarOptions"></chartist>
@@ -25,13 +25,13 @@
         <h5>Stacked bar chart</h5>
         <chartist class="ct-chart stacked-bar" chartist-data="stackedBarData" chartist-chart-type="Bar"
                   chartist-chart-options="stackedBarOptions"></chartist>
-      </blur-panel>
+      </div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-12">
-      <blur-panel title="Pies & Donuts" class-container="with-scroll ">
+      <div ba-panel ba-panel-title="Pies & Donuts" ba-panel-class="with-scroll ">
         <div class="row">
           <div class="col-md-12 col-lg-4"><h5>Simple Pie</h5>
             <chartist class="ct-chart" chartist-data="simplePieData" chartist-chart-type="Pie"
@@ -46,7 +46,7 @@
                       chartist-chart-options="simpleDonutOptions" chartist-responsive-options="donutResponsive"></chartist>
           </div>
         </div>
-      </blur-panel>
+      </div>
     </div>
   </div>
 </section>

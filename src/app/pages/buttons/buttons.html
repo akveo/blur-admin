@@ -1,36 +1,49 @@
 <div class="widgets">
   <div class="row">
-    <div class="col-md-12">
-      <blur-panel class-container="with-scroll" >
-        <div ng-include="'app/pages/buttons/widgets/buttons.html'"></div>
-      </blur-panel>
+    <div class="col-md-12"
+         ba-panel
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/buttons/widgets/buttons.html'"></div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <blur-panel title="Icon Buttons" class-container="with-scroll">
+      <div
+          ba-panel
+          ba-panel-title="Icon Buttons"
+          ba-panel-class="with-scroll">
         <div ng-include="'app/pages/buttons/widgets/iconButtons.html'"></div>
-      </blur-panel>
-      <blur-panel title="Large Buttons" class-container="with-scroll">
+      </div>
+      <div
+          ba-panel
+          ba-panel-title="Large Buttons"
+          ba-panel-class="with-scroll">
         <div ng-include="'app/pages/buttons/widgets/largeButtons.html'"></div>
-      </blur-panel>
+      </div>
     </div>
     <div class="col-md-6">
-      <blur-panel title="Button Dropdowns" class-container="with-scroll" >
+      <div
+          ba-panel
+          ba-panel-title="Button Dropdowns"
+          ba-panel-class="with-scroll">
         <div ng-include="'app/pages/buttons/widgets/dropdowns.html'"></div>
-      </blur-panel>
-      <blur-panel title="Button Groups" class-container="with-scroll">
+      </div>
+      <div
+          ba-panel
+          ba-panel-title="Button Groups"
+          ba-panel-class="with-scroll">
         <div ng-include="'app/pages/buttons/widgets/buttonGroups.html'"></div>
-      </blur-panel>
+      </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-12">
-      <blur-panel title="Progress Buttons" class-container="with-scroll">
-        <div ng-include="'app/pages/buttons/widgets/progressButtons.html'"></div>
-      </blur-panel>
+    <div class="col-md-12"
+         ba-panel
+         ba-panel-title="Progress Buttons"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/buttons/widgets/progressButtons.html'"></div>
     </div>
   </div>
 

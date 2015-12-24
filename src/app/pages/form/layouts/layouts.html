@@ -1,29 +1,42 @@
 <div class="widgets">
 
   <div class="row">
-    <div class="col-md-12">
-      <blur-panel title="Inline Form" class-container="with-scroll">
-        <div ng-include="'app/pages/form/layouts/widgets/inlineForm.html'"></div>
-      </blur-panel>
+    <div class="col-md-12"
+         ba-panel
+         ba-panel-title="Inline Form"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/form/layouts/widgets/inlineForm.html'"></div>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <blur-panel title="Basic Form" class-container="with-scroll">
+      <div
+          ba-panel
+          ba-panel-title="Basic Form"
+          ba-panel-class="with-scroll">
         <div ng-include="'app/pages/form/layouts/widgets/basicForm.html'"></div>
-      </blur-panel>
-      <blur-panel title="Block Form" class-container="with-scroll">
+      </div>
+      <div
+          ba-panel
+          ba-panel-title="Block Form"
+          ba-panel-class="with-scroll">
         <div ng-include="'app/pages/form/layouts/widgets/blockForm.html'"></div>
-      </blur-panel>
+      </div>
     </div>
     <div class="col-md-6">
-      <blur-panel title="Horizontal Form" class-container="with-scroll" >
+      <div
+          ba-panel
+          ba-panel-title="Horizontal Form"
+          ba-panel-class="with-scroll">
         <div ng-include="'app/pages/form/layouts/widgets/horizontalForm.html'"></div>
-      </blur-panel>
-      <blur-panel title="Form Without Labels" class-container="with-scroll">
+      </div>
+      <div
+          ba-panel
+          ba-panel-title="Form Without Labels"
+          ba-panel-class="with-scroll">
         <div ng-include="'app/pages/form/layouts/widgets/formWithoutLabels.html'"></div>
-      </blur-panel>
+      </div>
     </div>
   </div>
 
