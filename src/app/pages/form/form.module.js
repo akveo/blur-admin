@@ -23,7 +23,8 @@
         {
           url: '/form-wizard',
           templateUrl: 'app/pages/form/wizard/wizardPage.html',
-          controller: 'WizardCtrl'
+          controller: 'WizardCtrl',
+          controllerAs: 'vm'
         })
   }
 

@@ -8,96 +8,59 @@
 
   /** @ngInject */
   function WizardCtrl($scope, $location, $sce) {
-    $scope.tabs = [
-      {
-        name: 'Step 1'
-      },
-      {
-        name: 'Step 2'
-      },
-      {
-        name: 'Step 3'
-      }];
-
-    $scope.$watch('tab', countProgress);
-
-    $scope.selectTab = function (tab) {
-      $scope.tab = tab;
-    };
-
-    $scope.isSelectedTab = function (tab) {
-      return $scope.tab === tab;
-    };
-
-    $scope.isFirstTab = function () {
-      return $scope.tab == 0;
-    };
-
-    $scope.isLastTab = function () {
-      return $scope.tab == $scope.tabs.length - 1 ;
-    };
-
-    $scope.nextTab = function () {
-      $scope.tab++;
-    };
-
-    $scope.previousTab = function () {
-      $scope.tab--;
-    };
-
-    function countProgress() {
-      $scope.progress = (($scope.tab + 1) / $scope.tabs.length) * 100;
-    }
-
-    $scope.tab = 0;
-    $scope.progress = 0;
+   var vm = this;
+    setTimeout(function (evt, isValid) {
+      console.log(vm.personalInfoForm);
+      $scope.formValid = isValid;
+    }, 1000);
+    $scope.bla= 'Ctrl'
   }
 
   function baWizard() {
     return {
       restrict: 'E',
       transclude: true,
-      scope: {},
       templateUrl: 'app/pages/form/wizard/wizard.html',
+      controllerAs: '$baWizardController',
       controller: ['$scope', function ($scope) {
         var vm = this;
-        $scope.tabs = [];
+        vm.tabs = [];
 
-        $scope.tabNum = 0;
-        $scope.progress = 0;
+        vm.tabNum = 0;
+        vm.progress = 0;
 
         vm.addTab = function(tab) {
-          $scope.tabs.push(tab);
-          $scope.selectTab(0);
+          vm.tabs.push(tab);
+          vm.selectTab(0);
         };
 
-        $scope.$watch('tabNum', countProgress);
+        $scope.$watch(angular.bind(vm, function () {return vm.tabNum;}), countProgress);
 
-        $scope.selectTab = function (tabNum) {
-          $scope.tabNum = tabNum;
-          $scope.tabs.forEach(function (t, tIndex) {
-            tIndex == $scope.tabNum ? t.select(true) : t.select(false);
+        vm.selectTab = function (tabNum) {
+          vm.tabNum = tabNum;
+          vm.tabs.forEach(function (t, tIndex) {
+            tIndex == vm.tabNum ? t.select(true) : t.select(false);
           });
         };
 
-        $scope.isFirstTab = function () {
-          return $scope.tabNum == 0;
+        vm.isFirstTab = function () {
+          return vm.tabNum == 0;
         };
 
-        $scope.isLastTab = function () {
-          return $scope.tabNum == $scope.tabs.length - 1 ;
+        vm.isLastTab = function () {
+          return vm.tabNum == vm.tabs.length - 1 ;
         };
 
-        $scope.nextTab = function () {
-          $scope.tabNum++;
+        vm.nextTab = function () {
+          vm.tabNum++;
         };
 
-        $scope.previousTab = function () {
-          $scope.tabNum--;
+        vm.previousTab = function () {
+          vm.tabNum--;
         };
 
         function countProgress() {
-          $scope.progress = (($scope.tabNum + 1) / $scope.tabs.length) * 100;
+          vm.progress = ((vm.tabNum + 1) / vm.tabs.length) * 100;
         }
       }]
     }
@@ -107,21 +70,26 @@
     return {
       restrict: 'E',
       transclude: true,
-      scope: {
-        title: '@'
-      },
       require: '^baWizard',
+      scope: {
+        availability: '='
+      },
       templateUrl:  'app/pages/form/wizard/tab.html',
       link: function($scope, $element, $attrs, wizard) {
-        $scope.selected = false;
-        $scope.select = function(isSelected) {
-           if (isSelected) {
-             $scope.selected = true;
-           } else {
-             $scope.selected = false;
-           }
-        } ;
-        wizard.addTab($scope);
+        $scope.selected = true;
+
+        function select(isSelected) {
+          if (isSelected) {
+            $scope.selected = true;
+          } else {
+            $scope.selected = false;
+          }
+        }
+
+        wizard.addTab({
+          title: $attrs.title,
+          select: select
+        });
       }
     };
   }
