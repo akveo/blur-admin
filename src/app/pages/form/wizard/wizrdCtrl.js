@@ -2,53 +2,96 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.form')
-    .controller('WizardCtrl', WizardCtrl);
+      .controller('WizardCtrl', WizardCtrl)
+      .directive('baWizard', baWizard)
+      .directive('baWizardTab', baWizardTab);
 
   /** @ngInject */
   function WizardCtrl($scope, $location, $sce) {
-    $scope.tabs = [
-      {
-        name: 'Step 1'
-      },
-      {
-        name: 'Step 2'
-      },
-      {
-        name: 'Step 3'
-      }];
+   var vm = this;
+    setTimeout(function (evt, isValid) {
+      console.log(vm.personalInfoForm);
+      $scope.formValid = isValid;
+    }, 1000);
+    $scope.bla= 'Ctrl'
+  }
 
-    $scope.$watch('tab', countProgress);
+  function baWizard() {
+    return {
+      restrict: 'E',
+      transclude: true,
+      templateUrl: 'app/pages/form/wizard/wizard.html',
+      controllerAs: '$baWizardController',
+      controller: ['$scope', function ($scope) {
+        var vm = this;
+        vm.tabs = [];
 
-    $scope.selectTab = function (tab) {
-      $scope.tab = tab;
-    };
+        vm.tabNum = 0;
+        vm.progress = 0;
 
-    $scope.isSelectedTab = function (tab) {
-      return $scope.tab === tab;
-    };
+        vm.addTab = function(tab) {
+          vm.tabs.push(tab);
+          vm.selectTab(0);
+        };
 
-    $scope.isFirstTab = function () {
-      return $scope.tab == 0;
-    };
+        $scope.$watch(angular.bind(vm, function () {return vm.tabNum;}), countProgress);
 
-    $scope.isLastTab = function () {
-      return $scope.tab == $scope.tabs.length - 1 ;
-    };
+        vm.selectTab = function (tabNum) {
+          vm.tabNum = tabNum;
+          vm.tabs.forEach(function (t, tIndex) {
+            tIndex == vm.tabNum ? t.select(true) : t.select(false);
+          });
+        };
 
-    $scope.nextTab = function () {
-      $scope.tab++;
-    };
+        vm.isFirstTab = function () {
+          return vm.tabNum == 0;
+        };
 
-    $scope.previousTab = function () {
-      $scope.tab--;
-    };
+        vm.isLastTab = function () {
+          return vm.tabNum == vm.tabs.length - 1 ;
+        };
 
-    function countProgress() {
-      $scope.progress = (($scope.tab + 1) / $scope.tabs.length) * 100;
+        vm.nextTab = function () {
+          vm.tabNum++;
+        };
+
+        vm.previousTab = function () {
+          vm.tabNum--;
+        };
+
+        function countProgress() {
+          vm.progress = ((vm.tabNum + 1) / vm.tabs.length) * 100;
+        }
+      }]
     }
+  }
 
-    $scope.tab = 0;
-    $scope.progress = 0;
+  function baWizardTab() {
+    return {
+      restrict: 'E',
+      transclude: true,
+      require: '^baWizard',
+      scope: {
+        availability: '='
+      },
+      templateUrl:  'app/pages/form/wizard/tab.html',
+      link: function($scope, $element, $attrs, wizard) {
+        $scope.selected = true;
+
+        function select(isSelected) {
+          if (isSelected) {
+            $scope.selected = true;
+          } else {
+            $scope.selected = false;
+          }
+        }
+
+        wizard.addTab({
+          title: $attrs.title,
+          select: select
+        });
+      }
+    };
   }
 
 })();

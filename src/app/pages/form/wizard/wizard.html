@@ -1,119 +1,25 @@
-<div class="widgets">
-
+<div class="wizard">
     <div class="row">
-        <div class="col-md-12">
-            <blur-panel title="Form Wizard" class-container="with-scroll">
-                <div class="row">
-                    <div class="mail-navigation-container">
-                        <div ng-repeat="t in tabs" class="mail-navigation {{tab == $index ? 'active' : ''}}" ng-click="selectTab($index)">
-                            {{t.name}}
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="progress progress-wizard">
-                    <div class="progress-bar progress-bar-info active" role="progressbar"
-                         aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="{{'width: ' + progress + '%;'}}">
-                    </div>
-                </div>
-
-                <form id="wizardForm">
-                    <div ng-show="tab == 0">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="inputFirstName">First Name</label>
-                                    <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="inputLastName">Last Name</label>
-                                    <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="inputFirstName">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="inputWebsite">Website</label>
-                                    <input type="text" class="form-control" id="inputWebsite" placeholder="Website">
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-
-                    <div ng-show="tab == 1">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div class="checkbox">
-                            <label class="custom-checkbox">
-                                <input type="checkbox">
-                                <span>Check me out</span>
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-danger">Submit</button>
-                    </div>
-
-                    <div ng-show="tab == 2">
-                        <div class="form-group">
-                            <label for="input01">Text</label>
-                            <input type="text" class="form-control" id="input01" placeholder="Text">
-                        </div>
-                        <div class="form-group">
-                            <label for="input02">Password</label>
-                            <input type="password" class="form-control" id="input02" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="input03">Rounded Corners</label>
-                            <input type="text" class="form-control form-control-rounded" id="input03" placeholder="Rounded Corners">
-                        </div>
-                        <div class="form-group">
-                            <label for="input04">With help</label>
-                            <input type="text" class="form-control" id="input04" placeholder="With help">
-                            <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-                        </div>
-                        <div class="form-group">
-                            <label for="input05">Disabled Input</label>
-                            <input type="text" class="form-control" id="input05" placeholder="Disabled Input" disabled>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="textarea01">Textarea</label>
-                            <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" class="form-control input-sm" id="input2" placeholder="Small Input">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control input-lg" id="input4" placeholder="Large Input">
-                        </div>
-                    </div>
-                </form>
-
-                <nav>
-                    <ul class="pager wizard-pager">
-                        <li class="previous"><button  ng-disabled="isFirstTab()" ng-click="previousTab()" type="button" class=" btn btn-primary"><span aria-hidden="true">&larr;</span> previous</button></li>
-                        <li class="next"> <button ng-disabled="isLastTab()" ng-click="nextTab()" type="button" class="btn btn-primary">next <span aria-hidden="true">&rarr;</span></button></li>
-                    </ul>
-                </nav>
-            </blur-panel>
+        <div class="wizard-navigation-container">
+            <div ng-repeat="t in $baWizardController.tabs" class="wizard-navigation {{$baWizardController.tabNum == $index ? 'active' : ''}}" ng-click="$baWizardController.selectTab($index)">
+                {{t.title}}
+            </div>
         </div>
     </div>
 
+
+    <div class="progress progress-wizard">
+        <div class="progress-bar progress-bar-info active" role="progressbar"
+             aria-valuenow="{{$baWizardController.progress}}" aria-valuemin="0" aria-valuemax="100" style="{{'width: ' + progress + '%;'}}">
+        </div>
+    </div>
+
+    <div class="steps" ng-transclude></div>
+
+    <nav>
+        <ul class="pager wizard-pager">
+            <li class="previous"><button  ng-disabled="$baWizardController.isFirstTab()" ng-click="$baWizardController.previousTab()" type="button" class=" btn btn-primary"><span aria-hidden="true">&larr;</span> previous</button></li>
+            <li class="next"> <button ng-disabled="$baWizardController.isLastTab()" ng-click="$baWizardController.nextTab()" type="button" class="btn btn-primary">next <span aria-hidden="true">&rarr;</span></button></li>
+        </ul>
+    </nav>
 </div>
