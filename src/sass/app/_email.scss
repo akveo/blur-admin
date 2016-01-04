@@ -1,5 +1,6 @@
 .letter-layout{
   margin-top: -15px;
+  margin-right: -22px;
 }
 
 .mail-panel {
@@ -53,6 +54,7 @@
     }
   }
 }
+
 
 .labels, .add-label-container{
   margin-top: 16px;
@@ -117,7 +119,7 @@
   float: left;
   padding: 0 15px;
   position: relative;
-  min-height: 650px;
+  height: 550px;
   overflow: scroll;
 }
 
@@ -174,10 +176,10 @@
 }
 
 .message-container {
-  width: calc(100% - 320px);
-  padding: 15px 0 10px 30px;
+  width: calc(100% - 300px);
+  padding: 15px 15px 10px 30px;
   box-shadow: -4px 0 7px -2px $input-border;
-  overflow: inherit;
+  overflow-x: hidden;
 }
 
 
@@ -250,7 +252,7 @@
   }
   &:hover {
     .little-human-picture {
-      transform: rotate(5deg);
+      animation: rotateReturnAnimation 0.5s;
     }
       color: $dribble-color;
   }
@@ -392,6 +394,9 @@
       cursor: pointer;
     }
   }
+  .date{
+    white-space: nowrap;
+  }
 }
 
 .message-body {
@@ -468,6 +473,21 @@
 .second-name {
   margin-top: -7px;
 }
+
+
+@keyframes rotateReturnAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
 @media screen and (max-width: 1199px) {
   .name-h{
     display: inline;
@@ -490,7 +510,7 @@
   }
 
   .message-container {
-    width: calc(100% - 220px);
+    width: calc(100% - 200px);
   }
 
   .person-info .human-picture {
@@ -539,21 +559,24 @@
   }
 
   .message-container {
-    width: calc(100% - 185px);
+    width: calc(100% - 175px);
   }
 
   .mail-body-part{
     display: none;
   }
   .little-human .little-human-picture{
-    display: none;
+    width: 30px;
+    height: 30px;
   }
   .messages-control .more-button {
     width: 50px;
   }
 }
 @media screen and (max-width: 470px) {
-
+  .little-human .little-human-picture{
+    display: none;
+  }
 
   .mail-navigation-container{
     width: 155px
@@ -564,7 +587,7 @@
   }
 
   .message-container {
-    width: calc(100% - 165px);
+    width: calc(100% - 155px);
   }
 
   .mail-navigation-container .compose-button .btn {

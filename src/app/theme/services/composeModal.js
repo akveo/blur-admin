@@ -16,9 +16,17 @@
           animation: false,
           templateUrl: 'app/theme/components/composeBox/compose.html',
           controller: 'composeBoxCtrl',
-          size: size,
+          size: 'slim',
           resolve: {
-            subject : options.subject
+            subject: function () {
+              return options.subject;
+            },
+            to: function () {
+              return options.to;
+            },
+            text: function () {
+              return options.text;
+            }
           }
         });
       }

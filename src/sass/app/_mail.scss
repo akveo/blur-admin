@@ -1,5 +1,79 @@
-.mail-container{
-  div{
 
+.compose-header {
+  padding: 8px 3px 8px 10px;
+  color: white;
+  font-weight: 100;
+  font-size: 13px;
+  background-color: $github-color;
+}
+
+.header-controls {
+  display: inline-block;
+  float: right;
+  i {
+    margin-right: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+      color: $primary-light;
+    }
   }
+}
+
+.compose-input {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+
+
+.compose-footer {
+  padding: 2px 4px;
+  background-color: whitesmoke;
+    .btn-send {
+    background-color: $primary-light;
+    color: white;
+    padding: 2px 10px;
+    margin: 3px;
+    font-weight: 100;
+  }
+  .btn-default{
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.footer-controls {
+  float: right;
+  margin: 6px;
+}
+
+.compose-footer-icon {
+  font-size: 18px;
+  margin-right: 5px;
+  cursor: pointer;
+  &:hover {
+    color: $primary-light;
+  }
+}
+
+.compose-container {
+  background-color: whitesmoke;
+  .ta-text.ta-editor {
+    background-color: white;
+  }
+
+}
+
+.footer-control-first {
+  border-right: 2px solid $help-text;
+  display: inline-block;
+  padding-right: 9px;
+}
+
+.modal .modal-dialog.modal-slim {
+  width: 398px;
+  float: right;
+  margin-top: 10%;
 }
