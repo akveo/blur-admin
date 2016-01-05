@@ -1,6 +1,5 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family;
-  color: $default-text;
   width: 90%;
   margin-top: 0;
 }
@@ -19,17 +18,17 @@ a {
 
 h1 {
   font-size: 32px;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 h2 {
   font-size: 24px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 h3 {
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 h4 {
@@ -274,7 +273,6 @@ h5 {
 
 p {
   margin-bottom: 12px;
-  color: $default-text;
   font-family: $font-family;
   font-size: 14px;
 }

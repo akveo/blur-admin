@@ -15,7 +15,7 @@
   function baPanel(baPanel) {
     return angular.extend({}, baPanel, {
       template: function(el, attrs) {
-        var res = '<div class="panel panel-default invisible ' + (attrs.baPanelClass || '') + '" zoom-in>';
+        var res = '<div class="panel panel-white invisible ' + (attrs.baPanelClass || '') + '" zoom-in>';
         res += baPanel.template(el, attrs);
         res += '</div>';
         return res;

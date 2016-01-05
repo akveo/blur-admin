@@ -15,7 +15,7 @@
   function baPanelSelf(baPanel) {
     return angular.extend({}, baPanel, {
       link: function(scope, el, attrs) {
-        el.addClass('panel panel-default');
+        el.addClass('panel panel-white');
         if (attrs.baPanelClass) {
           el.addClass(attrs.baPanelClass);
         }

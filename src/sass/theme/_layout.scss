@@ -14,7 +14,7 @@ html, body {
 
 body {
   font: 14px/16px $font-family;
-  color: $default-text;
+  color: white;
   @include main-background();
 }
 
