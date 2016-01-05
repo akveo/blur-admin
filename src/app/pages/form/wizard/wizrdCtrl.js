@@ -12,12 +12,15 @@
 
     vm.personalInfo = {};
     vm.productInfo = {};
-    vm.payment = {};
-    vm.finish = {};
+    vm.shipment = {};
 
     vm.arePersonalInfoPasswordsEqual = function () {
       return vm.personalInfo.confirmPassword && vm.personalInfo.password == vm.personalInfo.confirmPassword;
     };
+
+    setInterval(function() {
+      console.log(vm.productInfo)
+    }, 5000)
   }
 
   function baWizard() {

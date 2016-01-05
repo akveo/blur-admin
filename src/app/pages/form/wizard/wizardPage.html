@@ -38,81 +38,64 @@
                   <ba-wizard-tab title="Product Info" form="vm.productInfoForm">
                       <form name="vm.productInfoForm" novalidate>
                           <div class="row">
-                              <div class="col-sm-6">
-                                  <div class="form-group">
-                                      <label for="inputFirstName">First Name</label>
-                                      <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" ng-model="vm.productInfo.fName" required>
+                              <div class="col-md-6">
+                                  <div class="form-group has-feedback"
+                                       ng-class="{'has-error': vm.productInfoForm.productName.$invalid && (vm.productInfoForm.productName.$dirty || vm.productInfoForm.$submitted)}">
+                                      <label for="productName">Product name</label>
+                                      <input type="text" class="form-control" id="productName" name="productName" placeholder="Product name" ng-model="vm.productInfo.productName" required>
+                                      <span class="help-block error-block basic-block">Required</span>
+                                  </div>
+                                  <div class="form-group" ng-class="{'has-error': vm.productInfoForm.productId.$invalid && (vm.productInfoForm.productId.$dirty || vm.productInfoForm.$submitted)}">
+                                      <label for="productId">Product id</label>
+                                      <input type="text" class="form-control" id="productId" name="productId" placeholder="productId" ng-model="vm.productInfo.productId" required>
+                                      <span class="help-block error-block basic-block">Required</span>
                                   </div>
                               </div>
-                              <div class="col-sm-6">
+                              <div class="col-md-6">
                                   <div class="form-group">
-                                      <label for="inputLastName">Last Name</label>
-                                      <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" ng-model="vm.productInfo.lName" required>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-sm-6">
-                                  <div class="form-group">
-                                      <label for="inputFirstName">Email</label>
-                                      <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="vm.productInfo.email" required>
-                                  </div>
-                              </div>
-                              <div class="col-sm-6">
-                                  <div class="form-group">
-                                      <label for="inputWebsite">Website</label>
-                                      <input type="text" class="form-control" id="inputWebsite" placeholder="Website" ng-model="vm.productInfo.website" required>
+                                      <label for="productName">Category</label>
+                                      <select class="form-control" title="Category" selectpicker>
+                                          <option selected>Electronics</option>
+                                          <option>Toys</option>
+                                          <option>Weed</option>
+                                      </select>
                                   </div>
                               </div>
                           </div>
                       </form>
                   </ba-wizard-tab>
-                  <ba-wizard-tab title="Payment"  form="vm.paymentForm">
-                      <form class="row form-inline" name="vm.paymentForm" novalidate>
-                          <div class="form-group col-sm-3 col-xs-6">
-                              <input type="text" class="form-control" id="exampleInputName2" placeholder="Name" ng-model="vm.payment.name" required>
-                          </div>
-                          <div class="form-group col-sm-3 col-xs-6">
-                              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" ng-model="vm.payment.email" required>
-                          </div>
-                          <div class="checkbox">
-                              <label class="custom-checkbox">
-                                  <input type="checkbox">
-                                  <span>Remember me</span>
-                              </label>
-                          </div>
-                          <button type="submit" class="btn btn-primary">Send invitation</button>
-                      </form>
+                    <ba-wizard-tab title="Shipment"  form="vm.addressForm">
+                        <form name="vm.addressForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group has-feedback"
+                                         ng-class="{'has-error': vm.addressForm.address.$invalid && (vm.addressForm.address.$dirty || vm.addressForm.$submitted)}">
+                                        <label for="productName">Shipment address</label>
+                                        <input type="text" class="form-control" id="address" name="address" placeholder="Shipment address" ng-model="vm.shipment.address" required>
+                                        <span class="help-block error-block basic-block">Required</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="productName">Shipment method</label>
+                                        <select class="form-control" title="Category" selectpicker>
+                                            <option selected>Fast & expensive</option>
+                                            <option>Cheap & free</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span>Save shipment info</span>
+                                </label>
+                            </div>
+                        </form>
                   </ba-wizard-tab>
                   <ba-wizard-tab title="Finish">
                       <form class="form-horizontal" name="vm.finishForm" novalidate>
-                          <div class="form-group">
-                              <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-                              <div class="col-sm-10">
-                                  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-                              <div class="col-sm-10">
-                                  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="col-sm-offset-2 col-sm-10">
-                                  <div class="checkbox">
-                                      <label class="custom-checkbox">
-                                          <input type="checkbox">
-                                          <span>Remember me</span>
-                                      </label>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="col-sm-offset-2 col-sm-10">
-                                  <button type="submit" class="btn btn-warning">Sign in</button>
-                              </div>
-                          </div>
+                         Congratulations! You have successfully filled the form
                       </form>
                   </ba-wizard-tab>
               </ba-wizard>
