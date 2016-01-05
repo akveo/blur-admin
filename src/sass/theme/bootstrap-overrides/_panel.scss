@@ -1,12 +1,14 @@
-$panel-title-height: 35px;
+$panel-title-height: 44px;
+$panel-heading-font-size: 16px;
 
 .panel {
   border: none;
-  border-radius: 0px;
+  border-radius: 0;
   background-color: $panel-bg;
   position: relative;
   transition: all 0.2s ease;
   margin-bottom: 24px;
+
   &:hover {
     background: $panel-bg-hover;
   }
@@ -32,30 +34,37 @@ $panel-title-height: 35px;
   &.with-scroll {
     .panel-body {
       height: calc(100% - #{$panel-title-height});
-      .panel-content {
-        overflow-y: auto;
-      }
+      overflow-y: auto;
     }
   }
 }
 
-.panel-heading, .panel-default > .panel-heading {
-  background-color: transparent;
-  border: none;
-  padding: 0 22px;
-  color: $default-text;
+.panel-body {
+  padding: 15px 22px;
+  height: 100%;
+}
+
+.panel-heading {
+  height: $panel-title-height;
+  font-size: $panel-heading-font-size;
+
+  $vertical-padding: ($panel-title-height - $panel-heading-font-size) / 2;
+  padding: $vertical-padding 22px;
+
+  + .panel-body {
+    padding-top: 0;
+  }
+}
+
+.panel-default {
+  > .panel-heading {
+    background-color: transparent;
+    border: none;
+    color: $default-text;
+  }
 }
 
 .panel-title {
-  height: $panel-title-height;
-  line-height: 20px;
-  padding-top: 15px;
-}
-
-.panel-body {
-  padding: 0;
-}
-.panel-content {
-  padding: 15px 22px;
-  height: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
 }
