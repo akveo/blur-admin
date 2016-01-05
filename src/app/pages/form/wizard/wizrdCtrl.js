@@ -9,11 +9,12 @@
   /** @ngInject */
   function WizardCtrl($scope, $location, $sce) {
    var vm = this;
-    setTimeout(function (evt, isValid) {
-      console.log(vm.personalInfoForm);
-      $scope.formValid = isValid;
-    }, 1000);
-    $scope.bla= 'Ctrl'
+
+    vm.personalInfo = {};
+    vm.productInfo = {};
+    vm.paymentForm = {};
+    vm.finishForm = {};
+
   }
 
   function baWizard() {
@@ -30,6 +31,7 @@
         vm.progress = 0;
 
         vm.addTab = function(tab) {
+          tab.setPrev(vm.tabs[vm.tabs.length - 1]);
           vm.tabs.push(tab);
           vm.selectTab(0);
         };
@@ -37,10 +39,12 @@
         $scope.$watch(angular.bind(vm, function () {return vm.tabNum;}), countProgress);
 
         vm.selectTab = function (tabNum) {
-          vm.tabNum = tabNum;
-          vm.tabs.forEach(function (t, tIndex) {
-            tIndex == vm.tabNum ? t.select(true) : t.select(false);
-          });
+          if (vm.tabs[tabNum].isAvailiable()) {
+            vm.tabNum = tabNum;
+            vm.tabs.forEach(function (t, tIndex) {
+              tIndex == vm.tabNum ? t.select(true) : t.select(false);
+            });
+          }
         };
 
         vm.isFirstTab = function () {
@@ -52,11 +56,11 @@
         };
 
         vm.nextTab = function () {
-          vm.tabNum++;
+          vm.selectTab(vm.tabNum + 1)
         };
 
         vm.previousTab = function () {
-          vm.tabNum--;
+          vm.selectTab(vm.tabNum - 1)
         };
 
         function countProgress() {
@@ -72,11 +76,22 @@
       transclude: true,
       require: '^baWizard',
       scope: {
-        availability: '='
+        completeness: '='
       },
       templateUrl:  'app/pages/form/wizard/tab.html',
       link: function($scope, $element, $attrs, wizard) {
         $scope.selected = true;
+
+        var tab = {
+          title: $attrs.title,
+          select: select,
+          isComplete: isComplete,
+          isAvailiable: isAvailiable,
+          prevTab: undefined,
+          setPrev: setPrev
+        };
+
+        wizard.addTab(tab);
 
         function select(isSelected) {
           if (isSelected) {
@@ -86,10 +101,17 @@
           }
         }
 
-        wizard.addTab({
-          title: $attrs.title,
-          select: select
-        });
+        function isComplete() {
+          return $scope.completeness;
+        }
+
+        function isAvailiable() {
+          return tab.prevTab ? tab.prevTab.isComplete() : true;
+        }
+
+        function setPrev(pTab) {
+          tab.prevTab = pTab;
+        }
       }
     };
   }

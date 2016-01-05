@@ -4,15 +4,15 @@
         <div class="col-md-12">
             <blur-panel title="Form Wizard" class-container="with-scroll">
               <ba-wizard>
-                  <ba-wizard-tab title="Personal info">
+                  <ba-wizard-tab title="Personal info" completeness="vm.personalInfoForm.$valid">
                       <form name="vm.personalInfoForm" novalidate>
                           <div class="form-group">
                               <label for="exampleInputEmail1">Email address</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required max="5">
+                              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" ng-model="vm.personalInfo.email" required>
                           </div>
                           <div class="form-group">
                               <label for="exampleInputPassword1">Password</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="vm.personalInfo.password" required>
                           </div>
                           <div class="checkbox">
                               <label class="custom-checkbox">
@@ -23,19 +23,19 @@
                           <button type="submit" class="btn btn-danger">Submit</button>
                       </form>
                   </ba-wizard-tab>
-                  <ba-wizard-tab title="Product Info">
-                      <form name="productInfoForm" novalidate>
+                  <ba-wizard-tab title="Product Info" completeness="vm.productInfoForm.$valid">
+                      <form name="vm.productInfoForm" novalidate>
                           <div class="row">
                               <div class="col-sm-6">
                                   <div class="form-group">
                                       <label for="inputFirstName">First Name</label>
-                                      <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                                      <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" ng-model="vm.productInfoForm.fName" required>
                                   </div>
                               </div>
                               <div class="col-sm-6">
                                   <div class="form-group">
                                       <label for="inputLastName">Last Name</label>
-                                      <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                                      <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" ng-model="vm.productInfoForm.lName" required>
                                   </div>
                               </div>
                           </div>
@@ -43,26 +43,26 @@
                               <div class="col-sm-6">
                                   <div class="form-group">
                                       <label for="inputFirstName">Email</label>
-                                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                      <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="vm.productInfoForm.email" required>
                                   </div>
                               </div>
                               <div class="col-sm-6">
                                   <div class="form-group">
                                       <label for="inputWebsite">Website</label>
-                                      <input type="text" class="form-control" id="inputWebsite" placeholder="Website">
+                                      <input type="text" class="form-control" id="inputWebsite" placeholder="Website" ng-model="vm.productInfoForm.website" required>
                                   </div>
                               </div>
                           </div>
                       </form>
                       <button type="submit" class="btn btn-primary">Submit</button>
                   </ba-wizard-tab>
-                  <ba-wizard-tab title="Payment">
-                      <form class="row form-inline" name="paymentForm" novalidate>
+                  <ba-wizard-tab title="Payment"  completeness="vm.paymentForm.$valid">
+                      <form class="row form-inline" name="vm.paymentForm" novalidate>
                           <div class="form-group col-sm-3 col-xs-6">
-                              <input type="text" class="form-control" id="exampleInputName2" placeholder="Name">
+                              <input type="text" class="form-control" id="exampleInputName2" placeholder="Name" ng-model="vm.paymentForm.name" required>
                           </div>
                           <div class="form-group col-sm-3 col-xs-6">
-                              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email">
+                              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email" ng-model="vm.paymentForm.email" required>
                           </div>
                           <div class="checkbox">
                               <label class="custom-checkbox">
@@ -74,7 +74,7 @@
                       </form>
                   </ba-wizard-tab>
                   <ba-wizard-tab title="Finish">
-                      <form class="form-horizontal" name="finishForm" novalidate>
+                      <form class="form-horizontal" name="vm.finishForm" novalidate>
                           <div class="form-group">
                               <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                               <div class="col-sm-10">
