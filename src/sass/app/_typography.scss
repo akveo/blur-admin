@@ -12,7 +12,7 @@ a {
   color: $primary;
   text-decoration: none !important;
   &:hover {
-    color: $danger;
+    color: shade($primary, 20);
   }
 }
 
