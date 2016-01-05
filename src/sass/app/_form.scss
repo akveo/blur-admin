@@ -380,6 +380,13 @@ label.custom-input-danger {
   color: $help-text;
 }
 
+.help-block.error-block {
+  display: none;
+  .has-error &.basic-block {
+    display: block;
+  }
+}
+
 @mixin groupAddon($color) {
   background: $color;
   color: #ffffff;

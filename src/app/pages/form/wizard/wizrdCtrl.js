@@ -7,7 +7,7 @@
       .directive('baWizardTab', baWizardTab);
 
   /** @ngInject */
-  function WizardCtrl($scope, $location, $sce) {
+  function WizardCtrl($scope) {
    var vm = this;
 
     vm.personalInfo = {};
@@ -15,6 +15,9 @@
     vm.payment = {};
     vm.finish = {};
 
+    vm.arePersonalInfoPasswordsEqual = function () {
+      return vm.personalInfo.confirmPassword && vm.personalInfo.password == vm.personalInfo.confirmPassword;
+    };
   }
 
   function baWizard() {
@@ -39,6 +42,7 @@
         $scope.$watch(angular.bind(vm, function () {return vm.tabNum;}), countProgress);
 
         vm.selectTab = function (tabNum) {
+          vm.tabs[vm.tabNum].submit();
           if (vm.tabs[tabNum].isAvailiable()) {
             vm.tabNum = tabNum;
             vm.tabs.forEach(function (t, tIndex) {
@@ -76,7 +80,7 @@
       transclude: true,
       require: '^baWizard',
       scope: {
-        completeness: '='
+        form: '='
       },
       templateUrl:  'app/pages/form/wizard/tab.html',
       link: function($scope, $element, $attrs, wizard) {
@@ -85,6 +89,7 @@
         var tab = {
           title: $attrs.title,
           select: select,
+          submit: submit,
           isComplete: isComplete,
           isAvailiable: isAvailiable,
           prevTab: undefined,
@@ -101,8 +106,12 @@
           }
         }
 
+        function submit() {
+          $scope.form && $scope.form.$setSubmitted(true);
+        }
+
         function isComplete() {
-          return $scope.completeness;
+          return $scope.form ? $scope.form.$valid : true;
         }
 
         function isAvailiable() {
