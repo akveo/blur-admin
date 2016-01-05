@@ -11,6 +11,7 @@
       'angular-chartist',
       'angular.morris-chart',
       'ui.tree',
+      'textAngular',
       'BlurAdmin.theme.components'
   ]);
 

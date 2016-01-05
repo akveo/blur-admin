@@ -1,7 +1,44 @@
-<div class="row">
-  <div class="col-md-12 col-sm-12"
-       ba-panel
-       ba-panel-class="with-scroll">
-    <blur-email></blur-email>
+<div class="row mail-row">
+  <div class="col-md-12 col-sm-12">
+    <blur-panel class-container="xmedium-panel mail-panel">
+      <div class="mail-container">
+        <div class="row letter-layout">
+          <div class="mail-navigation-container">
+            <div class="compose-button">
+              <button type="button" class="btn compose-button" ng-click="showCompose('','','')">
+                Compose
+              </button>
+            </div>
+            <div ng-repeat="t in tabs" class="mail-navigation {{currentTabLabel == t.label ? 'active' : ''}}"
+                 ng-click="selectTab(t.label)">
+              {{t.name}}<span class="new-mails" ng-show="t.newMails">{{t.newMails}}</span>
+            </div>
+            <div class="labels">
+              <div class="labels-title">
+                <h5 class="label-header">
+                  Labels
+                </h5>
+              </div>
+              <div class="label-item">
+                <span class="tag label work">Work</span>
+              </div>
+              <div class="label-item">
+                <span class="tag label family">Family</span>
+              </div>
+              <div class="label-item">
+                <span class="tag label friend">Friend</span>
+              </div>
+              <div class="label-item">
+                <span class="tag label study">Study</span>
+              </div>
+            </div>
+            <div class="add-label-container">
+              <i class="ion-plus-round"></i><span class="label-input-stub">Add new label</span>
+            </div>
+          </div>
+          <ui-view></ui-view>
+        </div>
+      </div>
+    </blur-panel>
   </div>
 </div>

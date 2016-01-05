@@ -54,6 +54,10 @@
           {
             title: 'Form Layouts',
             root: '#/form-layouts'
+          },
+          {
+            title: 'From Wizard',
+            root: '#/form-wizard'
           }
         ]
       },
@@ -114,7 +118,7 @@
       {
         title: 'Mail',
         icon: 'ion-ios-email-outline',
-        root: '#/mail'
+        root: '#/mail/inbox'
       },
       {
         title: 'Maps',

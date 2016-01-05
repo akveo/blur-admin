@@ -6,15 +6,29 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.mail', [])
-      .config(routeConfig);
+    .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($stateProvider) {
+  function routeConfig($stateProvider,$urlRouterProvider) {
     $stateProvider
-        .state('mail', {
-          url: '/mail',
-          templateUrl: 'app/pages/mail/mail.html'
-        });
+      .state('mail', {
+        url: '/mail',
+        abstract: true,
+        templateUrl: 'app/pages/mail/mail.html',
+        controller: "MailTabCtrl",
+        controllerAs: "tabCtrl"
+      }).state('mail.label', {
+        url: '/:label',
+        templateUrl: 'app/pages/mail/list/mailList.html',
+        controller: "MailListCtrl",
+        controllerAs: "listCtrl"
+      }).state('mail.detail', {
+        url: '/detail/:id',
+        templateUrl: 'app/pages/mail/detail/mailDetail.html',
+        controller: "MailDetailCtrl",
+        controllerAs: "detailCtrl"
+      });
+      $urlRouterProvider.when('/mail','/mail/inbox');
   }
 
 })();
