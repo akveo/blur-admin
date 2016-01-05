@@ -12,8 +12,8 @@
 
     vm.personalInfo = {};
     vm.productInfo = {};
-    vm.paymentForm = {};
-    vm.finishForm = {};
+    vm.payment = {};
+    vm.finish = {};
 
   }
 
