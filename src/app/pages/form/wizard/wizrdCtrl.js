@@ -29,7 +29,7 @@
       transclude: true,
       templateUrl: 'app/pages/form/wizard/wizard.html',
       controllerAs: '$baWizardController',
-      controller: ['$scope', function ($scope) {
+      controller: function ($scope) {
         var vm = this;
         vm.tabs = [];
 
@@ -42,7 +42,7 @@
           vm.selectTab(0);
         };
 
-        $scope.$watch(angular.bind(vm, function () {return vm.tabNum;}), countProgress);
+        $scope.$watch(angular.bind(vm, function () {return vm.tabNum;}), calcProgress);
 
         vm.selectTab = function (tabNum) {
           vm.tabs[vm.tabNum].submit();
@@ -70,10 +70,10 @@
           vm.selectTab(vm.tabNum - 1)
         };
 
-        function countProgress() {
+        function calcProgress() {
           vm.progress = ((vm.tabNum + 1) / vm.tabs.length) * 100;
         }
-      }]
+      }
     }
   }
 

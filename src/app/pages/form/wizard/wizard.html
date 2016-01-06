@@ -1,16 +1,14 @@
 <div class="wizard">
-    <div class="row">
-        <div class="wizard-navigation-container">
-            <div ng-repeat="t in $baWizardController.tabs" class="wizard-navigation {{$baWizardController.tabNum == $index ? 'active' : ''}}" ng-click="$baWizardController.selectTab($index)">
-                {{t.title}}
-            </div>
+    <div class="wizard-navigation-container">
+        <div ng-repeat="t in $baWizardController.tabs" class="wizard-navigation {{$baWizardController.tabNum == $index ? 'active' : ''}}" ng-click="$baWizardController.selectTab($index)">
+            {{t.title}}
         </div>
     </div>
 
 
     <div class="progress progress-wizard">
         <div class="progress-bar progress-bar-info active" role="progressbar"
-             aria-valuemin="0" aria-valuemax="100" style="{{'width: ' + $baWizardController.progress + '%;'}}">
+             aria-valuemin="0" aria-valuemax="100" ng-style="{width: $baWizardController.progress + '%'}">
         </div>
     </div>
 
