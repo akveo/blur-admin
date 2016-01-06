@@ -1,8 +1,17 @@
 <div class="horizontal-scroll">
+  <div class="form-group select-page-size-wrap ">
+    <select class="form-control" data-live-search="true"  title="Rows on page" selectpicker>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
   <table class="table" st-table="smartTableData">
     <thead>
-    <tr class="sortable">
-      <th class="table-id" st-sort="id">#</th>
+    <tr class="sortable ">
+      <th class="table-id" st-sort="id" st-sort-default="true">#</th>
       <th st-sort="firstName">First Name</th>
       <th st-sort="lastName">Last Name</th>
       <th st-sort="username">Username</th>
@@ -11,11 +20,16 @@
     </tr>
     <tr>
       <th></th>
-      <th><input st-search="firstName" placeholder="Search First Name" class="input-sm form-control search-input" type="search"/></th>
-      <th><input st-search="lastName" placeholder="Search Last Name" class="input-sm form-control search-input" type="search"/></th>
-      <th><input st-search="username" placeholder="Search Username" class="input-sm form-control search-input" type="search"/></th>
-      <th><input st-search="email" placeholder="Search Email" class="input-sm form-control search-input" type="search"/></th>
-      <th><input st-search="age" placeholder="Search Age" class="input-sm form-control search-input" type="search"/></th>
+      <th><input st-search="firstName" placeholder="Search First Name" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="lastName" placeholder="Search Last Name" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="username" placeholder="Search Username" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="email" placeholder="Search Email" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="age" placeholder="Search Age" class="input-sm form-control search-input" type="search"/>
+      </th>
     </tr>
     </thead>
     <tbody>
@@ -31,7 +45,7 @@
     <tfoot>
     <tr>
       <td colspan="6" class="text-center">
-        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+        <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
       </td>
     </tr>
     </tfoot>

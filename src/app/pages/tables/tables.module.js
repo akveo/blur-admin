@@ -6,16 +6,24 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.tables', [])
-      .config(routeConfig);
+    .config(routeConfig);
 
   /** @ngInject */
-  function routeConfig($stateProvider) {
+  function routeConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-        .state('tables', {
-          url: '/tables',
-          templateUrl: 'app/pages/tables/tables.html',
-          controller: 'TablesPageCtrl'
-        });
+      .state('tables', {
+        url: '/tables',
+        template : '<ui-view></ui-view>',
+        abstract: true,
+        controller: 'TablesPageCtrl'
+      }).state('tables.basic', {
+        url: '/basic',
+        templateUrl: 'app/pages/tables/basic/tables.html'
+      }).state('tables.smart', {
+        url: '/smart',
+        templateUrl: 'app/pages/tables/smart/tables.html'
+      });
+      $urlRouterProvider.when('/tables','/tables/basic');
   }
 
 })();

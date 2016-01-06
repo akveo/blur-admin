@@ -9,7 +9,7 @@
       .run(themeRun);
 
   /** @ngInject */
-  function themeRun($timeout, $rootScope, layoutSizes) {
+  function themeRun($timeout, $rootScope, layoutSizes, editableOptions) {
     $timeout(function () {
       $rootScope.$pageFinishedLoading = true;
     }, 1000);
@@ -19,6 +19,8 @@
     }, 4000);
 
     $rootScope.$isMenuCollapsed = window.innerWidth <= layoutSizes.resWidthCollapseSidebar;
+
+    editableOptions.theme = 'bs3';
   }
 
 })();
