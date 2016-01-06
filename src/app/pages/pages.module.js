@@ -19,6 +19,7 @@
     'BlurAdmin.pages.maps',
     'BlurAdmin.pages.modals',
     'BlurAdmin.pages.notifications',
+    'BlurAdmin.pages.panels',
     'BlurAdmin.pages.profile',
     'BlurAdmin.pages.progressBars',
     'BlurAdmin.pages.slider',

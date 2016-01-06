@@ -1,6 +1,6 @@
 <div class="row pie-charts">
   <div class="pie-chart-item-container" ng-repeat="chart in charts">
-    <blur-panel>
+    <div ba-panel>
       <div class="pie-chart-item">
         <div class="chart" rel="{{ ::chart.color }}" data-percent="60"> <span class="percent"></span> </div>
         <div class="description">
@@ -9,6 +9,6 @@
         </div>
         <i class="chart-icon i-{{ ::chart.icon }}"></i>
       </div>
-    </blur-panel>
+    </div>
   </div>
 </div>

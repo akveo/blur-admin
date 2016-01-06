@@ -1,46 +1,52 @@
 <div class="widgets">
 
   <div class="row">
-    <div class="col-lg-4 col-md-6">
-      <blur-panel title="Bar Chart" class-container="with-scroll">
-        <div ng-include="'app/pages/charts/amCharts/barChart/barChart.html'"></div>
-      </blur-panel>
+    <div class="col-lg-4 col-md-6"
+         ba-panel
+         ba-panel-title="Bar Chart"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/charts/amCharts/barChart/barChart.html'"></div>
     </div>
-    <div class="col-lg-4 col-md-6">
-      <blur-panel title="Area Chart" class-container="with-scroll" >
-        <div ng-include="'app/pages/charts/amCharts/areaChart/areaChart.html'"></div>
-      </blur-panel>
+    <div class="col-lg-4 col-md-6"
+         ba-panel
+         ba-panel-title="Area Chart"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/charts/amCharts/areaChart/areaChart.html'"></div>
     </div>
-    <div class="col-lg-4 col-md-12">
-      <blur-panel title="Line Chart" class-container="with-scroll">
-        <div ng-include="'app/pages/charts/amCharts/lineChart/lineChart.html'"></div>
-      </blur-panel>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <blur-panel title="Pie Chart" class-container="with-scroll">
-        <div ng-include="'app/pages/charts/amCharts/pieChart/pieChart.html'"></div>
-      </blur-panel>
-    </div>
-    <div class="col-md-6">
-      <blur-panel title="Funnel Chart" class-container="with-scroll">
-        <div ng-include="'app/pages/charts/amCharts/funnelChart/funnelChart.html'"></div>
-      </blur-panel>
+    <div class="col-lg-4 col-md-12"
+         ba-panel
+         ba-panel-title="Line Chart"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/charts/amCharts/lineChart/lineChart.html'"></div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-12">
-      <blur-panel title="Combined bullet/column and line graphs with multiple value axes" class-container="with-scroll">
-        <div ng-include="'app/pages/charts/amCharts/combinedChart/combinedChart.html'"></div>
-      </blur-panel>
+    <div class="col-md-6"
+         ba-panel
+         ba-panel-title="Pie Chart"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/charts/amCharts/pieChart/pieChart.html'"></div>
+    </div>
+    <div class="col-md-6"
+         ba-panel
+         ba-panel-title="Funnel Chart"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/charts/amCharts/funnelChart/funnelChart.html'"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12"
+         ba-panel
+         ba-panel-title="Combined bullet/column and line graphs with multiple value axes"
+         ba-panel-class="with-scroll">
+      <div ng-include="'app/pages/charts/amCharts/combinedChart/combinedChart.html'"></div>
     </div>
     <!--<div class="col-md-6">-->
-      <!--<blur-panel title="Gantt chart" class-container="with-scroll">-->
-        <!--<div ng-include="'app/pages/charts/amCharts/ganttChart/ganttChart.html'"></div>-->
-      <!--</blur-panel>-->
+    <!--<div ba-panel ba-panel-title="Gantt chart" ba-panel-class="with-scroll">-->
+    <!--<div ng-include="'app/pages/charts/amCharts/ganttChart/ganttChart.html'"></div>-->
+    <!--</div>-->
     <!--</div>-->
   </div>
 

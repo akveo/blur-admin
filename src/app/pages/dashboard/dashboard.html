@@ -1,57 +1,63 @@
 <dashboard-pie-chart></dashboard-pie-chart>
 
 <div class="row">
-  <div class="col-md-7 col-sm-12">
-    <blur-panel title="Acquisition Channels" class-container="medium-panel">
-      <traffic-chart></traffic-chart>
-    </blur-panel>
+  <div class="col-md-7 col-sm-12"
+       ba-panel
+       ba-panel-title="Acquisition Channels"
+       ba-panel-class="medium-panel">
+    <traffic-chart></traffic-chart>
   </div>
-  <div class="col-md-5 col-sm-12">
-    <blur-panel title="Users by Country" class-container="medium-panel">
-      <dashboard-map></dashboard-map>
-    </blur-panel>
+  <div class="col-md-5 col-sm-12"
+       ba-panel
+       ba-panel-title="Users by Country"
+       ba-panel-class="medium-panel">
+    <dashboard-map></dashboard-map>
   </div>
 </div>
 
 <div class="row">
   <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
     <div class="row">
-      <div class="col-lg-7 col-md-12 col-sm-7 col-xs-12">
-        <blur-panel title="Revenue" class-container="medium-panel">
-          <dashboard-line-chart></dashboard-line-chart>
-        </blur-panel>
+      <div class="col-lg-7 col-md-12 col-sm-7 col-xs-12"
+           ba-panel
+           ba-panel-title="Revenue"
+           ba-panel-class="medium-panel">
+        <dashboard-line-chart></dashboard-line-chart>
       </div>
-      <div class="col-lg-5 col-md-12 col-sm-5 col-xs-12">
-        <blur-panel class-container="popular-app medium-panel">
-          <popular-app></popular-app>
-        </blur-panel>
+      <div class="col-lg-5 col-md-12 col-sm-5 col-xs-12"
+           ba-panel
+           ba-panel-class="popular-app medium-panel">
+        <popular-app></popular-app>
       </div>
     </div>
   </div>
-  <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
-    <blur-panel title="Feed" class-container="large-panel with-scroll feed-panel">
-      <blur-feed></blur-feed>
-    </blur-panel>
+  <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12"
+       ba-panel
+       ba-panel-title="Feed"
+       ba-panel-class="large-panel with-scroll feed-panel">
+    <blur-feed></blur-feed>
   </div>
 </div>
 
 <div class="row shift-up">
-  <div class="col-lg-3 col-md-6 col-xs-12">
-    <blur-panel title="To Do List" class-container="xmedium-panel feed-comply-panel with-scroll">
-      <dashboard-todo></dashboard-todo>
-    </blur-panel>
+  <div class="col-lg-3 col-md-6 col-xs-12"
+       ba-panel
+       ba-panel-title="To Do List"
+       ba-panel-class="xmedium-panel feed-comply-panel with-scroll">
+    <dashboard-todo></dashboard-todo>
   </div>
-  <div class="col-lg-5 col-md-6 col-xs-12">
-    <blur-panel title="Calendar" class-container="xmedium-panel feed-comply-panel with-scroll">
-      <dashboard-calendar></dashboard-calendar>
-    </blur-panel>
+  <div class="col-lg-5 col-md-6 col-xs-12"
+       ba-panel
+       ba-panel-title="Calendar"
+       ba-panel-class="xmedium-panel feed-comply-panel with-scroll">
+    <dashboard-calendar></dashboard-calendar>
   </div>
 </div>
 
 <!--<div class="row">
   <div class="col-lg-4 col-sm-6 col-xs-12">
-    <blur-panel title="Weather" class-container="medium-panel with-scroll">
+    <div ba-panel ba-panel-title="Weather" ba-panel-class="medium-panel with-scroll">
       <blur-weather forecast="5"></blur-weather>
-    </blur-panel>
+    </div>
   </div>
 </div>-->

@@ -1,6 +1,5 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family;
-  color: $default-text;
   width: 90%;
   margin-top: 0;
 }
@@ -13,41 +12,31 @@ a {
   color: $primary;
   text-decoration: none !important;
   &:hover {
-    color: $danger;
+    color: shade($primary, 20);
   }
 }
 
 h1 {
   font-size: 32px;
-  line-height: 40px;
-  margin-bottom: 14px;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 h2 {
   font-size: 24px;
-  line-height: 40px;
-  margin-bottom: 10px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 h3 {
   font-size: 20px;
-  line-height: 40px;
-  margin-bottom: 6px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 h4 {
   font-size: 18px;
-  line-height: 38px;
-  margin-bottom: 5px;
 }
 
 h5 {
   font-size: 15px;
-  line-height: 35px;
-  margin-bottom: 3px;
 }
 
 .typography-document-samples {
@@ -284,7 +273,6 @@ h5 {
 
 p {
   margin-bottom: 12px;
-  color: $default-text;
   font-family: $font-family;
   font-size: 14px;
 }
