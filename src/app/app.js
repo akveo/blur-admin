@@ -8,6 +8,7 @@ angular.module('BlurAdmin', [
   'ngTouch',
   'toastr',
   'smart-table',
+  "xeditable",
   'ui.slimscroll',
 
   'BlurAdmin.theme',

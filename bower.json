@@ -51,7 +51,8 @@
     "ionrangeslider": "~2.1.2",
     "angular-bootstrap": "~0.14.3",
     "angular-animate": "~1.4.8",
-    "textAngular": "~1.4.6"
+    "textAngular": "~1.4.6",
+    "angular-xeditable": "~0.1.9"
   },
   "overrides": {
     "amcharts": {

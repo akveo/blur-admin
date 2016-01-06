@@ -54,6 +54,57 @@
   }
 }
 
+.table-panel {
+  height: 280px;
+}
+
+.editable-tr-wrap {
+  .editable-wrap {
+    vertical-align: super;
+  }
+  input.editable-input {
+    width: 110px;
+  }
+  td {
+    width: 20%;
+  }
+}
+
+.editable-table-button {
+  width: 70px;
+}
+
+.add-row-editable-table {
+  margin-bottom: 10px;
+}
+
+.select-page-size-wrap{
+  width: 150px;
+}
+
+.table .header-row th {
+  vertical-align: middle;
+  padding: 0 8px;
+}
+
+tr.editable-row {
+  input.form-control {
+    vertical-align: middle;
+  }
+}
+
+.select-td .editable-select {
+  margin-bottom: 1px;
+}
+
+@media screen and (max-width: 1199px) {
+  .editable-tr-wrap {
+    .editable-wrap {
+      vertical-align: middle;
+    }
+  }
+}
+
 .browser-icons {
   width: 41px;
 }
@@ -61,6 +112,7 @@
 .st-sort-ascent, .st-sort-descent {
   position: relative;
 }
+
 .st-sort-ascent:after, .st-sort-descent:after {
   width: 0;
   height: 0;
@@ -72,7 +124,7 @@
 }
 
 .st-sort-descent:after {
-  transform:rotate(-180deg);
+  transform: rotate(-180deg);
   margin-bottom: -2px;
 }
 
@@ -111,15 +163,16 @@ input.search-input {
   max-height: 214px;
 }
 
-.pagination>li>a, .pagination>li>span {
+.pagination > li > a, .pagination > li > span {
   background: transparent;
 }
-.pagination>li:first-child>a, .pagination>li:first-child>span {
-   border-top-left-radius: 0px;
-   border-bottom-left-radius: 0px;
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
-.pagination>li:last-child>a, .pagination>li:last-child>span {
+.pagination > li:last-child > a, .pagination > li:last-child > span {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }

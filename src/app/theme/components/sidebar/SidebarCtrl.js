@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('BlurAdmin.theme.components')
-      .controller('SidebarCtrl', SidebarCtrl);
+    .controller('SidebarCtrl', SidebarCtrl);
 
   /** @ngInject */
   function SidebarCtrl($scope, $timeout, $location, $rootScope, layoutSizes) {
@@ -41,7 +41,16 @@
       {
         title: 'Tables',
         icon: 'ion-grid',
-        root: '#/tables'
+        subMenu: [
+          {
+            title: "Basic Tables",
+            root: '#/tables/basic'
+          },
+          {
+            title: "Smart Tables",
+            root: '#/tables/smart'
+          }
+        ]
       },
       {
         title: 'Form Elements',
@@ -155,16 +164,16 @@
       },
       {
         title: 'Menu Level 1',
-        icon : 'ion-ios-more',
+        icon: 'ion-ios-more',
         subMenu: [
           {
-            title : 'Menu Level 1.1'
+            title: 'Menu Level 1.1'
           },
           {
-            title : 'Menu Level 1.2',
+            title: 'Menu Level 1.2',
             subMenu: [
               {
-                title : 'Menu Level 1.2.1'
+                title: 'Menu Level 1.2.1'
               }
             ]
           }
@@ -213,7 +222,7 @@
       $rootScope.$isMenuCollapsed = true;
     };
 
-    $rootScope.$watch('$isMenuCollapsed', function(newValue) {
+    $rootScope.$watch('$isMenuCollapsed', function (newValue) {
       if (!newValue && !$scope.selectElemTop) {
         changeSelectElemTopValue();
       }
