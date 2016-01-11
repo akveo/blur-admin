@@ -492,35 +492,3 @@ label.custom-input-danger {
 .progress-bar-danger {
   background-color: $danger;
 }
-
-.progress-wizard {
-  margin-top: 10px;
-  height: 10px;
-}
-
-.wizard-pager {
-  .previous {
-    float: left;
-  }
-  .next {
-    float: right;
-  }
-}
-
-.wizard-navigation-container {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  padding: 15px 0;
-  .wizard-navigation {
-    cursor: pointer;
-    display: table-cell;
-    line-height: 1;
-    text-align: center;
-    font-weight: 100;
-    font-size: 18px;
-    &.active {
-      color: $primary-dark;
-    }
-  }
-}
