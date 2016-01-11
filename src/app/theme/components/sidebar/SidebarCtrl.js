@@ -65,7 +65,7 @@
             root: '#/form-layouts'
           },
           {
-            title: 'From Wizard',
+            title: 'Form Wizard',
             root: '#/form-wizard'
           }
         ]

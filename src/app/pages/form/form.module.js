@@ -22,7 +22,7 @@
         .state('form-wizard',
         {
           url: '/form-wizard',
-          templateUrl: 'app/pages/form/wizard/wizardPage.html',
+          templateUrl: 'app/pages/form/wizard/wizard.html',
           controller: 'WizardCtrl',
           controllerAs: 'vm'
         })
