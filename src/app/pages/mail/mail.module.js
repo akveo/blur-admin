@@ -23,7 +23,7 @@
         controller: "MailListCtrl",
         controllerAs: "listCtrl"
       }).state('mail.detail', {
-        url: '/detail/:id',
+        url: '/:label/:id',
         templateUrl: 'app/pages/mail/detail/mailDetail.html',
         controller: "MailDetailCtrl",
         controllerAs: "detailCtrl"

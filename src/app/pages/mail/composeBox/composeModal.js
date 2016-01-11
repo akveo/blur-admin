@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.theme')
+  angular.module('BlurAdmin.pages.mail')
     .service('composeModal', composeModal);
 
   /** @ngInject */
@@ -14,7 +14,7 @@
       open : function(options){
         return $uibModal.open({
           animation: false,
-          templateUrl: 'app/theme/components/composeBox/compose.html',
+          templateUrl: 'app/pages/mail/composeBox/compose.html',
           controller: 'composeBoxCtrl',
           size: 'slim',
           resolve: {

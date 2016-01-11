@@ -155,12 +155,6 @@
   margin-left: 5px;
 }
 
-
-
-.border-tag{
-
-}
-
 .mail-tag.tag.label{
   display: inline-block;
   font-size: 14px;
@@ -180,40 +174,6 @@
   padding: 15px 15px 10px 30px;
   box-shadow: -4px 0 7px -2px $input-border;
   overflow-x: hidden;
-}
-
-
-.control-container {
-  background-color: #ebebeb;
-  padding-left: 15px;
-  margin-bottom: 30px;
-
-  .icon-buttons {
-    margin-left: -10px;
-  }
-  .btn-icon {
-    background-color: $dribble-color;
-    color: white;
-    height: 35px;
-    width: 35px;
-    font-size: 16px;
-    margin-left: -3px;
-  }
-
-  .btn.btn-icon.dropdown-toggle {
-    width: 50px;
-    &.margin-left {
-      margin-left: 10px;
-    }
-  }
-  .dropdown-menu {
-    margin-left: 10px;
-  }
-
-  .more-button {
-    font-size: 12px;
-    font-weight: 100;
-  }
 }
 
 .little-human {
@@ -616,6 +576,88 @@
 
 }
 
+
+
+.compose-header {
+  padding: 8px 3px 8px 10px;
+  color: white;
+  font-weight: 100;
+  font-size: 13px;
+  background-color: $github-color;
+}
+
+.header-controls {
+  display: inline-block;
+  float: right;
+  i {
+    margin-right: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+      color: $primary-light;
+    }
+  }
+}
+
+.compose-input {
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+
+
+.compose-footer {
+  padding: 2px 4px;
+  background-color: whitesmoke;
+  .btn-send {
+    background-color: $primary-light;
+    color: white;
+    padding: 2px 10px;
+    margin: 3px;
+    font-weight: 100;
+  }
+  .btn-default{
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.footer-controls {
+  float: right;
+  margin: 6px;
+}
+
+.compose-footer-icon {
+  font-size: 18px;
+  margin-right: 5px;
+  cursor: pointer;
+  &:hover {
+    color: $primary-light;
+  }
+}
+
+.compose-container {
+  background-color: whitesmoke;
+  .ta-text.ta-editor {
+    background-color: white;
+  }
+
+}
+
+.footer-control-first {
+  border-right: 2px solid $help-text;
+  display: inline-block;
+  padding-right: 9px;
+}
+
+.modal .modal-dialog.modal-slim {
+  width: 398px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  max-height: 474px;
+}
 
 
 
