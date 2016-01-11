@@ -276,7 +276,7 @@
     width: 80px;
     height: 80px;
     border-radius: 40px;
-    margin-top: -115px;
+    margin-top: -60px;
   }
 
   .name {
@@ -447,13 +447,29 @@
   }
 }
 
+@media screen and (max-width: 1300px) {
+
+  .mail-navigation-container{
+    width: 260px
+  }
+
+  .side-message-navigation {
+    width: calc(100% - 260px);
+  }
+
+  .message-container {
+    width: calc(100% - 260px);
+  }
+
+}
+
 
 @media screen and (max-width: 1199px) {
   .name-h{
     display: inline;
   }
   .person-info .human-picture {
-    margin-top: -45px;
+    margin-top: -30px;
   }
   .second-name {
     margin-top: 0;

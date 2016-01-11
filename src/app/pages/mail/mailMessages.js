@@ -100,7 +100,7 @@
           "<br><p>Cras tincidunt fermentum lectus, quis scelerisque lorem volutpat sed." +
           "Sed quis orci sed nisl sagittis viverra id at mauris. Nam venenatis mi nibh. Sed fringilla mattis vehic</p>"),
         "pic": "img/Kostya.png",
-        "email": "schwartzalford@mail.com",
+        "email": "schwart@mail.com",
         "position": "Technical Chef",
         "attachment": "file.doc",
         "tag": "family",
@@ -117,7 +117,7 @@
           "<br><p>Nulla facilisi. Nulla congue, arcu eget blandit lacinia, leo ante ullamcorper lectus, vel pulvinar justo ipsum vitae justo." +
           "Cras tincidunt fermentum lectus, quis scelerisque lorem volutpat sed. Sed quis orci sed nisl sagittis viverra id at mauris. Nam venenatis mi nibh. Sed fringilla mattis vehic</p>"),
         "pic": "img/Kostya.png",
-        "email": "schwartzalford@mail.com",
+        "email": "schwart@mail.com",
         "position": "Technical Chef",
         "tag": "family",
         "labels": ['inbox', 'important']
@@ -132,7 +132,7 @@
           "<br>"+
           "<p>Cras tincidunt fermentum lectus, quis scelerisque lorem volutpat sed. Sed quis orci sed nisl sagittis viverra id at mauris. Nam venenatis mi nibh. Sed fringilla mattis vehic</p>"),
         "pic": "img/Kostya.png",
-        "email": "schwartzalford@mail.com",
+        "email": "schwart@mail.com",
         "position": "Technical Chef",
         "tag": "study",
         "labels": ['trash']
