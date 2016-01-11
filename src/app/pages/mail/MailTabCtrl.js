@@ -9,17 +9,11 @@
       .controller('MailTabCtrl', MailTabCtrl);
 
   /** @ngInject */
-  function MailTabCtrl($scope, $state, $stateParams, composeModal, mailMessages) {
+  function MailTabCtrl(composeModal, mailMessages) {
 
-    $scope.selectTab = function (tab) {
-      $state.go('mail.label',{
-        label : tab
-      })
-    };
+    var vm = this;
 
-    console.log($state);
-
-    $scope.showCompose = function(subject, to , text){
+    vm.showCompose = function(subject, to , text){
       composeModal.open({
         subject : subject,
         to: to,
@@ -27,8 +21,7 @@
       })
     };
 
-    $scope.tabs = mailMessages.getTabs();
-    $scope.currentTabLabel = $stateParams.label ? $stateParams.label : $scope.tabs[0].label;
+    vm.tabs = mailMessages.getTabs();
   }
 
 })();

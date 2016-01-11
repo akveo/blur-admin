@@ -21,9 +21,9 @@
   </div>
   <div class="messages">
     <table>
-      <tr ng-repeat="m in messages track by m.id | orderBy:'-date'"
+      <tr ng-repeat="m in listCtrl.messages track by m.id | orderBy:'-date'"
           class="side-message-navigation-item little-human shineHover {{m.tag}}"
-          ng-click="selectMail(m)">
+          ui-sref="mail.detail({id: m.id})">
         <td>
           <div class="mail-checkbox">
             <label class="checkbox-inline custom-checkbox nowrap margin-left">

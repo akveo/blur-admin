@@ -1,16 +1,16 @@
 <div class="row mail-row">
-  <div class="col-md-12 col-sm-12">
+  <div class="col-md-12">
     <blur-panel class-container="xmedium-panel mail-panel">
       <div class="mail-container">
-        <div class="row letter-layout">
+        <div class="letter-layout">
           <div class="mail-navigation-container">
             <div class="compose-button">
-              <button type="button" class="btn compose-button" ng-click="showCompose('','','')">
+              <button type="button" class="btn compose-button" ng-click="tabCtrl.showCompose('','','')">
                 Compose
               </button>
             </div>
-            <div ng-repeat="t in tabs" class="mail-navigation {{currentTabLabel == t.label ? 'active' : ''}}"
-                 ng-click="selectTab(t.label)">
+            <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="mail-navigation"
+                 ui-sref="mail.label({label: t.label})" ng-click="selectTab(t.label)">
               {{t.name}}<span class="new-mails" ng-show="t.newMails">{{t.newMails}}</span>
             </div>
             <div class="labels">

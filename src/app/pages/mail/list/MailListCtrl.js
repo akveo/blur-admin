@@ -9,17 +9,9 @@
     .controller('MailListCtrl', MailListCtrl);
 
   /** @ngInject */
-  function MailListCtrl($scope, $state, $stateParams,  mailMessages) {
-
-    $scope.messages = mailMessages.getMessagesByLabel($stateParams.label);
-    $scope.$parent.currentTabLabel = $stateParams.label;
-    $scope.selectMail = function (mail) {
-      $state.go('mail.detail', {
-        id: mail.id,
-        back: $stateParams.label
-      })
-    };
-
+  function MailListCtrl($stateParams,  mailMessages) {
+    var vm = this;
+    vm.messages = mailMessages.getMessagesByLabel($stateParams.label);
   }
 
 })();
