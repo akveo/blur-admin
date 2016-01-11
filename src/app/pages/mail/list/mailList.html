@@ -23,7 +23,7 @@
     <table>
       <tr ng-repeat="m in listCtrl.messages track by m.id | orderBy:'-date'"
           class="side-message-navigation-item little-human shineHover {{m.tag}}"
-          ui-sref="mail.detail({id: m.id})">
+          ui-sref="mail.detail({id: m.id, label: listCtrl.label})">
         <td>
           <div class="mail-checkbox">
             <label class="checkbox-inline custom-checkbox nowrap margin-left">

@@ -14,7 +14,7 @@
     vm.mail = mailMessages.getMessageById($stateParams.id);
     vm.back = function(){
       $state.go('mail.label', {
-        label: 'inbox'
+        label: $stateParams.label
       })
     }
   }
