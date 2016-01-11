@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.theme.components')
+  angular.module('BlurAdmin.pages.mail')
     .controller('composeBoxCtrl', composeBoxCtrl);
 
   /** @ngInject */
