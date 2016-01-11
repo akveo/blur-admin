@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.theme')
+  angular.module('BlurAdmin.pages.mail')
     .service('mailMessages', mailMessages);
 
   /** @ngInject */
