@@ -11,239 +11,377 @@
   /** @ngInject */
   function treeCtrl($scope, $timeout) {
 
-    var getRootNodesScope = function () {
-      return angular.element(document.getElementById('tree-root')).scope();
+    $scope.ignoreChanges = false;
+    var newId = 0;
+    $scope.ignoreChanges = false;
+    $scope.newNode = {};
+
+    $scope.basicConfig = {
+      core: {
+        multiple: false,
+        check_callback: true,
+        worker: true
+      },
+      'types': {
+        'folder': {
+          'icon': 'ion-ios-folder'
+        },
+        'default': {
+          'icon': 'ion-document-text'
+        }
+      },
+      'plugins': ['types'],
+      'version': 1
     };
 
-    var getFirstNode = function () {
-      return angular.element(document.getElementsByClassName("tree-node")[0]).scope();
+    $scope.dragConfig = {
+      'core': {
+        'check_callback': true,
+        'themes': {
+          'responsive': false
+        }
+      },
+      'types': {
+        'folder': {
+          'icon': 'ion-ios-folder'
+        },
+        'default': {
+          'icon': 'ion-document-text'
+        }
+      },
+      "plugins": ["dnd", 'types']
     };
 
-    $scope.select = function (item) {
-      $scope.current.selected = false;
-      $scope.current = item;
-      $scope.current.selected = true;
+    $scope.addNewNode = function () {
+      $scope.ignoreChanges = true;
+      var selected = this.basicTree.jstree(true).get_selected()[0];
+      if (selected)
+        $scope.treeData.push({
+          id: (newId++).toString(),
+          parent: selected,
+          text: "New node " + newId,
+          state: {opened: true}
+        });
+      $scope.basicConfig.version++;
     };
 
-    $scope.remove = function () {
-      $scope.current.remove();
-      $scope.current = getFirstNode();
-      $scope.current.selected = true;
+
+    $scope.refresh = function () {
+      $scope.ignoreChanges = true;
+      newId = 0;
+      $scope.treeData = getDefaultData();
+      $scope.basicConfig.version++;
     };
 
-    $scope.toggle = function (scope) {
-      scope.toggle();
+    $scope.expand = function () {
+      $scope.ignoreChanges = true;
+      $scope.treeData.forEach(function (n) {
+        n.state.opened = true;
+      });
+      $scope.basicConfig.version++;
     };
 
-    $scope.newSubItem = function () {
-      var nodeData = $scope.current.$modelValue;
-      nodeData.nodes.push({
-        id: nodeData.id * 10 + nodeData.nodes.length,
-        title: nodeData.title + '.' + (nodeData.nodes.length + 1),
-        nodes: []
+    $scope.collapse = function () {
+      $scope.ignoreChanges = true;
+      $scope.treeData.forEach(function (n) {
+        n.state.opened = false;
+      });
+      $scope.basicConfig.version++;
+    };
+
+    $scope.readyCB = function() {
+      $timeout(function() {
+        $scope.ignoreChanges = false;
       });
     };
 
-    $scope.collapseAll = function () {
-      var scope = getRootNodesScope();
-      scope.collapseAll();
+
+    $scope.applyModelChanges = function() {
+      return !$scope.ignoreChanges;
     };
 
-    $scope.expandAll = function () {
-      var scope = getRootNodesScope();
-      scope.expandAll();
-    };
-
-    $scope.visible = function (item) {
-      return !($scope.query && $scope.query.length > 0
-      && item.title.indexOf($scope.query) == -1);
-    };
-
-    $scope.basicData = getDefaultData();
-
-    $scope.refresh = function () {
-      $scope.basicData = getDefaultData();
-      $scope.current = getFirstNode();
-      if ($scope.current) $scope.current.selected = true;
-      else $scope.current = {};
-    };
-
-    $scope.treeOptions = {
-      beforeDrop: function (e) {
-        var sourceValue = e.source.nodeScope.$modelValue.value,
-          destValue = e.dest.nodesScope.node ? e.dest.nodesScope.node.value : undefined;
-        return true;
+    $scope.treeData = getDefaultData();
+    $scope.dragData = [
+      {
+        "id": "nd1",
+        "parent": "#",
+        "type": "folder",
+        "text": "Node 1",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd2",
+        "parent": "#",
+        "type": "folder",
+        "text": "Node 2",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd3",
+        "parent": "#",
+        "type": "folder",
+        "text": "Node 3",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd4",
+        "parent": "#",
+        "type": "folder",
+        "text": "Node 4",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd5",
+        "parent": "nd1",
+        "text": "Node 1.1",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd6",
+        "parent": "nd1",
+        "text": "Node 1.2",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd7",
+        "parent": "nd1",
+        "text": "Node 1.3",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd8",
+        "parent": "nd2",
+        "text": "Node 2.1",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd9",
+        "parent": "nd2",
+        "text": "Node 2.2",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd10",
+        "parent": "nd2",
+        "text": "Node 2.3",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd11",
+        "parent": "nd3",
+        "text": "Node 3.1",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd12",
+        "parent": "nd3",
+        "text": "Node 3.2",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd13",
+        "parent": "nd3",
+        "text": "Node 3.3",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd14",
+        "parent": "nd4",
+        "text": "Node 4.1",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd15",
+        "parent": "nd4",
+        "text": "Node 4.2",
+        "state": {
+          "opened": true
+        }
+      },
+      {
+        "id": "nd16",
+        "parent": "nd4",
+        "text": "Node 4.3",
+        "state": {
+          "opened": true
+        }
       }
-    };
+    ];
 
     function getDefaultData() {
       return [
-
-            {
-              'id': 1,
-              'title': 'Node 1',
-              'nodes': [
-                {
-                  'id': 11,
-                  'title': 'Node 1.1',
-                  'nodes': [
-                    {
-                      'id': 111,
-                      'title': 'Node 1.1.1',
-                      'nodes': []
-                    }
-                  ]
-                },
-                {
-                  'id': 12,
-                  'title': 'Node 1.2',
-                  'nodes': []
-                }
-              ]
-            }, {
-              'id': 2,
-              'title': 'Node 2',
-              'nodes': [
-                {
-                  'id': 21,
-                  'title': 'Node 2.1',
-                  'nodes': []
-                },
-                {
-                  'id': 22,
-                  'title': 'Node 2.2',
-                  'nodes': []
-                }
-              ]
-            }, {
-              'id': 3,
-              'title': 'Node 3',
-              'nodes': [
-                {
-                  'id': 31,
-                  'title': 'Node 3.1',
-                  'nodes': []
-                },
-                {
-                  'id': 32,
-                  'title': 'Node 3.2',
-                  'nodes': [{
-                    'id': 321,
-                    'title': 'Node 3.2.1',
-                    'nodes': []
-                  },
-                    {
-                      'id': 322,
-                      'title': 'Node 3.2.2',
-                      'nodes': []
-                    },
-                    {
-                      'id': 323,
-                      'title': 'Node 3.2.3',
-                      'nodes': []
-                    }]
-                }
-              ]
-            },
-            {
-              'id': 4,
-              'title': 'Node 4',
-              'nodes': [
-                {
-                  'id': 41,
-                  'title': 'Node 4.1',
-                  'nodes': []
-                }]
-            }]
-
+        {
+          "id": "n1",
+          "parent": "#",
+          "type": "folder",
+          "text": "Node 1",
+          "state": {
+            "opened": true
+          }
+        },
+        {
+          "id": "n2",
+          "parent": "#",
+          "type": "folder",
+          "text": "Node 2",
+          "state": {
+            "opened": true
+          }
+        },
+        {
+          "id": "n3",
+          "parent": "#",
+          "type": "folder",
+          "text": "Node 3",
+          "state": {
+            "opened": true
+          }
+        },
+        {
+          "id": "n5",
+          "parent": "n1",
+          "text": "Node 1.1",
+          "state": {
+            "opened": false
+          }
+        },
+        {
+          "id": "n6",
+          "parent": "n1",
+          "text": "Node 1.2",
+          "state": {
+            "opened": true
+          }
+        },
+        {
+          "id": "n7",
+          "parent": "n1",
+          "text": "Node 1.3",
+          "state": {
+            "opened": true
+          }
+        },
+        {
+          "id": "n8",
+          "parent": "n1",
+          "text": "Node 1.4",
+          "state": {
+            "opened": true
+          }
+        },
+        {
+          "id": "n9",
+          "parent": "n2",
+          "text": "Node 2.1",
+          "state": {
+            "opened": false
+          }
+        },
+        {
+          "id": "n10",
+          "parent": "n2",
+          "text": "Node 2.2 (Custom icon)",
+          "icon": "ion-help-buoy",
+          "state": {
+            "opened": false
+          }
+        },
+        {
+          "id": "n12",
+          "parent": "n3",
+          "text": "Node 3.1",
+          "state": {
+            "opened": false
+          }
+        },
+        {
+          "id": "n13",
+          "parent": "n3",
+          "type": "folder",
+          "text": "Node 3.2",
+          "state": {
+            "opened": true
+          }
+        },
+        {
+          "id": "n14",
+          "parent": "n13",
+          "text": "Node 3.2.1",
+          "state": {
+            "opened": false
+          }
+        },
+        {
+          "id": "n15",
+          "parent": "n13",
+          "text": "Node 3.2.2",
+          "state": {
+            "opened": false
+          }
+        },
+        {
+          "id": "n16",
+          "parent": "n3",
+          "text": "Node 3.3",
+          "state": {
+            "opened": true
+          }
+        },
+        {
+          "id": "n17",
+          "parent": "n3",
+          "text": "Node 3.4",
+          "state": {
+            "opened": false
+          }
+        },
+        {
+          "id": "n18",
+          "parent": "n3",
+          "text": "Node 3.5",
+          "state": {
+            "opened": false
+          }
+        },
+        {
+          "id": "n19",
+          "parent": "n3",
+          "text": "Node 3.6",
+          "state": {
+            "opened": false
+          }
+        }
+      ]
     }
-    $scope.dragData = [
-      {
-        "id": 1,
-        "title": "Node 1",
-        "nodes": [
-          {
-            "id": 11,
-            "title": "Node 1.1",
-            "nodes": []
-          },
-          {
-            "id": 12,
-            "title": "Node 1.2",
-            "nodes": []
-          },
-          {
-            "id": 12,
-            "title": "Node 1.3",
-            "nodes": []
-          },
-          {
-            "id": 13,
-            "title": "Node 1.4",
-            "nodes": []
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "title": "Node 2",
-        "nodes": [
-          {
-            "id": 21,
-            "title": "Node 2.1",
-            "nodes": []
-          },
-          {
-            "id": 22,
-            "title": "Node 2.2",
-            "nodes": []
-          },
-          {
-            "id": 22,
-            "title": "Node 2.3",
-            "nodes": []
-          },
-          {
-            "id": 23,
-            "title": "Node 2.4",
-            "nodes": []
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "title": "Node 3",
-        "nodes": [
-          {
-            "id": 31,
-            "title": "Node 3.1",
-            "nodes": []
-          },
-          {
-            "id": 31,
-            "title": "Node 3.2",
-            "nodes": []
-          },
-          {
-            "id": 32,
-            "title": "Node 3.3",
-            "nodes": []
-          },
-          {
-            "id": 33,
-            "title": "Node 3.4",
-            "nodes": []
-          }
-        ]
-      }
-    ];
-    $scope.find = function(){};
 
-    $timeout(function () {
-      $scope.current = getFirstNode();
-      if ($scope.current) $scope.current.selected = true;
-      else $scope.current = {};
-    }, 1000);
 
   }
 })();

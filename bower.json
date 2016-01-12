@@ -47,12 +47,12 @@
     "angular-chart.js": "~0.8.8",
     "angular-chartist.js": "~3.3.12",
     "angular-morris-chart": "~1.1.0",
-    "angular-ui-tree": "~2.12.0",
     "ionrangeslider": "~2.1.2",
     "angular-bootstrap": "~0.14.3",
     "angular-animate": "~1.4.8",
     "textAngular": "~1.4.6",
-    "angular-xeditable": "~0.1.9"
+    "angular-xeditable": "~0.1.9",
+    "ng-js-tree": "~0.0.7"
   },
   "overrides": {
     "amcharts": {

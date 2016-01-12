@@ -1,72 +1,39 @@
-<div>
-
-  <script type="text/ng-template" id="nodes_renderer.html">
-    <div ui-tree-handle class="tree-node tree-node-content" ng-class="{'selected' : this.selected}"
-         ng-click="select(this)">
-      <a ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)"><i class="control"
-                                                                                            ng-class="{
-          'ion-chevron-right': collapsed,
-          'ion-chevron-down': !collapsed
-        }"></i></a>
-      <i class="control ion-document" ng-if="!node.nodes || node.nodes.length < 1"></i>
-      {{node.title}}
-    </div>
-    <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
-      <li ng-repeat="node in node.nodes"  ng-show="visible(node)" ui-tree-node ng-include="'nodes_renderer.html'"></li>
-    </ol>
-  </script>
-
-
-  <div class="row">
-    <div class="col-md-6">
-      <div ba-panel ba-panel-title="Basic Action" ba-panel-class="with-scroll tree-panel">
-        <div class="row" ng-controller="treeCtrl">
-          <div class="col-sm-4">
-            <div class="control-side text-center">
-              <div>
-                <button class="btn btn-primary" ng-click="newSubItem()">Add</button>
-              </div>
-              <div>
-                <button class="btn btn-primary" ng-click="remove()">Remove</button>
-              </div>
-              <div>
-                <button class="btn btn-primary" ng-click="collapseAll()">Collapse All</button>
-              </div>
-              <div>
-                <button class="btn btn-primary" ng-click="expandAll()">Expand All</button>
-              </div>
-              <div>
-                <button class="btn btn-primary" ng-click="refresh()">Refresh</button>
-              </div>
-              <div>
-                <div class="form-group text-left search-container">
-                  <label for="search">Filter</label>
-                    <input id="search" type="text" class="form-control" ng-model="query" ng-change="find()">
-                </div>
-              </div>
+<div class="row" ng-controller="treeCtrl">
+  <div class="col-md-6">
+    <div ba-panel ba-panel-title="Basic Action" ba-panel-class="with-scroll tree-panel">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="control-side text-center">
+            <div>
+              <button class="btn btn-primary" ng-click="addNewNode()">Add</button>
             </div>
-          </div>
-          <div class="col-sm-8">
-            <div ui-tree data-drag-enabled="false" id="tree-root">
-              <ol ui-tree-nodes ng-model="basicData">
-                <li ng-repeat="node in basicData" ng-show="visible(node)" ui-tree-node
-                    ng-include="'nodes_renderer.html'"></li>
-              </ol>
+            <div>
+              <button class="btn btn-primary" ng-click="collapse()">Collapse All</button>
+            </div>
+            <div>
+              <button class="btn btn-primary" ng-click="expand()">Expand All</button>
+            </div>
+            <div>
+              <button class="btn btn-primary" ng-click="refresh()">Refresh</button>
+            </div>
+            <div>
+              <div class="form-group text-left search-container">
+                <label for="search">Filter</label>
+                <input id="search" type="text" class="form-control" ng-model="query" ng-change="find()">
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div ba-panel ba-panel-title="Drag & Drop" ba-panel-class="with-scroll tree-panel">
-        <div data-ui-tree="treeOptions" data-drag-enabled="true" id="tree-root-drag" ng-controller="treeCtrl">
-          <ol data-ui-tree-nodes ng-model="dragData">
-            <li data-ng-repeat="node in dragData" data-ui-tree-node ng-include="'nodes_renderer.html'"></li>
-          </ol>
+        <div class="col-sm-8">
+          <div js-tree="basicConfig" ng-model="treeData" should-apply="applyModelChanges()" tree="basicTree" tree-events="ready:readyCB"></div>
         </div>
       </div>
     </div>
   </div>
+  <div class="col-md-6">
+    <div ba-panel ba-panel-title="Drag & Drop" ba-panel-class="with-scroll tree-panel">
+      <div js-tree="dragConfig" ng-model="dragData"></div>
+    </div>
   </div>
-
+</div>
 </div>

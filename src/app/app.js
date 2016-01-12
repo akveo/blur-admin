@@ -10,6 +10,7 @@ angular.module('BlurAdmin', [
   'smart-table',
   "xeditable",
   'ui.slimscroll',
+  'ngJsTree',
 
   'BlurAdmin.theme',
   'BlurAdmin.pages',
