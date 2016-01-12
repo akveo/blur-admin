@@ -44,7 +44,9 @@
           '/maps/leaflet': 'Leaflet Map',
           '/maps/line': 'Line Map',
           '/maps/bubble': 'Bubble Map',
-          '/panels': 'Panels'
+          '/panels': 'Panels',
+          '/timeline': 'Timeline',
+
         };
 
         $scope.$watch(function () {

@@ -152,6 +152,11 @@
         ]
       },
       {
+        title: 'Timeline',
+        icon: 'ion-ios-pulse',
+        root: '#/timeline'
+      },
+      {
         title: 'User Profile',
         icon: 'ion-person',
         root: '#/profile'
