@@ -41,9 +41,18 @@
 
     var staticMenuItems = [
       {
-        title: 'Login Page',
+        title: 'Auth Pages',
         icon: 'ion-log-out',
-        root: 'auth.html'
+        subMenu: [
+          {
+            title: 'Sign In',
+            root: 'auth.html'
+          },
+          {
+            title: 'Sign Up',
+            root: 'reg.html'
+          }
+        ]
       },
       {
         title: '404 Page',

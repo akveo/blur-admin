@@ -21,10 +21,10 @@ gulp.task('styles', function () {
 });
 
 gulp.task('stylesAuth', function () {
-  return buildAloneStyles(path.join(conf.paths.src, '/sass/auth.scss'));
+  return buildSingleScss(path.join(conf.paths.src, '/sass/auth.scss'));
 });
 gulp.task('styles404', function () {
-  return buildAloneStyles(path.join(conf.paths.src, '/sass/404.scss'));
+  return buildSingleScss(path.join(conf.paths.src, '/sass/404.scss'));
 });
 
 var buildStyles = function () {
@@ -61,7 +61,7 @@ var buildStyles = function () {
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
 };
 
-var buildAloneStyles = function (paths) {
+var buildSingleScss = function (paths) {
   var sassOptions = {
     style: 'expanded'
   };
