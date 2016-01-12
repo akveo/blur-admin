@@ -270,7 +270,7 @@
           "parent": "n1",
           "text": "Node 1.1",
           "state": {
-            "opened": false
+            "opened": true
           }
         },
         {
@@ -302,7 +302,7 @@
           "parent": "n2",
           "text": "Node 2.1",
           "state": {
-            "opened": false
+            "opened": true
           }
         },
         {
@@ -311,7 +311,7 @@
           "text": "Node 2.2 (Custom icon)",
           "icon": "ion-help-buoy",
           "state": {
-            "opened": false
+            "opened": true
           }
         },
         {
@@ -319,7 +319,7 @@
           "parent": "n3",
           "text": "Node 3.1",
           "state": {
-            "opened": false
+            "opened": true
           }
         },
         {
@@ -336,7 +336,7 @@
           "parent": "n13",
           "text": "Node 3.2.1",
           "state": {
-            "opened": false
+            "opened": true
           }
         },
         {
@@ -344,7 +344,7 @@
           "parent": "n13",
           "text": "Node 3.2.2",
           "state": {
-            "opened": false
+            "opened": true
           }
         },
         {
@@ -360,7 +360,7 @@
           "parent": "n3",
           "text": "Node 3.4",
           "state": {
-            "opened": false
+            "opened": true
           }
         },
         {
@@ -368,7 +368,7 @@
           "parent": "n3",
           "text": "Node 3.5",
           "state": {
-            "opened": false
+            "opened": true
           }
         },
         {
@@ -376,7 +376,7 @@
           "parent": "n3",
           "text": "Node 3.6",
           "state": {
-            "opened": false
+            "opened": true
           }
         }
       ]
