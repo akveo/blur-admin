@@ -11,10 +11,14 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('buttons', {
+        .state('ui.buttons', {
           url: '/buttons',
           templateUrl: 'app/pages/buttons/buttons.html',
-          controller: 'ButtonPageCtrl'
+          controller: 'ButtonPageCtrl',
+          title: 'Buttons',
+          sidebarMeta: {
+            order: 100,
+          },
         });
   }
 

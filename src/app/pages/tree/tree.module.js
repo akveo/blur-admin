@@ -10,10 +10,14 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('tree', {
-        url: '/tree',
-        templateUrl: 'app/pages/tree/tree.html'
-      });
+        .state('ui.tree', {
+          url: '/tree',
+          templateUrl: 'app/pages/tree/tree.html',
+          title: 'Tree View',
+          sidebarMeta: {
+            order: 900,
+          },
+        });
   }
 
 })();

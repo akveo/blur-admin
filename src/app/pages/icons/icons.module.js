@@ -11,10 +11,14 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('icons', {
+        .state('ui.icons', {
           url: '/icons',
           templateUrl: 'app/pages/icons/icons.html',
-          controller: 'IconsPageCtrl'
+          controller: 'IconsPageCtrl',
+          title: 'Icons',
+          sidebarMeta: {
+            order: 200,
+          },
         });
   }
 

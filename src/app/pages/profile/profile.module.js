@@ -14,7 +14,12 @@
         .state('profile', {
           url: '/profile',
           templateUrl: 'app/pages/profile/profile.html',
-          controller: 'ProfilePageCtrl'
+          controller: 'ProfilePageCtrl',
+          title: 'User Profile',
+          sidebarMeta: {
+            icon: 'ion-person',
+            order: 700,
+          },
         });
   }
 

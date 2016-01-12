@@ -11,9 +11,13 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('progressBars', {
+        .state('ui.progressBars', {
           url: '/progressBars',
-          templateUrl: 'app/pages/progressBars/progressBars.html'
+          templateUrl: 'app/pages/progressBars/progressBars.html',
+          title: 'Progress Bars',
+          sidebarMeta: {
+            order: 600,
+          },
         });
   }
 
