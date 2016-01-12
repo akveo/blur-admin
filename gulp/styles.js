@@ -11,27 +11,36 @@ var $ = require('gulp-load-plugins')();
 var wiredep = require('wiredep').stream;
 var _ = require('lodash');
 
-gulp.task('styles-reload', ['styles'], function() {
+gulp.task('styles-reload', ['styles'], function () {
   return buildStyles()
     .pipe(browserSync.stream());
 });
 
-gulp.task('styles', function() {
+gulp.task('styles', function () {
   return buildStyles();
 });
 
-var buildStyles = function() {
+gulp.task('stylesAuth', function () {
+  return buildAloneStyles(path.join(conf.paths.src, '/sass/auth.scss'));
+});
+gulp.task('styles404', function () {
+  return buildAloneStyles(path.join(conf.paths.src, '/sass/404.scss'));
+});
+
+var buildStyles = function () {
   var sassOptions = {
     style: 'expanded'
   };
 
   var injectFiles = gulp.src([
     path.join(conf.paths.src, '/sass/**/_*.scss'),
-    '!' + path.join(conf.paths.src, '/sass/theme/conf/**/*.scss')
-  ], { read: false });
+    '!' + path.join(conf.paths.src, '/sass/theme/conf/**/*.scss'),
+    '!' + path.join(conf.paths.src, '/sass/404.scss'),
+    '!' + path.join(conf.paths.src, '/sass/auth.scss')
+  ], {read: false});
 
   var injectOptions = {
-    transform: function(filePath) {
+    transform: function (filePath) {
       filePath = filePath.replace(conf.paths.src + '/sass/', '');
       return '@import "' + filePath + '";';
     },
@@ -49,5 +58,16 @@ var buildStyles = function() {
     .pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
     .pipe($.sourcemaps.write())
+    .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
+};
+
+var buildAloneStyles = function (paths) {
+  var sassOptions = {
+    style: 'expanded'
+  };
+
+  return gulp.src([paths])
+    .pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
+    .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
 };
