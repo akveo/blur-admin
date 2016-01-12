@@ -19,7 +19,12 @@
         .state('charts', {
           url: '/charts',
           abstract: true,
-          template: '<div ui-view></div>'
+          template: '<div ui-view></div>',
+          title: 'Charts',
+          sidebarMeta: {
+            icon: 'ion-stats-bars',
+            order: 100,
+          },
         });
   }
 

@@ -11,21 +11,42 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('form-inputs', {
-          url: '/form-inputs',
-          templateUrl: 'app/pages/form/inputs/inputs.html'
+        .state('form', {
+          url: '/form',
+          template : '<ui-view></ui-view>',
+          abstract: true,
+          title: 'Form Elements',
+          sidebarMeta: {
+            icon: 'ion-compose',
+            order: 300,
+          },
         })
-        .state('form-layouts', {
-          url: '/form-layouts',
-          templateUrl: 'app/pages/form/layouts/layouts.html'
+        .state('form.inputs', {
+          url: '/inputs',
+          templateUrl: 'app/pages/form/inputs/inputs.html',
+          title: 'Form Inputs',
+          sidebarMeta: {
+            order: 0,
+          },
         })
-        .state('form-wizard',
+        .state('form.layouts', {
+          url: '/layouts',
+          templateUrl: 'app/pages/form/layouts/layouts.html',
+          title: 'Form Layouts',
+          sidebarMeta: {
+            order: 100,
+          },
+        })
+        .state('form.wizard',
         {
-          url: '/form-wizard',
+          url: '/wizard',
           templateUrl: 'app/pages/form/wizard/wizard.html',
           controller: 'WizardCtrl',
-          controllerAs: 'vm'
-        })
+          controllerAs: 'vm',
+          title: 'Form Wizard',
+          sidebarMeta: {
+            order: 200,
+          },
+        });
   }
-
 })();

@@ -9,153 +9,37 @@
     .controller('SidebarCtrl', SidebarCtrl);
 
   /** @ngInject */
-  function SidebarCtrl($scope, $timeout, $location, $rootScope, layoutSizes) {
-    $scope.menuItems = [
-      {
-        title: 'Dashboard',
-        icon: 'ion-android-home',
-        root: '#/dashboard'
-      },
-      {
-        icon: 'ion-stats-bars',
-        title: 'Charts',
-        subMenu: [
-          {
-            title: 'amCharts',
-            root: '#/charts/amCharts'
-          },
-          {
-            title: 'Chart.js',
-            root: '#/charts/chartJs'
-          },
-          {
-            title: 'Chartist',
-            root: '#/charts/chartist'
-          },
-          {
-            title: 'Morris',
-            root: '#/charts/morris'
-          }
-        ]
-      },
-      {
-        title: 'Tables',
-        icon: 'ion-grid',
-        subMenu: [
-          {
-            title: "Basic Tables",
-            root: '#/tables/basic'
-          },
-          {
-            title: "Smart Tables",
-            root: '#/tables/smart'
-          }
-        ]
-      },
-      {
-        title: 'Form Elements',
-        icon: 'ion-compose',
-        subMenu: [
-          {
-            title: 'Inputs',
-            root: '#/form-inputs'
-          },
-          {
-            title: 'Form Layouts',
-            root: '#/form-layouts'
-          },
-          {
-            title: 'Form Wizard',
-            root: '#/form-wizard'
-          }
-        ]
-      },
-      {
-        title: 'UI Elements',
-        icon: 'ion-android-laptop',
-        subMenu: [
-          {
-            title: 'Typography',
-            root: '#/typography'
-          },
-          {
-            title: 'Buttons',
-            root: '#/buttons'
-          },
-          {
-            title: 'Icons',
-            root: '#/icons'
-          },
-          {
-            title: 'Modals',
-            root: '#/modals'
-          },
-          {
-            title: 'Grid',
-            root: '#/grid'
-          },
-          {
-            title: 'Alerts',
-            root: '#/alerts'
-          },
-          {
-            title: 'Progress Bars',
-            root: '#/progressBars'
-          },
-          {
-            title: 'Notifications',
-            root: '#/notifications'
-          },
-          {
-            title: 'Tabs and Accordions',
-            root: '#/tabs'
-          },
-          {
-            title: 'Tree View',
-            root: '#/tree'
-          },
-          {
-            title: 'Sliders',
-            root: '#/slider'
-          },
-          {
-            title: 'Panels',
-            root: '#/panels'
-          }
-        ]
-      },
-      {
-        title: 'Mail',
-        icon: 'ion-ios-email-outline',
-        root: '#/mail/inbox'
-      },
-      {
-        title: 'Maps',
-        icon: 'ion-ios-location-outline',
-        subMenu: [
-          {
-            title: 'Google Maps',
-            root: '#/maps/gmap'
-          },
-          {
-            title: 'Leaflet',
-            root: '#/maps/leaflet'
-          },
-          {
-            title: 'Bubble Map',
-            root: '#/maps/bubble'
-          },
-          {
-            title: 'Line Map',
-            root: '#/maps/line'
-          }
-        ]
-      },
-      {
-        title: 'User Profile',
-        icon: 'ion-person',
-        root: '#/profile'
-      },
+  function SidebarCtrl($scope, $timeout, $location, $rootScope, layoutSizes, $state) {
+
+    var states = $state.get().filter(function(s) {
+          return s.sidebarMeta;
+        })
+        .map(function(s) {
+          var meta = s.sidebarMeta;
+          return {
+            name: s.name,
+            title: s.title,
+            level: (s.name.match(/\./g) || []).length,
+            order: meta.order,
+            icon: meta.icon,
+            root: '#/' + s.name.replace('.', '/'),
+          };
+        })
+        .sort(function(a, b) {
+          return (a.level - b.level) * 100 + a.order - b.order;
+        });
+
+    var menuItems = states.filter(function(item) {
+      return item.level == 0;
+    });
+    menuItems.forEach(function(item) {
+       var children = states.filter(function(child) {
+        return child.level == 1 && child.name.indexOf(item.name) == 0;
+      });
+      item.subMenu = children.length ? children : null;
+    });
+
+    var staticMenuItems = [
       {
         title: 'Login Page',
         icon: 'ion-log-out',
@@ -184,6 +68,8 @@
         ]
       }
     ];
+
+    $scope.menuItems = menuItems.concat(staticMenuItems);
 
     function changeSelectElemTopValue() {
       $timeout(function () {

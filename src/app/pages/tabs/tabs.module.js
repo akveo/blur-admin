@@ -11,9 +11,13 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('tabs', {
+        .state('ui.tabs', {
           url: '/tabs',
-          templateUrl: 'app/pages/tabs/tabs.html'
+          templateUrl: 'app/pages/tabs/tabs.html',
+          title: 'Tabs and Accordions',
+          sidebarMeta: {
+            order: 800,
+          },
         });
   }
 

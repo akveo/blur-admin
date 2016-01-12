@@ -11,9 +11,13 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('alerts', {
+        .state('ui.alerts', {
           url: '/alerts',
-          templateUrl: 'app/pages/alerts/alerts.html'
+          templateUrl: 'app/pages/alerts/alerts.html',
+          title: 'Modals',
+          sidebarMeta: {
+            order: 500,
+          },
         });
   }
 

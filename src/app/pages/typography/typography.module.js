@@ -11,9 +11,13 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('typography', {
+        .state('ui.typography', {
           url: '/typography',
-          templateUrl: 'app/pages/typography/typography.html'
+          templateUrl: 'app/pages/typography/typography.html',
+          title: 'Typography',
+          sidebarMeta: {
+            order: 0,
+          },
         });
   }
 

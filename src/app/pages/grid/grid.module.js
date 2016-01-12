@@ -11,9 +11,13 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('grid', {
+        .state('ui.grid', {
           url: '/grid',
-          templateUrl: 'app/pages/grid/grid.html'
+          templateUrl: 'app/pages/grid/grid.html',
+          title: 'Grid',
+          sidebarMeta: {
+            order: 400,
+          },
         });
   }
 

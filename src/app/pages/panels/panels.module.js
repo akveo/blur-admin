@@ -11,10 +11,14 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('panels', {
+        .state('ui.panels', {
           url: '/panels',
           templateUrl: 'app/pages/panels/panels.html',
-          controller: 'NotificationsPageCtrl'
+          controller: 'NotificationsPageCtrl',
+          title: 'Panels',
+          sidebarMeta: {
+            order: 1100,
+          },
         });
   }
 

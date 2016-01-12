@@ -11,10 +11,14 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('slider', {
-        url: '/slider',
-        templateUrl: 'app/pages/slider/slider.html'
-      });
+        .state('ui.slider', {
+          url: '/slider',
+          templateUrl: 'app/pages/slider/slider.html',
+          title: 'Sliders',
+          sidebarMeta: {
+            order: 1000,
+          },
+        });
   }
 
 })();

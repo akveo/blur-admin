@@ -11,9 +11,13 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('modals', {
+        .state('ui.modals', {
           url: '/modals',
-          templateUrl: 'app/pages/modals/modals.html'
+          templateUrl: 'app/pages/modals/modals.html',
+          title: 'Modals',
+          sidebarMeta: {
+            order: 300,
+          },
         });
   }
 
