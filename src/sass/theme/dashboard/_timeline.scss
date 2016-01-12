@@ -38,29 +38,6 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-
-  img {
-    display: block;
-    width: 24px;
-    height: 24px;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    margin-left: -12px;
-    margin-top: -12px;
-  }
-
-  &.cd-picture {
-    background: $success;
-  }
-
-  &.cd-movie {
-    background: $danger;
-  }
-
-  &.cd-location {
-    background: $primary;
-  }
 }
 
 @media only screen and (min-width: $resXL) {

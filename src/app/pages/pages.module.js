@@ -28,6 +28,7 @@
     'BlurAdmin.pages.tabs',
     'BlurAdmin.pages.typography',
     'BlurAdmin.pages.ui',
+    'BlurAdmin.pages.timeline',
   ])
       .config(routeConfig);
 

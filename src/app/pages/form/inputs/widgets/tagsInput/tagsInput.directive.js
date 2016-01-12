@@ -6,10 +6,10 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.form')
-      .service('tagsInput', tagsInput);
+      .directive('tagInput', tagInput);
 
   /** @ngInject */
-  function tagsInput() {
+  function tagInput() {
     return {
       restrict: 'A',
       link: function( $scope, elem, attr) {

@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.form')
-      .service('switch', switchDirective);
+      .directive('switch', switchDirective);
 
   /** @ngInject */
   function switchDirective($timeout) {
