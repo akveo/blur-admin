@@ -9,67 +9,9 @@
     .controller('SidebarCtrl', SidebarCtrl);
 
   /** @ngInject */
-  function SidebarCtrl($scope, $timeout, $location, $rootScope, layoutSizes, $state) {
+  function SidebarCtrl($scope, $timeout, $location, $rootScope, layoutSizes, sidebarService) {
 
-    var states = $state.get().filter(function(s) {
-          return s.sidebarMeta;
-        })
-        .map(function(s) {
-          var meta = s.sidebarMeta;
-          return {
-            name: s.name,
-            title: s.title,
-            level: (s.name.match(/\./g) || []).length,
-            order: meta.order,
-            icon: meta.icon,
-            root: '#/' + s.name.replace('.', '/'),
-          };
-        })
-        .sort(function(a, b) {
-          return (a.level - b.level) * 100 + a.order - b.order;
-        });
-
-    var menuItems = states.filter(function(item) {
-      return item.level == 0;
-    });
-    menuItems.forEach(function(item) {
-       var children = states.filter(function(child) {
-        return child.level == 1 && child.name.indexOf(item.name) == 0;
-      });
-      item.subMenu = children.length ? children : null;
-    });
-
-    var staticMenuItems = [
-      {
-        title: 'Login Page',
-        icon: 'ion-log-out',
-        root: 'auth.html'
-      },
-      {
-        title: '404 Page',
-        icon: 'ion-document',
-        root: '404.html'
-      },
-      {
-        title: 'Menu Level 1',
-        icon: 'ion-ios-more',
-        subMenu: [
-          {
-            title: 'Menu Level 1.1'
-          },
-          {
-            title: 'Menu Level 1.2',
-            subMenu: [
-              {
-                title: 'Menu Level 1.2.1'
-              }
-            ]
-          }
-        ]
-      }
-    ];
-
-    $scope.menuItems = menuItems.concat(staticMenuItems);
+    $scope.menuItems = sidebarService.getMenuItems();
 
     function changeSelectElemTopValue() {
       $timeout(function () {
