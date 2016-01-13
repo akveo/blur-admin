@@ -9,14 +9,10 @@
     .controller('composeBoxCtrl', composeBoxCtrl);
 
   /** @ngInject */
-  function composeBoxCtrl($scope, $uibModalInstance, subject, to, text) {
-
-    $scope.subject = subject;
-    $scope.to = to;
-    $scope.text = text;
-    console.log(subject, to , text);
-    $scope.close = function () {
-      $uibModalInstance.dismiss('cancel');
-    };
+  function composeBoxCtrl(subject, to, text) {
+    var vm = this;
+    vm.subject = subject;
+    vm.to = to;
+    vm.text = text;
   }
 })();
