@@ -10,12 +10,12 @@
 
   /** @ngInject */
   function composeModal($uibModal) {
-    return {
-      open : function(options){
+      this.open = function(options){
         return $uibModal.open({
           animation: false,
           templateUrl: 'app/pages/mail/composeBox/compose.html',
           controller: 'composeBoxCtrl',
+          controllerAs: 'boxCtrl',
           size: 'slim',
           resolve: {
             subject: function () {
@@ -30,7 +30,7 @@
           }
         });
       }
-    }
+
   }
 
 })();

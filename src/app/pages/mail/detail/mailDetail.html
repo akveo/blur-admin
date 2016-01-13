@@ -1,7 +1,7 @@
 <div class="message-container">
   <div class="message">
     <div class="row">
-      <button ng-click="detailCtrl.back()" type="button" class="back-button btn btn-default btn-with-icon"><i
+      <button ui-sref="mail.label({label : detailCtrl.label})"  type="button" class="back-button btn btn-default btn-with-icon"><i
           class="ion-chevron-left"></i>Back
       </button>
     </div>
@@ -64,8 +64,8 @@
     </div>
     <div class="line" ng-show="detailCtrl.mail.attachment"></div>
     <div class="answer-container">
-      <button type="button" class="btn btn-with-icon" ng-click="showCompose(detailCtrl.mail.subject,detailCtrl.mail.email,'')"><i class="ion-reply"></i>Reply</button>
-      <button type="button" class="btn btn-with-icon" ng-click="showCompose(detailCtrl.mail.subject,'',detailCtrl.mail.body)"><i class="ion-forward"></i>Forward</button>
+      <button type="button" class="btn btn-with-icon" ng-click="tabCtrl.showCompose(detailCtrl.mail.subject,detailCtrl.mail.email,'')"><i class="ion-reply"></i>Reply</button>
+      <button type="button" class="btn btn-with-icon" ng-click="tabCtrl.showCompose(detailCtrl.mail.subject,'',detailCtrl.mail.body)"><i class="ion-forward"></i>Forward</button>
       <button type="button" class="btn btn-with-icon"><i class="ion-printer"></i>Print</button>
       <button type="button" class="btn btn-with-icon"><i class="ion-android-remove-circle"></i>Spam</button>
       <button type="button" class="btn btn-with-icon"><i class="ion-android-delete"></i>Delete</button>
