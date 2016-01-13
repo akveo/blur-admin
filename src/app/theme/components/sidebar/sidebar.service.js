@@ -6,25 +6,31 @@
 
   /** @ngInject */
   function sidebarService($state) {
-    var staticMenuItems = [{
-      title: 'Login Page',
-      icon: 'ion-log-out',
-      root: 'auth.html'
-    }, {
-      title: '404 Page',
-      icon: 'ion-document',
-      root: '404.html'
-    }, {
-      title: 'Menu Level 1',
-      icon: 'ion-ios-more',
-      subMenu: [{
-        title: 'Menu Level 1.1'
-      }, {
-        title: 'Menu Level 1.2',
+    var staticMenuItems = [ {
+        title: 'Auth Pages',
+        icon: 'ion-log-out',
         subMenu: [{
-          title: 'Menu Level 1.2.1'
-        }]
-      }]
+            title: 'Sign In',
+            root: 'auth.html'
+          }, {
+            title: 'Sign Up',
+            root: 'reg.html'
+          }]
+      }, {
+        title: '404 Page',
+        icon: 'ion-document',
+        root: '404.html'
+      }, {
+        title: 'Menu Level 1',
+        icon: 'ion-ios-more',
+        subMenu: [{
+            title: 'Menu Level 1.1'
+          }, {
+            title: 'Menu Level 1.2',
+            subMenu: [{
+              title: 'Menu Level 1.2.1'
+            }]
+          }]
     }];
 
     this.getMenuItems = function() {
