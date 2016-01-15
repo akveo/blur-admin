@@ -7,12 +7,12 @@ $panel-heading-font-size: 16px;
   background-color: $panel-bg;
   color: $default-text;
   position: relative;
-  transition: all 0.2s ease;
+  //transition: all 0.2s ease;
   margin-bottom: 24px;
 
-  &:hover {
+  /*&:hover {
     background: $panel-bg-hover;
-  }
+  }*/
   &.animated {
     animation-duration: 0.5s;
   }
@@ -60,6 +60,9 @@ $panel-heading-font-size: 16px;
 }
 
 .panel-white {
+  $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
+  background: url($blurredBgUrl);
+  background-size: cover;
   > .panel-heading {
     background-color: transparent;
     border: none;
