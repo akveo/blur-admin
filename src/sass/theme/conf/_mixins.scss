@@ -51,8 +51,8 @@
 }
 
 @mixin main-background() {
-  $mainBgUrl: $images-root + 'green-bg.jpg';
-  background: url($mainBgUrl) no-repeat top center fixed;
+  $mainBgUrl: $images-root + 'blur-bg.jpg';
+  background: url($mainBgUrl) no-repeat center center fixed;
   background-size: cover;
 }
 
