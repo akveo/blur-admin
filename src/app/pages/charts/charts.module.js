@@ -23,7 +23,7 @@
           title: 'Charts',
           sidebarMeta: {
             icon: 'ion-stats-bars',
-            order: 100,
+            order: 400,
           },
         });
   }

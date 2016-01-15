@@ -1,0 +1,56 @@
+<div class="side-message-navigation">
+  <div class="messages-control side-message-navigation-item">
+    <label class="checkbox-inline custom-checkbox nowrap margin-left">
+      <span class="select-all-label">Select All</span>
+      <input type="checkbox" id="inlineCheckbox01" value="option1">
+    </label>
+    <button type="button" class="btn  btn-icon margin-left"><i class="ion-refresh"></i></button>
+    <div class="btn-group margin-left">
+      <button type="button" class="btn btn-icon dropdown-toggle more-button" data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false">More<span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href>Action</a></li>
+        <li><a href>Another action</a></li>
+        <li><a href>Something else here</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href>Separated link</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="messages">
+    <table>
+      <tr ng-repeat="m in listCtrl.messages track by m.id | orderBy:'-date'"
+          class="side-message-navigation-item little-human shineHover {{m.tag}}"
+          ui-sref="components.mail.detail({id: m.id, label: listCtrl.label})">
+        <td>
+          <div class="mail-checkbox">
+            <label class="checkbox-inline custom-checkbox nowrap margin-left">
+              <span></span>
+              <input type="checkbox">
+            </label>
+          </div>
+        </td>
+        <td><img ng-src="{{m.name.split(' ')[0] | profilePicture}}" class="little-human-picture"></td>
+        <td >
+          <div class="margin-left">
+            <div><span class="name">{{m.name.split(' ')[0] + ' ' + m.name.split(' ')[1][0]}}.</span></div>
+            <div><span class="tag label label-primary {{m.tag}}">{{m.tag}}</span></div>
+          </div>
+        </td>
+        <td >
+          <div class="margin-left additional-info">
+            <span class="subject"> {{m.subject}}</span>
+          </div>
+        </td>
+        <td>
+          <div class="mail-body-part">{{m.body | plainText}}</div>
+        </td>
+        <td class="date">
+          <span>{{m.date | date : 'MMM d HH:mm'}}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

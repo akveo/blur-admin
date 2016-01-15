@@ -18,7 +18,7 @@
           title: 'Form Elements',
           sidebarMeta: {
             icon: 'ion-compose',
-            order: 300,
+            order: 200,
           },
         })
         .state('form.inputs', {

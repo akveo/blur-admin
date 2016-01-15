@@ -15,11 +15,6 @@
           url: '/profile',
           templateUrl: 'app/pages/profile/profile.html',
           controller: 'ProfilePageCtrl',
-          title: 'User Profile',
-          sidebarMeta: {
-            icon: 'ion-person',
-            order: 700,
-          },
         });
   }
 
