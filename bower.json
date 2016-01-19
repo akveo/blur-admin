@@ -29,7 +29,7 @@
     "angular-ui-sortable": "~0.13.4",
     "animate.css": "~3.4.0",
     "bootstrap": "~3.3.5",
-    "bootstrap-select": "~1.7.3",
+    "bootstrap-select": "~1.9.3",
     "bootstrap-switch": "~3.3.2",
     "bootstrap-tagsinput": "~0.5.0",
     "font-awesome": "fontawesome#~4.4.0",
@@ -77,7 +77,7 @@
     "bootstrap": {
       "main": [
         "dist/css/bootstrap.css",
-        "dist/js/bootstrap.js"
+        "js/dropdown.js"
       ]
     },
     "slimScroll": {
