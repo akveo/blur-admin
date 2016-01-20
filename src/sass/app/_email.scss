@@ -88,11 +88,11 @@
   margin-left: 10px;
 }
 
-.messages-control {
+.mail-messages-control {
   padding: 10px;
 
-  .dropdown-menu {
-    margin-left: 10px;
+  ul.dropdown-menu {
+    margin-top: 5px;
   }
 
   .btn {
@@ -102,9 +102,8 @@
 
   .more-button {
     width: 60px;
-
-    font-size: 12px;
-    font-weight: 100;
+    font-size: 14px;
+    padding: 6px 5px;
   }
 
   span.select-all-label {
