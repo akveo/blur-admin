@@ -20,7 +20,7 @@
     "amcharts": "~3.15.2",
     "amcharts-stock": "*",
     "ammap": "~3.14.5",
-    "angular": "~1.4.6",
+    "angular": "~1.4.8",
     "angular-route": "~1.4.6",
     "angular-slimscroll": "~1.1.5",
     "angular-smart-table": "~2.1.3",
