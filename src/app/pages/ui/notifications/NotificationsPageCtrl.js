@@ -9,7 +9,7 @@
       .controller('NotificationsPageCtrl', NotificationsPageCtrl);
 
   /** @ngInject */
-  function NotificationsPageCtrl($scope, toastr, toastrConfig) {
+  function NotificationsPageCtrl($scope, toastr) {
     $scope.types = ['success', 'error', 'info', 'warning'];
 
     $scope.quotes = [
@@ -75,21 +75,6 @@
       msg: "Type your message here"
     };
 
-    $scope.$watchCollection('options', function (newValue) {
-      toastrConfig.autoDismiss = newValue.autoDismiss;
-      toastrConfig.allowHtml = newValue.html;
-      toastrConfig.extendedTimeOut = parseInt(newValue.extendedTimeout, 10);
-      toastrConfig.positionClass = newValue.position;
-      toastrConfig.timeOut = parseInt(newValue.timeout, 10);
-      toastrConfig.closeButton = newValue.closeButton;
-      toastrConfig.tapToDismiss = newValue.tapToDismiss;
-      toastrConfig.progressBar = newValue.progressBar;
-      toastrConfig.newestOnTop = newValue.newestOnTop;
-      toastrConfig.maxOpened = newValue.maxOpened;
-      toastrConfig.preventDuplicates = newValue.preventDuplicates;
-      toastrConfig.preventOpenDuplicates = newValue.preventOpenDuplicates;
-    });
-
 
     $scope.clearLastToast = function () {
       var toast = openedToasts.pop();
@@ -110,7 +95,7 @@
     };
 
     $scope.openToast = function () {
-      openedToasts.push(toastr[$scope.options.type]($scope.options.msg, $scope.options.title));
+      openedToasts.push(toastr[$scope.options.type]($scope.options.msg, $scope.options.title, $scope.options));
       var strOptions = {};
       for (var o in  $scope.options) if (o != 'msg' && o != 'title')strOptions[o] = $scope.options[o];
       $scope.optionsStr = "toastr." + $scope.options.type + "(\'" + $scope.options.msg + "\', \'" + $scope.options.title + "\', " + JSON.stringify(strOptions, null, 2) + ")";

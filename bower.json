@@ -24,7 +24,7 @@
     "angular-route": "~1.4.6",
     "angular-slimscroll": "~1.1.5",
     "angular-smart-table": "~2.1.3",
-    "angular-toastr": "~1.5.0",
+    "angular-toastr": "~1.6.0",
     "angular-touch": "~1.4.6",
     "angular-ui-sortable": "~0.13.4",
     "animate.css": "~3.4.0",
