@@ -164,8 +164,8 @@
   .message-time {
     position: absolute;
     width: 100%;
-    left: 0;
-    bottom: -22px;
+    left: 5px;
+    bottom: -35px;
     font-size: 11px;
     padding-top: 5px;
     color: $help-text;
@@ -174,8 +174,10 @@
       width: 50%;
     }
     .ago-time {
+      position: relative;
+      top: -7px;
       display: inline-block;
-      width: 50%;
+      width: 100%;
       text-align: right;
     }
   }
