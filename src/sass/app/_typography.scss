@@ -69,7 +69,7 @@ h5 {
   text-align: center;
   margin: 0;
   width: 100%;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .heading-widget {
@@ -77,12 +77,12 @@ h5 {
 
   h1, h2, h3, h4, h5, h6 {
     width: 100%;
-    font-weight: 100;
+    font-weight: 300;
   }
 
   p {
     line-height: 16px;
-    font-weight: 100;
+    font-weight: 300;
   }
 }
 
@@ -107,7 +107,7 @@ h5 {
   }
 
   .regular-text {
-    font-weight: 600;
+    font-weight: 400;
   }
 
   .upper-text {
@@ -166,10 +166,10 @@ h5 {
 
 .lists-widget {
 
-  font-weight: 100;
+  font-weight: 300;
   .list-header {
     width: 100%;
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
   }
 
@@ -429,7 +429,7 @@ a.learn-more {
   padding: 0;
   margin-bottom: 50px;
 
-  .panel-content{
+  .panel-body{
     padding: 0;
   }
 }
