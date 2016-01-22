@@ -12,20 +12,16 @@
   function MsgCenterCtrl($scope, $sce) {
     $scope.users = {
       0: {
-        name: 'Vladimir',
-        image: 'img/pic-vova.png'
+        name: 'Vlad',
       },
       1: {
-        name: 'Konstantin',
-        image: 'img/pic-kostia.png'
+        name: 'Kostya',
       },
       2: {
         name: 'Andrey',
-        image: 'img/pic-andrey.png'
       },
       3: {
-        name: 'Anastasiya',
-        image: 'img/pic-nasta.png'
+        name: 'Nasta',
       }
     };
 
@@ -41,7 +37,7 @@
         time: '2 hrs ago'
       },
       {
-        image: 'img/shopping-cart.svg',
+        image: 'assets/img/shopping-cart.svg',
         template: 'New orders received.',
         time: '5 hrs ago'
       },
@@ -56,7 +52,7 @@
         time: '2 days ago'
       },
       {
-        image: 'img/comments.svg',
+        image: 'assets/img/comments.svg',
         template: 'New comments on your post.',
         time: '3 days ago'
       },

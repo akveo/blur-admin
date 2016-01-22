@@ -16,7 +16,7 @@
       </div>
       <div class="msg-list">
         <a href class="clearfix" ng-repeat="msg in notifications">
-          <div class="img-area"><img ng-src="{{ users[msg.userId].image || msg.image }}"></div>
+          <div class="img-area"><img ng-src="{{::( msg.image ||  (users[msg.userId].name | profilePicture) )}}"></div>
           <div class="msg-area">
             <div ng-bind-html="getMessage(msg)"></div>
             <span>{{ msg.time }}</span>
@@ -40,7 +40,7 @@
       </div>
       <div class="msg-list">
         <a href class="clearfix" ng-repeat="msg in messages">
-          <div class="img-area"><img ng-src="{{ users[msg.userId].image || msg.image }}"></div>
+          <div class="img-area"><img ng-src="{{::( users[msg.userId].name | profilePicture )}}"></div>
           <div class="msg-area">
             <div>{{ msg.text }}</div>
             <span>{{ msg.time }}</span>
