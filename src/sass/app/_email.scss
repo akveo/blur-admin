@@ -13,7 +13,7 @@
   width: 300px;
   .mail-navigation {
     cursor: pointer;
-    font-weight: 100;
+    font-weight: $font-light;
     font-size: 16px;
     padding: 10px;
     margin-left: 22px;
@@ -49,7 +49,7 @@
     .btn {
       width: 150px;
       color: white;
-      font-weight: 100;
+      font-weight: $font-light;
       background-color: $dribble-color;
     }
   }
@@ -75,7 +75,7 @@
 .add-label-container {
   padding-left: 10px;
   font-size: 16px;
-  font-weight: 100;
+  font-weight: $font-light;
   .label-input-stub {
     margin-left: 5px;
   }
@@ -108,7 +108,7 @@
 
   span.select-all-label {
     font-size: 13px;
-    font-weight: 100;
+    font-weight: $font-light;
   }
 }
 
@@ -223,7 +223,7 @@
 .mail-panel .tag {
   text-transform: lowercase;
   font-size: 11px;
-  font-weight: 100;
+  font-weight: $font-light;
   width: 45px;
   cursor: pointer;
   display: inline-block;
@@ -305,7 +305,7 @@
     }
     .phone {
       font-size: 19px;
-      font-weight: 200;
+      font-weight: $font-light;
       vertical-align: super;
     }
     .ion-email {
@@ -315,7 +315,7 @@
     }
     .email {
       font-size: 16px;
-      font-weight: 200;
+      font-weight: $font-light;
       vertical-align: super;
     }
   }
@@ -326,12 +326,12 @@
     }
     .position {
       font-size: 20px;
-      font-weight: 100;
+      font-weight: $font-light;
     }
 
     .address {
       font-size: 16px;
-      font-weight: 100;
+      font-weight: $font-light;
     }
   }
 }
@@ -341,7 +341,7 @@
   .subject {
     font-size: 20px;
     margin-right: 10px;
-    font-weight: 100;
+    font-weight: $font-light;
   }
   .control-icons {
     float: right;
@@ -358,7 +358,7 @@
 
 .message-body {
   margin: 20px 0;
-  font-weight: 100;
+  font-weight: $font-light;
   line-height: 18px;
   p {
     margin-bottom: 0;
@@ -377,7 +377,7 @@
     margin-left: 3px;
     position: relative;
     top: -3px;
-    font-weight: 100;
+    font-weight: $font-light;
   }
 
   .file-links {
@@ -395,7 +395,7 @@
   margin-left: 20px;
   color: white;
   font-size: 16px;
-  font-weight: 100;
+  font-weight: $font-light;
   padding-left: 40px;
   padding-right: 40px;
   background-color: $dribble-color;
@@ -583,7 +583,7 @@
   .add-label-container {
     padding-left: 0;
     font-size: 13px;
-    font-weight: 100;
+    font-weight: $font-light;
   }
 
 }
@@ -591,7 +591,7 @@
 .compose-header {
   padding: 8px 3px 8px 10px;
   color: white;
-  font-weight: 100;
+  font-weight: $font-light;
   font-size: 13px;
   background-color: $github-color;
 }
@@ -629,7 +629,7 @@
     color: white;
     padding: 2px 10px;
     margin: 3px;
-    font-weight: 100;
+    font-weight: $font-light;
   }
   .btn-default {
     background-color: transparent;

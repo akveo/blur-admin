@@ -177,6 +177,19 @@
         "labels": ['draft']
       },
       {
+        "id": "8223xsdaa",
+        "name": "Andrey Hrabouski",
+        "subject": "Car rent",
+        "date": "2015-02-25T10:58:58",
+        "body": $sce.trustAsHtml("<p>Hey Andrey. </p>" +
+          "<p>Cras tincidunt fermentum lectus, quis scelerisque lorem volutpat sed. Sed quis orci sed nisl sagittis viverra id at mauris. Nam venenatis mi nibh. Sed fringilla mattis vehic</p>"),
+        "pic": "img/Andrey.png",
+        "email": "lakeishaphillips@mail.com",
+        "position": "Mobile Developer",
+        "tag": "family",
+        "labels": ['draft']
+      },
+      {
         "id": "9391xdsff",
         "name": "Vlad Lugovsky",
         "subject": "What next",

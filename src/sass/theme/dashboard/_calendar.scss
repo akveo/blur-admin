@@ -136,13 +136,13 @@
 
 .fc-icon-left-single-arrow:after {
   content: "\02039";
-  font-weight: bold;
+  font-weight: $font-bold;
   font-size: 100%;
 }
 
 .fc-icon-right-single-arrow:after {
   content: "\0203A";
-  font-weight: bold;
+  font-weight: $font-bold;
   font-size: 100%;
 }
 
@@ -326,7 +326,7 @@
   line-height: 1.3;
   border: 1px solid $primary;
   background-color: $primary;
-  font-weight: normal;
+  font-weight: $font-normal;
 }
 
 .fc-event,
@@ -370,7 +370,7 @@
 }
 
 .fc-day-grid-event .fc-time {
-  font-weight: bold;
+  font-weight: $font-bold;
 }
 
 .fc-day-grid-event .fc-resizer {
@@ -546,7 +546,7 @@ a.fc-more {
 }
 
 .ui-widget td.fc-axis {
-  font-weight: normal;
+  font-weight: $font-normal;
 }
 
 .fc-time-grid-container,

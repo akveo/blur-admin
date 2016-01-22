@@ -18,17 +18,14 @@ a {
 
 h1 {
   font-size: 32px;
-  font-weight: 400;
 }
 
 h2 {
   font-size: 24px;
-  font-weight: 400;
 }
 
 h3 {
   font-size: 20px;
-  font-weight: 400;
 }
 
 h4 {
@@ -69,7 +66,7 @@ h5 {
   text-align: center;
   margin: 0;
   width: 100%;
-  font-weight: 300;
+  font-weight: $font-light;
 }
 
 .heading-widget {
@@ -77,12 +74,12 @@ h5 {
 
   h1, h2, h3, h4, h5, h6 {
     width: 100%;
-    font-weight: 300;
+    font-weight: $font-light;
   }
 
   p {
     line-height: 16px;
-    font-weight: 300;
+    font-weight: $font-normal;
   }
 }
 
@@ -103,11 +100,11 @@ h5 {
   }
 
   .light-text {
-    font-weight: 100;
+    font-weight: $font-light;
   }
 
   .regular-text {
-    font-weight: 400;
+    font-weight: $font-normal;
   }
 
   .upper-text {
@@ -115,14 +112,14 @@ h5 {
   }
 
   .bold-text {
-    font-weight: 900;
+    font-weight: $font-bold;
   }
 
   .small-text {
     padding: 5px 0 0 0;
     p {
       font-size: 9px;
-      font-weight: 100;
+      font-weight: $font-light;
       line-height: 10px;
     }
   }
@@ -131,7 +128,7 @@ h5 {
 .color-widget {
   text-align: center;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: $font-normal;
   p {
     line-height: 17px;
   }
@@ -166,10 +163,9 @@ h5 {
 
 .lists-widget {
 
-  font-weight: 300;
+  font-weight: $font-normal;
   .list-header {
     width: 100%;
-    font-weight: 300;
     text-align: center;
   }
 
@@ -310,7 +306,7 @@ p.small-text {
 
 a.learn-more {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: $font-bold;
   text-decoration: none;
   line-height: 24px;
 }
@@ -360,7 +356,7 @@ a.learn-more {
   color: #ffffff;
 
   h1 {
-    font-weight: bold;
+    font-weight: $font-bold;
     width: 100%;
     color: #ffffff;
     margin-bottom: 10px;
@@ -368,7 +364,7 @@ a.learn-more {
   p {
     font-size: 24px;
     line-height: 30px;
-    font-weight: 300;
+    font-weight: $font-light;
     color: $primary;
     margin-bottom: 0px;
   }
