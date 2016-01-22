@@ -22,6 +22,10 @@
       }
     };
 
+    this.getActiveSkin = function(){
+      return activeSkin;
+    };
+
     this.getChartColorProfile = function() {
       return tplSkinChartColors[activeSkin.chartColorProfile];
     };
