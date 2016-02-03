@@ -5,8 +5,7 @@
         ng-class="{'selected': item.selected, 'with-sub-menu': item.subMenu}"
         ng-mouseenter="hoverItem($event, item)">
 
-      <a href="{{ item.root }}" ng-if="!item.subMenu" class="al-sidebar-list-link"
-         ng-click="collapseSidebarIfSmallRes()">
+      <a href="{{ item.root }}" ng-if="!item.subMenu" class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
       </a>
 
@@ -28,11 +27,11 @@
           <ul ng-if="subitem.subMenu" class="al-sidebar-sublist subitem-submenu-list"
               ng-class="{expanded: subitem.selected, 'slide-right': subitem.slideRight}">
             <li ng-repeat="subSubitem in subitem.subMenu" ng-class="{selected: subitem.selected}">
-              <a href="{{ subSubitem.root }}" ng-click="collapseSidebarIfSmallRes()">{{
+              <a href="{{ subSubitem.root }}">{{
                 subSubitem.title }}</a>
             </li>
           </ul>
-          <a ng-if="!subitem.subMenu" href="{{ subitem.root }}" ng-click="collapseSidebarIfSmallRes()">{{ subitem.title}}</a>
+          <a ng-if="!subitem.subMenu" href="{{ subitem.root }}">{{ subitem.title}}</a>
         </li>
       </ul>
     </li>

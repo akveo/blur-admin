@@ -34,12 +34,10 @@
         });
 
         function recalculatePanelStyle() {
-          console.log(bodyBgSize);
           if (!bodyBgSize) {
             return;
           }
           var position = elem[0].getBoundingClientRect();
-          console.log(position);
           elem.css({
             backgroundSize: Math.round(bodyBgSize.width) + 'px ' + Math.round(bodyBgSize.height) + 'px',
             backgroundPosition: Math.floor(-position.left + bodyBgSize.positionX) + 'px ' + Math.floor(-position.top + bodyBgSize.positionY) + 'px'

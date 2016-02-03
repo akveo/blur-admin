@@ -12,6 +12,9 @@
   function pageTop() {
     return {
       restrict: 'E',
+      scope: {
+        isMenuCollapsed: '=',
+      },
       templateUrl: 'app/theme/components/pageTop/pageTop.html'
     };
   }
