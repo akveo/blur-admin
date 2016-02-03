@@ -29,7 +29,7 @@
 <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $isMenuCollapsed }">
 
   <sidebar></sidebar>
-  <page-top></page-top>
+  <page-top is-menu-collapsed="$isMenuCollapsed"></page-top>
 
   <div class="al-main">
     <div class="al-content">

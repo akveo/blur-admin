@@ -9,32 +9,27 @@
     .controller('SidebarCtrl', SidebarCtrl);
 
   /** @ngInject */
-  function SidebarCtrl($scope, $timeout, $location, $rootScope, layoutSizes, sidebarService) {
+  function SidebarCtrl($scope, $rootScope, $timeout, $location, layoutSizes, sidebarService) {
 
     $scope.menuItems = sidebarService.getMenuItems();
 
     function changeSelectElemTopValue() {
       $timeout(function () {
         var selectedItem = $('.al-sidebar-list-item.selected');
-        if (selectedItem) {
+        if (selectedItem.length) {
           $scope.selectElemTop = selectedItem.position().top;
         }
       }, 101);
     }
 
     function selectMenuItem() {
-      $.each($scope.menuItems, function (index, value) {
-        value.selected = value.root === '#' + $location.$$url;
-
-        if (value.subMenu) {
-          var hasSelectedSubmenu = false;
-          $.each(value.subMenu, function (subIndex, subValue) {
-            subValue.selected = subValue.root === '#' + $location.$$url;
-            if (subValue.selected) {
-              hasSelectedSubmenu = true;
-            }
+      $.each($scope.menuItems, function (index, menu) {
+        menu.selected = ('#' + $location.$$url).indexOf(menu.root) == 0;
+        menu.expanded = menu.selected;
+        if (menu.subMenu) {
+          $.each(menu.subMenu, function (subIndex, subMenu) {
+            subMenu.selected = ('#' + $location.$$url).indexOf(subMenu.root) == 0;
           });
-          value.selected = hasSelectedSubmenu;
         }
       });
       changeSelectElemTopValue();
@@ -47,14 +42,14 @@
     });
 
     $scope.menuExpand = function () {
-      $rootScope.$isMenuCollapsed = false;
+      $scope.$isMenuCollapsed = false;
     };
 
     $scope.menuCollapse = function () {
-      $rootScope.$isMenuCollapsed = true;
+      $scope.$isMenuCollapsed = true;
     };
 
-    $rootScope.$watch('$isMenuCollapsed', function (newValue) {
+    $scope.$watch('$isMenuCollapsed', function (newValue) {
       if (!newValue && !$scope.selectElemTop) {
         changeSelectElemTopValue();
       }
@@ -65,7 +60,7 @@
       var isMenuShouldCollapsed = $(window).width() <= layoutSizes.resWidthCollapseSidebar;
       if ($scope.isMenuShouldCollapsed !== isMenuShouldCollapsed) {
         $scope.$apply(function () {
-          $rootScope.$isMenuCollapsed = isMenuShouldCollapsed;
+          $scope.$isMenuCollapsed = isMenuShouldCollapsed;
         });
       }
       $scope.isMenuShouldCollapsed = isMenuShouldCollapsed;
@@ -73,19 +68,29 @@
 
     $scope.toggleSubMenu = function ($event, item) {
       var submenu = $($event.currentTarget).next();
-
-      if ($rootScope.$isMenuCollapsed) {
-        if (!item.slideRight) {
+      if ($scope.$isMenuCollapsed) {
+        $scope.menuExpand();
+        if (!item.selected) {
           $timeout(function () {
-            item.slideRight = true;
-            $scope.anySlideRight = true;
-          }, 20);
+            item.selected = !item.selected;
+            changeSelectElemTopValue();
+            submenu.slideToggle();
+          });
         }
       } else {
-        submenu.slideToggle(100);
+        item.selected = !item.selected;
         changeSelectElemTopValue();
+        submenu.slideToggle();
       }
+
     };
+
+    function toggleExpandedSubmenu() {
+
+      $timeout(function () {
+
+      }, 200);
+    }
 
     window.onclick = function () {
       $timeout(function () {
@@ -104,12 +109,6 @@
       $scope.showHoverElem = true;
       var menuTopValue = 66;
       $scope.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - menuTopValue;
-    };
-
-    $scope.collapseSidebarIfSmallRes = function () {
-      if (window.innerWidth <= layoutSizes.resWidthCollapseSidebar) {
-        $rootScope.$isMenuCollapsed = true;
-      }
     };
   }
 })();
