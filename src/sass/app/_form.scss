@@ -34,7 +34,7 @@
   label {
     margin-bottom: 5px;
     color: $default-text;
-    font-weight: normal;
+    font-weight: $font-normal;
     font-size: 13px;
   }
 }
@@ -85,6 +85,7 @@ textarea.form-control {
 
 .modal-content {
   border-radius: 0;
+  color: $default-text;
 }
 
 @mixin setSwitchBorder($color) {
@@ -217,14 +218,14 @@ label.custom-checkbox {
     display: inline-block;
     margin: 0;
     line-height: 16px;
-    font-weight: normal;
+    font-weight: $font-normal;
     cursor: pointer;
     padding-left: 22px;
     width: 100%;
     &:before {
       cursor: pointer;
       font-family: fontAwesome;
-      font-weight: 400;
+      font-weight: $font-normal;
       font-size: 12px;
       color: $input-border-focus;
       content: "\a0";

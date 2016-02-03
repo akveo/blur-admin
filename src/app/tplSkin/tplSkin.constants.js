@@ -11,37 +11,43 @@
     {
       name: 'Default',
       bodyClass: '',
-      thumbnailUrl: 'img/01_default.jpg',
+      thumbnailUrl: 'assets/img/app/skin-thumbnails/01_default.jpg',
+      panelType: "panel-white",
       chartColorProfile: 'whitePanel'
     },
     {
       name: 'Peachy',
       bodyClass: SKIN_CLASS_PREFIX + '-peachy',
-      thumbnailUrl: 'img/04_peachy.jpg',
+      thumbnailUrl: 'assets/img/app/skin-thumbnails/04_peachy.jpg',
+      panelType: "panel-white",
       chartColorProfile: 'whitePanel'
     },
     {
       name: 'Blue',
       bodyClass: SKIN_CLASS_PREFIX + '-blue',
-      thumbnailUrl: 'img/03_blue.jpg',
+      thumbnailUrl: 'assets/img/app/skin-thumbnails/03_blue.jpg',
+      panelType: "panel-white",
       chartColorProfile: 'whitePanel'
     },
     {
       name: 'Material',
       bodyClass: SKIN_CLASS_PREFIX + '-material',
-      thumbnailUrl: 'img/05_material.jpg',
+      thumbnailUrl: 'assets/img/app/skin-thumbnails/05_material.jpg',
+      panelType: "panel-white",
       chartColorProfile: 'whitePanel'
     },
     {
       name: 'Transblue (beta)',
       bodyClass: SKIN_CLASS_PREFIX + '-transblue',
-      thumbnailUrl: 'img/06_transblue.jpg',
+      panelType: "panel-blur",
+      thumbnailUrl: 'assets/img/app/skin-thumbnails/06_transblue.jpg',
       chartColorProfile: 'transparent'
     },
     {
       name: 'Transparent (beta)',
       bodyClass: SKIN_CLASS_PREFIX + '-transparent',
-      thumbnailUrl: 'img/02_transparent.jpg',
+      panelType: "panel-blur",
+      thumbnailUrl: 'assets/img/app/skin-thumbnails/02_transparent.jpg',
       chartColorProfile: 'transparent'
     }
   ];

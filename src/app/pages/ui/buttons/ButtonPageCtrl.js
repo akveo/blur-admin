@@ -9,7 +9,7 @@
       .controller('ButtonPageCtrl', ButtonPageCtrl);
 
   /** @ngInject */
-  function ButtonPageCtrl($scope) {
+  function ButtonPageCtrl($scope, $timeout) {
     $scope.progressFunction = function() {
       return $timeout(function() {}, 3000);
     };

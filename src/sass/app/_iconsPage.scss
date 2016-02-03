@@ -10,7 +10,7 @@
     margin-bottom: 32px;
   }
   i {
-    font-weight: normal;
+    font-weight: $font-normal;
     font-size: 18px;
     cursor: pointer;
   }
@@ -31,6 +31,10 @@
 
 a.see-all-icons {
   float: right;
+}
+
+.awesomeIcons{
+  height: 308px;
 }
 
 .kameleon-row {

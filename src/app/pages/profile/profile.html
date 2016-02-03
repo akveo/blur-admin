@@ -143,7 +143,7 @@
           <div class="social-profiles row clearfix">
             <div class="col-md-3 col-sm-4" ng-repeat="item in socialProfiles">
 
-              <a class="sn-link" href ng-click="showModal()" ng-if="!item.href">
+              <a class="sn-link" href ng-click="showModal(item)" ng-if="!item.href">
                 <i class="socicon {{ item.icon }}"></i>
                 <span>{{ item.name }}</span>
               </a>
@@ -215,4 +215,3 @@
     </div>
   </div>
 </div>
-<profile-modal></profile-modal>

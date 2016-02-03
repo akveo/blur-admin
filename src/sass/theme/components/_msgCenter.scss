@@ -203,14 +203,14 @@
 
   &.profile-dropdown {
     width: 145px;
-    top: 47px;
+    top: 55px;
     right: -25px;
-    & > a {
+    a {
       text-align: left;
       border: none;
       text-decoration: none;
       color: $default-text;
-      padding-left: 16px;
+      padding: 4px 16px 4px 20px;
       &.signout {
         border-top: 1px solid $border-light;
       }
@@ -222,7 +222,7 @@
       }
     }
     i.dropdown-arr {
-      right: 33px;
+      right: 25px;
     }
   }
 

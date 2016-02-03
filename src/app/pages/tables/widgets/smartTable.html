@@ -1,12 +1,10 @@
 <div class="horizontal-scroll">
   <div class="form-group select-page-size-wrap ">
-    <select class="form-control" data-live-search="true"  title="Rows on page" selectpicker>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+    <label>Rows on page
+      <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+              ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+      </select>
+    </label>
   </div>
   <table class="table" st-table="smartTableData">
     <thead>

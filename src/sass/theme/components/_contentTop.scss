@@ -4,7 +4,7 @@
 }
 
 h1.al-title {
-  font-weight: normal;
+  font-weight: $font-normal;
   color: #ffffff;
   float: left;
   width: auto;
@@ -22,7 +22,7 @@ h1.al-title {
   padding-top: 11px;
   li {
     font-size: 18px;
-    font-weight: 100;
+    font-weight: $font-light;
   }
 }
 

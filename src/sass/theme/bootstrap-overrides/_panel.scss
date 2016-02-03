@@ -55,19 +55,26 @@ $panel-heading-font-size: 16px;
 }
 
 .panel-title {
-  font-weight: 400;
+  font-weight: $font-normal;
   //text-transform: uppercase;
 }
 
-.panel-white {
-  $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
-  background: url($blurredBgUrl);
+.panel-white, .panel-blur {
   background-size: cover;
   > .panel-heading {
     background-color: transparent;
     border: none;
     color: $default-text;
   }
+}
+
+.panel-white{
+  background-color: $panel-bg;
+}
+
+.panel-blur{
+  $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
+  background: url($blurredBgUrl);
 }
 
 .panel-primary {

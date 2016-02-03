@@ -1,12 +1,12 @@
 <ul class="al-msg-center clearfix">
-  <li class="dropdown">
-    <a href class="dropdown-toggle" data-toggle="dropdown">
+  <li uib-dropdown>
+    <a href uib-dropdown-toggle>
       <i class="fa fa-bell-o"></i><span>5</span>
 
       <div class="notification-ring"></div>
     </a>
 
-    <div class="dropdown-menu top-dropdown-menu">
+    <div uib-dropdown-menu class="top-dropdown-menu">
       <i class="dropdown-arr"></i>
 
       <div class="header clearfix">
@@ -16,7 +16,7 @@
       </div>
       <div class="msg-list">
         <a href class="clearfix" ng-repeat="msg in notifications">
-          <div class="img-area"><img ng-src="{{ users[msg.userId].image || msg.image }}"></div>
+          <div class="img-area"><img ng-src="{{::( msg.image ||  (users[msg.userId].name | profilePicture) )}}"></div>
           <div class="msg-area">
             <div ng-bind-html="getMessage(msg)"></div>
             <span>{{ msg.time }}</span>
@@ -26,12 +26,12 @@
       <a href>See all notifications</a>
     </div>
   </li>
-  <li class="dropdown">
-    <a href class="msg dropdown-toggle" data-toggle="dropdown">
+  <li uib-dropdown>
+    <a href class="msg" uib-dropdown-toggle>
       <i class="fa fa-envelope-o"></i><span>5</span>
       <div class="notification-ring"></div>
     </a>
-    <div class="dropdown-menu top-dropdown-menu">
+    <div uib-dropdown-menu class="top-dropdown-menu">
       <i class="dropdown-arr"></i>
       <div class="header clearfix">
         <strong>Messages</strong>
@@ -40,7 +40,7 @@
       </div>
       <div class="msg-list">
         <a href class="clearfix" ng-repeat="msg in messages">
-          <div class="img-area"><img ng-src="{{ users[msg.userId].image || msg.image }}"></div>
+          <div class="img-area"><img ng-src="{{::( users[msg.userId].name | profilePicture )}}"></div>
           <div class="msg-area">
             <div>{{ msg.text }}</div>
             <span>{{ msg.time }}</span>

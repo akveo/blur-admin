@@ -249,7 +249,7 @@
     height: 20px;
     line-height: 18px;
     font-family: Lato;
-    font-weight: 100;
+    font-weight: $font-thin;
     &:hover {
       background-color: $danger;
     }
@@ -470,7 +470,7 @@
   font: 16px/14px Tahoma, Verdana, sans-serif;
   color: #c3c3c3;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: $font-bold;
   background: transparent;
 }
 

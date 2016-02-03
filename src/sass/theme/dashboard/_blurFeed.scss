@@ -135,9 +135,10 @@
   }
 
   .message-header {
+    font-size: 12px;
     padding-bottom: 5px;
     .author {
-      font-weight: 600;
+      font-weight: $font-bold;
       padding-right: 5px;
     }
   }
@@ -146,7 +147,7 @@
     font-size: 18px;
     line-height: 20px;
   }
-  
+
   .preview {
     position: absolute;
     right: 0;
@@ -170,13 +171,10 @@
     padding-top: 5px;
     color: $help-text;
     .post-time {
-      display: inline-block;
-      width: 50%;
+      float: left;
     }
     .ago-time {
-      display: inline-block;
-      width: 50%;
-      text-align: right;
+      float: right;
     }
   }
 

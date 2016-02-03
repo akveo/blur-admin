@@ -8,23 +8,23 @@
   </div>
 
   <div class="user-profile clearfix">
-    <div class="al-user-profile dropdown">
-      <a href class="dropdown-toggle" data-toggle="dropdown">
+    <div class="al-user-profile" uib-dropdown>
+      <a uib-dropdown-toggle>
         <img ng-src="{{::( 'Nasta' | profilePicture )}}">
       </a>
-      <div class="dropdown-menu top-dropdown-menu profile-dropdown">
-        <i class="dropdown-arr"></i>
-        <a href="#/profile"><i class="fa fa-user"></i>Profile</a>
-        <a href><i class="fa fa-cog"></i>Settings</a>
-        <a href class="signout"><i class="fa fa-power-off"></i>Sign out</a>
-      </div>
+      <ul  class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
+        <li><i class="dropdown-arr"></i></li>
+        <li><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
+        <li><a href><i class="fa fa-cog"></i>Settings</a></li>
+        <li><a href class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
+      </ul>
     </div>
     <msg-center></msg-center>
     <a href class="refresh-data"><i class="fa fa-refresh"></i></a>
 
-    <div class="dropdown al-skin-dropdown">
-      <a href class="dropdown-toggle icon-palette" data-toggle="dropdown"></a>
-      <div class="dropdown-menu dropdown-menu-right" tpl-skin-panel></div>
+    <div class="al-skin-dropdown" uib-dropdown>
+      <a href class=" icon-palette" uib-dropdown-toggle></a>
+      <div class=" dropdown-menu-right" uib-dropdown-menu tpl-skin-panel></div>
     </div>
   </div>
 </div>
