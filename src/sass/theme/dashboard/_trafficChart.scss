@@ -29,7 +29,7 @@
 
 .traffic-legend {
   display: inline-block;
-  padding: 70px 0 0 10px;
+  padding: 70px 0 0 0px;
   width: 160px;
 }
 
@@ -120,6 +120,16 @@
         float: left;
       }
     }
+  }
+  .traffic-chart{
+    width: 100%;
+  }
+  .canvas-holder{
+    display: block;
+    margin: 0 auto;
+  }
+  .panel.medium-panel.traffic-panel{
+    height: inherit;
   }
 }
 

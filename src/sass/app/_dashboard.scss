@@ -1,4 +1,4 @@
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1620px) {
   .row.shift-up {
     > div {
       margin-top: -573px;
@@ -6,8 +6,8 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
- .panel.feed-panel {
+@media screen and (max-width: 1620px) {
+ .panel.feed-panel.large-panel {
    height: 824px;
  }
 }
@@ -16,4 +16,8 @@
   .panel-title {
     padding: 0 0 15px;
   }
+}
+
+.blurCalendar{
+  height: 475px;
 }
