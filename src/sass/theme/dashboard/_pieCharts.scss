@@ -72,8 +72,10 @@
   .description {
     display: inline-block;
     padding: 20px 0 0 20px;
+    font-size: 18px;
+    opacity: 0.9;
     .description-stats {
-      padding-top: 4px;
+      padding-top: 8px;
       font-size: 24px;
     }
   }

@@ -17,7 +17,7 @@
       icon: 'person',
     }, {
       color: '#9D498C',
-      description: 'New Purchases',
+      description: 'Purchases',
       stats: '$ 89,745',
       icon: 'money',
     }, {
@@ -27,7 +27,7 @@
       icon: 'face',
     }, {
       color: '#5FBCBB',
-      description: 'Returned Visitors',
+      description: 'Returned',
       stats: '32,592',
       icon: 'refresh',
     }
@@ -51,7 +51,7 @@
           scaleLength: 0,
           animation: 2000,
           lineWidth: 9,
-          lineCap: 'square',
+          lineCap: 'round',
         });
       });
 
