@@ -1,6 +1,6 @@
 <aside class="al-sidebar" ng-swipe-right="menuExpand()" ng-swipe-left="menuCollapse()"
        ng-mouseleave="hoverElemTop=selectElemTop">
-  <ul class="al-sidebar-list" slimscroll="{height: '100%'}">
+  <ul class="al-sidebar-list" slimscroll="{height: '{{menuHeight}}px'}" slimscroll-watch="menuHeight" >
     <li ng-repeat="item in menuItems" class="al-sidebar-list-item"
         ng-class="{'selected': item.selected, 'with-sub-menu': item.subMenu}"
         ng-mouseenter="hoverItem($event, item)">

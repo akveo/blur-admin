@@ -9,9 +9,10 @@
     .controller('SidebarCtrl', SidebarCtrl);
 
   /** @ngInject */
-  function SidebarCtrl($scope, $rootScope, $timeout, $location, layoutSizes, sidebarService) {
+  function SidebarCtrl($scope, $rootScope, $timeout, $location, layoutSizes, sidebarService, $element) {
 
     $scope.menuItems = sidebarService.getMenuItems();
+    $scope.menuHeight = $element[0].childNodes[0].clientHeight - 84;
 
     function changeSelectElemTopValue() {
       $timeout(function () {
@@ -58,12 +59,21 @@
     // watch window resize to change menu collapsed state if needed
     $(window).resize(function () {
       var isMenuShouldCollapsed = $(window).width() <= layoutSizes.resWidthCollapseSidebar;
+      var scopeApplied = false;
       if ($scope.isMenuShouldCollapsed !== isMenuShouldCollapsed) {
         $scope.$apply(function () {
+          $scope.menuHeight = $element[0].childNodes[0].clientHeight - 84;
           $scope.$isMenuCollapsed = isMenuShouldCollapsed;
+          scopeApplied = true;
+        });
+      }
+      if (!scopeApplied) {
+        $scope.$apply(function () {
+          $scope.menuHeight = $element[0].childNodes[0].clientHeight - 84;
         });
       }
       $scope.isMenuShouldCollapsed = isMenuShouldCollapsed;
+
     });
 
     $scope.toggleSubMenu = function ($event, item) {
