@@ -13,32 +13,32 @@
     var doughnutData = [
       {
         value: 2000,
-        color: layoutColors.primary,
+        color: layoutColors.default,
         highlight: layoutColors.primaryDark,
         label: 'Ad Campaigns'
       },
       {
         value: 1500,
-        color: layoutColors.danger,
-        highlight: layoutColors.dangerDark,
+        color: layoutColors.primary,
+        highlight: layoutColors.primaryBg,
         label: 'Search engines'
       },
       {
         value: 1000,
-        color: layoutColors.successLight,
-        highlight: '#6c9c3f',
+        color: layoutColors.info,
+        highlight: layoutColors.infoBg,
         label: 'Direct Traffic'
       },
       {
         value: 1200,
         color: layoutColors.success,
-        highlight: layoutColors.successDark,
+        highlight: layoutColors.successBg,
         label: 'Referral Traffic'
       },
       {
         value: 400,
         color: layoutColors.warning,
-        highlight: layoutColors.warningDark,
+        highlight: layoutColors.warningBg,
         label: 'Other'
       }
     ];

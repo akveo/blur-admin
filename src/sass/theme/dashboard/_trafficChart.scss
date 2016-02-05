@@ -116,20 +116,23 @@
   top: 27px;
   border-radius: 15px;
   left: -45px;
-  &.successDark{
-    background-color: $success-dark;
+  &.info{
+    background-color: $info;
   }
-  &.successLight{
-    background-color: $success-light;
+  &.success{
+    background-color: $success;
   }
   &.danger{
-    background-color: $danger-bg;
+    background-color: $danger;
   }
-  &.primary{
-    background-color: $primary-bg;
+  &.default{
+    background-color: $default;
   }
   &.warning{
-    background-color: $warning-bg;
+    background-color: $warning;
+  }
+  &.primary{
+    background-color: $primary;
   }
 }
 

@@ -9,23 +9,25 @@
 
   angular.module('BlurAdmin.theme')
       .constant('layoutColors', {
-        primary:        '#41bee9',
-        info:           '#5bc0de',
-        danger:         '#9d498c',
-        success:        '#348779',
-        warning:        '#bbcb50',
-        default:        '#e1e1e1',
+        primary:        '#005562',
+        info:           '#6eba8c',
+        success:        '#0e8174',
+        warning:        '#b9f2a1',
+        danger:         '#ffa76d',
+        default:        '#ffffff',
         successLight:   '#85BA54',
         primaryLight:   '#5FBCBB',
         warningLight:   '#c5d36a',
-        primaryDark:    '#1488b0',
-        dangerDark:     '#632e58',
-        successDark:    '#1c4a42',
-        warningDark:    '#8b992d',
+        primaryDark:    '#001d21',
+        dangerDark:     '#573925',
+        successDark:    '#052c27',
+        warningDark:    '#3f5237',
 
-        primaryBg:      '#C5ECF9',
-        successBg:      '#C1DBD7',
-        dangerBg:       '#E1C8DD',
+        primaryBg:      '#b3ccd0',
+        successBg:      '#b7d9d5',
+        dangerBg:       '#ffe5d3',
+        infoBg:       '#d4eadd',
+        warningBg:       '#eafbe3',
 
         defaultText:    '#585858'
       })
