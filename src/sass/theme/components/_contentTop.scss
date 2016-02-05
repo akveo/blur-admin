@@ -4,13 +4,15 @@
 }
 
 h1.al-title {
-  font-weight: $font-normal;
+  font-weight: $font-bold;
   color: #ffffff;
   float: left;
   width: auto;
   margin: 0;
   padding: 0;
-  font-size: 30px;
+  font-size: 24px;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
 .al-breadcrumb {

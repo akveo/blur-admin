@@ -9,6 +9,13 @@
 
   var ADMIN_STYLES = [
     {
+      name: 'Transparent (beta)',
+      bodyClass: SKIN_CLASS_PREFIX + '-transparent',
+      panelType: "panel-blur",
+      thumbnailUrl: 'assets/img/app/skin-thumbnails/02_transparent.jpg',
+      chartColorProfile: 'transparent'
+    },
+    {
       name: 'Default',
       bodyClass: '',
       thumbnailUrl: 'assets/img/app/skin-thumbnails/01_default.jpg',
@@ -41,13 +48,6 @@
       bodyClass: SKIN_CLASS_PREFIX + '-transblue',
       panelType: "panel-blur",
       thumbnailUrl: 'assets/img/app/skin-thumbnails/06_transblue.jpg',
-      chartColorProfile: 'transparent'
-    },
-    {
-      name: 'Transparent (beta)',
-      bodyClass: SKIN_CLASS_PREFIX + '-transparent',
-      panelType: "panel-blur",
-      thumbnailUrl: 'assets/img/app/skin-thumbnails/02_transparent.jpg',
       chartColorProfile: 'transparent'
     }
   ];

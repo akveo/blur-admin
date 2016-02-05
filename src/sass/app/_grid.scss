@@ -1,8 +1,8 @@
-.show-grid [class^=col-] {
-
+.show-grid div[class^=col-]{
   padding: 10px;
   box-sizing: border-box;
   div {
+    color: $default-text;
     text-align: center;
     font-size: 18px;
     background-color: $border-light;;

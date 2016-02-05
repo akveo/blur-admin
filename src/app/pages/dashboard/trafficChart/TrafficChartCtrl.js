@@ -46,17 +46,9 @@
     var ctx = document.getElementById('chart-area').getContext('2d');
     window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
       segmentShowStroke: false,
-      responsive: true,
-      legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend clearfix">' +
-      '<% for (var i=0; i<segments.length; i++){%>' +
-      '<li class="clearfix">' +
-      '<span style="background-color:<%=segments[i].fillColor%>"></span>' +
-      '<%if(segments[i].label){%><%=segments[i].label%><%}%>' +
-      '</li><%}%>' +
-      '</ul>'
+      percentageInnerCutout : 64,
+      responsive: true
     });
 
-    var legend = window.myDoughnut.generateLegend();
-    $('.traffic-legend').html(legend);
   }
 })();

@@ -5,7 +5,9 @@
 
 .channels-info {
   display: inline-block;
-  width: calc(100% - 500px);
+  width: calc(100% - 370px);
+  margin-left: 70px;
+  margin-top: -20px;
 }
 .small-container {
   .channels-info {
@@ -14,14 +16,19 @@
 }
 
 .channels-info-item {
-  margin-bottom: 19px;
   p {
     margin-bottom: 9px;
+    font-size: 18px;
+    opacity: 0.9;
+  }
+  .channel-number{
+    display: inline-block;
+    float: right;
   }
 }
 
 .traffic-chart {
-  width: 500px;
+  width: 300px;
   position: relative;
   min-height: 300px;
   float: left;
@@ -60,6 +67,10 @@
   height: 300px;
   position: relative;
   float: left;
+  //canvas{
+  //  border: 10px solid rgba(0, 0, 0, 0.34902);
+  //  border-radius: 180px;
+  //}
 }
 
 .traffic-text {
@@ -75,7 +86,7 @@
   //color: $danger;
   span {
     display: block;
-    font-size: 12px;
+    font-size: 18px;
     color: $default-text;
   }
 }
@@ -86,10 +97,40 @@
 }
 
 .channel-progress {
-  height: 16px;
+  height: 4px;
   border-radius: 0;
   width: 100%;
   margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+  .progress-bar{
+    height: 4px;
+    background-color: white;
+  }
+}
+
+.legend-color{
+  width: 30px;
+  height: 30px;
+  box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.25);
+  position: relative;
+  top: 27px;
+  border-radius: 15px;
+  left: -45px;
+  &.successDark{
+    background-color: $success-dark;
+  }
+  &.successLight{
+    background-color: $success-light;
+  }
+  &.danger{
+    background-color: $danger-bg;
+  }
+  &.primary{
+    background-color: $primary-bg;
+  }
+  &.warning{
+    background-color: $warning-bg;
+  }
 }
 
 @mixin doughnut-size($size) {
@@ -131,6 +172,21 @@
   .panel.medium-panel.traffic-panel{
     height: inherit;
   }
+}
+
+.traffic-chart canvas{
+  border: 10px solid rgba(0,0,0,0.0);
+  border-radius: 150px;
+}
+
+.chart-bg{
+  background-color: $primary-dark;
+  position: absolute;
+  border-radius: 100px;
+  width: 180px;
+  height: 180px;
+  left: 60px;
+  top: 60px;
 }
 
 @media (max-width: $resMin) {

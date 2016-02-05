@@ -78,9 +78,22 @@
 }
 
 @mixin overrideColors($color) {
-  color: $color;
-
-  p,.pie-charts,.panel-heading>.dropdown .dropdown-toggle, .panel-title, .panel-title>.small, .panel-title>.small>a, .panel-title>a, .panel-title>small, .panel-title>small>a,.traffic-text span, .form-group label {
+  p,
+  h1,h2,h3,h4,h5,h6,
+  .pie-chart-item,
+  .panel-heading>.dropdown .dropdown-toggle,
+  .panel-title,
+  ol.blur span,
+  ul.blur,
+  .popular-app-cost,
+  .popular-app-info,
+  .panel-title>.small,
+  .panel-title>.small>a,
+  .panel-title>a,
+  .panel-title>small,
+  .panel-title>small>a,
+  .traffic-text span,
+  .form-group label {
     color: $color;
   }
   .traffic-text {

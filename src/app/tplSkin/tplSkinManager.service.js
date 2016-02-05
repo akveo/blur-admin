@@ -43,6 +43,8 @@
     function _addSkinBodyClass(skin) {
       angular.element($document[0].body).addClass(skin.bodyClass);
     }
+
+    this.setActiveSkin(activeSkin);
   }
 
 })();
