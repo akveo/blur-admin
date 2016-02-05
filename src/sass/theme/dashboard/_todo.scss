@@ -6,7 +6,6 @@ ul.todo-list {
   margin: 0;
   padding: 0;
   .placeholder, .ui-sortable-placeholder {
-    background: #fff;
   }
   li {
     margin: 0 0 -1px 0;
@@ -85,7 +84,7 @@ ul.todo-list {
       i.mark {
         min-width: 40px;
       }
-      label.todo-checkbox>span {
+      label.todo-checkbox > span {
         &:before {
           color: white;
           content: '\f10c';
@@ -95,7 +94,7 @@ ul.todo-list {
           float: none;
         }
       }
-      label.todo-checkbox>input:checked+span:before {
+      label.todo-checkbox > input:checked + span:before {
         content: '\f00c';
       }
     }
@@ -107,7 +106,7 @@ label.todo-checkbox {
   padding-right: 25px;
   min-height: 16px;
   cursor: pointer;
-  >span {
+  > span {
     white-space: nowrap;
     height: 16px;
     &:before {
@@ -116,4 +115,112 @@ label.todo-checkbox {
       transition: all 0.15s ease-out;
     }
   }
+}
+
+.add-item-icon {
+  display: none;
+}
+
+body.badmin-transparent {
+  .todo-panel.panel {
+    color: white;
+    opacity: 0.9;
+  }
+  input.task-todo {
+    color: white;
+    width: calc(100% - 25px);
+    opacity: 0.9;
+    border: none;
+    &:focus {
+      outline: none;
+      background-color: transparent;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
+    }
+    &::-webkit-input-placeholder {
+      color: white;
+      opacity: 0.6;
+    }
+  }
+  .add-item-icon {
+    display: block;
+    float: right;
+    margin-top: -45px;
+    margin-right: 5px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  ul.todo-list {
+    li {
+      margin: 0;
+      border: none;
+      font-weight: $font-light;
+
+      .blur-container{
+        height: 40px;
+        position: absolute;
+        width: calc(100% + 40px);;
+        top: 0;
+        left: -25px;
+        overflow-y: hidden;
+      }
+      &:hover{
+        .blur-container{
+          box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        }
+        .blur-box {
+          height: 100%;
+          background: linear-gradient(to right, rgba(0,0,0,0.3) 0%,rgba(255,255,255,0) 100%);
+          -webkit-filter: blur(3px);
+        }
+      }
+      &.primary, &.danger,&.success, &.info, &.warning {
+        i.mark {
+          background-color: transparent;
+        }
+      }
+      i.remove-todo {
+        color: white;
+        opacity: 0.4;
+        &:hover {
+          color: white;
+          opacity: 0.95;
+        }
+      }
+      i.mark {
+        min-width: 40px;
+        background-color: transparent;
+      }
+      label.todo-checkbox > span {
+        &:before {
+          color: white;
+          content: '\f10c';
+          float: none;
+          margin-right: 6px;
+          transition: none;
+        }
+      }
+      &.checked {
+        label.todo-checkbox > span {
+          &:before {
+            margin-right: 0;
+            position: absolute;
+            content: '';
+            background-size: contain;
+            background: url("../../../assets/img/app/todo/check-icon.png") no-repeat;
+          }
+        }
+      }
+    }
+  }
+
+  .box-shadow-border{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
+    width: calc(100% + 44px);
+    margin-left: -22px;
+  }
+
 }

@@ -105,8 +105,8 @@
 
     $scope.newTodoText = '';
 
-    $scope.addToDoItem = function (event) {
-      if (event.which === 13) {
+    $scope.addToDoItem = function (event, clickPlus) {
+      if (clickPlus || event.which === 13) {
         $scope.todoList.unshift({
           text: $scope.newTodoText,
           edit: false,
