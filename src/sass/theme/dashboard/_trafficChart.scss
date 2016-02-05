@@ -133,46 +133,46 @@
   }
 }
 
-@mixin doughnut-size($size) {
-  .traffic-chart .canvas-holder {
-    width: $size;
-    height: $size;
-    canvas {
-      width: $size;
-      height: $size;
-    }
-  }
-}
+//@mixin doughnut-size($size) {
+//  .traffic-chart .canvas-holder {
+//    width: $size;
+//    height: $size;
+//    canvas {
+//      width: $size;
+//      height: $size;
+//    }
+//  }
+//}
 
-@media (max-width: $resS) {
-  @include doughnut-size(250px);
-  .canvas-holder {
-    float: none;
-  }
-  .traffic-legend {
-    display: block;
-    padding: 10px 0 0;
-    width: 300px;
-  }
-  ul.doughnut-legend {
-    padding-left: 20px;
-    li {
-      &:nth-child(2n-1) {
-        float: left;
-      }
-    }
-  }
-  .traffic-chart{
-    width: 100%;
-  }
-  .canvas-holder{
-    display: block;
-    margin: 0 auto;
-  }
-  .panel.medium-panel.traffic-panel{
-    height: inherit;
-  }
-}
+//@media (max-width: $resS) {
+//  @include doughnut-size(250px);
+//  .canvas-holder {
+//    float: none;
+//  }
+//  .traffic-legend {
+//    display: block;
+//    padding: 10px 0 0;
+//    width: 300px;
+//  }
+//  ul.doughnut-legend {
+//    padding-left: 20px;
+//    li {
+//      &:nth-child(2n-1) {
+//        float: left;
+//      }
+//    }
+//  }
+//  .traffic-chart{
+//    width: 100%;
+//  }
+//  .canvas-holder{
+//    display: block;
+//    margin: 0 auto;
+//  }
+//  .panel.medium-panel.traffic-panel{
+//    height: inherit;
+//  }
+//}
 
 .traffic-chart canvas{
   border: 10px solid rgba(0,0,0,0.0);
@@ -189,6 +189,22 @@
   top: 60px;
 }
 
-@media (max-width: $resMin) {
-  @include doughnut-size(200px);
+@media (max-width: $resM) {
+  .channels-info{
+    display: block;
+    width: calc(100% - 88px);
+    margin-top: -65px;
+    margin-bottom: 10px;
+  }
+  .panel.medium-panel.traffic-panel{
+    height: auto;
+  }
+  .traffic-chart{
+    position: inherit;
+    float: none;
+    margin: 0 auto;
+  }
+  .chart-bg{
+    left: calc(50% - 90px);
+  }
 }
