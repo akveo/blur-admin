@@ -11,22 +11,22 @@
   /** @ngInject */
   function DashboardPieChartCtrl($scope, $element, $window, $timeout) {
     $scope.charts = [{
-      color: '#41bee9',
+      color: 'rgba(255,255,255,0.4)',
       description: 'New Visits',
       stats: '57,820',
       icon: 'person',
     }, {
-      color: '#9D498C',
+      color: 'rgba(255,255,255,0.4)',
       description: 'Purchases',
       stats: '$ 89,745',
       icon: 'money',
     }, {
-      color: '#bbcb50',
+      color: 'rgba(255,255,255,0.4)',
       description: 'Active Users',
       stats: '178,391',
       icon: 'face',
     }, {
-      color: '#5FBCBB',
+      color: 'rgba(255,255,255,0.4)',
       description: 'Returned',
       stats: '32,592',
       icon: 'refresh',
