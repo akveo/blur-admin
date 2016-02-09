@@ -138,7 +138,7 @@ tr.editable-row {
 }
 
 a.email-link {
-  color: $default-text;
+  color: $default;
   &:hover {
     color: $danger;
   }
@@ -172,4 +172,56 @@ input.search-input {
 .pagination > li:last-child > a, .pagination > li:last-child > span {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
+}
+
+.status-button{
+  width: 60px;
+}
+
+body.badmin-transparent {
+  .table {
+    & > thead {
+      & > tr {
+        & > th {
+          border-bottom: none;
+        }
+      }
+    }
+    & > tbody {
+      & > tr.no-top-border {
+        &:first-child > td {
+          border-top: none;
+        }
+      }
+    }
+  }
+
+  .black-muted-bg{
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .table-hover{
+    tr:hover {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .table-striped > tbody > tr:nth-of-type(odd){
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  .table > tbody > tr.primary > td{
+    background-color: $primary-btn;
+  }
+  .table > tbody > tr.success > td{
+    background-color: $success-btn;
+  }
+  .table > tbody > tr.warning > td{
+    background-color: $warning-btn;
+  }
+  .table > tbody > tr.danger > td{
+    background-color: $danger-btn;
+  }
+  .table > tbody > tr.info > td{
+    background-color: $info-btn;
+  }
 }

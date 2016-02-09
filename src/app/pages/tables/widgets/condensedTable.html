@@ -17,7 +17,7 @@
       <td>{{item.lastName}}</td>
       <td>{{item.username}}</td>
       <td><a class="email-link" ng-href="mailto:{{item.email}}">{{item.email}}</a></td>
-      <td>{{item.age}}</td>
+      <td><button class="status-button btn btn-xs btn-{{item.status}}">{{item.status}}</button></td>
     </tr>
     </tbody>
   </table>

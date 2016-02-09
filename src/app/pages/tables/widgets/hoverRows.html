@@ -1,7 +1,7 @@
 <div class="horizontal-scroll">
   <table class="table table-hover">
     <thead>
-    <tr>
+    <tr class="black-muted-bg">
       <th class="browser-icons"></th>
       <th>Browser</th>
       <th class="align-right">Visits</th>
@@ -13,7 +13,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="item in metricsTableData">
+    <tr ng-repeat="item in metricsTableData" class="no-top-border">
       <td><img ng-src="{{::( item.image | appImage )}}" width="20" height="20"></td>
       <td ng-class="nowrap">{{item.browser}}</td>
       <td class="align-right">{{item.visits}}</td>

@@ -505,7 +505,8 @@
         lastName: 'Otto',
         username: '@mdo',
         email: 'mdo@gmail.com',
-        age: '28'
+        age: '28',
+        status: 'info'
       },
       {
         id: 2,
@@ -513,7 +514,8 @@
         lastName: 'Thornton',
         username: '@fat',
         email: 'fat@yandex.ru',
-        age: '45'
+        age: '45',
+        status: 'primary'
       },
       {
         id: 3,
@@ -521,7 +523,8 @@
         lastName: 'Bird',
         username: '@twitter',
         email: 'twitter@outlook.com',
-        age: '18'
+        age: '18',
+        status: 'success'
       },
       {
         id: 4,
@@ -529,7 +532,8 @@
         lastName: 'Snow',
         username: '@snow',
         email: 'snow@gmail.com',
-        age: '20'
+        age: '20',
+        status: 'danger'
       },
       {
         id: 5,
@@ -537,7 +541,8 @@
         lastName: 'Sparrow',
         username: '@jack',
         email: 'jack@yandex.ru',
-        age: '30'
+        age: '30',
+        status: 'warning'
       }
     ];
 
