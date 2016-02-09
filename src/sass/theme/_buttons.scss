@@ -5,7 +5,7 @@ $hover: 24;
 }
 
 .btn {
-  border-radius: 0;
+  border-radius: 5px;
   transition: all 0.1s ease;
 }
 
@@ -13,45 +13,45 @@ $hover: 24;
   transform: scale(1.2);
 }
 
-@mixin styleButton($color) {
+@mixin styleButton($color, $borderColor) {
   background: $color;
-  border-color: $color;
+  border-color: $borderColor;
 }
 
-@mixin buttonColor($color) {
-  @include styleButton($color);
+@mixin buttonColor($color, $borderColor) {
+  @include styleButton($color, $borderColor);
 
   &.disabled, &[disabled], fieldset[disabled] &, &.disabled:hover, &[disabled]:hover,
   fieldset[disabled] &:hover, &.disabled:focus, &[disabled]:focus, fieldset[disabled] &:focus,
   &.disabled.focus, &[disabled].focus, fieldset[disabled] &.focus, &.disabled:active,
   &[disabled]:active, fieldset[disabled] &:active, &.disabled.active, &[disabled].active,
   fieldset[disabled] &.active {
-    @include styleButton($color + $hover/2);
+    @include styleButton($color, $borderColor + $hover/2);
   }
 
   &:hover, &:focus, &.focus, &:active, &.active {
-    @include styleButton($color - $hover);
+    @include styleButton($color, $borderColor - $hover);
   }
 }
 
 .open > .dropdown-toggle {
   &.btn-primary {
-    @include styleButton($primary - $hover);
+    @include styleButton($primary-btn, $primary-btn - $hover);
   }
   &.btn-default {
-    @include styleButton($default - $hover);
+    @include styleButton(transparent, $default);
   }
   &.btn-success {
-    @include styleButton($success - $hover);
+    @include styleButton($success-btn, $success-btn - $hover);
   }
   &.btn-info {
-    @include styleButton($info - $hover);
+    @include styleButton($info-btn, $info-btn - $hover);
   }
   &.btn-warning {
-    @include styleButton($warning - $hover);
+    @include styleButton($warning-btn, $warning-btn - $hover);
   }
   &.btn-danger {
-    @include styleButton($danger - $hover);
+    @include styleButton($danger-btn, $danger-btn - $hover);
   }
 }
 
@@ -60,27 +60,28 @@ $hover: 24;
 }
 
 .btn-primary {
-  @include buttonColor($primary);
+  @include buttonColor($primary-btn, $primary-btn);
 }
 
 .btn-default {
-  @include buttonColor($default);
+  border-width: 2px;
+  @include buttonColor(transparent, $default);
 }
 
 .btn-success {
-  @include buttonColor($success);
+  @include buttonColor($success-btn, $success-btn);
 }
 
 .btn-info {
-  @include buttonColor($info);
+  @include buttonColor($info-btn, $info-btn);
 }
 
 .btn-warning {
-  @include buttonColor($warning);
+  @include buttonColor($warning-btn, $warning-btn);
 }
 
 .btn-danger {
-  @include buttonColor($danger);
+  @include buttonColor($danger-btn, $danger-btn);
 }
 
 .btn-with-icon {
@@ -153,7 +154,7 @@ $hover: 24;
   }
 
   &.btn-primary {
-    @include progressButtonColor($primary);
+    @include progressButtonColor($primary-btn);
   }
 
   &.btn-default {
@@ -161,18 +162,32 @@ $hover: 24;
   }
 
   &.btn-success {
-    @include progressButtonColor($success);
+    @include progressButtonColor($success-btn);
   }
 
   &.btn-info {
-    @include progressButtonColor($info);
+    @include progressButtonColor($info-btn);
   }
 
   &.btn-warning {
-    @include progressButtonColor($warning);
+    @include progressButtonColor($warning-btn);
   }
 
   &.btn-danger {
-    @include progressButtonColor($danger);
+    @include progressButtonColor($danger-btn);
   }
+}
+
+.btn-raised{
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.35);
+}
+
+.btn-mm{
+  padding: 5px 11px;
+  font-size: 13px;
+}
+
+.btn-xm{
+  padding: 8px 14px;
+  font-size: 16px;
 }

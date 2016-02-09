@@ -18,16 +18,16 @@
         successLight:   '#85BA54',
         primaryLight:   '#5FBCBB',
         warningLight:   '#c5d36a',
-        primaryDark:    '#001d21',
-        dangerDark:     '#573925',
-        successDark:    '#052c27',
-        warningDark:    '#3f5237',
+        primaryDark:    '#003e4b',
+        dangerDark:     '#c37350',
+        successDark:    '#18524b',
+        warningDark:    '#8adc68',
 
-        primaryBg:      '#b3ccd0',
-        successBg:      '#b7d9d5',
-        dangerBg:       '#ffe5d3',
-        infoBg:       '#d4eadd',
-        warningBg:       '#eafbe3',
+        primaryBg:      '#0d8da2',
+        successBg:      '#02b6a2',
+        dangerBg:       '#ffcd92',
+        infoBg:       '#a8e6b3',
+        warningBg:       '#e4fbd3',
 
         defaultText:    '#585858'
       })

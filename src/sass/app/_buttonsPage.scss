@@ -91,3 +91,40 @@ $btn-icon-size: 34px;
   }
 }
 
+.button-panel{
+  height: 315px;
+  .btn{
+    width: 150px;
+  }
+}
+
+.large-buttons-panel{
+  height: 202px;
+}
+
+.button-panel.df-size-button-panel{
+  .btn-xs{
+    width: 60px;
+  }
+  .btn-sm{
+    width: 90px;
+  }
+  .btn-mm{
+    width: 120px;
+  }
+  .btn-md{
+    width: 150px;
+  }
+  .btn-xm{
+    width: 175px;
+  }
+  .btn-lg{
+    width: 200px;
+  }
+}
+
+.button-wrapper{
+  text-align: center;
+  margin: 5px 0;
+}
+

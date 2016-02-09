@@ -12,14 +12,33 @@ $success-dark: shade($success, 66%);
 $warning-dark: shade($warning, 66%);
 $danger-dark: shade($danger, 66%);
 
-$primary-light: #5FBCBB;
-$success-light: #85BA54;
 
 $primary-bg: tint($primary, 70%);
 $info-bg: tint($info, 70%);
 $success-bg: tint($success, 70%);
 $warning-bg: tint($warning, 70%);
 $danger-bg: tint($danger, 70%);
+
+$primaryDark: #003e4b;
+$dangerDark: #c37350;
+$successDark: #18524b;
+$warningDark: #8adc68;
+
+$primaryBg: #0d8da2;
+$successBg: #02b6a2;
+$dangerBg: #ffcd92;
+$infoBg: #a8e6b3;
+$warningBg: #e4fbd3;
+
+$primary-light: #5FBCBB;
+$success-light: #85BA54;
+
+$primary-btn: #209e91;
+$info-btn:    #2dacd1;
+$success-btn: #90b900;
+$primary-btn: #209e91;
+$warning-btn: #dfb81c;
+$danger-btn:  #e85656;
 
 $facebook-color: #3b5998;
 $twitter-color: #55acee;
