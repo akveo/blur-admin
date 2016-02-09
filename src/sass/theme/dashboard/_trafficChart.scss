@@ -193,7 +193,7 @@
 }
 
 @media (max-width: $resM) {
-  .channels-info{
+  div.channels-info{
     display: block;
     width: calc(100% - 88px);
     margin-top: -65px;
@@ -211,6 +211,21 @@
     left: calc(50% - 90px);
   }
 }
+
+@media (max-width: 1465px) and (min-width: 1199px){
+  .channels-info{
+    display: none;
+  }
+  .traffic-chart{
+    position: inherit;
+    float: none;
+    margin: 0 auto;
+  }
+  .chart-bg{
+    left: calc(50% - 90px);
+  }
+}
+
 body.badmin-transparent{
   .traffic-chart canvas{
     border: 10px solid rgba(0,0,0,0.35);

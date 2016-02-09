@@ -25,14 +25,14 @@
       },
       {
         value: 1000,
-        color: layoutColors.info,
-        highlight: layoutColors.infoBg,
+        color: layoutColors.success,
+        highlight: layoutColors.successBg,
         label: 'Direct Traffic'
       },
       {
         value: 1200,
-        color: layoutColors.success,
-        highlight: layoutColors.successBg,
+        color: layoutColors.info,
+        highlight: layoutColors.infoBg,
         label: 'Referral Traffic'
       },
       {
