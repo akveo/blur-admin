@@ -132,6 +132,9 @@ a.al-sidebar-list-link {
       a {
         border: none;
         background-color: $success;
+        &:hover {
+          color: $default;
+        }
       }
     }
   }

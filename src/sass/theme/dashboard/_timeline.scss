@@ -136,15 +136,15 @@
 }
 
 .cd-timeline-content-green {
-  @include cd-timeline-color($success-bg);
+  @include cd-timeline-color($success);
 }
 
 .cd-timeline-content-red {
-  @include cd-timeline-color($danger-bg);
+  @include cd-timeline-color($danger);
 }
 
 .cd-timeline-content-blue {
-  @include cd-timeline-color($primary-bg);
+  @include cd-timeline-color($primary);
 }
 
 .no-touch .cd-timeline-content .cd-read-more:hover {

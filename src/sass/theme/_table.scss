@@ -3,7 +3,7 @@
   & > thead {
     & > tr {
       & > th {
-        border-bottom: 1px solid $border-light;
+        border-bottom: 1px solid rgba(255,255,255,0.5);
         white-space: nowrap;
         &:first-child {
           text-align: center;
@@ -22,7 +22,7 @@
       & > td {
         padding: 0px 8px;
         line-height: 35px;
-        border-top: 1px solid $border-light;
+        border-top: 1px solid rgba(255,255,255,0.5);
         &:first-child {
           text-align: center;
         }
@@ -33,7 +33,7 @@
     }
   }
   &.table-bordered th {
-    border-color: $border !important;
+    border-color: rgba(255,255,255,0.5) !important;
   }
 }
 

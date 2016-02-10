@@ -17,6 +17,7 @@
       "dataDateFormat": "YYYY-MM-DD",
       "precision": 2,
       "valueAxes": [{
+        color: layoutColors.default,
         "id": "v1",
         "title": "Sales",
         "position": "left",
@@ -33,6 +34,7 @@
       }],
       "graphs": [{
         "id": "g3",
+        color: layoutColors.default,
         "valueAxis": "v1",
         "lineColor": layoutColors.primaryBg,
         "fillColors": layoutColors.primaryBg,
@@ -47,6 +49,7 @@
       }, {
         "id": "g4",
         "valueAxis": "v1",
+        color: layoutColors.default,
         "lineColor": layoutColors.primaryLight,
         "fillColors": layoutColors.primaryLight,
         "fillAlphas": 1,
@@ -63,6 +66,7 @@
         "bullet": "round",
         "bulletBorderAlpha": 1,
         "bulletColor": "#FFFFFF",
+        color: layoutColors.default,
         "bulletSize": 5,
         "hideBulletsCount": 50,
         "lineThickness": 2,
@@ -75,6 +79,7 @@
       }, {
         "id": "g2",
         "valueAxis": "v2",
+        color: layoutColors.default,
         "bullet": "round",
         "bulletBorderAlpha": 1,
         "bulletColor": "#FFFFFF",
@@ -114,6 +119,7 @@
       },
       "categoryField": "date",
       "categoryAxis": {
+        color: "#fff",
         "parseDates": true,
         "dashLength": 1,
         "minorGridEnabled": true

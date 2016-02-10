@@ -9,10 +9,10 @@ h1.color, h2.color, h3.color, h4.color, h5.color, h6.color {
 }
 
 a {
-  color: $primary;
+  color: $activelink;
   text-decoration: none !important;
   &:hover {
-    color: shade($primary, 20);
+    color: $hoverlink;
   }
 }
 
@@ -137,12 +137,12 @@ h5 {
     margin: 14px 0;
   }
 
-  .red-text p {
-    color: $dribble-color;
+  .accent-text p {
+    color: $accent;
   }
 
-  .blue-text p {
-    color: $primary;
+  .black-text p {
+    color: black;
   }
 
   .links {
@@ -153,7 +153,7 @@ h5 {
       margin-bottom: 0;
       &.hovered {
         a {
-          color: $danger;
+          color: $hoverlink;
         }
       }
     }
@@ -171,11 +171,11 @@ h5 {
 
   .accent {
     margin-top: 30px;
-    color: $dribble-color;
+    color: $accent;
     line-height: 14px;
     font-size: 14px;
     padding-left: 11px;
-    border-left: 4px solid $dribble-color;
+    border-left: 4px solid $accent;
     margin-left: 13px;
   }
 
@@ -199,7 +199,7 @@ h5 {
     li {
       &:before {
         content: "• ";
-        color: $dribble-color;
+        color: $accent;
         width: 10px;
         display: inline-block;
       }
@@ -209,7 +209,7 @@ h5 {
   ol.blur {
     counter-reset: section;
     li {
-      color: $dribble-color;
+      color: $accent;
       padding-left: 0;
       line-height: 14px;
       position: relative;

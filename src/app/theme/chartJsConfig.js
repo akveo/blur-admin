@@ -12,8 +12,11 @@
   function chartJsConfig(ChartJsProvider, layoutColors) {
     // Configure all charts
     ChartJsProvider.setOptions({
-      colours: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg, layoutColors.info],
-      responsive: true
+      colours: [layoutColors.default, layoutColors.danger, layoutColors.primary,  layoutColors.warning, layoutColors.success,  layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg, layoutColors.info],
+      responsive: true,
+      scaleFontColor: "rgba(255,255,255,.7)",
+      scaleLineColor: "rgba(255,255,255,.7)",
+      pointLabelFontColor: "rgba(255,255,255,.7)"
     });
     // Configure all line charts
     ChartJsProvider.setOptions('Line', {

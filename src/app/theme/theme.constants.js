@@ -29,7 +29,7 @@
         infoBg:       '#a8e6b3',
         warningBg:       '#e4fbd3',
 
-        defaultText:    '#585858'
+        defaultText:    '#ffffff'
       })
       .constant('layoutSizes', {
         resWidthCollapseSidebar: 1200,

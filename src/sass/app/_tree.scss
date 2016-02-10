@@ -14,6 +14,16 @@
   }
 }
 
+.jstree-default .jstree-clicked, .jstree-default .jstree-hovered {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.jstree-default .jstree-anchor, .jstree-default .jstree-wholerow{
+  &:hover{
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+}
+
 .control-side > div {
   margin-top: 5px;
   margin-bottom: 10px;

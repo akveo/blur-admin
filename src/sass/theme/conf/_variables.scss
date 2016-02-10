@@ -1,17 +1,16 @@
-$font-family:  'Roboto', sans-serif;
+$font-family: 'Roboto', sans-serif;
 
-$primary: #005562!default;
-$info: #6eba8c!default;
-$success: #0e8174!default;
-$warning: #b9f2a1!default;
-$danger: #ffa76d!default;
-$default: #ffffff!default;
+$primary: #005562 !default;
+$info: #6eba8c !default;
+$success: #0e8174 !default;
+$warning: #b9f2a1 !default;
+$danger: #ffa76d !default;
+$default: #ffffff !default;
 
 $primary-dark: shade($primary, 66%);
 $success-dark: shade($success, 66%);
 $warning-dark: shade($warning, 66%);
 $danger-dark: shade($danger, 66%);
-
 
 $primary-bg: tint($primary, 70%);
 $info-bg: tint($info, 70%);
@@ -34,11 +33,15 @@ $primary-light: #5FBCBB;
 $success-light: #85BA54;
 
 $primary-btn: #209e91;
-$info-btn:    #2dacd1;
+$info-btn: #2dacd1;
 $success-btn: #90b900;
 $primary-btn: #209e91;
 $warning-btn: #dfb81c;
-$danger-btn:  #e85656;
+$danger-btn: #e85656;
+
+$accent: #E3FF53;
+$activelink: #D6FF8A;
+$hoverlink: #9EB546;
 
 $facebook-color: #3b5998;
 $twitter-color: #55acee;
