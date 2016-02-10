@@ -39,7 +39,7 @@
         images: {
           root: IMAGES_ROOT,
           profile: IMAGES_ROOT + 'app/profile/',
-          amChart: 'bower_components/amcharts/dist/amcharts/images/'
+          amChart: 'bower_components/ammap/dist/ammap/images/'
         }
       });
 
