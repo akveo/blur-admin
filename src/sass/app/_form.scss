@@ -366,11 +366,19 @@ label.custom-input-danger {
   font-size: 18px;
 }
 
+.bootstrap-select{
+  .btn-default{
+    &:focus{
+      color: $default-text;
+    }
+  }
+}
+
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
   background: transparent;
   color: $disabled;
   border-color: $disabled-bg;
-  @include placeholderStyle($disabled);
+  @include placeholderStyle($disabled, 1);
 }
 
 .form-control-rounded {

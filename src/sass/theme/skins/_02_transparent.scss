@@ -15,4 +15,12 @@ body.badmin-transparent {
   .btn-default{
     color: $default;
   }
+  .form-control, .bootstrap-tagsinput input {
+    @include placeholderStyle($default, 0.8);
+    background-color: transparent;
+    color: $default;
+  }
+  .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    @include placeholderStyle($default, 0.6);
+  }
 }

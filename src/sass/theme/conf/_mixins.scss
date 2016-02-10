@@ -60,20 +60,24 @@
   background: rgba(0, 0, 0, $opacity);
 }
 
-@mixin placeholderStyle($color) {
+@mixin placeholderStyle($color, $opacity) {
   &::-webkit-input-placeholder {
     color: $color;
+    opacity: $opacity;
   }
   &:-moz-placeholder {
     /* Firefox 18- */
     color: $color;
+    opacity: $opacity;
   }
   &::-moz-placeholder {
     /* Firefox 19+ */
     color: $color;
+    opacity: $opacity;
   }
   &:-ms-input-placeholder {
     color: $color;
+    opacity: $opacity;
   }
 }
 
@@ -93,7 +97,8 @@
   .panel-title>small,
   .panel-title>small>a,
   .traffic-text span,
-  .form-group label {
+  .form-group label,
+  .help-block{
     color: $color;
   }
   .traffic-text {

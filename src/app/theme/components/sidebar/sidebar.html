@@ -18,7 +18,7 @@
 
       <ul ng-if="item.subMenu" class="al-sidebar-sublist"
           ng-class="{expanded: item.selected, 'slide-right': item.slideRight}">
-        <li ng-repeat="subitem in item.subMenu" ng-class="{selected: subitem.selected}">
+        <li ng-repeat="subitem in item.subMenu" ng-class="{'selected': subitem.selected, 'with-sub-menu': item.subMenu}">
           <a ng-if="subitem.subMenu" href ng-click="toggleSubMenu($event, subitem);"
              class="al-sidebar-list-link subitem-submenu-link"><span>{{ subitem.title }}</span>
             <b class="fa" ng-class="{'fa-angle-up': subitem.selected, 'fa-angle-down': !subitem.selected}"

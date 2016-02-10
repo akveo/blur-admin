@@ -5,7 +5,7 @@
     color: $default-text;
     text-align: center;
     font-size: 18px;
-    background-color: $border-light;;
+    background-color: $border-light;
     padding: 12px 5px;
   }
 }
@@ -17,3 +17,13 @@
     margin-top: 0;
   }
 }
+
+body.badmin-transparent {
+  .show-grid div[class^=col-]{
+    div {
+      color: $default;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
