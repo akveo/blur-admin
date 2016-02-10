@@ -50,6 +50,11 @@ h5 {
       height: 620px;
     }
 
+    .panel-title{
+      text-align: center;
+      width: 100%;
+    }
+
     .panel.with-scroll .panel-body{
       height: 100%;
     }
@@ -62,24 +67,18 @@ h5 {
 
 }
 
-.typography-widget-header {
-  text-align: center;
-  margin: 0;
-  width: 100%;
-  font-weight: $font-light;
-}
-
 .heading-widget {
-  text-align: center;
 
   h1, h2, h3, h4, h5, h6 {
     width: 100%;
     font-weight: $font-light;
+    text-align: center;
   }
 
   p {
     line-height: 16px;
     font-weight: $font-normal;
+    text-align: center;
   }
 }
 
