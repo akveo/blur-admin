@@ -14,6 +14,7 @@
     var chart = AmCharts.makeChart(id, {
       "type": "serial",
       "theme": "none",
+      "color": layoutColors.default,
       "dataDateFormat": "YYYY-MM-DD",
       "precision": 2,
       "valueAxes": [{
@@ -44,6 +45,7 @@
         "valueField": "sales2",
         "clustered": false,
         "columnWidth": 0.5,
+        "lineColorField" : "#ffffff",
         "legendValueText": "$[[value]]M",
         "balloonText": "[[title]]<br/><b style='font-size: 130%'>$[[value]]M</b>"
       }, {
