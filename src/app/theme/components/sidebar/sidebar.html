@@ -12,16 +12,16 @@
       <a ng-if="item.subMenu" href ng-click="toggleSubMenu($event, item)"
          class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
-        <b class="fa" ng-class="{'fa-angle-up': item.selected, 'fa-angle-down': !item.selected}"
+        <b class="fa" ng-class="{'fa-angle-up': item.expanded, 'fa-angle-down': !item.expanded}"
            ng-if="item.subMenu"></b>
       </a>
 
       <ul ng-if="item.subMenu" class="al-sidebar-sublist"
           ng-class="{expanded: item.selected, 'slide-right': item.slideRight}">
-        <li ng-repeat="subitem in item.subMenu" ng-class="{'selected': subitem.selected, 'with-sub-menu': item.subMenu}">
+        <li ng-repeat="subitem in item.subMenu" ng-class="{'selected': subitem.selected, 'with-sub-menu': subitem.subMenu}">
           <a ng-if="subitem.subMenu" href ng-click="toggleSubMenu($event, subitem);"
              class="al-sidebar-list-link subitem-submenu-link"><span>{{ subitem.title }}</span>
-            <b class="fa" ng-class="{'fa-angle-up': subitem.selected, 'fa-angle-down': !subitem.selected}"
+            <b class="fa" ng-class="{'fa-angle-up': subitem.expanded, 'fa-angle-down': !subitem.expanded}"
                ng-if="subitem.subMenu"></b>
           </a>
           <ul ng-if="subitem.subMenu" class="al-sidebar-sublist subitem-submenu-list"

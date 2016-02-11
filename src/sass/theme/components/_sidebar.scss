@@ -20,12 +20,12 @@ $angle-right: "\f101";
   list-style: none;
 }
 
-.al-sidebar-sublist .subitem-submenu-list{
+.al-sidebar-sublist .subitem-submenu-list {
   padding-left: 15px;
 }
 
-.subitem-submenu-link{
-  .fa{
+.subitem-submenu-link {
+  .fa {
     top: 7px;
   }
 }
@@ -128,15 +128,14 @@ a.al-sidebar-list-link {
         color: $success;
       }
     }
-    > &.selected:not(.with-sub-menu)  {
-      a {
-        border: none;
-        background-color: $success;
-        &:hover {
-          color: $default;
-        }
+    &.selected:not(.with-sub-menu) > a {
+      border: none;
+      background-color: $success;
+      &:hover {
+        color: $default;
       }
     }
+
   }
 }
 

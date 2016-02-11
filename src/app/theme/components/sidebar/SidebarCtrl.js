@@ -82,13 +82,13 @@
         $scope.menuExpand();
         if (!item.selected) {
           $timeout(function () {
-            item.selected = !item.selected;
+            item.expanded = !item.expanded;
             changeSelectElemTopValue();
             submenu.slideToggle();
           });
         }
       } else {
-        item.selected = !item.selected;
+        item.expanded = !item.expanded;
         changeSelectElemTopValue();
         submenu.slideToggle();
       }

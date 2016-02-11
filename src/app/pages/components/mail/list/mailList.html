@@ -1,11 +1,15 @@
-<div class="side-message-navigation">
+<div class="side-message-navigation" ng-class="{'expanded': tabCtrl.navigationCollapsed}">
   <div class="mail-messages-control side-message-navigation-item">
-    <label class="checkbox-inline custom-checkbox nowrap margin-left">
+    <div class="toggle-navigation-container">
+      <a href class="collapse-navigation-link ion-navicon"
+         ng-click="tabCtrl.navigationCollapsed=!tabCtrl.navigationCollapsed"></a>
+    </div>
+    <label class="checkbox-inline custom-checkbox nowrap">
       <input type="checkbox" id="inlineCheckbox01" value="option1">
       <span class="select-all-label">Select All</span>
     </label>
-    <button type="button" class="btn  btn-icon margin-left"><i class="ion-refresh"></i></button>
-    <div class="btn-group margin-left" uib-dropdown>
+    <button type="button" class="btn  btn-icon refresh-button"><i class="ion-refresh"></i></button>
+    <div class="btn-group" uib-dropdown>
       <button type="button" class="btn more-button" uib-dropdown-toggle>
         More <span class="caret"></span>
       </button>
@@ -24,7 +28,7 @@
           class="side-message-navigation-item little-human shineHover {{m.tag}}">
         <td>
           <div class="mail-checkbox">
-            <label class="checkbox-inline custom-checkbox nowrap margin-left">
+            <label class="checkbox-inline custom-checkbox nowrap">
               <input type="checkbox">
               <span></span>
             </label>
@@ -32,13 +36,13 @@
         </td>
         <td  ui-sref="components.mail.detail({id: m.id, label: listCtrl.label})"><img ng-src="{{m.name.split(' ')[0] | profilePicture}}" class="little-human-picture"></td>
         <td  ui-sref="components.mail.detail({id: m.id, label: listCtrl.label})">
-          <div class="margin-left">
-            <div><span class="name">{{m.name.split(' ')[0] + ' ' + m.name.split(' ')[1][0]}}.</span></div>
+          <div class="name-container">
+            <div><span class="name">{{m.name}}</span></div>
             <div><span class="tag label label-primary {{m.tag}}">{{m.tag}}</span></div>
           </div>
         </td>
         <td  ui-sref="components.mail.detail({id: m.id, label: listCtrl.label})">
-          <div class="margin-left additional-info">
+          <div class="additional-info">
             <span class="subject"> {{m.subject}}</span>
           </div>
         </td>

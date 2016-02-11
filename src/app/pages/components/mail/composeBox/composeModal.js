@@ -16,7 +16,7 @@
           templateUrl: 'app/pages/components/mail/composeBox/compose.html',
           controller: 'composeBoxCtrl',
           controllerAs: 'boxCtrl',
-          size: 'slim',
+          size: 'compose',
           resolve: {
             subject: function () {
               return options.subject;

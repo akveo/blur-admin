@@ -8,9 +8,9 @@
     <i ng-click="$dismiss()" class="ion-close-round"></i>
   </span>
 </div>
-<div >
-  <input type="text" class="form-control compose-input"  placeholder="To" ng-model="boxCtrl.to">
-  <input type="text" class="form-control compose-input"  placeholder="Subject" ng-model="boxCtrl.subject">
+<div>
+  <input type="text" class="form-control compose-input default-color"  placeholder="To" ng-model="boxCtrl.to">
+  <input type="text" class="form-control compose-input default-color"  placeholder="Subject" ng-model="boxCtrl.subject">
   <div class="compose-container">
     <text-angular-toolbar ta-toolbar-class="toolbarMain" name="toolbarMain" ta-toolbar="[['h1','h2','h3','bold','italics', 'underline', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull']]"></text-angular-toolbar>
     <text-angular name="htmlcontent" ta-target-toolbars='toolbarMain,toolbarFooter' ng-model="boxCtrl.text"></text-angular>

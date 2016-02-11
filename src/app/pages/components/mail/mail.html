@@ -3,7 +3,7 @@
     <div ba-panel ba-panel-class="xmedium-panel mail-panel">
       <div class="mail-container">
         <div class="letter-layout">
-          <div class="mail-navigation-container">
+          <div class="mail-navigation-container" ng-class="{'expanded' : !tabCtrl.navigationCollapsed}">
             <div class="compose-button">
               <button type="button" class="btn compose-button" ng-click="tabCtrl.showCompose('','','')">
                 Compose
@@ -19,17 +19,19 @@
                   Labels
                 </h5>
               </div>
-              <div class="label-item">
-                <span class="tag label work">Work</span>
-              </div>
-              <div class="label-item">
-                <span class="tag label family">Family</span>
-              </div>
-              <div class="label-item">
-                <span class="tag label friend">Friend</span>
-              </div>
-              <div class="label-item">
-                <span class="tag label study">Study</span>
+              <div class="labels-container">
+                <div class="label-item">
+                  <span class="tag label work">Work</span>
+                </div>
+                <div class="label-item">
+                  <span class="tag label family">Family</span>
+                </div>
+                <div class="label-item">
+                  <span class="tag label friend">Friend</span>
+                </div>
+                <div class="label-item">
+                  <span class="tag label study">Study</span>
+                </div>
               </div>
             </div>
             <div class="add-label-container">

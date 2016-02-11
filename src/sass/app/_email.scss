@@ -4,6 +4,9 @@
 }
 
 .mail-panel {
+  .panel-body{
+    padding-left: 0;
+  }
   .panel-content {
     padding: 15px 22px 0 0;
   }
@@ -47,7 +50,7 @@
   .compose-button {
     margin: 7px 0;
     .btn {
-      width: 150px;
+      width: 140px;
       color: white;
       font-weight: $font-light;
       background-color: $dribble-color;
@@ -118,6 +121,7 @@
   position: relative;
   height: 550px;
   overflow: scroll;
+  transition: width 0.5s;
 }
 
 .side-message-navigation {
@@ -215,9 +219,16 @@
   }
 }
 
+.name-container{
+  margin-left: 10px;
+}
+
 .mail-checkbox {
   margin-top: 5px;
   margin-left: 6px;
+  .custom-checkbox{
+    margin-left: 5px;
+  }
 }
 
 .mail-panel .tag {
@@ -233,15 +244,15 @@
     line-height: 1.1;
   }
   &.work {
-    background-color: $primary-light;
+    background-color: $primary;
   }
 
   &.study {
-    background-color: $google-color;
+    background-color: $warning-btn;
   }
 
   &.family {
-    background-color: $warning;
+    background-color: $success;
   }
 
   &.friend {
@@ -353,6 +364,7 @@
   }
   .date {
     white-space: nowrap;
+    font-size: 12px;
   }
 }
 
@@ -519,7 +531,7 @@
 
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 760px) {
 
   .mail-navigation-container {
     width: 175px
@@ -545,39 +557,57 @@
   }
 }
 
-@media screen and (max-width: 470px) {
-  .little-human .little-human-picture {
-    display: none;
-  }
-
+@media screen and (max-width: 560px) {
   .mail-navigation-container {
-    width: 155px
+    padding: 0;
+    width: 0;
+    &.expanded {
+      width: 155px;
+    }
+    .mail-navigation {
+      font-size: 14px;
+      .new-mails {
+        left: 82%;
+        padding: 0px 5px;
+        margin-top: 0px;
+        font-size: 12px;
+      }
+      .labels {
+        margin-left: 10px;
+      }
+    }
+    .compose-button .btn {
+      width: 110px;
+    }
   }
 
-  .side-message-navigation {
+  .mail-messages-control{
+    .custom-checkbox{
+      margin-left: 5px;
+      margin-top: -2px;
+    }
+  }
+
+  .side-message-navigation, .message-container {
+    &.expanded {
+      width: 100%;
+      border: none;
+      box-shadow: none;
+    }
     width: calc(100% - 155px);
   }
 
-  .message-container {
-    width: calc(100% - 155px);
+  div.toggle-navigation-container {
+    display: inline-block;
   }
 
-  .mail-navigation-container .compose-button .btn {
-    width: 110px;
-  }
-
-  .mail-navigation-container .mail-navigation {
-    font-size: 14px;
-  }
-
-  .mail-navigation-container .mail-navigation .new-mails {
-    padding: 0px 5px;
-    margin-top: 0px;
-    font-size: 12px;
-  }
-
-  .mail-navigation-container .mail-navigation, .labels {
-    margin-left: 10px;
+  .little-human {
+    .name {
+      white-space: inherit;
+    }
+    .little-human-picture {
+      display: none;
+    }
   }
 
   .add-label-container {
@@ -666,13 +696,349 @@
   padding-right: 9px;
 }
 
-.modal .modal-dialog.modal-slim {
+.toggle-navigation-container {
+  display: none;
+  vertical-align: middle;
+  margin-left: -1px;
+  &.detail-page{
+    margin-left: 10px;
+  }
+}
+
+.collapse-navigation-link {
+  font-size: 32px;
+  color: $default;
+  &:hover{
+    color: $default;
+    opacity: .8;
+  }
+  &:visited{
+    color: $default;
+  }
+
+}
+
+.collapsed {
+  width: 0;
+}
+
+.modal .modal-dialog.modal-compose {
   width: 398px;
   position: fixed;
   bottom: 0;
   right: 0;
   max-height: 474px;
+
+  .form-control, .bootstrap-tagsinput input {
+    @include placeholderStyle($default-text, 1);
+    color: $default-text;
+  }
+  .ta-toolbar {
+    .btn {
+      border-width: 1px;
+      border-radius: 0;
+      color: $default-text;
+      border-color: transparent;
+      &.active {
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, .12);
+      }
+    }
+  }
+  @include overrideColors($default-text)
 }
+
+body.badmin-transparent {
+  .mail-navigation-container {
+    overflow: hidden;
+    width: 250px;
+    padding: 0;
+    .mail-navigation {
+      margin-left: 0;
+      text-align: center;
+      .new-mails {
+        position: absolute;
+        left: 85%;
+        padding: 1px 6px;
+        border: 1px solid;
+        background-color: transparent;
+      }
+      &.active {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        transition: background-color .5s ease;
+        .new-mails {
+          background-color: transparent;
+          color: $default;
+        }
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.3);
+        }
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .message-container, .side-message-navigation{
+    width: calc(100% - 250px);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: -1px 0px 0px 0px rgba(255, 255, 255, 0.12);
+  }
+
+  .side-message-navigation {
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .labels-container {
+    text-align: center;
+    padding-right: 8px;
+    .label-item {
+      display: inline-block;
+    }
+  }
+
+  .labels, .add-label-container {
+    margin-left: 0;
+  }
+
+  .add-label-container {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .labels-title {
+    text-align: center;
+    .label-header {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    padding-left: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
+  }
+
+  .compose-button {
+    text-align: center;
+    .btn {
+      border: $default 2px solid;
+      background-color: transparent;
+    }
+  }
+
+  .side-message-navigation .side-message-navigation-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    &.work, &.study, &.family, &.friend {
+      border-left: none;
+    }
+  }
+
+  .mail-messages-control {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 0px 1px 0px rgba(255, 255, 255, 0.12);
+    padding-right: 0;
+    .btn {
+      border: none;
+      width: auto;
+      &:focus, &:hover {
+        color:$default;
+        opacity: 0.8;
+        box-shadow: none;
+      }
+    }
+    .refresh-button{
+      margin-left: 10px;
+    }
+  }
+
+  .little-human {
+    font-weight: $font-light;
+    &:hover {
+      color: $default;
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+    .subject {
+      font-weight: $font-light;
+      margin: 0 30px;
+      font-size: 16px;
+    }
+    .date {
+      margin-right: 10px;
+    }
+  }
+
+  .mail-body-part {
+    width: calc(100% - 50px);
+    opacity: 0.8;
+  }
+
+  .name-h {
+    font-weight: $font-light;
+    &.second-name {
+      margin: 5px 0;
+    }
+  }
+
+  .person-info .human-picture {
+    margin-top: -65px;
+  }
+
+  .mail-tag.tag.label {
+    margin-top: 0;
+  }
+
+  .back-button {
+    margin-left: 45px;
+  }
+
+  .phone-email i {
+    color: $default;
+  }
+
+  .message-details {
+    padding: 5px 0 5px 30px;
+  }
+
+  .message-body, .attachment {
+    padding-left: 30px;
+  }
+
+  .person-info {
+    padding-left: 45px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    .person-info {
+      .human-picture {
+        margin-top: -35px;
+      }
+      .name {
+        margin-top: 20px;
+      }
+    }
+    .mail-tag.tag.label {
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (max-width: 990px) {
+    .person-info {
+      .human-picture {
+        margin-top: 5px;
+      }
+    }
+
+    .mail-navigation-container {
+      width: 200px
+    }
+
+    .side-message-navigation {
+      width: calc(100% - 200px);
+    }
+
+    .message-container {
+      width: calc(100% - 200px);
+    }
+    .back-button {
+      margin-left: 10px;
+    }
+
+    .message-details {
+      padding: 5px 0 5px 0;
+    }
+
+    .message-body, .attachment {
+      padding-left: 0;
+    }
+
+    .person-info {
+      padding-left: 0;
+    }
+
+  }
+
+  @media screen and (max-width: 760px) {
+
+    .mail-navigation-container {
+      width: 175px
+    }
+
+    .side-message-navigation {
+      width: calc(100% - 175px);
+    }
+
+    .message-container {
+      width: calc(100% - 175px);
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    .mail-navigation-container {
+      width: 0;
+      &.expanded {
+        width: 155px;
+      }
+      .mail-navigation {
+        font-size: 14px;
+        .new-mails {
+          left: 82%;
+          padding: 0px 5px;
+          margin-top: 0px;
+          font-size: 12px;
+        }
+        .labels {
+          margin-left: 10px;
+        }
+      }
+      .compose-button .btn {
+        width: 110px;
+      }
+    }
+
+    .mail-messages-control{
+      .custom-checkbox{
+        margin-left: 5px;
+        margin-top: -2px;
+      }
+    }
+
+    .side-message-navigation, .message-container {
+      &.expanded {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+      }
+      width: calc(100% - 155px);
+    }
+
+    .toggle-navigation-container {
+      display: inline-block;
+    }
+
+    .little-human {
+      .name {
+        white-space: inherit;
+      }
+      .little-human-picture {
+        display: none;
+      }
+    }
+
+    .add-label-container {
+      padding-left: 0;
+      font-size: 13px;
+      font-weight: $font-light;
+    }
+
+  }
+
+}
+
+
 
 
 
