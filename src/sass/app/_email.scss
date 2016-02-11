@@ -857,6 +857,7 @@ body.badmin-transparent {
 
   .little-human {
     font-weight: $font-light;
+    transition: background-color .5s;
     &:hover {
       color: $default;
       background-color: rgba(255, 255, 255, 0.12);
