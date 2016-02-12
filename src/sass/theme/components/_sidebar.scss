@@ -36,7 +36,7 @@ $angle-right: "\f101";
   float: none;
   padding: 0;
   &.selected:not(.with-sub-menu) {
-    background-color: $success;
+    background-color: $primary;
     a.al-sidebar-list-link {
       color: $default;
       b {
@@ -59,9 +59,9 @@ a.al-sidebar-list-link {
   overflow: hidden;
   cursor: pointer;
   &:hover {
-    color: $success;
+    color: $primary;
     b {
-      color: $success;
+      color: $primary;
     }
   }
   i {
@@ -125,12 +125,12 @@ a.al-sidebar-list-link {
       height: auto;
       line-height: 29px;
       &:hover {
-        color: $success;
+        color: $primary;
       }
     }
     &.selected:not(.with-sub-menu) > a {
       border: none;
-      background-color: $success;
+      background-color: $primary;
       &:hover {
         color: $default;
       }
@@ -145,7 +145,7 @@ a.al-sidebar-list-link {
 
 .sidebar-hover-elem, .sidebar-select-elem {
   width: 4px;
-  background: $success;
+  background: $primary;
   position: absolute;
   top: 0;
   left: 176px;
