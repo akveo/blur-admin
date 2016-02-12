@@ -135,8 +135,8 @@
   }
 }
 
-.cd-timeline-content-green {
-  @include cd-timeline-color($success);
+.cd-timeline-content-yellow {
+  @include cd-timeline-color($warning);
 }
 
 .cd-timeline-content-red {
@@ -197,8 +197,8 @@
     }
   }
 
-  .cd-timeline-content-green {
-    @include cd-timeline-left-color($success-bg);
+  .cd-timeline-content-yellow {
+    @include cd-timeline-left-color($warning-bg);
   }
 
   .cd-timeline-content-red {
@@ -228,8 +228,8 @@
           border-right-color: $color;
         }
       }
-      &.cd-timeline-content-green {
-        @include cd-timeline-right-color($success-bg);
+      &.cd-timeline-content-yellow {
+        @include cd-timeline-right-color($warning-bg);
       }
       &.cd-timeline-content-red {
         @include cd-timeline-right-color($danger-bg);

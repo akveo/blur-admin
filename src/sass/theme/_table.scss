@@ -178,6 +178,27 @@ input.search-input {
   width: 60px;
 }
 
+.table{
+  .editable-wrap .editable-controls, .editable-wrap .editable-error{
+    vertical-align: sub;
+    .btn{
+      &.dropdown-toggle{
+        padding: 3px 20px;
+        margin-top: 3px;
+      }
+      padding: 3px 8px;
+    }
+    input{
+      line-height: 1px;
+      height: 30px;
+    }
+  }
+}
+
+.form-inline button[type="submit"].editable-table-button{
+  margin-left: 0;
+}
+
 body.badmin-transparent {
   .table {
     & > thead {
@@ -223,5 +244,10 @@ body.badmin-transparent {
   }
   .table > tbody > tr.info > td{
     background-color: $info;
+  }
+
+  .editable-click, a.editable-click {
+    color: $default;
+    border-bottom: dashed 1px $default;
   }
 }

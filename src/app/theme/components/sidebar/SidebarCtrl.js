@@ -80,7 +80,7 @@
       var submenu = $($event.currentTarget).next();
       if ($scope.$isMenuCollapsed) {
         $scope.menuExpand();
-        if (!item.selected) {
+        if (!item.expanded) {
           $timeout(function () {
             item.expanded = !item.expanded;
             changeSelectElemTopValue();
