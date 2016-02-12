@@ -14,7 +14,7 @@
       {
         value: 2000,
         color: layoutColors.default,
-        highlight: layoutColors.primaryDark,
+        highlight: layoutColors.primaryBg,
         label: 'Ad Campaigns'
       },
       {

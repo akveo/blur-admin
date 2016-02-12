@@ -59,7 +59,7 @@
       },
 
       ChartCursor: {
-        cursorColor: "#FFFFFF",
+        cursorColor: layoutColors.dangerCharts,
         color: "#FFFFFF",
         cursorAlpha: 0.5
       },

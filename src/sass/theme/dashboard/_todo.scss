@@ -15,9 +15,6 @@ ul.todo-list {
     border: 1px solid $input-border;
     cursor: grab;
     height: 42px;
-    &.ui-sortable-helper {
-      background: #ffffff;
-    }
     i.remove-todo {
       position: absolute;
       cursor: pointer;
