@@ -38,6 +38,12 @@
       dangerCharts: '#faad74',
       defaultCharts: '#ffffff',
 
+      primaryTrafficCharts: '#209e91',
+      infoTrafficCharts: '#2dacd1',
+      successTrafficCharts: '#90b900',
+      warningTrafficCharts: '#dfb81c',
+      dangerTrafficCharts: '#e85656',
+
       defaultText: '#ffffff'
     })
     .constant('layoutSizes', {
@@ -48,7 +54,8 @@
       images: {
         root: IMAGES_ROOT,
         profile: IMAGES_ROOT + 'app/profile/',
-        amChart: 'bower_components/ammap/dist/ammap/images/'
+        amMap: 'bower_components/ammap/dist/ammap/images/',
+        amChart: 'bower_components/amcharts/dist/amcharts/images/'
       }
     });
 

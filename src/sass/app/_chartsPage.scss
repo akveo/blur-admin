@@ -53,47 +53,47 @@
 
 .ct-series-a {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $primary;
+    stroke: $primary-charts;
   }
   .ct-slice-pie, .ct-area{
-    fill: $primary;
+    fill: $primary-charts;
   }
 }
 
 .ct-series-b {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $success;
+    stroke: $success-charts;
   }
   .ct-slice-pie, .ct-area{
-    fill: $success;
+    fill: $success-charts;
   }
 }
 
 .ct-series-c {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $danger;
+    stroke: $danger-charts;
   }
   .ct-slice-pie, .ct-area{
-    fill: $danger;
+    fill: $danger-charts;
   }
 }
 
 .ct-series-d {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $warning;
+    stroke: $warning-charts;
   }
   .ct-slice-pie, .ct-area{
-    fill: $warning;
+    fill: $warning-charts;
   }
 
 }
 
 .ct-series-e {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $info;
+    stroke: $info-charts;
   }
   .ct-slice-pie, .ct-area{
-    fill: $info;
+    fill: $info-charts;
   }
 }
 @media screen and (min-width: 992px) {

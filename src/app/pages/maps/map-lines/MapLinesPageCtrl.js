@@ -269,7 +269,7 @@
         export: {
           'enabled': true
         },
-        pathToImages: layoutPaths.images.amChart
+        pathToImages: layoutPaths.images.amMap
       } );
     }, 100);
 

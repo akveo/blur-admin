@@ -452,7 +452,7 @@
       unlistedAreasAlpha: 0.1
     };
     map.imagesSettings.balloonText = '<span style="font-size:14px;"><b>[[title]]</b>: [[value]]</span>';
-    map.pathToImages = layoutPaths.images.amChart;
+    map.pathToImages = layoutPaths.images.amMap;
 
     var dataProvider = {
       mapVar: AmCharts.maps.worldLow,

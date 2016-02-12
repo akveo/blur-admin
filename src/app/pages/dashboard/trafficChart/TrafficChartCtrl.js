@@ -19,25 +19,25 @@
       },
       {
         value: 1500,
-        color: layoutColors.primaryCharts,
+        color: layoutColors.primaryTrafficCharts,
         highlight: layoutColors.primaryLight,
         label: 'Search engines'
       },
       {
         value: 1000,
-        color: layoutColors.successCharts,
+        color: layoutColors.successTrafficCharts,
         highlight: layoutColors.successBg,
         label: 'Direct Traffic'
       },
       {
         value: 1200,
-        color: layoutColors.infoCharts,
+        color: layoutColors.infoTrafficCharts,
         highlight: layoutColors.infoBg,
         label: 'Referral Traffic'
       },
       {
         value: 400,
-        color: layoutColors.warningCharts,
+        color: layoutColors.warningTrafficCharts,
         highlight: layoutColors.warningBg,
         label: 'Other'
       }

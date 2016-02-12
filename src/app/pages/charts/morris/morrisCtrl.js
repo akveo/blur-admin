@@ -10,7 +10,7 @@
 
   /** @ngInject */
   function morrisCtrl($scope, $window, layoutColors) {
-    $scope.colors = [layoutColors.primary, layoutColors.danger, layoutColors.success, layoutColors.warning, layoutColors.default, layoutColors.primaryDark];
+    $scope.colors = [layoutColors.primaryCharts, layoutColors.warningCharts, layoutColors.infoCharts, layoutColors.dangerCharts, layoutColors.successCharts, layoutColors.default, layoutColors.primaryDark];
     $scope.lineData = [
       {y: "2006", a: 100, b: 90},
       {y: "2007", a: 75, b: 65},

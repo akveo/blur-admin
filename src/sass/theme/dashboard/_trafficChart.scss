@@ -117,22 +117,22 @@
   border-radius: 15px;
   left: -45px;
   &.info{
-    background-color: $info-charts;
+    background-color: $info-traffic-charts;
   }
   &.success{
-    background-color: $success-charts;
+    background-color: $success-traffic-charts;
   }
   &.danger{
-    background-color: $danger-charts;
+    background-color: $danger-traffic-charts;
   }
   &.default{
     background-color: $default;
   }
   &.warning{
-    background-color: $warning-charts;
+    background-color: $warning-traffic-charts;
   }
   &.primary{
-    background-color: $primary-charts;
+    background-color: $primary-traffic-charts;
   }
 }
 
