@@ -210,18 +210,18 @@ body.badmin-transparent {
     background-color: rgba(0, 0, 0, 0.25);
   }
   .table > tbody > tr.primary > td{
-    background-color: $primary-btn;
+    background-color: $primary;
   }
   .table > tbody > tr.success > td{
-    background-color: $success-btn;
+    background-color: $success;
   }
   .table > tbody > tr.warning > td{
-    background-color: $warning-btn;
+    background-color: $warning;
   }
   .table > tbody > tr.danger > td{
-    background-color: $danger-btn;
+    background-color: $danger;
   }
   .table > tbody > tr.info > td{
-    background-color: $info-btn;
+    background-color: $info;
   }
 }

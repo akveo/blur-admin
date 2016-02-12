@@ -117,22 +117,22 @@
   border-radius: 15px;
   left: -45px;
   &.info{
-    background-color: $info;
+    background-color: $info-charts;
   }
   &.success{
-    background-color: $success;
+    background-color: $success-charts;
   }
   &.danger{
-    background-color: $danger;
+    background-color: $danger-charts;
   }
   &.default{
     background-color: $default;
   }
   &.warning{
-    background-color: $warning;
+    background-color: $warning-charts;
   }
   &.primary{
-    background-color: $primary;
+    background-color: $primary-charts;
   }
 }
 

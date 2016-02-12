@@ -8,39 +8,48 @@
   var IMAGES_ROOT = 'assets/img/';
 
   angular.module('BlurAdmin.theme')
-      .constant('layoutColors', {
-        primary:        '#005562',
-        info:           '#6eba8c',
-        success:        '#0e8174',
-        warning:        '#b9f2a1',
-        danger:         '#ffa76d',
-        default:        '#ffffff',
-        successLight:   '#85BA54',
-        primaryLight:   '#5FBCBB',
-        warningLight:   '#c5d36a',
-        primaryDark:    '#003e4b',
-        dangerDark:     '#c37350',
-        successDark:    '#18524b',
-        warningDark:    '#8adc68',
+    .constant('layoutColors', {
+      primary: '#209e91',
+      info: '#2dacd1',
+      success: '#90b900',
+      warning: '#dfb81c',
+      danger: '#e85656',
+      default: '#ffffff',
+      successLight: '#85BA54',
+      primaryLight: '#5FBCBB',
+      warningLight: '#c5d36a',
 
-        primaryBg:      '#0d8da2',
-        successBg:      '#02b6a2',
-        dangerBg:       '#ffcd92',
-        infoBg:       '#a8e6b3',
-        warningBg:       '#e4fbd3',
+      primaryDark: '#17857a',
+      dangerDark: '#c24848',
+      successDark: '#7b9e00',
+      warningDark: '#c6a315',
+      infoDark: '#258ead',
 
-        defaultText:    '#ffffff'
-      })
-      .constant('layoutSizes', {
-        resWidthCollapseSidebar: 1200,
-        resWidthHideSidebar: 500
-      })
-      .constant('layoutPaths', {
-        images: {
-          root: IMAGES_ROOT,
-          profile: IMAGES_ROOT + 'app/profile/',
-          amChart: 'bower_components/ammap/dist/ammap/images/'
-        }
-      });
+      primaryBg: '#63cec3',
+      infoBg: '#5abfdd',
+      successBg: '#b5d448',
+      warningBg: '#e8ca52',
+      dangerBg: '#f67171',
+
+      primaryCharts: '#218d9d',
+      successCharts: '#c2eb70',
+      infoCharts: '#59c3b8',
+      warningCharts: '#f9d673',
+      dangerCharts: '#faad74',
+      defaultCharts: '#ffffff',
+
+      defaultText: '#ffffff'
+    })
+    .constant('layoutSizes', {
+      resWidthCollapseSidebar: 1200,
+      resWidthHideSidebar: 500
+    })
+    .constant('layoutPaths', {
+      images: {
+        root: IMAGES_ROOT,
+        profile: IMAGES_ROOT + 'app/profile/',
+        amChart: 'bower_components/ammap/dist/ammap/images/'
+      }
+    });
 
 })();

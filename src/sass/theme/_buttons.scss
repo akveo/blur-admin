@@ -36,22 +36,22 @@ $hover: 24;
 
 .open > .dropdown-toggle {
   &.btn-primary {
-    @include styleButton($primary-btn, $primary-btn - $hover);
+    @include styleButton($primary, $primary - $hover);
   }
   &.btn-default {
     @include styleButton(transparent, $default);
   }
   &.btn-success {
-    @include styleButton($success-btn, $success-btn - $hover);
+    @include styleButton($success, $success - $hover);
   }
   &.btn-info {
-    @include styleButton($info-btn, $info-btn - $hover);
+    @include styleButton($info, $info - $hover);
   }
   &.btn-warning {
-    @include styleButton($warning-btn, $warning-btn - $hover);
+    @include styleButton($warning, $warning - $hover);
   }
   &.btn-danger {
-    @include styleButton($danger-btn, $danger-btn - $hover);
+    @include styleButton($danger, $danger - $hover);
   }
 }
 
@@ -60,7 +60,7 @@ $hover: 24;
 }
 
 .btn-primary {
-  @include buttonColor($primary-btn, $primary-btn);
+  @include buttonColor($primary, $primary);
 }
 
 .btn-default {
@@ -69,19 +69,19 @@ $hover: 24;
 }
 
 .btn-success {
-  @include buttonColor($success-btn, $success-btn);
+  @include buttonColor($success, $success);
 }
 
 .btn-info {
-  @include buttonColor($info-btn, $info-btn);
+  @include buttonColor($info, $info);
 }
 
 .btn-warning {
-  @include buttonColor($warning-btn, $warning-btn);
+  @include buttonColor($warning, $warning);
 }
 
 .btn-danger {
-  @include buttonColor($danger-btn, $danger-btn);
+  @include buttonColor($danger, $danger);
 }
 
 .btn-with-icon {
@@ -154,7 +154,7 @@ $hover: 24;
   }
 
   &.btn-primary {
-    @include progressButtonColor($primary-btn);
+    @include progressButtonColor($primary);
   }
 
   &.btn-default {
@@ -162,19 +162,19 @@ $hover: 24;
   }
 
   &.btn-success {
-    @include progressButtonColor($success-btn);
+    @include progressButtonColor($success);
   }
 
   &.btn-info {
-    @include progressButtonColor($info-btn);
+    @include progressButtonColor($info);
   }
 
   &.btn-warning {
-    @include progressButtonColor($warning-btn);
+    @include progressButtonColor($warning);
   }
 
   &.btn-danger {
-    @include progressButtonColor($danger-btn);
+    @include progressButtonColor($danger);
   }
 }
 
