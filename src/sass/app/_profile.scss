@@ -194,9 +194,9 @@ a.sn-link {
   }
 }
 
-.sn-link-close {
+.connected .sn-link-close {
   position: absolute;
-  top: 0;
+  top: 1px;
   right: 0;
   width: 45px;
   line-height: 45px;

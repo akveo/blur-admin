@@ -188,6 +188,7 @@ body.badmin-transparent {
       }
       label.todo-checkbox > span {
         &:before {
+          position: absolute;
           color: white;
           content: '\f10c';
           float: none;

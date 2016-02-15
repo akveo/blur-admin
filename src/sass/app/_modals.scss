@@ -23,6 +23,9 @@
   }
   .modal-header {
     border: none;
+    .close{
+      margin-top: -5px;
+    }
   }
   .modal-footer {
     border: none;
@@ -30,6 +33,7 @@
   }
   .sn-link-close {
     color: #949494;
+    font-size: 30px;
     &:hover {
       color: $danger;
     }
