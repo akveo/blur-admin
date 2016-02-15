@@ -155,6 +155,8 @@
   }
 }
 
+
+
 .line-clamp
 {
   display            : block;
@@ -167,18 +169,22 @@
   text-overflow      : ellipsis;
   padding            : 0 !important;
 }
-.line-clamp:after
-{
-  content    : '...';
-  text-align : right;
-  bottom     : 0;
-  right      : 0;
-  width      : 25%;
-  display    : block;
-  position   : absolute;
-  height     : calc(1em * 1.2);
-  background : linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .line-clamp:after
+  {
+    content    : '...';
+    text-align : right;
+    bottom     : 0;
+    right      : 0;
+    width      : 25%;
+    display    : block;
+    position   : absolute;
+    height     : calc(1em * 1.2);
+  }
 }
+
+
 @supports (-webkit-line-clamp: 1)
 {
   .line-clamp:after

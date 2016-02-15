@@ -96,6 +96,17 @@
     fill: $info-charts;
   }
 }
+
+body.badmin-transparent{
+  .ct-area {
+    fill-opacity: .5;
+  }
+  .ct-label{
+    color: $default;
+    opacity: 0.9;
+    fill: rgba(255,255,255,.9);
+  }
+}
 @media screen and (min-width: 992px) {
   .row.morris-up {
     > div {
