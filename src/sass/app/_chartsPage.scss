@@ -51,6 +51,11 @@
   font-size: 1em;
 }
 
+.ct-chart svg{
+  width: 100%;
+  display: block;
+}
+
 .ct-series-a {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
     stroke: $primary;

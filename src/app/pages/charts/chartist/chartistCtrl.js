@@ -9,7 +9,7 @@
     .controller('chartistCtrl', chartistCtrl);
 
   /** @ngInject */
-  function chartistCtrl($scope) {
+  function chartistCtrl($scope, $timeout) {
 
     $scope.simpleLineOptions = {
       fullWidth: true,
@@ -29,6 +29,8 @@
         [3, 6, 30, 33, 43]
       ]
     };
+
+
 
     $scope.areaLineData = {
       labels: [1, 2, 3, 4, 5, 6, 7, 8],
@@ -221,6 +223,20 @@
         }]
       ];
     }
+
+    $timeout(function(){
+      new Chartist.Line('#line-chart', $scope.simpleLineData, $scope.simpleLineOptions);
+      new Chartist.Line('#area-chart', $scope.areaLineData, $scope.areaLineOptions);
+      new Chartist.Line('#bi-chart', $scope.biLineData, $scope.biLineOptions);
+
+      new Chartist.Bar('#simple-bar', $scope.simpleBarData, $scope.simpleBarOptions);
+      new Chartist.Bar('#multi-bar', $scope.multiBarData, $scope.multiBarOptions, $scope.multiBarResponsive);
+      new Chartist.Bar('#stacked-bar', $scope.stackedBarData, $scope.stackedBarOptions);
+
+      new Chartist.Pie('#simple-pie', $scope.simplePieData, $scope.simplePieOptions, $scope.pieResponsive);
+      new Chartist.Pie('#label-pie', $scope.labelsPieData, $scope.labelsPieOptions);
+      new Chartist.Pie('#donut', $scope.simpleDonutData, $scope.simpleDonutOptions, $scope.donutResponsive);
+    }, 100);
 
 
   }
