@@ -31,18 +31,12 @@
       warningBg: '#e8ca52',
       dangerBg: '#f67171',
 
-      primaryCharts: '#218d9d',
-      successCharts: '#c2eb70',
-      infoCharts: '#59c3b8',
-      warningCharts: '#f9d673',
-      dangerCharts: '#faad74',
+      primaryCharts: '#005562',
+      successCharts: '#6eba8c',
+      infoCharts: '#0e8174',
+      warningCharts: '#b9f2a1',
+      dangerCharts: '#ffa76d',
       defaultCharts: '#ffffff',
-
-      primaryTrafficCharts: '#209e91',
-      infoTrafficCharts: '#2dacd1',
-      successTrafficCharts: '#90b900',
-      warningTrafficCharts: '#dfb81c',
-      dangerTrafficCharts: '#e85656',
 
       defaultText: '#ffffff'
     })

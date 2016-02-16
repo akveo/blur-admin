@@ -53,47 +53,47 @@
 
 .ct-series-a {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $primary-charts;
+    stroke: $primary;
   }
   .ct-slice-pie, .ct-area{
-    fill: $primary-charts;
+    fill: $primary;
   }
 }
 
 .ct-series-b {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $success-charts;
+    stroke: $success;
   }
   .ct-slice-pie, .ct-area{
-    fill: $success-charts;
+    fill: $success;
   }
 }
 
 .ct-series-c {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $danger-charts;
+    stroke: $danger;
   }
   .ct-slice-pie, .ct-area{
-    fill: $danger-charts;
+    fill: $danger;
   }
 }
 
 .ct-series-d {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $warning-charts;
+    stroke: $warning;
   }
   .ct-slice-pie, .ct-area{
-    fill: $warning-charts;
+    fill: $warning;
   }
 
 }
 
 .ct-series-e {
   .ct-bar,  .ct-line, .ct-point, .ct-slice-donut, .ct-slice-pie {
-    stroke: $info-charts;
+    stroke: $info;
   }
   .ct-slice-pie, .ct-area{
-    fill: $info-charts;
+    fill: $info;
   }
 }
 

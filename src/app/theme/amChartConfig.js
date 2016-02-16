@@ -20,15 +20,15 @@
       },
 
       AmCoordinateChart: {
-        colors: [layoutColors.primaryCharts, layoutColors.dangerCharts, layoutColors.warningCharts, layoutColors.successCharts, layoutColors.infoCharts, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg]
+        colors: [layoutColors.$primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg]
       },
 
       AmStockChart: {
-        colors: [layoutColors.primaryCharts, layoutColors.dangerCharts, layoutColors.warningCharts, layoutColors.successCharts, layoutColors.infoCharts, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg]
+        colors: [layoutColors.$primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg]
       },
 
       AmSlicedChart: {
-        colors: [layoutColors.primaryCharts, layoutColors.dangerCharts, layoutColors.warningCharts, layoutColors.successCharts, layoutColors.infoCharts, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg],
+        colors: [layoutColors.$primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg],
         outlineAlpha: 1,
         outlineThickness: 2,
         labelTickColor: "#FFFFFF",

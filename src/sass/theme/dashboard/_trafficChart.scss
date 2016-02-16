@@ -117,22 +117,22 @@
   border-radius: 15px;
   left: -45px;
   &.info{
-    background-color: $info-traffic-charts;
+    background-color: $info-charts;
   }
   &.success{
-    background-color: $success-traffic-charts;
+    background-color: $success-charts;
   }
   &.danger{
-    background-color: $danger-traffic-charts;
+    background-color: $danger-charts;
   }
   &.default{
     background-color: $default;
   }
   &.warning{
-    background-color: $warning-traffic-charts;
+    background-color: $warning-charts;
   }
   &.primary{
-    background-color: $primary-traffic-charts;
+    background-color: $primary-charts;
   }
 }
 
@@ -183,7 +183,7 @@
 }
 
 .chart-bg{
-  background-color: $primary-dark;
+  background-color: $view-total;
   position: absolute;
   border-radius: 100px;
   width: 180px;

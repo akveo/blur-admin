@@ -16,7 +16,7 @@
       theme: 'blur',
       dataProvider: [
         {
-          lineColor: layoutColors.dangerCharts,
+          lineColor: layoutColors.info,
           date: '2012-01-01',
           duration: 408
         },
@@ -33,7 +33,7 @@
           duration: 379
         },
         {
-          lineColor: layoutColors.successCharts,
+          lineColor: layoutColors.warning,
           date: '2012-01-05',
           duration: 501
         },
@@ -48,7 +48,7 @@
         {
           date: '2012-01-08',
           duration: 309,
-          lineColor: layoutColors.primaryCharts
+          lineColor: layoutColors.danger
         },
         {
           date: '2012-01-09',

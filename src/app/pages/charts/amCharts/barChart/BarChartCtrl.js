@@ -18,28 +18,28 @@
         {
           country: 'USA',
           visits: 3025,
-          color: layoutColors.primaryCharts
+          color: layoutColors.primary
         },
         {
           country: 'China',
           visits: 1882,
-          color: layoutColors.dangerCharts
+          color: layoutColors.danger
 
         },
         {
           country: 'Japan',
           visits: 1809,
-          color: layoutColors.infoCharts
+          color: layoutColors.info
         },
         {
           country: 'Germany',
           visits: 1322,
-          color: layoutColors.successCharts
+          color: layoutColors.success
         },
         {
           country: 'UK',
           visits: 1122,
-          color: layoutColors.warningCharts
+          color: layoutColors.warning
         },
         {
           country: 'France',

@@ -94,9 +94,9 @@
           balloonText: '[[value]]',
           bullet: 'round',
           bulletSize: 8,
-          lineColor: layoutColors.dangerCharts,
+          lineColor: layoutColors.danger,
           lineThickness: 1,
-          negativeLineColor: layoutColors.primaryCharts,
+          negativeLineColor: layoutColors.warning,
           type: 'smoothedLine',
           valueField: 'value'
         }

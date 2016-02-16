@@ -12,7 +12,7 @@
   function chartJsConfig(ChartJsProvider, layoutColors) {
     // Configure all charts
     ChartJsProvider.setOptions({
-      colours: [ layoutColors.primaryCharts, layoutColors.dangerCharts, layoutColors.warningCharts, layoutColors.successCharts, layoutColors.infoCharts, layoutColors.defaultCharts, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg],
+      colours: [ layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg],
       responsive: true,
       scaleFontColor: "rgba(255,255,255,.7)",
       scaleLineColor: "rgba(255,255,255,.7)",
