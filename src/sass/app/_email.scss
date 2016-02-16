@@ -120,7 +120,6 @@
   padding: 0 15px;
   position: relative;
   height: 550px;
-  overflow: scroll;
   transition: width 0.5s;
 }
 
@@ -686,6 +685,11 @@
   background-color: whitesmoke;
   .ta-text.ta-editor {
     background-color: white;
+    div{
+      &:focus{
+        outline: none;
+      }
+    }
   }
 
 }
