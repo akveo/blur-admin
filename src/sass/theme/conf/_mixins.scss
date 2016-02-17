@@ -109,7 +109,7 @@
 }
 
 @mixin overridePanelBg($color, $borderColor, $dropdownColor) {
-  .panel, .panel:hover {
+  .panel.panel-blur, .panel.panel-blur:hover {
     border-color: $borderColor;
     background-color: $color;
   }
