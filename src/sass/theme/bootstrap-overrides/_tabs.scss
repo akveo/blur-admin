@@ -24,10 +24,6 @@
       margin-bottom: 0;
 
       > a {
-        -webkit-border-radius: 0 0 4px 4px;
-        -moz-border-radius: 0 0 4px 4px;
-        border-radius: 0 0 4px 4px;
-
         &:hover, &:focus {
           border-top-color: #ddd;
           border-bottom-color: transparent;
@@ -56,14 +52,9 @@
 
 .tabs-left > .nav-tabs {
   float: left;
-  margin-right: 19px;
-  border-right: 1px solid #ddd;
 
   > li > a {
     margin-right: -1px;
-    -webkit-border-radius: 4px 0 0 4px;
-    -moz-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
 
     &:hover, &:focus {
       border-color: #eee #ddd #eee #eee;
@@ -80,14 +71,10 @@
 
 .tabs-right > .nav-tabs {
   float: right;
-  margin-left: 19px;
   border-left: 1px solid #ddd;
 
   > li > a {
     margin-left: -1px;
-    -webkit-border-radius: 0 4px 4px 0;
-    -moz-border-radius: 0 4px 4px 0;
-    border-radius: 0 4px 4px 0;
 
     &:hover, &:focus {
       border-color: #eee #eee #eee #ddd;
@@ -104,13 +91,6 @@
 
 /** /Different tabs positions, which were removed from bootstrap */
 
-.nav-tabs {
-  border-bottom: none;
-  background-color: #ddd;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
 .nav-tabs > li.with-dropdown {
   > a {
     padding: 0;
@@ -124,7 +104,32 @@
 }
 
 .tab-content {
-  padding: 15px;
+  padding: 15px 15px 5px 15px;
   background: #ffffff;
   color: $default-text;
+  overflow-y: scroll;
+  .tab-pane p{
+    color: $default-text;
+  }
+}
+
+.nav-tabs > li {
+  margin-bottom:  0;
+}
+.nav.nav-tabs {
+  border-bottom: none;
+  background-color: #ddd;
+  & > li > a {
+    margin-right: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    border: none;
+    &:hover{
+      border: none;
+    }
+  }
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+  border: none;
 }

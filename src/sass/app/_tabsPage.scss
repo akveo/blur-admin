@@ -4,6 +4,18 @@
   }
 }
 
-.accordions-row {
-  margin-top: 30px;
+.xsmall-panel {
+  .nav-tabs, .tab-content{
+    height: 100%;
+  }
 }
+.inline-icon{
+  display: inline-block;
+  margin: 20px 5px;
+}
+.panel.horizontal-tabs {
+  .tab-content{
+    height: calc(100% - 40px);
+  }
+}
+

@@ -129,8 +129,32 @@ $panel-heading-font-size: 16px;
   }
 }
 
-.panel.bootstrap-panel .panel-body p {
-  color: $default-text;
+.panel.bootstrap-panel{
+  .panel-body, .panel-heading {
+    p, div, span {
+      color: $default-text;
+    }
+  }
+}
+
+.accordion-panel.panel.bootstrap-panel{
+  &.panel-primary,
+  &.panel-success,
+  &.panel-info,
+  &.panel-warning,
+  &.panel-danger{
+    .panel-heading {
+      p, div, span {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+}
+
+.panel-group .panel.accordion-panel{
+  .panel-heading{
+    border-bottom: 0;
+  }
 }
 
 .panel-group .panel {
