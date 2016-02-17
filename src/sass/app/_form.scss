@@ -45,7 +45,7 @@
   box-shadow: none;
   &:focus {
     box-shadow: none;
-    border-color: $input-border-focus;
+    border-color: $primary-bg;
     background: #ffffff;
   }
 }
@@ -227,7 +227,7 @@ label.custom-checkbox {
       font-family: fontAwesome;
       font-weight: $font-normal;
       font-size: 12px;
-      color: $input-border-focus;
+      color: $default;
       content: "\a0";
       background-color: transparent;
       border: 1px solid #c8c8c8;
@@ -245,7 +245,7 @@ label.custom-checkbox {
     }
     &:hover {
       &:before {
-        border-color: $input-border-focus;
+        border-color: $primary-bg;
       }
     }
   }
@@ -350,15 +350,15 @@ label.custom-input-danger {
 }
 
 .has-success {
-  @include validationState($success, $success-dark);
+  @include validationState($success-bg, $success);
 }
 
 .has-warning {
-  @include validationState($warning-dark, #4f571a);
+  @include validationState($warning-bg, $warning);
 }
 
 .has-error {
-  @include validationState($danger, $danger-dark);
+  @include validationState($danger-bg, $danger);
 }
 
 .has-feedback label ~ .form-control-feedback {
@@ -500,4 +500,8 @@ label.custom-input-danger {
 }
 .progress-bar-danger {
   background-color: $danger;
+}
+
+.has-success .input-group-addon {
+  border: none;
 }

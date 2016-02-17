@@ -83,7 +83,7 @@
           id: 'g1',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: 'rgba(0,0,0,0.6)',
+          lineColor: 'rgba(0,0,0,0.4)',
           lineThickness: 1,
           negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',

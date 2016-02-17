@@ -3,7 +3,7 @@
   & > thead {
     & > tr {
       & > th {
-        border-bottom: 1px solid rgba(255,255,255,0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         white-space: nowrap;
         &:first-child {
           text-align: center;
@@ -22,7 +22,7 @@
       & > td {
         padding: 0px 8px;
         line-height: 35px;
-        border-top: 1px solid rgba(255,255,255,0.5);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
         &:first-child {
           text-align: center;
         }
@@ -32,8 +32,11 @@
       }
     }
   }
-  &.table-bordered th {
-    border-color: rgba(255,255,255,0.5) !important;
+  &.table-bordered {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    th, td {
+      border-color: rgba(255, 255, 255, 0.2) !important;
+    }
   }
 }
 
@@ -53,7 +56,6 @@
     border: none !important;
   }
 }
-
 
 .editable-tr-wrap {
   .editable-wrap {
@@ -75,7 +77,7 @@
   margin-bottom: 10px;
 }
 
-.select-page-size-wrap{
+.select-page-size-wrap {
   width: 150px;
 }
 
@@ -174,28 +176,28 @@ input.search-input {
   border-bottom-right-radius: 0px;
 }
 
-.status-button{
+.status-button {
   width: 60px;
 }
 
-.table{
-  .editable-wrap .editable-controls, .editable-wrap .editable-error{
+.table {
+  .editable-wrap .editable-controls, .editable-wrap .editable-error {
     vertical-align: sub;
-    .btn{
-      &.dropdown-toggle{
+    .btn {
+      &.dropdown-toggle {
         padding: 3px 20px;
         margin-top: 3px;
       }
       padding: 3px 8px;
     }
-    input{
+    input {
       line-height: 1px;
       height: 30px;
     }
   }
 }
 
-.form-inline button[type="submit"].editable-table-button{
+.form-inline button[type="submit"].editable-table-button {
   margin-left: 0;
 }
 
@@ -217,32 +219,32 @@ body.badmin-transparent {
     }
   }
 
-  .black-muted-bg{
-    background-color: rgba(0, 0, 0, 0.25);
+  .black-muted-bg {
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
-  .table-hover{
+  .table-hover {
     tr:hover {
-      background-color: rgba(0, 0, 0, 0.25);
+      background-color: rgba(0, 0, 0, 0.1);
     }
   }
 
-  .table-striped > tbody > tr:nth-of-type(odd){
-    background-color: rgba(0, 0, 0, 0.25);
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.1);
   }
-  .table > tbody > tr.primary > td{
+  .table > tbody > tr.primary > td {
     background-color: $primary;
   }
-  .table > tbody > tr.success > td{
+  .table > tbody > tr.success > td {
     background-color: $success;
   }
-  .table > tbody > tr.warning > td{
+  .table > tbody > tr.warning > td {
     background-color: $warning;
   }
-  .table > tbody > tr.danger > td{
+  .table > tbody > tr.danger > td {
     background-color: $danger;
   }
-  .table > tbody > tr.info > td{
+  .table > tbody > tr.info > td {
     background-color: $info;
   }
 
@@ -250,4 +252,21 @@ body.badmin-transparent {
     color: $default;
     border-bottom: dashed 1px $default;
   }
+}
+
+th {
+  font-weight: $font-normal;
+}
+
+.editable-empty{
+  color: $danger-dark;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+
 }
