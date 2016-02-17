@@ -136,12 +136,12 @@ h5 {
     margin: 14px 0;
   }
 
-  .accent-text p {
-    color: $accent;
+  .yellow-text p {
+    color: $warning-bg;
   }
 
-  .black-text p {
-    color: black;
+  .red-text p {
+    color: $danger-bg;
   }
 
   .links {
@@ -170,11 +170,11 @@ h5 {
 
   .accent {
     margin-top: 30px;
-    color: $accent;
+    color: $warning-bg;
     line-height: 14px;
     font-size: 14px;
     padding-left: 11px;
-    border-left: 4px solid $accent;
+    border-left: 4px solid $warning-bg;
     margin-left: 13px;
   }
 
@@ -198,7 +198,7 @@ h5 {
     li {
       &:before {
         content: "• ";
-        color: $accent;
+        color: $warning-bg;
         width: 10px;
         display: inline-block;
       }
@@ -208,7 +208,7 @@ h5 {
   ol.blur {
     counter-reset: section;
     li {
-      color: $accent;
+      color: $warning-bg;
       padding-left: 0;
       line-height: 14px;
       position: relative;
