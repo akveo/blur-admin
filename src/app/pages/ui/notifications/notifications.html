@@ -19,7 +19,7 @@
         </div>
         <div class="control">
           <label class="checkbox-inline custom-checkbox nowrap">
-            <input ng-model="options.html" type="checkbox" id="html">
+            <input ng-model="options.allowHtml" type="checkbox" id="html">
             <span>Allow html</span>
           </label>
         </div>
@@ -31,7 +31,7 @@
         </div>
         <div class="control">
           <label class="checkbox-inline custom-checkbox nowrap">
-            <input ng-model="options.position" type="checkbox" id="preventDuplicates">
+            <input ng-model="options.preventDuplicates" type="checkbox" id="preventDuplicates">
             <span>Prevent duplicates</span>
           </label>
         </div>
@@ -77,35 +77,35 @@
         <div class="controls">
           <label class="radio-header position-header">Position</label>
           <label class="radio">
-            <input type="radio" ng-model="options.position" name="positions" value="toast-top-right"/>
+            <input type="radio" ng-model="options.positionClass" name="positions" value="toast-top-right"/>
             Top Right
           </label>
           <label class="radio">
-            <input type="radio" ng-model="options.position" name="positions" value="toast-bottom-right"/>
+            <input type="radio" ng-model="options.positionClass" name="positions" value="toast-bottom-right"/>
             Bottom Right
           </label>
           <label class="radio">
-            <input type="radio" ng-model="options.position" name="positions" value="toast-bottom-left"/>
+            <input type="radio" ng-model="options.positionClass" name="positions" value="toast-bottom-left"/>
             Bottom Left
           </label>
           <label class="radio">
-            <input type="radio" ng-model="options.position" name="positions" value="toast-top-left"/>
+            <input type="radio" ng-model="options.positionClass" name="positions" value="toast-top-left"/>
             Top Left
           </label>
           <label class="radio">
-            <input type="radio" ng-model="options.position" name="positions" value="toast-top-full-width"/>
+            <input type="radio" ng-model="options.positionClass" name="positions" value="toast-top-full-width"/>
             Top Full Width
           </label>
           <label class="radio">
-            <input type="radio" ng-model="options.position" name="positions" value="toast-bottom-full-width"/>
+            <input type="radio" ng-model="options.positionClass" name="positions" value="toast-bottom-full-width"/>
             Bottom Full Width
           </label>
           <label class="radio">
-            <input type="radio" ng-model="options.position" name="positions" value="toast-top-center"/>
+            <input type="radio" ng-model="options.positionClass" name="positions" value="toast-top-center"/>
             Top Center
           </label>
           <label class="radio">
-            <input type="radio" ng-model="options.position" name="positions" value="toast-bottom-center"/>
+            <input type="radio" ng-model="options.positionClass" name="positions" value="toast-bottom-center"/>
             Bottom Center
           </label>
         </div>
@@ -114,12 +114,12 @@
     <div class="col-md-2 col-sm-3">
       <div class="control">
         <label for="timeOut">Time out</label>
-        <input type="text" class="form-control" id="timeOut" ng-model="options.timeout" placeholder="ms">
+        <input type="text" class="form-control" id="timeOut" ng-model="options.timeOut" placeholder="ms">
         <label for="timeOut">If you set it to 0, it will stick</label>
       </div>
       <div class="control">
         <label for="extendedTimeOut">Extended time out</label>
-        <input type="text" class="form-control" id="extendedTimeOut" ng-model="options.extendedTimeout"
+        <input type="text" class="form-control" id="extendedTimeOut" ng-model="options.extendedTimeOut"
                placeholder="ms">
       </div>
       <div class="control">

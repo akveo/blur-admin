@@ -9,7 +9,8 @@
       .controller('NotificationsPageCtrl', NotificationsPageCtrl);
 
   /** @ngInject */
-  function NotificationsPageCtrl($scope, toastr) {
+  function NotificationsPageCtrl($scope, toastr, toastrConfig) {
+    var defaultConfig = angular.copy(toastrConfig);
     $scope.types = ['success', 'error', 'info', 'warning'];
 
     $scope.quotes = [
@@ -59,11 +60,11 @@
     var openedToasts = [];
     $scope.options = {
       autoDismiss: false,
-      position: 'toast-top-right',
-      type: 'success',
-      timeout: '5000',
-      extendedTimeout: '1000',
-      html: false,
+      positionClass: 'toast-top-right',
+      type: 'info',
+      timeOut: '5000',
+      extendedTimeOut: '2000',
+      allowHtml: false,
       closeButton: false,
       tapToDismiss: true,
       progressBar: false,
@@ -86,8 +87,8 @@
     };
 
     $scope.openRandomToast = function () {
-      var type = Math.floor(Math.random() * 4);
-      var quote = Math.floor(Math.random() * 7);
+      var type = Math.floor(Math.random() * $scope.types.length);
+      var quote = Math.floor(Math.random() * $scope.quotes.length);
       var toastType = $scope.types[type];
       var toastQuote = $scope.quotes[quote];
       openedToasts.push(toastr[toastType](toastQuote.message, toastQuote.title, toastQuote.options));
@@ -95,11 +96,16 @@
     };
 
     $scope.openToast = function () {
-      openedToasts.push(toastr[$scope.options.type]($scope.options.msg, $scope.options.title, angular.copy($scope.options)));
+      angular.extend(toastrConfig, $scope.options);
+      openedToasts.push(toastr[$scope.options.type]($scope.options.msg, $scope.options.title));
       var strOptions = {};
       for (var o in  $scope.options) if (o != 'msg' && o != 'title')strOptions[o] = $scope.options[o];
       $scope.optionsStr = "toastr." + $scope.options.type + "(\'" + $scope.options.msg + "\', \'" + $scope.options.title + "\', " + JSON.stringify(strOptions, null, 2) + ")";
     };
+
+    $scope.$on('$destroy', function iVeBeenDismissed() {
+      angular.extend(toastrConfig, defaultConfig);
+    })
   }
 
 })();
