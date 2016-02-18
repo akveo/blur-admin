@@ -1,15 +1,15 @@
 .alert{
   font-size: 13px;
+  font-weight: $font-light;
+  strong{
+    font-weight: $font-normal;
+  }
   .close{
     margin-top: -3px;
   }
-  //a{
-  //  font-weight: 900;
-  //  color: #3C3C3B;
-  //  &:hover{
-  //    border-bottom: 1px solid $github-color;
-  //  }
-  //}
+  .alert-link{
+    font-weight: $font-normal;
+  }
   .control-alert{
     padding-top:10px ;
     button{
@@ -26,13 +26,37 @@
 
 .bg-success {
   background-color: $success;
+  a{
+    color: $primary-charts;
+    &:hover{
+      color: $primary-dark;
+    }
+  }
 }
 .bg-info {
   background-color: $info;
+  a{
+    color: $warning-bg;
+    &:hover{
+      color: $warning;
+    }
+  }
 }
 .bg-warning {
   background-color: $warning;
+  a{
+    color: $danger;
+    &:hover{
+      color: $danger-dark;
+    }
+  }
 }
 .bg-danger {
   background-color: $danger;
+  a{
+    color: $primary-light;
+    &:hover{
+      color: $primary;
+    }
+  }
 }
