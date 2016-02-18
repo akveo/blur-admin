@@ -506,3 +506,13 @@ label.custom-input-danger {
 .has-success .input-group-addon {
   border: none;
 }
+
+.input-group > span.addon-left{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.input-group > span.addon-right{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
