@@ -14,7 +14,7 @@
       restrict: 'A',
       link: function( $scope, elem) {
         $timeout(function() {
-          $(elem).selectpicker();
+          $(elem).selectpicker({dropupAuto: false});
         }, 0);
       }
     };

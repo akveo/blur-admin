@@ -433,7 +433,6 @@ label.custom-input-danger {
     color: #555555;
     &:focus {
       background: #ffffff;
-      border: 1px solid $default;
       box-shadow: none;
       outline: 0 !important;
     }
@@ -444,25 +443,32 @@ label.custom-input-danger {
     }
   }
   &.open {
+    .btn-default + .dropdown-menu{
+      border-top: 1px solid $disabled;
+    }
     .btn-default.dropdown-toggle {
       box-shadow: none;
       background-color: #ffffff;
       border-color: $default;
     }
-    .btn-default + .dropdown-menu {
+    .dropdown-menu {
       border-left: 1px solid $default;
       border-right: 1px solid $default;
-      top: calc(100% + 1px);
+      border-bottom-color: $default;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
-    .btn {
-      border-radius: 0;
+    > .btn.dropdown-toggle {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-color: transparent;
+      box-shadow: none;
     }
     .dropdown-menu {
       border-top: none;
     }
   }
   &.with-search.open .btn-default + .dropdown-menu {
-    top: calc(100% + 3px);
     .bs-searchbox .form-control{
         background-color: rgba(0,0,0,0.5);
     }
