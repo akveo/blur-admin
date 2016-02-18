@@ -367,9 +367,9 @@ label.custom-input-danger {
   font-size: 18px;
 }
 
-.bootstrap-select{
-  .btn-default{
-    &:focus{
+.bootstrap-select {
+  .btn-default {
+    &:focus {
       color: $default-text;
     }
   }
@@ -430,16 +430,16 @@ label.custom-input-danger {
 .bootstrap-select {
   .btn-default {
     background: transparent;
-    border-color: $input-border;
+    border-color: $default;
     color: #555555;
     &:focus {
       background: #ffffff;
-      border: 1px solid $input-border-focus;
+      border: 1px solid $default;
       box-shadow: none;
       outline: 0 !important;
     }
     &:active {
-      border-color: $input-border;
+      border-color: $default;
       box-shadow: none;
       background: #ffffff;
     }
@@ -448,8 +448,31 @@ label.custom-input-danger {
     .btn-default.dropdown-toggle {
       box-shadow: none;
       background-color: #ffffff;
-      border-color: $input-border-focus;
+      border-color: $default;
     }
+    .btn-default + .dropdown-menu {
+      border-left: 1px solid $default;
+      border-right: 1px solid $default;
+      top: calc(100% + 1px);
+    }
+    .btn {
+      border-radius: 0;
+    }
+    .dropdown-menu {
+      border-top: none;
+    }
+  }
+  &.with-search.open .btn-default + .dropdown-menu {
+    top: calc(100% + 3px);
+    .bs-searchbox .form-control{
+        background-color: rgba(0,0,0,0.5);
+    }
+    .no-results{
+      color: $default-text;
+    }
+  }
+  .notify{
+    color: $default-text;
   }
 }
 
@@ -493,12 +516,15 @@ label.custom-input-danger {
 .progress-bar-primary {
   background-color: $primary;
 }
+
 .progress-bar-success {
   background-color: $success-light;
 }
+
 .progress-bar-warning {
   background-color: $warning;
 }
+
 .progress-bar-danger {
   background-color: $danger;
 }
@@ -507,12 +533,12 @@ label.custom-input-danger {
   border: none;
 }
 
-.input-group > span.addon-left{
+.input-group > span.addon-left {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.input-group > span.addon-right{
+.input-group > span.addon-right {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
