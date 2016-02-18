@@ -85,8 +85,14 @@ textarea.form-control {
 }
 
 .modal-content {
-  border-radius: 0;
+  border-radius: 5px;
+  border: none;
   color: $default-text;
+  .modal-header{
+    color: $default;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
 }
 
 @mixin setSwitchBorder($color) {
