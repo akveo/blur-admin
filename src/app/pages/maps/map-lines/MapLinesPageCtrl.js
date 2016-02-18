@@ -23,7 +23,7 @@
           linkToObject: 'london',
           images: [ {
             id: 'london',
-            color: layoutColors.primaryDark,
+            color: layoutColors.warningBg,
             svgPath: targetSVG,
             title: 'London',
             latitude: 51.5002,
@@ -85,7 +85,7 @@
               label: 'show flights from Vilnius',
               left: 106,
               top: 70,
-              labelColor: layoutColors.primaryDark,
+              labelColor: layoutColors.warningBg,
               labelRollOverColor: layoutColors.danger,
               labelFontSize: 11,
               linkToObject: 'vilnius'
@@ -94,7 +94,7 @@
 
             {
               id: 'vilnius',
-              color: layoutColors.primaryDark,
+              color: layoutColors.warningBg,
               svgPath: targetSVG,
               title: 'Vilnius',
               latitude: 54.6896,
@@ -153,7 +153,7 @@
                 label: 'show flights from London',
                 left: 106,
                 top: 70,
-                labelColor: layoutColors.primaryDark,
+                labelColor: layoutColors.warningBg,
                 labelRollOverColor: layoutColors.danger,
                 labelFontSize: 11,
                 linkToObject: 'london'
@@ -248,13 +248,13 @@
         },
 
         areasSettings: {
-          unlistedAreasColor: layoutColors.warning
+          unlistedAreasColor: layoutColors.info
         },
 
         imagesSettings: {
           color: layoutColors.danger,
           rollOverColor: layoutColors.danger,
-          selectedColor: layoutColors.primaryDark
+          selectedColor: layoutColors.warningBg
         },
 
         linesSettings: {
