@@ -77,16 +77,16 @@
               left: 100,
               top: 45,
               labelShiftY: 5,
-              color: layoutColors.danger,
-              labelColor: layoutColors.danger,
-              labelRollOverColor: layoutColors.danger,
+              color: layoutColors.default,
+              labelColor: layoutColors.default,
+              labelRollOverColor: layoutColors.default,
               labelFontSize: 20
             }, {
               label: 'show flights from Vilnius',
               left: 106,
               top: 70,
-              labelColor: layoutColors.warningBg,
-              labelRollOverColor: layoutColors.danger,
+              labelColor: layoutColors.default,
+              labelRollOverColor: layoutColors.default,
               labelFontSize: 11,
               linkToObject: 'vilnius'
             } ]
@@ -145,16 +145,16 @@
                 left: 100,
                 top: 45,
                 labelShiftY: 5,
-                color: layoutColors.danger,
-                labelColor: layoutColors.danger,
-                labelRollOverColor: layoutColors.danger,
+                color: layoutColors.default,
+                labelColor: layoutColors.default,
+                labelRollOverColor: layoutColors.default,
                 labelFontSize: 20
               }, {
                 label: 'show flights from London',
                 left: 106,
                 top: 70,
-                labelColor: layoutColors.warningBg,
-                labelRollOverColor: layoutColors.danger,
+                labelColor: layoutColors.default,
+                labelRollOverColor: layoutColors.default,
                 labelFontSize: 11,
                 linkToObject: 'london'
               } ]
@@ -252,14 +252,14 @@
         },
 
         imagesSettings: {
-          color: layoutColors.danger,
-          rollOverColor: layoutColors.danger,
-          selectedColor: layoutColors.warningBg
+          color: layoutColors.warningBg,
+          rollOverColor: layoutColors.warningBg,
+          selectedColor: layoutColors.warning
         },
 
         linesSettings: {
-          color: layoutColors.danger,
-          alpha: 0.4
+          color: layoutColors.warningBg,
+          alpha: 0.8
         },
 
 

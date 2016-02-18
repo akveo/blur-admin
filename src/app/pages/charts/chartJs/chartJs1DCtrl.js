@@ -11,8 +11,8 @@
   /** @ngInject */
   function chartJs1DCtrl($scope) {
 
-    $scope.labels =["Sleeping", "Designing", "Coding", "Cycling", "Running"];
-    $scope.data = [20, 40, 5, 35, 10];
+    $scope.labels =["Sleeping", "Designing", "Coding", "Cycling"];
+    $scope.data = [20, 40, 5, 35];
     $scope.options = {
       segmentStrokeColor : "rgba(0,0,0,0)"
     };

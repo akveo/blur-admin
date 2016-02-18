@@ -5,7 +5,7 @@
 
   .popular-app-img {
     position: relative;
-    background: #2d2d2d;
+    background: rgba(0, 0, 0, 0.5);
     padding: 30px 0;
     height: 260px;
     border-top-right-radius: 5px;
@@ -40,14 +40,13 @@
   }
 }
 
-
-body.badmin-transparent{
+body.badmin-transparent {
   .popular-app-img {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
   }
-  .popular-app-cost{
-    border-bottom: 1px solid rgba(0,0,0,0.12);
+  .popular-app-cost {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
   }
 }
