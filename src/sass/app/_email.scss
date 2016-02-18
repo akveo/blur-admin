@@ -644,10 +644,10 @@
 
 }
 
-.compose-input {
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
+.modal-compose input.form-control.compose-input {
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  border-radius: 0;
 }
 
 .compose-footer {
