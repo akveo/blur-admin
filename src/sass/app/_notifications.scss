@@ -8,6 +8,17 @@
   }
 }
 
+.notification-panel{
+  .control,
+  .radio,
+  label,
+  label.custom-checkbox > span,
+  label.custom-radio > span {
+    font-weight: $font-light;
+  }
+}
+
+
 @media (max-width: 991px) {
   .toastr-radio-setup {
     margin-left: 22px;
@@ -28,5 +39,8 @@
   }
 }
 .result-toastr{
-  border-radius: 0;
+  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.33);
+  border: none;
 }

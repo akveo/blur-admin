@@ -43,6 +43,7 @@
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+  border: none;
   &:focus {
     box-shadow: none;
     border-color: $primary-bg;
@@ -320,7 +321,7 @@ label.custom-input-danger {
     color: $color;
   }
   .form-control {
-    border-color: $color;
+    border: 1px solid $color;
     &:focus {
       box-shadow: none;
       border-color: $focusColor;
