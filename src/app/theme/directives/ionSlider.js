@@ -33,31 +33,35 @@
         disable: '=',
         onChange: '=',
         onFinish: '=',
-        values: '='
+        values: '=',
+        timeout: '@'
       },
       link: function ($scope, $element) {
         (function init() {
-          $element.ionRangeSlider({
-            min: $scope.min,
-            max: $scope.max,
-            type: $scope.type,
-            prefix: $scope.prefix,
-            maxPostfix: $scope.maxPostfix,
-            prettify_enabled: $scope.prettify,
-            prettify_separator: $scope.prettifySeparator,
-            grid: $scope.grid,
-            gridMargin: $scope.gridMargin,
-            postfix: $scope.postfix,
-            step: $scope.step,
-            hideMinMax: $scope.hideMinMax,
-            hideFromTo: $scope.hideFromTo,
-            from: $scope.from,
-            to: $scope.to,
-            disable: $scope.disable,
-            onChange: $scope.onChange,
-            onFinish: $scope.onFinish,
-            values: $scope.values
-          });
+          var timeout = $scope.timeout || 0;
+          $timeout(function(){
+            $element.ionRangeSlider({
+              min: $scope.min,
+              max: $scope.max,
+              type: $scope.type,
+              prefix: $scope.prefix,
+              maxPostfix: $scope.maxPostfix,
+              prettify_enabled: $scope.prettify,
+              prettify_separator: $scope.prettifySeparator,
+              grid: $scope.grid,
+              gridMargin: $scope.gridMargin,
+              postfix: $scope.postfix,
+              step: $scope.step,
+              hideMinMax: $scope.hideMinMax,
+              hideFromTo: $scope.hideFromTo,
+              from: $scope.from,
+              to: $scope.to,
+              disable: $scope.disable,
+              onChange: $scope.onChange,
+              onFinish: $scope.onFinish,
+              values: $scope.values
+            });
+          }, timeout);
         })();
         $scope.$watch('min', function (value) {
           $timeout(function () {

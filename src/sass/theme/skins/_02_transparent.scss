@@ -25,4 +25,7 @@ body.badmin-transparent {
   .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     @include placeholderStyle($default, 0.6);
   }
+  .irs-grid-text {
+    color: $default;
+  }
 }
