@@ -1,6 +1,7 @@
 h3.with-line {
   border-bottom: 1px solid $border;
   color: $default-text;
+  font-weight: $font-normal;
   padding-top: 30px;
   margin-bottom: 14px;
   line-height: 39px;
@@ -221,6 +222,11 @@ a.sn-link {
   .form-group {
     label {
       line-height: 34px;
+      font-size: 14px;
+      font-weight: $font-light;
+    }
+    input{
+      font-weight: $font-light;
     }
   }
 }
