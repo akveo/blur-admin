@@ -14,31 +14,31 @@
       {
         value: 2000,
         color: layoutColors.defaultCharts,
-        highlight: layoutColors.primary,
+        highlight: "#f1f1f1",
         label: 'Ad Campaigns'
       },
       {
         value: 1500,
         color: layoutColors.primaryCharts,
-        highlight: layoutColors.primaryLight,
+        highlight: "#136775",
         label: 'Search engines'
       },
       {
         value: 1000,
         color: layoutColors.infoCharts,
-        highlight: layoutColors.infoBg,
+        highlight: "#13998a",
         label: 'Direct Traffic'
       },
       {
         value: 1200,
         color: layoutColors.successCharts,
-        highlight: layoutColors.successDark,
+        highlight: "#94d7a1",
         label: 'Referral Traffic'
       },
       {
         value: 400,
         color: layoutColors.warningCharts,
-        highlight: layoutColors.warningDark,
+        highlight: "#dcfcc4",
         label: 'Other'
       }
     ];
