@@ -61,33 +61,34 @@
               onFinish: $scope.onFinish,
               values: $scope.values
             });
+
+            $scope.$watch('min', function (value) {
+              $timeout(function () {
+                $element.data("ionRangeSlider").update({min: value});
+              });
+            }, true);
+            $scope.$watch('max', function (value) {
+              $timeout(function () {
+                $element.data("ionRangeSlider").update({max: value});
+              });
+            });
+            $scope.$watch('from', function (value) {
+              $timeout(function () {
+                $element.data("ionRangeSlider").update({from: value});
+              });
+            });
+            $scope.$watch('to', function (value) {
+              $timeout(function () {
+                $element.data("ionRangeSlider").update({to: value});
+              });
+            });
+            $scope.$watch('disable', function (value) {
+              $timeout(function () {
+                $element.data("ionRangeSlider").update({disable: value});
+              });
+            });
           }, timeout);
         })();
-        $scope.$watch('min', function (value) {
-          $timeout(function () {
-            $element.data("ionRangeSlider").update({min: value});
-          });
-        }, true);
-        $scope.$watch('max', function (value) {
-          $timeout(function () {
-            $element.data("ionRangeSlider").update({max: value});
-          });
-        });
-        $scope.$watch('from', function (value) {
-          $timeout(function () {
-            $element.data("ionRangeSlider").update({from: value});
-          });
-        });
-        $scope.$watch('to', function (value) {
-          $timeout(function () {
-            $element.data("ionRangeSlider").update({to: value});
-          });
-        });
-        $scope.$watch('disable', function (value) {
-          $timeout(function () {
-            $element.data("ionRangeSlider").update({disable: value});
-          });
-        });
       }
     };
   }
