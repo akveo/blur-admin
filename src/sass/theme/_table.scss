@@ -57,6 +57,10 @@
   }
 }
 
+.editable-wrap .btn-group.form-control{
+  background-color: transparent;
+}
+
 .editable-tr-wrap {
   .editable-wrap {
     vertical-align: super;
@@ -262,11 +266,10 @@ th {
   color: $danger-dark;
 }
 
-.table > thead > tr > th,
-.table > tbody > tr > th,
-.table > tfoot > tr > th,
-.table > thead > tr > td,
-.table > tbody > tr > td,
-.table > tfoot > tr > td {
+.table > tbody > tr > th{
+  border: none;
+}
 
+.table-striped > tbody > tr > td {
+  border: none;
 }
