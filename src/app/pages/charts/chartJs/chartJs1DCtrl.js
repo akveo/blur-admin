@@ -14,6 +14,7 @@
     $scope.labels =["Sleeping", "Designing", "Coding", "Cycling", "Running"];
     $scope.data = [20, 40, 5, 35, 10];
     $scope.options = {
+      segmentStrokeColor : "rgba(0,0,0,0)"
     };
     $scope.changeData = function () {
       $scope.data = shuffle($scope.data);
