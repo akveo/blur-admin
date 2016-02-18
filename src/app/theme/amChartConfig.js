@@ -20,17 +20,15 @@
       },
 
       AmCoordinateChart: {
-        colors: [layoutColors.$primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg]
+        colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg]
       },
 
       AmStockChart: {
-        colors: [layoutColors.$primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg]
+        colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg]
       },
 
       AmSlicedChart: {
-        colors: [layoutColors.$primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.successBg],
-        outlineAlpha: 1,
-        outlineThickness: 2,
+        colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg],
         labelTickColor: "#FFFFFF",
         labelTickAlpha: 0.3
       },
@@ -59,7 +57,7 @@
       },
 
       ChartCursor: {
-        cursorColor: layoutColors.dangerCharts,
+        cursorColor: layoutColors.primary,
         color: "#FFFFFF",
         cursorAlpha: 0.5
       },
