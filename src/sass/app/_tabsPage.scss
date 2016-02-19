@@ -4,6 +4,23 @@
   }
 }
 
+
+.panel.tabs-panel{
+  .panel-body{
+    padding: 0;
+  }
+  .dropdown-menu{
+    min-width: 132px;
+    top: auto;
+    border: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  &.with-scroll .panel-body{
+    height: 100%;
+  }
+}
+
 .xsmall-panel {
   .nav-tabs, .tab-content{
     height: 100%;

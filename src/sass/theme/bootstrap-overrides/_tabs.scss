@@ -5,6 +5,23 @@
   }
 }
 
+.tabs-right, .tabs-left {
+  .nav-tabs {
+    min-width: 100px;
+  }
+  .tab-content {
+    width: calc(100% - 100px);
+  }
+}
+
+.tabs-right .tab-content {
+  margin-right: 100px;
+}
+
+.tabs-left .tab-content {
+  margin-left: 100px;
+}
+
 .tab-content > .tab-pane,
 .pill-content > .pill-pane {
   display: none;
@@ -17,7 +34,6 @@
 
 .tabs-below {
   > .nav-tabs {
-    border-top: 1px solid #ddd;
 
     > li {
       margin-top: -1px;
@@ -25,23 +41,21 @@
 
       > a {
         &:hover, &:focus {
-          border-top-color: #ddd;
-          border-bottom-color: transparent;
         }
       }
     }
     > .active a {
       &, &:hover, &:focus {
-        border-color: transparent #ddd #ddd #ddd;
       }
     }
   }
 }
 
 .tabs-left, .tabs-right {
+  height: 100%;
   > .nav-tabs > li {
     float: none;
-
+    margin-bottom: 0;
     > a {
       min-width: 74px;
       margin-right: 0;
@@ -52,39 +66,37 @@
 
 .tabs-left > .nav-tabs {
   float: left;
-
+  border-bottom-left-radius: 5px;
   > li > a {
     margin-right: -1px;
 
     &:hover, &:focus {
-      border-color: #eee #ddd #eee #eee;
     }
   }
 
   > .active a {
     &, &:hover, &:focus {
-      border-color: #ddd transparent #ddd #ddd;
-      *border-right-color: #fff;
     }
   }
 }
 
-.tabs-right > .nav-tabs {
+.tabs-right > .nav.nav-tabs {
   float: right;
-  border-left: 1px solid #ddd;
-
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 5px;
   > li > a {
     margin-left: -1px;
 
     &:hover, &:focus {
-      border-color: #eee #eee #eee #ddd;
     }
+  }
+
+  & > li:first-of-type a {
+    border-top-left-radius: 0;
   }
 
   > .active a {
     &, &:hover, &:focus {
-      border-color: #ddd #ddd #ddd transparent;
-      *border-left-color: #fff;
     }
   }
 }
@@ -105,31 +117,68 @@
 
 .tab-content {
   padding: 15px 15px 5px 15px;
-  background: #ffffff;
-  color: $default-text;
-  overflow-y: scroll;
-  .tab-pane p{
-    color: $default-text;
+  background: transparent;
+  color: $default;
+  .tab-pane p {
+    color: $default;
   }
 }
 
-.nav-tabs > li {
-  margin-bottom:  0;
-}
 .nav.nav-tabs {
-  border-bottom: none;
-  background-color: #ddd;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, .01);
+  background-color: rgba(0, 0, 0, .2);
+  a {
+    color: $default;
+    &:hover {
+      color: $default;
+    }
+  }
   & > li > a {
     margin-right: 0;
     margin-bottom: 0;
     border-radius: 0;
     border: none;
-    &:hover{
+    color: $default;
+    &:hover {
       border: none;
+      color: $default;
+      background-color: rgba(0, 0, 0, .1);
     }
+  }
+  & > li.active > a {
+    color: $default;
+    background-color: rgba(0, 0, 0, .15);
+  }
+  > li:first-of-type a {
+    border-top-left-radius: 5px;
+  }
+  .dropdown-menu > li > a {
+    color: $default-text;
   }
 }
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: transparent;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
   border: none;
 }
+
+.panel-primary, .panel-info, .panel-success, .panel-warning, .panel-danger, {
+  .panel-heading{
+    border-radius: 4px;
+  }
+
+  &.panel-open .panel-heading{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  > .panel-heading + .panel-collapse > .panel-body {
+    border-top: none;
+  }
+}
+
