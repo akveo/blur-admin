@@ -89,6 +89,7 @@ a.al-sidebar-list-link {
 .slimScrollBar, .slimScrollRail {
   border-radius: 0px !important;
   width: 4px !important;
+  left: 176px;
 }
 
 @mixin layout-collapsed() {
@@ -143,19 +144,16 @@ a.al-sidebar-list-link {
   @include default-sublist();
 }
 
-.sidebar-hover-elem, .sidebar-select-elem {
+.sidebar-hover-elem{
   width: 4px;
   background: $primary;
   position: absolute;
-  top: 0;
+  top: -150px;
   left: 176px;
+  transition: all 0.5s ease;
+  transition-property: top, height;
   height: 42px;
-  display: none;
-  transition: top 0.5s ease;
-  &.show-hover-elem {
-    height: 42px;
-    display: block;
-  }
+  display: block;
 }
 
 .sidebar-select-elem {

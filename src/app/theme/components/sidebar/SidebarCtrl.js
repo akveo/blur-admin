@@ -14,26 +14,16 @@
     $scope.menuItems = sidebarService.getMenuItems();
     $scope.menuHeight = $element[0].childNodes[0].clientHeight - 84;
 
-    function changeSelectElemTopValue() {
-      $timeout(function () {
-        var selectedItem = $('.al-sidebar-list-item.selected');
-        if (selectedItem.length) {
-          $scope.selectElemTop = selectedItem.position().top;
-        }
-      }, 101);
-    }
-
     function selectMenuItem() {
       $.each($scope.menuItems, function (index, menu) {
         menu.selected = ('#' + $location.$$url).indexOf(menu.root) == 0;
-        menu.expanded = menu.selected;
+        menu.expanded = menu.expanded || menu.selected;
         if (menu.subMenu) {
           $.each(menu.subMenu, function (subIndex, subMenu) {
             subMenu.selected = ('#' + $location.$$url).indexOf(subMenu.root) == 0;
           });
         }
       });
-      changeSelectElemTopValue();
     }
 
     selectMenuItem();
@@ -50,11 +40,6 @@
       $scope.$isMenuCollapsed = true;
     };
 
-    $scope.$watch('$isMenuCollapsed', function (newValue) {
-      if (!newValue && !$scope.selectElemTop) {
-        changeSelectElemTopValue();
-      }
-    });
 
     // watch window resize to change menu collapsed state if needed
     $(window).resize(function () {
@@ -83,24 +68,15 @@
         if (!item.expanded) {
           $timeout(function () {
             item.expanded = !item.expanded;
-            changeSelectElemTopValue();
             submenu.slideToggle();
           });
         }
       } else {
         item.expanded = !item.expanded;
-        changeSelectElemTopValue();
         submenu.slideToggle();
       }
 
     };
-
-    function toggleExpandedSubmenu() {
-
-      $timeout(function () {
-
-      }, 200);
-    }
 
     window.onclick = function () {
       $timeout(function () {
@@ -117,6 +93,7 @@
 
     $scope.hoverItem = function ($event) {
       $scope.showHoverElem = true;
+      $scope.hoverElemHeight =  $event.currentTarget.clientHeight;
       var menuTopValue = 66;
       $scope.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - menuTopValue;
     };
