@@ -216,7 +216,7 @@ label.custom-checkbox {
       & + span {
         color: $disabled;
         &:before {
-          border-color: $disabled-bg !important;
+          border-color: $disabled !important;
         }
       }
     }
@@ -238,7 +238,7 @@ label.custom-checkbox {
       color: $default;
       content: "\a0";
       background-color: transparent;
-      border: 1px solid #c8c8c8;
+      border: 1px solid $default;
       border-radius: 0;
       display: inline-block;
       text-align: center;
@@ -321,6 +321,10 @@ label.custom-input-danger {
   .radio, .checkbox, .radio-inline, .checkbox-inline {
     padding-top: 0px;
   }
+}
+
+.input-demo{
+  line-height: 25px;
 }
 
 @mixin validationState($color, $focusColor) {
@@ -492,17 +496,18 @@ label.custom-input-danger {
   background-color: transparent;
   border: 1px solid $input-border;
   box-shadow: none;
-  border-radius: 0;
   color: #555555;
   max-width: 100%;
   font-size: 14px;
+  line-height: 26px;
   width: 100%;
   &.form-control {
     display: block;
     width: 100%;
   }
   .tag {
-    border-radius: 0;
+    border-radius: 3px;
+    font-weight: $font-normal;
     font-size: 11px;
     padding: 4px 8px;
     & [data-role="remove"]:hover {
@@ -510,20 +515,11 @@ label.custom-input-danger {
     }
   }
   input {
+    line-height: 22px;
     font-size: 11px;
   }
 }
 
-@media (max-width: $resM) {
-  .form-inline {
-    .checkbox {
-      margin-left: 15px;
-    }
-    label.custom-checkbox > span, label.custom-radio > span {
-      display: inline-block;
-    }
-  }
-}
 
 .progress-bar-primary {
   background-color: $primary;

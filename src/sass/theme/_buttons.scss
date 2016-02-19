@@ -35,8 +35,10 @@ $hover: 24;
 }
 
 .open > .dropdown-toggle {
-  &.btn-primary {
+  &.btn.btn-primary {
     @include styleButton($primary, $primary - $hover);
+    background-color: $primary-bg;
+    border-color: $primary-bg;
   }
   &.btn-default {
     @include styleButton(transparent, $default);
@@ -59,13 +61,20 @@ $hover: 24;
   outline: none !important;
 }
 
-.btn-primary {
+button.btn.btn-primary {
   @include buttonColor($primary, $primary);
+  &:active, &:target {
+    background-color: $primary-bg;
+  }
 }
 
-.btn-default {
+button.btn.btn-default {
   border-width: 1px;
   @include buttonColor(transparent, $default);
+  &:active, &:target, &:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: $default ;
+  }
 }
 
 .btn-success {
@@ -136,7 +145,7 @@ $hover: 24;
   .progress-inner {
     background-color: darken($btnColor, 20);
   }
-  &.progress-button-perspective  {
+  &.progress-button-perspective {
     background: none;
     .content {
       background-color: $btnColor;
@@ -178,16 +187,16 @@ $hover: 24;
   }
 }
 
-.btn-raised{
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.35);
+.btn-raised {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.35);
 }
 
-.btn-mm{
+.btn-mm {
   padding: 5px 11px;
   font-size: 13px;
 }
 
-.btn-xm{
+.btn-xm {
   padding: 8px 14px;
   font-size: 16px;
 }

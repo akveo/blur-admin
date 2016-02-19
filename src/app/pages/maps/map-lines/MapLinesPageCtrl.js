@@ -23,7 +23,6 @@
           linkToObject: 'london',
           images: [ {
             id: 'london',
-            color: layoutColors.warningBg,
             svgPath: targetSVG,
             title: 'London',
             latitude: 51.5002,
@@ -95,7 +94,6 @@
 
             {
               id: 'vilnius',
-              color: layoutColors.warningBg,
               svgPath: targetSVG,
               title: 'Vilnius',
               latitude: 54.6896,
@@ -255,7 +253,6 @@
 
         imagesSettings: {
           color: layoutColors.warningBg,
-          rollOverColor: layoutColors.warningBg,
           selectedColor: layoutColors.warning
         },
 

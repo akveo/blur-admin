@@ -39,8 +39,8 @@ h3.with-line {
     padding: 15px 15px 25px;
   }
 
-  .progress-bar-success {
-    background-color: $success-light;
+  .progress-bar-primary {
+    background-color: $primary-light;
   }
 
   .form-group {
@@ -88,7 +88,7 @@ h3.with-line {
     font-size: 32px;
     background: #ffffff;
     cursor: pointer;
-    color: $success;
+    color: $primary;
     top: -11px;
     right: -11px;
     height: 26px;
@@ -127,7 +127,7 @@ h3.with-line {
   margin: 23px 0 12px 12px;
 }
 
-$snColor: $success;
+$snColor: $primary;
 $snPadding: 8px;
 a.sn-link {
   transition: none;

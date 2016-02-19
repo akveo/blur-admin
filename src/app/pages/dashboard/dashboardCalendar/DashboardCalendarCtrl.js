@@ -17,7 +17,7 @@
         center: 'title',
         right: 'month,agendaWeek,agendaDay'
       },
-      defaultDate: '2015-07-12',
+      defaultDate: '2016-03-08',
       selectable: true,
       selectHelper: true,
       select: function (start, end) {
@@ -38,55 +38,24 @@
       events: [
         {
           title: 'All Day Event',
-          start: '2015-07-01'
+          start: '2016-03-01',
+          color: layoutColors.success
         },
         {
           title: 'Long Event',
-          start: '2015-07-07',
-          end: '2015-07-10',
-          color: layoutColors.danger
-        },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: '2015-07-09T16:00:00'
-        },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: '2015-07-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2015-07-11',
-          end: '2015-07-13',
-          color: layoutColors.successLight
-        },
-        {
-          title: 'Meeting',
-          start: '2015-07-12T10:30:00',
-          end: '2015-07-12T12:30:00',
-          color: layoutColors.danger
-        },
-        {
-          title: 'Meeting',
-          start: '2015-07-14T14:30:00',
-          color: layoutColors.successLight
+          start: '2016-03-07',
+          end: '2016-03-10',
+          color: layoutColors.info
         },
         {
           title: 'Dinner',
-          start: '2015-07-14T20:00:00',
-          color: layoutColors.success
+          start: '2016-03-14T20:00:00',
+          color: layoutColors.warning
         },
         {
           title: 'Birthday Party',
-          start: '2015-07-13T07:00:00',
-          color: layoutColors.success
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2015-07-28'
+          start: '2016-04-01T07:00:00',
+          color: layoutColors.info
         }
       ]
     });
