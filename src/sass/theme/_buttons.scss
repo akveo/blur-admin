@@ -37,8 +37,8 @@ $hover: 24;
 .open > .dropdown-toggle {
   &.btn.btn-primary {
     @include styleButton($primary, $primary - $hover);
-    background-color: $primary-bg;
-    border-color: $primary-bg;
+    background-color: $primary-dark;
+    border-color: $primary-dark;
   }
   &.btn-default {
     @include styleButton(transparent, $default);
@@ -64,7 +64,7 @@ $hover: 24;
 button.btn.btn-primary {
   @include buttonColor($primary, $primary);
   &:active, &:target {
-    background-color: $primary-bg;
+    background-color: $primary-dark;
   }
 }
 

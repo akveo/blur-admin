@@ -1,14 +1,14 @@
-.control{
+.control {
   margin-bottom: 10px;
-  .form-control{
+  .form-control {
     width: 75%;
   }
-  span{
+  span {
     white-space: pre-line;
   }
 }
 
-.notification-panel{
+.notification-panel {
   .control,
   .radio,
   label,
@@ -18,33 +18,48 @@
   }
 }
 
-
 @media (max-width: 991px) {
   .toastr-radio-setup {
     margin-left: 22px;
   }
 }
-.radio-header{
+
+.radio-header {
 
   margin-bottom: 0;
-  &.position-header{
+  &.position-header {
     margin-top: 15px;
   }
 }
 
-.button-row{
+.button-row {
   line-height: 37px;
-  button{
+  button {
     width: 125px;
   }
 }
-.result-toastr{
+
+.result-toastr {
   border-radius: 5px;
   color: rgba(255, 255, 255, 0.9);
   background-color: rgba(0, 0, 0, 0.33);
   border: none;
 }
 
-.timeout-sub-label{
+.timeout-sub-label {
   margin-top: 5px;
+}
+
+.toast-title {
+  font-weight: $font-normal;
+}
+
+.toast-message {
+  font-weight: $font-light;
+}
+
+#toast-container.toast-top-center, #toast-container.toast-bottom-center{
+  .toast{
+    margin-bottom: 5px;
+  }
 }
