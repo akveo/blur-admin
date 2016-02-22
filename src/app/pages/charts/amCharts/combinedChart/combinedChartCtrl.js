@@ -9,7 +9,7 @@
     .controller('combinedChartCtrl', combinedChartCtrl);
 
   /** @ngInject */
-  function combinedChartCtrl($element, layoutColors) {
+  function combinedChartCtrl($element, layoutColors, layoutPaths) {
     var id = $element[0].getAttribute('id');
     var chart = AmCharts.makeChart(id, {
       "type": "serial",
@@ -227,7 +227,8 @@
         "market2": 85,
         "sales1": 4,
         "sales2": 7
-      }]
+      }],
+      pathToImages: layoutPaths.images.amChart
     });
   }
 
