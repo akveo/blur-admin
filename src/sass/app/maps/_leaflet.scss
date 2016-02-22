@@ -270,10 +270,13 @@
 
 /* zoom control */
 
-.leaflet-control-zoom-in,
-.leaflet-control-zoom-out {
-  font: bold 18px 'Lucida Console', Monaco, monospace;
-  text-indent: 1px;
+.leaflet-bar .leaflet-control-zoom-in,
+.leaflet-bar .leaflet-control-zoom-out {
+  line-height: 18px;
+  &:hover{
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .leaflet-control-zoom-out {

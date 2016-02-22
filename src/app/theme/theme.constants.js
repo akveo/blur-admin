@@ -48,8 +48,8 @@
       images: {
         root: IMAGES_ROOT,
         profile: IMAGES_ROOT + 'app/profile/',
-        amMap: 'bower_components/ammap/dist/ammap/images/',
-        amChart: 'bower_components/amcharts/dist/amcharts/images/'
+        amMap: 'assets/img/theme/vendor/ammap/',
+        amChart: 'assets/img/theme/vendor/amchart/'
       }
     });
 
