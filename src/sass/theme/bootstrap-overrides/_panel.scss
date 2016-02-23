@@ -42,7 +42,7 @@ $panel-heading-font-size: 16px;
   }
 }
 
-.panel-body {
+.panel > .panel-body {
   padding: 15px 22px;
   height: 100%;
 }

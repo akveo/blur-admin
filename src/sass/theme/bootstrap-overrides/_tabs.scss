@@ -177,6 +177,10 @@
     border-bottom-right-radius: 0;
   }
 
+  &:not(.panel-open) .panel-heading{
+    transition-delay: .3s;
+  }
+
   > .panel-heading + .panel-collapse > .panel-body {
     border-top: none;
   }
