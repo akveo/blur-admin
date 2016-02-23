@@ -39,23 +39,23 @@
         {
           title: 'All Day Event',
           start: '2016-03-01',
-          color: layoutColors.success
+          color: layoutColors.successCharts
         },
         {
           title: 'Long Event',
           start: '2016-03-07',
           end: '2016-03-10',
-          color: layoutColors.info
+          color: layoutColors.primaryCharts
         },
         {
           title: 'Dinner',
           start: '2016-03-14T20:00:00',
-          color: layoutColors.warning
+          color: layoutColors.infoCharts
         },
         {
           title: 'Birthday Party',
           start: '2016-04-01T07:00:00',
-          color: layoutColors.info
+          color: layoutColors.warningCharts
         }
       ]
     });
