@@ -21,7 +21,9 @@ body {
 .page-not-found-modal {
   width: 638px;
   margin: 0 auto;
-  @include bg-translucent-dark(0.7);
+  @include bg-translucent-dark(0.5);
+  border-radius: 5px;
+  font-weight: $font-light;
   color: #ffffff;
   padding: 32px;
   text-align: center;
@@ -37,11 +39,11 @@ body {
   a {
     text-decoration: none;
     outline: none;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
     color: $primary;
     display: inline-block;
     &:hover {
-      color: $warning;
+      color: $primary-dark;
     }
   }
 }
