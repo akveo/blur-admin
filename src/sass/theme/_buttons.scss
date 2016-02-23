@@ -59,10 +59,18 @@ $hover: 24;
     @include styleButton($danger, $danger - $hover);
   }
 }
-
-.bootstrap-select .dropdown-toggle:focus {
-  outline: none !important;
+.bootstrap-select{
+  .dropdown-toggle:focus {
+    outline: none !important;
+  }
+  .btn-default:focus{
+    color: $default;
+  }
+  .btn{
+    transition: none;
+  }
 }
+
 
 button.btn.btn-primary {
   @include buttonColor($primary, $primary);
