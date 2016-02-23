@@ -13,23 +13,26 @@
 }
 
 .mail-navigation-container {
-  width: 300px;
+  width: 200px;
   .mail-navigation {
     cursor: pointer;
     font-weight: $font-light;
     font-size: 16px;
-    padding: 10px;
-    margin-left: 22px;
+    text-align: left;
+    padding: 10px 10px 10px 30px;
+    transition: 0.8s padding ease;
     .new-mails {
-      display: inline-block;
-      float: right;
+      position: absolute;
+      left: 150px;
+      padding: 1px 6px;
+      border: 1px solid;
       color: white;
       background-color: $primary-light;
-      padding: 1px 6px;
       margin-top: -2px;
       font-size: 12px;
       margin-right: 5px;
       border-radius: 10px;
+      transition: 0.8s left ease;
     }
     &.active {
       background-color: $primary-light;
@@ -41,7 +44,7 @@
         color: $primary-light;
         background-color: white;
       }
-      transition: background-color .2s ease;
+      transition: background-color .2s ease, 0.8s padding ease;
     }
     &:hover {
       background-color: $border-light;
@@ -63,6 +66,15 @@
   margin-left: 22px;
 }
 
+.labels-container {
+  text-align: center;
+  padding-right: 28px;
+  padding-left: 20px;
+  .label-item {
+    display: inline-block;
+  }
+}
+
 .labels-title {
   padding-left: 10px;
   border-bottom: 1px solid $border-light;
@@ -80,6 +92,7 @@
   font-size: 16px;
   font-weight: $font-light;
   .label-input-stub {
+    font-size: 14px;
     margin-left: 5px;
   }
   i {
@@ -125,7 +138,7 @@
 
 .side-message-navigation {
   padding: 10px 0 0 0;
-  width: calc(100% - 300px);
+  width: calc(100% - 200px);
   box-shadow: -4px 0 7px -2px $input-border;
   .side-message-navigation-item {
     border-bottom: 1px solid $input-border;
@@ -183,7 +196,7 @@
     width: 45px;
     height: 45px;
     border-radius: 23px;
-    margin: 7px 0 7px 7px;
+    margin: 7px 0px 7px 7px;
     transition: all .2s ease-in-out;
   }
   .name {
@@ -263,6 +276,14 @@
   overflow: auto;
   table {
     width: 100%;
+  }
+}
+@media screen and (min-width: 1199px) {
+  .photo-td {
+    width: 55px;
+  }
+  .check-td{
+    width: 35px;
   }
 }
 
@@ -454,21 +475,6 @@
   }
 }
 
-@media screen and (max-width: 1300px) {
-
-  .mail-navigation-container {
-    width: 260px
-  }
-
-  .side-message-navigation {
-    width: calc(100% - 260px);
-  }
-
-  .message-container {
-    width: calc(100% - 260px);
-  }
-
-}
 
 @media screen and (max-width: 1199px) {
   .name-h {
@@ -483,17 +489,6 @@
 }
 
 @media screen and (max-width: 990px) {
-  .mail-navigation-container {
-    width: 200px
-  }
-
-  .side-message-navigation {
-    width: calc(100% - 200px);
-  }
-
-  .message-container {
-    width: calc(100% - 200px);
-  }
 
   .person-info .human-picture {
     width: 150px;
@@ -533,7 +528,13 @@
 @media screen and (max-width: 760px) {
 
   .mail-navigation-container {
-    width: 175px
+    width: 175px;
+    .mail-navigation{
+      padding-left: 19px;
+      .new-mails {
+        left: 137px;
+      }
+    }
   }
 
   .side-message-navigation {
@@ -565,8 +566,9 @@
     }
     .mail-navigation {
       font-size: 14px;
+      padding-left: 23px;
       .new-mails {
-        left: 82%;
+        left: 116px;
         padding: 0px 5px;
         margin-top: 0px;
         font-size: 12px;
@@ -755,16 +757,11 @@
 body.badmin-transparent {
   .mail-navigation-container {
     overflow: hidden;
-    width: 250px;
+    width: 200px;
     padding: 0;
     .mail-navigation {
       margin-left: 0;
-      text-align: center;
       .new-mails {
-        position: absolute;
-        left: 85%;
-        padding: 1px 6px;
-        border: 1px solid;
         background-color: transparent;
       }
       &.active {
@@ -786,7 +783,7 @@ body.badmin-transparent {
   }
 
   .message-container, .side-message-navigation{
-    width: calc(100% - 250px);
+    width: calc(100% - 200px);
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     border-left: 1px solid rgba(0, 0, 0, 0.12);
@@ -796,14 +793,6 @@ body.badmin-transparent {
   .side-message-navigation {
     overflow: hidden;
     padding: 0;
-  }
-
-  .labels-container {
-    text-align: center;
-    padding-right: 8px;
-    .label-item {
-      display: inline-block;
-    }
   }
 
   .labels, .add-label-container {
@@ -937,17 +926,6 @@ body.badmin-transparent {
       }
     }
 
-    .mail-navigation-container {
-      width: 200px
-    }
-
-    .side-message-navigation {
-      width: calc(100% - 200px);
-    }
-
-    .message-container {
-      width: calc(100% - 200px);
-    }
     .back-button {
       margin-left: 10px;
     }
@@ -990,9 +968,8 @@ body.badmin-transparent {
       .mail-navigation {
         font-size: 14px;
         .new-mails {
-          left: 82%;
-          padding: 0px 5px;
-          margin-top: 0px;
+          padding: 0 5px;
+          margin-top: 0;
           font-size: 12px;
         }
         .labels {

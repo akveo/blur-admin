@@ -1,5 +1,5 @@
 input.task-todo {
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 ul.todo-list {
@@ -126,7 +126,7 @@ body.badmin-transparent {
   input.task-todo {
     color: white;
     width: calc(100% - 25px);
-    opacity: 0.9;
+    border-radius: 0;
     border: none;
     background: transparent;
     &:focus {

@@ -26,7 +26,7 @@
     <table>
       <tr ng-repeat="m in listCtrl.messages track by m.id | orderBy:'-date'"
           class="side-message-navigation-item little-human shineHover {{m.tag}}">
-        <td>
+        <td class="check-td">
           <div class="mail-checkbox">
             <label class="checkbox-inline custom-checkbox nowrap">
               <input type="checkbox">
@@ -34,7 +34,7 @@
             </label>
           </div>
         </td>
-        <td  ui-sref="components.mail.detail({id: m.id, label: listCtrl.label})"><img ng-src="{{m.name.split(' ')[0] | profilePicture}}" class="little-human-picture"></td>
+        <td  class="photo-td" ui-sref="components.mail.detail({id: m.id, label: listCtrl.label})"><img ng-src="{{m.name.split(' ')[0] | profilePicture}}" class="little-human-picture"></td>
         <td  ui-sref="components.mail.detail({id: m.id, label: listCtrl.label})">
           <div class="name-container">
             <div><span class="name">{{m.name}}</span></div>
