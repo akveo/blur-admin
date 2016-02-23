@@ -27,6 +27,9 @@ $hover: 24;
   &[disabled]:active, fieldset[disabled] &:active, &.disabled.active, &[disabled].active,
   fieldset[disabled] &.active {
     @include styleButton($color, $borderColor + $hover/2);
+    &:hover {
+      transform: none;
+    }
   }
 
   &:hover, &:focus, &.focus, &:active, &.active {
@@ -71,26 +74,38 @@ button.btn.btn-primary {
 button.btn.btn-default {
   border-width: 1px;
   @include buttonColor(transparent, $default);
-  &:active, &:target, &:focus {
+  &:active, &:target {
     background-color: rgba(0, 0, 0, 0.2);
     color: $default ;
   }
 }
 
-.btn-success {
+button.btn.btn-success {
   @include buttonColor($success, $success);
+  &:active, &:target {
+    background-color: $success-dark;
+  }
 }
 
-.btn-info {
+button.btn.btn-info {
   @include buttonColor($info, $info);
+  &:active, &:target {
+    background-color: $info-dark;
+  }
 }
 
-.btn-warning {
+button.btn.btn-warning {
   @include buttonColor($warning, $warning);
+  &:active, &:target {
+    background-color: $warning-dark;
+  }
 }
 
-.btn-danger {
+button.btn.btn-danger {
   @include buttonColor($danger, $danger);
+  &:active, &:target {
+    background-color: $danger-dark;
+  }
 }
 
 .btn-with-icon {
@@ -120,6 +135,7 @@ button.btn.btn-default {
 }
 
 @mixin progressButtonColor($btnColor) {
+  border-radius: 0;
   .content {
     &:after, &:before {
       color: darken($btnColor, 40);
@@ -153,7 +169,8 @@ button.btn.btn-default {
   }
 }
 
-.progress-button {
+button.progress-button {
+
   .progress {
     margin-bottom: 0;
     border-radius: 0;
@@ -162,27 +179,27 @@ button.btn.btn-default {
     transform: none;
   }
 
-  &.btn-primary {
+  &.btn.btn-primary {
     @include progressButtonColor($primary);
   }
 
-  &.btn-default {
+  &.btn.btn-default {
     @include progressButtonColor($default);
   }
 
-  &.btn-success {
+  &.btn.btn-success {
     @include progressButtonColor($success);
   }
 
-  &.btn-info {
+  &.btn.btn-info {
     @include progressButtonColor($info);
   }
 
-  &.btn-warning {
+  &.btn.btn-warning {
     @include progressButtonColor($warning);
   }
 
-  &.btn-danger {
+  &.btn.btn-danger {
     @include progressButtonColor($danger);
   }
 }
