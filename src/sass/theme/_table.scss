@@ -242,18 +242,23 @@ body.badmin-transparent {
   }
   .table > tbody > tr.primary > td {
     background-color: $primary;
+    border: none;
   }
   .table > tbody > tr.success > td {
     background-color: $success;
+    border: none;
   }
   .table > tbody > tr.warning > td {
     background-color: $warning;
+    border: none;
   }
   .table > tbody > tr.danger > td {
     background-color: $danger;
+    border: none;
   }
   .table > tbody > tr.info > td {
     background-color: $info;
+    border: none;
   }
 
   .editable-click, a.editable-click {
