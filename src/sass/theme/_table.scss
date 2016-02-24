@@ -57,7 +57,7 @@
   }
 }
 
-.editable-wrap .btn-group.form-control{
+.editable-wrap .btn-group.form-control {
   background-color: transparent;
 }
 
@@ -81,7 +81,7 @@
   margin-bottom: 10px;
 }
 
-.add-row-editable-table + table{
+.add-row-editable-table + table {
   margin-bottom: 5px;
 }
 
@@ -266,14 +266,54 @@ th {
   font-weight: $font-normal;
 }
 
-.editable-empty{
+.editable-empty {
   color: $danger-dark;
 }
 
-.table > tbody > tr > th{
+.table > tbody > tr > th {
   border: none;
 }
 
 .table-striped > tbody > tr > td {
   border: none;
+}
+.pagination > li > a,
+.pagination > li > span{
+  color: $default;
+  border-color: $default;
+}
+
+
+.pagination > li:first-of-type > a,
+.pagination > li:first-of-type > span{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.pagination > li:last-of-type > a,
+.pagination > li:last-of-type > span{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: $primary;
+  border-color: $default;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus{
+  background-color: rgba(0,0,0,.2);
+  color: $default;
+}
+
+.editable-buttons .btn-with-icon i {
+   margin-right: 0;
 }
