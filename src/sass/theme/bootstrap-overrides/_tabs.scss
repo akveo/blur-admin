@@ -168,21 +168,30 @@
 }
 
 .panel-primary, .panel-info, .panel-success, .panel-warning, .panel-danger, {
-  .panel-heading{
+  .panel-heading {
     border-radius: 4px;
   }
 
-  &.panel-open .panel-heading{
+  &.panel-open .panel-heading {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 
-  &:not(.panel-open) .panel-heading{
+  &:not(.panel-open) .panel-heading {
     transition-delay: .3s;
   }
 
   > .panel-heading + .panel-collapse > .panel-body {
     border-top: none;
+  }
+}
+
+.accordion-panel .panel-heading {
+  padding: 0;
+  .accordion-toggle {
+    display: inline-block;
+    width: 100%;
+    padding: 14px 22px;
   }
 }
 
