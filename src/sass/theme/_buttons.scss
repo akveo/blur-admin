@@ -63,7 +63,7 @@ $hover: 24;
   .dropdown-toggle:focus {
     outline: none !important;
   }
-  .btn-default:focus{
+  button.btn-default:focus{
     color: $default;
   }
   .btn{

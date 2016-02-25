@@ -8,9 +8,10 @@ h1.color, h2.color, h3.color, h4.color, h5.color, h6.color {
   color: $danger;
 }
 
-a {
+body a {
   color: $activelink;
   text-decoration: none !important;
+  transition: color 0.2s ease;
   &:hover {
     color: $hoverlink;
   }

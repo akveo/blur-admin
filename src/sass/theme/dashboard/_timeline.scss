@@ -200,15 +200,15 @@
   }
 
   .cd-timeline-content-yellow {
-    @include cd-timeline-left-color($warning-bg);
+    @include cd-timeline-left-color(rgba(0,0,0,.2));
   }
 
   .cd-timeline-content-red {
-    @include cd-timeline-left-color($danger-bg);
+    @include cd-timeline-left-color(rgba(0,0,0,.2));
   }
 
   .cd-timeline-content-blue {
-    @include cd-timeline-left-color($primary-bg);
+    @include cd-timeline-left-color(rgba(0,0,0,.2));
   }
 
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
@@ -231,13 +231,13 @@
         }
       }
       &.cd-timeline-content-yellow {
-        @include cd-timeline-right-color($warning-bg);
+        @include cd-timeline-right-color(rgba(0,0,0,.2));
       }
       &.cd-timeline-content-red {
-        @include cd-timeline-right-color($danger-bg);
+        @include cd-timeline-right-color(rgba(0,0,0,.2));
       }
       &.cd-timeline-content-blue {
-        @include cd-timeline-right-color($primary-bg);
+        @include cd-timeline-right-color(rgba(0,0,0,.2));
       }
     }
   }

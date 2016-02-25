@@ -9,12 +9,12 @@
       .directive('selectpicker', selectpicker);
 
   /** @ngInject */
-  function selectpicker($timeout) {
+  function selectpicker() {
     return {
       restrict: 'A',
       link: function( $scope, elem) {
-        $timeout(function() {
-          $(elem).selectpicker({dropupAuto: false});
+        setTimeout(function() {
+          elem.selectpicker({dropupAuto: false});
         }, 0);
       }
     };

@@ -469,8 +469,7 @@ label.custom-input-danger {
       border-left: 1px solid $default;
       border-right: 1px solid $default;
       border-bottom-color: $default;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
+      border-radius: 0 0 5px 5px;
     }
     > .btn.dropdown-toggle {
       border-bottom-left-radius: 0;
