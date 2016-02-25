@@ -78,14 +78,15 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
 });
 
-gulp.task('other', function () {
+gulp.task('other', ['copyVendorImages'], function () {
   var fileFilter = $.filter(function (file) {
     return file.stat.isFile();
   });
 
   return gulp.src([
     path.join(conf.paths.src, '/**/*'),
-    path.join('!' + conf.paths.src, '/**/*.{html,css,js,scss,md}')
+    path.join('!' + conf.paths.src, '/**/*.{html,css,js,scss,md}'),
+    path.join(conf.paths.tmp, '/serve/**/assets/img/theme/vendor/**/*')
   ])
     .pipe(fileFilter)
     .pipe(gulp.dest(path.join(conf.paths.dist, '/')));
