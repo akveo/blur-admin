@@ -9,7 +9,7 @@
       .controller('TablesPageCtrl', TablesPageCtrl);
 
   /** @ngInject */
-  function TablesPageCtrl($scope, $filter) {
+  function TablesPageCtrl($scope, $filter, editableOptions, editableThemes) {
 
     $scope.smartTablePageSize = 10;
 
@@ -703,6 +703,11 @@
       };
       $scope.users.push($scope.inserted);
     };
+
+    editableOptions.theme = 'bs3';
+    editableThemes['bs3'].submitTpl = '<button type="submit" class="btn btn-primary btn-with-icon"><i class="ion-checkmark-round"></i></button>';
+    editableThemes['bs3'].cancelTpl = '<button type="button" ng-click="$form.$cancel()" class="btn btn-default btn-with-icon"><i class="ion-close-round"></i></button>';
+
 
   }
 

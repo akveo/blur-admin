@@ -14,13 +14,13 @@
   }
 }
 
-.jstree-default .jstree-clicked, .jstree-default .jstree-hovered {
+.jstree-default a.jstree-clicked, .jstree-default a.jstree-hovered {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.jstree-default .jstree-anchor, .jstree-default .jstree-wholerow{
+.jstree-default a.jstree-anchor, .jstree-default a.jstree-wholerow{
   &:hover{
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.15);
   }
 }
 
