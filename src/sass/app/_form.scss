@@ -88,7 +88,7 @@ textarea.form-control {
   border-radius: 5px;
   border: none;
   color: $default-text;
-  .modal-header{
+  .modal-header {
     color: $default;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -218,8 +218,10 @@ label.custom-checkbox {
     &:disabled {
       & + span {
         color: $disabled;
+        cursor: not-allowed;
         &:before {
           border-color: $disabled !important;
+          cursor: not-allowed;
         }
       }
     }
@@ -326,7 +328,7 @@ label.custom-input-danger {
   }
 }
 
-.input-demo{
+.input-demo {
   line-height: 25px;
 }
 
@@ -457,7 +459,7 @@ label.custom-input-danger {
     }
   }
   &.open {
-    .btn-default + .dropdown-menu{
+    .btn-default + .dropdown-menu {
       border-top: 1px solid $disabled;
     }
     .btn-default.dropdown-toggle {
@@ -482,14 +484,14 @@ label.custom-input-danger {
     }
   }
   &.with-search.open .btn-default + .dropdown-menu {
-    .bs-searchbox .form-control{
-        background-color: rgba(0,0,0,0.5);
+    .bs-searchbox .form-control {
+      background-color: rgba(0, 0, 0, 0.5);
     }
-    .no-results{
+    .no-results {
       color: $default-text;
     }
   }
-  .notify{
+  .notify {
     color: $default-text;
   }
 }
@@ -522,7 +524,6 @@ label.custom-input-danger {
     min-width: 53px;
   }
 }
-
 
 .progress-bar-primary {
   background-color: $primary;
