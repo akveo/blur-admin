@@ -17,13 +17,13 @@ body.badmin-transparent {
     color: $default;
   }
   .form-control, .bootstrap-tagsinput input {
-    @include placeholderStyle($default, 0.9);
+    @include placeholderStyle($default, 0.7);
     background-color: rgba(0, 0, 0, .15);
     border-radius: 5px;
     color: $default;
   }
   .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-    @include placeholderStyle($default, 0.6);
+    @include placeholderStyle($default, 0.5);
   }
   .irs-grid-text {
     color: $default;
