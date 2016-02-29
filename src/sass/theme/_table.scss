@@ -241,23 +241,23 @@ body.badmin-transparent {
     background-color: rgba(0, 0, 0, 0.1);
   }
   .table > tbody > tr.primary > td {
-    background-color: $primary;
+    background-color: rgba($primary,0.7);
     border: none;
   }
   .table > tbody > tr.success > td {
-    background-color: $success;
+    background-color: rgba($success,0.7);
     border: none;
   }
   .table > tbody > tr.warning > td {
-    background-color: $warning;
+    background-color: rgba($warning,0.7);
     border: none;
   }
   .table > tbody > tr.danger > td {
-    background-color: $danger;
+    background-color: rgba($danger,0.7);
     border: none;
   }
   .table > tbody > tr.info > td {
-    background-color: $info;
+    background-color: rgba($info,0.7);
     border: none;
   }
 
