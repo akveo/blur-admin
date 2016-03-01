@@ -18,6 +18,18 @@ body {
   @include main-background();
 }
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+{
+  html{
+    overflow: hidden;
+    height: 100%;
+  }
+  body{
+    overflow: auto;
+    height: 100%;
+  }
+}
+
 a {
   transition: color 0.5s ease;
   outline: 0 !important;
