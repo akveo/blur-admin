@@ -21,7 +21,7 @@
         });
       },
       template: function(el, attrs) {
-        var res = '<div  class="panel {{panelType}} invisible ' + (attrs.baPanelClass || '') + '" zoom-in ba-panel-blur>';
+        var res = '<div  class="panel {{panelType}} full-invisible ' + (attrs.baPanelClass || '') + '" zoom-in ba-panel-blur>';
         res += baPanel.template(el, attrs);
         res += '</div>';
         return res;

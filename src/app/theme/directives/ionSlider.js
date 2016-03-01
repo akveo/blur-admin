@@ -37,9 +37,6 @@
         timeout: '@'
       },
       link: function ($scope, $element) {
-        (function init() {
-          var timeout = $scope.timeout || 0;
-          $timeout(function(){
             $element.ionRangeSlider({
               min: $scope.min,
               max: $scope.max,
@@ -87,8 +84,6 @@
                 $element.data("ionRangeSlider").update({disable: value});
               });
             });
-          }, timeout);
-        })();
       }
     };
   }

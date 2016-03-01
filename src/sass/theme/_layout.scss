@@ -176,3 +176,10 @@ a {
     display: inline-block;
   }
 }
+
+.full-invisible {
+  visibility: hidden!important;
+  * {
+    visibility: hidden!important;
+  }
+}
