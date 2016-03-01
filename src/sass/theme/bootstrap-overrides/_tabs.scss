@@ -11,6 +11,7 @@
   }
   .tab-content {
     width: calc(100% - 100px);
+    overflow-y: auto;
   }
 }
 
