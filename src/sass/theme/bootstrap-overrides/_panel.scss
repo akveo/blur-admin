@@ -177,6 +177,16 @@ $panel-heading-font-size: 16px;
   font-weight: $font-light;
 }
 
+div.preload-images {
+   height: 0;
+  .preload-bg{
+    background: url($images-root + 'blur-bg.jpg') no-repeat;
+  }
+  .preload-blurred-bg{
+    background: url($images-root + 'blur-bg-blurred.jpg') no-repeat;
+  }
+}
+
 /*
 .panel-group .panel {
   border-radius: 0;

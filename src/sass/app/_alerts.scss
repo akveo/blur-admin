@@ -25,7 +25,7 @@
 }
 
 .bg-success {
-  background-color: $success;
+  background-color: rgba($success,0.85);
   a{
     color: $primary-charts;
     &:hover{
@@ -34,7 +34,7 @@
   }
 }
 .bg-info {
-  background-color: $info;
+  background-color: rgba($info,0.85);
   a{
     color: $warning-bg;
     &:hover{
@@ -43,7 +43,7 @@
   }
 }
 .bg-warning {
-  background-color: $warning;
+  background-color: rgba($warning,0.85);
   a{
     color: $danger;
     &:hover{
@@ -52,7 +52,7 @@
   }
 }
 .bg-danger {
-  background-color: $danger;
+  background-color: rgba($danger,0.85);
   a{
     color: $primary-light;
     &:hover{

@@ -26,11 +26,13 @@
         title: 'Menu Level 1',
         icon: 'ion-ios-more',
         subMenu: [{
-            title: 'Menu Level 1.1'
+            title: 'Menu Level 1.1',
+            root: '#'
           }, {
             title: 'Menu Level 1.2',
             subMenu: [{
-              title: 'Menu Level 1.2.1'
+              title: 'Menu Level 1.2.1',
+              root: '#'
             }]
           }]
       }];

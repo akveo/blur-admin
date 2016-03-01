@@ -19,6 +19,8 @@
       "precision": 2,
       "valueAxes": [{
         color: layoutColors.default,
+        axisColor: layoutColors.default,
+        gridColor: layoutColors.default,
         "id": "v1",
         "title": "Sales",
         "position": "left",
@@ -27,6 +29,9 @@
           return "$" + Math.round(value) + "M";
         }
       }, {
+        color: layoutColors.default,
+        axisColor: layoutColors.default,
+        gridColor: layoutColors.default,
         "id": "v2",
         "title": "Market Days",
         "gridAlpha": 0,
@@ -123,14 +128,17 @@
       },
       "categoryField": "date",
       "categoryAxis": {
-        color: "#fff",
+        "axisColor": "#fff",
+        "color": "#fff",
+        "gridColor": "#fff",
         "parseDates": true,
         "dashLength": 1,
         "minorGridEnabled": true
       },
       "legend": {
         "useGraphSettings": true,
-        "position": "top"
+        "position": "top",
+        "color": "#fff"
       },
       "balloon": {
         "borderThickness": 1,

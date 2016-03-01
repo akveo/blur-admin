@@ -59,7 +59,7 @@
         {
           balloonText: '<b>[[category]]: [[value]]</b>',
           fillColorsField: 'color',
-          fillAlphas: 0.5,
+          fillAlphas: 0.7,
           lineAlpha: 0.2,
           type: 'column',
           valueField: 'visits'

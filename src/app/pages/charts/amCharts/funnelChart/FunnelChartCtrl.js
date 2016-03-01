@@ -51,6 +51,7 @@
       funnelAlpha: 0.9,
       valueField: 'value',
       startX: 0,
+      alpha: 0.8,
       neckWidth: '0%',
       startAlpha: 0,
       outlineThickness: 1,

@@ -90,6 +90,7 @@
 
       autoMargins: false,
       marginTop: 10,
+      alpha: 0.8,
       marginBottom: 0,
       marginLeft: 0,
       marginRight: 0,

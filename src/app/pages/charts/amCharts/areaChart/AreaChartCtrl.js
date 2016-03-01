@@ -87,7 +87,7 @@
           bullet: 'square',
           bulletBorderAlpha: 1,
           bulletBorderThickness: 1,
-          fillAlphas: 0.3,
+          fillAlphas: 0.5,
           fillColorsField: 'lineColor',
           legendValueText: '[[value]]',
           lineColorField: 'lineColor',
