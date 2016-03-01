@@ -26,7 +26,6 @@
         baPanelBlurHelper.bodyBgLoad().then(function() {
           setTimeout(recalculatePanelStyle);
         });
-        $document.on('scroll', recalculatePanelStyle);
         $window.addEventListener('resize', recalculatePanelStyle);
 
         $scope.$on('$destroy', function() {
@@ -37,10 +36,9 @@
           if (!bodyBgSize) {
             return;
           }
-          var position = elem[0].getBoundingClientRect();
           elem.css({
             backgroundSize: Math.round(bodyBgSize.width) + 'px ' + Math.round(bodyBgSize.height) + 'px',
-            backgroundPosition: Math.floor(-position.left + bodyBgSize.positionX) + 'px ' + Math.floor(-position.top + bodyBgSize.positionY) + 'px'
+            backgroundPosition: Math.floor(bodyBgSize.positionX) + 'px ' + Math.floor(bodyBgSize.positionY) + 'px'
           });
         }
 

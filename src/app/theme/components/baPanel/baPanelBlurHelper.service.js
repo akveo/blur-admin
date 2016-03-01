@@ -39,7 +39,7 @@
         finalWidth = elemW;
         finalHeight = (elemW * imgRatio);
       }
-      return { width: finalWidth, height: finalHeight, positionX: (elemW - finalWidth) / 2, positionY: (elemH - finalHeight) / 2 };
+      return { width: finalWidth, height: finalHeight, positionX: (elemW - finalWidth)/2, positionY: (elemH - finalHeight)/2};
     };
   }
 
