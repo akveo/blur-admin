@@ -20,6 +20,15 @@
     display: inline-block;
     text-align: left;
     margin: 0 auto;
+    .form-control{
+      color: $github-color;
+      background-color: transparent;
+      border: 1px solid $input-border;
+      @include placeholderStyle($default-text, 0.9);
+    }
+    .modal-body p, .modal-body div, .modal-body span{
+      color: $default-text;
+    }
   }
   .modal-header {
     border: none;
