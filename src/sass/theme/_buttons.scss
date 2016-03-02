@@ -64,6 +64,10 @@ $hover: 24;
   }
 }
 
+button.btn.btn-default.dropdown-toggle {
+  color: #fff;
+}
+
 .bootstrap-select {
   .dropdown-toggle:focus {
     outline: none !important;
