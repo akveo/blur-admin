@@ -127,12 +127,38 @@ button.btn.btn-danger {
     transform: none;
   }
 }
+@mixin buttonGroupColor($color) {
+  border-color: $color - $hover/2;
+  &:hover{
+    border-color: $color - $hover;
+  }
+}
 
 .btn-group {
+  button.btn.btn-primary{
+    @include buttonGroupColor($primary);
+  }
+  button.btn.btn-default{
+    @include buttonGroupColor($default);
+  }
+  button.btn.btn-danger{
+    @include buttonGroupColor($danger);
+  }
+  button.btn.btn-info{
+    @include buttonGroupColor($info);
+  }
+  button.btn.btn-success{
+    @include buttonGroupColor($success);
+  }
+  button.btn.btn-warning{
+    @include buttonGroupColor($warning);
+  }
   .dropdown-menu {
     margin-top: 0px;
   }
 }
+
+
 
 .btn-toolbar {
   display: inline-block;
