@@ -209,9 +209,10 @@ button.progress-button {
     margin-bottom: 0;
     border-radius: 0;
   }
-  &:hover {
+  &:hover, &.btn.disabled {
     transform: none;
   }
+
 
   &.btn.btn-primary {
     @include progressButtonColor($primary);
