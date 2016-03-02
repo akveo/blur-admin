@@ -43,7 +43,10 @@
     "http-proxy-middleware": "~0.9.0",
     "chalk": "~1.1.1",
     "uglify-save-license": "~0.4.1",
-    "wrench": "~1.5.8"
+    "wrench": "~1.5.8",
+    "gulp-prompt": "^0.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-zip": "^3.0.2"
   },
   "scripts": {
     "postinstall": "bower install"
