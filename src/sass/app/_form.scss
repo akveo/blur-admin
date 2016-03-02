@@ -124,7 +124,7 @@ textarea.form-control {
 }
 
 .bootstrap-switch {
-  border-radius: 0;
+  border-radius: 5px;
   border: 1px solid $default;
   transition: border-color ease-in-out .7s, box-shadow ease-in-out .7s;
   &:focus {
@@ -446,7 +446,7 @@ label.custom-input-danger {
 .bootstrap-select {
   .btn-default {
     background: transparent;
-    color: #555555;
+    color: $default;
     &:focus {
       background: #ffffff;
       box-shadow: none;
@@ -459,13 +459,11 @@ label.custom-input-danger {
     }
   }
   &.open {
-    .btn-default + .dropdown-menu {
-      border-top: 1px solid $disabled;
-    }
     .btn-default.dropdown-toggle {
       box-shadow: none;
       background-color: #ffffff;
       border-color: $default;
+      color: $default;
     }
     .dropdown-menu {
       border-left: 1px solid $default;
@@ -483,9 +481,15 @@ label.custom-input-danger {
       border-top: none;
     }
   }
+  &.with-search.open{
+    .btn-default.btn{
+      background-color: rgba(0, 0, 0, 0.2);
+      border-color: 1px solid $default;
+    }
+  }
   &.with-search.open .btn-default + .dropdown-menu {
     .bs-searchbox .form-control {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.35);
     }
     .no-results {
       color: $default-text;

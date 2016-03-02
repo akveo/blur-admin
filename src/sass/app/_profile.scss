@@ -132,10 +132,11 @@ $snPadding: 8px;
 a.sn-link {
   transition: none;
   display: block;
-  background-color: #fff;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .15);
   padding: $snPadding;
-  color: $default-text;
-  border: 1px solid $border;
+  color: $default;
+  border: 1px solid transparent;
   margin-bottom: 23px;
   width: 100%;
   position: relative;
@@ -147,7 +148,7 @@ a.sn-link {
     width: auto;
     font-size: 17px;
     margin-right: 8px;
-    background-color: #666666;
+    background-color: rgba(0,0,0,.15);
     color: #fff;
   }
   span {
@@ -164,7 +165,7 @@ a.sn-link {
     border-width: 2px;
     padding: $snPadding - 1;
     span {
-      color: $snColor;
+      color: $default;
     }
     i {
       background: $snColor;

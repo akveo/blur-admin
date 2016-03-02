@@ -20,7 +20,7 @@
         menu.expanded = menu.expanded || menu.selected;
         if (menu.subMenu) {
           $.each(menu.subMenu, function (subIndex, subMenu) {
-            subMenu.selected = ('#' + $location.$$url).indexOf(subMenu.root) == 0;
+            subMenu.selected = (('#' + $location.$$url).indexOf(subMenu.root) == 0) && !subMenu.disabled;
           });
         }
       });

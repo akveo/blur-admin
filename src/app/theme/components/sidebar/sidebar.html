@@ -30,7 +30,7 @@
                 subSubitem.title }}</a>
             </li>
           </ul>
-          <a  ng-mouseenter="hoverItem($event, item)" target="{{subitem.root[0]=='#' ? '_self' : '_blank'}}" ng-if="!subitem.subMenu" href="{{ subitem.root }}">{{ subitem.title}}</a>
+          <a  ng-mouseenter="hoverItem($event, item)" target="{{subitem.blank ? '_blank' : '_self'}}" ng-if="!subitem.subMenu" href="{{ subitem.root }}">{{ subitem.title}}</a>
         </li>
       </ul>
     </li>

@@ -37,7 +37,7 @@ $hover: 24;
   }
 }
 
-.open > .dropdown-toggle {
+.open > .btn.dropdown-toggle {
   &.btn.btn-primary {
     @include styleButton($primary, $primary - $hover);
     background-color: $primary-dark;
@@ -45,6 +45,10 @@ $hover: 24;
   }
   &.btn-default {
     @include styleButton(transparent, $default);
+    &:focus, &:active:hover, &.active:hover, &:hover{
+      background-color: rgba(0, 0, 0, 0.2);
+      color: $default;
+    }
   }
   &.btn-success {
     @include styleButton($success, $success - $hover);
@@ -115,6 +119,18 @@ button.btn.btn-danger {
     background-color: $danger-dark;
   }
 }
+
+
+button.btn.btn-inverse {
+  @include buttonColor($help-text, $help-text);
+  color: $default;
+  &:active, &:target, &:hover {
+    background-color: $help-text;
+    color: $default;
+  }
+}
+
+
 
 .btn-with-icon {
   i {
