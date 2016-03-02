@@ -59,18 +59,18 @@ $hover: 24;
     @include styleButton($danger, $danger - $hover);
   }
 }
-.bootstrap-select{
+
+.bootstrap-select {
   .dropdown-toggle:focus {
     outline: none !important;
   }
-  button.btn-default:focus{
+  button.btn-default:focus {
     color: $default;
   }
-  .btn{
+  .btn {
     transition: none;
   }
 }
-
 
 button.btn.btn-primary {
   @include buttonColor($primary, $primary);
@@ -84,7 +84,7 @@ button.btn.btn-default {
   @include buttonColor(transparent, $default);
   &:active, &:target {
     background-color: rgba(0, 0, 0, 0.2);
-    color: $default ;
+    color: $default;
   }
 }
 
@@ -127,38 +127,37 @@ button.btn.btn-danger {
     transform: none;
   }
 }
+
 @mixin buttonGroupColor($color) {
   border-color: $color - $hover/2;
-  &:hover{
+  &:hover {
     border-color: $color - $hover;
   }
 }
 
 .btn-group {
-  button.btn.btn-primary{
+  button.btn.btn-primary {
     @include buttonGroupColor($primary);
   }
-  button.btn.btn-default{
+  button.btn.btn-default {
     @include buttonGroupColor($default);
   }
-  button.btn.btn-danger{
+  button.btn.btn-danger {
     @include buttonGroupColor($danger);
   }
-  button.btn.btn-info{
+  button.btn.btn-info {
     @include buttonGroupColor($info);
   }
-  button.btn.btn-success{
+  button.btn.btn-success {
     @include buttonGroupColor($success);
   }
-  button.btn.btn-warning{
+  button.btn.btn-warning {
     @include buttonGroupColor($warning);
   }
   .dropdown-menu {
     margin-top: 0px;
   }
 }
-
-
 
 .btn-toolbar {
   display: inline-block;
@@ -209,10 +208,16 @@ button.progress-button {
     margin-bottom: 0;
     border-radius: 0;
   }
-  &:hover, &.btn.disabled {
+  &:hover {
     transform: none;
   }
 
+  &.progress-button-style-shrink.btn.disabled.progress-button-dir-horizontal:hover {
+    transform: scaleY(.3);
+  }
+  &.progress-button-style-shrink.btn.disabled.progress-button-dir-vertical:hover {
+    transform: scaleX(.1);
+  }
 
   &.btn.btn-primary {
     @include progressButtonColor($primary);
