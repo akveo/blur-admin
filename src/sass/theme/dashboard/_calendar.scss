@@ -117,12 +117,12 @@ div.blurCalendar{
   }
 
   .fc-today {
-    background: $primary-bg;
+    background: rgba(255,255,255,0.15);
   }
 }
 
 .fc-highlight {
-  background: $primary-bg;
+  background: rgba(255,255,255,0.25);
   opacity: .3;
 }
 
