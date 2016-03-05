@@ -14,7 +14,7 @@
       link: function ($scope, elem) {
         var delay = 1000;
 
-        if ($rootScope.$pageLoaded) {
+        if ($rootScope.$pageFinishedLoading) {
           delay = 100;
         }
 
