@@ -48,16 +48,21 @@ a.see-all-icons {
   & > div {
     width: 70%;
   }
+  .kameleon-icon {
+    max-width: 84px;
+    img {
+      width: 100%;
+      min-width: 81px;
+      min-height: 81px;
+    }
+  }
 }
 
 .kameleon-icon {
   text-align: center;
   margin: 0 auto;
-  max-width: 84px;
   img {
     width: 100%;
-    min-width: 81px;
-    min-height: 82px;
   }
   span {
     display: block;
