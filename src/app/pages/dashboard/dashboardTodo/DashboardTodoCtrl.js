@@ -70,7 +70,7 @@
         markId: 1
       },
       {
-        text: 'Write email to contact@akveo.com',
+        text: 'Write email to business cat',
         edit: false,
         markId: 3
       },
