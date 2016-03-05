@@ -33,7 +33,7 @@ a.see-all-icons {
   float: right;
 }
 
-.awesomeIcons{
+.awesomeIcons {
   height: 308px;
 }
 
@@ -55,6 +55,15 @@ a.see-all-icons {
       min-width: 81px;
       min-height: 81px;
     }
+  }
+}
+
+.kameleon-icon-tabs {
+  max-width: 84px;
+  img {
+    width: 100%;
+    min-width: 81px;
+    min-height: 81px;
   }
 }
 
