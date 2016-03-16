@@ -226,9 +226,36 @@
   }
 }
 
+
+@media (max-width: 380px){
+
+  .traffic-chart{
+    width: 240px;
+  }
+
+  .canvas-holder{
+    width: 240px;
+    height: 240px;
+  }
+
+  .chart-bg {
+    top: 30px;
+  }
+}
+@media (max-width: 320px){
+  .chart-bg {
+    left: 50px;
+    top: 50px;
+    width: 142px;
+    height: 142px;
+  }
+}
+
+
 body.badmin-transparent{
   .traffic-chart canvas{
     border: 10px solid rgba(0,0,0,0.35);
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
     border-radius: 150px;
   }
 }

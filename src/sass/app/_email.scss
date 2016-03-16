@@ -729,7 +729,7 @@
 }
 
 .modal .modal-dialog.modal-compose {
-  width: 398px;
+  max-width: 398px;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -738,6 +738,7 @@
   .form-control, .bootstrap-tagsinput input {
     @include placeholderStyle($default-text, 1);
     color: $default-text;
+    border-radius: 0;
   }
   .ta-toolbar {
     .btn {
@@ -752,6 +753,12 @@
     }
   }
   @include overrideColors($default-text)
+}
+
+@media (max-width: 640px) {
+  .modal .modal-dialog.modal-compose {
+    max-height: 600px;
+  }
 }
 
 body.badmin-transparent {

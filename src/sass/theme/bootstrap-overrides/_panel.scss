@@ -82,6 +82,12 @@ $panel-heading-font-size: 16px;
   transition: none;
 }
 
+@media (max-width: 640px) {
+  .panel-blur {
+    background: transparent;
+  }
+}
+
 .panel-primary {
   > .panel-heading {
     color: $primary;

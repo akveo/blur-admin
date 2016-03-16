@@ -28,6 +28,7 @@
     this.getBodyBgImageSizes = function() {
       var elemW = document.documentElement.clientWidth;
       var elemH = document.documentElement.clientHeight;
+      if(elemW <= 640) return;
       var imgRatio = (image.height / image.width);       // original img ratio
       var containerRatio = (elemH / elemW);     // container ratio
 

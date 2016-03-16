@@ -57,7 +57,7 @@ h5 {
     }
 
     .panel.with-scroll .panel-body{
-      height: 100%;
+      height: calc(100% - 45px);
     }
 
     .panel-content{
@@ -334,6 +334,7 @@ a.learn-more {
   height: 400px;
   img {
     height: 100%;
+    width: 100%;
     display: block
   }
 }
@@ -422,7 +423,7 @@ a.learn-more {
 
 .panel.banner-column-panel {
   padding: 0;
-  margin-bottom: 50px;
+  margin-bottom: 90px;
 
   .panel-body{
     padding: 0;

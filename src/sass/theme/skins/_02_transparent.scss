@@ -1,6 +1,6 @@
 body.badmin-transparent {
   @include overrideColors(#fff);
-  @include overridePanelBg(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+  @include overridePanelBg(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
   .default-color {
     color: $default-text !important;;
   }

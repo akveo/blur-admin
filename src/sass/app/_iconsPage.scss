@@ -38,23 +38,32 @@ a.see-all-icons {
 }
 
 .kameleon-row {
+  display: inline-block;
+  min-width: 102px;
   width: 20%;
-  float: left;
-  min-height: 80px;
-  position: relative;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-bottom: 12px;
-  & > div {
-    width: 70%;
-  }
   .kameleon-icon {
-    max-width: 84px;
+    padding:0 10px;
     img {
-      width: 100%;
-      min-width: 81px;
-      min-height: 81px;
+      width: 81px;
     }
+  }
+}
+
+@media (max-width: 750px) {
+  .kameleon-row {
+    width: 25%;
+  }
+}
+
+@media (max-width: 550px) {
+  .kameleon-row {
+    width: 33%;
+  }
+}
+
+@media (max-width: 430px) {
+  .kameleon-row {
+    width: 50%;
   }
 }
 
@@ -111,9 +120,4 @@ a.see-all-icons {
   }
 }
 
-@media (max-width: 1500px) and (min-width: $resL), (max-width: $resS) {
-  .kameleon-row {
-    width: 25%;
-  }
-}
 
