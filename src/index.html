@@ -24,7 +24,7 @@
   <!-- endinject -->
   <!-- endbuild -->
 </head>
-<body>
+<body ng-class="{'mobile' : $isMobile}">
 <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $isMenuCollapsed }">
 
   <sidebar></sidebar>

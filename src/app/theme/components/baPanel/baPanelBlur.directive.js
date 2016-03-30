@@ -9,7 +9,7 @@
       .directive('baPanelBlur', baPanelBlur);
 
   /** @ngInject */
-  function baPanelBlur(baPanelBlurHelper, $window, $document) {
+  function baPanelBlur(baPanelBlurHelper, $window, $rootScope) {
     var bodyBgSize;
 
     baPanelBlurHelper.bodyBgLoad().then(function() {
@@ -23,14 +23,16 @@
     return {
       restrict: 'A',
       link: function($scope, elem) {
-        baPanelBlurHelper.bodyBgLoad().then(function() {
-          setTimeout(recalculatePanelStyle);
-        });
-        $window.addEventListener('resize', recalculatePanelStyle);
+        if(!$rootScope.$isMobile) {
+          baPanelBlurHelper.bodyBgLoad().then(function () {
+            setTimeout(recalculatePanelStyle);
+          });
+          $window.addEventListener('resize', recalculatePanelStyle);
 
-        $scope.$on('$destroy', function() {
-          $window.removeEventListener('resize', recalculatePanelStyle);
-        });
+          $scope.$on('$destroy', function () {
+            $window.removeEventListener('resize', recalculatePanelStyle);
+          });
+        }
 
         function recalculatePanelStyle() {
           if (!bodyBgSize) {

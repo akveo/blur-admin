@@ -18,11 +18,6 @@ body {
   @include main-background();
 }
 
-@media (max-width: 640px) {
-  body {
-    background-image: url($images-root + 'blur-bg-mobile.jpg');
-  }
-}
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
 {
