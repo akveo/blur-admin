@@ -30,7 +30,7 @@
           title: 'UI Features',
           sidebarMeta: {
             icon: 'ion-android-laptop',
-            order: 100,
+            order: 200,
           },
         });
   }

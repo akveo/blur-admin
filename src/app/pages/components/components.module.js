@@ -22,7 +22,7 @@
           title: 'Components',
           sidebarMeta: {
             icon: 'ion-gear-a',
-            order: 150,
+            order: 100,
           },
         });
   }
