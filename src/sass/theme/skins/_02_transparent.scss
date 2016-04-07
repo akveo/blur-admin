@@ -1,6 +1,15 @@
 body.badmin-transparent {
   &.mobile{
-    background-image: url($images-root + 'blur-bg-mobile.jpg');
+    background: none;
+    .body-bg{
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      @include main-background();
+    }
     .panel-blur {
       background: transparent;
     }
