@@ -26,11 +26,12 @@
     $scope.socialProfiles = [
       {
         name: 'Facebook',
-        href: 'https://www.facebook.com/nasta.kartul',
+        href: 'https://www.facebook.com/akveo/',
         icon: 'socicon-facebook'
       },
       {
         name: 'Twitter',
+        href: 'https://twitter.com/akveo_inc',
         icon: 'socicon-twitter'
       },
       {
@@ -39,12 +40,12 @@
       },
       {
         name: 'LinkedIn',
-        href: 'https://www.linkedin.com/profile/view?id=177497038',
+        href: 'https://www.linkedin.com/company/akveo',
         icon: 'socicon-linkedin'
       },
       {
         name: 'GitHub',
-        href: 'https://github.com/1itvinka',
+        href: 'https://github.com/akveo',
         icon: 'socicon-github'
       },
       {
