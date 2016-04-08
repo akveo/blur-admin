@@ -94,7 +94,7 @@
         author: 'Alexander',
         surname: 'Demeshko',
         header: 'Posted new message',
-        text: '“I mean, they say you die twice. One time when you stop breathing and a second time, a bit later on, when somebody says your name for the last time." © Banksy',
+        text: '“I mean, they say you die twice. One time when you stop breathing and a second time, a bit later on, when somebody says your name for the last time." ©',
         time: '15.11.2015',
         ago: '6 days ago',
         expanded: false,
