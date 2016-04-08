@@ -8,6 +8,8 @@ We're very proud of it and like it very much. We also hope that you will enjoy i
 
 It's just a first version, but we will continue development of this template to create not just another bootstrap customization, but the whole HTML framework that can be applied in a lot of places.
 
+Check out [live demo](http://akveo.com/blur-admin/#/dashboard)!
+
 ## Installlation
 
 To build the template from scratch you will be required to have following tools
