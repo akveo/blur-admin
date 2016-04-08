@@ -9,6 +9,7 @@ body.badmin-transparent {
       bottom: 0;
       right: 0;
       @include main-background();
+      background-attachment: inherit;
     }
     .panel-blur {
       background: transparent;
