@@ -12,7 +12,7 @@ It's just a first version, but we will continue development of this template to 
 ![alt tag](http://i.imgur.com/yOZPlps.jpg)
 **[Template Demo](http://akveo.com/blur-admin/#/dashboard)**
 
-## Installlation
+## Installation
 
 To build the template from scratch you will be required to have following tools
 * Download and install nodejs [https://nodejs.org](https://nodejs.org)
