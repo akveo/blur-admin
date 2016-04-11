@@ -11,7 +11,7 @@
   /** @ngInject */
   function baPanelBlurHelper($q) {
     var res = $q.defer();
-    var computedStyle = getComputedStyle(document.body);
+    var computedStyle = getComputedStyle(document.body, ':before');
     var image = new Image();
     image.src = computedStyle.backgroundImage.replace(/url\((['"])?(.*?)\1\)/gi, '$2');
     image.onerror = function() {
