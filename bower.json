@@ -46,6 +46,7 @@
     "angular-ui-router": "~0.2.15",
     "angular-chart.js": "~0.8.8",
     "angular-chartist.js": "~3.3.12",
+    "chartist": "0.9.5",
     "angular-morris-chart": "~1.1.0",
     "ionrangeslider": "~2.1.2",
     "angular-bootstrap": "~0.14.3",

@@ -30,8 +30,6 @@
       ]
     };
 
-
-
     $scope.areaLineData = {
       labels: [1, 2, 3, 4, 5, 6, 7, 8],
       series: [
@@ -236,9 +234,6 @@
       new Chartist.Pie('#simple-pie', $scope.simplePieData, $scope.simplePieOptions, $scope.pieResponsive);
       new Chartist.Pie('#label-pie', $scope.labelsPieData, $scope.labelsPieOptions);
       new Chartist.Pie('#donut', $scope.simpleDonutData, $scope.simpleDonutOptions, $scope.donutResponsive);
-    }, 100);
-
-
+    });
   }
-
 })();
