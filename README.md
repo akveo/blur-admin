@@ -36,7 +36,7 @@ To build the template from scratch you will be required to have following tools
 
 License
 -------------
-<a href=/LICENSE.txt" target="_blank">MIT</a> license.
+<a href=/LICENSE.txt target="_blank">MIT</a> license.
 
 ### From akveo
 
