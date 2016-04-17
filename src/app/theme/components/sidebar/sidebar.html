@@ -2,13 +2,13 @@
        ng-mouseleave="hoverElemTop=selectElemTop">
   <ul class="al-sidebar-list" slimscroll="{height: '{{menuHeight}}px'}" slimscroll-watch="menuHeight" >
     <li ng-repeat="item in menuItems" class="al-sidebar-list-item"
-        ng-class="{'selected': item.selected, 'with-sub-menu': item.subMenu}" ng-click="item.expanded = !item.expanded">
+        ng-class="{'selected': item.selected, 'with-sub-menu': item.subMenu}">
 
       <a ng-mouseenter="hoverItem($event, item)" href="{{ item.root }}" ng-if="!item.subMenu" class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
       </a>
 
-      <a ng-mouseenter="hoverItem($event, item)" ng-if="item.subMenu" href
+      <a ng-mouseenter="hoverItem($event, item)" ng-if="item.subMenu" href ng-click="item.expanded = !item.expanded"
          class="al-sidebar-list-link">
         <i class="{{ item.icon }}"></i><span>{{ item.title }}</span>
         <b class="fa" ng-class="{'fa-angle-up': item.expanded, 'fa-angle-down': !item.expanded}"
@@ -17,8 +17,8 @@
 
       <ul ng-if="item.subMenu" class="al-sidebar-sublist"
           ng-class="{expanded: item.expanded, 'slide-right': item.slideRight}">
-        <li ng-repeat="subitem in item.subMenu" ng-class="{'selected': subitem.selected, 'with-sub-menu': subitem.subMenu}" ng-click="subitem.expanded = !subitem.expanded">
-          <a ng-mouseenter="hoverItem($event, item)" ng-if="subitem.subMenu" href
+        <li ng-repeat="subitem in item.subMenu" ng-class="{'selected': subitem.selected, 'with-sub-menu': subitem.subMenu}">
+          <a ng-mouseenter="hoverItem($event, item)" ng-if="subitem.subMenu" href  ng-click="subitem.expanded = !subitem.expanded"
              class="al-sidebar-list-link subitem-submenu-link"><span>{{ subitem.title }}</span>
             <b class="fa" ng-class="{'fa-angle-up': subitem.expanded, 'fa-angle-down': !subitem.expanded}"
                ng-if="subitem.subMenu"></b>
