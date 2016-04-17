@@ -23,6 +23,9 @@
             subMenu.selected = (('#' + $location.$$url).indexOf(subMenu.root) == 0) && !subMenu.disabled;
           });
         }
+        if($rootScope.$isMobile) {
+          $scope.menuCollapse();
+        }
       });
     }
 
