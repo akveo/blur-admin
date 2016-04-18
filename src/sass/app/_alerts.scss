@@ -27,18 +27,18 @@
 .bg-success {
   background-color: rgba($success,0.85);
   a{
-    color: $primary-charts;
+    color: $danger;
     &:hover{
-      color: $primary-dark;
+      color: $danger-dark;
     }
   }
 }
 .bg-info {
   background-color: rgba($info,0.85);
   a{
-    color: $warning-bg;
+    color: $warning;
     &:hover{
-      color: $warning;
+      color: $warning-dark;
     }
   }
 }
