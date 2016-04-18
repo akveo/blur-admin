@@ -10,6 +10,7 @@
 
   /** @ngInject */
   function DashboardCalendarCtrl(layoutColors) {
+    var palette = layoutColors.bgColorPalette;
     var $element = $('#calendar').fullCalendar({
       //height: 335,
       header: {
@@ -39,23 +40,23 @@
         {
           title: 'All Day Event',
           start: '2016-03-01',
-          color: layoutColors.successCharts
+          color: palette.silverTree
         },
         {
           title: 'Long Event',
           start: '2016-03-07',
           end: '2016-03-10',
-          color: layoutColors.primaryCharts
+          color: palette.blueStone
         },
         {
           title: 'Dinner',
           start: '2016-03-14T20:00:00',
-          color: layoutColors.infoCharts
+          color: palette.surfieGreen
         },
         {
           title: 'Birthday Party',
           start: '2016-04-01T07:00:00',
-          color: layoutColors.warningCharts
+          color: palette.gossipDark
         }
       ]
     });

@@ -135,7 +135,6 @@ textarea.form-control {
   }
   &.bootstrap-switch-focused {
     box-shadow: none;
-    border-color: $input-border-focus;
     &.bootstrap-switch-off {
       border-color: $input-border;
     }

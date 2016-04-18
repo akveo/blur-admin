@@ -1,40 +1,11 @@
 $font-family: 'Roboto', sans-serif;
 
-$default: #ffffff !default;
-$primary: #209e91 !default;
-$info: #2dacd1 !default;
-$success: #90b900 !default;
-$warning: #dfb81c !default;
-$danger: #e85656 !default;
-
-$primary-light: #5FBCBB;
-$success-light: #85BA54;
-
-$primary-dark:  #17857a;
-$info-dark:  #258ead;
-$success-dark:  #7b9e00;
-$warning-dark:  #c6a315;
-$danger-dark:  #c24848;
-
-$primary-bg:  #63cec3;
-$info-bg:  #5abfdd;
-$success-bg:  #b5d448;
-$warning-bg:  #e8ca52;
-$danger-bg:  #f67171;
-
-$primary-charts :#005562;
-$success-charts :#6eba8c;
-$info-charts    :#0e8174;
-$warning-charts :#b9f2a1;
-$danger-charts  :#ffa76d;
-$default-charts :#ffffff;
-
 $view-total :rgba(0,0,0,.4);
 
-
-$accent: #E3FF53;
 $activelink: $primary;
 $hoverlink: $primary-dark;
+
+$default: #ffffff !default;
 
 $facebook-color: #3b5998;
 $twitter-color: #55acee;
@@ -57,7 +28,6 @@ $help-text: #949494;
 $border: #dddddd;
 $border-light: #eeeeee;
 $input-border: #cccccc;
-$input-border-focus: #1488b0;
 
 $resXXL: 1280px;
 $resXL: 1170px;

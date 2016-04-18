@@ -116,66 +116,7 @@
   top: 27px;
   border-radius: 15px;
   left: -45px;
-  &.info{
-    background-color: $info-charts;
-  }
-  &.success{
-    background-color: $success-charts;
-  }
-  &.danger{
-    background-color: $danger-charts;
-  }
-  &.default{
-    background-color: $default;
-  }
-  &.warning{
-    background-color: $warning-charts;
-  }
-  &.primary{
-    background-color: $primary-charts;
-  }
 }
-
-//@mixin doughnut-size($size) {
-//  .traffic-chart .canvas-holder {
-//    width: $size;
-//    height: $size;
-//    canvas {
-//      width: $size;
-//      height: $size;
-//    }
-//  }
-//}
-
-//@media (max-width: $resS) {
-//  @include doughnut-size(250px);
-//  .canvas-holder {
-//    float: none;
-//  }
-//  .traffic-legend {
-//    display: block;
-//    padding: 10px 0 0;
-//    width: 300px;
-//  }
-//  ul.doughnut-legend {
-//    padding-left: 20px;
-//    li {
-//      &:nth-child(2n-1) {
-//        float: left;
-//      }
-//    }
-//  }
-//  .traffic-chart{
-//    width: 100%;
-//  }
-//  .canvas-holder{
-//    display: block;
-//    margin: 0 auto;
-//  }
-//  .panel.medium-panel.traffic-panel{
-//    height: inherit;
-//  }
-//}
 
 .traffic-chart canvas{
   border: 10px solid rgba(0,0,0,0.0);
