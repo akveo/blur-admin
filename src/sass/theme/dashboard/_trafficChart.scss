@@ -101,10 +101,12 @@
   border-radius: 0;
   width: 100%;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: $border-light;
+  box-shadow: none;
   .progress-bar{
     height: 4px;
-    background-color: white;
+    background-color: $input-border;
+    box-shadow: none;
   }
 }
 
@@ -119,12 +121,11 @@
 }
 
 .traffic-chart canvas{
-  border: 10px solid rgba(0,0,0,0.0);
+  border: 10px solid $default;
   border-radius: 150px;
 }
 
 .chart-bg{
-  background-color: $view-total;
   position: absolute;
   border-radius: 100px;
   width: 180px;
@@ -189,14 +190,5 @@
     top: 50px;
     width: 142px;
     height: 142px;
-  }
-}
-
-
-body.badmin-transparent{
-  .traffic-chart canvas{
-    border: 10px solid rgba(0,0,0,0.35);
-    box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
-    border-radius: 150px;
   }
 }

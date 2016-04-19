@@ -91,7 +91,7 @@
 
 @mixin message-modal-color($color) {
   .modal-header {
-    color: #ffffff;
+    color: $default-text;
     background: $color;
   }
 }

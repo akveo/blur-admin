@@ -98,7 +98,7 @@ div.blurCalendar{
   }
 
   .fc-popover {
-    background-color: #ffffff;
+    background-color: $default;
     border: 1px solid;
 
     .fc-header {
@@ -330,7 +330,7 @@ div.blurCalendar{
 .fc-event,
 .fc-event:hover,
 .ui-widget .fc-event {
-  color: #ffffff;
+  color: $default;
   text-decoration: none;
 }
 
@@ -663,7 +663,7 @@ a.fc-more {
 
   .fc-bg {
     z-index: 1;
-    background: #fff;
+    background: $default;
     opacity: .25;
     filter: alpha(opacity=25);
   }
@@ -742,7 +742,7 @@ body.badmin-transparent{
   }
 
   .fc td{
-    border-color: rgba(255,255,255,0.1);
+    border-color: $border;
   }
 
   .fc-today-button, .fc-month-button, .fc-agendaWeek-button, .fc-agendaDay-button  {
@@ -756,7 +756,7 @@ body.badmin-transparent{
     background: transparent;
     box-shadow: none;
     border: none;
-    color: $default;
+    color: $default-text;
   }
   .fc-next-button {
     left: 30px;
@@ -764,7 +764,7 @@ body.badmin-transparent{
   .fc-prev-button {
   }
   .fc-day-number{
-    color: $default;
+    color: $default-text;
     opacity: 0.9;
   }
 }

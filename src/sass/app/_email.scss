@@ -13,6 +13,7 @@
 }
 
 .mail-navigation-container {
+  color: $default-text;
   width: 200px;
   .mail-navigation {
     cursor: pointer;
@@ -26,7 +27,6 @@
       left: 150px;
       padding: 1px 6px;
       border: 1px solid;
-      color: white;
       background-color: $primary-light;
       margin-top: -2px;
       font-size: 12px;
@@ -36,13 +36,12 @@
     }
     &.active {
       background-color: $primary-light;
-      color: white;
       &:hover {
         background-color: $primary-light;
       }
       .new-mails {
         color: $primary-light;
-        background-color: white;
+        background-color: $default;
       }
       transition: background-color .2s ease, 0.8s padding ease;
     }
@@ -54,7 +53,6 @@
     margin: 7px 0;
     .btn {
       width: 140px;
-      color: white;
       font-weight: $font-light;
       background-color: $dribble-color;
     }
@@ -435,9 +433,6 @@
     color: white;
   }
   &:focus {
-    color: white;
-  }
-  &.focus {
     color: white;
   }
 }

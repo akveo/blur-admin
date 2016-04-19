@@ -43,7 +43,7 @@
       { date: new Date(2015, 1), value: 49800, value0: 13000}
     ];
 
-    var chartColorProfile = tplSkinManager.getChartColorProfile();
+    //var chartColorProfile = tplSkinManager.getChartColorProfile();
 
     var chart = AmCharts.makeChart('amchart', {
       type: 'serial',
@@ -55,15 +55,15 @@
       categoryAxis: {
         parseDates: true,
         gridAlpha: 0,
-        color: chartColorProfile.fontColors,
-        axisColor: chartColorProfile.axisColors
+        color: layoutColors.defaultText,
+        axisColor: layoutColors.defaultText
       },
       valueAxes: [
         {
           minVerticalGap: 50,
           gridAlpha: 0,
-          color: chartColorProfile.fontColors,
-          axisColor: chartColorProfile.axisColors
+          color: layoutColors.defaultText,
+          axisColor: layoutColors.defaultText
         }
       ],
       graphs: [
@@ -71,7 +71,7 @@
           id: 'g0',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: 'rgba(0,0,0,0.3)',
+          lineColor: 'rgba(0,0,0,0.15)',
           lineThickness: 1,
           negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',
@@ -83,7 +83,7 @@
           id: 'g1',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: 'rgba(0,0,0,0.4)',
+          lineColor: 'rgba(0,0,0,0.2)',
           lineThickness: 1,
           negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',
@@ -114,7 +114,7 @@
       pathToImages: layoutPaths.images.amChart
     });
 
-    tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, chart);
+    //tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, chart);
 
     function zoomChart() {
       chart.zoomToDates(new Date(2013, 3), new Date(2014, 0));
