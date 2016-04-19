@@ -263,7 +263,7 @@ h5 {
 }
 
 .columns-section {
-  background-color: white;
+  background-color: $default;
 }
 
 p {
@@ -349,16 +349,15 @@ a.learn-more {
   padding: 85px 90px 60px;
   display: inline-block;
   margin: 67px auto;
-  background: #fff;
+  background: $default;
   min-width: 432px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.75);
-  color: #ffffff;
 
   h1 {
     font-weight: $font-bold;
     width: 100%;
-    color: #ffffff;
+    color: $default;
     margin-bottom: 10px;
   }
   p {

@@ -27,7 +27,7 @@
       margin-left: 0;
     }
     & > a {
-      color: #ffffff;
+      color: $default;
       text-decoration: none;
       font-size: 13px;
       position: relative;
@@ -35,7 +35,7 @@
         display: inline-block;
         min-width: 10px;
         padding: 2px 4px 2px 4px;
-        color: #ffffff;
+        color: $default;
         vertical-align: baseline;
         white-space: nowrap;
         text-align: center;
@@ -247,7 +247,7 @@
       width: 0;
       height: 0;
       border: 10px solid transparent;
-      border-bottom-color: #ffffff;
+      border-bottom-color: $border;
     }
   }
 }

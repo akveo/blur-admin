@@ -5,11 +5,11 @@
 
   .popular-app-img {
     position: relative;
-    background: rgba(0, 0, 0, 0.5);
     padding: 30px 0;
     height: 260px;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    border-bottom: 1px solid $border;
     img {
       max-width: 60%;
       max-height: 70%;

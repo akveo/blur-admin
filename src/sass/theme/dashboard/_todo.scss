@@ -22,11 +22,11 @@ ul.todo-list {
       right: 12px;
       font-size: 32px;
       transition: color 0.2s;
-      color: $input-border;
+      color: rgba($input-border, 0.5);
       visibility: hidden;
       line-height: 42px;
       &:hover {
-        color: $danger-dark;
+        color: $input-border;
       }
     }
     &:hover {
@@ -37,32 +37,11 @@ ul.todo-list {
 
     &.checked {
       .todo-text {
-        color: #BFBFBF;
+        color: $default-text;
       }
       &:before {
         background: $input-border !important;
       }
-    }
-
-    @mixin mark($color) {
-      i.mark {
-        background: $color;
-      }
-    }
-    &.primary {
-      @include mark($primary);
-    }
-    &.danger {
-      @include mark($danger);
-    }
-    &.success {
-      @include mark($success);
-    }
-    &.info {
-      @include mark($info);
-    }
-    &.warning {
-      @include mark($warning);
     }
 
     i.mark {
@@ -116,105 +95,4 @@ label.todo-checkbox {
 
 .add-item-icon {
   display: none;
-}
-
-body.badmin-transparent {
-  .todo-panel.panel {
-    color: white;
-    opacity: 0.9;
-  }
-  input.task-todo {
-    color: white;
-    width: calc(100% - 25px);
-    border-radius: 0;
-    border: none;
-    background: transparent;
-    &:focus {
-      outline: none;
-      background-color: transparent;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-      box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
-    }
-  }
-  .add-item-icon {
-    display: block;
-    float: right;
-    margin-top: -45px;
-    margin-right: 5px;
-    font-size: 25px;
-    cursor: pointer;
-  }
-
-  ul.todo-list {
-    li {
-      margin: 0;
-      border: none;
-      font-weight: $font-light;
-
-      .blur-container{
-        height: 40px;
-        position: absolute;
-        width: calc(100% + 40px);;
-        top: 0;
-        left: -25px;
-        overflow-y: hidden;
-      }
-      &:hover{
-        .blur-container{
-          box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
-        }
-        .blur-box {
-          height: 100%;
-          background: linear-gradient(to right, rgba(255,255,255,0.3) 0%,rgba(255,255,255,0) 100%);
-          -webkit-filter: blur(3px);
-        }
-      }
-      &.primary, &.danger,&.success, &.info, &.warning {
-        i.mark {
-          background-color: transparent;
-        }
-      }
-      i.remove-todo {
-        color: white;
-        opacity: 0.4;
-        &:hover {
-          color: white;
-          opacity: 0.95;
-        }
-      }
-      i.mark {
-        min-width: 40px;
-        background-color: transparent;
-      }
-      label.todo-checkbox > span {
-        &:before {
-          position: absolute;
-          color: white;
-          content: '\f10c';
-          float: none;
-          margin-right: 6px;
-          transition: none;
-        }
-      }
-      &.checked {
-        label.todo-checkbox > span {
-          &:before {
-            margin-right: 0;
-            position: absolute;
-            content: '';
-            background-size: contain;
-            background: url($images-root + "app/todo/check-icon.png") no-repeat;
-          }
-        }
-      }
-    }
-  }
-
-  .box-shadow-border{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
-    width: calc(100% + 44px);
-    margin-left: -22px;
-  }
-
 }

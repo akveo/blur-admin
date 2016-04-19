@@ -34,7 +34,7 @@ html {
   margin: 0 auto;
   border-radius: 5px;
   @include bg-translucent-dark(0.55);
-  color: #fff;
+  color: $default-text;
   padding: 32px;
   h1 {
     font-weight: $font-light;
@@ -142,13 +142,13 @@ a.forgot-pass {
 
 .btn-auth {
   background: $primary;
-  color: #ffffff;
+  color: $default-text;
   border-radius: 5px;
   border-color: $primary;
   padding: 7px 12px;
   transition: all 0.1s ease;
   &:hover {
-    color: #ffffff;
+    color: $default-text;
     background: $primary;
     border-color: $primary;
     transform: scale(1.2);

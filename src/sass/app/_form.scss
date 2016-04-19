@@ -47,7 +47,7 @@
   &:focus {
     box-shadow: none;
     border-color: $primary-bg;
-    background: #ffffff;
+    background: $default;
   }
 }
 
@@ -361,7 +361,7 @@ label.custom-input-danger {
   }
   .input-group-addon {
     background-color: $color;
-    color: #ffffff;
+    color: $default-text;
   }
 }
 
@@ -414,7 +414,7 @@ label.custom-input-danger {
 
 @mixin groupAddon($color) {
   background: $color;
-  color: #ffffff;
+  color: $default-text;
   border-color: $color;
 }
 
@@ -447,20 +447,20 @@ label.custom-input-danger {
     background: transparent;
     color: $default;
     &:focus {
-      background: #ffffff;
+      background: $default;
       box-shadow: none;
       outline: 0 !important;
     }
     &:active {
       border-color: $default;
       box-shadow: none;
-      background: #ffffff;
+      background: $default;
     }
   }
   &.open {
     .btn-default.dropdown-toggle {
       box-shadow: none;
-      background-color: #ffffff;
+      background-color: $default;
       border-color: $default;
       color: $default;
     }

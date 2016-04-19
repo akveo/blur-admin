@@ -14,8 +14,9 @@ html, body {
 
 body {
   font: 14px/16px $font-family;
-  color: white;
-  @include main-background();
+  color: $default-text;
+  background-color: #F0F3F4;
+  //@include main-background();
 }
 
 
@@ -63,7 +64,7 @@ a {
   display: block;
   bottom: 0;
   font-size: 13px;
-  color: #ffffff;
+  color: $default-text;
   transition: padding-left 0.5s ease;
 }
 
@@ -81,14 +82,14 @@ a {
   margin-right: 12px;
   i {
     margin: 0 4px;
-    color: $warning;
+    color: $danger;
     font-size: 12px;
   }
   a {
     margin-left: 4px;
-    color: #ffffff;
+    color: $default-text;
     &:hover {
-      color: $warning;
+      color: $danger;
     }
   }
 }
@@ -105,7 +106,7 @@ a {
     i {
       cursor: pointer;
       transition: all 0.1s ease;
-      color: #ffffff;
+      color: $default;
       padding: 6px;
       box-sizing: content-box;
       font-size: 16px;

@@ -3,7 +3,7 @@
 }
 
 .feed-message {
-  $text-message-color: $default;
+  $text-message-color: $default-text;
   $video-message-color: $danger;
   $image-message-color: $success;
   $geo-message-color: $primary;
@@ -80,7 +80,7 @@
     border-radius: 5px;
     margin: 0 0 0 80px;
     padding: 5px 20px;
-    color: #fff;
+    color: $default-text;
     width: 280px;
     height: 70px;
 

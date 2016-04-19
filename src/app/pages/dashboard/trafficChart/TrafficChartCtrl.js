@@ -13,12 +13,19 @@
     var palette = layoutColors.bgColorPalette;
     $scope.doughnutData = [
       {
-        value: 2000,
+        value: 1000,
+        color: palette.gossip,
+        highlight: palette.gossipDark,
+        label: 'Ad Campaigns',
+        percentage: 17,
+        order: 0,
+      },{
+        value: 1400,
         color: palette.white,
         highlight: palette.whiteDark,
-        label: 'Ad Campaigns',
+        label: 'Other',
         percentage: 87,
-        order: 0,
+        order: 1,
       }, {
         value: 1500,
         color: palette.blueStone,
@@ -40,13 +47,6 @@
         label: 'Direct Traffic',
         percentage: 38,
         order: 2,
-      }, {
-        value: 400,
-        color: palette.gossip,
-        highlight: palette.gossipDark,
-        label: 'Other',
-        percentage: 17,
-        order: 1,
       },
     ];
 

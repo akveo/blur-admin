@@ -243,7 +243,7 @@
     text-align: center;
     text-decoration: none;
     opacity: 0.8;
-    color: #fff;
+    color: $default-text;
     font-size: 17px;
     width: 20px;
     height: 20px;
@@ -295,7 +295,7 @@
 
 .leaflet-control-layers {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  background: #fff;
+  background: $default;
 }
 
 .leaflet-control-layers-toggle {
@@ -327,7 +327,7 @@
 .leaflet-control-layers-expanded {
   padding: 6px 10px 6px 6px;
   color: #333;
-  background: #fff;
+  background: $default;
 }
 
 .leaflet-control-layers-selector {
@@ -349,7 +349,7 @@
 /* attribution and scale controls */
 
 .leaflet-container .leaflet-control-attribution {
-  background: #fff;
+  background: $default;
   background: rgba(255, 255, 255, 0.7);
   margin: 0;
 }
@@ -392,7 +392,7 @@
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 
-  background: #fff;
+  background: $default;
   background: rgba(255, 255, 255, 0.5);
 }
 
@@ -513,6 +513,6 @@
 /* div icon */
 
 .leaflet-div-icon {
-  background: #fff;
+  background: $default;
   border: 1px solid #666;
 }
