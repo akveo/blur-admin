@@ -14,6 +14,7 @@
     var lineChart = AmCharts.makeChart(id, {
       type: 'serial',
       theme: 'blur',
+      color: layoutColors.defaultText,
       marginTop: 0,
       marginRight: 15,
       dataProvider: [
@@ -85,7 +86,9 @@
       valueAxes: [
         {
           axisAlpha: 0,
-          position: 'left'
+          position: 'left',
+          gridAlpha: 0.5,
+          gridColor: layoutColors.border,
         }
       ],
       graphs: [
@@ -104,17 +107,16 @@
       chartScrollbar: {
         graph: 'g1',
         gridAlpha: 0,
-        color: '#888888',
+        color: layoutColors.defaultText,
         scrollbarHeight: 55,
         backgroundAlpha: 0,
-        selectedBackgroundAlpha: 0.1,
-        selectedBackgroundColor: '#888888',
+        selectedBackgroundAlpha: 0.05,
+        selectedBackgroundColor: layoutColors.defaultText,
         graphFillAlpha: 0,
         autoGridCount: true,
         selectedGraphFillAlpha: 0,
         graphLineAlpha: 0.2,
-        graphLineColor: '#c2c2c2',
-        selectedGraphLineColor: '#888888',
+        selectedGraphLineColor: layoutColors.defaultText,
         selectedGraphLineAlpha: 1
       },
       chartCursor: {
@@ -131,7 +133,9 @@
         minPeriod: 'YYYY',
         parseDates: true,
         minorGridAlpha: 0.1,
-        minorGridEnabled: true
+        minorGridEnabled: true,
+        gridAlpha: 0.5,
+        gridColor: layoutColors.border,
       },
       export: {
         enabled: true
@@ -140,7 +144,7 @@
       pathToImages: layoutPaths.images.amChart
     });
 
-    tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, lineChart);
+    //tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, lineChart);
 
     lineChart.addListener('rendered', zoomChart);
     if (lineChart.zoomChart) {

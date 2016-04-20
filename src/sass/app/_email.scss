@@ -4,11 +4,8 @@
 }
 
 .mail-panel {
-  .panel-body{
+  &.panel>.panel-body{
     padding-left: 0;
-  }
-  .panel-content {
-    padding: 15px 22px 0 0;
   }
 }
 
@@ -59,12 +56,13 @@
   }
 }
 
-.labels, .add-label-container {
-  margin-top: 16px;
+.labels {
+  margin-top: 14px;
   margin-left: 22px;
 }
 
 .labels-container {
+  margin-top: 16px;
   text-align: center;
   padding-right: 28px;
   padding-left: 20px;
@@ -767,7 +765,7 @@ body.badmin-transparent {
         background-color: transparent;
       }
       &.active {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(black, 0.2);
         color: white;
         transition: background-color .5s ease;
         .new-mails {
@@ -775,11 +773,11 @@ body.badmin-transparent {
           color: $default;
         }
         &:hover {
-          background-color: rgba(255, 255, 255, 0.3);
+          background-color: rgba(black, 0.3);
         }
       }
       &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(black, 0.1);
       }
     }
   }
@@ -826,7 +824,7 @@ body.badmin-transparent {
   }
 
   .side-message-navigation .side-message-navigation-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid $border;
     &.work, &.study, &.family, &.friend {
       border-left: none;
     }
@@ -1017,12 +1015,5 @@ body.badmin-transparent {
       font-size: 13px;
       font-weight: $font-light;
     }
-
   }
-
 }
-
-
-
-
-

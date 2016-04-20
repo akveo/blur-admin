@@ -107,7 +107,7 @@ body.badmin-transparent{
     fill-opacity: .5;
   }
   .ct-label{
-    color: $default;
+    color: $default-text;
     opacity: 0.9;
     fill: rgba(255,255,255,.9);
   }
@@ -158,4 +158,8 @@ body.badmin-transparent{
 
 .amcharts-cursor-fill {
   filter: url(#shadow);
+}
+
+.chartist h5 {
+  font-weight: $font-normal;
 }

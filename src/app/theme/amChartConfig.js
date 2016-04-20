@@ -20,15 +20,15 @@
       },
 
       AmCoordinateChart: {
-        colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg]
+        colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg, layoutColors.warningDark]
       },
 
       AmStockChart: {
-        colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg]
+        colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg, layoutColors.warningDark]
       },
 
       AmSlicedChart: {
-        colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg],
+        colors: [layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.primaryDark, layoutColors.warningLight, layoutColors.successDark, layoutColors.successLight, layoutColors.successBg, layoutColors.warningDark],
         labelTickColor: "#FFFFFF",
         labelTickAlpha: 0.3
       },
@@ -128,7 +128,7 @@
 
       ZoomControl: {
         buttonFillAlpha: 0.8,
-        buttonIconColor: layoutColors.default,
+        buttonIconColor: layoutColors.defaultText,
         buttonRollOverColor: layoutColors.danger,
         buttonFillColor: layoutColors.primaryDark,
         buttonBorderColor: layoutColors.primaryDark,
