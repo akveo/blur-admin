@@ -6,11 +6,11 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.charts.morris', [])
-    .config(routeConfig).config(function(){
+    .config(routeConfig).config(function(layoutColors){
       Morris.Donut.prototype.defaults.backgroundColor = 'transparent';
-      Morris.Donut.prototype.defaults.labelColor = 'rgba(255,255,255,0.8)';
-      Morris.Grid.prototype.gridDefaults.gridLineColor = 'rgba(255,255,255,0.8)';
-      Morris.Grid.prototype.gridDefaults.gridTextColor = 'rgba(255,255,255,0.8)';
+      Morris.Donut.prototype.defaults.labelColor = layoutColors.defaultText;
+      Morris.Grid.prototype.gridDefaults.gridLineColor = layoutColors.borderDark;
+      Morris.Grid.prototype.gridDefaults.gridTextColor = layoutColors.defaultText;
     });
 
   /** @ngInject */

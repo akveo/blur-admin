@@ -9,17 +9,19 @@
       .controller('PieChartCtrl', PieChartCtrl);
 
   /** @ngInject */
-  function PieChartCtrl($scope, $element, tplSkinChartWatcherHelper, layoutPaths) {
+  function PieChartCtrl($scope, $element, tplSkinChartWatcherHelper, layoutPaths, layoutColors) {
     var id = $element[0].getAttribute('id');
     var pieChart = AmCharts.makeChart(id, {
       type: 'pie',
       startDuration: 0,
       theme: 'blur',
       addClassNames: true,
+      color: layoutColors.defaultText,
+      labelTickColor: layoutColors.borderDark,
       legend: {
         position: 'right',
         marginRight: 100,
-        autoMargins: false
+        autoMargins: false,
       },
       innerRadius: '40%',
       defs: {
@@ -126,7 +128,7 @@
       }
     });
 
-    tplSkinChartWatcherHelper.watchDonutChanges($scope, pieChart);
+    //tplSkinChartWatcherHelper.watchDonutChanges($scope, pieChart);
 
     pieChart.addListener('init', handleInit);
 

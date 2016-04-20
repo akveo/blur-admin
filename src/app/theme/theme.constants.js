@@ -54,6 +54,7 @@
       default: '#ffffff',
       defaultText: '#666666',
       border: '#dddddd',
+      borderDark: '#aaaaaa',
 
       bgColorPalette: {
         blueStone: bgColorPalette.blueStone,

@@ -14,6 +14,7 @@
     var barChart = AmCharts.makeChart(id, {
       type: 'serial',
       theme: 'blur',
+      color: layoutColors.defaultText,
       dataProvider: [
         {
           country: 'USA',
@@ -44,14 +45,16 @@
         {
           country: 'France',
           visits: 1114,
-          color: layoutColors.default
+          color: layoutColors.primaryLight
         }
       ],
       valueAxes: [
         {
           axisAlpha: 0,
           position: 'left',
-          title: 'Visitors from country'
+          title: 'Visitors from country',
+          gridAlpha: 0.5,
+          gridColor: layoutColors.border,
         }
       ],
       startDuration: 1,
@@ -73,7 +76,9 @@
       categoryField: 'country',
       categoryAxis: {
         gridPosition: 'start',
-        labelRotation: 45
+        labelRotation: 45,
+        gridAlpha: 0.5,
+        gridColor: layoutColors.border,
       },
       export: {
         enabled: true
@@ -82,7 +87,6 @@
       pathToImages: layoutPaths.images.amChart
     });
 
-    tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, barChart);
+    //tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, barChart);
   }
-
 })();

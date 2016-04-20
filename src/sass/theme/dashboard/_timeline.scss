@@ -132,30 +132,30 @@
 
 @mixin cd-timeline-color($color) {
   background: $color;
-  &:before {
-    border-right-color: $color;
-  }
 }
-
-.cd-timeline-content-yellow {
-  @include cd-timeline-color(rgba(0,0,0,.2));
+.cd-timeline-content.warning {
+  @include cd-timeline-color(rgba($warning, 0.2));
 }
-
-.cd-timeline-content-red {
-  @include cd-timeline-color(rgba(0,0,0,.2));
+.cd-timeline-content.danger {
+  @include cd-timeline-color(rgba($danger, 0.2));
 }
-
-.cd-timeline-content-blue {
-  @include cd-timeline-color(rgba(0,0,0,.2));
+.cd-timeline-content.primary {
+  @include cd-timeline-color(rgba($primary, 0.2));
 }
 
 .no-touch .cd-timeline-content .cd-read-more:hover {
-  background-color: #bac4cb;
+  background-color: $border;
 }
 
 @mixin cd-timeline-left-color($color) {
   &:before {
     border-left-color: $color;
+  }
+}
+
+@mixin cd-timeline-right-color($color) {
+  &::before {
+    border-right-color: $color;
   }
 }
 
@@ -199,16 +199,14 @@
     }
   }
 
-  .cd-timeline-content-yellow {
-    @include cd-timeline-left-color(rgba(0,0,0,.2));
+  .cd-timeline-content.warning {
+    @include cd-timeline-left-color(rgba($warning, 0.2));
   }
-
-  .cd-timeline-content-red {
-    @include cd-timeline-left-color(rgba(0,0,0,.2));
+  .cd-timeline-content.danger {
+    @include cd-timeline-left-color(rgba($danger, 0.2));
   }
-
-  .cd-timeline-content-blue {
-    @include cd-timeline-left-color(rgba(0,0,0,.2));
+  .cd-timeline-content.primary {
+    @include cd-timeline-left-color(rgba($primary, 0.2));
   }
 
   .cd-timeline-block:nth-child(even) .cd-timeline-content {
@@ -225,19 +223,14 @@
         border-right-color: white;
       }
 
-      @mixin cd-timeline-right-color($color) {
-        &::before {
-          border-right-color: $color;
-        }
+      &.cd-timeline-content.warning {
+        @include cd-timeline-right-color(rgba($warning, 0.2));
       }
-      &.cd-timeline-content-yellow {
-        @include cd-timeline-right-color(rgba(0,0,0,.2));
+      &.cd-timeline-content.danger {
+        @include cd-timeline-right-color(rgba($danger, 0.2));
       }
-      &.cd-timeline-content-red {
-        @include cd-timeline-right-color(rgba(0,0,0,.2));
-      }
-      &.cd-timeline-content-blue {
-        @include cd-timeline-right-color(rgba(0,0,0,.2));
+      &.cd-timeline-content.primary {
+        @include cd-timeline-right-color(rgba($primary, 0.2));
       }
     }
   }

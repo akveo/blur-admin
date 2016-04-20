@@ -14,6 +14,7 @@
     var areaChart = AmCharts.makeChart(id, {
       type: 'serial',
       theme: 'blur',
+      color: layoutColors.defaultText,
       dataProvider: [
         {
           lineColor: layoutColors.info,
@@ -79,7 +80,7 @@
             hh: 'h ',
             mm: 'min'
           },
-          axisAlpha: 0
+          gridColor: layoutColors.defaultText,
         }
       ],
       graphs: [
@@ -124,9 +125,9 @@
         ],
         parseDates: true,
         autoGridCount: false,
-        axisColor: '#555555',
-        gridAlpha: 0,
-        gridCount: 50
+        gridCount: 50,
+        gridAlpha: 0.5,
+        gridColor: layoutColors.border,
       },
       export: {
         enabled: true
@@ -134,7 +135,7 @@
       pathToImages: layoutPaths.images.amChart
     });
 
-    tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, areaChart);
+    //tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, areaChart);
 
     areaChart.addListener('dataUpdated', zoomAreaChart);
 
