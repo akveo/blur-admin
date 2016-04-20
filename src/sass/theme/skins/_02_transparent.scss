@@ -23,9 +23,7 @@
   .panel-body {
   }
 }
-.btn-default {
-  color: $default;
-}
+
 .form-control, .bootstrap-tagsinput input {
   @include placeholderStyle($default-text, 0.7);
   border: 1px solid $border;

@@ -32,12 +32,6 @@
       }
     }
   }
-  &.table-bordered {
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    th, td {
-      border-color: rgba(255, 255, 255, 0.2) !important;
-    }
-  }
 }
 
 .table-id {
@@ -321,4 +315,8 @@ th {
 
 .editable-buttons .btn-with-icon i {
    margin-right: 0;
+}
+
+.table-responsive {
+  margin-top: 10px;
 }
