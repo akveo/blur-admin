@@ -119,9 +119,9 @@
 .tab-content {
   padding: 15px 15px 5px 15px;
   background: transparent;
-  color: $default;
+  color: $default-text;
   .tab-pane p {
-    color: $default;
+    color: $default-text;
   }
 }
 
@@ -129,7 +129,7 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom: 1px solid rgba(0, 0, 0, .01);
-  background-color: rgba(0, 0, 0, .2);
+  background-color: $primary-light;
   a {
     color: $default;
     &:hover {
@@ -145,7 +145,7 @@
     &:hover {
       border: none;
       color: $default;
-      background-color: rgba(0, 0, 0, .1);
+      background-color: rgba(0, 0, 0, .05);
     }
   }
   & > li.active > a {

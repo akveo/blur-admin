@@ -43,13 +43,6 @@ $hover: 24;
     background-color: $primary-dark;
     border-color: $primary-dark;
   }
-  &.btn-default {
-    @include styleButton(transparent, $default);
-    &:focus, &:active:hover, &.active:hover, &:hover{
-      background-color: rgba(0, 0, 0, 0.2);
-      color: $default;
-    }
-  }
   &.btn-success {
     @include styleButton($success, $success - $hover);
   }
@@ -64,22 +57,6 @@ $hover: 24;
   }
 }
 
-.dropdown button.btn.btn-default.dropdown-toggle {
-  color: $default-text;
-}
-
-.bootstrap-select {
-  .dropdown-toggle:focus {
-    outline: none !important;
-  }
-  button.btn-default:focus {
-    color: $default;
-  }
-  .btn {
-    transition: none;
-  }
-}
-
 button.btn.btn-primary {
   @include buttonColor($primary, $primary);
   &:active, &:target {
@@ -89,7 +66,8 @@ button.btn.btn-primary {
 
 button.btn.btn-default {
   border-width: 1px;
-  @include buttonColor(transparent, $default);
+  color: $default-text;
+  @include buttonColor(transparent, $border);
   &:active, &:target {
     background-color: rgba(0, 0, 0, 0.2);
     color: $default;
