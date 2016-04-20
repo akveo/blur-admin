@@ -13,13 +13,13 @@ html {
 }
 
 .form-control, .form-control:focus {
-  @include placeholderStyle($default, 0.9);
-  background-color: rgba(0, 0, 0, .4);
+  @include placeholderStyle($default-text, 0.7);
   border-radius: 5px;
-  color: $default;
+  border: 1px solid $border;
+  color: $default-text;
 }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-  @include placeholderStyle($default, 0.6);
+  @include placeholderStyle($default, 0.7);
 }
 
 .auth-main {
@@ -33,7 +33,7 @@ html {
   width: 540px;
   margin: 0 auto;
   border-radius: 5px;
-  @include bg-translucent-dark(0.55);
+  background-color: white;
   color: $default-text;
   padding: 32px;
   h1 {
@@ -56,7 +56,7 @@ html {
 
   .control-label {
     padding-top: 11px;
-    color: $default;
+    color: $default-text;
   }
 
   .form-group {
@@ -106,7 +106,7 @@ a.forgot-pass {
     width: 30%;
     white-space: nowrap;
     padding: 0 24px;
-    color: $default;
+    color: $default-text;
     & > span {
       margin-top: -12px;
       display: block;

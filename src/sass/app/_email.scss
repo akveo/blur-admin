@@ -818,7 +818,7 @@ body.badmin-transparent {
   .compose-button {
     text-align: center;
     .btn {
-      border: $default 2px solid;
+      border: $border 2px solid;
       background-color: transparent;
     }
   }
@@ -838,7 +838,7 @@ body.badmin-transparent {
       border: none;
       width: auto;
       &:focus, &:hover {
-        color:$default;
+        color:$default-text;
         opacity: 0.8;
         box-shadow: none;
       }
@@ -852,8 +852,8 @@ body.badmin-transparent {
     font-weight: $font-light;
     transition: background-color .5s;
     &:hover {
-      color: $default;
-      background-color: rgba(255, 255, 255, 0.12);
+      color: $default-text;
+      background-color: rgba(black, 0.05);
     }
     .subject {
       font-weight: $font-light;
