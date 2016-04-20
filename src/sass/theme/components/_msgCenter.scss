@@ -114,7 +114,7 @@
   @include scrollbars(.4em, rgba(0,0,0,0.5), #fff);
   .header {
     padding: 10px 12px;
-    border-bottom: 1px solid $border-light;
+    border-bottom: 1px solid $default;
     font-size: 12px;
     strong {
       float: left;
@@ -134,7 +134,7 @@
     overflow: scroll;
     overflow-x: hidden;
     & > a {
-      border-top: 1px solid $border-light;
+      border-top: 1px solid $default;
       padding: 10px 12px;
       display: block;
       text-decoration: none;
@@ -192,7 +192,7 @@
     }
   }
   & > a {
-    border-top: 1px solid $border-light;
+    border-top: 1px solid $default;
     display: block;
     text-align: center;
     padding: 10px;
@@ -214,7 +214,7 @@
       color: $default-text;
       padding: 4px 16px 4px 20px;
       &.signout {
-        border-top: 1px solid $border-light;
+        border-top: 1px solid $default;
       }
       i {
         margin-right: 10px;
@@ -247,7 +247,7 @@
       width: 0;
       height: 0;
       border: 10px solid transparent;
-      border-bottom-color: $border;
+      border-bottom-color: $default;
     }
   }
 }

@@ -3,7 +3,7 @@
   & > thead {
     & > tr {
       & > th {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid $border;
         white-space: nowrap;
         &:first-child {
           text-align: center;
@@ -22,7 +22,7 @@
       & > td {
         padding: 0px 8px;
         line-height: 35px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid $border;
         &:first-child {
           text-align: center;
         }
@@ -142,7 +142,7 @@ tr.editable-row {
 }
 
 a.email-link {
-  color: $default;
+  color: $default-text;
   &:hover {
     color: $danger;
   }
@@ -256,8 +256,8 @@ body.badmin-transparent {
   }
 
   .editable-click, a.editable-click {
-    color: $default;
-    border-bottom: dashed 1px $default;
+    color: $default-text;
+    border-bottom: dashed 1px $border;
   }
 }
 
@@ -278,8 +278,8 @@ th {
 }
 .pagination > li > a,
 .pagination > li > span{
-  color: $default;
-  border-color: $default;
+  color: $default-text;
+  border-color: $border;
 }
 
 
@@ -302,7 +302,7 @@ th {
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
   background-color: $primary;
-  border-color: $default;
+  border-color: $border;
 }
 
 .pagination > li > a:hover,
@@ -310,7 +310,7 @@ th {
 .pagination > li > a:focus,
 .pagination > li > span:focus{
   background-color: rgba(0,0,0,.2);
-  color: $default;
+  color: $default-text;
 }
 
 .editable-buttons .btn-with-icon i {
