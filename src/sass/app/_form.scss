@@ -103,9 +103,6 @@ textarea.form-control {
 
 .switch-container {
   display: inline-block;
-  & {
-    @include setSwitchBorder($default);
-  }
   &.primary {
     @include setSwitchBorder($primary);
   }
@@ -131,12 +128,12 @@ textarea.form-control {
     outline: none;
   }
   &.bootstrap-switch-off {
-    border-color: $input-border;
+    border-color: $border;
   }
   &.bootstrap-switch-focused {
     box-shadow: none;
     &.bootstrap-switch-off {
-      border-color: $input-border;
+      border-color: $border;
     }
   }
   .bootstrap-switch-container {
@@ -239,10 +236,10 @@ label.custom-checkbox {
       font-family: fontAwesome;
       font-weight: $font-light;
       font-size: 12px;
-      color: $default;
+      color: $default-text;
       content: "\a0";
       background-color: transparent;
-      border: 1px solid $default;
+      border: 1px solid $input-border;
       border-radius: 0;
       display: inline-block;
       text-align: center;
@@ -361,7 +358,7 @@ label.custom-input-danger {
   }
   .input-group-addon {
     background-color: $color;
-    color: $default-text;
+    color: $default;
   }
 }
 
@@ -414,7 +411,7 @@ label.custom-input-danger {
 
 @mixin groupAddon($color) {
   background: $color;
-  color: $default-text;
+  color: $default;
   border-color: $color;
 }
 
@@ -442,42 +439,31 @@ label.custom-input-danger {
   border-radius: 5px;
 }
 
-.bootstrap-select {
-  .btn-default {
+.bootstrap-select.btn-group {
+  button.btn.btn-default {
     background: transparent;
-    color: $default;
-    &:focus {
+    color: $default-text;
+    border-color: $input-border;
+    &:focus, &:hover {
       background: $default;
       box-shadow: none;
       outline: 0 !important;
     }
     &:active {
-      border-color: $default;
+      border-color: $input-border;
       box-shadow: none;
       background: $default;
     }
   }
   &.open {
-    .btn-default.dropdown-toggle {
+    > .btn.btn-default.dropdown-toggle {
       box-shadow: none;
-      background-color: $default;
-      border-color: $default;
-      color: $default;
-    }
-    .dropdown-menu {
-      border-left: 1px solid $default;
-      border-right: 1px solid $default;
-      border-bottom-color: $default;
-      border-radius: 0 0 5px 5px;
-    }
-    > .btn.dropdown-toggle {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      border-color: transparent;
-      box-shadow: none;
+      border-radius: 5px 5px 0 0;
     }
     .dropdown-menu {
       border-top: none;
+      border-radius: 0 0 5px 5px;
+      padding-top: 0;
     }
   }
   &.with-search.open{

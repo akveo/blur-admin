@@ -13,7 +13,7 @@
   }
 }
 .panel.panel-blur {
-  @include scrollbars(.4em, rgba(0, 0, 0, 0.7), rgba(255, 255, 255, 0.8));
+  @include scrollbars(.4em, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.5));
   border-radius: 5px;
   color: $default-text;
   .panel-heading {
