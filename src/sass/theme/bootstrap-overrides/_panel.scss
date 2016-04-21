@@ -2,16 +2,14 @@ $panel-title-height: 44px;
 $panel-heading-font-size: 16px;
 
 .panel {
-  border: none;
-  background-color: $panel-bg;
+  @include scrollbars(.4em, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.5));
   color: $default-text;
+  border: none;
+  border-radius: 5px;
+  background-color: $default;
   position: relative;
-  //transition: all 0.2s ease;
   margin-bottom: 24px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
-  /*&:hover {
-    background: $panel-bg-hover;
-  }*/
   &.animated {
     animation-duration: 0.5s;
   }
@@ -52,6 +50,8 @@ $panel-heading-font-size: 16px;
 }
 
 .panel-heading, .panel-footer {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
   height: $panel-title-height;
   font-size: $panel-heading-font-size;
 
@@ -65,10 +65,6 @@ $panel-heading-font-size: 16px;
   text-transform: uppercase;
   opacity: 0.9;
   //text-transform: uppercase;
-}
-
-.panel-white {
-  background-color: $panel-bg;
 }
 
 .panel-primary {

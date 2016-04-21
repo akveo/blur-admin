@@ -40,10 +40,12 @@
 }
 
 .form-control {
-  border-radius: 0;
+  color: $default-text;
+  @include placeholderStyle($default-text, 0.7);
+  border: 1px solid $input-border;
+  border-radius: 5px;
   background: transparent;
   box-shadow: none;
-  border: none;
   &:focus {
     box-shadow: none;
     border-color: $primary-bg;
@@ -391,7 +393,7 @@ label.custom-input-danger {
   background: transparent;
   color: $disabled;
   border-color: $disabled-bg;
-  @include placeholderStyle($disabled, 1);
+  @include placeholderStyle($default-text, 0.5);
 }
 
 .form-control-rounded {
@@ -486,10 +488,12 @@ label.custom-input-danger {
 }
 
 .bootstrap-tagsinput {
+  color: $default-text;
+  @include placeholderStyle($default-text, 0.7);
   background-color: transparent;
   border: 1px solid $input-border;
+  border-radius: 5px;
   box-shadow: none;
-  color: #555555;
   max-width: 100%;
   font-size: 14px;
   line-height: 26px;
