@@ -15,10 +15,24 @@ html, body {
 body {
   font: 14px/16px $font-family;
   color: $default-text;
-  background-color: #F0F3F4;
+  background-color: $body-bg;
   //@include main-background();
 }
 
+&.mobile{
+  background: none;
+  .body-bg{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-attachment: inherit;
+    background-color: $body-bg;
+    //@include main-background();
+  }
+}
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
 {
@@ -199,4 +213,8 @@ a {
   * {
     visibility: hidden!important;
   }
+}
+
+.irs-grid-text {
+  color: $default-text;
 }

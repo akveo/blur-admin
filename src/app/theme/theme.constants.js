@@ -7,7 +7,14 @@
 
   var IMAGES_ROOT = 'assets/img/';
 
-  // main color scheme
+  var basic = {
+    default: '#ffffff',
+    defaultText: '#666666',
+    border: '#dddddd',
+    borderDark: '#aaaaaa',
+  };
+
+  // main functional color scheme
   var colorScheme = {
     primary: '#209e91',
     info: '#2dacd1',
@@ -27,6 +34,11 @@
 
   angular.module('BlurAdmin.theme')
     .constant('layoutColors', {
+      default: basic.default,
+      defaultText: basic.defaultText,
+      border: basic.border,
+      borderDark: basic.borderDark,
+
       primary: colorScheme.primary,
       info: colorScheme.info,
       success: colorScheme.success,
@@ -50,11 +62,6 @@
       successBg: tint(colorScheme.success, 20),
       warningBg: tint(colorScheme.warning, 20),
       dangerBg: tint(colorScheme.danger, 20),
-
-      default: '#ffffff',
-      defaultText: '#666666',
-      border: '#dddddd',
-      borderDark: '#aaaaaa',
 
       bgColorPalette: {
         blueStone: bgColorPalette.blueStone,
