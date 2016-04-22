@@ -47,6 +47,16 @@
   margin: 1px;
 }
 
+.ct-area {
+  fill-opacity: .5;
+}
+
+.ct-label{
+  color: $default-text;
+  opacity: 0.9;
+  fill: rgba(255,255,255,.9);
+}
+
 .ct-chart .ct-label{
   font-size: 1em;
 }
@@ -102,16 +112,6 @@
   }
 }
 
-body.badmin-transparent{
-  .ct-area {
-    fill-opacity: .5;
-  }
-  .ct-label{
-    color: $default-text;
-    opacity: 0.9;
-    fill: rgba(255,255,255,.9);
-  }
-}
 @media screen and (min-width: 992px) {
   .row.morris-up {
     > div {

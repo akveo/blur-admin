@@ -10,21 +10,28 @@
 }
 
 .mail-navigation-container {
+  float: left;
+  position: relative;
+  height: 550px;
+  transition: width 0.5s;
   color: $default-text;
   width: 200px;
+  overflow: hidden;
+  padding: 0;
   .mail-navigation {
     cursor: pointer;
     font-weight: $font-light;
     font-size: 16px;
     text-align: left;
     padding: 10px 10px 10px 30px;
+    margin-left: 0;
     transition: 0.8s padding ease;
     .new-mails {
       position: absolute;
       left: 150px;
       padding: 1px 6px;
       border: 1px solid;
-      background-color: $primary-light;
+      background-color: transparent;
       margin-top: -2px;
       font-size: 12px;
       margin-right: 5px;
@@ -32,26 +39,29 @@
       transition: 0.8s left ease;
     }
     &.active {
-      background-color: $primary-light;
+      background: rgba(black, 0.2);
+      color: white;
+      transition: background-color .5s ease;
       &:hover {
-        background-color: $primary-light;
+        background-color: rgba(black, 0.3);
       }
       .new-mails {
-        color: $primary-light;
-        background-color: $default;
+        background-color: transparent;
+        color: $default;
       }
-      transition: background-color .2s ease, 0.8s padding ease;
     }
     &:hover {
-      background-color: $border-light;
+      background-color: rgba(black, 0.1);
     }
   }
   .compose-button {
     margin: 7px 0;
+    text-align: center;
     .btn {
       width: 140px;
       font-weight: $font-light;
-      background-color: $dribble-color;
+      border: $border 2px solid;
+      background-color: transparent;
     }
   }
 }
@@ -124,12 +134,17 @@
   }
 }
 
-.message-container, .side-message-navigation, .mail-navigation-container {
+.message-container, .side-message-navigation {
   float: left;
   padding: 0 15px;
   position: relative;
   height: 550px;
   transition: width 0.5s;
+  width: calc(100% - 200px);
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: -1px 0 0 0 rgba(255, 255, 255, 0.12);
 }
 
 .side-message-navigation {
@@ -755,40 +770,6 @@
 }
 
 body.badmin-transparent {
-  .mail-navigation-container {
-    overflow: hidden;
-    width: 200px;
-    padding: 0;
-    .mail-navigation {
-      margin-left: 0;
-      .new-mails {
-        background-color: transparent;
-      }
-      &.active {
-        background: rgba(black, 0.2);
-        color: white;
-        transition: background-color .5s ease;
-        .new-mails {
-          background-color: transparent;
-          color: $default;
-        }
-        &:hover {
-          background-color: rgba(black, 0.3);
-        }
-      }
-      &:hover {
-        background-color: rgba(black, 0.1);
-      }
-    }
-  }
-
-  .message-container, .side-message-navigation{
-    width: calc(100% - 200px);
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    border-left: 1px solid rgba(0, 0, 0, 0.12);
-    box-shadow: -1px 0px 0px 0px rgba(255, 255, 255, 0.12);
-  }
 
   .side-message-navigation {
     overflow: hidden;

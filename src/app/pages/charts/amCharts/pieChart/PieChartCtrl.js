@@ -9,7 +9,7 @@
       .controller('PieChartCtrl', PieChartCtrl);
 
   /** @ngInject */
-  function PieChartCtrl($scope, $element, tplSkinChartWatcherHelper, layoutPaths, layoutColors) {
+  function PieChartCtrl($element, layoutPaths, layoutColors) {
     var id = $element[0].getAttribute('id');
     var pieChart = AmCharts.makeChart(id, {
       type: 'pie',
@@ -127,8 +127,6 @@
         ]
       }
     });
-
-    //tplSkinChartWatcherHelper.watchDonutChanges($scope, pieChart);
 
     pieChart.addListener('init', handleInit);
 

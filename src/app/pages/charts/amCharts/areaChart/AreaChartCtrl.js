@@ -9,7 +9,7 @@
       .controller('AreaChartCtrl', AreaChartCtrl);
 
   /** @ngInject */
-  function AreaChartCtrl($scope, layoutColors, $element, tplSkinChartWatcherHelper, layoutPaths) {
+  function AreaChartCtrl($scope, layoutColors, $element, layoutPaths) {
     var id = $element[0].getAttribute('id');
     var areaChart = AmCharts.makeChart(id, {
       type: 'serial',
@@ -135,8 +135,6 @@
       },
       pathToImages: layoutPaths.images.amChart
     });
-
-    //tplSkinChartWatcherHelper.watchAxisChartStyleChanges($scope, areaChart);
 
     areaChart.addListener('dataUpdated', zoomAreaChart);
 

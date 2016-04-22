@@ -203,62 +203,60 @@ input.search-input {
   margin-left: 0;
 }
 
-body.badmin-transparent {
-  .table {
-    & > thead {
-      & > tr {
-        & > th {
-          border-bottom: none;
-        }
-      }
-    }
-    & > tbody {
-      & > tr.no-top-border {
-        &:first-child > td {
-          border-top: none;
-        }
+.table {
+  & > thead {
+    & > tr {
+      & > th {
+        border-bottom: none;
       }
     }
   }
-
-  .black-muted-bg {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
-
-  .table-hover {
-    tr:hover {
-      background-color: rgba(0, 0, 0, 0.1);
+  & > tbody {
+    & > tr.no-top-border {
+      &:first-child > td {
+        border-top: none;
+      }
     }
   }
+}
 
-  .table-striped > tbody > tr:nth-of-type(odd) {
+.black-muted-bg {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.table-hover {
+  tr:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
-  .table > tbody > tr.primary > td {
-    background-color: rgba($primary,0.7);
-    border: none;
-  }
-  .table > tbody > tr.success > td {
-    background-color: rgba($success,0.7);
-    border: none;
-  }
-  .table > tbody > tr.warning > td {
-    background-color: rgba($warning,0.7);
-    border: none;
-  }
-  .table > tbody > tr.danger > td {
-    background-color: rgba($danger,0.7);
-    border: none;
-  }
-  .table > tbody > tr.info > td {
-    background-color: rgba($info,0.7);
-    border: none;
-  }
+}
 
-  .editable-click, a.editable-click {
-    color: $default-text;
-    border-bottom: dashed 1px $border;
-  }
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.table > tbody > tr.primary > td {
+  background-color: rgba($primary,0.7);
+  border: none;
+}
+.table > tbody > tr.success > td {
+  background-color: rgba($success,0.7);
+  border: none;
+}
+.table > tbody > tr.warning > td {
+  background-color: rgba($warning,0.7);
+  border: none;
+}
+.table > tbody > tr.danger > td {
+  background-color: rgba($danger,0.7);
+  border: none;
+}
+.table > tbody > tr.info > td {
+  background-color: rgba($info,0.7);
+  border: none;
+}
+
+.editable-click, a.editable-click {
+  color: $default-text;
+  border-bottom: dashed 1px $border;
 }
 
 th {
