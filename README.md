@@ -1,7 +1,5 @@
 # Blur Admin HTML template
 
-Admin template made with ♥ by [Akveo team](http://akveo.com/).
-
 We put a lot of efforts to bring together latest and the most trending web design approaches, while creating this template.
 Every color, character or image was carefully selected by our team to provide the best experience possible.
 We're very proud of it and like it very much. We also hope that you will enjoy it as well.
@@ -11,6 +9,13 @@ It's just a first version, but we will continue development of this template to 
 ## Theme Demo
 ![alt tag](http://i.imgur.com/yOZPlps.jpg)
 **[Template Demo](http://akveo.com/blur-admin/#/dashboard)**
+
+## Mint Version
+
+We've just finished mint version, check this out:
+
+![alt tag](http://i.imgur.com/A3TMviJ.png)
+**[Template Demo](http://akveo.com/blur-admin-mint)**
 
 ## Installation
 
