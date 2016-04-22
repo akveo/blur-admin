@@ -1,13 +1,15 @@
-$default: #ffffff;
+$default: rgba(#000000, 0.2);
 $body-bg: #F0F3F4;
-$default-text: #666666;
-$help-text: #949494;
+$default-text: #ffffff;
+$help-text: #eeeeee;
 $disabled: #dddddd;
 $disabled-bg: tint($disabled, 15%);
-$border: #d6d6d6;
-$border-light: tint($border, 15%);
-$input-border: shade($border, 5%);
-$sidebar: #1C2B36;
+$border: #ffffff;
+$border-light: $border;// tint
+$input-border: $border;// shade
+$sidebar: rgba(#000000, 0.5);
+$sidebar-text: #ffffff;
+$dropdown-text: #7d7d7d;
 
 $primary: #209e91 !default;
 $info: #2dacd1 !default;

@@ -69,24 +69,24 @@
           id: 'g0',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: layoutColors.primary,
+          lineColor: 'rgba(0, 0, 0, 0.3)',
           lineThickness: 1,
           negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',
           valueField: 'value0',
-          fillAlphas: 0.5,
+          fillAlphas: 1,
           fillColorsField: 'lineColor'
         },
         {
           id: 'g1',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: layoutColors.primary,
+          lineColor: 'rgba(0, 0, 0, 0.4)',
           lineThickness: 1,
           negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',
           valueField: 'value',
-          fillAlphas: 0.3,
+          fillAlphas: 1,
           fillColorsField: 'lineColor'
         }
       ],

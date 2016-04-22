@@ -8,8 +8,8 @@
   var IMAGES_ROOT = 'assets/img/';
 
   var basic = {
-    default: '#ffffff',
-    defaultText: '#666666',
+    default: 'rgba(#000000, 0.2)',
+    defaultText: '#ffffff',
     border: '#dddddd',
     borderDark: '#aaaaaa',
   };
@@ -29,7 +29,7 @@
     surfieGreen: '#0e8174',
     silverTree: '#6eba8c',
     gossip: '#b9f2a1',
-    white: '#10c4b5',
+    white: '#ffffff',
   };
 
   angular.module('BlurAdmin.theme')

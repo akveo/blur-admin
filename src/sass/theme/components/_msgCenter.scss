@@ -27,7 +27,7 @@
       margin-left: 0;
     }
     & > a {
-      color: $default;
+      color: $sidebar-text;
       text-decoration: none;
       font-size: 13px;
       position: relative;
@@ -35,7 +35,7 @@
         display: inline-block;
         min-width: 10px;
         padding: 2px 4px 2px 4px;
-        color: $default;
+        color: $sidebar-text;
         vertical-align: baseline;
         white-space: nowrap;
         text-align: center;
@@ -125,7 +125,7 @@
       margin-left: 12px;
       text-decoration: none;
       &:hover {
-        color: $default-text;
+        color: $dropdown-text;
       }
     }
   }
@@ -138,7 +138,7 @@
       padding: 10px 12px;
       display: block;
       text-decoration: none;
-      color: $default-text;
+      color: $dropdown-text;
       font-size: 12px;
       &:first-child {
         border-top: none;
@@ -199,7 +199,7 @@
     font-size: 12px;
     text-decoration: none;
     &:hover {
-      color: $default-text;
+      color: $dropdown-text;
     }
   }
 
@@ -211,7 +211,7 @@
       text-align: left;
       border: none;
       text-decoration: none;
-      color: $default-text;
+      color: $dropdown-text;
       padding: 4px 16px 4px 20px;
       &.signout {
         border-top: 1px solid $default;

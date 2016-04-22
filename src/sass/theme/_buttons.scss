@@ -70,7 +70,7 @@ button.btn.btn-default {
   @include buttonColor(transparent, $border);
   &:active, &:target {
     background-color: rgba(0, 0, 0, 0.2);
-    color: $default;
+    color: $default-text;
   }
 }
 
@@ -138,7 +138,7 @@ button.btn.btn-inverse {
     @include buttonGroupColor($primary);
   }
   button.btn.btn-default {
-    @include buttonGroupColor($default);
+    @include buttonGroupColor($default-text);
   }
   button.btn.btn-danger {
     @include buttonGroupColor($danger);
@@ -254,4 +254,25 @@ button.progress-button {
 .btn-xm {
   padding: 8px 14px;
   font-size: 16px;
+}
+
+.dropdown button.btn.btn-default.dropdown-toggle {
+  color: $default-text;
+  border: 1px solid $border;
+  background-color: transparent;
+  &:focus, &:active {
+    background-color: $default;
+  }
+}
+
+.bootstrap-select {
+  .dropdown-toggle:focus {
+    outline: none !important;
+  }
+  button.btn-default:focus {
+    color: $default;
+  }
+  .btn {
+    transition: none;
+  }
 }

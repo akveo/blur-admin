@@ -67,10 +67,6 @@
   height: 300px;
   position: relative;
   float: left;
-  //canvas{
-  //  border: 10px solid rgba(0, 0, 0, 0.34902);
-  //  border-radius: 180px;
-  //}
 }
 
 .traffic-text {
@@ -101,11 +97,11 @@
   border-radius: 0;
   width: 100%;
   margin-bottom: 0;
-  background-color: $border-light;
+  background-color: rgba(0, 0, 0, 0.25);
   box-shadow: none;
   .progress-bar{
     height: 4px;
-    background-color: $input-border;
+    background-color: $default-text;
     box-shadow: none;
   }
 }
@@ -121,17 +117,19 @@
 }
 
 .traffic-chart canvas{
-  border: 10px solid $default;
+  border: 10px solid rgba(0,0,0,0.35);
+  box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
   border-radius: 150px;
 }
 
 .chart-bg{
   position: absolute;
-  border-radius: 100px;
   width: 180px;
   height: 180px;
   left: 60px;
   top: 60px;
+  background-color: rgba(0,0,0,0.35);
+  border-radius: 100px;
 }
 
 @media (max-width: $resM) {

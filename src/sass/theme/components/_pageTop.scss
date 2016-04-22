@@ -9,12 +9,12 @@
   padding: 0 32px 0 40px;
 
   &.scrolled {
-    //background-color: rgba($sidebar, 0.9)
+    background-color: rgba(black, 0.85)
   }
 }
 
 a.al-logo {
-  color: $default;
+  color: $sidebar-text;
   display: block;
   font-size: 24px;
   font-family: $font-family;
@@ -55,7 +55,7 @@ a.al-logo {
 }
 
 a.refresh-data {
-  color: $default;
+  color: $sidebar-text;
   font-size: 13px;
   text-decoration: none;
   font-weight: $font-normal;
@@ -74,7 +74,7 @@ a.collapse-menu-link {
   display: block;
   text-decoration: none;
   line-height: 42px;
-  color: $default;
+  color: $sidebar-text;
   padding: 0;
   float: left;
   margin: 11px 0 0 25px;
@@ -107,7 +107,7 @@ a.collapse-menu-link {
 
 .search {
   text-shadow: none;
-  color: $default;
+  color: $sidebar-text;
   font-size: 13px;
   line-height: 25px;
   transition: all 0.5s ease;

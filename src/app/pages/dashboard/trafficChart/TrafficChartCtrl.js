@@ -13,14 +13,7 @@
     var palette = layoutColors.bgColorPalette;
     $scope.doughnutData = [
       {
-        value: 1000,
-        color: palette.gossip,
-        highlight: palette.gossipDark,
-        label: 'Ad Campaigns',
-        percentage: 17,
-        order: 0,
-      },{
-        value: 1400,
+        value: 2000,
         color: palette.white,
         highlight: palette.whiteDark,
         label: 'Other',
@@ -47,8 +40,48 @@
         label: 'Direct Traffic',
         percentage: 38,
         order: 2,
+      }, {
+        value: 400,
+        color: palette.gossip,
+        highlight: palette.gossipDark,
+        label: 'Ad Campaigns',
+        percentage: 17,
+        order: 0,
       },
     ];
+
+    /*
+    *       {
+     value: 2000,
+     color: layoutColors.defaultCharts,
+     highlight: "#f1f1f1",
+     label: 'Ad Campaigns'
+     },
+     {
+     value: 1500,
+     color: layoutColors.primaryCharts,
+     highlight: "#136775",
+     label: 'Search engines'
+     },
+     {
+     value: 1000,
+     color: layoutColors.infoCharts,
+     highlight: "#13998a",
+     label: 'Direct Traffic'
+     },
+     {
+     value: 1200,
+     color: layoutColors.successCharts,
+     highlight: "#94d7a1",
+     label: 'Referral Traffic'
+     },
+     {
+     value: 400,
+     color: layoutColors.warningCharts,
+     highlight: "#dcfcc4",
+     label: 'Other'
+     }
+    * */
 
     var ctx = document.getElementById('chart-area').getContext('2d');
     window.myDoughnut = new Chart(ctx).Doughnut($scope.doughnutData, {

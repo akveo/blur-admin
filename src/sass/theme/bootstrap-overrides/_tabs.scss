@@ -129,11 +129,11 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom: 1px solid rgba(0, 0, 0, .01);
-  background-color: $primary-light;
+  background-color: rgba(0, 0, 0, 0.2);
   a {
-    color: $default;
+    color: $default-text;
     &:hover {
-      color: $default;
+      color: $default-text;
     }
   }
   & > li > a {
@@ -141,16 +141,16 @@
     margin-bottom: 0;
     border-radius: 0;
     border: none;
-    color: $default;
+    color: $default-text;
     &:hover {
       border: none;
-      color: $default;
-      background-color: rgba(0, 0, 0, .05);
+      color: $default-text;
+      background-color: rgba(0, 0, 0, 0.2);
     }
   }
   & > li.active > a {
-    color: $default;
-    background-color: rgba(0, 0, 0, .25);
+    color: $default-text;
+    background-color: rgba(0, 0, 0, 0.25);
   }
   > li:first-of-type a {
     border-top-left-radius: 5px;

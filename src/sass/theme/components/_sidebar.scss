@@ -38,9 +38,9 @@ $angle-right: "\f101";
   &.selected:not(.with-sub-menu) {
     background-color: $primary;
     a.al-sidebar-list-link {
-      color: $default;
+      color: $sidebar-text;
       b {
-        color: $default;
+        color: $sidebar-text;
       }
     }
   }
@@ -67,7 +67,7 @@ a.al-sidebar-list-link {
   text-shadow: none;
   font-size: 13px;
   text-decoration: none;
-  color: $default;
+  color: $sidebar-text;
   line-height: 42px;
   white-space: nowrap;
   overflow: hidden;
@@ -96,7 +96,7 @@ a.al-sidebar-list-link {
     top: 12px;
     padding: 0;
     text-align: center;
-    color: #cccccc;
+    color: $sidebar-text;
     transition: transform 0.2s linear;
   }
 }
@@ -136,7 +136,7 @@ a.al-sidebar-list-link {
       text-shadow: none;
       font-size: 13px;
       text-decoration: none;
-      color: $default;
+      color: $sidebar-text;
       padding-left: 52px;
       height: auto;
       line-height: 29px;
@@ -148,7 +148,7 @@ a.al-sidebar-list-link {
       border: none;
       background-color: $primary;
       &:hover {
-        color: $default;
+        color: $sidebar-text;
       }
     }
 

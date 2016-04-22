@@ -15,8 +15,8 @@ html, body {
 body {
   font: 14px/16px $font-family;
   color: $default-text;
-  background-color: $body-bg;
-  //@include main-background();
+  //background-color: $body-bg;
+  @include main-background();
 }
 
 &.mobile{
@@ -29,8 +29,8 @@ body {
     bottom: 0;
     right: 0;
     background-attachment: inherit;
-    background-color: $body-bg;
-    //@include main-background();
+    //background-color: $body-bg;
+    @include main-background();
   }
 }
 

@@ -1,3 +1,15 @@
+
+.modal-content {
+  border-radius: 5px;
+  border: none;
+  color: $dropdown-text;
+  .modal-header {
+    color: $default-text;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+}
+
 .modal-buttons {
   margin-top: -12px;
   margin-right: -22px;
@@ -24,10 +36,10 @@
       color: $github-color;
       background-color: transparent;
       border: 1px solid $input-border;
-      @include placeholderStyle($default-text, 0.9);
+      @include placeholderStyle($dropdown-text, 0.9);
     }
     .modal-body p, .modal-body div, .modal-body span{
-      color: $default-text;
+      color: $dropdown-text;
     }
   }
   .modal-header {
@@ -62,7 +74,7 @@
 }
 
 .modal-content .modal-header .modal-title{
-  color: $default-text;
+  color: $dropdown-text;
 }
 
 .message-modal {
@@ -91,7 +103,7 @@
 
 @mixin message-modal-color($color) {
   .modal-header {
-    color: $default-text;
+    color: $dropdown-text;
     background: $color;
   }
 }

@@ -61,10 +61,6 @@ textarea.form-control {
   height: 96px;
 }
 
-.modal-form-btn {
-  text-align: center;
-}
-
 .form-inline {
   .form-group {
     input {
@@ -83,17 +79,6 @@ textarea.form-control {
     display: block;
     margin-top: -13px;
     margin-right: 10px;
-  }
-}
-
-.modal-content {
-  border-radius: 5px;
-  border: none;
-  color: $default-text;
-  .modal-header {
-    color: $default;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
   }
 }
 
@@ -447,7 +432,7 @@ label.custom-input-danger {
     color: $default-text;
     border-color: $input-border;
     &:focus, &:hover {
-      background: $default;
+      background: $default-text;
       box-shadow: none;
       outline: 0 !important;
     }
@@ -516,6 +501,10 @@ label.custom-input-danger {
     font-size: 11px;
     min-width: 53px;
   }
+}
+
+.progress {
+  background: rgba(black, 0.15);
 }
 
 .progress-bar-primary {

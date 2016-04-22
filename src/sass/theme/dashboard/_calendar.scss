@@ -330,7 +330,7 @@ div.blurCalendar{
 .fc-event,
 .fc-event:hover,
 .ui-widget .fc-event {
-  color: $default;
+  color: $default-text;
   text-decoration: none;
 }
 
@@ -730,7 +730,7 @@ a.fc-more {
 }
 
 .fc-head{
-  color: $default;
+  color: $default-text;
   background-color: $primary;
   td, th{
     border:none;
