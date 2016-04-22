@@ -77,16 +77,16 @@
               top: 45,
               labelShiftY: 5,
               labelShiftX: 5,
-              color: layoutColors.default,
-              labelColor: layoutColors.default,
-              labelRollOverColor: layoutColors.default,
+              color: layoutColors.defaultText,
+              labelColor: layoutColors.defaultText,
+              labelRollOverColor: layoutColors.defaultText,
               labelFontSize: 20
             }, {
               label: 'show flights from Vilnius',
               left: 106,
               top: 70,
-              labelColor: layoutColors.default,
-              labelRollOverColor: layoutColors.default,
+              labelColor: layoutColors.defaultText,
+              labelRollOverColor: layoutColors.defaultText,
               labelFontSize: 11,
               linkToObject: 'vilnius'
             } ]
@@ -145,16 +145,16 @@
                 top: 45,
                 labelShiftY: 5,
                 labelShiftX: 5,
-                color: layoutColors.default,
-                labelColor: layoutColors.default,
-                labelRollOverColor: layoutColors.default,
+                color: layoutColors.defaultText,
+                labelColor: layoutColors.defaultText,
+                labelRollOverColor: layoutColors.defaultText,
                 labelFontSize: 20
               }, {
                 label: 'show flights from London',
                 left: 106,
                 top: 70,
-                labelColor: layoutColors.default,
-                labelRollOverColor: layoutColors.default,
+                labelColor: layoutColors.defaultText,
+                labelRollOverColor: layoutColors.defaultText,
                 labelFontSize: 11,
                 linkToObject: 'london'
               } ]
