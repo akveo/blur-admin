@@ -153,6 +153,12 @@
   background-color: #bac4cb;
 }
 
+@mixin cd-timeline-left-color($color) {
+  &:before {
+    border-left-color: $color;
+  }
+}
+
 @media only screen and (min-width: $resXL) {
 
   #cd-timeline::before {
@@ -190,12 +196,6 @@
       left: 137%;
       top: 6px;
       font-size: 16px;
-    }
-  }
-
-  @mixin cd-timeline-left-color($color) {
-    &:before {
-      border-left-color: $color;
     }
   }
 
