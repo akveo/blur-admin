@@ -80,7 +80,8 @@
             hh: 'h ',
             mm: 'min'
           },
-          gridColor: layoutColors.defaultText,
+          gridAlpha: 0.5,
+          gridColor: layoutColors.border,
         }
       ],
       graphs: [
