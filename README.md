@@ -1,6 +1,6 @@
 # Blur Admin HTML template
 
-Admin template made with ♥ by [Akveo team](http://akveo.com/).
+Admin template made with ♥ by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
 
 We put a lot of efforts to bring together latest and the most trending web design approaches, while creating this template.
 Every color, character or image was carefully selected by our team to provide the best experience possible.
