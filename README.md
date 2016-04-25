@@ -12,15 +12,21 @@ It's just a first version, but we will continue development of this template to 
 ![alt tag](http://i.imgur.com/yOZPlps.jpg)
 **[Template Demo](http://akveo.com/blur-admin/#/dashboard)**
 
-## Installation
+## Getting Started
 
-To build the template from scratch you will be required to have following tools
+### Installation
+* Install [git](https://git-scm.com/) and clone the repository `git clone https://github.com/akveo/blur-admin.git`
 * Download and install nodejs [https://nodejs.org](https://nodejs.org)
-* Open the console inside of extracted folder and run `npm install` to fetch all dependencies
-* Run `gulp` to build sources
-* Go to `release\` folder in check out your freshly made compiled files
-* Run `gulp serve` and enjoy the beauty!
- 
+* Open the console inside of the cloned folder and run `npm install` to fetch all dependencies
+
+### Development
+To run the template in the development mode use `gulp serve`. This will start a local build-in server on your machine bind to [http://localhost:3000](http://localhost:3000) address.
+
+### Production
+In case if you just need the template ready for production usage run `gulp` command. This will create a `release\` folder with freshly built files.
+
+Enjoy the beauty!
+
 ## Features
 * Responsive layout
 * High resolution
