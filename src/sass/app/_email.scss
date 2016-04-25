@@ -666,7 +666,7 @@
 
 .compose-footer {
   padding: 2px 4px;
-  background-color: $input-border;
+  background-color: whitesmoke;
   .btn-send {
     background-color: $primary-light;
     color: white;
@@ -696,7 +696,7 @@
 }
 
 .compose-container {
-  background-color: $input-border;
+  background-color: whitesmoke;
   .ta-text.ta-editor {
     background-color: $input-border;
     div {
@@ -754,10 +754,9 @@
   }
   .ta-toolbar {
     .btn {
-      border-width: 1px;
       border-radius: 0;
       color: $dropdown-text;
-      border-color: transparent;
+      border: 1px transparent;
       &.active {
         box-shadow: none;
         background-color: rgba(0, 0, 0, .12);

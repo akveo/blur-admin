@@ -55,7 +55,7 @@ div.blurCalendar{
   }
 
   th, td {
-    border: 1px solid;
+    border: 1px solid rgba(255,255,255,0.3);
     padding: 0;
     vertical-align: top;
   }
@@ -94,7 +94,7 @@ div.blurCalendar{
 
 .fc-unthemed {
   th, td, hr, thead, tbody, .fc-row, .fc-popover {
-    border-color: $border;
+    border-color: rgba(255,255,255,0.3);
   }
 
   .fc-popover {
@@ -738,10 +738,6 @@ a.fc-more {
   div.fc-widget-header{
     padding: 5px 0;
   }
-}
-
-.fc td{
-  border-color: $border;
 }
 
 .fc-today-button, .fc-month-button, .fc-agendaWeek-button, .fc-agendaDay-button  {

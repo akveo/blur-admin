@@ -35,7 +35,7 @@
     .form-control{
       color: $github-color;
       background-color: transparent;
-      border: 1px solid $input-border;
+      border: 1px solid $select-border;
       @include placeholderStyle($dropdown-text, 0.9);
     }
     .modal-body p, .modal-body div, .modal-body span{
