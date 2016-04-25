@@ -168,9 +168,9 @@
   border: none;
 }
 
-.panel-primary, .panel-info, .panel-success, .panel-warning, .panel-danger, {
+.accordion-panel  {
   .panel-heading {
-    border-radius: 4px;
+    border-radius: 3px;
   }
 
   &.panel-open .panel-heading {

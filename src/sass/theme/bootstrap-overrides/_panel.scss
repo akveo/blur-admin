@@ -47,36 +47,48 @@ $panel-heading-font-size: 16px;
   background-attachment: fixed;
 }
 
-.panel-white {
-  background-color: white;
-}
-
-.panel > .panel-body {
-  padding: 15px 22px;
-  height: 100%;
+.panel {
+  > .panel-body {
+    padding: 15px 22px;
+    height: 100%;
+  }
+  > .panel-heading {
+    color: $default-text;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  > .panel-footer {
+    color: $default-text;
+  }
 }
 
 .panel-heading, .panel-footer {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.12);
   height: $panel-title-height;
   font-size: $panel-heading-font-size;
-
   $vertical-padding: ($panel-title-height - $panel-heading-font-size) / 2;
   padding: $vertical-padding 22px;
-
 }
 
 .panel-title {
   font-weight: $font-normal;
   text-transform: uppercase;
   opacity: 0.9;
-  //text-transform: uppercase;
 }
+
+.panel-default {
+  > .panel-heading {
+    color: $bootstrap-panel-text;
+  }
+  > .panel-footer {
+    color: $bootstrap-panel-text;
+  }
+}
+
 
 .panel-primary {
   > .panel-heading {
-    color: $primary;
     background-color: $primary-bg;
     border-color: $primary-bg;
   }
@@ -84,7 +96,6 @@ $panel-heading-font-size: 16px;
 
 .panel-success {
   > .panel-heading {
-    color: $success;
     background-color: $success-bg;
     border-color: $success-bg;
   }
@@ -92,7 +103,6 @@ $panel-heading-font-size: 16px;
 
 .panel-info {
   > .panel-heading {
-    color: $info;
     background-color: $info-bg;
     border-color: $info-bg;
   }
@@ -100,7 +110,6 @@ $panel-heading-font-size: 16px;
 
 .panel-warning {
   > .panel-heading {
-    color: $warning;
     background-color: $warning-bg;
     border-color: $warning-bg;
   }
@@ -108,32 +117,24 @@ $panel-heading-font-size: 16px;
 
 .panel-danger {
   > .panel-heading {
-    color: $danger;
     background-color: $danger-bg;
     border-color: $danger-bg;
   }
 }
 
-.panel-primary, .panel-success, .panel-info, .panel-warning, .panel-danger {
-  .panel-heading {
-    color: rgba(255, 255, 255, 0.8);
+.bootstrap-panel{
+  background-color: $bootstrap-panel-bg;
+  .panel-body{
+    color: $bootstrap-panel-text;
   }
 }
 
-.panel.bootstrap-panel{
-  .panel-body, .panel-heading {
-    p, div, span {
-      color: $default-text;
-    }
-  }
-}
-
-.accordion-panel.panel.bootstrap-panel{
+.accordion-panel.panel {
   &.panel-primary,
   &.panel-success,
   &.panel-info,
   &.panel-warning,
-  &.panel-danger{
+  &.panel-danger {
     .panel-heading {
       p, div, span {
         color: rgba(255, 255, 255, 0.8);
@@ -142,8 +143,8 @@ $panel-heading-font-size: 16px;
   }
 }
 
-.panel-group .panel.accordion-panel{
-  .panel-heading{
+.panel-group .panel.accordion-panel {
+  .panel-heading {
     border-bottom: 0;
   }
 }
@@ -162,14 +163,13 @@ $panel-heading-font-size: 16px;
   height: 120px;
 }
 
-.footer-panel{
+.footer-panel {
   height: 142px;
 }
 
-.light-text{
+.light-text {
   font-weight: $font-light;
 }
-
 
 /*
 .panel-group .panel {

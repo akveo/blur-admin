@@ -133,6 +133,19 @@
 @mixin cd-timeline-color($color) {
   background: $color;
 }
+
+@mixin cd-timeline-left-color($color) {
+  &:before {
+    border-left-color: $color;
+  }
+}
+
+@mixin cd-timeline-right-color($color) {
+  &::before {
+    border-right-color: $color;
+  }
+}
+
 .cd-timeline-content.warning {
   @include cd-timeline-color(rgba($warning, 0.2));
 }
@@ -145,18 +158,6 @@
 
 .no-touch .cd-timeline-content .cd-read-more:hover {
   background-color: $border;
-}
-
-@mixin cd-timeline-left-color($color) {
-  &:before {
-    border-left-color: $color;
-  }
-}
-
-@mixin cd-timeline-right-color($color) {
-  &::before {
-    border-right-color: $color;
-  }
 }
 
 @media only screen and (min-width: $resXL) {
