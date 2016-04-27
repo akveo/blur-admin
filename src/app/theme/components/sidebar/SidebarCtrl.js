@@ -17,16 +17,17 @@
     function selectMenuItem() {
       $.each($scope.menuItems, function (index, menu) {
         menu.selected = ('#' + $location.$$url).indexOf(menu.root) == 0;
-        menu.expanded = menu.expanded || menu.selected;
+        menu.expanded = menu.selected;
         if (menu.subMenu) {
           $.each(menu.subMenu, function (subIndex, subMenu) {
             subMenu.selected = (('#' + $location.$$url).indexOf(subMenu.root) == 0) && !subMenu.disabled;
           });
         }
+        if($rootScope.$isMobile) {
+          $scope.menuCollapse();
+        }
       });
     }
-
-    selectMenuItem();
 
     $scope.$on('$locationChangeSuccess', function () {
       selectMenuItem();
@@ -97,5 +98,7 @@
       var menuTopValue = 66;
       $scope.hoverElemTop = $event.currentTarget.getBoundingClientRect().top - menuTopValue;
     };
+
+    selectMenuItem();
   }
 })();
