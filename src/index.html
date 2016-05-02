@@ -26,10 +26,10 @@
 </head>
 <body ng-class="{'mobile' : $isMobile}">
 <div class="body-bg"></div>
-<main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $isMenuCollapsed }">
+<main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
 
-  <sidebar></sidebar>
-  <page-top is-menu-collapsed="$isMenuCollapsed"></page-top>
+  <ba-sidebar></ba-sidebar>
+  <page-top></page-top>
 
   <div class="al-main">
     <div class="al-content">

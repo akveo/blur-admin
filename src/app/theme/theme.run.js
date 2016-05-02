@@ -9,7 +9,7 @@
     .run(themeRun);
 
   /** @ngInject */
-  function themeRun($timeout, $rootScope, layoutSizes, layoutPaths, preloader, $q) {
+  function themeRun($timeout, $rootScope, layoutSizes, layoutPaths, preloader, $q, baSidebarService) {
 
     $rootScope.$isMobile =  (/android|webos|iphone|ipad|ipod|blackberry|windows phone/).test(navigator.userAgent.toLowerCase());
     var whatToWait = [
@@ -34,7 +34,7 @@
       }
     }, 7000);
 
-    $rootScope.$isMenuCollapsed = window.innerWidth <= layoutSizes.resWidthCollapseSidebar;
+    $rootScope.$baSidebarService = baSidebarService;
   }
 
 })();

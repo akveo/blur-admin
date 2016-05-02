@@ -2,10 +2,13 @@
   'use strict';
 
   angular.module('BlurAdmin.theme.components')
-      .service('sidebarService', sidebarService);
+      .service('baSidebarService', baSidebarService);
 
   /** @ngInject */
-  function sidebarService($state) {
+  function baSidebarService($state, layoutSizes) {
+
+    var isMenuCollapsed = shouldMenuBeCollapsed();
+
     var staticMenuItems = [ {
         title: 'Pages',
         icon: 'ion-document',
@@ -58,6 +61,21 @@
       return menuItems.concat(staticMenuItems);
     };
 
+    this.shouldMenuBeCollapsed = shouldMenuBeCollapsed;
+    this.canSidebarBeHidden = canSidebarBeHidden;
+
+    this.setMenuCollapsed = function(isCollapsed) {
+      isMenuCollapsed = isCollapsed;
+    };
+
+    this.isMenuCollapsed = function() {
+      return isMenuCollapsed;
+    };
+
+    this.toggleMenuCollapsed = function() {
+      isMenuCollapsed = !isMenuCollapsed;
+    };
+
     function defineMenuItemStates() {
       return $state.get()
           .filter(function(s) {
@@ -71,12 +89,20 @@
               level: (s.name.match(/\./g) || []).length,
               order: meta.order,
               icon: meta.icon,
-              root: '#/' + s.name.replace('.', '/'),
+              stateRef: s.name,
             };
           })
           .sort(function(a, b) {
             return (a.level - b.level) * 100 + a.order - b.order;
           });
+    }
+
+    function shouldMenuBeCollapsed() {
+      return window.innerWidth <= layoutSizes.resWidthCollapseSidebar;
+    }
+
+    function canSidebarBeHidden() {
+      return window.innerWidth <= layoutSizes.resWidthHideSidebar;
     }
   }
 })();
