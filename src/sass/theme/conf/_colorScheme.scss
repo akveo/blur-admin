@@ -3,16 +3,18 @@ $body-bg: #F0F3F4;
 $default-text: #ffffff;
 $help-text: #eeeeee;
 $disabled: #dddddd;
-$disabled-bg: tint($disabled, 15%);
+$disabled-bg: transparent;
+
 $border: #ffffff;
-$border-light: $border;// tint
-$input-border: $border;// shade
+$border-light: $border;
+$input-border: transparent;
+
 $sidebar: rgba(#000000, 0.5);
 $sidebar-text: #ffffff;
 $dropdown-text: #7d7d7d;
 $bootstrap-panel-text: #7d7d7d;
 $bootstrap-panel-bg: #ffffff;
-$select-border: #e7e7e7;
+$mail-box: whitesmoke;
 
 $primary: #209e91 !default;
 $info: #2dacd1 !default;

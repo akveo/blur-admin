@@ -37,23 +37,27 @@ $hover: 24;
   }
 }
 
+@mixin openDropdownButton($color, $dark-color) {
+  @include styleButton($color, $color - $hover);
+  background-color: $dark-color;
+  border-color: $dark-color;
+}
+
 .open > .btn.dropdown-toggle {
   &.btn.btn-primary {
-    @include styleButton($primary, $primary - $hover);
-    background-color: $primary-dark;
-    border-color: $primary-dark;
+    @include openDropdownButton($primary, $primary-dark)
   }
   &.btn-success {
-    @include styleButton($success, $success - $hover);
+    @include openDropdownButton($success, $success-dark)
   }
   &.btn-info {
-    @include styleButton($info, $info - $hover);
+    @include openDropdownButton($info, $info-dark)
   }
   &.btn-warning {
-    @include styleButton($warning, $warning - $hover);
+    @include openDropdownButton($warning, $warning-dark)
   }
   &.btn-danger {
-    @include styleButton($danger, $danger - $hover);
+    @include openDropdownButton($danger, $danger-dark)
   }
 }
 

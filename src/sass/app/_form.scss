@@ -44,7 +44,7 @@
   @include placeholderStyle($default-text, 0.7);
   border: 1px solid $input-border;
   border-radius: 5px;
-  background: transparent;
+  background-color: rgba(0,0,0,.15);
   box-shadow: none;
   &:focus {
     box-shadow: none;
@@ -226,7 +226,7 @@ label.custom-checkbox {
       color: $default-text;
       content: "\a0";
       background-color: transparent;
-      border: 1px solid $input-border;
+      border: 1px solid $border;
       border-radius: 0;
       display: inline-block;
       text-align: center;
@@ -317,7 +317,7 @@ label.custom-input-danger {
 
 @mixin validationState($color, $focusColor) {
   .control-label {
-    color: $color;
+    color: $default-text;
   }
   .form-control {
     border: 1px solid $color;
@@ -375,7 +375,7 @@ label.custom-input-danger {
 }
 
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-  background: transparent;
+  background-color: rgba(0,0,0,.15);
   color: $disabled;
   border-color: $disabled-bg;
   @include placeholderStyle($default-text, 0.5);
@@ -430,24 +430,22 @@ label.custom-input-danger {
   button.btn.btn-default {
     background: transparent;
     color: $default-text;
+    //border-color: $input-border;
     &:hover {
       background: $default;
       box-shadow: none;
       outline: 0 !important;
     }
     &:active {
-      border-color: $input-border;
+      background: $default;
       box-shadow: none;
-      background: $default-text;
-      color: $dropdown-text;
     }
   }
   &.open {
     > .btn.btn-default.dropdown-toggle {
+      background: $default;
       box-shadow: none;
-      background: $default-text;
-      color: $dropdown-text;
-      border-color: $select-border;
+      border-color: $border;
     }
     > .btn{
       border-radius: 5px 5px 0 0;
@@ -474,7 +472,7 @@ label.custom-input-danger {
 
 .bootstrap-tagsinput {
   color: $default-text;
-  background-color: transparent;
+  background-color: rgba(0,0,0,.15);
   border: 1px solid $input-border;
   border-radius: 5px;
   box-shadow: none;
@@ -496,6 +494,8 @@ label.custom-input-danger {
     }
   }
   input {
+    background-color: rgba(0,0,0,.15);
+    border-radius: 5px;
     @include placeholderStyle($default-text, 0.8);
     line-height: 22px;
     font-size: 11px;

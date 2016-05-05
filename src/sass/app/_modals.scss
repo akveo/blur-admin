@@ -26,6 +26,8 @@
   }
 }
 
+$modal-input-border: #e7e7e7;
+
 .modal {
   text-align: center;
   .modal-dialog {
@@ -35,7 +37,7 @@
     .form-control{
       color: $github-color;
       background-color: transparent;
-      border: 1px solid $select-border;
+      border: 1px solid $modal-input-border;
       @include placeholderStyle($dropdown-text, 0.9);
     }
     .modal-body p, .modal-body div, .modal-body span{

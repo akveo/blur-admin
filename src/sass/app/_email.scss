@@ -666,7 +666,7 @@
 
 .compose-footer {
   padding: 2px 4px;
-  background-color: whitesmoke;
+  background-color: $mail-box;
   .btn-send {
     background-color: $primary-light;
     color: white;
@@ -696,7 +696,7 @@
 }
 
 .compose-container {
-  background-color: whitesmoke;
+  background-color: $mail-box;
   .ta-text.ta-editor {
     background-color: $input-border;
     div {
