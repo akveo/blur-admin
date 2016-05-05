@@ -4,7 +4,7 @@
     <li ng-repeat="item in ::menuItems" class="al-sidebar-list-item"
         ng-class="::{'with-sub-menu': item.subMenu}" ui-sref-active="selected">
 
-      <a ng-mouseenter="hoverItem($event, item)" ui-sref="{{ ::(item.stateRef || defaultSidebarState) }}" ng-if="::!item.subMenu" class="al-sidebar-list-link">
+      <a ng-mouseenter="hoverItem($event, item)" ui-state="item.stateRef || ''" ng-href="{{::(item.fixedHref ? item.fixedHref: '')}}" ng-if="::!item.subMenu" class="al-sidebar-list-link">
         <i class="{{ ::item.icon }}"></i><span>{{ ::item.title }}</span>
       </a>
 
@@ -28,11 +28,13 @@
               ng-class="{expanded: subitem.expanded, 'slide-right': subitem.slideRight}"
               ba-ui-sref-toggling-submenu="subitem.stateRef">
             <li ng-mouseenter="hoverItem($event, item)" ng-repeat="subSubitem in ::subitem.subMenu" ui-sref-active="selected">
-              <a ng-mouseenter="hoverItem($event, item)" ui-sref="{{ ::(subSubitem.stateRef || defaultSidebarState) }}">{{
+              <a ng-mouseenter="hoverItem($event, item)" ui-state="subSubitem.stateRef || ''" ng-href="{{::(subSubitem.fixedHref ? subSubitem.fixedHref: '')}}">{{
                 ::subSubitem.title }}</a>
             </li>
           </ul>
-          <a ng-mouseenter="hoverItem($event, item)" target="{{::(subitem.blank ? '_blank' : '_self')}}" ng-if="::!subitem.subMenu" ui-sref="{{ ::(subitem.stateRef || defaultSidebarState) }}">{{ ::subitem.title}}</a>
+          <a ng-mouseenter="hoverItem($event, item)" target="{{::(subitem.blank ? '_blank' : '_self')}}" ng-if="::!subitem.subMenu"
+             ui-state="subitem.stateRef || ''"
+             ng-href="{{::(subitem.fixedHref ? subitem.fixedHref: '')}}">{{ ::subitem.title}}</a>
         </li>
       </ul>
     </li>
