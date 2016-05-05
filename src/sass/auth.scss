@@ -33,7 +33,7 @@ html {
   width: 540px;
   margin: 0 auto;
   border-radius: 5px;
-  background-color: $default;
+  @include bg-translucent-dark(0.5);
   color: $default-text;
   padding: 32px;
   h1 {
