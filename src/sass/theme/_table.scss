@@ -3,7 +3,7 @@
   & > thead {
     & > tr {
       & > th {
-        border-bottom: 1px solid rgba($border, 0.2);
+        border-bottom: 1px solid $border-light;
         white-space: nowrap;
         &:first-child {
           text-align: center;
@@ -22,7 +22,7 @@
       & > td {
         padding: 0px 8px;
         line-height: 35px;
-        border-top: 1px solid rgba($border, 0.2);
+        border-top: 1px solid $border-light;
         &:first-child {
           text-align: center;
         }
@@ -237,7 +237,7 @@ input.search-input {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td{
-  border: 1px solid rgba($border, 0.2);
+  border: 1px solid $border-light;
 }
 
 .table-striped > tbody > tr:nth-of-type(odd) {

@@ -94,7 +94,7 @@ div.blurCalendar{
 
 .fc-unthemed {
   th, td, hr, thead, tbody, .fc-row, .fc-popover {
-    border-color: rgba(255,255,255,0.3);
+    border-color: rgba($border, 0.3);
   }
 
   .fc-popover {
@@ -330,7 +330,7 @@ div.blurCalendar{
 .fc-event,
 .fc-event:hover,
 .ui-widget .fc-event {
-  color: $default-text;
+  color: $label-text;
   text-decoration: none;
 }
 
@@ -730,7 +730,7 @@ a.fc-more {
 }
 
 .fc-head{
-  color: $default-text;
+  color: $label-text;
   background-color: $primary;
   td, th{
     border:none;

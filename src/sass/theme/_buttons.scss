@@ -141,9 +141,6 @@ button.btn.btn-inverse {
   button.btn.btn-primary {
     @include buttonGroupColor($primary);
   }
-  button.btn.btn-default {
-    @include buttonGroupColor($default-text);
-  }
   button.btn.btn-danger {
     @include buttonGroupColor($danger);
   }

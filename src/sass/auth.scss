@@ -12,16 +12,6 @@ html {
   min-height: 520px;
 }
 
-.form-control, .form-control:focus {
-  @include placeholderStyle($default-text, 0.7);
-  border-radius: 5px;
-  border: 1px solid $border;
-  color: $default-text;
-}
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-  @include placeholderStyle($default, 0.7);
-}
-
 .auth-main {
   display: flex;
   align-items: center;
@@ -33,7 +23,7 @@ html {
   width: 540px;
   margin: 0 auto;
   border-radius: 5px;
-  @include bg-translucent-dark(0.5);
+  background-color: $auth-panel-background;
   color: $default-text;
   padding: 32px;
   h1 {
