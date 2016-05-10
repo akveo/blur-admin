@@ -833,7 +833,7 @@ h1:after {
 /* code styling */
 
 code {
-    font-family: 'Anonymous Pro', monospace;
+    font-family: 'Anonymous Pro', sans-serif;
     font-size: 0.85em;
     color: #000;
 }
@@ -845,6 +845,7 @@ pre code {
     background: #f8f5ec;
     padding: 30px 14px 14px;
     position: relative;
+    overflow-x: auto;
 }
 
 pre code:before {
