@@ -1,9 +1,0 @@
-<div class="widgets">
-  <div ng-repeat="widgetBlock in ngModel" ng-class="{'row': widgetBlock.widgets.length > 1}">
-    <div ng-repeat="widgetCol in widgetBlock.widgets" ng-class="{'col-md-6': widgetBlock.widgets.length === 2}" ng-model="widgetCol" class="widgets-block">
-      <div ba-panel ba-panel-title="{{::widget.title}}" ng-repeat="widget in widgetCol" ba-panel-class="with-scroll {{widget.panelClass}}">
-        <div ng-include="widget.url"></div>
-      </div>
-    </div>
-  </div>
-</div>
