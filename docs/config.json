@@ -24,9 +24,8 @@
   "paginator": {
     "perPage": 3,
     "groupSort": {
-      "First Group": 100,
-      "Second Group": 200,
-      "Third Group": 50
+      "Quick Start": 1000,
+      "Customization": 900
     }
   }
 }
