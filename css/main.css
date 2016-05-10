@@ -485,6 +485,21 @@ h1:hover .hash-link, h2:hover .hash-link, h3:hover .hash-link, h4:hover .hash-li
     margin-bottom: 5px
 }
 
+.nav-docs-right {
+    display: block;
+    float: right;
+    line-height: 50px;
+}
+
+.nav-docs-right a {
+    color: #c05b4d;
+    text-decoration: none;
+}
+
+.nav-docs-right a:hover {
+    text-decoration: underline;
+}
+
 .home-section {
     margin: 50px 0
 }
