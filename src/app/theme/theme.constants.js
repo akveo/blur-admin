@@ -7,7 +7,7 @@
 
   var IMAGES_ROOT = 'assets/img/';
 
-  var blurTheme = false;
+  var blurTheme = true;
 
   var basic = {
     default: 'rgba(#000000, 0.2)',
