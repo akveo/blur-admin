@@ -3,6 +3,24 @@
   position: relative;
 }
 
+.channels-block.transparent {
+  .traffic-chart canvas{
+    border: 10px solid rgba(0,0,0,0.35);
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
+    border-radius: 150px;
+  }
+
+  .chart-bg{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 60px;
+    top: 60px;
+    background-color: rgba(0,0,0,0.35);
+    border-radius: 100px;
+  }
+}
+
 .channels-info {
   display: inline-block;
   width: calc(100% - 370px);
@@ -97,11 +115,11 @@
   border-radius: 0;
   width: 100%;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: $progress-background;
   box-shadow: none;
   .progress-bar{
     height: 4px;
-    background-color: $default-text;
+    background-color: $progress-default;
     box-shadow: none;
   }
 }
@@ -114,22 +132,6 @@
   top: 27px;
   border-radius: 15px;
   left: -45px;
-}
-
-.traffic-chart canvas{
-  border: 10px solid rgba(0,0,0,0.35);
-  box-shadow: 0 0 5px 0 rgb(0, 0, 0) inset;
-  border-radius: 150px;
-}
-
-.chart-bg{
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  left: 60px;
-  top: 60px;
-  background-color: rgba(0,0,0,0.35);
-  border-radius: 100px;
 }
 
 @media (max-width: $resM) {
