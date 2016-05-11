@@ -163,7 +163,7 @@ label.todo-checkbox {
       label.todo-checkbox > span {
         &:before {
           position: absolute;
-          color: white;
+          color: $default-text;
           content: '\f10c';
           float: none;
           margin-right: 6px;
@@ -173,11 +173,7 @@ label.todo-checkbox {
       &.checked {
         label.todo-checkbox > span {
           &:before {
-            margin-right: 0;
-            position: absolute;
-            content: '';
-            background-size: contain;
-            background: url($images-root + "app/todo/check-icon.png") no-repeat;
+            content: '\f00c';
           }
         }
       }
