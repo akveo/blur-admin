@@ -7,6 +7,8 @@
 
   var IMAGES_ROOT = 'assets/img/';
 
+  var blurTheme = false;
+
   var basic = {
     default: 'rgba(#000000, 0.2)',
     defaultText: '#ffffff',
@@ -33,6 +35,9 @@
   };
 
   angular.module('BlurAdmin.theme')
+    .constant('layoutTheme', {
+      blur: blurTheme,
+    })
     .constant('layoutColors', {
       default: basic.default,
       defaultText: basic.defaultText,

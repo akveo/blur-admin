@@ -15,11 +15,13 @@ html, body {
 body {
   font: 14px/16px $font-family;
   color: $default-text;
-  //background-color: $body-bg;
-  @include main-background();
+  background-color: $body-bg;
+  &.blur-theme {
+    @include main-background();
+  }
 }
 
-&.mobile{
+body.mobile{
   background: none;
   .body-bg{
     display: block;
@@ -29,7 +31,9 @@ body {
     bottom: 0;
     right: 0;
     background-attachment: inherit;
-    //background-color: $body-bg;
+    background-color: $body-bg;
+  }
+  &.blur-theme {
     @include main-background();
   }
 }

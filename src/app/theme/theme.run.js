@@ -9,9 +9,11 @@
     .run(themeRun);
 
   /** @ngInject */
-  function themeRun($timeout, $rootScope, layoutSizes, layoutPaths, preloader, $q, baSidebarService) {
+  function themeRun($timeout, $rootScope, layoutTheme, layoutPaths, preloader, $q, baSidebarService) {
 
     $rootScope.$isMobile =  (/android|webos|iphone|ipad|ipod|blackberry|windows phone/).test(navigator.userAgent.toLowerCase());
+    $rootScope.$blurTheme = layoutTheme.blur;
+
     var whatToWait = [
       preloader.loadAmCharts(),
       $timeout(3000)

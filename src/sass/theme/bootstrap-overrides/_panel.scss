@@ -40,11 +40,13 @@ $panel-heading-font-size: 16px;
   }
 }
 
-.panel.panel-blur {
-  $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
-  background: url($blurredBgUrl);
-  transition: none;
-  background-attachment: fixed;
+.blur-theme {
+  .panel.panel-blur {
+    $blurredBgUrl: $images-root + 'blur-bg-blurred.jpg';
+    background: url($blurredBgUrl);
+    transition: none;
+    background-attachment: fixed;
+  }
 }
 
 .panel {
