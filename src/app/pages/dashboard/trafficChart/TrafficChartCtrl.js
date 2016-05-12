@@ -9,7 +9,9 @@
       .controller('TrafficChartCtrl', TrafficChartCtrl);
 
   /** @ngInject */
-  function TrafficChartCtrl(layoutColors, $scope) {
+  function TrafficChartCtrl($scope, layoutColors, layoutTheme) {
+
+    $scope.transparent = layoutTheme.blur;
     var palette = layoutColors.bgColorPalette;
     $scope.doughnutData = [
       {
