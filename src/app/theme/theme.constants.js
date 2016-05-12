@@ -25,8 +25,8 @@
     danger: '#e85656',
   };
 
-  // background color palette
-  var bgColorPalette = {
+  // dashboard colors for charts
+  var dashboardColors = {
     blueStone: '#005562',
     surfieGreen: '#0e8174',
     silverTree: '#6eba8c',
@@ -68,18 +68,18 @@
       warningBg: tint(colorScheme.warning, 20),
       dangerBg: tint(colorScheme.danger, 20),
 
-      bgColorPalette: {
-        blueStone: bgColorPalette.blueStone,
-        surfieGreen: bgColorPalette.surfieGreen,
-        silverTree: bgColorPalette.silverTree,
-        gossip: bgColorPalette.gossip,
-        white: bgColorPalette.white,
+      dashboard: {
+        blueStone: dashboardColors.blueStone,
+        surfieGreen: dashboardColors.surfieGreen,
+        silverTree: dashboardColors.silverTree,
+        gossip: dashboardColors.gossip,
+        white: dashboardColors.white,
 
-        blueStoneDark: shade(bgColorPalette.blueStone, 15),
-        surfieGreenDark: shade(bgColorPalette.surfieGreen, 15),
-        silverTreeDark: shade(bgColorPalette.silverTree, 15),
-        gossipDark: shade(bgColorPalette.gossip, 15),
-        whiteDark: shade(bgColorPalette.white, 5),
+        blueStoneDark: shade(dashboardColors.blueStone, 15),
+        surfieGreenDark: shade(dashboardColors.surfieGreen, 15),
+        silverTreeDark: shade(dashboardColors.silverTree, 15),
+        gossipDark: shade(dashboardColors.gossip, 15),
+        whiteDark: shade(dashboardColors.white, 5),
       },
     })
     .constant('layoutSizes', {

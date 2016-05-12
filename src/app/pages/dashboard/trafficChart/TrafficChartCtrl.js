@@ -12,40 +12,40 @@
   function TrafficChartCtrl($scope, layoutColors, layoutTheme) {
 
     $scope.transparent = layoutTheme.blur;
-    var palette = layoutColors.bgColorPalette;
+    var dashboardColors = layoutColors.dashboard;
     $scope.doughnutData = [
       {
         value: 2000,
-        color: palette.white,
-        highlight: palette.whiteDark,
+        color: dashboardColors.white,
+        highlight: dashboardColors.whiteDark,
         label: 'Other',
         percentage: 87,
         order: 1,
       }, {
         value: 1500,
-        color: palette.blueStone,
-        highlight: palette.blueStoneDark,
+        color: dashboardColors.blueStone,
+        highlight: dashboardColors.blueStoneDark,
         label: 'Search engines',
         percentage: 22,
         order: 4,
       }, {
         value: 1000,
-        color: palette.surfieGreen,
-        highlight: palette.surfieGreenDark,
+        color: dashboardColors.surfieGreen,
+        highlight: dashboardColors.surfieGreenDark,
         label: 'Referral Traffic',
         percentage: 70,
         order: 3,
       }, {
         value: 1200,
-        color: palette.silverTree,
-        highlight: palette.silverTreeDark,
+        color: dashboardColors.silverTree,
+        highlight: dashboardColors.silverTreeDark,
         label: 'Direct Traffic',
         percentage: 38,
         order: 2,
       }, {
         value: 400,
-        color: palette.gossip,
-        highlight: palette.gossipDark,
+        color: dashboardColors.gossip,
+        highlight: dashboardColors.gossipDark,
         label: 'Ad Campaigns',
         percentage: 17,
         order: 0,

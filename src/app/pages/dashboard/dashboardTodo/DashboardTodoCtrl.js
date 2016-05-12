@@ -12,10 +12,10 @@
   function DashboardTodoCtrl($scope, layoutColors, layoutTheme) {
 
     $scope.transparent = layoutTheme.blur;
-    var palette = layoutColors.bgColorPalette;
+    var dashboardColors = layoutColors.dashboard;
     var colors = [];
-    for (var key in palette) {
-      colors.push(palette[key]);
+    for (var key in dashboardColors) {
+      colors.push(dashboardColors[key]);
     }
 
     function getRandomColor() {
