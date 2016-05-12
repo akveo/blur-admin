@@ -9,12 +9,12 @@
       .controller('DashboardLineChartCtrl', DashboardLineChartCtrl);
 
   /** @ngInject */
-  function DashboardLineChartCtrl(layoutColors, layoutPaths) {
+  function DashboardLineChartCtrl(layoutColors, layoutPaths, baUtil) {
+    var graphColor = layoutColors.primary;
     var chartData = [
       { date: new Date(2012, 11), value: 0, value0: 0 },
       { date: new Date(2013, 0), value: 15000, value0: 19000},
       { date: new Date(2013, 1), value: 30000, value0: 20000},
-
 
       { date: new Date(2013, 2), value: 25000, value0: 22000},
       { date: new Date(2013, 3), value: 21000, value0: 25000},
@@ -69,7 +69,7 @@
           id: 'g0',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: 'rgba(0, 0, 0, 0.3)',
+          lineColor: baUtil.hexToRGB(graphColor, 0.3),
           lineThickness: 1,
           negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',
@@ -81,7 +81,7 @@
           id: 'g1',
           bullet: 'none',
           useLineColorForBulletBorder: true,
-          lineColor: 'rgba(0, 0, 0, 0.4)',
+          lineColor: baUtil.hexToRGB(graphColor, 0.5),
           lineThickness: 1,
           negativeLineColor: layoutColors.danger,
           type: 'smoothedLine',
