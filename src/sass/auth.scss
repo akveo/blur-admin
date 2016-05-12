@@ -4,12 +4,24 @@
 @import 'theme/buttons.scss';
 @import 'app/form.scss';
 
-html, body {
+html {
+  min-height: 520px;
   height: 100%;
 }
 
-html {
-  min-height: 520px;
+body {
+  @include main-background();
+  height: 100%;
+}
+
+.form-control, .form-control:focus {
+  @include placeholderStyle($default, 0.9);
+  background-color: rgba(0, 0, 0, .4);
+  border-radius: 5px;
+  color: $default;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  @include placeholderStyle($default, 0.6);
 }
 
 .auth-main {
@@ -23,8 +35,8 @@ html {
   width: 540px;
   margin: 0 auto;
   border-radius: 5px;
-  background-color: $auth-panel-background;
-  color: $default-text;
+  @include bg-translucent-dark(0.55);
+  color: #fff;
   padding: 32px;
   h1 {
     font-weight: $font-light;
@@ -46,7 +58,7 @@ html {
 
   .control-label {
     padding-top: 11px;
-    color: $default-text;
+    color: $default;
   }
 
   .form-group {
@@ -96,7 +108,7 @@ a.forgot-pass {
     width: 30%;
     white-space: nowrap;
     padding: 0 24px;
-    color: $default-text;
+    color: $default;
     & > span {
       margin-top: -12px;
       display: block;
@@ -131,16 +143,5 @@ a.forgot-pass {
 }
 
 .btn-auth {
-  background: $primary;
-  color: $default-text;
-  border-radius: 5px;
-  border-color: $primary;
-  padding: 7px 12px;
-  transition: all 0.1s ease;
-  &:hover {
-    color: $default-text;
-    background: $primary;
-    border-color: $primary;
-    transform: scale(1.2);
-  }
+  color: #ffffff!important;
 }
