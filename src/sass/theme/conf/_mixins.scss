@@ -115,14 +115,3 @@
     color: darken($color, 20);
   }
 }
-
-@mixin overridePanelBg($color, $borderColor, $dropdownColor) {
-  .panel.panel-blur, .panel.panel-blur:hover {
-    border-color: $borderColor;
-    background-color: $color;
-  }
-
-  .progress {
-    background: $color;
-  }
-}

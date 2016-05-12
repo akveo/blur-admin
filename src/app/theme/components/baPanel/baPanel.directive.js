@@ -12,10 +12,11 @@
       .directive('baPanel', baPanel);
 
   /** @ngInject */
-  function baPanel(baPanel) {
+  function baPanel(baPanel, layoutTheme) {
     return angular.extend({}, baPanel, {
       template: function(el, attrs) {
-        var res = '<div  class="panel panel-blur full-invisible ' + (attrs.baPanelClass || '') + '" zoom-in>';
+        var res = '<div  class="panel ' + (layoutTheme.blur ? 'panel-blur' : '') + ' full-invisible ' + (attrs.baPanelClass || '');
+        res += '" zoom-in ' + (layoutTheme.blur ? 'ba-panel-blur' : '') + '>';
         res += baPanel.template(el, attrs);
         res += '</div>';
         return res;

@@ -9,21 +9,20 @@
     .run(themeRun);
 
   /** @ngInject */
-  function themeRun($timeout, $rootScope, layoutTheme, layoutPaths, preloader, $q, baSidebarService) {
-
-    $rootScope.$isMobile =  (/android|webos|iphone|ipad|ipod|blackberry|windows phone/).test(navigator.userAgent.toLowerCase());
-    $rootScope.$blurTheme = layoutTheme.blur;
-
+  function themeRun($timeout, $rootScope, layoutPaths, preloader, $q, baSidebarService, themeLayoutSettings) {
     var whatToWait = [
       preloader.loadAmCharts(),
       $timeout(3000)
     ];
 
-    if ($rootScope.$isMobile) {
-      whatToWait.unshift(preloader.loadImg(layoutPaths.images.root + 'blur-bg-mobile.jpg'));
-    } else {
-      whatToWait.unshift(preloader.loadImg(layoutPaths.images.root + 'blur-bg.jpg'));
-      whatToWait.unshift(preloader.loadImg(layoutPaths.images.root + 'blur-bg-blurred.jpg'));
+    var theme = themeLayoutSettings;
+    if (theme.blur) {
+      if (theme.mobile) {
+        whatToWait.unshift(preloader.loadImg(layoutPaths.images.root + 'blur-bg-mobile.jpg'));
+      } else {
+        whatToWait.unshift(preloader.loadImg(layoutPaths.images.root + 'blur-bg.jpg'));
+        whatToWait.unshift(preloader.loadImg(layoutPaths.images.root + 'blur-bg-blurred.jpg'));
+      }
     }
 
     $q.all(whatToWait).then(function () {
