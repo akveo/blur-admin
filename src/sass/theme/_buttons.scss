@@ -109,14 +109,12 @@ button.btn.btn-danger {
 
 button.btn.btn-inverse {
   @include buttonColor($help-text, $help-text);
-  color: $dropdown-text;
+  color: $label-text;
   &:active, &:target, &:hover {
     background-color: $help-text;
-    color: $dropdown-text;
+    color: $label-text;
   }
 }
-
-
 
 .btn-with-icon {
   i {

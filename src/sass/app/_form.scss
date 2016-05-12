@@ -398,7 +398,7 @@ label.custom-input-danger {
 
 @mixin groupAddon($color) {
   background: $color;
-  color: $default-text;
+  color: $label-text;
   border-color: $color;
 }
 
@@ -450,7 +450,7 @@ label.custom-input-danger {
       border-radius: 5px 5px 0 0;
     }
     .dropdown-menu.open {
-      border: 1px solid;
+      border: 1px solid $border-light;
       border-top: none;
       border-radius: 0 0 5px 5px;
     }

@@ -9,7 +9,6 @@
     height: 260px;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    //background: rgba(0, 0, 0, 0.5);
     .popular-app-img {
       width: 260px;
       position: absolute;
@@ -45,4 +44,8 @@
       padding: 0;
     }
   }
+}
+
+.blur-theme .panel.popular-app .popular-app-img-container {
+  background: rgba(0, 0, 0, 0.5);
 }

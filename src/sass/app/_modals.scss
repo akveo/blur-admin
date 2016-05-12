@@ -4,7 +4,7 @@
   border: none;
   color: $dropdown-text;
   .modal-header {
-    color: $default-text;
+    color: $label-text;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
@@ -76,7 +76,7 @@ $modal-input-border: #e7e7e7;
 }
 
 .modal-content .modal-header .modal-title{
-  color: $dropdown-text;
+  color: $label-text;
 }
 
 .message-modal {
@@ -105,7 +105,7 @@ $modal-input-border: #e7e7e7;
 
 @mixin message-modal-color($color) {
   .modal-header {
-    color: $dropdown-text;
+    color: $label-text;
     background: $color;
   }
 }

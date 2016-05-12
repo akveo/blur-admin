@@ -243,25 +243,32 @@ input.search-input {
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.table > tbody > tr.primary > td {
-  background-color: rgba($primary,0.7);
+
+@mixin color-row($color) {
+  background-color: rgba($color, 0.7);
+  color: $label-text;
   border: none;
+  a.email-link {
+    color: $label-text;
+    &:hover {
+      color: $danger;
+    }
+  }
+}
+.table > tbody > tr.primary > td {
+  @include color-row($primary);
 }
 .table > tbody > tr.success > td {
-  background-color: rgba($success,0.7);
-  border: none;
+  @include color-row($success);
 }
 .table > tbody > tr.warning > td {
-  background-color: rgba($warning,0.7);
-  border: none;
+  @include color-row($warning);
 }
 .table > tbody > tr.danger > td {
-  background-color: rgba($danger,0.7);
-  border: none;
+  @include color-row($danger);
 }
 .table > tbody > tr.info > td {
-  background-color: rgba($info,0.7);
-  border: none;
+  @include color-row($info);
 }
 
 .editable-click, a.editable-click {
