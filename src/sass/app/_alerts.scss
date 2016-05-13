@@ -27,6 +27,7 @@
 
 .bg-success {
   background-color: rgba($success,0.85);
+  color: $label-text;
   a{
     color: $danger-dark;
     &:hover{
@@ -36,6 +37,7 @@
 }
 .bg-info {
   background-color: rgba($info,0.85);
+  color: $label-text;
   a{
     color: $warning-light;
     &:hover{
@@ -45,6 +47,7 @@
 }
 .bg-warning {
   background-color: rgba($warning,0.85);
+  color: $label-text;
   a{
     color: $danger-dark;
     &:hover{
@@ -54,6 +57,7 @@
 }
 .bg-danger {
   background-color: rgba($danger,0.85);
+  color: $label-text;
   a{
     color: $warning-light;
     &:hover{
