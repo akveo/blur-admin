@@ -252,12 +252,12 @@
         },
 
         imagesSettings: {
-          color: layoutColors.warningBg,
+          color: layoutColors.warningLight,
           selectedColor: layoutColors.warning
         },
 
         linesSettings: {
-          color: layoutColors.warningBg,
+          color: layoutColors.warningLight,
           alpha: 0.8
         },
 

@@ -62,12 +62,6 @@
       warningDark: shade(colorScheme.warning, 15),
       dangerDark: shade(colorScheme.danger, 15),
 
-      primaryBg: tint(colorScheme.primary, 20),
-      infoBg: tint(colorScheme.info, 20),
-      successBg: tint(colorScheme.success, 20),
-      warningBg: tint(colorScheme.warning, 20),
-      dangerBg: tint(colorScheme.danger, 20),
-
       dashboard: {
         blueStone: dashboardColors.blueStone,
         surfieGreen: dashboardColors.surfieGreen,
