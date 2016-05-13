@@ -9,7 +9,8 @@
       .controller('PieChartCtrl', PieChartCtrl);
 
   /** @ngInject */
-  function PieChartCtrl($element, layoutPaths, layoutColors) {
+  function PieChartCtrl($element, layoutPaths, baConfig) {
+    var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
     var pieChart = AmCharts.makeChart(id, {
       type: 'pie',

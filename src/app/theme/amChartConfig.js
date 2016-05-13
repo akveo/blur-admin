@@ -9,7 +9,8 @@
       .config(amChartConfig);
 
   /** @ngInject */
-  function amChartConfig(layoutColors) {
+  function amChartConfig(baConfigProvider) {
+    var layoutColors = baConfigProvider.colors;
     AmCharts.themes.blur = {
 
       themeName: "blur",

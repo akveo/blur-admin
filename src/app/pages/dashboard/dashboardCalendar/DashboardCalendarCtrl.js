@@ -9,8 +9,8 @@
       .controller('DashboardCalendarCtrl', DashboardCalendarCtrl);
 
   /** @ngInject */
-  function DashboardCalendarCtrl(layoutColors) {
-    var dashboardColors = layoutColors.dashboard;
+  function DashboardCalendarCtrl(baConfig) {
+    var dashboardColors = baConfig.colors.dashboard;
     var $element = $('#calendar').fullCalendar({
       //height: 335,
       header: {

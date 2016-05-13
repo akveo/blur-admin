@@ -9,10 +9,10 @@
     .controller('chartistCtrl', chartistCtrl);
 
   /** @ngInject */
-  function chartistCtrl($scope, $timeout, layoutColors) {
+  function chartistCtrl($scope, $timeout, baConfig) {
 
     $scope.simpleLineOptions = {
-      color: layoutColors.defaultText,
+      color: baConfig.colors.defaultText,
       fullWidth: true,
       height: "300px",
       chartPadding: {

@@ -9,7 +9,8 @@
       .controller('AreaChartCtrl', AreaChartCtrl);
 
   /** @ngInject */
-  function AreaChartCtrl($scope, layoutColors, $element, layoutPaths) {
+  function AreaChartCtrl($scope, baConfig, $element, layoutPaths) {
+    var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
     var areaChart = AmCharts.makeChart(id, {
       type: 'serial',

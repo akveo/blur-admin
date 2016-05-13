@@ -9,10 +9,10 @@
       .controller('DashboardTodoCtrl', DashboardTodoCtrl);
 
   /** @ngInject */
-  function DashboardTodoCtrl($scope, layoutColors, layoutTheme) {
+  function DashboardTodoCtrl($scope, baConfig) {
 
-    $scope.transparent = layoutTheme.blur;
-    var dashboardColors = layoutColors.dashboard;
+    $scope.transparent = baConfig.theme.blur;
+    var dashboardColors = baConfig.colors.dashboard;
     var colors = [];
     for (var key in dashboardColors) {
       colors.push(dashboardColors[key]);

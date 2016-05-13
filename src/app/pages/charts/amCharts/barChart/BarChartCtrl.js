@@ -9,7 +9,8 @@
       .controller('BarChartCtrl', BarChartCtrl);
 
   /** @ngInject */
-  function BarChartCtrl($scope, layoutColors, $element, layoutPaths) {
+  function BarChartCtrl($scope, baConfig, $element, layoutPaths) {
+    var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
     var barChart = AmCharts.makeChart(id, {
       type: 'serial',

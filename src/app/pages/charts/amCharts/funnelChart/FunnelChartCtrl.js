@@ -9,7 +9,8 @@
       .controller('FunnelChartCtrl', FunnelChartCtrl);
 
   /** @ngInject */
-  function FunnelChartCtrl($scope, $element, layoutPaths, layoutColors) {
+  function FunnelChartCtrl($scope, $element, layoutPaths, baConfig) {
+    var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
     var funnelChart = AmCharts.makeChart(id, {
       type: 'funnel',

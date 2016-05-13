@@ -9,7 +9,7 @@
     .controller('ganttChartCtrl', ganttChartCtrl);
 
   /** @ngInject */
-  function ganttChartCtrl(layoutColors, $element) {
+  function ganttChartCtrl($element) {
     var id = $element[0].getAttribute('id');
     var chart = AmCharts.makeChart( id, {
       "type": "gantt",

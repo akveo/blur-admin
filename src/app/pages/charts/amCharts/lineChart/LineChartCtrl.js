@@ -9,7 +9,8 @@
       .controller('LineChartCtrl', LineChartCtrl);
 
   /** @ngInject */
-  function LineChartCtrl($scope, layoutColors, $element, layoutPaths) {
+  function LineChartCtrl($scope, baConfig, $element, layoutPaths) {
+    var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
     var lineChart = AmCharts.makeChart(id, {
       type: 'serial',

@@ -9,7 +9,8 @@
       .controller('DashboardMapCtrl', DashboardMapCtrl);
 
   /** @ngInject */
-  function DashboardMapCtrl(layoutColors, layoutPaths) {
+  function DashboardMapCtrl(baConfig, layoutPaths) {
+    var layoutColors = baConfig.colors;
     var map = AmCharts.makeChart('amChartMap', {
       type: 'map',
       theme: 'blur',

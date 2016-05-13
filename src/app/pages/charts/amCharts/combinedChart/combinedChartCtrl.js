@@ -9,7 +9,8 @@
     .controller('combinedChartCtrl', combinedChartCtrl);
 
   /** @ngInject */
-  function combinedChartCtrl($element, layoutColors, layoutPaths) {
+  function combinedChartCtrl($element, baConfig, layoutPaths) {
+    var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
     var chart = AmCharts.makeChart(id, {
       "type": "serial",

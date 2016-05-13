@@ -9,7 +9,8 @@
     .config(chartJsConfig);
 
   /** @ngInject */
-  function chartJsConfig(ChartJsProvider, layoutColors) {
+  function chartJsConfig(ChartJsProvider, baConfigProvider) {
+    var layoutColors = baConfigProvider.colors;
     // Configure all charts
     ChartJsProvider.setOptions({
       colours: [ layoutColors.primary, layoutColors.danger, layoutColors.warning, layoutColors.success, layoutColors.info, layoutColors.default, layoutColors.primaryDark, layoutColors.successDark, layoutColors.warningLight, layoutColors.successLight, layoutColors.primaryLight],
