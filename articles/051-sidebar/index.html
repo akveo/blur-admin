@@ -47,15 +47,15 @@
         </div>
         <div class="inner-content">
           <h1>Sidebar</h1>
-          <div class="subHeader"></div><p>Sidebar is used to provide convenient way of navigation in our application. 
+          <div class="subHeader"></div><p>Sidebar is used to provide convenient way of navigation in the application. 
 Application support only one sidebar per angular application. 
 That means sidebar is basically a singletone object.
 Currently sidebar supports level 1 and 2 sub&nbsp;menus.</p>
 <p>Sidebar can be created using <code>baSidebar</code> directive:</p>
 <pre><code class="lang-html"><span class="tag">&lt;<span class="name">ba-sidebar</span>&gt;</span><span class="tag">&lt;/<span class="name">ba-sidebar</span>&gt;</span>
 </code></pre>
-<p>For now it support only javascript configuration. And can be configured manually or via <code>ui-router</code> states.
-They can be used either combined or one at a&nbsp;time.</p>
+<p>For now it support only javascript configuration. Though it can be configured manually or via <code>ui-router</code> states.
+This methods can be used either together or one at a&nbsp;time.</p>
 <h2 id="manual-configuration">Manual&nbsp;configuration</h2>
 <p>For manual configuration you need to use <code>baSidebarServiceProvider</code> provider in angular <a href="https://docs.angularjs.org/guide/module#configuration-blocks">configuration block</a>.
 The provider has <code>addStaticItem</code> method, which receives menuItem object as an argument, which can have following&nbsp;properties:</p>
@@ -78,7 +78,7 @@ The provider has <code>addStaticItem</code> method, which receives menuItem obje
 <tr>
 <td>icon</td>
 <td>String</td>
-<td>Icon (it’s class name) to be displayed near title</td>
+<td>Icon (it’s a class name) to be displayed near title</td>
 </tr>
 
 <tr>
@@ -108,12 +108,18 @@ The provider has <code>addStaticItem</code> method, which receives menuItem obje
 </tbody>
 </table>
 
+<p>Sample manual&nbsp;configuration:</p>
+<pre><code class="lang-javascript">    baSidebarServiceProvider.addStaticItem({
+      title: <span class="string">'Menu Level 1'</span>,
+      icon: <span class="string">'ion-ios-more'</span>
+    });
+</code></pre>
 <h2 id="route-configuration">Route&nbsp;configuration</h2>
-<p>By default sidebar iterates through all <strong>ui-router</strong> states you defined in your application and looks for <code>sidebarMeta</code> property in them.
-For each state with this property found sidebar element is&nbsp;created. </p>
+<p>By default sidebar iterates through all <strong>ui-router</strong> states you defined in your application and searches for <code>sidebarMeta</code> object in them.
+For each state, which has this property, sidebar element is&nbsp;created. </p>
 <p>States are being grouped hierarchically. 
-That means if there’s parent abstract state for some state and they both have <code>sidebarMeta</code> property, it will be displayed as a sub item of that abstract state menu&nbsp;item.  </p>
-<p>Name of the item is taken from <code>state</code>‘s <code>title</code> property. Sample state configuration, which will be included in&nbsp;sidebar:</p>
+That means if there’s a parent abstract state for some state and they both have <code>sidebarMeta</code> property, it will be displayed as a sub item of that abstract state’s menu&nbsp;item.  </p>
+<p>Name of the item is taken from <code>state</code>‘s <code>title</code> property. Sample state configuration, which will add an item to&nbsp;sidebar:</p>
 <pre><code class="lang-javascript">$stateProvider
         .state(<span class="string">'dashboard'</span>, {
           url: <span class="string">'/dashboard'</span>,
@@ -139,7 +145,7 @@ That means if there’s parent abstract state for some state and they both have 
 <tr>
 <td>icon</td>
 <td>String</td>
-<td>Icon (it’s class name) to be displayed near title</td>
+<td>Icon (it’s a class name) to be displayed near title</td>
 </tr>
 
 <tr>

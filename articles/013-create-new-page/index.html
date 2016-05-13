@@ -49,13 +49,13 @@
           <h1>Create New Page</h1>
           <div class="subHeader"></div><p>Blur admin uses <a href="https://github.com/angular-ui/ui-router">Angular <span class="caps">UI</span> router</a> for navigation. 
 That means to create new page you need to basically configure <code>ui-router</code> state.</p>
-<p>We strongly recommend to follow pages structure in our application. 
+<p>We strongly recommend to follow pages structure in your application. 
 If it doesn’t fit your needs please create a GitHub issue and tell us why. We would be glad to&nbsp;discuss. </p>
 <p>Also we recommend to put pages to separate modules. 
 This will allow you to easily switch off some pages in the future if&nbsp;needed.</p>
 <h2 id="page-creation-example">Page creation&nbsp;example</h2>
 <p>0) Let’s assume we want to create a blank page with title ‘My New&nbsp;Page’</p>
-<p>1) Create new folder to contain <code>myNewPage</code> inside of <code>src/app/pages</code>. Let’s call it <code>myNewPage</code> as&nbsp;well.</p>
+<p>1) Let’s Create a new directory to contain our new page inside of <code>src/app/pages</code>. Let’s call this directory <code>myNewPage</code>.</p>
 <p>2) Then let’s create blank angular module to contain our page called ‘myNewPage.module.js’ inside of <code>src/app/pages/myNewPage</code>:</p>
 <pre><code class="lang-javascript">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
 <span class="meta">  'use strict'</span>;
@@ -64,14 +64,14 @@ This will allow you to easily switch off some pages in the future if&nbsp;needed
       .config(routeConfig);
 
   <span class="comment">/** @ngInject */</span>
-  <span class="function"><span class="keyword">function</span> <span class="title">routeConfig</span>(<span class="params">$stateProvider</span>) </span>{
+  <span class="function"><span class="keyword">function</span> <span class="title">routeConfig</span>(<span class="params"></span>) </span>{
 
   }
 
 })();
 </code></pre>
 <p>3) Then let’s create empty html file called <code>my-new-page.html</code> inside of <code>src/app/pages/myNewPage</code>.</p>
-<p>4) Lastly let’s create ui router state for this page. To do this we need to modify&nbsp;:</p>
+<p>4) Lastly let’s create ui router state for this page. To do this we need to modify module.js file we created on step&nbsp;2:</p>
 <pre><code class="lang-javascript">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
 <span class="meta">  'use strict'</span>;
 
