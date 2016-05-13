@@ -812,6 +812,19 @@ figure {
     max-width: 100%;
 }
 
+.inner-content table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.inner-content th, .inner-content td {
+    padding: 0.25rem;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+.inner-content tbody tr:nth-child(odd) {
+    background: #eee;
+}
+
 h1:after {
     content: "";
     display: table;
