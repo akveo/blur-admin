@@ -6,7 +6,7 @@ group: Components
 template: article.jade
 ---
 
-Sidebar is used to provide convenient way of navigation in our application. 
+Sidebar is used to provide convenient way of navigation in the application. 
 Application support only one sidebar per angular application. 
 That means sidebar is basically a singletone object.
 Currently sidebar supports level 1 and 2 sub menus.
@@ -16,9 +16,8 @@ Sidebar can be created using `baSidebar` directive:
 <ba-sidebar></ba-sidebar>
 ```
 
-
-For now it support only javascript configuration. And can be configured manually or via `ui-router` states.
-They can be used either combined or one at a time.
+For now it support only javascript configuration. Though it can be configured manually or via `ui-router` states.
+This methods can be used either together or one at a time.
 
 
 ## Manual configuration
@@ -45,7 +44,7 @@ The provider has `addStaticItem` method, which receives menuItem object as an ar
 <tr>
 <td>icon</td>
 <td>String</td>
-<td>Icon (it's class name) to be displayed near title</td>
+<td>Icon (it's a class name) to be displayed near title</td>
 </tr>
 
 <tr>
@@ -75,15 +74,23 @@ The provider has `addStaticItem` method, which receives menuItem object as an ar
 </tbody>
 </table>
 
+Sample manual configuration:
+```javascript
+    baSidebarServiceProvider.addStaticItem({
+      title: 'Menu Level 1',
+      icon: 'ion-ios-more'
+    });
+```
+
 ## Route configuration
 
-By default sidebar iterates through all **ui-router** states you defined in your application and looks for `sidebarMeta` property in them.
-For each state with this property found sidebar element is created. 
+By default sidebar iterates through all **ui-router** states you defined in your application and searches for `sidebarMeta` object in them.
+For each state, which has this property, sidebar element is created. 
 
 States are being grouped hierarchically. 
-That means if there's parent abstract state for some state and they both have `sidebarMeta` property, it will be displayed as a sub item of that abstract state menu item.  
+That means if there's a parent abstract state for some state and they both have `sidebarMeta` property, it will be displayed as a sub item of that abstract state's menu item.  
 
-Name of the item is taken from `state`'s `title` property. Sample state configuration, which will be included in sidebar:
+Name of the item is taken from `state`'s `title` property. Sample state configuration, which will add an item to sidebar:
 ```javascript
 $stateProvider
         .state('dashboard', {
@@ -112,7 +119,7 @@ $stateProvider
 <tr>
 <td>icon</td>
 <td>String</td>
-<td>Icon (it's class name) to be displayed near title</td>
+<td>Icon (it's a class name) to be displayed near title</td>
 </tr>
 
 <tr>
