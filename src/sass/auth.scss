@@ -14,14 +14,16 @@ body {
   height: 100%;
 }
 
+$text-color: #ffffff;
+
 .form-control, .form-control:focus {
-  @include placeholderStyle($default, 0.9);
+  @include placeholderStyle($text-color, 0.9);
   background-color: rgba(0, 0, 0, .4);
   border-radius: 5px;
-  color: $default;
+  color: $text-color;
 }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-  @include placeholderStyle($default, 0.6);
+  @include placeholderStyle($text-color, 0.6);
 }
 
 .auth-main {
@@ -58,7 +60,7 @@ body {
 
   .control-label {
     padding-top: 11px;
-    color: $default;
+    color: $text-color;
   }
 
   .form-group {
@@ -108,14 +110,14 @@ a.forgot-pass {
     width: 30%;
     white-space: nowrap;
     padding: 0 24px;
-    color: $default;
+    color: $text-color;
     & > span {
       margin-top: -12px;
       display: block;
     }
   }
   &:before, &:after {
-    border-top: solid 1px $default;
+    border-top: solid 1px $text-color;
     content: "";
     height: 1px;
     width: 35%;
