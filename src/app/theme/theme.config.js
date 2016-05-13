@@ -10,12 +10,12 @@
 
   /** @ngInject */
   function config(baConfigProvider, colorHelper) {
-    baConfigProvider.theme.blur = false;
-
-    var colors = baConfigProvider.colors;
-    colors.default = '#ffffff';
-    colors.defaultText = '#666666';
-    colors.dashboard.white = '#10c4b5';
-    colors.dashboard.whiteDark = colorHelper.shade(colors.dashboard.white, 5);
+    //baConfigProvider.theme.blur = false;
+    //
+    //var colors = baConfigProvider.colors;
+    //colors.default = '#ffffff';
+    //colors.defaultText = '#666666';
+    //colors.dashboard.white = '#10c4b5';
+    //colors.dashboard.whiteDark = colorHelper.shade(colors.dashboard.white, 5);
   }
 })();
