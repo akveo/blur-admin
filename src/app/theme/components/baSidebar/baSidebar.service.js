@@ -50,6 +50,19 @@
           isMenuCollapsed = !isMenuCollapsed;
         };
 
+        this.getAllStateRefsRecursive = function(item) {
+          var result = [];
+          _iterateSubItems(item);
+          return result;
+
+          function _iterateSubItems(currentItem) {
+            currentItem.subMenu && currentItem.subMenu.forEach(function(subItem) {
+              subItem.stateRef && result.push(subItem.stateRef);
+              _iterateSubItems(subItem);
+            });
+          }
+        };
+
         function defineMenuItemStates() {
           return $state.get()
               .filter(function(s) {

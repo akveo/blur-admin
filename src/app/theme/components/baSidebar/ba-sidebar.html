@@ -2,14 +2,15 @@
        ng-mouseleave="hoverElemTop=selectElemTop">
   <ul class="al-sidebar-list" slimscroll="{height: '{{menuHeight}}px'}" slimscroll-watch="menuHeight" >
     <li ng-repeat="item in ::menuItems" class="al-sidebar-list-item"
-        ng-class="::{'with-sub-menu': item.subMenu}" ui-sref-active="selected">
+        ng-class="::{'with-sub-menu': item.subMenu}" ui-sref-active="selected"
+        ba-sidebar-toggling-item="item">
 
       <a ng-mouseenter="hoverItem($event, item)" ui-state="item.stateRef || ''" ng-href="{{::(item.fixedHref ? item.fixedHref: '')}}" ng-if="::!item.subMenu" class="al-sidebar-list-link">
         <i class="{{ ::item.icon }}"></i><span>{{ ::item.title }}</span>
       </a>
 
       <a ng-mouseenter="hoverItem($event, item)" ng-if="::item.subMenu"
-         class="al-sidebar-list-link" ba-ui-sref-toggler="item.stateRef">
+         class="al-sidebar-list-link" ba-ui-sref-toggler>
         <i class="{{ ::item.icon }}"></i><span>{{ ::item.title }}</span>
         <b class="fa fa-angle-down" ui-sref-active="fa-angle-up"
            ng-if="::item.subMenu"></b>
@@ -17,16 +18,17 @@
 
       <ul ng-if="::item.subMenu" class="al-sidebar-sublist"
           ng-class="{'slide-right': item.slideRight}"
-          ba-ui-sref-toggling-submenu="item.stateRef">
-        <li ng-repeat="subitem in ::item.subMenu" ng-class="::{'with-sub-menu': subitem.subMenu}" ui-sref-active="selected" class="ba-sidebar-sublist-item">
-          <a ng-mouseenter="hoverItem($event, item)" ng-if="::subitem.subMenu" ba-ui-sref-toggler="subitem.stateRef"
+          ba-ui-sref-toggling-submenu>
+        <li ng-repeat="subitem in ::item.subMenu" ng-class="::{'with-sub-menu': subitem.subMenu}" ui-sref-active="selected"
+            ba-sidebar-toggling-item="subitem" class="ba-sidebar-sublist-item">
+          <a ng-mouseenter="hoverItem($event, item)" ng-if="::subitem.subMenu" ba-ui-sref-toggler
              class="al-sidebar-list-link subitem-submenu-link"><span>{{ ::subitem.title }}</span>
             <b class="fa" ng-class="{'fa-angle-up': subitem.expanded, 'fa-angle-down': !subitem.expanded}"
                ng-if="::subitem.subMenu"></b>
           </a>
           <ul ng-if="::subitem.subMenu" class="al-sidebar-sublist subitem-submenu-list"
               ng-class="{expanded: subitem.expanded, 'slide-right': subitem.slideRight}"
-              ba-ui-sref-toggling-submenu="subitem.stateRef">
+              ba-ui-sref-toggling-submenu>
             <li ng-mouseenter="hoverItem($event, item)" ng-repeat="subSubitem in ::subitem.subMenu" ui-sref-active="selected">
               <a ng-mouseenter="hoverItem($event, item)" ui-state="subSubitem.stateRef || ''" ng-href="{{::(subSubitem.fixedHref ? subSubitem.fixedHref: '')}}">{{
                 ::subSubitem.title }}</a>
