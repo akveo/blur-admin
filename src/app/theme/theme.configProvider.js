@@ -6,8 +6,8 @@
   'use strict';
 
   var basic = {
-    default: 'rgba(#000000, 0.2)',
-    defaultText: '#ffffff',
+    default: '#ffffff',
+    defaultText: '#666666',
     border: '#dddddd',
     borderDark: '#aaaaaa',
   };
@@ -27,7 +27,7 @@
     surfieGreen: '#0e8174',
     silverTree: '#6eba8c',
     gossip: '#b9f2a1',
-    white: '#ffffff',
+    white: '#10c4b5',
   };
 
   angular.module('BlurAdmin.theme')
@@ -37,7 +37,7 @@
   function configProvider(colorHelper) {
     var conf = {
       theme: {
-        blur: true,
+        blur: false,
       },
       colors: {
         default: basic.default,

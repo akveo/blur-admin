@@ -10,12 +10,14 @@
 
   /** @ngInject */
   function config(baConfigProvider, colorHelper) {
-    //baConfigProvider.theme.blur = false;
+    //baConfigProvider.changeTheme({blur: true});
     //
-    //var colors = baConfigProvider.colors;
-    //colors.default = '#ffffff';
-    //colors.defaultText = '#666666';
-    //colors.dashboard.white = '#10c4b5';
-    //colors.dashboard.whiteDark = colorHelper.shade(colors.dashboard.white, 5);
+    //baConfigProvider.changeColors({
+    //  default: 'rgba(#000000, 0.2)',
+    //  defaultText: '#ffffff',
+    //  dashboard: {
+    //    white: '#ffffff',
+    //  },
+    //});
   }
 })();
