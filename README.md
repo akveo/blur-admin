@@ -2,12 +2,13 @@
 
 Customizable admin panel framework made with :heart: by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
 
-Documentation (installation, customization, components etc.): https://akveo.github.io/blur-admin/
-
-## Demo
+### Demo
 **[Mint version demo](http://akveo.com/blur-admin/#/dashboard)**             |  **[Blur version demo](http://akveo.com/blur-admin/#/dashboard)**
 :-------------------------:|:-------------------------:
 ![Mint demo](http://i.imgur.com/A3TMviJ.png)  |  ![Blur demo](http://i.imgur.com/yOZPlps.jpg)
+
+### Documentation
+Installation, customization and other useful articles: https://akveo.github.io/blur-admin/
 
 ## How can I support developers?
 - Star our GitHub repo
