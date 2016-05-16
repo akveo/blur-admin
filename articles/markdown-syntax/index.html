@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="admin,dashboard,template,angular,bootstrap,blur,panel,html,css,javascript">
+    <title>BlurAdmin documentation - Markdown syntax</title>
+    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Ramblings of an immor(t)al demigod">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900|Anonymous+Pro:400,700,400italic,700italic&amp;subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic">
+    <link rel="stylesheet" href="/blur-admin/css/main.css">
+    <link rel="shortcut icon" href="/blur-admin/images/favicon.png">
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav-main">
+        <div class="wrap"><a href="/blur-admin/" class="nav-home"><img src="/blur-admin/images/blur-admin-logo.png" width="36" height="36" class="nav-logo">&nbsp;<span class="blur-label">Blur</span>Admin</a>
+          <ul class="nav-site nav-site-internal">
+            <li><a href="/blur-admin/">Home</a></li>
+            <li><a href="/blur-admin/articles/red-herring/" class="active">Docs</a></li>
+          </ul><span class="nav-docs-right">Need some help? Let us know! <a href="mailto:help@akveo.com">help@akveo.com</a></span>
+        </div>
+      </div>
+      <section class="content wrap documentationContent">
+        <div class="nav-docs">
+          <div class="nav-docs section">
+            <h3>Second Group</h3>
+            <ul>
+              <li><a href="/blur-admin/articles/red-herring/">A red herring</a></li>
+              <li><a href="/blur-admin/articles/bamboo-cutter/">Taketori Monogatari</a></li>
+            </ul>
+          </div>
+          <div class="nav-docs section">
+            <h3>First Group</h3>
+            <ul>
+              <li><a href="/blur-admin/articles/another-test/">Code and stuff!</a></li>
+              <li><a href="/blur-admin/articles/hello-world/">README</a></li>
+            </ul>
+          </div>
+          <div class="nav-docs section">
+            <h3>Third Group</h3>
+            <ul>
+              <li><a href="/blur-admin/articles/markdown-syntax/" class="active">Markdown syntax</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="inner-content">
+          <h1>Markdown syntax</h1>
+          <div class="subHeader"></div><p>Full markdown syntax taken from John Gruber’s <a href="http://daringfireball.net/projects/markdown/syntax">Daring Fireball</a>.
+Did you know that 9 out of 10 bloggers prefer to write in&nbsp;markdown?</p>
+<hr>
+<h1 id="markdown-syntax">Markdown:&nbsp;Syntax</h1>
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#philosophy">Philosophy</a></li>
+<li><a href="#html">Inline&nbsp;<span class="caps">HTML</span></a></li>
+<li><a href="#autoescape">Automatic Escaping for Special&nbsp;Characters</a></li>
+</ul>
+</li>
+<li><a href="#block">Block Elements</a><ul>
+<li><a href="#p">Paragraphs and Line&nbsp;Breaks</a></li>
+<li><a href="#header">Headers</a></li>
+<li><a href="#blockquote">Blockquotes</a></li>
+<li><a href="#list">Lists</a></li>
+<li><a href="#precode">Code&nbsp;Blocks</a></li>
+<li><a href="#hr">Horizontal&nbsp;Rules</a></li>
+</ul>
+</li>
+<li><a href="#span">Span Elements</a><ul>
+<li><a href="#link">Links</a></li>
+<li><a href="#em">Emphasis</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#img">Images</a></li>
+</ul>
+</li>
+<li><a href="#misc">Miscellaneous</a><ul>
+<li><a href="#backslash">Backslash&nbsp;Escapes</a></li>
+<li><a href="#autolink">Automatic&nbsp;Links</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>Note:</strong> This document is itself written using Markdown; you
+can <a href="/projects/markdown/syntax.text">see the source for it by adding ‘.text’ to the <span class="caps">URL</span></a>.</p>
+<hr>
+<h2 id="overview">Overview</h2>
+
+<h3 id="philosophy">Philosophy</h3>
+
+<p>Markdown is intended to be as easy-to-read and easy-to-write as is&nbsp;feasible.</p>
+<p>Readability, however, is emphasized above all else. A Markdown-formatted
+document should be publishable as-is, as plain text, without looking
+like it’s been marked up with tags or formatting instructions. While
+Markdown’s syntax has been influenced by several existing text-to-<span class="caps">HTML</span>
+filters – including <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a>, <a href="http://www.aaronsw.com/2002/atx/">atx</a>, <a href="http://textism.com/tools/textile/">Textile</a>, <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a>,
+<a href="http://www.triptico.com/software/grutatxt.html">Grutatext</a>, and <a href="http://ettext.taint.org/doc/">EtText</a> – the single biggest source of
+inspiration for Markdown’s syntax is the format of plain text&nbsp;email.</p>
+<p>To this end, Markdown’s syntax is comprised entirely of punctuation
+characters, which punctuation characters have been carefully chosen so
+as to look like what they mean. E.g., asterisks around a word actually
+look like *emphasis*. Markdown lists look like, well, lists. Even
+blockquotes look like quoted passages of text, assuming you’ve ever
+used&nbsp;email.</p>
+<h3 id="html">Inline&nbsp;<span class="caps">HTML</span></h3>
+
+<p>Markdown’s syntax is intended for one purpose: to be used as a
+format for <em>writing</em> for the&nbsp;web.</p>
+<p>Markdown is not a replacement for <span class="caps">HTML</span>, or even close to it. Its
+syntax is very small, corresponding only to a very small subset of
+HTML tags. The idea is <em>not</em> to create a syntax that makes it easier
+to insert <span class="caps">HTML</span> tags. In my opinion, HTML tags are already easy to
+insert. The idea for Markdown is to make it easy to read, write, and
+edit prose. HTML is a <em>publishing</em> format; Markdown is a <em>writing</em>
+format. Thus, Markdown’s formatting syntax only addresses issues that
+can be conveyed in plain&nbsp;text.</p>
+<p>For any markup that is not covered by Markdown’s syntax, you simply
+use <span class="caps">HTML</span> itself. There’s no need to preface it or delimit it to
+indicate that you’re switching from Markdown to HTML; you just use
+the&nbsp;tags.</p>
+<p>The only restrictions are that block-level <span class="caps">HTML</span> elements – e.g. <code>&lt;div&gt;</code>,
+<code>&lt;table&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;p&gt;</code>, etc. – must be separated from surrounding
+content by blank lines, and the start and end tags of the block should
+not be indented with tabs or spaces. Markdown is smart enough not
+to add extra (unwanted) <code>&lt;p&gt;</code> tags around <span class="caps">HTML</span> block-level&nbsp;tags.</p>
+<p>For example, to add an <span class="caps">HTML</span> table to a Markdown&nbsp;article:</p>
+<pre><code>This is a regular paragraph.
+
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Foo&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+This is another regular paragraph.
+</code></pre><p>Note that Markdown formatting syntax is not processed within block-level
+<span class="caps">HTML</span> tags. E.g., you can’t use Markdown-style <code>*emphasis*</code> inside an
+<span class="caps">HTML</span>&nbsp;block.</p>
+<p>Span-level <span class="caps">HTML</span> tags – e.g. <code>&lt;span&gt;</code>, <code>&lt;cite&gt;</code>, or <code>&lt;del&gt;</code> – can be
+used anywhere in a Markdown paragraph, list item, or header. If you
+want, you can even use <span class="caps">HTML</span> tags instead of Markdown formatting; e.g. if
+you’d prefer to use HTML <code>&lt;a&gt;</code> or <code>&lt;img&gt;</code> tags instead of Markdown’s
+link or image syntax, go right&nbsp;ahead.</p>
+<p>Unlike block-level <span class="caps">HTML</span> tags, Markdown syntax <em>is</em> processed within
+span-level&nbsp;tags.</p>
+<h3 id="autoescape">Automatic Escaping for Special&nbsp;Characters</h3>
+
+<p>In <span class="caps">HTML</span>, there are two characters that demand special treatment: <code>&lt;</code>
+and <code>&amp;</code>. Left angle brackets are used to start tags; ampersands are
+used to denote <span class="caps">HTML</span> entities. If you want to use them as literal
+characters, you must escape them as entities, e.g. <code>&amp;lt;</code>, and
+<code>&amp;amp;</code>.</p>
+<p>Ampersands in particular are bedeviling for web writers. If you want to
+write about ‘<span class="caps">AT</span>&amp;T’, you need to write ‘<code>AT&amp;amp;T</code>‘. You even need to
+escape ampersands within URLs. Thus, if you want to link&nbsp;to:</p>
+<pre><code>http://images.google.com/images?num=30&amp;q=larry+bird
+</code></pre><p>you need to encode the <span class="caps">URL</span>&nbsp;as:</p>
+<pre><code>http://images.google.com/images?num=30&amp;amp;q=larry+bird
+</code></pre><p>in your anchor tag <code>href</code> attribute. Needless to say, this is easy to
+forget, and is probably the single most common source of <span class="caps">HTML</span> validation
+errors in otherwise well-marked-up web&nbsp;sites.</p>
+<p>Markdown allows you to use these characters naturally, taking care of
+all the necessary escaping for you. If you use an ampersand as part of
+an <span class="caps">HTML</span> entity, it remains unchanged; otherwise it will be translated
+into <code>&amp;amp;</code>.</p>
+<p>So, if you want to include a copyright symbol in your article, you can&nbsp;write:</p>
+<pre><code>&amp;copy;
+</code></pre><p>and Markdown will leave it alone. But if you&nbsp;write:</p>
+<pre><code>AT&amp;T
+</code></pre><p>Markdown will translate it&nbsp;to:</p>
+<pre><code>AT&amp;amp;T
+</code></pre><p>Similarly, because Markdown supports <a href="#html">inline <span class="caps">HTML</span></a>, if you use
+angle brackets as delimiters for <span class="caps">HTML</span> tags, Markdown will treat them as
+such. But if you&nbsp;write:</p>
+<pre><code>4 &lt; 5
+</code></pre><p>Markdown will translate it&nbsp;to:</p>
+<pre><code>4 &amp;lt; 5
+</code></pre><p>However, inside Markdown code spans and blocks, angle brackets and
+ampersands are <em>always</em> encoded automatically. This makes it easy to use
+Markdown to write about <span class="caps">HTML</span> code. (As opposed to raw HTML, which is a
+terrible format for writing about HTML syntax, because every single <code>&lt;</code>
+and <code>&amp;</code> in your example code needs to be&nbsp;escaped.)</p>
+<hr>
+<h2 id="block">Block&nbsp;Elements</h2>
+
+
+<h3 id="p">Paragraphs and Line&nbsp;Breaks</h3>
+
+<p>A paragraph is simply one or more consecutive lines of text, separated
+by one or more blank lines. (A blank line is any line that looks like a
+blank line – a line containing nothing but spaces or tabs is considered
+blank.) Normal paragraphs should not be indented with spaces or&nbsp;tabs.</p>
+<p>The implication of the “one or more consecutive lines of text” rule is
+that Markdown supports “hard-wrapped” text paragraphs. This differs
+significantly from most other text-to-<span class="caps">HTML</span> formatters (including Movable
+Type’s “Convert Line Breaks” option) which translate every line break
+character in a paragraph into a <code>&lt;br /&gt;</code> tag.</p>
+<p>When you <em>do</em> want to insert a <code>&lt;br /&gt;</code> break tag using Markdown, you
+end a line with two or more spaces, then type&nbsp;return.</p>
+<p>Yes, this takes a tad more effort to create a <code>&lt;br /&gt;</code>, but a simplistic
+“every line break is a <code>&lt;br /&gt;</code>“ rule wouldn’t work for Markdown.
+Markdown’s email-style <a href="#blockquote">blockquoting</a> and multi-paragraph <a href="#list">list items</a>
+work best – and look better – when you format them with hard&nbsp;breaks.</p>
+<h3 id="header">Headers</h3>
+
+<p>Markdown supports two styles of headers, <a href="http://docutils.sourceforge.net/mirror/setext.html">Setext</a> and <a href="http://www.aaronsw.com/2002/atx/">atx</a>.</p>
+<p>Setext-style headers are “underlined” using equal signs (for first-level
+headers) and dashes (for second-level headers). For&nbsp;example:</p>
+<pre><code>This is an H1
+=============
+
+This is an H2
+-------------
+</code></pre><p>Any number of underlining <code>=</code>‘s or <code>-</code>‘s will&nbsp;work.</p>
+<p>Atx-style headers use 1-6 hash characters at the start of the line,
+corresponding to header levels 1-6. For&nbsp;example:</p>
+<pre><code># This is an H1
+
+## This is an H2
+
+###### This is an H6
+</code></pre><p>Optionally, you may “close” atx-style headers. This is purely
+cosmetic – you can use this if you think it looks better. The
+closing hashes don’t even need to match the number of hashes
+used to open the header. (The number of opening hashes
+determines the header level.)&nbsp;:</p>
+<pre><code># This is an H1 #
+
+## This is an H2 ##
+
+### This is an H3 ######
+</code></pre><h3 id="blockquote">Blockquotes</h3>
+
+<p>Markdown uses email-style <code>&gt;</code> characters for blockquoting. If you’re
+familiar with quoting passages of text in an email message, then you
+know how to create a blockquote in Markdown. It looks best if you hard
+wrap the text and put a <code>&gt;</code> before every&nbsp;line:</p>
+<pre><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+&gt;
+&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+&gt; id sem consectetuer libero luctus adipiscing.
+</code></pre><p>Markdown allows you to be lazy and only put the <code>&gt;</code> before the first
+line of a hard-wrapped&nbsp;paragraph:</p>
+<pre><code>&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+
+&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+id sem consectetuer libero luctus adipiscing.
+</code></pre><p>Blockquotes can be nested (i.e. a blockquote-in-a-blockquote) by
+adding additional levels of <code>&gt;</code>:</p>
+<pre><code>&gt; This is the first level of quoting.
+&gt;
+&gt; &gt; This is nested blockquote.
+&gt;
+&gt; Back to the first level.
+</code></pre><p>Blockquotes can contain other Markdown elements, including headers, lists,
+and code&nbsp;blocks:</p>
+<blockquote>
+<h2 id="this-is-a-header-">This is a&nbsp;header.</h2>
+<ol>
+<li>This is the first list&nbsp;item.</li>
+<li>This is the second list&nbsp;item.</li>
+</ol>
+<p>Here’s some example&nbsp;code:</p>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);
+</code></pre></blockquote>
+<p>Any decent text editor should make email-style quoting easy. For
+example, with BBEdit, you can make a selection and choose Increase
+Quote Level from the Text&nbsp;menu.</p>
+<h3 id="list">Lists</h3>
+
+<p>Markdown supports ordered (numbered) and unordered (bulleted)&nbsp;lists.</p>
+<p>Unordered lists use asterisks, pluses, and hyphens – interchangably
+– as list&nbsp;markers:</p>
+<pre><code>*   Red
+*   Green
+*   Blue
+</code></pre><p>is equivalent&nbsp;to:</p>
+<pre><code>+   Red
++   Green
++   Blue
+</code></pre><p>and:</p>
+<pre><code>-   Red
+-   Green
+-   Blue
+</code></pre><p>Ordered lists use numbers followed by&nbsp;periods:</p>
+<pre><code>1.  Bird
+2.  McHale
+3.  Parish
+</code></pre><p>It’s important to note that the actual numbers you use to mark the
+list have no effect on the <span class="caps">HTML</span> output Markdown produces. The HTML
+Markdown produces from the above list&nbsp;is:</p>
+<pre><code>&lt;ol&gt;
+&lt;li&gt;Bird&lt;/li&gt;
+&lt;li&gt;McHale&lt;/li&gt;
+&lt;li&gt;Parish&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre><p>If you instead wrote the list in Markdown like&nbsp;this:</p>
+<pre><code>1.  Bird
+1.  McHale
+1.  Parish
+</code></pre><p>or&nbsp;even:</p>
+<pre><code>3. Bird
+1. McHale
+8. Parish
+</code></pre><p>you’d get the exact same <span class="caps">HTML</span> output. The point is, if you want to,
+you can use ordinal numbers in your ordered Markdown lists, so that
+the numbers in your source match the numbers in your published HTML.
+But if you want to be lazy, you don’t have&nbsp;to.</p>
+<p>If you do use lazy list numbering, however, you should still start the
+list with the number 1. At some point in the future, Markdown may support
+starting ordered lists at an arbitrary&nbsp;number.</p>
+<p>List markers typically start at the left margin, but may be indented by
+up to three spaces. List markers must be followed by one or more spaces
+or a&nbsp;tab.</p>
+<p>To make lists look nice, you can wrap items with hanging&nbsp;indents:</p>
+<pre><code>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+    viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+    Suspendisse id sem consectetuer libero luctus adipiscing.
+</code></pre><p>But if you want to be lazy, you don’t have&nbsp;to:</p>
+<pre><code>*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,
+viverra nec, fringilla in, laoreet vitae, risus.
+*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.
+Suspendisse id sem consectetuer libero luctus adipiscing.
+</code></pre><p>If list items are separated by blank lines, Markdown will wrap the
+items in <code>&lt;p&gt;</code> tags in the <span class="caps">HTML</span> output. For example, this&nbsp;input:</p>
+<pre><code>*   Bird
+*   Magic
+</code></pre><p>will turn&nbsp;into:</p>
+<pre><code>&lt;ul&gt;
+&lt;li&gt;Bird&lt;/li&gt;
+&lt;li&gt;Magic&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>But&nbsp;this:</p>
+<pre><code>*   Bird
+
+*   Magic
+</code></pre><p>will turn&nbsp;into:</p>
+<pre><code>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Bird&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Magic&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p>List items may consist of multiple paragraphs. Each subsequent
+paragraph in a list item must be indented by either 4 spaces
+or one&nbsp;tab:</p>
+<pre><code>1.  This is a list item with two paragraphs. Lorem ipsum dolor
+    sit amet, consectetuer adipiscing elit. Aliquam hendrerit
+    mi posuere lectus.
+
+    Vestibulum enim wisi, viverra nec, fringilla in, laoreet
+    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum
+    sit amet velit.
+
+2.  Suspendisse id sem consectetuer libero luctus adipiscing.
+</code></pre><p>It looks nice if you indent every line of the subsequent
+paragraphs, but here again, Markdown will allow you to be&nbsp;lazy:</p>
+<pre><code>*   This is a list item with two paragraphs.
+
+    This is the second paragraph in the list item. You&#39;re
+only required to indent the first line. Lorem ipsum dolor
+sit amet, consectetuer adipiscing elit.
+
+*   Another item in the same list.
+</code></pre><p>To put a blockquote within a list item, the blockquote’s <code>&gt;</code>
+delimiters need to be&nbsp;indented:</p>
+<pre><code>*   A list item with a blockquote:
+
+    &gt; This is a blockquote
+    &gt; inside a list item.
+</code></pre><p>To put a code block within a list item, the code block needs
+to be indented <em>twice</em> – 8 spaces or two&nbsp;tabs:</p>
+<pre><code>*   A list item with a code block:
+
+        &lt;code goes here&gt;
+</code></pre><p>It’s worth noting that it’s possible to trigger an ordered list by
+accident, by writing something like&nbsp;this:</p>
+<pre><code>1986. What a great season.
+</code></pre><p>In other words, a <em>number-period-space</em> sequence at the beginning of a
+line. To avoid this, you can backslash-escape the&nbsp;period:</p>
+<pre><code>1986\. What a great season.
+</code></pre><h3 id="precode">Code&nbsp;Blocks</h3>
+
+<p>Pre-formatted code blocks are used for writing about programming or
+markup source code. Rather than forming normal paragraphs, the lines
+of a code block are interpreted literally. Markdown wraps a code block
+in both <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tags.</p>
+<p>To produce a code block in Markdown, simply indent every line of the
+block by at least 4 spaces or 1 tab. For example, given this&nbsp;input:</p>
+<pre><code>This is a normal paragraph:
+
+    This is a code block.
+</code></pre><p>Markdown will&nbsp;generate:</p>
+<pre><code>&lt;p&gt;This is a normal paragraph:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is a code block.
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre><p>One level of indentation – 4 spaces or 1 tab – is removed from each
+line of the code block. For example,&nbsp;this:</p>
+<pre><code>Here is an example of AppleScript:
+
+    tell application &quot;Foo&quot;
+        beep
+    end tell
+</code></pre><p>will turn&nbsp;into:</p>
+<pre><code>&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tell application &quot;Foo&quot;
+    beep
+end tell
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre><p>A code block continues until it reaches a line that is not indented
+(or the end of the&nbsp;article).</p>
+<p>Within a code block, ampersands (<code>&amp;</code>) and angle brackets (<code>&lt;</code> and <code>&gt;</code>)
+are automatically converted into <span class="caps">HTML</span> entities. This makes it very
+easy to include example HTML source code using Markdown – just paste
+it and indent it, and Markdown will handle the hassle of encoding the
+ampersands and angle brackets. For example,&nbsp;this:</p>
+<pre><code>    &lt;div class=&quot;footer&quot;&gt;
+        &amp;copy; 2004 Foo Corporation
+    &lt;/div&gt;
+</code></pre><p>will turn&nbsp;into:</p>
+<pre><code>&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;footer&quot;&amp;gt;
+    &amp;amp;copy; 2004 Foo Corporation
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre><p>Regular Markdown syntax is not processed within code blocks. E.g.,
+asterisks are just literal asterisks within a code block. This means
+it’s also easy to use Markdown to write about Markdown’s own&nbsp;syntax.</p>
+<h3 id="hr">Horizontal&nbsp;Rules</h3>
+
+<p>You can produce a horizontal rule tag (<code>&lt;hr /&gt;</code>) by placing three or
+more hyphens, asterisks, or underscores on a line by themselves. If you
+wish, you may use spaces between the hyphens or asterisks. Each of the
+following lines will produce a horizontal&nbsp;rule:</p>
+<pre><code>* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
+</code></pre><hr>
+<h2 id="span">Span&nbsp;Elements</h2>
+
+<h3 id="link">Links</h3>
+
+<p>Markdown supports two style of links: <em>inline</em> and <em>reference</em>.</p>
+<p>In both styles, the link text is delimited by [square&nbsp;brackets].</p>
+<p>To create an inline link, use a set of regular parentheses immediately
+after the link text’s closing square bracket. Inside the parentheses,
+put the <span class="caps">URL</span> where you want the link to point, along with an <em>optional</em>
+title for the link, surrounded in quotes. For&nbsp;example:</p>
+<pre><code>This is [an example](http://example.com/ &quot;Title&quot;) inline link.
+
+[This link](http://example.net/) has no title attribute.
+</code></pre><p>Will&nbsp;produce:</p>
+<pre><code>&lt;p&gt;This is &lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;
+an example&lt;/a&gt; inline link.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://example.net/&quot;&gt;This link&lt;/a&gt; has no
+title attribute.&lt;/p&gt;
+</code></pre><p>If you’re referring to a local resource on the same server, you can
+use relative&nbsp;paths:</p>
+<pre><code>See my [About](/about/) page for details.
+</code></pre><p>Reference-style links use a second set of square brackets, inside
+which you place a label of your choosing to identify the&nbsp;link:</p>
+<pre><code>This is [an example][id] reference-style link.
+</code></pre><p>You can optionally use a space to separate the sets of&nbsp;brackets:</p>
+<pre><code>This is [an example] [id] reference-style link.
+</code></pre><p>Then, anywhere in the document, you define your link label like this,
+on a line by&nbsp;itself:</p>
+<pre><code>[id]: http://example.com/  &quot;Optional Title Here&quot;
+</code></pre><p>That&nbsp;is:</p>
+<ul>
+<li>Square brackets containing the link identifier (optionally
+indented from the left margin using up to three&nbsp;spaces);</li>
+<li>followed by a&nbsp;colon;</li>
+<li>followed by one or more spaces (or&nbsp;tabs);</li>
+<li>followed by the <span class="caps">URL</span> for the&nbsp;link;</li>
+<li>optionally followed by a title attribute for the link, enclosed
+in double or single quotes, or enclosed in&nbsp;parentheses.</li>
+</ul>
+<p>The following three link definitions are&nbsp;equivalent:</p>
+<p>  <a href="http://example.com/" title="Optional Title Here">foo</a>: <a href="http://example.com/">http://example.com/</a>  ‘Optional Title&nbsp;Here’</p>
+<p><strong>Note:</strong> There is a known bug in Markdown.pl 1.0.1 which prevents
+single quotes from being used to delimit link&nbsp;titles.</p>
+<p>The link <span class="caps">URL</span> may, optionally, be surrounded by angle&nbsp;brackets:</p>
+<pre><code>[id]: &lt;http://example.com/&gt;  &quot;Optional Title Here&quot;
+</code></pre><p>You can put the title attribute on the next line and use extra spaces
+or tabs for padding, which tends to look better with longer&nbsp;URLs:</p>
+<pre><code>[id]: http://example.com/longish/path/to/resource/here
+    &quot;Optional Title Here&quot;
+</code></pre><p>Link definitions are only used for creating links during Markdown
+processing, and are stripped from your document in the <span class="caps">HTML</span>&nbsp;output.</p>
+<p>Link definition names may consist of letters, numbers, spaces, and
+punctuation – but they are <em>not</em> case sensitive. E.g. these two&nbsp;links:</p>
+<p>  [link text][a]
+  [link&nbsp;text][A]</p>
+<p>are&nbsp;equivalent.</p>
+<p>The <em>implicit link name</em> shortcut allows you to omit the name of the
+link, in which case the link text itself is used as the name.
+Just use an empty set of square brackets – e.g., to link the word
+“Google” to the google.com web site, you could simply&nbsp;write:</p>
+<p>  <a href="http://google.com/">Google</a></p>
+<p>And then define the&nbsp;link:</p>
+<p>Because link names may contain spaces, this shortcut even works for
+multiple words in the link&nbsp;text:</p>
+<p>  Visit <a href="http://daringfireball.net/">Daring Fireball</a> for more&nbsp;information.</p>
+<p>And then define the&nbsp;link:</p>
+<p>Link definitions can be placed anywhere in your Markdown document. I
+tend to put them immediately after each paragraph in which they’re
+used, but if you want, you can put them all at the end of your
+document, sort of like&nbsp;footnotes.</p>
+<p>Here’s an example of reference links in&nbsp;action:</p>
+<pre><code>I get 10 times more traffic from [Google] [1] than from
+[Yahoo] [2] or [MSN] [3].
+
+  [1]: http://google.com/        &quot;Google&quot;
+  [2]: http://search.yahoo.com/  &quot;Yahoo Search&quot;
+  [3]: http://search.msn.com/    &quot;MSN Search&quot;
+</code></pre><p>Using the implicit link name shortcut, you could instead&nbsp;write:</p>
+<pre><code>I get 10 times more traffic from [Google][] than from
+[Yahoo][] or [MSN][].
+
+  [google]: http://google.com/        &quot;Google&quot;
+  [yahoo]:  http://search.yahoo.com/  &quot;Yahoo Search&quot;
+  [msn]:    http://search.msn.com/    &quot;MSN Search&quot;
+</code></pre><p>Both of the above examples will produce the following <span class="caps">HTML</span>&nbsp;output:</p>
+<pre><code>&lt;p&gt;I get 10 times more traffic from &lt;a href=&quot;http://google.com/&quot;
+title=&quot;Google&quot;&gt;Google&lt;/a&gt; than from
+&lt;a href=&quot;http://search.yahoo.com/&quot; title=&quot;Yahoo Search&quot;&gt;Yahoo&lt;/a&gt;
+or &lt;a href=&quot;http://search.msn.com/&quot; title=&quot;MSN Search&quot;&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+</code></pre><p>For comparison, here is the same paragraph written using
+Markdown’s inline link&nbsp;style:</p>
+<pre><code>I get 10 times more traffic from [Google](http://google.com/ &quot;Google&quot;)
+than from [Yahoo](http://search.yahoo.com/ &quot;Yahoo Search&quot;) or
+[MSN](http://search.msn.com/ &quot;MSN Search&quot;).
+</code></pre><p>The point of reference-style links is not that they’re easier to
+write. The point is that with reference-style links, your document
+source is vastly more readable. Compare the above examples: using
+reference-style links, the paragraph itself is only 81 characters
+long; with inline-style links, it’s 176 characters; and as raw <span class="caps">HTML</span>,
+it’s 234 characters. In the raw HTML, there’s more markup than there
+is&nbsp;text.</p>
+<p>With Markdown’s reference-style links, a source document much more
+closely resembles the final output, as rendered in a browser. By
+allowing you to move the markup-related metadata out of the paragraph,
+you can add links without interrupting the narrative flow of your&nbsp;prose.</p>
+<h3 id="em">Emphasis</h3>
+
+<p>Markdown treats asterisks (<code>*</code>) and underscores (<code>_</code>) as indicators of
+emphasis. Text wrapped with one <code>*</code> or <code>_</code> will be wrapped with an
+<span class="caps">HTML</span> <code>&lt;em&gt;</code> tag; double <code>*</code>‘s or <code>_</code>‘s will be wrapped with an <span class="caps">HTML</span>
+<code>&lt;strong&gt;</code> tag. E.g., this&nbsp;input:</p>
+<pre><code>*single asterisks*
+
+_single underscores_
+
+**double asterisks**
+
+__double underscores__
+</code></pre><p>will&nbsp;produce:</p>
+<pre><code>&lt;em&gt;single asterisks&lt;/em&gt;
+
+&lt;em&gt;single underscores&lt;/em&gt;
+
+&lt;strong&gt;double asterisks&lt;/strong&gt;
+
+&lt;strong&gt;double underscores&lt;/strong&gt;
+</code></pre><p>You can use whichever style you prefer; the lone restriction is that
+the same character must be used to open and close an emphasis&nbsp;span.</p>
+<p>Emphasis can be used in the middle of a&nbsp;word:</p>
+<pre><code>un*frigging*believable
+</code></pre><p>But if you surround an <code>*</code> or <code>_</code> with spaces, it’ll be treated as a
+literal asterisk or&nbsp;underscore.</p>
+<p>To produce a literal asterisk or underscore at a position where it
+would otherwise be used as an emphasis delimiter, you can backslash
+escape&nbsp;it:</p>
+<pre><code>\*this text is surrounded by literal asterisks\*
+</code></pre><h3 id="code">Code</h3>
+
+<p>To indicate a span of code, wrap it with backtick quotes (<code>` </code>).
+Unlike a pre-formatted code block, a code span indicates code within a
+normal paragraph. For&nbsp;example:</p>
+<pre><code>Use the `printf()` function.
+</code></pre><p>will&nbsp;produce:</p>
+<pre><code>&lt;p&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/p&gt;
+</code></pre><p>To include a literal backtick character within a code span, you can use
+multiple backticks as the opening and closing&nbsp;delimiters:</p>
+<pre><code>``There is a literal backtick (`) here.``
+</code></pre><p>which will produce&nbsp;this:</p>
+<pre><code>&lt;p&gt;&lt;code&gt;There is a literal backtick (`) here.&lt;/code&gt;&lt;/p&gt;
+</code></pre><p>The backtick delimiters surrounding a code span may include spaces –
+one after the opening, one before the closing. This allows you to place
+literal backtick characters at the beginning or end of a code&nbsp;span:</p>
+<p>  A single backtick in a code span: <code>` </code></p>
+<p>  A backtick-delimited string in a code span: <code>`foo` </code></p>
+<p>will&nbsp;produce:</p>
+  <p>A single backtick in a code span: <code>`</code></p>
+
+  <p>A backtick-delimited string in a code span: <code><code>foo</code></code></p>
+
+<p>With a code span, ampersands and angle brackets are encoded as <span class="caps">HTML</span>
+entities automatically, which makes it easy to include example HTML
+tags. Markdown will turn&nbsp;this:</p>
+<pre><code>Please don&#39;t use any `&lt;blink&gt;` tags.
+</code></pre><p>into:</p>
+<pre><code>&lt;p&gt;Please don&#39;t use any &lt;code&gt;&amp;lt;blink&amp;gt;&lt;/code&gt; tags.&lt;/p&gt;
+</code></pre><p>You can write&nbsp;this:</p>
+<pre><code>`&amp;#8212;` is the decimal-encoded equivalent of `&amp;mdash;`.
+</code></pre><p>to&nbsp;produce:</p>
+<pre><code>&lt;p&gt;&lt;code&gt;&amp;amp;#8212;&lt;/code&gt; is the decimal-encoded
+equivalent of &lt;code&gt;&amp;amp;mdash;&lt;/code&gt;.&lt;/p&gt;
+</code></pre><h3 id="img">Images</h3>
+
+<p>Admittedly, it’s fairly difficult to devise a “natural” syntax for
+placing images into a plain text document&nbsp;format.</p>
+<p>Markdown uses an image syntax that is intended to resemble the syntax
+for links, allowing for two styles: <em>inline</em> and <em>reference</em>.</p>
+<p>Inline image syntax looks like&nbsp;this:</p>
+<pre><code>![Alt text](/path/to/img.jpg)
+
+![Alt text](/path/to/img.jpg &quot;Optional title&quot;)
+</code></pre><p>That&nbsp;is:</p>
+<ul>
+<li>An exclamation mark: <code>!</code>;</li>
+<li>followed by a set of square brackets, containing the <code>alt</code>
+attribute text for the&nbsp;image;</li>
+<li>followed by a set of parentheses, containing the <span class="caps">URL</span> or path to
+the image, and an optional <code>title</code> attribute enclosed in double
+or single&nbsp;quotes.</li>
+</ul>
+<p>Reference-style image syntax looks like&nbsp;this:</p>
+<pre><code>![Alt text][id]
+</code></pre><p>Where “id” is the name of a defined image reference. Image references
+are defined using syntax identical to link&nbsp;references:</p>
+<pre><code>[id]: url/to/image  &quot;Optional title attribute&quot;
+</code></pre><p>As of this writing, Markdown has no syntax for specifying the
+dimensions of an image; if this is important to you, you can simply
+use regular <span class="caps">HTML</span> <code>&lt;img&gt;</code> tags.</p>
+<hr>
+<h2 id="misc">Miscellaneous</h2>
+
+<h3 id="autolink">Automatic&nbsp;Links</h3>
+
+<p>Markdown supports a shortcut style for creating “automatic” links for URLs and email addresses: simply surround the <span class="caps">URL</span> or email address with angle brackets. What this means is that if you want to show the actual text of a URL or email address, and also have it be a clickable link, you can do&nbsp;this:</p>
+<pre><code>&lt;http://example.com/&gt;
+</code></pre><p>Markdown will turn this&nbsp;into:</p>
+<pre><code>&lt;a href=&quot;http://example.com/&quot;&gt;http://example.com/&lt;/a&gt;
+</code></pre><p>Automatic links for email addresses work similarly, except that
+Markdown will also perform a bit of randomized decimal and hex
+entity-encoding to help obscure your address from address-harvesting
+spambots. For example, Markdown will turn&nbsp;this:</p>
+<pre><code>&lt;address@example.com&gt;
+</code></pre><p>into something like&nbsp;this:</p>
+<pre><code>&lt;a href=&quot;&amp;#x6D;&amp;#x61;i&amp;#x6C;&amp;#x74;&amp;#x6F;:&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;
+&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;
+&amp;#109;&quot;&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;
+&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;
+</code></pre><p>which will render in a browser as a clickable link to&nbsp;“address@example.com”.</p>
+<p>(This sort of entity-encoding trick will indeed fool many, if not
+most, address-harvesting bots, but it definitely won’t fool all of
+them. It’s better than nothing, but an address published in this way
+will probably eventually start receiving&nbsp;spam.)</p>
+<h3 id="backslash">Backslash&nbsp;Escapes</h3>
+
+<p>Markdown allows you to use backslash escapes to generate literal
+characters which would otherwise have special meaning in Markdown’s
+formatting syntax. For example, if you wanted to surround a word
+with literal asterisks (instead of an <span class="caps">HTML</span> <code>&lt;em&gt;</code> tag), you can use
+backslashes before the asterisks, like&nbsp;this:</p>
+<pre><code>\*literal asterisks\*
+</code></pre><p>Markdown provides backslash escapes for the following&nbsp;characters:</p>
+<pre><code>\   backslash
+`   backtick
+*   asterisk
+_   underscore
+{}  curly braces
+[]  square brackets
+()  parentheses
+#   hash mark
+</code></pre><ul>
+<li>plus&nbsp;sign</li>
+</ul>
+<ul>
+<li>minus sign (hyphen)
+.   dot
+!   exclamation&nbsp;mark</li>
+</ul>
+
+        </div>
+      </section>
+      <footer class="wrap">
+        <div class="left">Powered by Angular, Bootsrap, Gulp and more...</div>
+        <div class="right">© 2015–2016 Akveo LLC<br />Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</div>
+      </footer>
+    </div>
+  </body>
+</html>
