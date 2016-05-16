@@ -3,9 +3,9 @@
 Customizable admin panel framework made with :heart: by [Akveo team](http://akveo.com/). Follow us on [Twitter](https://twitter.com/akveo_inc) to get latest news about this template first!
 
 ### Demo
-**[Mint version demo](http://akveo.com/blur-admin/#/dashboard)**             |  **[Blur version demo](http://akveo.com/blur-admin/#/dashboard)**
+**[Mint version demo](http://akveo.com/blur-admin-mint/)**             |  **[Blur version demo](http://akveo.com/blur-admin/)**
 :-------------------------:|:-------------------------:
-![Mint demo](http://i.imgur.com/A3TMviJ.png)  |  ![Blur demo](http://i.imgur.com/yOZPlps.jpg)
+![Mint version demo](http://i.imgur.com/A3TMviJ.png)  |  ![Blur version demo](http://i.imgur.com/EAoiK2O.jpg)
 
 ### Documentation
 Installation, customization and other useful articles: https://akveo.github.io/blur-admin/
@@ -27,7 +27,6 @@ Yes! We are available for hire. Visit [our homepage](http://akveo.com/) or simpl
 * Gulp build
 * AngularJS
 * Jquery
-* Jquery ui
 * Charts (amChart, Chartist, Chart.js, Morris)
 * Maps (Google, Leaflet, amMap)
 * etc
