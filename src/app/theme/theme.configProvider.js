@@ -78,6 +78,15 @@
         },
       }
     };
+
+    conf.changeTheme = function(theme) {
+      angular.merge(conf.theme, theme)
+    };
+
+    conf.changeColors = function(colors) {
+      angular.merge(conf.colors, colors)
+    };
+
     conf.$get = function () {
       delete conf.$get;
       return conf;
