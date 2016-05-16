@@ -69,12 +69,6 @@
           silverTree: dashboardColors.silverTree,
           gossip: dashboardColors.gossip,
           white: dashboardColors.white,
-
-          blueStoneDark: colorHelper.shade(dashboardColors.blueStone, 15),
-          surfieGreenDark: colorHelper.shade(dashboardColors.surfieGreen, 15),
-          silverTreeDark: colorHelper.shade(dashboardColors.silverTree, 15),
-          gossipDark: colorHelper.shade(dashboardColors.gossip, 15),
-          whiteDark: colorHelper.shade(dashboardColors.white, 5),
         },
       }
     };

@@ -9,7 +9,7 @@
       .controller('TrafficChartCtrl', TrafficChartCtrl);
 
   /** @ngInject */
-  function TrafficChartCtrl($scope, baConfig) {
+  function TrafficChartCtrl($scope, baConfig, colorHelper) {
 
     $scope.transparent = baConfig.theme.blur;
     var dashboardColors = baConfig.colors.dashboard;
@@ -17,35 +17,35 @@
       {
         value: 2000,
         color: dashboardColors.white,
-        highlight: dashboardColors.whiteDark,
+        highlight: colorHelper.shade(dashboardColors.white, 15),
         label: 'Other',
         percentage: 87,
         order: 1,
       }, {
         value: 1500,
         color: dashboardColors.blueStone,
-        highlight: dashboardColors.blueStoneDark,
+        highlight: colorHelper.shade(dashboardColors.blueStone, 15),
         label: 'Search engines',
         percentage: 22,
         order: 4,
       }, {
         value: 1000,
         color: dashboardColors.surfieGreen,
-        highlight: dashboardColors.surfieGreenDark,
+        highlight: colorHelper.shade(dashboardColors.surfieGreen, 15),
         label: 'Referral Traffic',
         percentage: 70,
         order: 3,
       }, {
         value: 1200,
         color: dashboardColors.silverTree,
-        highlight: dashboardColors.silverTreeDark,
+        highlight: colorHelper.shade(dashboardColors.silverTree, 15),
         label: 'Direct Traffic',
         percentage: 38,
         order: 2,
       }, {
         value: 400,
         color: dashboardColors.gossip,
-        highlight: dashboardColors.gossipDark,
+        highlight: colorHelper.shade(dashboardColors.gossip, 15),
         label: 'Ad Campaigns',
         percentage: 17,
         order: 0,
