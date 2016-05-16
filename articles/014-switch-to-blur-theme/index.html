@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
     <meta name="keywords" content="admin,dashboard,template,angular,bootstrap,blur,panel,html,css,javascript">
-    <title>BlurAdmin documentation - Switching to Blur Theme</title>
+    <title>BlurAdmin documentation - Enabling blur theme</title>
     <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Ramblings of an immor(t)al demigod">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900|Anonymous+Pro:400,700,400italic,700italic&amp;subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic">
     <link rel="stylesheet" href="/blur-admin/css/main.css">
@@ -33,8 +33,8 @@
           <div class="nav-docs section">
             <h3>Customization</h3>
             <ul>
-              <li><a href="/blur-admin/articles/014-switch-to-blur-theme/" class="active">Switching to Blur Theme</a></li>
               <li><a href="/blur-admin/articles/011-changing-color-scheme/">Changing Color Scheme</a></li>
+              <li><a href="/blur-admin/articles/014-switch-to-blur-theme/" class="active">Enabling blur theme</a></li>
               <li><a href="/blur-admin/articles/012-project-structure/">Project Structure</a></li>
               <li><a href="/blur-admin/articles/013-create-new-page/">Create New Page</a></li>
             </ul>
@@ -47,12 +47,18 @@
           </div>
         </div>
         <div class="inner-content">
-          <h1>Switching to Blur Theme</h1>
-          <div class="subHeader"></div><p>If you want to switch theme to the blur, you need to do 2 simple&nbsp;steps:</p>
-<p>1) Override theme and colors in config (<code>src/app/theme/theme.config.js</code>):</p>
+          <h1>Enabling blur theme</h1>
+          <div class="subHeader"></div><p>If you want to switch theme to the blur, you need to follow 3 simple&nbsp;steps:</p>
+<p>1) Blur theme needs some javascript to calculate initial background offsets for panels.
+That’s why first thing you need to do is enable that code.
+This should be done in Angular <strong>configuration block</strong>. 
+For example you can add following lines to <code>src/app/theme/theme.config.js</code>:</p>
 <pre><code class="lang-javascript">  baConfigProvider.changeTheme({blur: <span class="literal">true</span>});
-
-  baConfigProvider.changeColors({
+</code></pre>
+<p>2) As well you need to change some colors. 
+For example <em>Mint</em>‘s default gray text color doesn’t look good on blurred panels.
+For our blur theme we use following&nbsp;configuration:</p>
+<pre><code class="lang-javascript">  baConfigProvider.changeColors({
     <span class="keyword">default</span>: <span class="string">'rgba(#000000, 0.2)'</span>,
     defaultText: <span class="string">'#ffffff'</span>,
     dashboard: {
@@ -60,12 +66,22 @@
     },
   });
 </code></pre>
-<p>2) Replace theme in <code>src/sass/theme/common.scss</code> file:</p>
+<p>3) <span class="caps">CSS</span> should also be recompiled. 
+Before running build command, we suggest you to switch to <em>blur</em> color profile.
+To do this replace theme in file <code>src/sass/theme/common.scss</code>:</p>
 <pre><code class="lang-scss">@<span class="keyword">import</span> <span class="string">'theme/conf/colorScheme/mint'</span>;
 </code></pre>
 <p>to</p>
 <pre><code class="lang-scss">@<span class="keyword">import</span> <span class="string">'theme/conf/colorScheme/blur'</span>;
 </code></pre>
+<p>3.1) If you would like to use some different background, replace following&nbsp;images:</p>
+<ul>
+<li><code>src/app/assets/img/blur-bg.jpg</code> (main background&nbsp;image)</li>
+<li><code>src/app/assets/img/blur-bg-blurred.jpg</code> (blurred background image used on&nbsp;panels)</li>
+</ul>
+<p>We suggest using 10px Gaussian blur to blur original&nbsp;image.</p>
+<hr>
+<p>That’s it! You have successfully blurred your theme! Run <code>gulp serve</code> and check it&nbsp;out.</p>
 
         </div>
       </section>

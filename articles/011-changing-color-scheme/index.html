@@ -33,8 +33,8 @@
           <div class="nav-docs section">
             <h3>Customization</h3>
             <ul>
-              <li><a href="/blur-admin/articles/014-switch-to-blur-theme/">Switching to Blur Theme</a></li>
               <li><a href="/blur-admin/articles/011-changing-color-scheme/" class="active">Changing Color Scheme</a></li>
+              <li><a href="/blur-admin/articles/014-switch-to-blur-theme/">Enabling blur theme</a></li>
               <li><a href="/blur-admin/articles/012-project-structure/">Project Structure</a></li>
               <li><a href="/blur-admin/articles/013-create-new-page/">Create New Page</a></li>
             </ul>
@@ -48,32 +48,44 @@
         </div>
         <div class="inner-content">
           <h1>Changing Color Scheme</h1>
-          <div class="subHeader"></div><p>If you want to change template color scheme, you need to do 4 simple&nbsp;steps:</p>
-<p>1) Override theme and colors in config (<code>src/app/theme/theme.config.js</code>):</p>
-<pre><code class="lang-javascript">  baConfigProvider.changeTheme({blur: <span class="literal">true</span>});
-
-  baConfigProvider.changeColors({
-    <span class="keyword">default</span>: <span class="string">'rgba(#000000, 0.2)'</span>,
-    defaultText: <span class="string">'#ffffff'</span>,
-    dashboard: {
-      white: <span class="string">'#ffffff'</span>,
-    },
-  });
-</code></pre>
-<p>Note:</p>
-<ul>
-<li>you shouldn’t change default config directly (<code>theme.configProvider.js</code>). Instead of that you can override color scheme on the configuration step (<code>theme.config.js</code>)</li>
-</ul>
-<p>2) Create your own color scheme, like <code>src/sass/theme/conf/colorScheme/_mint.scss</code> and <code>src/sass/theme/conf/colorScheme/_blur.scss</code>. And replace it in <code>src/sass/theme/common.scss</code> file:</p>
+          <div class="subHeader"></div><p>We tried to make the process of changing color scheme in BlurAdmin as easy as&nbsp;possible. </p>
+<p>By default BlurAdmin has two color profiles: mint and blur.
+This article will help you to create your own color profile.
+Let’s say you want to make BlurAdmin&nbsp;dark.</p>
+<p>First we advice you to take some colorscheme file as a basis. 
+For light themes we suggest you to take <code>src/sass/theme/conf/colorScheme/_mint.scss</code> one and for dark take <code>src/sass/theme/conf/colorScheme/_blur.scss</code> one.
+As we want dark theme, we’re taking <code>blur</code>.</p>
+<p>1) Copy <code>src/sass/theme/conf/colorScheme/_blur.scss</code> to <code>src/sass/theme/conf/colorScheme/_dark.scss</code>.</p>
+<p>2) Include your colorscheme file in <code>src/sass/theme/common.scs</code>.</p>
+<p>To do this,&nbsp;replace </p>
 <pre><code class="lang-scss">@<span class="keyword">import</span> <span class="string">'theme/conf/colorScheme/mint'</span>;
 </code></pre>
 <p>to</p>
-<pre><code class="lang-scss">@<span class="keyword">import</span> <span class="string">'theme/conf/colorScheme/custom'</span>;
+<pre><code class="lang-scss">@<span class="keyword">import</span> <span class="string">'theme/conf/colorScheme/dark'</span>;
 </code></pre>
-<p>3) Replace background images: <code>src/app/assets/img/blur-bg.jpg</code> and <code>src/app/assets/img/blur-bg-blurred.jpg</code></p>
-<p>4) Run application <code>gulp serve</code></p>
-<p>Here’s an example of template with another color&nbsp;scheme:</p>
+<p>Now you can start changing your colors.
+For example, after playing a bit with different colors, we changed 5 first main variables in <code>_dark.scss</code> file:</p>
+<pre><code class="lang-sass">$default: rgba(#000000, 0.2); //Panel background color
+$body-bg: #F0F3F4; // Body background color
+$default-text: #ffffff; // Default text color
+$help-text: #eeeeee; // Default subtext color
+$label-text: #ffffff; // Text for labels in forms (Basically it should be equal to default-text in most cases)
+</code></pre>
+<p>After this is done, you need to setup javascript to use <strong>same colors</strong> while building charts and other javascript components.
+To do this, add following code to some configuration block, for example to <code>src/app/theme/theme.config.js</code>:</p>
+<pre><code class="lang-javascript">  baConfigProvider.changeColors({
+    <span class="keyword">default</span>: <span class="string">'#4e4e55'</span>,
+    defaultText: <span class="string">'#e2e2e2'</span>,
+  });
+</code></pre>
+<p>That’s basically it! Right now your admin application should look like&nbsp;this:</p>
 <p><img src="/blur-admin/articles/011-changing-color-scheme/new-color-scheme.jpg" alt=""></p>
+<p>For further reference, please look&nbsp;in</p>
+<ul>
+<li>Colorscheme scss file (<code>src/sass/theme/conf/colorScheme/_mint.scss</code> or <code>src/sass/theme/conf/colorScheme/_blur.scss</code>)</li>
+<li><code>src/app/theme/theme.configProvider.js</code> to understand which javascript colors can be&nbsp;changed</li>
+<li>If you want to know how to change theme to blur, read <a href="/blur-admin/articles/014-switch-to-blur-theme/">following&nbsp;article</a></li>
+</ul>
 
         </div>
       </section>
