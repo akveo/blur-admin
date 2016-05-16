@@ -6,45 +6,39 @@ group: Customization
 template: article.jade
 ---
 
-If you want to change template color scheme, you just need to do 4 simple steps:
+If you want to change template color scheme, you need to do 4 simple steps:
 
-1) Change color scheme in javascript (`src/app/theme/theme.constants.js`):
+1) Override theme and colors in config (`src/app/theme/theme.config.js`):
 ```javascript
-  // main color scheme
-  var colorScheme = {
-    primary: '#209e91',
-    info: '#2dacd1',
-    success: '#90b900',
-    warning: '#dfb81c',
-    danger: '#e85656',
-  };
+  baConfigProvider.changeTheme({blur: true});
 
-  // background color palette
-  var bgColorPalette = {
-    blueStone: '#005562',
-    surfieGreen: '#0e8174',
-    silverTree: '#6eba8c',
-    gossip: '#b9f2a1',
-    white: '#ffffff',
-  };
+  baConfigProvider.changeColors({
+    default: 'rgba(#000000, 0.2)',
+    defaultText: '#ffffff',
+    dashboard: {
+      white: '#ffffff',
+    },
+  });
 ```
-- css colors and javascript colors in colorScheme object should be the same
-- background color palette is used for the pie traffic chart and calendar on the dashboard page
+Note:
+- you shouldn't change default config directly (`theme.configProvider.js`). Instead of that you can override color scheme on the configuration step (`theme.config.js`)
 
-2) Change colors in css (`src/sass/theme/conf/_colorScheme.scss`):
+2) Create your own color scheme, like `src/sass/theme/conf/colorScheme/_mint.scss` and `src/sass/theme/conf/colorScheme/_blur.scss`. And replace it in `src/sass/theme/common.scss` file:
 
 ```scss
-$primary: #209e91 !default;
-$info: #2dacd1 !default;
-$success: #90b900 !default;
-$warning: #dfb81c !default;
-$danger: #e85656 !default;
+@import 'theme/conf/colorScheme/mint';
+```
+
+to
+
+```scss
+@import 'theme/conf/colorScheme/custom';
 ```
 
 3) Replace background images: `src/app/assets/img/blur-bg.jpg` and `src/app/assets/img/blur-bg-blurred.jpg`
 
-4) build source files and run application: `gulp` and `gulp serve`
+4) Run application `gulp serve`
 
-Below is an example of template with another color scheme:
+Here's an example of template with another color scheme:
 
 ![](new-color-scheme.jpg)
