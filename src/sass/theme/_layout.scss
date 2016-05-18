@@ -33,7 +33,7 @@ body.mobile{
     background-attachment: inherit;
     background-color: $body-bg;
   }
-  &.blur-theme {
+  &.blur-theme .body-bg{
     @include main-background();
   }
 }
