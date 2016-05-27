@@ -7,6 +7,9 @@ Customizable admin panel framework made with :heart: by [Akveo team](http://akve
 :-------------------------:|:-------------------------:
 ![Mint version demo](http://i.imgur.com/A3TMviJ.png)  |  ![Blur version demo](http://i.imgur.com/EAoiK2O.jpg)
 
+## Angular 2 version
+Here you can find Angular2 based version: [ng2-admin](https://github.com/akveo/ng2-admin).
+
 ### Documentation
 Installation, customization and other useful articles: https://akveo.github.io/blur-admin/
 
