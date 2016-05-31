@@ -20,10 +20,16 @@
       link: function (scope, elem, attr) {
         $timeout(function(){
           scope.color = attr.color;
-          $(elem).find('input').bootstrapSwitch({
+          var input = $(elem).find('input');
+          input.bootstrapSwitch({
             size: 'small',
             onColor: attr.color
           });
+          input.on('switchChange.bootstrapSwitch', function(event, state) {
+            scope.ngModel = state;
+            scope.$apply();
+          });
+
         });
       }
     };
