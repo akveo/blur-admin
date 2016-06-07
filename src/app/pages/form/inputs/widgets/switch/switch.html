@@ -1,7 +1,7 @@
-<div ng-init="switches = [ true, true, true, true, true, true ]" class="switches clearfix">
-  <switch color="primary" ng-model="switches[5]"></switch>
-  <switch color="warning" ng-model="switches[1]"></switch>
-  <switch color="danger" ng-model="switches[2]"></switch>
-  <switch color="info" ng-model="switches[3]"></switch>
-  <switch color="success" ng-model="switches[0]"></switch>
+<div ng-controller="SwitchPanelCtrl as switchPanelVm" class="switches clearfix">
+  <switch color="primary" ng-model="switchPanelVm.switcherValues.primary"></switch>
+  <switch color="warning" ng-model="switchPanelVm.switcherValues.warning"></switch>
+  <switch color="danger" ng-model="switchPanelVm.switcherValues.danger"></switch>
+  <switch color="info" ng-model="switchPanelVm.switcherValues.info"></switch>
+  <switch color="success" ng-model="switchPanelVm.switcherValues.success"></switch>
 </div>
