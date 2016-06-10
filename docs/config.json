@@ -25,7 +25,9 @@
     "perPage": 3,
     "groupSort": {
       "Quick Start": 1000,
-      "Customization": 900
+      "Customization": 900,
+      "Components": 800,
+      "Other": 100
     }
   }
 }
