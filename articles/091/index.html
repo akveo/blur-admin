@@ -54,10 +54,21 @@
         </div>
         <div class="inner-content">
           <h1>Downloads</h1>
-          <div class="subHeader"></div><p>If you have some problems installing node.js to build and run BlurAdmin yourself, you can find links for download on this&nbsp;page.</p>
-<p>Development (non-compressed) files can be found in <em>dev-release</em> directory. Compressed files are in <em>release</em>&nbsp;directory.</p>
+          <div class="subHeader"></div><p>If you have problems installing node.js and/or other tools to build and run BlurAdmin on your machine and you just want to download html/js/css files, you can find links for download on this&nbsp;page.</p>
+<p>Development (non-compressed) files can be found in <code>{ARCHIVE_ROOT}/blur-admin-{VERSION}/dev-release</code> directory. Compressed files are in <code>{ARCHIVE_ROOT}/blur-admin-{VERSION}/release</code> directory.
+Then you can just open <code>index.html</code> to view your local&nbsp;version.</p>
+<p><strong>Please note</strong>: <em>As chrome doesn’t support <span class="caps">AJAX</span> requests, when you open HTML file via <strong>file</strong> protocol, you might need to disable web security to have your template&nbsp;running.</em></p>
+<p>Sample command on <span class="caps">OS</span>&nbsp;X:</p>
+<pre><code class="lang-bash">open <span class="_">-a</span> Google\ Chrome --args --disable-web-security --user-data-dir=~/ChromeDevSession/
+</code></pre>
+<p>Sample command on&nbsp;Linux:</p>
+<pre><code class="lang-bash">google-chrome --user-data-dir=<span class="string">"~/chrome-dev-session"</span> --disable-web-security
+</code></pre>
+<p>Sample command on&nbsp;Windows:</p>
+<pre><code class="lang-bash">start chrome --user-data-dir=<span class="string">"C:/Chrome dev session"</span> --disable-web-security
+</code></pre>
 <h2 id="links-for-downloads">Links for&nbsp;downloads</h2>
-<p><a href="/blur-admin/dwonloads/blur-admin-1.2.0.zip">BlurAdmin&nbsp;1.2.0</a></p>
+<p><a href="/blur-admin/downloads/blur-admin-1.2.0.zip">BlurAdmin&nbsp;1.2.0</a></p>
 
         </div>
       </section>
