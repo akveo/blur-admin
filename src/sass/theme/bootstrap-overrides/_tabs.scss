@@ -139,7 +139,7 @@
     margin-bottom: 0;
     border-radius: 0;
     border: none;
-    &:hover {
+    &:hover, &:focus {
       border: none;
       background-color: $primary-light;
     }
