@@ -1,4 +1,4 @@
-<uib-tabset>
+<uib-tabset active="$tabSetStatus.activeTab">
   <uib-tab heading="Start">
     <p>
       Take up one idea. Make that one idea your life--think of it, dream of it, live on that idea. Let the brain,
@@ -43,9 +43,9 @@
       <a uib-dropdown-toggle ng-click="$event.stopPropagation()">
         Dropdown tab <i class="caret"></i>
       </a>
-      <ul class="uib-dropdown-menu">
-        <li><a ng-click="$dropdownTabActive = 1">Tab 1</a></li>
-        <li><a ng-click="$dropdownTabActive = 2">Tab 2</a></li>
+      <ul class="dropdown-menu" uib-dropdown-menu>
+        <li><a ng-click="$dropdownTabActive = 1; $tabSetStatus.activeTab = 3">Tab 1</a></li>
+        <li><a ng-click="$dropdownTabActive = 2; $tabSetStatus.activeTab = 3">Tab 2</a></li>
       </ul>
     </uib-tab-heading>
     <div ng-show="$dropdownTabActive == 1">
