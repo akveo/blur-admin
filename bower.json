@@ -78,7 +78,8 @@
     "bootstrap": {
       "main": [
         "dist/css/bootstrap.css",
-        "js/dropdown.js"
+        "js/dropdown.js",
+        "./dist/fonts/**.*"
       ]
     },
     "slimScroll": {
