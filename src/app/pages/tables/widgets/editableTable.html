@@ -1,6 +1,7 @@
 <div class="horizontal-scroll">
   <table class="table table-hover" st-table="editableTableData">
-    <tr class="sortable header-row">
+    <thead>
+    <tr class="sortable">
       <th class="table-id" st-sort="id" st-sort-default="true">#</th>
       <th st-sort="firstName">First Name</th>
       <th st-sort="lastName">Last Name</th>
@@ -8,6 +9,8 @@
       <th st-sort="email">Email</th>
       <th st-sort="age">Age</th>
     </tr>
+    </thead>
+    <tbody>
     <tr ng-repeat="item in editableTableData" class="editable-tr-wrap">
       <td class="table-id">{{item.id}}</td>
       <td><span editable-text="item.firstName" blur="cancel">{{item.firstName}}</span></td>
@@ -16,6 +19,7 @@
       <td><a class="email-link" ng-href="mailto:{{item.email}}">{{item.email}}</a></td>
       <td><span editable-text="item.age" blur="cancel">{{item.age}}</span></td>
     </tr>
+    </tbody>
     <tfoot>
     <tr>
       <td colspan="6" class="text-center">
