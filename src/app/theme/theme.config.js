@@ -9,7 +9,12 @@
     .config(config);
 
   /** @ngInject */
-  function config(baConfigProvider, colorHelper) {
+  function config(baConfigProvider, colorHelper, $provide) {
+    $provide.decorator('$uiViewScroll', function ($delegate) {
+      return function (uiViewElement) {
+        window.scrollTo(0, 0);
+      };
+    });
     //baConfigProvider.changeTheme({blur: true});
     //
     //baConfigProvider.changeColors({
