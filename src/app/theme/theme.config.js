@@ -9,7 +9,8 @@
     .config(config);
 
   /** @ngInject */
-  function config(baConfigProvider, colorHelper) {
+  function config(baConfigProvider, colorHelper, $provide) {
+    $provide.decorator('$uiViewScroll', uiViewScrollDecorator);
     //baConfigProvider.changeTheme({blur: true});
     //
     //baConfigProvider.changeColors({
@@ -19,5 +20,16 @@
     //    white: '#ffffff',
     //  },
     //});
+  }
+
+  /** @ngInject */
+  function uiViewScrollDecorator($delegate, $anchorScroll, baUtil) {
+    return function (uiViewElement) {
+      if (baUtil.hasAttr(uiViewElement, "autoscroll-body-top")) {
+        $anchorScroll();
+      } else {
+        $delegate(uiViewElement);
+      }
+    };
   }
 })();
