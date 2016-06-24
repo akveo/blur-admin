@@ -13,7 +13,7 @@
     $stateProvider
         .state('form', {
           url: '/form',
-          template : '<ui-view></ui-view>',
+          template : '<ui-view autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
           title: 'Form Elements',
           sidebarMeta: {
