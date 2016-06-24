@@ -13,7 +13,7 @@
     $stateProvider
         .state('tables', {
           url: '/tables',
-          template : '<ui-view></ui-view>',
+          template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
           controller: 'TablesPageCtrl',
           title: 'Tables',
