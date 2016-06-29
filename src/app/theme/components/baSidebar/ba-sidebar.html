@@ -31,7 +31,7 @@
               ba-ui-sref-toggling-submenu>
             <li ng-mouseenter="hoverItem($event, item)" ng-repeat="subSubitem in ::subitem.subMenu" ui-sref-active="selected">
               <a ng-mouseenter="hoverItem($event, item)" href ng-if="::subSubitem.disabled" class="al-sidebar-list-link">
-                {{ ::item.title }}
+                {{ ::subSubitem.title }}
               </a>
               <a ng-mouseenter="hoverItem($event, item)"
                  ui-state="subSubitem.stateRef || ''"
