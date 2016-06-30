@@ -1,0 +1,45 @@
+.datepicker {
+  .btn:hover {
+    transform: scale(1);
+  }
+
+  button.btn.btn-default {
+    background-color: transparent;
+  }
+
+  button.btn.btn-default.active {
+    background-color: $info;
+    color: white;
+  }
+
+  button.btn.active span.ng-binding.text-info {
+    color: white;
+  }
+}
+
+.uib-datepicker-wrap {
+  display:inline-block;
+  min-height:270px;
+}
+
+.uib-datepicker span.ng-binding.text-muted {
+  color: $default-text;
+}
+.uib-datepicker-popup {
+
+  background-color: $bootstrap-panel-bg;
+  border-width: 0;
+  color: black;
+
+  button.btn {
+    color: black;
+
+    .text-muted {
+      color: black;
+    }
+  }
+
+  .glyphicon {
+    color: rgba($progress-background, 1);
+  }
+}
