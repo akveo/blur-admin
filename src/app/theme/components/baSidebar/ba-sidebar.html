@@ -31,7 +31,7 @@
               ba-ui-sref-toggling-submenu>
             <li ng-mouseenter="hoverItem($event, item)" ng-repeat="subSubitem in ::subitem.subMenu" ui-sref-active="selected">
               <a ng-mouseenter="hoverItem($event, item)" href ng-if="::subSubitem.disabled" class="al-sidebar-list-link">
-                {{ ::item.title }}
+                {{ ::subSubitem.title }}
               </a>
               <a ng-mouseenter="hoverItem($event, item)"
                  ui-state="subSubitem.stateRef || ''"
@@ -44,8 +44,14 @@
           <a ng-mouseenter="hoverItem($event, item)" href ng-if="::(!subitem.subMenu && subitem.disabled)" class="al-sidebar-list-link">
             {{ ::subitem.title }}
           </a>
-          <a ng-mouseenter="hoverItem($event, item)" target="{{::(subitem.blank ? '_blank' : '_self')}}"
-             ng-if="::(!subitem.subMenu && !subitem.disabled)"
+          <a ng-mouseenter="hoverItem($event, item)"
+            ng-if="::(!subitem.subMenu && !subitem.disabled && !subitem.blank)"
+            ui-state="subitem.stateRef || ''"
+            ng-href="{{::(subitem.fixedHref ? subitem.fixedHref: '')}}">
+            {{ ::subitem.title}}
+          </a>
+          <a ng-mouseenter="hoverItem($event, item)" target="_blank"
+             ng-if="::(!subitem.subMenu && !subitem.disabled && subitem.blank)"
              ui-state="subitem.stateRef || ''"
              ng-href="{{::(subitem.fixedHref ? subitem.fixedHref: '')}}">
             {{ ::subitem.title}}
