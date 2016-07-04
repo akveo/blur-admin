@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var conf = require('./conf');
 
 var $ = require('gulp-load-plugins')();
+var gulpRemoveHtml = require('gulp-remove-html');
 
 var wiredep = require('wiredep').stream;
 var _ = require('lodash');
