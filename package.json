@@ -23,7 +23,6 @@
     "gulp-ng-annotate": "~1.1.0",
     "gulp-prompt": "^0.1.2",
     "gulp-protractor": "~1.0.0",
-    "gulp-remove-html": "~1.1.2",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "~0.5.4",
     "gulp-rev": "~6.0.1",
