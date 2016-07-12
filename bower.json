@@ -55,6 +55,9 @@
     "angular-xeditable": "~0.1.9",
     "ng-js-tree": "~0.0.7"
   },
+  "resolutions": {
+    "angular": "~1.4.8"
+  },
   "overrides": {
     "amcharts": {
       "main": [
