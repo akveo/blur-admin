@@ -44,5 +44,10 @@
   },
   "scripts": {
     "postinstall": "bower install"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akveo/blur-admin"
+  },
+  "license" : "MIT"
 }
