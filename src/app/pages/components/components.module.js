@@ -17,7 +17,7 @@
     $stateProvider
         .state('components', {
           url: '/components',
-          template : '<ui-view></ui-view>',
+          template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
           title: 'Components',
           sidebarMeta: {
