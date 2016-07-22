@@ -9,7 +9,7 @@
     .controller('ModalsPageCtrl', ModalsPageCtrl);
 
   /** @ngInject */
-  function ModalsPageCtrl($scope, $uibModal) {
+  function ModalsPageCtrl($scope, $uibModal, progressDialog) {
     $scope.open = function (page, size) {
       $uibModal.open({
         animation: true,
@@ -22,6 +22,7 @@
         }
       });
     };
+    $scope.openProgressDialog = progressDialog.open;
   }
 
 

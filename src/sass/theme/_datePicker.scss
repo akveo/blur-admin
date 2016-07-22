@@ -1,0 +1,29 @@
+.datepicker .btn:hover {
+  transform: scale(1);
+}
+
+.datepicker button.btn.btn-default {
+  background-color: white;
+}
+
+.datepicker button.btn.btn-default.active {
+  background-color: $info;
+  color: white;
+}
+
+.datepicker button.btn.active span.ng-binding.text-info {
+  color: white;
+}
+
+.uib-datepicker-wrap {
+  display:inline-block;
+  min-height:270px;
+}
+.uib-datepicker, .uib-datepicker-popup {
+  background-color: $body-bg;
+  border-width: 0;
+}
+
+.uib-datepicker-button-group button.btn {
+  margin: 0 0 5px 5px;
+}
