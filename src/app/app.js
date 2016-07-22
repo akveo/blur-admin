@@ -15,4 +15,10 @@ angular.module('BlurAdmin', [
 
   'BlurAdmin.theme',
   'BlurAdmin.pages'
-]);
+]).run(scrollTop);
+
+function scrollTop($rootScope) {
+  $rootScope.$on('$stateChangeSuccess', function(){
+    window.scrollTo(0, 0);
+  });
+}
