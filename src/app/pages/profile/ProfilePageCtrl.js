@@ -76,13 +76,6 @@
         });
     };
 
-    $scope.getFile = function () {
-      fileReader.readAsDataUrl($scope.file, $scope)
-          .then(function (result) {
-            $scope.picture = result;
-          });
-    };
-
     $scope.switches = [true, true, false, true, true, false];
   }
 
