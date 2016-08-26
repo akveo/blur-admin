@@ -40,7 +40,7 @@ This will allow you to easily switch off some pages in the future if needed.
 
 3) Then let's create empty html file called `my-new-page.html` inside of `src/app/pages/myNewPage`.
 
-4) Lastly let's create ui router state for this page. To do this we need to modify module.js file we created on step 2:
+4) Let's create ui router state for this page. To do this we need to modify module.js file we created on step 2:
 ```javascript
 (function () {
   'use strict';
@@ -62,6 +62,26 @@ This will allow you to easily switch off some pages in the future if needed.
   }
 
 })();
+```
+
+5) Lastly, add our module to `src/app/pages/pages.module.js`:
+
+```javascript
+    angular.module('BlurAdmin.pages', [
+        'ui.router',
+
+        'BlurAdmin.pages.dashboard',
+        'BlurAdmin.pages.ui',
+        'BlurAdmin.pages.components',
+        'BlurAdmin.pages.form',
+        'BlurAdmin.pages.tables',
+        'BlurAdmin.pages.charts',
+        'BlurAdmin.pages.maps',
+        'BlurAdmin.pages.profile',
+        'BlurAdmin.pages.myNewPage' 
+    ])
+        .config(routeConfig);
+
 ```
 
 That's it! Your can now open your new page either from sidebar or through hash URL.
