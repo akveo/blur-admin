@@ -44,5 +44,10 @@
   },
   "scripts": {
     "postinstall": "bower install"
+  },
+  "eslintConfig": {
+    "globals": {
+      "window": true
+    }
   }
 }
