@@ -7,6 +7,7 @@
   /** @ngInject */
   function baSidebarServiceProvider() {
     var staticMenuItems = [];
+    var menuItems = [];
 
     this.addStaticItem = function() {
       staticMenuItems.push.apply(staticMenuItems, arguments);
@@ -19,20 +20,15 @@
       function _factory() {
         var isMenuCollapsed = shouldMenuBeCollapsed();
 
-        this.getMenuItems = function() {
-          var states = defineMenuItemStates();
-          var menuItems = states.filter(function(item) {
-            return item.level == 0;
-          });
+        this.getMenuItems = function () {
+          if (!menuItems.length) {
+            menuItems = createMenu();
+          }
+          return menuItems;
+        };
 
-          menuItems.forEach(function(item) {
-            var children = states.filter(function(child) {
-              return child.level == 1 && child.name.indexOf(item.name) === 0;
-            });
-            item.subMenu = children.length ? children : null;
-          });
-
-          return menuItems.concat(staticMenuItems);
+        this.addMenuItem = function(item) {
+          menuItems.push(item);
         };
 
         this.shouldMenuBeCollapsed = shouldMenuBeCollapsed;
@@ -62,6 +58,32 @@
             });
           }
         };
+
+        function createMenu() {
+          var parentLevel = 0;
+          var states = defineMenuItemStates();
+          var parents = states.filter(function(item) {
+            return item.level == parentLevel;
+          });
+
+          bindMenuItems(parents, ++parentLevel);
+          return parents.concat(staticMenuItems);
+
+          function bindMenuItems(parents, childLevel) {
+            var child = states.filter(function (item) {
+              return item.level == childLevel;
+            });
+            if (child.length) {
+              parents.forEach(function (p) {
+                var children = child.filter(function (c) {
+                  return c.name.indexOf(p.name) === 0;
+                });
+                p.subMenu = children.length ? children : null;
+              });
+              bindMenuItems(child, ++childLevel)
+            }
+          }
+        }
 
         function defineMenuItemStates() {
           return $state.get()
