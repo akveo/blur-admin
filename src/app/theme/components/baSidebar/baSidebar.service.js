@@ -7,28 +7,57 @@
   /** @ngInject */
   function baSidebarServiceProvider() {
     var staticMenuItems = [];
-    var menuItems = [];
 
     this.addStaticItem = function() {
       staticMenuItems.push.apply(staticMenuItems, arguments);
     };
 
     /** @ngInject */
-    this.$get = function($state, layoutSizes) {
-      return new _factory();
+    this.$get = function ($state, layoutSizes, baSidebarModel) {
+        return new _factory();
 
       function _factory() {
         var isMenuCollapsed = shouldMenuBeCollapsed();
 
         this.getMenuItems = function () {
-          if (!menuItems.length) {
+          var menuItems = baSidebarModel.getMenuItems();
+          if (!menuItems) {
             menuItems = createMenu();
+            baSidebarModel.setMenuItems(menuItems);
           }
           return menuItems;
         };
 
-        this.addMenuItem = function(item) {
-          menuItems.push(item);
+        this.addMenuItem = function (item) {
+          var menuItems = baSidebarModel.getMenuItems();
+          var parent = null;
+          _findParent(menuItems, item);
+          if (parent) {
+            _addToSubMenu(item);
+          } else {
+            menuItems.push(item);
+          }
+
+          baSidebarModel.setMenuItems(menuItems);
+
+          function _findParent(parents, item) {
+            parent = parents
+                .filter(function (p) {
+                  return item.name.indexOf(p.name) === 0;
+                })
+                .pop();
+            if (parent && parent.subMenu) {
+              _findParent(parent.subMenu, item);
+            }
+          }
+
+          function _addToSubMenu(item) {
+            if (parent.subMenu) {
+              parent.subMenu.push(item);
+            } else {
+              parent.subMenu = [item];
+            }
+          }
         };
 
         this.shouldMenuBeCollapsed = shouldMenuBeCollapsed;
@@ -66,10 +95,10 @@
             return item.level == parentLevel;
           });
 
-          bindMenuItems(parents, ++parentLevel);
+          _bindMenuItems(parents, ++parentLevel);
           return parents.concat(staticMenuItems);
 
-          function bindMenuItems(parents, childLevel) {
+          function _bindMenuItems(parents, childLevel) {
             var child = states.filter(function (item) {
               return item.level == childLevel;
             });
@@ -80,7 +109,7 @@
                 });
                 p.subMenu = children.length ? children : null;
               });
-              bindMenuItems(child, ++childLevel)
+              _bindMenuItems(child, ++childLevel)
             }
           }
         }
