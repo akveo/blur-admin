@@ -30,7 +30,9 @@
             scope.ngModel = state;
             scope.$apply();
           });
-
+          scope.$watch('ngModel', function(newVal, oldVal) {
+            input.bootstrapSwitch('state', newVal, true);
+          });
         });
       }
     };
