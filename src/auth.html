@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="BlurAdmin.login">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,9 +26,9 @@
 </head>
 <body>
 <main class="auth-main">
-  <div class="auth-block">
+  <div class="auth-block" ng-controller="LoginPageCtrl as vm">
     <h1>Sign in to Blur Admin</h1>
-    <a href="reg.html" class="auth-link">New to Blur Admin? Sign up!</a>
+    <a href="reg.html" class="auth-link">New to Blur Admin? Sign up! {{vm.email}}</a>
 
     <form class="form-horizontal">
       <div class="form-group">
@@ -64,5 +64,17 @@
     </div>
   </div>
 </main>
+
+<!-- build:js(src) scripts/vendor.js -->
+<!-- bower:js -->
+<!-- run `gulp inject` to automatically populate bower script dependencies -->
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+<!-- inject:js -->
+<!-- js files will be automatically insert here -->
+<!-- endinject -->
+
 </body>
 </html>
