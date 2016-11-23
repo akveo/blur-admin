@@ -47,6 +47,18 @@ browserSync.use(browserSyncSpa({
   selector: '[ng-app]'// Only needed for angular apps
 }));
 
+var bsInjular = require('bs-injular');
+
+browserSync.use(bsInjular, {
+    templates: ['/app/pages/**/*.html','/app/my-module/**/*.html'],
+    controllers: ['/app/pages/**/*.controller.js','/app/my-module/**/*.controller.js'],
+    directives: ['/app/pages/**/*.directive.js','/app/my-module/**/*.directive.js'],
+    filters: ['/app/pages/**/*.filter.js','/app/pages/**/*.filter.js'],
+    angularFile: '/bower_components/angular/angular.js',
+    moduleFile: '/app/app.js',
+    ngApp: 'BlurAdmin'
+});
+
 gulp.task('serve', ['watch'], function () {
   browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
 });

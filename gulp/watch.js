@@ -16,7 +16,9 @@ gulp.task('watch', ['inject'], function () {
 
   gulp.watch([
     path.join(conf.paths.src, '/sass/**/*.css'),
-    path.join(conf.paths.src, '/sass/**/*.scss')
+    path.join(conf.paths.src, '/sass/**/*.scss'),
+    path.join(conf.paths.src, '/app/**/*.scss')
+
   ], function(event) {
     if(isOnlyChange(event)) {
       gulp.start('styles-reload');
@@ -26,11 +28,13 @@ gulp.task('watch', ['inject'], function () {
   });
 
   gulp.watch(path.join(conf.paths.src, '/app/**/*.js'), function(event) {
+    conf._gulpWatchEvent = event;
     if(isOnlyChange(event)) {
       gulp.start('scripts-reload');
     } else {
       gulp.start('inject-reload');
     }
+    delete conf._gulpWatchEvent;
   });
 
   gulp.watch(path.join(conf.paths.src, '/app/**/*.html'), function(event) {
