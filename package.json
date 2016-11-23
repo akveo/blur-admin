@@ -2,8 +2,9 @@
   "name": "blur_admin",
   "version": "1.2.0",
   "devDependencies": {
-    "browser-sync": "~2.9.11",
+    "browser-sync": "^2.18.2",
     "browser-sync-spa": "~1.0.3",
+    "bs-injular": "^0.6.0",
     "chalk": "~1.1.1",
     "del": "~2.0.2",
     "eslint-plugin-angular": "~0.12.0",

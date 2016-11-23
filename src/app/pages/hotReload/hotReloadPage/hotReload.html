@@ -1,0 +1,47 @@
+<div class="widgets red">
+
+ {{vm.ctrlName}}
+
+    <hot-reload-directive text="'!!! Hot Reload Directive !!!'"></hot-reload-directive>
+
+
+
+</div>
+
+<div class="form-group">
+
+    <h1>AngularJS 1.x hot reloading. This is a plugin for the awesome BrowserSync and bs-injular libs.</h1>
+
+    <br>
+
+    <h2>This supports template, controller, directive, component and filter injection.</h2>
+
+    <br>
+
+    <h2>See https://github.com/tfoxy/bs-injular for more details</h2>
+
+    <br>
+
+    <br>
+
+    <h3>Configuration in gulp/server.js</h3>
+
+    <textarea class="form-control" style="height: 400px">
+
+browserSync.use(bsInjular, {
+
+    templates: ['/app/pages/**/*.html','/app/my-module/**/*.html'],
+    controllers: ['/app/pages/**/*.controller.js','/app/my-module/**/*.controller.js'],
+    directives: ['/app/pages/**/*.directive.js','/app/my-module/**/*.directive.js'],
+    filters: ['/app/pages/**/*.filter.js','/app/pages/**/*.filter.js'],
+    angularFile: '/bower_components/angular/angular.js',
+    moduleFile: '/app/app.js',
+    ngApp: 'BlurAdmin'
+
+});
+
+    </textarea>
+
+</div>
+
+
