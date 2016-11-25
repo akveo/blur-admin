@@ -1,6 +1,7 @@
 /**
  * @author v.lugovksy
  * created on 16.12.2015
+ * @deprecated
  */
 (function () {
   'use strict';

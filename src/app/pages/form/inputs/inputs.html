@@ -26,6 +26,9 @@
           ba-panel-class="with-scroll">
         <div ng-include="'app/pages/form/inputs/widgets/checkboxesRadios.html'"></div>
       </div>
+      <div ba-panel ba-panel-title="On/Off Switches" ba-panel-class="with-scroll">
+        <div ng-include="'app/pages/form/inputs/widgets/switch/switch.html'"></div>
+      </div>
     </div>
     <div class="col-md-6">
       <div
@@ -40,9 +43,14 @@
           ba-panel-class="with-scroll">
         <div ng-include="'app/pages/form/inputs/widgets/select/select.html'"></div>
       </div>
-      <div ba-panel ba-panel-title="On/Off Switches" ba-panel-class="with-scroll">
-        <div ng-include="'app/pages/form/inputs/widgets/switch/switch.html'"></div>
+      <div
+          ba-panel
+          ba-panel-title="Old selects(deprecated)"
+          ba-panel-class="with-scroll">
+        <div ng-include="'app/pages/form/inputs/widgets/oldSelect/select.html'"></div>
       </div>
+
+
     </div>
   </div>
 

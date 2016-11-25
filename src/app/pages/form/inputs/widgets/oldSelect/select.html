@@ -1,0 +1,134 @@
+<div ng-controller="OldSelectpickerPanelCtrl as selectpickerVm">
+    <div class="form-group">
+        <select class="form-control selectpicker" selectpicker title="Standard Select"
+                ng-model="selectpickerVm.standardSelected"
+                ng-options="item as item.label for item in selectpickerVm.standardSelectItems">
+        </select>
+    </div>
+    <div class="form-group">
+        <select class="form-control selectpicker with-search" data-live-search="true" title="Select With Search"
+                selectpicker
+                ng-model="selectpickerVm.searchSelectedItem"
+                ng-options="item as item.label for item in selectpickerVm.selectWithSearchItems">
+        </select>
+    </div>
+    <div class="form-group">
+        <select class="form-control selectpicker" title="Option Types" selectpicker>
+            <option>Standard option</option>
+            <option data-subtext="option subtext">Option with subtext</option>
+            <option disabled>Disabled Option</option>
+            <option data-icon="glyphicon-heart">Option with cion</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <select class="form-control selectpicker" disabled title="Disabled Select" selectpicker>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <select class="form-control" title="Select with Option Groups" selectpicker
+                        ng-model="selectpickerVm.groupedSelectedItem"
+                        ng-options="item as item.label group by item.group for item in selectpickerVm.groupedSelectItems">
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <select class="form-control" title="Select with Divider" selectpicker>
+                    <option>Group 1 - Option 1</option>
+                    <option>Group 1 - Option 2</option>
+                    <option data-divider="true"></option>
+                    <option>Group 2 - Option 1</option>
+                    <option>Group 2 - Option 2</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <select class="form-control" title="Multiple Select" multiple selectpicker
+                ng-model="selectpickerVm.multipleSelectedItems"
+                ng-options="item as item.label for item in selectpickerVm.standardSelectItems">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <select class="form-control" title="Multiple Select with Limit" multiple data-max-options="2" selectpicker
+                ng-model="selectpickerVm.multipleSelectedItems2"
+                ng-options="item as item.label for item in selectpickerVm.standardSelectItems">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <select class="form-control" title="Primary Select" data-style="btn-primary" data-container="body"
+                        selectpicker>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" title="Success Select" data-style="btn-success" data-container="body"
+                        selectpicker>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" title="Warning Select" data-style="btn-warning" data-container="body"
+                        selectpicker>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <select class="form-control" title="Info Select" data-style="btn-info" data-container="body"
+                        selectpicker>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select class="form-control" title="Danger Select" data-style="btn-danger" data-container="body"
+                        selectpicker>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <select class="form-control" title="Inverse Select" data-style="btn-inverse" data-container="body"
+                        selectpicker>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
