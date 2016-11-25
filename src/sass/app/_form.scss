@@ -446,7 +446,7 @@ label.custom-input-danger {
       box-shadow: none;
       border-color: $border;
     }
-    > .btn{
+    > .btn {
       border-radius: 5px 5px 0 0;
     }
     .dropdown-menu.open {
@@ -503,6 +503,12 @@ label.custom-input-danger {
   }
 }
 
+.ui-select-multiple.ui-select-bootstrap {
+
+  min-height: 34px;
+  padding: 4px 3px 0 12px;
+}
+
 .progress {
   background: $progress-background;
 }
@@ -537,19 +543,22 @@ label.custom-input-danger {
   border-bottom-right-radius: 5px;
 }
 
-.with-primary-addon:focus{
+.with-primary-addon:focus {
   border-color: $primary;
 }
-.with-warning-addon:focus{
+
+.with-warning-addon:focus {
   border-color: $warning;
 }
-.with-success-addon:focus{
+
+.with-success-addon:focus {
   border-color: $success;
 }
-.with-danger-addon:focus{
+
+.with-danger-addon:focus {
   border-color: $danger;
 }
 
-.sub-little-text{
+.sub-little-text {
   font-size: 12px;
 }

@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.form', [])
+  angular.module('BlurAdmin.pages.form', ['ui.select', 'ngSanitize'])
       .config(routeConfig);
 
   /** @ngInject */

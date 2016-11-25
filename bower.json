@@ -53,7 +53,8 @@
     "angular-animate": "~1.5.8",
     "textAngular": "~1.4.6",
     "angular-xeditable": "~0.5.0",
-    "ng-js-tree": "~0.0.7"
+    "ng-js-tree": "~0.0.7",
+    "angular-ui-select": "^0.19.6"
   },
   "resolutions": {
     "angular": "~1.5.9",
