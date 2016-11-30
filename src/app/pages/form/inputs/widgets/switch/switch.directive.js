@@ -1,37 +1,24 @@
 /**
- * @author v.lugovksy
- * created on 16.12.2015
+ * @author p.maslava
+ * created on 30.11.2016
+ * @deprecated
  */
 (function () {
   'use strict';
 
   angular.module('BlurAdmin.pages.form')
-      .directive('switch', switchDirective);
+    .directive('switchInput', switchDirective);
 
   /** @ngInject */
-  function switchDirective($timeout) {
+  function switchDirective() {
     return {
-      restrict: 'EA',
-      replace: true,
-      scope: {
-        ngModel: '='
-      },
-      template: function(el, attrs) {
-        return '<div class="switch-container ' + (attrs.color || '') + '"><input type="checkbox" ng-model="ngModel"></div>';
-      },
-      link: function (scope, elem, attr) {
-        $timeout(function(){
-          var input = $(elem).find('input');
-          input.bootstrapSwitch({
-            size: 'small',
-            onColor: attr.color
-          });
-          input.on('switchChange.bootstrapSwitch', function(event, state) {
-            scope.ngModel = state;
-            scope.$apply();
-          });
-
-        });
+      restrict: 'A',
+      template: function(el, attr) {
+        var switcher = '<input type="checkbox"><div class="switcher '
+          + (attr.switchInput || '') +
+          '"><div class="handle-container"><span class="handle handle-on">ON</span>' +
+          '<span class="handle"></span><span class="handle handle-off">OFF</span></div></div>';
+        return switcher
       }
     };
   }

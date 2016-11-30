@@ -88,6 +88,78 @@ textarea.form-control {
   }
 }
 
+@mixin setSwitcherColor($color) {
+  border: solid 1px $color;
+  .handle.handle-on {
+    background-color: $color;
+  }
+}
+
+.switcher-container {
+  margin-right: 10px;
+  input {
+    display: none;
+  }
+  .switcher {
+    &.primary {
+      @include setSwitcherColor($primary);
+    }
+    &.success {
+      @include setSwitcherColor($success);
+    }
+    &.warning {
+      @include setSwitcherColor($warning);
+    }
+    &.danger {
+      @include setSwitcherColor($danger);
+    }
+    &.info {
+      @include setSwitcherColor($primary-light);
+    }
+    position: relative;
+    display: inline-block;
+    width: 84px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-sizing: border-box;
+
+    /* this fixes the overflow:hidden in Chrome */
+    -webkit-transform: translateZ(0);
+    /* Hide default HTML checkbox */
+    input {
+      display: none;
+    }
+    .handle-container {
+      position: relative;
+      margin-left: 0px;
+      width: 126px;
+      cursor: pointer;
+      transition: .2s;
+      .handle {
+        width: 42px;
+        float: left;
+        line-height: 28px;
+        height: 28px;
+        font-size: 12px;
+        text-align: center;
+        color: white;
+        &.handle-off {
+          background: $border;
+          color: black;
+        }
+      }
+    }
+  }
+  input:checked + .switcher {
+    border: solid 1px $border;
+    .handle-container {
+      margin-left: -42px;
+    }
+  }
+
+}
+
+
 .switch-container {
   display: inline-block;
   &.primary {
@@ -446,7 +518,7 @@ label.custom-input-danger {
       box-shadow: none;
       border-color: $border;
     }
-    > .btn{
+    > .btn {
       border-radius: 5px 5px 0 0;
     }
     .dropdown-menu.open {
@@ -503,6 +575,12 @@ label.custom-input-danger {
   }
 }
 
+.ui-select-multiple.ui-select-bootstrap {
+
+  min-height: 34px;
+  padding: 4px 3px 0 12px;
+}
+
 .progress {
   background: $progress-background;
 }
@@ -537,19 +615,23 @@ label.custom-input-danger {
   border-bottom-right-radius: 5px;
 }
 
-.with-primary-addon:focus{
+.with-primary-addon:focus {
   border-color: $primary;
 }
-.with-warning-addon:focus{
+
+.with-warning-addon:focus {
   border-color: $warning;
 }
-.with-success-addon:focus{
+
+.with-success-addon:focus {
   border-color: $success;
 }
-.with-danger-addon:focus{
+
+.with-danger-addon:focus {
   border-color: $danger;
 }
 
-.sub-little-text{
+.sub-little-text {
   font-size: 12px;
 }
+
