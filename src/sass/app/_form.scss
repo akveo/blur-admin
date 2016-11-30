@@ -88,6 +88,79 @@ textarea.form-control {
   }
 }
 
+@mixin setSwitcherColor($color) {
+  border: solid 1px $color;
+  .handle.handle-on {
+    background-color: $color;
+  }
+}
+
+.switcher-container {
+  margin-right: 10px;
+  font-weight: normal;
+  input {
+    display: none;
+  }
+  .switcher {
+    &.primary {
+      @include setSwitcherColor($primary);
+    }
+    &.success {
+      @include setSwitcherColor($success);
+    }
+    &.warning {
+      @include setSwitcherColor($warning);
+    }
+    &.danger {
+      @include setSwitcherColor($danger);
+    }
+    &.info {
+      @include setSwitcherColor($primary-light);
+    }
+    position: relative;
+    display: inline-block;
+    width: 84px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-sizing: border-box;
+
+    /* this fixes the overflow:hidden in Chrome */
+    -webkit-transform: translateZ(0);
+    /* Hide default HTML checkbox */
+    input {
+      display: none;
+    }
+    .handle-container {
+      position: relative;
+      width: 126px;
+      cursor: pointer;
+      transform: translate3d(-42px, 0, 0);
+      transition: transform .2s linear;
+      .handle {
+        width: 42px;
+        float: left;
+        line-height: 28px;
+        height: 28px;
+        font-size: 12px;
+        text-align: center;
+        color: white;
+        &.handle-off {
+          background: $border;
+          color: black;
+        }
+      }
+    }
+  }
+  input:checked + .switcher {
+    border: solid 1px $border;
+    .handle-container {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+}
+
+
 .switch-container {
   display: inline-block;
   &.primary {
@@ -562,3 +635,4 @@ label.custom-input-danger {
 .sub-little-text {
   font-size: 12px;
 }
+
