@@ -6,10 +6,10 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.form')
-      .controller('SwitchPanelCtrl', SwitchPanelCtrl);
+      .controller('OldSwitchPanelCtrl', OldSwitchPanelCtrl);
 
   /** @ngInject */
-  function SwitchPanelCtrl() {
+  function OldSwitchPanelCtrl() {
     var vm = this;
 
     vm.switcherValues = {
