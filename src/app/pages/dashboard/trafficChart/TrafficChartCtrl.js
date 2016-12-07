@@ -11,52 +11,51 @@
   /** @ngInject */
   function TrafficChartCtrl($scope, baConfig, colorHelper) {
 
-    $scope.transparent = baConfig.theme.blur;
-    var dashboardColors = baConfig.colors.dashboard;
-    $scope.doughnutData = [
-      {
-        value: 2000,
-        color: dashboardColors.white,
-        highlight: colorHelper.shade(dashboardColors.white, 15),
-        label: 'Other',
-        percentage: 87,
-        order: 1,
-      }, {
-        value: 1500,
-        color: dashboardColors.blueStone,
-        highlight: colorHelper.shade(dashboardColors.blueStone, 15),
-        label: 'Search engines',
-        percentage: 22,
-        order: 4,
-      }, {
-        value: 1000,
-        color: dashboardColors.surfieGreen,
-        highlight: colorHelper.shade(dashboardColors.surfieGreen, 15),
-        label: 'Referral Traffic',
-        percentage: 70,
-        order: 3,
-      }, {
-        value: 1200,
-        color: dashboardColors.silverTree,
-        highlight: colorHelper.shade(dashboardColors.silverTree, 15),
-        label: 'Direct Traffic',
-        percentage: 38,
-        order: 2,
-      }, {
-        value: 400,
-        color: dashboardColors.gossip,
-        highlight: colorHelper.shade(dashboardColors.gossip, 15),
-        label: 'Ad Campaigns',
-        percentage: 17,
-        order: 0,
-      },
-    ];
+      $scope.transparent = baConfig.theme.blur;
+      var dashboardColors = baConfig.colors.dashboard;
+      $scope.doughnutData = {
+          labels: [
+              'Other',
+              'Search engines',
+              'Referral Traffic',
+              'Direct Traffic',
+              'Ad Campaigns'
+          ],
+          datasets: [
+              {
+                  data: [2000, 1500, 1000, 1200, 400],
+                  backgroundColor: [
+                      dashboardColors.white,
+                      dashboardColors.blueStone,
+                      dashboardColors.surfieGreen,
+                      dashboardColors.silverTree,
+                      dashboardColors.gossip
 
-    var ctx = document.getElementById('chart-area').getContext('2d');
-    window.myDoughnut = new Chart(ctx).Doughnut($scope.doughnutData, {
-      segmentShowStroke: false,
-      percentageInnerCutout : 64,
-      responsive: true
-    });
+                  ],
+                  hoverBackgroundColor: [
+                      colorHelper.shade(dashboardColors.white, 15),
+                      colorHelper.shade(dashboardColors.blueStone, 15),
+                      colorHelper.shade(dashboardColors.surfieGreen, 15),
+                      colorHelper.shade(dashboardColors.silverTree, 15),
+                      colorHelper.shade(dashboardColors.gossip, 15)
+                  ],
+                  percentage: [87, 22, 70, 38, 17]
+              }]
+      };
+
+      var ctx = document.getElementById('chart-area').getContext('2d');
+      window.myDoughnut = new Chart(ctx, {
+          type: 'doughnut',
+          data: $scope.doughnutData,
+          options: {
+              cutoutPercentage: 64,
+              responsive: true,
+              elements: {
+                  arc: {
+                      borderWidth: 0
+                  }
+              }
+          }
+      });
   }
 })();
