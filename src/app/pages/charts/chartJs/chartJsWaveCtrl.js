@@ -10,14 +10,20 @@
 
   /** @ngInject */
   function chartJsWaveCtrl($scope, $interval, stopableInterval) {
-    $scope.labels =["April", "May", "June", "Jule", "August", "September", "October", "November", "December"];
-    $scope.data = [[1, 9, 3, 4, 5, 6, 7, 8, 2].map(function(e){
+    $scope.labels =["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    $scope.data = [1, 9, 3, 4, 5, 6, 7, 8, 2].map(function(e){
       return Math.sin(e) * 25 +25;
-    })];
+    });
 
     stopableInterval.start($interval, function(){
-      $scope.data[0].unshift($scope.data[0].pop());
-    }, 300)
+      var tempArray = [];
+      var lastElement = $scope.data[$scope.data.length-1];
+      for(var i = $scope.data.length-1; i > 0; i--){
+       tempArray[i] = $scope.data[i-1];
+      }
+      tempArray[0] = lastElement;
+      $scope.data = tempArray;
+    }, 400)
   }
 
 })();

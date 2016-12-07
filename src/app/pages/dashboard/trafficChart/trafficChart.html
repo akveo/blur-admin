@@ -11,18 +11,20 @@
     <div class="traffic-legend"></div>
   </div>
 
-  <div class="channels-info">
-    <div>
-      <div class="channels-info-item" ng-repeat="item in doughnutData | orderBy:'order'">
-        <div class="legend-color" style="background-color: {{::item.color}}"></div>
-        <p>{{::item.label}}<span class="channel-number">+{{item.percentage}}%</span></p>
-        <div class="progress progress-sm channel-progress">
-          <div class="progress-bar " role="progressbar"
-               aria-valuenow="{{item.percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{item.percentage}}%">
-          </div>
+    <div class="channels-info">
+        <div>
+            <div class="channels-info-item" ng-repeat="label in doughnutData.labels"
+                 ng-init="i = $index; data = doughnutData.datasets[0]">
+                <div class="legend-color" style="background-color: {{::data.backgroundColor[i]}}"></div>
+                <p>{{::label}}<span class="channel-number">+{{data.percentage[i]}}%</span></p>
+                <div class="progress progress-sm channel-progress">
+                    <div class="progress-bar " role="progressbar"
+                         aria-valuenow="{{data.percentage[i]}}" aria-valuemin="0" aria-valuemax="100"
+                         style="width: {{item.percentage}}%">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 
