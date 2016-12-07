@@ -19,7 +19,7 @@
     "jquery-ui": "~1.12.1",
     "jquery.easing": "~1.3.1",
     "jquery.easy-pie-chart": "~2.1.6",
-    "Chart.js": "2.4.0",
+    "chart.js": "~2.4.0",
     "Ionicons": "ionicons#~2.0.1",
     "amcharts": "~3.15.2",
     "amcharts-stock": "*",
@@ -46,7 +46,7 @@
     "angular-ui-router": "~0.3.2",
     "angular-chart.js": "~1.0.3",
     "angular-chartist.js": "~3.3.12",
-    "chartist": "0.10.1",
+    "chartist": "~0.9.5",
     "angular-morris-chart": "~1.1.0",
     "ionrangeslider": "~2.1.2",
     "angular-bootstrap": "~1.3.3",
@@ -56,7 +56,7 @@
     "ng-js-tree": "~0.0.7"
   },
   "resolutions": {
-    "angular": "~1.5.8"
+    "angular": "~1.5.9"
   },
   "overrides": {
     "amcharts": {
