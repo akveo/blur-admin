@@ -10,10 +10,10 @@
 
   /** @ngInject */
   function chartJs2DCtrl($scope) {
-    $scope.labels =["May", "June", "Jule", "August", "September", "October", "November"];
+    $scope.labels =["May", "Jun", "Jul", "Aug", "Sep"];
     $scope.data = [
-      [65, 59, 90, 81, 56, 55, 40],
-      [28, 48, 40, 19, 88, 27, 45]
+      [65, 59, 90, 81, 56],
+      [28, 48, 40, 19, 88]
     ];
     $scope.series = ['Product A', 'Product B'];
 
