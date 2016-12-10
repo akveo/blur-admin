@@ -445,6 +445,14 @@ label.custom-input-danger {
       color: $default-text;
     }
   }
+  > .dropdown-toggle {
+    &.btn-primary, &.btn-warning, &.btn-danger, &.btn-success, &.btn-inverse, &.btn-info {
+      color: #fff;
+      &:hover, &:focus {
+        color: #fff;
+      }
+    }
+  }
 }
 
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
