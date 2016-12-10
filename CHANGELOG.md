@@ -1,3 +1,12 @@
+v1.3.0 - 10 Dec 2016
+--------------------
+- Update bower dependencies
+- Add progress dialog component
+- Add datepicker component
+- Scroll up pages upon navigation
+- CSS-only switchers
+- Use ui-select instead of bootstrap-select
+
 v1.2.0 - 16 May 2016
 --------------------
 - Refactoring to improve customization, fixes #22, #26
