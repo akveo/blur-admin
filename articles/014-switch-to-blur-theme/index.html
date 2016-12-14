@@ -59,16 +59,16 @@
 That’s why first thing you need to do is enable that code.
 This should be done in Angular <strong>configuration block</strong>. 
 For example you can add following lines to <code>src/app/theme/theme.config.js</code>:</p>
-<pre><code class="lang-javascript">  baConfigProvider.changeTheme({blur: <span class="literal">true</span>});
+<pre><code class="lang-javascript">  baConfigProvider.changeTheme({<span class="attr">blur</span>: <span class="literal">true</span>});
 </code></pre>
 <p>2) As well you need to change some colors. 
 For example <em>Mint</em>‘s default gray text color doesn’t look good on blurred panels.
 For our blur theme we use following&nbsp;configuration:</p>
 <pre><code class="lang-javascript">  baConfigProvider.changeColors({
-    <span class="keyword">default</span>: <span class="string">'rgba(#000000, 0.2)'</span>,
-    defaultText: <span class="string">'#ffffff'</span>,
-    dashboard: {
-      white: <span class="string">'#ffffff'</span>,
+    <span class="attr">default</span>: <span class="string">'rgba(#000000, 0.2)'</span>,
+    <span class="attr">defaultText</span>: <span class="string">'#ffffff'</span>,
+    <span class="attr">dashboard</span>: {
+      <span class="attr">white</span>: <span class="string">'#ffffff'</span>,
     },
   });
 </code></pre>
