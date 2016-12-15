@@ -33,5 +33,6 @@ start chrome --user-data-dir="C:/Chrome dev session" --disable-web-security
 
 ## Links for downloads
 
+[BlurAdmin 1.3.1](/blur-admin/downloads/blur-admin-1.3.1.zip)
 [BlurAdmin 1.2.0](/blur-admin/downloads/blur-admin-1.2.0.zip)
 
