@@ -80,8 +80,8 @@ $label-text: #ffffff; // Text for labels in forms (Basically it should be equal 
 <p>After this is done, you need to setup javascript to use <strong>same colors</strong> while building charts and other javascript components.
 To do this, add following code to some configuration block, for example to <code>src/app/theme/theme.config.js</code>:</p>
 <pre><code class="lang-javascript">  baConfigProvider.changeColors({
-    <span class="keyword">default</span>: <span class="string">'#4e4e55'</span>,
-    defaultText: <span class="string">'#e2e2e2'</span>,
+    <span class="attr">default</span>: <span class="string">'#4e4e55'</span>,
+    <span class="attr">defaultText</span>: <span class="string">'#e2e2e2'</span>,
   });
 </code></pre>
 <p>That’s basically it! Right now your admin application should look like&nbsp;this:</p>

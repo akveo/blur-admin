@@ -117,8 +117,8 @@ The provider has <code>addStaticItem</code> method, which receives menuItem obje
 
 <p>Sample manual&nbsp;configuration:</p>
 <pre><code class="lang-javascript">    baSidebarServiceProvider.addStaticItem({
-      title: <span class="string">'Menu Level 1'</span>,
-      icon: <span class="string">'ion-ios-more'</span>
+      <span class="attr">title</span>: <span class="string">'Menu Level 1'</span>,
+      <span class="attr">icon</span>: <span class="string">'ion-ios-more'</span>
     });
 </code></pre>
 <h2 id="route-configuration">Route&nbsp;configuration</h2>
@@ -129,12 +129,12 @@ That means if there’s a parent abstract state for some state and they both hav
 <p>Name of the item is taken from <code>state</code>‘s <code>title</code> property. Sample state configuration, which will add an item to&nbsp;sidebar:</p>
 <pre><code class="lang-javascript">$stateProvider
         .state(<span class="string">'dashboard'</span>, {
-          url: <span class="string">'/dashboard'</span>,
-          templateUrl: <span class="string">'app/pages/dashboard/dashboard.html'</span>,
-          title: <span class="string">'Dashboard'</span>,
-          sidebarMeta: {
-            icon: <span class="string">'ion-android-home'</span>,
-            order: <span class="number">0</span>,
+          <span class="attr">url</span>: <span class="string">'/dashboard'</span>,
+          <span class="attr">templateUrl</span>: <span class="string">'app/pages/dashboard/dashboard.html'</span>,
+          <span class="attr">title</span>: <span class="string">'Dashboard'</span>,
+          <span class="attr">sidebarMeta</span>: {
+            <span class="attr">icon</span>: <span class="string">'ion-android-home'</span>,
+            <span class="attr">order</span>: <span class="number">0</span>,
           },
         });
 </code></pre>
