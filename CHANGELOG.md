@@ -1,3 +1,9 @@
+v1.3.1 - 15 Dec 2016
+--------------------
+- Fix gulp build
+- Update dependencies
+- Fix datepicker position
+
 v1.3.0 - 10 Dec 2016
 --------------------
 - Update bower dependencies
