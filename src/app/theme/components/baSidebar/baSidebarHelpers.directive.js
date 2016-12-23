@@ -111,8 +111,8 @@
       restrict: 'A',
       require: '^baSidebarTogglingItem',
       link: function(scope, el, attrs, baSidebarTogglingItem) {
-        baSidebarTogglingItem.$$expandSubmenu = function() { el.slideDown(); };
-        baSidebarTogglingItem.$$collapseSubmenu = function() { el.slideUp(); };
+        baSidebarTogglingItem.$$expandSubmenu = function() { $(el).slideDown(); };
+        baSidebarTogglingItem.$$collapseSubmenu = function() { $(el).slideUp(); };
       }
     };
   }
