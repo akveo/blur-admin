@@ -49,6 +49,9 @@ node_modules
 gulp.1
 build
 .tmp
+test
+.DS_Store
+npm-debug.*
 
 /src/release
 /release
