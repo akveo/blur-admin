@@ -171,6 +171,12 @@ $panel-heading-font-size: 16px;
   font-weight: $font-light;
 }
 
+.panel-close{
+  position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
 /*
 .panel-group .panel {
   border-radius: 0;
