@@ -17,7 +17,6 @@
     'BlurAdmin.pages.ui.tabs',
     'BlurAdmin.pages.ui.slider',
     'BlurAdmin.pages.ui.panels',
-	'BlurAdmin.pages.ui.animatedPanel',
   ])
       .config(routeConfig);
 
