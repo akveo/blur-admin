@@ -1,5 +1,5 @@
 <label class="switcher-container">
-  <input type="checkbox" ng-model="switcherValue">
+  <input type="checkbox" ng-model="switcherValue" ng-change="switcherChange(switcherData, switcherValue)">
   <div class="switcher" ng-class="::switcherStyle">
     <div class="handle-container">
       <span class="handle handle-on">ON</span>
