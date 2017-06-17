@@ -18,7 +18,11 @@
       template: function(elem, attrs) {
         var res = '<div class="panel-body" ng-transclude></div>';
         if (attrs.baPanelTitle) {
-          var titleTpl = '<div class="panel-heading clearfix"><h3 class="panel-title">' + attrs.baPanelTitle + '</h3></div>';
+          var titleTpl = '<div class="panel-heading clearfix"><h3 class="panel-title">' + attrs.baPanelTitle + '</h3>'
+		  if(attrs.close) {
+			  titleTpl+= '<button class="btn btn-sm btn-danger pull-right panel-close" ng-click='+attrs.close+'><span class="fa fa-times"></span> Close</button>';
+		  }
+		  titleTpl+='</div>';
           res = titleTpl + res; // title should be before
         }
 
