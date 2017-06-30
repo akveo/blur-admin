@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('BlurAdmin.theme.components')
-      .provider('baSidebarService', baSidebarServiceProvider);
+    .provider('baSidebarService', baSidebarServiceProvider);
 
   /** @ngInject */
   function baSidebarServiceProvider() {
@@ -65,23 +65,23 @@
 
         function defineMenuItemStates() {
           return $state.get()
-              .filter(function(s) {
-                return s.sidebarMeta;
-              })
-              .map(function(s) {
-                var meta = s.sidebarMeta;
-                return {
-                  name: s.name,
-                  title: s.title,
-                  level: (s.name.match(/\./g) || []).length,
-                  order: meta.order,
-                  icon: meta.icon,
-                  stateRef: s.name,
-                };
-              })
-              .sort(function(a, b) {
-                return (a.level - b.level) * 100 + a.order - b.order;
-              });
+            .filter(function(s) {
+              return s.sidebarMeta;
+            })
+            .map(function(s) {
+              var meta = s.sidebarMeta;
+              return {
+                name: s.name,
+                title: s.title,
+                level: ((s.name.match(/\./g) || []).length - 1),
+                order: meta.order,
+                icon: meta.icon,
+                stateRef: s.name,
+              };
+            })
+            .sort(function(a, b) {
+              return (a.level - b.level) * 100 + a.order - b.order;
+            });
         }
 
         function shouldMenuBeCollapsed() {

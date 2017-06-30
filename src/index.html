@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="BlurAdmin">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,57 +24,29 @@
   <!-- css files will be automatically insert here -->
   <!-- endinject -->
   <!-- endbuild -->
+
 </head>
+
 <body>
-<div class="body-bg"></div>
-<main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
+  <div ui-view autoscroll="true" autoscroll-body-top></div>
 
-  <ba-sidebar></ba-sidebar>
-  <page-top></page-top>
+  <!-- build:js(src) scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- run `gulp inject` to automatically populate bower script dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
-  <div class="al-main">
-    <div class="al-content">
-      <content-top></content-top>
-      <div ui-view autoscroll="true" autoscroll-body-top></div>
-    </div>
-  </div>
+  <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+  <!-- inject:js -->
+  <!-- js files will be automatically insert here -->
+  <!-- endinject -->
 
-  <footer class="al-footer clearfix">
-    <div class="al-footer-right">Created with <i class="ion-heart"></i></div>
-    <div class="al-footer-main clearfix">
-      <div class="al-copy">Blur Admin 2016</div>
-      <ul class="al-share clearfix">
-        <li><i class="socicon socicon-facebook"></i></li>
-        <li><i class="socicon socicon-twitter"></i></li>
-        <li><i class="socicon socicon-google"></i></li>
-        <li><i class="socicon socicon-github"></i></li>
-      </ul>
-    </div>
-  </footer>
-
-  <back-top></back-top>
-</main>
-
-<div id="preloader" ng-show="!$pageFinishedLoading">
-  <div></div>
-</div>
-
-<!-- build:js(src) scripts/vendor.js -->
-<!-- bower:js -->
-<!-- run `gulp inject` to automatically populate bower script dependencies -->
-<!-- endbower -->
-<!-- endbuild -->
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-
-<!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
-<!-- inject:js -->
-<!-- js files will be automatically insert here -->
-<!-- endinject -->
-
-<!-- inject:partials -->
-<!-- angular templates will be automatically converted in js and inserted here -->
-<!-- endinject -->
-<!-- endbuild -->
+  <!-- inject:partials -->
+  <!-- angular templates will be automatically converted in js and inserted here -->
+  <!-- endinject -->
+  <!-- endbuild -->
 
 </body>
+
 </html>

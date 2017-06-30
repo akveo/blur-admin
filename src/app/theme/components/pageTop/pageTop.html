@@ -12,11 +12,11 @@
       <a uib-dropdown-toggle class="profile-toggle-link">
         <img ng-src="{{::( 'Nasta' | profilePicture )}}">
       </a>
-      <ul  class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
+      <ul class="top-dropdown-menu profile-dropdown" uib-dropdown-menu>
         <li><i class="dropdown-arr"></i></li>
-        <li><a href="#/profile"><i class="fa fa-user"></i>Profile</a></li>
+        <li><a href="#/main/profile"><i class="fa fa-user"></i>Profile</a></li>
         <li><a href><i class="fa fa-cog"></i>Settings</a></li>
-        <li><a href class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
+        <li><a href="#/authSignIn" class="signout"><i class="fa fa-power-off"></i>Sign out</a></li>
       </ul>
     </div>
     <msg-center></msg-center>
