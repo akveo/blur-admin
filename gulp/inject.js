@@ -11,11 +11,14 @@ var _ = require('lodash');
 
 var browserSync = require('browser-sync');
 
+//process.on('unhandledRejection', () => {});
+
 gulp.task('inject-reload', ['inject'], function () {
   browserSync.reload();
 });
 
 gulp.task('inject', ['scripts', 'styles', 'injectAuth', 'inject404', 'copyVendorImages'], function () {
+  console.log("START inject 1")
   var injectStyles = gulp.src([
     path.join(conf.paths.tmp, '/serve/app/main.css'),
     path.join('!' + conf.paths.tmp, '/serve/app/vendor.css')
@@ -34,7 +37,7 @@ gulp.task('inject', ['scripts', 'styles', 'injectAuth', 'inject404', 'copyVendor
     ignorePath: [conf.paths.src, path.join(conf.paths.tmp, '/serve')],
     addRootSlash: false
   };
-
+  console.log("END inject 1")
   return gulp.src(path.join(conf.paths.src, '/index.html'))
     .pipe($.inject(injectStyles, injectOptions))
     .pipe($.inject(injectScripts, injectOptions))

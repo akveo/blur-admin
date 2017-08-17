@@ -222,3 +222,28 @@ a {
 .irs-grid-text {
   color: $default-text;
 }
+
+
+
+
+.no-gutter {
+  padding-left:0;
+    padding-right:0;
+}
+
+#surveys #sidebar button {
+  margin-bottom:10px;
+}
+
+#surveys .new-question-container {
+  margin:25px 0;
+}
+
+#surveys .saved-questions .progress-button .content:after,#surveys .saved-questions .progress-button .content:before, #surveys .survey-template .progress-button .content:after,#surveys .survey-template .progress-button .content:before {
+    content: "\f054" !important;
+    opacity: 1 !important;
+}
+
+#surveys #survey-builder .new-question-options-container .panel-heading .btn-group{
+    margin-top: -25px;
+}
