@@ -1,0 +1,88 @@
+<div id="surveys" class="row">
+	<div id="sidebar" class="col-md-4 col-lg-4">
+		<uib-accordion>
+			<uib-accordion-group panel-class="bootstrap-panel accordion-panel panel-default">
+			    <uib-accordion-heading>
+			      Survey Builder <i class="fa pull-right fa-gavel"></i>
+			    </uib-accordion-heading>
+			    <section class="col-md-12 col-lg-12 no-gutter">
+			      <button ng-click="addElement('multiple')" progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+			      	<i class="fa fa-list"></i>Members
+			      </button>
+			      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+			      	<i class="fa fa-star"></i>Lists
+			      </button>
+			    </section>
+			  </uib-accordion-group>
+		</uib-accordion>
+	</div>
+
+
+	<div class="col-md-8 col-lg-8">
+		<div id="survey-builder" class="panel panel-default bootstrap-panel">
+       		<div class="panel-heading"><h2 class="panel-title pull-left">Survey Title</h2></div>
+       		<div class="panel-body">
+
+       			<div class="col-md-6">
+		        <div class="form-group row clearfix">
+		          <label for="inputFirstName" class="col-sm-3 control-label">Picture</label>
+
+		          <div class="col-sm-9">
+		            <div class="userpic">
+		              <div class="userpic-wrapper">
+		                <img ng-src="{{ picture }}" ng-click="uploadPicture()">
+		              </div>
+		              <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="!noPicture"></i>
+		              <a href class="change-userpic" ng-click="uploadPicture()">Change Profile Picture</a>
+		              <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+
+		      <div class="col-md-6">
+		        <div class="form-group row clearfix">
+		          <label for="inputFirstName" class="col-sm-3 control-label">First Name</label>
+
+		          <div class="col-sm-9">
+		            <input type="text" class="form-control" id="inputFirstName" placeholder="" value="Anastasiya">
+		          </div>
+		        </div>
+		        <div class="form-group row clearfix">
+		          <label for="inputLastName" class="col-sm-3 control-label">Last Name</label>
+
+		          <div class="col-sm-9">
+		            <input type="text" class="form-control" id="inputLastName" placeholder="" value="">
+		          </div>
+		        </div>
+		      </div>
+
+		      <div class="col-md-6">
+		        <div class="form-group row clearfix">
+		          <label class="col-sm-3 control-label">Department</label>
+
+		          <div class="col-sm-9">
+		            <select class="form-control" selectpicker>
+		              <option>Web Development</option>
+		              <option>System Development</option>
+		              <option>Sales</option>
+		              <option>Human Resources</option>
+		            </select>
+		          </div>
+		        </div>
+
+		        <div class="form-group row clearfix">
+		          <label for="inputOccupation" class="col-sm-3 control-label">Occupation</label>
+
+		          <div class="col-sm-9">
+		            <input type="text" class="form-control" id="inputOccupation" placeholder="" value="Front End Web Developer">
+		          </div>
+		        </div>
+		      </div>
+
+       		</div>
+       	</div>
+    </div>
+
+
+</div>

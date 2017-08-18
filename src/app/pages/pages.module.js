@@ -17,6 +17,7 @@
     'BlurAdmin.pages.maps',
     'BlurAdmin.pages.profile',
     'BlurAdmin.pages.surveys',
+    'BlurAdmin.pages.teams',
   ])
       .config(routeConfig);
 
