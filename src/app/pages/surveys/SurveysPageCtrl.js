@@ -6,15 +6,22 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.surveys')
-      .controller('SurveysPageCtrl', SurveysPageCtrl);
+      .controller('SurveysPageCtrl', SurveysPageCtrl)
+      .directive('multiple', function() {
+		    return {
+		      templateUrl: 'app/pages/surveys/widgets/multiple.html'
+		    };
+		  });
 
   /** @ngInject */
-  function SurveysPageCtrl($scope, $timeout) {
+  function SurveysPageCtrl($scope, $compile, $timeout) {
 
   	$scope.isUnfolded = false;
+  	$scope.actualId = 0;
+  	$scope.survey = {};
   	$scope.survey.name = '';
   	$scope.survey.description = '';
-  	$scope.survey.elements.length = 0;
+  	$scope.survey.elements = [];
 
     $scope.progressFunction = function() {
       return $timeout(function() {}, 3000);
@@ -31,14 +38,24 @@
     };
 
     $scope.addElement = function(type){
-        var element = createEmptyElement(type, $scope.survey.elements.length + 1);
+    	$scope.actualId = $scope.survey.elements.length + 1;
+        var element = $scope.createEmptyElement(type, $scope.survey.elements.length + 1);
         $scope.activeElement=element;
         $scope.survey.elements.push(element);
+        var compiledeHTML = $compile("<div multiple></div>")($scope);
+        $("#newElem").append(compiledeHTML);
+        console.log($scope.survey.elements);
      };
 
-     function createEmptyElement(type,orderNo){
+    $scope.removeElement = function(index){
+    			console.log("#q-"+index, index);
+                $scope.survey.elements.splice(index,1);
+                $("#q-"+index).remove();
+            };
+
+    $scope.createEmptyElement = function(type,orderNo){
                 return {
-                    id: 1, // TODO : generate the ID
+                    id: $scope.survey.elements.length+1, // TODO : generate the ID
                     orderNo: orderNo,
                     type: type
                 };

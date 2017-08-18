@@ -77,89 +77,7 @@
 		      	<h2>Page Title</h2>
 		      	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
 
-		      	<div class="panel panel-default bootstrap-panel new-question-options-container">
-		      	  <div class="panel-heading">
-		      	  	<h4 class="panel-title pull-left">Question 1</h4>
-		      	  	<div class="btn-group pull-right">  
-		      	  		  <button type="button" class="btn btn-default btn-icon" title="Your Title" data-toggle="tooltip"><i class="fa fa-arrows"></i></button>
-						  <button type="button" class="btn btn-default btn-icon" ng-click="panelFoldToggle()"><i class="" ng-class="getTheFoldingClass()"></i></button>
-						  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-chevron-down"></i></button>
-						  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-chevron-up"></i></button>
-						  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></button>
-						  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-trash-o"></i></button>
-						</div>
-		      	  </div>
-			      <div class="panel-body" ng-show=isUnfolded>
-			      	<form class="form-horizontal">
-			          <div class="form-group">
-					    <label for="inputQuestion1" class="col-md-12 control-label">Question 1</label>
-					    <div class="col-md-12">
-					      <input type="email" class="form-control" id="inputQuestion1" placeholder="Question 1">
-					    </div>
-					  </div>
-					  <hr/>
-					  <!-- Begin  Answer Choices -->
-					  <div class="form-group">
-					    <label class="col-md-12">Answer Choices</label>
-						    <div class="form-group">
-							    <label for="inputEmail3" class="col-md-2 control-label"><input type="radio" value="option2" disabled="true"></label>
-							    <div class="col-md-8">
-							      <input type="text" class="form-control" placeholder="Enter an answer choice">
-							    </div>
-							    <div class="col-md-2 btn-group">
-									  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-plus-circle"></i></button>
-									  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-minus-circle"></i></button>
-									</ul>
-							    </div>
-							  </div>
-
-							  <div class="form-group">
-							    <label for="inputEmail3" class="col-md-2 control-label"><input type="radio" value="option2" disabled="true"></label>
-							    <div class="col-md-8">
-							      <input type="text" class="form-control" placeholder="Enter an answer choice">
-							    </div>
-							    <div class="col-md-2 btn-group">
-									  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-plus-circle"></i></button>
-									  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-minus-circle"></i></button>
-									</ul>
-							    </div>
-							  </div>
-					  </div>
-					  <!-- End  Answer Choices -->
-
-					  <hr/>
-
-					  <!-- Begin Answer's Options -->
-					  <div class="form-group">
-					  	<label class="col-md-12">Question Options</label>
-					  		<div class="form-group">
-					  			<div class="col-md-10 pull-right">
-							      <label class="checkbox-inline custom-checkbox nowrap">
-							        <input type="checkbox" id="inlineCheckbox03" value="option3">
-							        <span>Allow more than one answer to this question (use checkboxes)</span>
-							      </label>
-							    </div>
-
-							    <div class="col-md-10 pull-right">
-							      <label class="checkbox-inline custom-checkbox nowrap">
-							        <input type="checkbox" id="inlineCheckbox03" value="option3" checked="true">
-							        <span>Add an "Other" Answer Option or Comment Field</span>
-							      </label>
-							      	  <div class="form-group">
-									    <label for="inputEmail3" class="col-sm-2 control-label">Label</label>
-									    <div class="col-sm-10">
-									      <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
-									    </div>
-									  </div>
-			
-							    </div>
-
-							  </div>
-					  </div>	
-					  <!-- End Answer's Options -->
-					</form>
-			      </div>
-			    </div>
+		      	<div id="newElem"></div>
 
 		    	<div class="control-group col-sm-12 col-xs-12 text-center new-question-container">
 				    <div class="btn-group" uib-dropdown dropdown-append-to-body>
@@ -170,7 +88,7 @@
 				      </button>
 				      <ul uib-dropdown-menu>
 				        <li><a href>Textbox</a></li>
-				        <li><a href>Multiple Choices</a></li>
+				        <li><a ng-click="addElement('multiple')" href>Multiple Choices</a></li>
 				        <li><a href>Star Rating</a></li>
 				        <li><a href>Drop Down</a></li>
 				        <li><a href>Slider</a></li>
