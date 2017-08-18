@@ -5,7 +5,9 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.surveys', [])
+  angular.module('BlurAdmin.pages.surveys', [
+    'BlurAdmin.pages.surveys.create',
+  ])
       .config(routeConfig);
 
   /** @ngInject */
@@ -13,11 +15,19 @@
     $stateProvider
         .state('surveys', {
           url: '/surveys',
-          templateUrl: 'app/pages/surveys/surveys.html',
-          controller: 'SurveysPageCtrl',
+          template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           title: 'Surveys',
           sidebarMeta: {
+          	icon: 'ion-gear-a',
             order: 1500,
+          },
+        }).state('surveys.create', {
+          url: '/create',
+          templateUrl: 'app/pages/surveys/create/create.html',
+          controller: "CreateTabCtrl",
+          title: 'Create a Survey',
+          sidebarMeta: {
+            order: 0,
           },
         });
   }

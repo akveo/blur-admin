@@ -1,0 +1,91 @@
+
+
+
+
+<div ng-repeat="element in survey.elements" id="q-{{$index}}" class="panel panel-default bootstrap-panel new-question-options-container">
+		      	  <div class="panel-heading">
+		      	  	<h4 class="panel-title pull-left">Question {{$index+1}}</h4>
+		      	  	<div class="btn-group pull-right">  
+		      	  		  <button type="button" class="btn btn-default btn-icon" title="Your Title" data-toggle="tooltip"><i class="fa fa-arrows"></i></button>
+						  <button type="button" class="btn btn-default btn-icon" ng-click="panelFoldToggle($index)"><i class="" ng-class="getTheFoldingClass()"></i></button>
+						  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-chevron-down"></i></button>
+						  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-chevron-up"></i></button>
+						  <button type="button" class="btn btn-default btn-icon"><i class="fa fa-pencil-square-o"></i></button>
+						  <button type="button" class="btn btn-default btn-icon" ng-click="removeElement($index)"><i class="fa fa-trash-o"></i></button>
+						</div>
+		      	  </div>
+			      <div class="panel-body" ng-show=survey.elements[$index].isUnfolded>
+			      	<form class="form-horizontal">
+			          <div class="form-group">
+					    <div class="col-md-12">
+					      <input ng-model="element.text" type="text" class="form-control" placeholder="Question's text">
+					    </div>
+					  </div>
+					  <hr/>
+					  <!-- Begin  Answer Choices -->
+					  <div class="form-group">
+					    <label class="col-md-12">Answer Choices</label>
+						    
+							  <div id="item-{{$index}}" class="form-group" ng-repeat="item in element['items']">
+							    <label for="inputEmail3" class="col-md-2 control-label"><input type="radio" disabled="true"></label>
+							    <div class="col-md-8">
+							      <input ng-model="item.value" type="text" class="form-control" placeholder="Enter an answer choice">
+							    </div>
+							    <div class="col-md-2 btn-group">
+									  <button type="button" ng-click="addNewItem($parent.$index)" class="btn btn-default btn-icon"><i class="fa fa-plus-circle"></i></button>
+									  <button type="button" ng-click="removeItem($parent.$index, $index)" class="btn btn-default btn-icon"><i class="fa fa-minus-circle"></i></button>
+							    </div>
+							  </div>
+					  </div>
+					  <!-- End  Answer Choices -->
+
+					  <hr/>
+
+					  <!-- Begin Answer's Options -->
+					  <div class="form-group">
+					  	<label class="col-md-12">Question Options</label>
+					  		<div class="form-group">
+					  			<div class="col-md-10 pull-right">
+							      <label class="checkbox-inline custom-checkbox nowrap">
+							        <input ng-model="element.required" type="checkbox">
+							        <span>Required field</span>
+							      </label>
+							    </div>
+
+							    <div class="col-md-10 pull-right">
+							      <label class="checkbox-inline custom-checkbox nowrap">
+							        <input ng-model="element.multiAnswers" type="checkbox">
+							        <span>Allow more than one answer to this question (use checkboxes)</span>
+							      </label>
+							    </div>
+
+							    <div class="col-md-10 pull-right">
+							      <label class="checkbox-inline custom-checkbox nowrap">
+							        <input ng-model="element.comment" type="checkbox">
+							        <span>Add an "Other" Answer Option or Comment Field</span>
+							      </label>
+							      	  <div class="form-group" ng-show=element.comment>
+									    <label for="inputEmail3" class="col-sm-2 control-label">Label</label>
+									    <div class="col-sm-8">
+									      <input ng-model="element.commentLabel" type="text" class="form-control">
+									    </div>
+									  </div>
+			
+							    </div>
+
+							  </div>
+					  </div>	
+					  <!-- End Answer's Options -->
+					  <hr/>
+
+					  <!-- Begin Tags -->
+					  <div class="form-group">
+					  	<label class="col-md-12">Question Tags</label>
+							<div class="col-md-12">
+								    	<input type="text" tag-input="primary" ng-model="element.tags" ng-list data-role="tagsinput" placeholder="Add Tag">
+								  </div>
+					  </div>	
+					  <!-- End Tags -->
+					</form>
+			      </div>
+			    </div>
