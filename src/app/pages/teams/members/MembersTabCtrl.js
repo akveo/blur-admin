@@ -6,23 +6,22 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.teams.members')
- .controller('MembersTabCtrl', MembersTabCtrl);
+      .controller('MembersTabCtrl', MembersTabCtrl);
 
   /** @ngInject */
-  function MembersTabCtrl($scope, fileReader, $filter, $uibModal) {
-  	$scope.picture = $filter('profilePicture')('Nasta');
+  function MembersTabCtrl(composeModal, mailMessages) {
 
-    $scope.removePicture = function () {
-      $scope.picture = $filter('appImage')('theme/no-photo.png');
-      $scope.noPicture = true;
+    var vm = this;
+    vm.navigationCollapsed = true;
+    vm.showCompose = function(subject, to , text){
+      composeModal.open({
+        subject : subject,
+        to: to,
+        text: text
+      })
     };
 
-    $scope.uploadPicture = function () {
-      var fileInput = document.getElementById('uploadFile');
-      fileInput.click();
-
-    };
-
+    vm.tabs = mailMessages.getTabs();
   }
 
 })();

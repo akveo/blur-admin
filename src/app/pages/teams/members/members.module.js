@@ -6,17 +6,35 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.teams.members', [])
-      .directive('tagInput', tagInput);
+    .config(routeConfig);
 
-  function tagInput() {
-    return {
-      restrict: 'A',
-      link: function( $scope, elem, attr) {
-        $(elem).tagsinput({
-          tagClass:  'label label-' + attr.tagInput
+  /** @ngInject */
+  function routeConfig($stateProvider,$urlRouterProvider) {
+    $stateProvider
+        .state('teams.members', {
+          url: '/members',
+          abstract: true,
+          templateUrl: 'app/pages/teams/members/members.html',
+          controller: "MembersTabCtrl",
+          controllerAs: "tabCtrl",
+          title: 'Members',
+          sidebarMeta: {
+            order: 0,
+          },
+        }).state('teams.members.label', {
+          url: '/:label',
+          templateUrl: 'app/pages/teams/members/list/membersList.html',
+          title: 'Mail',
+          controller: "MailListCtrl",
+          controllerAs: "listCtrl"
+        }).state('teams.members.detail', {
+          url: '/:label/:id',
+          templateUrl: 'app/pages/teams/members/detail/memberDetail.html',
+          title: 'Detail',
+          controller: "MemberDetailCtrl",
+          controllerAs: "detailCtrl"
         });
-      }
-    };
+    $urlRouterProvider.when('/teams/members','/teams/members/inbox');
   }
 
 })();

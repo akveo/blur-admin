@@ -1,6 +1,6 @@
 /**
- * @author v.lugovsky
- * created on 16.12.2015
+ * @author k.danovsky
+ * created on 15.01.2016
  */
 (function () {
   'use strict';
@@ -16,18 +16,11 @@
         .state('teams', {
           url: '/teams',
           template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
-          title: 'Teams',
+          abstract: true,
+          title: 'teams',
           sidebarMeta: {
-          	icon: 'ion-gear-a',
-            order: 1500,
-          },
-        }).state('teams.members', {
-          url: '/create',
-          templateUrl: 'app/pages/teams/members/members.html',
-          controller: "MembersTabCtrl",
-          title: 'Manage Members',
-          sidebarMeta: {
-            order: 0,
+            icon: 'ion-gear-a',
+            order: 100,
           },
         });
   }
