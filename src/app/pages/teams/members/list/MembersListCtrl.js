@@ -11,7 +11,7 @@
   /** @ngInject */
   function MembersListCtrl($scope, $stateParams,  membersList) {
     var vm = this;
-    vm.messages = ($stateParams.label == "list") ? membersList.getAllMessages() : membersList.getMembersByLabel($stateParams.label);
+    vm.members = ($stateParams.label == "list") ? membersList.getAllMessages() : membersList.getMembersByLabel($stateParams.label);
     vm.label = $stateParams.label;
 
 

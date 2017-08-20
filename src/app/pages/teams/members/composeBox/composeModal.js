@@ -18,9 +18,12 @@
           controllerAs: 'boxCtrl',
           size: 'compose',
           resolve: {
-            message: function () {
-              return options.message;
-            }
+            member: function () {
+              return options.member;
+            }/*,
+            actualIndex: function () {
+              return options.actualIndex;
+            }*/
           }
         });
       }

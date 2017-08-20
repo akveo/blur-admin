@@ -14,12 +14,16 @@
     var vm = this;
     vm.navigationCollapsed = true;
     vm.showCompose = function(id){
-      if (id != '')
-        vm.message = membersList.getMemberById(id);
+      if (id != ''){
+        vm.member = membersList.getMemberById(id);
+        //vm.actualIndex = membersList.getIndexById(id);
+      } 
       else 
-        vm.message = {};
+        vm.member = {};
+
       composeModal.open({
-        message : vm.message
+        member : vm.member,
+        //actualIndex : vm.actualIndex
       })
     };
 

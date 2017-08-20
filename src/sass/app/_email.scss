@@ -144,7 +144,7 @@
   float: left;
   padding: 0 15px;
   position: relative;
-  height: 550px;
+  min-height: 550px;
   transition: width 0.5s;
   width: calc(100% - 200px);
   border-bottom-right-radius: 5px;
