@@ -7,6 +7,7 @@
 
   angular.module('BlurAdmin.pages.teams', [
     'BlurAdmin.pages.teams.members',
+    'BlurAdmin.pages.teams.lists',
   ])
       .config(routeConfig);
 

@@ -23,7 +23,7 @@
           },
         }).state('teams.members.label', {
           url: '/:label',
-          templateUrl: 'app/pages/teams/members/list/membersList.html',
+          templateUrl: 'app/pages/teams/members/membersListing/membersList.html',
           title: 'Members',
           controller: "MembersListCtrl",
           controllerAs: "listCtrl"
@@ -34,7 +34,7 @@
           controller: "MemberDetailCtrl",
           controllerAs: "detailCtrl"
         });
-    $urlRouterProvider.when('/teams/members','/teams/members/list');
+    $urlRouterProvider.when('/teams/members','/teams/members/listing');
   }
 
 })();
