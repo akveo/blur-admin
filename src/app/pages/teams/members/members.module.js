@@ -24,8 +24,8 @@
         }).state('teams.members.label', {
           url: '/:label',
           templateUrl: 'app/pages/teams/members/list/membersList.html',
-          title: 'Mail',
-          controller: "MailListCtrl",
+          title: 'Members',
+          controller: "MembersListCtrl",
           controllerAs: "listCtrl"
         }).state('teams.members.detail', {
           url: '/:label/:id',
@@ -34,7 +34,7 @@
           controller: "MemberDetailCtrl",
           controllerAs: "detailCtrl"
         });
-    $urlRouterProvider.when('/teams/members','/teams/members/inbox');
+    $urlRouterProvider.when('/teams/members','/teams/members/list');
   }
 
 })();

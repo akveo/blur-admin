@@ -9,9 +9,9 @@
     .controller('MemberDetailCtrl', MemberDetailCtrl);
 
   /** @ngInject */
-  function MemberDetailCtrl($stateParams, mailMessages) {
+  function MemberDetailCtrl($stateParams, membersList) {
     var vm = this;
-    vm.mail = mailMessages.getMessageById($stateParams.id);
+    vm.member = membersList.getMemberById($stateParams.id);
     vm.label = $stateParams.label;
   }
 

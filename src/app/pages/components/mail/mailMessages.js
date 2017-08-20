@@ -22,7 +22,7 @@
         "attachment": "poem.txt",
         "position": "Great Employee",
         "tag": "friend",
-        "labels": ['inbox']
+        "labels": ['hr']
       },
       {
         "id": "4563fdfvd",

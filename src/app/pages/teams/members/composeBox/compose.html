@@ -1,26 +1,80 @@
 <div class="compose-header">
   <span>
-    New message
+    New member
   </span>
   <span class="header-controls">
-    <i class="ion-minus-round"></i>
-    <i class="ion-arrow-resize"></i>
     <i ng-click="$dismiss()" class="ion-close-round"></i>
   </span>
 </div>
 <div>
-  <input type="text" class="form-control compose-input default-color"  placeholder="To" ng-model="boxCtrl.to">
-  <input type="text" class="form-control compose-input default-color"  placeholder="Subject" ng-model="boxCtrl.subject">
-  <div class="compose-container">
-    <text-angular-toolbar ta-toolbar-class="toolbarMain" name="toolbarMain" ta-toolbar="[['h1','h2','h3','bold','italics', 'underline', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull']]"></text-angular-toolbar>
-    <text-angular name="htmlcontent" ta-target-toolbars='toolbarMain,toolbarFooter' ng-model="boxCtrl.text"></text-angular>
-  </div>
+  
+
+
+      <div class="col-md-12">
+        <div class="form-group row clearfix"></div>
+        <div class="form-group row clearfix">
+
+          <div class="col-sm-5">
+            <div class="userpic">
+              <div class="userpic-wrapper">
+                <img ng-src="{{ boxCtrl.picture }}" ng-click="boxCtrl.uploadPicture()">
+              </div>
+              <i class="ion-ios-close-outline" ng-click="boxCtrl.removePicture()" ng-if="!boxCtrl.noPicture"></i>
+              <a href class="change-userpic" ng-click="boxCtrl.uploadPicture()">Change Profile Picture</a>
+              <input type="file" ng-show="false" id="uploadFile" ng-file-select="boxCtrl.onFileSelect($files)">
+            </div>
+          </div>
+
+          <div class="col-md-7">
+        <div class="form-group row clearfix">
+          <label for="inputFirstName" class="col-sm-3 control-label">Name</label>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="" ng-model="boxCtrl.message.name">
+          </div>
+        </div>
+        <div class="form-group row clearfix">
+          <label for="inputLastName" class="col-sm-3 control-label">Email</label>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputLastName" placeholder="" ng-model="boxCtrl.message.email">
+          </div>
+        </div>
+        <div class="form-group row clearfix">
+          <label class="col-sm-3 control-label">Department</label>
+
+          <div class="col-sm-9">
+            <select class="form-control" selectpicker>
+              <option>Web Development</option>
+              <option>System Development</option>
+              <option>Sales</option>
+              <option>Human Resources</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row clearfix">
+          <label for="inputOccupation" class="col-sm-3 control-label">Occupation</label>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputOccupation" placeholder="" ng-model="boxCtrl.message.position">
+          </div>
+        </div>
+      </div>
+
+  
+      </div>
+      <div class="col-md-12"></div>
+
+
+
+
+
 </div>
 <div class="compose-footer clearfix">
-  <button type="button" ng-click="$dismiss()" class="btn btn-send">Send</button>
-  <text-angular-toolbar ta-toolbar-class="toolbarFooter" name="toolbarFooter" ta-toolbar="[['insertLink', 'insertImage', 'html', 'quote','insertVideo']]"></text-angular-toolbar>
+  <button type="button" ng-click="$dismiss()" class="btn btn-send">Save</button>
+
   <div class="footer-controls">
-    <i class="footer-control-first compose-footer-icon ion-arrow-down-b"></i>
-    <i ng-click="$dismiss()" class="compose-footer-icon ion-android-delete"></i>
+    <button type="button" ng-click="$dismiss()" class="btn btn-danger">Cancel</button>
   </div>
 </div>

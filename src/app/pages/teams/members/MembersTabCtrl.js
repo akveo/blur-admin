@@ -9,19 +9,21 @@
       .controller('MembersTabCtrl', MembersTabCtrl);
 
   /** @ngInject */
-  function MembersTabCtrl(composeModal, mailMessages) {
+  function MembersTabCtrl(composeModal, membersList) {
 
     var vm = this;
     vm.navigationCollapsed = true;
-    vm.showCompose = function(subject, to , text){
+    vm.showCompose = function(id){
+      if (id != '')
+        vm.message = membersList.getMemberById(id);
+      else 
+        vm.message = {};
       composeModal.open({
-        subject : subject,
-        to: to,
-        text: text
+        message : vm.message
       })
     };
 
-    vm.tabs = mailMessages.getTabs();
+    vm.tabs = membersList.getTabs();
   }
 
 })();

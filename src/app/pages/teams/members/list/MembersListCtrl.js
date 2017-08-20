@@ -9,11 +9,12 @@
     .controller('MembersListCtrl', MembersListCtrl);
 
   /** @ngInject */
-  function MembersListCtrl($stateParams,  mailMessages) {
+  function MembersListCtrl($scope, $stateParams,  membersList) {
     var vm = this;
-    console.log($stateParams.label);
-    vm.messages = mailMessages.getMessagesByLabel($stateParams.label);
+    vm.messages = ($stateParams.label == "list") ? membersList.getAllMessages() : membersList.getMembersByLabel($stateParams.label);
     vm.label = $stateParams.label;
+
+
   }
 
 })();

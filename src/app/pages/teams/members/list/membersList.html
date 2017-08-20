@@ -38,7 +38,7 @@
         <td  ui-sref="teams.members.detail({id: m.id, label: listCtrl.label})">
           <div class="name-container">
             <div><span class="name">{{m.name}}</span></div>
-            <div><span class="tag label label-primary {{m.tag}}">{{m.tag}}</span></div>
+            <div><span ng-repeat="l in m.labels" class="tag label label-primary {{l}}">{{l}}</span></div>
           </div>
         </td>
         <td  ui-sref="teams.members.detail({id: m.id, label: listCtrl.label})">
@@ -50,8 +50,8 @@
           <span>{{m.position}}</span>
         </td>
         <td>
-          <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">Edit</button>
-        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">Delete</button>
+          <button class="btn btn-primary editable-table-button btn-xs" ng-click="tabCtrl.showCompose(m.id)">Edit</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeMember(m.id)">Delete</button>
         </td>
       </tr>
     </table>

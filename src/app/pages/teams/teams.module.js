@@ -17,7 +17,7 @@
           url: '/teams',
           template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           abstract: true,
-          title: 'teams',
+          title: 'Teams',
           sidebarMeta: {
             icon: 'ion-gear-a',
             order: 100,

@@ -6,10 +6,10 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.teams.members')
-    .service('membersMessages', membersMessages);
+    .service('membersList', membersList);
 
   /** @ngInject */
-  function membersMessages($sce) {
+  function membersList($sce, $stateParams) {
     var messages = [
       {
         "id": "4563faass",
@@ -22,7 +22,7 @@
         "attachment": "poem.txt",
         "position": "Great Employee",
         "tag": "friend",
-        "labels": ['inbox']
+        "labels": ['content']
       },
       {
         "id": "4563fdfvd",
@@ -36,7 +36,7 @@
         "email": "petraramsey@mail.com",
         "position": "Great Employee",
         "tag": "study",
-        "labels": ['inbox']
+        "labels": ['content']
       },
       {
         "id": "4563zxcss",
@@ -49,7 +49,7 @@
         "email": "petraramsey@mail.com",
         "position": "Great Employee",
         "tag": "work",
-        "labels": ['sent', 'important']
+        "labels": ['product', 'content']
       },
       {
         "id": "8955sddf",
@@ -63,7 +63,7 @@
         "position": "Graphical designer",
         "attachment": "design.psd",
         "tag": "work",
-        "labels": ['inbox']
+        "labels": ['shops']
       },
       {
         "id": "8955sdfcc",
@@ -75,7 +75,7 @@
         "email": "barlowshort@mail.com",
         "position": "Graphical designer",
         "tag": "study",
-        "labels": ['inbox']
+        "labels": ['innovation']
       },
       {
         "id": "8955asewf",
@@ -87,7 +87,7 @@
         "email": "barlowshort@mail.com",
         "position": "Graphical designer",
         "tag": "work",
-        "labels": ['inbox', 'important']
+        "labels": ['shops', 'media']
       },
       {
         "id": "2334uudsa",
@@ -104,7 +104,7 @@
         "position": "Technical Chef",
         "attachment": "file.doc",
         "tag": "family",
-        "labels": ['inbox', 'important']
+        "labels": ['hr', 'innovation']
       },
       {
         "id": "2334aefvv",
@@ -120,7 +120,7 @@
         "email": "schwart@mail.com",
         "position": "Technical Chef",
         "tag": "family",
-        "labels": ['inbox', 'important']
+        "labels": ['tech', 'product']
       },
       {
         "id": "2334cvdss",
@@ -135,7 +135,7 @@
         "email": "schwart@mail.com",
         "position": "Technical Chef",
         "tag": "study",
-        "labels": ['trash']
+        "labels": ['product']
       },
       {
         "id": "8223xzxfn",
@@ -148,7 +148,7 @@
         "email": "lakeishaphillips@mail.com",
         "position": "Mobile Developer",
         "tag": 'family',
-        "labels": ['trash']
+        "labels": ['tech']
       },
       {
         "id": "8223sdffn",
@@ -161,7 +161,7 @@
         "email": "lakeishaphillips@mail.com",
         "position": "Mobile Developer",
         "tag": 'family',
-        "labels": ['spam']
+        "labels": ['tech']
       },
       {
         "id": "9391xdsff",
@@ -174,7 +174,7 @@
         "email": "carlsongoodman@mail.com",
         "position": "Fullstack man",
         "tag": "study",
-        "labels": ['draft']
+        "labels": ['tech']
       },
       {
         "id": "8223xsdaa",
@@ -187,10 +187,10 @@
         "email": "lakeishaphillips@mail.com",
         "position": "Mobile Developer",
         "tag": "family",
-        "labels": ['draft']
+        "labels": ['hr']
       },
       {
-        "id": "9391xdsff",
+        "id": "9391xdsfd",
         "name": "Vlad Lugovsky",
         "subject": "What next",
         "date": "2015-03-31T11:52:58",
@@ -200,45 +200,48 @@
         "email": "carlsongoodman@mail.com",
         "position": "Fullstack man",
         "tag": "study",
-        "labels": ['sent']
+        "labels": ['hr']
       }
     ].sort(function (a, b) {
         if (a.date > b.date) return 1;
         if (a.date < b.date) return -1;
       }).reverse();
     var tabs = [{
-      label: 'inbox',
-      name: 'Inbox',
-      newMails: 7
+      label: 'hr',
+      name: 'HR'
     }, {
-      label: 'sent',
-      name: 'Sent Mail'
+      label: 'tech',
+      name: 'Tech'
     }, {
-      label: 'important',
-      name: 'Important'
+      label: 'product',
+      name: 'Product'
     }, {
-      label: 'draft',
-      name: 'Draft',
-      newMails: 2
+      label: 'finance',
+      name: 'Finance'
     }, {
-      label: 'spam',
-      name: 'Spam'
+      label: 'media',
+      name: 'Media'
     }, {
-      label: 'trash',
-      name: 'Trash'
+      label: 'shops',
+      name: 'Shops'
+    }, {
+      label: 'innovation',
+      name: 'Innovation'
     }];
 
     return{
       getTabs : function(){
         return tabs
       },
-      getMessagesByLabel : function(label){
-        console.log('label',$stateParams.label);
+      getMembersByLabel : function(label){
         return messages.filter(function(m){
           return m.labels.indexOf(label) != -1;
         });
       },
-      getMessageById : function(id){
+      getAllMessages : function(){
+        return messages;
+      },
+      getMemberById : function(id){
         return messages.filter(function(m){
           return m.id == id;
         })[0];
