@@ -1,18 +1,82 @@
-<div class="task-todo-container" ng-class="{'transparent': transparent}">
-  <input type="text" value="" class="form-control task-todo" placeholder="Add a new list.." ng-keyup="addNewList($event)" ng-model="newTodoText"/>
-  <i ng-click="addNewList('',true)" class="add-item-icon ion-plus-round"></i>
-  <div class="box-shadow-border"></div>
-  <ul class="todo-list" ui-sortable ng-model="Lists">
-    <li ng-repeat="item in Lists" ng-if="!item.deleted" ng-init="activeItem=false"
-        ng-class="{checked: item.isChecked, active: activeItem}"
-        ng-mouseenter="activeItem=true" ng-mouseleave="activeItem=false">
-      <div class="blur-container"><div class="blur-box"></div></div>
-      <i class="mark" style="background-color: {{::item.color}}"></i>
-      <label class="todo-checkbox custom-checkbox custom-input-success">
-        <input type="checkbox" ng-model="item.isChecked" ng-change="updateMembers($index)">
-        <span class="cut-with-dots">{{ item.name }}</span>
-      </label>
-      <i class="remove-todo ion-ios-close-empty" ng-click="removeList($index)"></i>
-    </li>
-  </ul>
+<div class="row">
+  <div class="col-xlg-4 col-lg-6 col-md-4 col-xs-12"
+       ba-panel
+       ba-panel-title="Mailing LISTS"
+       ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
+
+        <div class="task-todo-container" ng-class="{'transparent': transparent}">
+          <input type="text" value="" class="form-control task-todo" placeholder="Add a new list.." ng-keyup="addNewList($event)" ng-model="newTodoText"/>
+          <i ng-click="addNewList('',true)" class="add-item-icon ion-plus-round"></i>
+          <div class="box-shadow-border"></div>
+          <ul class="todo-list" ui-sortable ng-model="Lists">
+            <li ng-repeat="item in Lists" ng-if="!item.deleted" ng-init="activeItem=false"
+                ng-class="{checked: item.isChecked, active: activeItem}"
+                ng-mouseenter="activeItem=true" ng-mouseleave="activeItem=false">
+              <div class="blur-container"><div class="blur-box"></div></div>
+              <i class="mark" style="background-color: {{::item.color}}"></i>
+              <label class="todo-checkbox custom-checkbox custom-input-success">
+                <input type="checkbox" ng-model="item.isChecked" ng-change="updateMembers($index)">
+                <span class="cut-with-dots">{{ item.name }}</span>
+              </label>
+              <i class="remove-todo ion-ios-close-empty" ng-click="removeList($index)"></i>
+            </li>
+          </ul>
+        </div>
+
+
+  </div>
+
+  <div class="col-xlg-4 col-lg-6 col-md-4 col-xs-12"
+       ba-panel
+       ba-panel-title="List members"
+       ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
+       
+       <div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
+        <div class="feed-message" ng-repeat="m in listMembers">
+          <div class="message-icon">
+            <img class="photo-icon" ng-src="{{m.name.split(' ')[0] | profilePicture}}">
+          </div>
+          <div class="text-block text-message">
+            <div class="message-header">
+              <span class="author">{{m.name}}</span>
+            </div>
+            <div class="message-content line-clamp">
+              <span>{{m.position}} </span>
+            </div>
+            <button class="btn btn-danger editable-table-button btn-xs pull-right" ng-click="removeMember(m.id)">Remove</button>
+            
+          </div>
+        </div>
+      </div>
+
+  </div>
+   <div class="col-xlg-4 col-lg-6 col-md-4 col-xs-12"
+       ba-panel
+       ba-panel-title="Add new members"
+       ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
+        <input type="text" value="" class="form-control task-todo" placeholder="Search" ng-keyup="addNewList($event)" ng-model="newTodoText"/>
+        <select class="form-control" selectpicker ng-model="selectedLabel" ng-change="getMemberByLabel(selectedLabel)">
+              <option selected="true" value="listing">Search by tag ...</option>
+              <option ng-repeat="t in tabs" value="{{t.label}}">{{t.name}}</option>
+            </select>
+
+        <div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
+        <div class="feed-message" ng-repeat="m in searchResult">
+          <div class="message-icon">
+            <img class="photo-icon" ng-src="{{m.name.split(' ')[0] | profilePicture}}">
+          </div>
+          <div class="text-block text-message">
+            <div class="message-header">
+              <span class="author">{{m.name}}</span>
+            </div>
+            <div class="message-content line-clamp">
+              <span>{{m.position}} </span>
+            </div>
+            <button class="btn btn-success editable-table-button btn-xs pull-right" ng-click="removeMember(m.id)">Add</button>
+            
+          </div>
+        </div>
+      </div>
+  </div>
+ 
 </div>

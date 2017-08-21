@@ -30,12 +30,19 @@
       { name: 'Vim an eius', deleted : false, members : ['8955sddf', '4563faass'] },
     ];
 
+    $scope.tabs = membersList.getTabs();
+
+    $scope.searchResult = membersList.getAllMessages();
+
+    
+
     $scope.Lists.forEach(function(item) {
       item.color = getRandomColor();
     });
 
     $scope.newTodoText = '';
-    $scope.listMembers = [{ name: 'Nasta Linnie'}];
+    $scope.listMembers = [];
+    $scope.selectedLabel = "listing";
 
     $scope.addNewList = function (event, clickPlus) {
       if (clickPlus || event.which === 13) {
@@ -63,6 +70,18 @@
 	     $scope.listMembers.push( member );
 	    });
       console.log($scope.listMembers);
+    };
+
+    $scope.getMemberByLabel = function (label) {
+      console.log(label);
+      $scope.searchResult = membersList.getMembersByLabel(label);
+    }; 
+
+    $scope.removeMember = function (index) {
+      if (confirm("Are you sure?"))
+           {
+               //$scope.Lists[index].deleted = true;
+           }
     };
 
     $scope.removeList = function (index) {
