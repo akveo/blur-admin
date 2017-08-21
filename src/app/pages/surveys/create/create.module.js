@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.surveys.create', [])
+  angular.module('BlurAdmin.pages.surveys.create',['BlurAdmin.pages.surveys'])
       .directive('tagInput', tagInput);
 
   function tagInput() {

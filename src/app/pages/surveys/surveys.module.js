@@ -7,6 +7,7 @@
 
   angular.module('BlurAdmin.pages.surveys', [
     'BlurAdmin.pages.surveys.create',
+    'BlurAdmin.pages.surveys.list',
   ])
       .config(routeConfig);
 
@@ -19,15 +20,23 @@
           title: 'Surveys',
           sidebarMeta: {
           	icon: 'ion-gear-a',
-            order: 1500,
+            order: 1000,
           },
         }).state('surveys.create', {
           url: '/create',
           templateUrl: 'app/pages/surveys/create/create.html',
           controller: "CreateTabCtrl",
-          title: 'Create a Survey',
+          title: 'Create new model',
           sidebarMeta: {
-            order: 0,
+            order: 1000,
+          },
+        }).state('surveys.list', {
+          url: '/list',
+          templateUrl: 'app/pages/surveys/list/list.html',
+          controller: "list",
+          title: 'list all models',
+          sidebarMeta: {
+            order: 2000,
           },
         });
   }

@@ -21,7 +21,7 @@
           title: 'Teams',
           sidebarMeta: {
             icon: 'ion-gear-a',
-            order: 100,
+            order: 2000,
           },
         });
   }

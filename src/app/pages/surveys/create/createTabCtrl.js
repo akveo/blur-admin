@@ -33,7 +33,7 @@
 			});
 
   /** @ngInject */
-  function CreateTabCtrl($scope, $http, $compile, $timeout) {
+  function CreateTabCtrl(SurveyService, $scope, $http, $compile, $timeout) {
 
   	$scope.editmode = true;
   	$scope.survey = {};
@@ -60,7 +60,6 @@
         $scope.activeElement=element;
         $scope.survey.elements.push(element);
         $scope.updateBuilder();
-        console.log($scope.survey.elements);
      };
 
     $scope.removeElement = function(index){
@@ -113,22 +112,18 @@
             };
 
      $scope.submitSurvey=function(){
-    		$scope.json = angular.toJson($scope.survey);
-    		var url = "/"
-    		var parameter = JSON.stringify($scope.json);
-		    $http.post(url, parameter).
-		    success(function(data, status, headers, config) {
-		        // this callback will be called asynchronously
-		        // when the response is available
-		        console.log(data);
-		      }).
-		      error(function(data, status, headers, config) {
-		        // called asynchronously if an error occurs
-		        // or server returns response with an error status.
-		        console.log("error",data);
-		      });
-
-            };
+        var survey = $scope.survey 
+        SurveyService
+          .create(survey)
+          .then(
+            function (data){
+              console.log('Survey created', data);
+            },
+            function (error){
+              console.log("Error creating the survey");
+            }
+          );
+      };
 
     $scope.updateBuilder=function(){
     		var compiledeHTML = $compile("<div multiple></div>")($scope);
