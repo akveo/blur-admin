@@ -247,3 +247,21 @@ a {
 #surveys #survey-builder .new-question-options-container .panel-heading .btn-group{
     margin-top: -25px;
 }
+
+#surveys [contenteditable='true']:hover{
+  cursor:pointer;
+  border: 1px dashed;
+  padding: 5px;
+  position:relative;
+}
+#surveys [contenteditable='true']:after{
+  content: "\f040";
+  font-family: FontAwesome;
+  opacity: 0;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+#surveys [contenteditable='true']:hover:after{
+  opacity: 1;
+}

@@ -1,0 +1,36 @@
+<div id="surveys" class="widgets">
+
+  <div class="row">
+    <div class="col-md-8 col-lg-8">
+        <div id="survey-builder" class="panel panel-default bootstrap-panel">
+          <div class="panel-heading"><h2 ng-model="survey.name" ng-attr-contenteditable="{{ editmode }}" class="panel-title pull-left">{{ survey.name }}</h2></div>
+              <div class="panel-body">
+                <p ng-model="survey.description" ng-attr-contenteditable="{{ editmode }}">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+
+                <div id="newElem"></div>
+
+              <div class="control-group col-sm-12 col-xs-12 text-center new-question-container">
+                <div class="btn-group" uib-dropdown dropdown-append-to-body>
+                  <button type="button" class="btn btn-primary btn-with-icon btn-lg" ng-click="addElement('multiple')" ><i class="ion-plus-round"></i>NEW QUESTION</button>
+                </div>
+                <hr />
+                <div class="btn-group">
+                  <button ng-click="submitSurvey()" class="btn btn-success btn-lg">
+                    Create
+                    </button>
+                </div>
+              </div>
+              
+              <br/>
+              <br/>
+              <br/>
+          </div>
+          </div>
+        </div>
+    </div>
+</div>
+<script>
+ $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
