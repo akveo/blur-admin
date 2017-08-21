@@ -4,13 +4,13 @@
   <div class="box-shadow-border"></div>
   <ul class="todo-list" ui-sortable ng-model="Lists">
     <li ng-repeat="item in Lists" ng-if="!item.deleted" ng-init="activeItem=false"
-        ng-class="{checked: isChecked, active: activeItem}"
+        ng-class="{checked: item.isChecked, active: activeItem}"
         ng-mouseenter="activeItem=true" ng-mouseleave="activeItem=false">
       <div class="blur-container"><div class="blur-box"></div></div>
       <i class="mark" style="background-color: {{::item.color}}"></i>
       <label class="todo-checkbox custom-checkbox custom-input-success">
-        <input type="checkbox" ng-model="isChecked">
-        <span class="cut-with-dots">{{ item.text }}</span>
+        <input type="checkbox" ng-model="item.isChecked" ng-change="updateMembers($index)">
+        <span class="cut-with-dots">{{ item.name }}</span>
       </label>
       <i class="remove-todo ion-ios-close-empty" ng-click="removeList($index)"></i>
     </li>
