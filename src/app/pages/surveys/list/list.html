@@ -1,11 +1,47 @@
 <div id="surveys" class="widgets">
-  
   <div class="row">
     <div class="col-md-12">
-      <div ba-panel ba-panel-title="list" ba-panel-class="with-scroll">
-      </div>
-    </div>
+      <div ba-panel ba-panel-title="My surveys" ba-panel-class="with-scroll">
 
+				<div ng-if="vm.surveys.length <= 0">
+					<button ng-click="vm.goToCreate()" class="btn btn-success btn-lg">
+							New survey
+           </button>
+				</div>
+
+				<table ng-if="vm.surveys.length > 0" class="table table-bordered table-hover">
+					<thead>
+						<tr class="black-muted-bg" >
+							<th></td>
+							<th>Title</td>
+							<th>Last edit</td>
+							<th>Responses</td>
+							<th>Actions</td>
+						</tr>
+					<thead>
+					<tbody>
+						<tr ng-repeat="survey in vm.surveys track by survey.id" >
+							<td>
+								{{ $index }}
+							</td>
+							<td>
+								{{ survey.name }} <br />
+								Create at : {{ survey.createdAt | date:'shortDate' }}
+							</td>
+							<td>
+								{{ survey.updatedAt | date:'shortDate' }}
+							</td>
+							<td> {{ survey.responses || 0 }}
+							<td>
+								Action ...
+							</td>
+						</tr>
+					</tbody>
+
+				</table>
+      </div>
+
+    </div>
   </div>
-  List surveys
+
 <div>

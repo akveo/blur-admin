@@ -10,16 +10,27 @@
   /** @ngInject */
   function SurveyService($http, $q) {
     var apiBaseUrl = "http://localhost:9000"
+    var endpoint = apiBaseUrl + "/surveys";
 
-    function list() {
-      return [];
+    function list(params) {
+      params = params || {};
+
+			var deferred = $q.defer();
+    	$http.get(endpoint)
+       .success(function(data) { 
+          deferred.resolve(data);
+       }).error(function(msg, code) {
+          deferred.reject(msg);
+       });
+
+     return deferred.promise;
+
+
+      return $http.get(endpoint, params);
     }
 
     function create(survey) {
-      var url = apiBaseUrl + "/surveys";
-
-      // Make the API call
-      return $http.post(url, survey);
+      return $http.post(endpoint, survey);
     }
 
     function edit(survery) {

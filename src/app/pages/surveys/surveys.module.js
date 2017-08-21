@@ -33,8 +33,8 @@
         }).state('surveys.list', {
           url: '/list',
           templateUrl: 'app/pages/surveys/list/list.html',
-          controller: "list",
-          title: 'list all models',
+          controller: "list as vm",
+          title: 'My surveys',
           sidebarMeta: {
             order: 2000,
           },
