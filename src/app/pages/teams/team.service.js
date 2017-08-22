@@ -33,18 +33,28 @@
       return $http.post(endpoint, member);
     }
 
+    function put(member) {
+      return $http.put(endpoint + "/" + member.id, member);
+    }
+
+    function get(id) {
+      return $http.get(endpoint + "/" + id);
+    }
+
     function edit(member) {
      console.log("edit Member Object", member);
     }
 
-    function remove(member) {
-     console.log("remove Member", member);
+    function remove(id) {
+     return $http.delete(endpoint + "/" + id);
     }
 
     return {
       list:list,
       create:create,
       edit:edit,
+      get:get,
+      put:put,
       remove:remove
     }
   }

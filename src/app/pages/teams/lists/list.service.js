@@ -34,11 +34,11 @@
     }
 
     function edit(list) {
-     console.log("edit Member Object", list);
+      return $http.put(endpoint+"/"+list.id, list);
     }
 
     function remove(list) {
-     console.log("remove Member", list);
+    	return $http.delete(endpoint+"/"+list.id);
     }
 
     return {

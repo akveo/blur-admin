@@ -9,22 +9,33 @@
     .controller('ListsTabCtrl', ListsTabCtrl);
 
   /** @ngInject */
-  function ListsTabCtrl($scope, baConfig, membersList, ListService, $log) {
+  function ListsTabCtrl($scope, baConfig, membersList, ListService,MemberService, $log) {
+  	var vm = this;
 
+  	vm.searchResult = [];
 
     function loadLists() {
       ListService
         .list()
         .then(function (data){
-					$scope.Lists = data;
-					$log.info("Got the survey data",data);
+					vm.Lists = data;
+					$log.info("Got the list data",data);
+					//getting all members
+					MemberService
+				        .list()
+				        .then(function (data){
+				          vm.searchResult = data;
+				          $log.info("Got the members data",data);
+				        }, function (error){
+				          $log.error(error);
+				        });
         }, function (error){
           $log.error(error);
         });
     }
 
     function activate(){
-	  $scope.Lists = [];
+	  vm.Lists = [];
 
       loadLists();
     }
@@ -34,7 +45,7 @@
 
 
     
-    $scope.transparent = baConfig.theme.blur;
+    vm.transparent = baConfig.theme.blur;
     var dashboardColors = baConfig.colors.dashboard;
     var colors = [];
     for (var key in dashboardColors) {
@@ -48,68 +59,120 @@
       return colors[i];
     }
 
-    $scope.tabs = membersList.getTabs();
-
-    $scope.searchResult = membersList.getAllMessages();
+    vm.tabs = membersList.getTabs();
 
     
 
-    $scope.Lists.forEach(function(item) {
+    vm.Lists.forEach(function(item) {
       item.color = getRandomColor();
     });
 
-    $scope.newTodoText = 'tech';
-    $scope.listMembers = [];
-    $scope.selectedLabel = "listing";
+    vm.newList = {};
+    vm.activeList = {};
+    vm.listMembers = [];
+    vm.selectedLabel = "listing";
 
-    $scope.addNewList = function (event, clickPlus) {
+    vm.addNewList = function (event, clickPlus) {
       if (clickPlus || event.which === 13) {
-        /*$scope.Lists.unshift({
-          name: $scope.newTodoText,
-          color: getRandomColor(),
-        });*/
-		var list = {"name" : $scope.newTodoText};
-		ListService.create(list);
-		loadLists();
-        $scope.newTodoText = '';
+
+        vm.Lists.unshift({name : vm.newList.name});
+        //vm.Lists.push(vm.newList);
+		var list = {name : vm.newList.name};
+        ListService
+          .create(list)
+          .then(
+            function (data){
+              loadLists();
+              vm.newList.name = '';
+            },
+            function (error){
+              console.log("Error creating the LIST");
+            }
+          ); 
       }
     };
 
 
-    $scope.updateMembers = function (index) {
+    vm.updateListMembers = function (item) {
 	  //uncheck others lists
-	  for(var i = 0; i<$scope.Lists.length; i++)
-		{
-			if(i != index)
-		   		$scope.Lists[i].isChecked = false;
-		}
+	  if (item.isChecked) {
+		  	vm.activeList = item;
+			angular.forEach(vm.Lists, function(list){
+	      	 if(item.id != list.id)
+			   		list.isChecked = false;
+		    });
 
-	  //getting members info
-	  $scope.listMembers = []; 
-      var membersIds = $scope.Lists[index].members;
-      angular.forEach(membersIds, function(id){
-      	 var member = membersList.getMemberById(id);
-	     $scope.listMembers.push( member );
-	    });
-      console.log($scope.listMembers);
+		  //getting members info
+		  vm.listMembers = []; 
+	      var membersIds = item.members;
+	      angular.forEach(membersIds, function(id){
+	      	 MemberService
+		          .get(id)
+		          .then(
+		            function (data){
+		              vm.listMembers.push( data.data );
+		              console.log("updateListMembers",vm.activeList, vm.listMembers);
+		            },
+		            function (error){
+		              console.log("Error getting the member");
+		            }
+		          ); 
+		     
+		    });
+	  } else
+	  	vm.listMembers = [];
+	  
+      
     };
 
-    $scope.getMemberByLabel = function (label) {
+    vm.getMemberByLabel = function (label) {
       console.log(label);
-      $scope.searchResult = membersList.getMembersByLabel(label);
+      vm.searchResult = membersList.getMembersByLabel(label);
     }; 
 
-    $scope.removeMember = function (index) {
+    vm.updateMembers = function (member, action) {
       if (confirm("Are you sure?"))
            {
-               //$scope.Lists[index].deleted = true;
+               var list = vm.activeList;
+               var index = list.members.indexOf(member.id);
+               
+               if (action == "add") {
+	               	if (index == -1)
+	               		list.members.push(member.id);
+               } else {
+               		if (index != -1)
+               			list.members.splice(index, 1);
+               }
+               
+		        ListService
+		          .edit(list)
+		          .then(
+		            function (data){
+		              loadLists();
+		              vm.newList.name = '';
+		            },
+		            function (error){
+		              console.log("Error updating the LIST");
+		            }
+		          ); 
            }
     };
 
-    $scope.removeList = function (index) {
+    vm.removeList = function (index) {
       if (confirm("Are you sure?"))
            {
-               $scope.Lists[index].deleted = true;
+               
+               var list = vm.Lists[index];
+               ListService
+		          .remove(list)
+		          .then(
+		            function (data){
+		              vm.Lists[index].deleted = true;
+		            },
+		            function (error){
+		              console.log("Error removing the LIST");
+		            }
+		          ); 
            }
     };
   }

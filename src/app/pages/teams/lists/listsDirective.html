@@ -5,20 +5,20 @@
        ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
 
         <div class="task-todo-container" ng-class="{'transparent': transparent}">
-          <input type="text" value="" class="form-control task-todo" placeholder="Add a new list.." ng-keyup="addNewList($event)" ng-model="newTodoText"/>
-          <i ng-click="addNewList('',true)" class="add-item-icon ion-plus-round"></i>
+          <input type="text" value="" class="form-control task-todo" placeholder="Add a new list.." ng-keyup="vm.addNewList($event)" ng-model="vm.newList.name"/>
+          <i ng-click="vm.addNewList('',true)" class="add-item-icon ion-plus-round"></i>
           <div class="box-shadow-border"></div>
-          <ul class="todo-list" ui-sortable ng-model="Lists">
-            <li ng-repeat="item in Lists" ng-if="!item.deleted" ng-init="activeItem=false"
-                ng-class="{checked: item.isChecked, active: activeItem}"
-                ng-mouseenter="activeItem=true" ng-mouseleave="activeItem=false">
+          <ul class="todo-list" ui-sortable ng-model="vm.Lists">
+            <li ng-repeat="item in vm.Lists" ng-if="!item.deleted" ng-init="vm.activeItem=false"
+                ng-class="{checked: item.isChecked, active: vm.activeItem}"
+                ng-mouseenter="vm.activeItem=true" ng-mouseleave="vm.activeItem=false">
               <div class="blur-container"><div class="blur-box"></div></div>
               <i class="mark" style="background-color: {{::item.color}}"></i>
               <label class="todo-checkbox custom-checkbox custom-input-success">
-                <input type="checkbox" ng-model="item.isChecked" ng-change="updateMembers($index)">
+                <input type="checkbox" ng-model="item.isChecked" ng-change="vm.updateListMembers(item)">
                 <span class="cut-with-dots">{{ item.name }}</span>
               </label>
-              <i class="remove-todo ion-ios-close-empty" ng-click="removeList($index)"></i>
+              <i class="remove-todo ion-ios-close-empty" ng-click="vm.removeList($index)"></i>
             </li>
           </ul>
         </div>
@@ -32,18 +32,19 @@
        ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
        
        <div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
-        <div class="feed-message" ng-repeat="m in listMembers">
+        <div class="feed-message" ng-repeat="m in vm.listMembers">
           <div class="message-icon">
             <img class="photo-icon" ng-src="{{m.name.split(' ')[0] | profilePicture}}">
           </div>
           <div class="text-block text-message">
             <div class="message-header">
               <span class="author">{{m.name}}</span>
+              <span class="email">{{m.email}}</span>
             </div>
             <div class="message-content line-clamp">
               <span>{{m.position}} </span>
             </div>
-            <button class="btn btn-danger editable-table-button btn-xs pull-right" ng-click="removeMember(m.id)">Remove</button>
+            <button class="btn btn-danger editable-table-button btn-xs pull-right" ng-click="vm.updateMembers(m, 'remove')">Remove</button>
             
           </div>
         </div>
@@ -54,25 +55,26 @@
        ba-panel
        ba-panel-title="Add new members"
        ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
-        <input type="text" value="" class="form-control task-todo" placeholder="Search" ng-keyup="addNewList($event)"/>
-        <select class="form-control" selectpicker ng-model="selectedLabel" ng-change="getMemberByLabel(selectedLabel)">
+        <input type="text" value="" class="form-control task-todo" placeholder="Search" ng-keyup="vm.addNewList($event)"/>
+        <select class="form-control" selectpicker ng-model="vm.selectedLabel" ng-change="vm.getMemberByLabel(selectedLabel)">
               <option selected="true" value="listing">Search by tag ...</option>
-              <option ng-repeat="t in tabs" value="{{t.label}}">{{t.name}}</option>
+              <option ng-repeat="t in vm.tabs" value="{{t.label}}">{{t.name}}</option>
             </select>
 
         <div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
-        <div class="feed-message" ng-repeat="m in searchResult">
+        <div class="feed-message" ng-repeat="m in vm.searchResult">
           <div class="message-icon">
             <img class="photo-icon" ng-src="{{m.name.split(' ')[0] | profilePicture}}">
           </div>
           <div class="text-block text-message">
             <div class="message-header">
               <span class="author">{{m.name}}</span>
+              <span class="email">{{m.email}}</span>
             </div>
             <div class="message-content line-clamp">
               <span>{{m.position}} </span>
             </div>
-            <button class="btn btn-success editable-table-button btn-xs pull-right" ng-click="removeMember(m.id)">Add</button>
+            <button class="btn btn-success editable-table-button btn-xs pull-right" ng-click="vm.updateMembers(m, 'add')">Add</button>
             
           </div>
         </div>
