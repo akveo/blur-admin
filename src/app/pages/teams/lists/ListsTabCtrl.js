@@ -9,7 +9,30 @@
     .controller('ListsTabCtrl', ListsTabCtrl);
 
   /** @ngInject */
-  function ListsTabCtrl($scope, baConfig, membersList) {
+  function ListsTabCtrl($scope, baConfig, membersList, ListService, $log) {
+
+
+    function loadLists() {
+      ListService
+        .list()
+        .then(function (data){
+					$scope.Lists = data;
+					$log.info("Got the survey data",data);
+        }, function (error){
+          $log.error(error);
+        });
+    }
+
+    function activate(){
+	  $scope.Lists = [];
+
+      loadLists();
+    }
+
+    activate();
+
+
+
     
     $scope.transparent = baConfig.theme.blur;
     var dashboardColors = baConfig.colors.dashboard;
@@ -18,17 +41,12 @@
       colors.push(dashboardColors[key]);
     }
 
+
+
     function getRandomColor() {
       var i = Math.floor(Math.random() * (colors.length - 1));
       return colors[i];
     }
-
-    $scope.Lists = [
-      { name: 'Check me out yeah', deleted : false, members : ['4563faass', '4563fdfvd'] },
-      { name: 'Lorem ipsum', deleted : false, members : ['4563zxcss', '8955sddf'] },
-      { name: 'Ex has semper', deleted : false, members : ['8955sdfcc', '8955sddf'] },
-      { name: 'Vim an eius', deleted : false, members : ['8955sddf', '4563faass'] },
-    ];
 
     $scope.tabs = membersList.getTabs();
 
@@ -40,19 +58,23 @@
       item.color = getRandomColor();
     });
 
-    $scope.newTodoText = '';
+    $scope.newTodoText = 'tech';
     $scope.listMembers = [];
     $scope.selectedLabel = "listing";
 
     $scope.addNewList = function (event, clickPlus) {
       if (clickPlus || event.which === 13) {
-        $scope.Lists.unshift({
+        /*$scope.Lists.unshift({
           name: $scope.newTodoText,
           color: getRandomColor(),
-        });
+        });*/
+		var list = {"name" : $scope.newTodoText};
+		ListService.create(list);
+		loadLists();
         $scope.newTodoText = '';
       }
     };
+
 
     $scope.updateMembers = function (index) {
 	  //uncheck others lists

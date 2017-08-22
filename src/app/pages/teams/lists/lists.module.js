@@ -15,8 +15,7 @@
           url: '/lists',
           //abstract: true,
           templateUrl: 'app/pages/teams/lists/lists.html',
-          controller: "ListsTabCtrl",
-          controllerAs: "listsTabCtrl",
+          controller: "ListsTabCtrl as vm",
           title: 'Lists',
           sidebarMeta: {
             order: 0,

@@ -7,7 +7,7 @@
 
   angular.module('BlurAdmin.pages.surveys.create')
       .controller('CreateTabCtrl', CreateTabCtrl)
-      .directive('multiple', function() {
+      .directive('multipleQ', function() {
 		    return {
 		      templateUrl: 'app/pages/surveys/create/widgets/multiple.html'
 		    };
@@ -126,7 +126,7 @@
       };
 
     $scope.updateBuilder=function(){
-    		var compiledeHTML = $compile("<div multiple></div>")($scope);
+    		var compiledeHTML = $compile("<div multiple-q></div>")($scope);
         	$("#newElem").html(compiledeHTML);
         	console.log($scope.survey.elements);
 

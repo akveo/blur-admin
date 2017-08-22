@@ -9,11 +9,12 @@
     .controller('composeBoxCtrl', composeBoxCtrl);
 
   /** @ngInject */
-  function composeBoxCtrl(member, membersList,fileReader, $filter) {
+  function composeBoxCtrl(member, membersList,MemberService,fileReader, $filter) {
     var vm = this;
     vm.member = member;
     //vm.actualIndex = actualIndex;
     vm.picture = (member.pic && member.pic != "") ? $filter('profilePicture')(member.name.split(' ')[0]) : $filter('appImage')('theme/no-photo.png');
+    vm.Labels = membersList.getTabs();
 
     vm.removePicture = function () {
       vm.picture = $filter('appImage')('theme/no-photo.png');
@@ -35,6 +36,10 @@
 
     vm.updateMember = function () {
       console.log(membersList.getIndexById(vm.member.id), vm.member);
+    };
+
+    vm.createMember = function () {
+      MemberService.create(vm.member);
     };
   }
 })();

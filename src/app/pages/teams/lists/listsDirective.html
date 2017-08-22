@@ -54,7 +54,7 @@
        ba-panel
        ba-panel-title="Add new members"
        ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
-        <input type="text" value="" class="form-control task-todo" placeholder="Search" ng-keyup="addNewList($event)" ng-model="newTodoText"/>
+        <input type="text" value="" class="form-control task-todo" placeholder="Search" ng-keyup="addNewList($event)"/>
         <select class="form-control" selectpicker ng-model="selectedLabel" ng-change="getMemberByLabel(selectedLabel)">
               <option selected="true" value="listing">Search by tag ...</option>
               <option ng-repeat="t in tabs" value="{{t.label}}">{{t.name}}</option>
