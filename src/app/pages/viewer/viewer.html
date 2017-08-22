@@ -1,0 +1,36 @@
+<style>
+  aside, div.page-top , footer, div.content-top {display:none !important;}
+  .al-main {margin-left:0 !important;}
+</style>
+
+<div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="{{vm.survey.name}}" ba-panel-class="with-scroll">
+
+              <div class="section-block bold-text ng-scope"><p>{{vm.survey.description}}</p></div>
+
+              <div class="separator"></div>
+
+              
+              <div id="{{e.id}}" class="form-group answer" ng-repeat="e in vm.survey.elements">
+                <p>{{ e.text }}</p>
+                  <label ng-class="{!el.multiple: custom-radio, el.multiple: custom-checkbox} radio-inline  nowrap" ng-repeat="el in e.items">
+                    <input ng-attr-type="{{el.multiple? 'checkbox' : 'radio'}}" name="{{ e.id }}_{{ $index }}" id="{{ e.id }}_{{ $index }}" value="{{ e.value }}" ng-required="el.required">
+                    <span>{{ e.value }}</span>
+                  </label>
+                  <div class="form-group" ng-if="el.hasComment">
+                    <label for="input01">{{el.commentLabel}}</label>
+                    <input type="text" class="form-control" id="{{ e.id }}_comment" name="{{ e.id }}_comment" placeholder="..." >
+                  </div>
+                  <div class="separator"></div>
+              </div>
+
+              <div class="btn-group">
+                  <button ng-click="submitSurvey()" class="btn btn-success btn-lg">
+                    Send
+                  </button>
+              </div>
+
+            </div>
+        </div>
+</div>

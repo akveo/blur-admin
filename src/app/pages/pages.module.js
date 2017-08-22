@@ -10,6 +10,7 @@
 
     'BlurAdmin.pages.surveys',
     'BlurAdmin.pages.teams',
+    'BlurAdmin.pages.viewer',
   ])
       .config(routeConfig);
 
