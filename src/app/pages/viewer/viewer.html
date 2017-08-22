@@ -7,20 +7,21 @@
         <div class="col-md-12">
             <div ba-panel ba-panel-title="{{vm.survey.name}}" ba-panel-class="with-scroll">
 
-              <div class="section-block bold-text ng-scope"><p>{{vm.survey.description}}</p></div>
+              <div class="section-block bold-text ng-scope"><p ng-bind-html="vm.survey.description"></p></div>
 
               <div class="separator"></div>
 
               
               <div id="{{e.id}}" class="form-group answer" ng-repeat="e in vm.survey.elements">
                 <p>{{ e.text }}</p>
-                  <label ng-class="{!el.multiple: custom-radio, el.multiple: custom-checkbox} radio-inline  nowrap" ng-repeat="el in e.items">
-                    <input ng-attr-type="{{el.multiple? 'checkbox' : 'radio'}}" name="{{ e.id }}_{{ $index }}" id="{{ e.id }}_{{ $index }}" value="{{ e.value }}" ng-required="el.required">
-                    <span>{{ e.value }}</span>
+                  <label ng-class="el.multiple ? 'custom-checkbox radio-checkbox  nowrap' : 'custom-radio radio-inline  nowrap'" ng-repeat="el in e.items">
+                    <input ng-attr-type="{{el.multiple? 'checkbox' : 'radio'}}" name="{{ e._id }}" id="{{ e._id }}_{{ el._id }}" value="{{ el.value }}" ng-required="el.required">
+                    <span>{{ el.value }}</span>
                   </label>
-                  <div class="form-group" ng-if="el.hasComment">
-                    <label for="input01">{{el.commentLabel}}</label>
-                    <input type="text" class="form-control" id="{{ e.id }}_comment" name="{{ e.id }}_comment" placeholder="..." >
+                  <br><br>
+                  <div class="form-group" ng-if="e.hasComment">
+                    <label for="input01">{{e.commentLabel}}</label>
+                    <input type="text" class="form-control" id="{{ e._id }}_comment" name="{{ e._id }}_comment" placeholder="..." >
                   </div>
                   <div class="separator"></div>
               </div>
