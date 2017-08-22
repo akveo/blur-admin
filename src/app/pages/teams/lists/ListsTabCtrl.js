@@ -9,7 +9,7 @@
     .controller('ListsTabCtrl', ListsTabCtrl);
 
   /** @ngInject */
-  function ListsTabCtrl($scope, baConfig) {
+  function ListsTabCtrl($scope, baConfig, membersList) {
     
     $scope.transparent = baConfig.theme.blur;
     var dashboardColors = baConfig.colors.dashboard;
@@ -24,32 +24,64 @@
     }
 
     $scope.Lists = [
-      { text: 'Check me out yeah' },
-      { text: 'Lorem ipsum dolor sit amet, possit denique oportere at his, etiam corpora deseruisse te pro' },
-      { text: 'Ex has semper alterum, expetenda dignissim' },
-      { text: 'Vim an eius ocurreret abhorreant, id nam aeque persius ornatus.' },
-      { text: 'Simul erroribus ad usu' },
-      { text: 'Ei cum solet appareat, ex est graeci mediocritatem' },
-      { text: 'Get in touch with akveo team' },
-      { text: 'Write email to business cat' },
-      { text: 'Have fun with blur admin' },
-      { text: 'What do you think?' },
+      { name: 'Check me out yeah', deleted : false, members : ['4563faass', '4563fdfvd'] },
+      { name: 'Lorem ipsum', deleted : false, members : ['4563zxcss', '8955sddf'] },
+      { name: 'Ex has semper', deleted : false, members : ['8955sdfcc', '8955sddf'] },
+      { name: 'Vim an eius', deleted : false, members : ['8955sddf', '4563faass'] },
     ];
+
+    $scope.tabs = membersList.getTabs();
+
+    $scope.searchResult = membersList.getAllMessages();
+
+    
 
     $scope.Lists.forEach(function(item) {
       item.color = getRandomColor();
     });
 
     $scope.newTodoText = '';
+    $scope.listMembers = [];
+    $scope.selectedLabel = "listing";
 
     $scope.addNewList = function (event, clickPlus) {
       if (clickPlus || event.which === 13) {
         $scope.Lists.unshift({
-          text: $scope.newTodoText,
+          name: $scope.newTodoText,
           color: getRandomColor(),
         });
         $scope.newTodoText = '';
       }
+    };
+
+    $scope.updateMembers = function (index) {
+	  //uncheck others lists
+	  for(var i = 0; i<$scope.Lists.length; i++)
+		{
+			if(i != index)
+		   		$scope.Lists[i].isChecked = false;
+		}
+
+	  //getting members info
+	  $scope.listMembers = []; 
+      var membersIds = $scope.Lists[index].members;
+      angular.forEach(membersIds, function(id){
+      	 var member = membersList.getMemberById(id);
+	     $scope.listMembers.push( member );
+	    });
+      console.log($scope.listMembers);
+    };
+
+    $scope.getMemberByLabel = function (label) {
+      console.log(label);
+      $scope.searchResult = membersList.getMembersByLabel(label);
+    }; 
+
+    $scope.removeMember = function (index) {
+      if (confirm("Are you sure?"))
+           {
+               //$scope.Lists[index].deleted = true;
+           }
     };
 
     $scope.removeList = function (index) {
