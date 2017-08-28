@@ -12,7 +12,7 @@
   function routeConfig($stateProvider) {
     $stateProvider
         .state('viewer', {
-          url: '/viewer/:survey_id',
+          url: '/viewer/:survey_id/:member_id',
           title: 'Viewer',
           templateUrl: 'app/pages/viewer/viewer.html',
           controller: 'ViewerPageCtrl as vm',
