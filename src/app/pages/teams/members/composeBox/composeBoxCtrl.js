@@ -9,26 +9,26 @@
     .controller('composeBoxCtrl', composeBoxCtrl);
 
   /** @ngInject */
-  function composeBoxCtrl(member, membersList,MemberService,fileReader, $filter) {
+  function composeBoxCtrl($scope ,member, membersList,MemberService,fileReader, $filter) {
     var vm = this;
     vm.member = member;
     //vm.actualIndex = actualIndex;
     vm.picture = (member.pic && member.pic != "") ? $filter('profilePicture')(member.name.split(' ')[0]) : $filter('appImage')('theme/no-photo.png');
     vm.Labels = membersList.getTabs();
 
-    vm.removePicture = function () {
+    $scope.removePicture = function () {
       vm.picture = $filter('appImage')('theme/no-photo.png');
       vm.noPicture = true;
     };
 
-    vm.uploadPicture = function () {
+    $scope.uploadPicture = function () {
       var fileInput = document.getElementById('uploadFile');
       fileInput.click();
 
     };
 
-    vm.getFile = function () {
-      fileReader.readAsDataUrl(vm.file, vm)
+    $scope.getFile = function () {
+      fileReader.readAsDataUrl($scope.file, $scope)
           .then(function (result) {
             vm.picture = result;
           });

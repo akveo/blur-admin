@@ -34,7 +34,8 @@
        <div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
         <div class="feed-message" ng-repeat="m in vm.listMembers">
           <div class="message-icon">
-            <img class="photo-icon" ng-src="{{m.name.split(' ')[0] | profilePicture}}">
+            <!--<img class="photo-icon" ng-src="{{m.name.split(' ')[0] | profilePicture}}">-->
+            <img class="photo-icon" ng-src="{{'undefined' | profilePicture}}">
           </div>
           <div class="text-block text-message">
             <div class="message-header">
@@ -64,7 +65,8 @@
         <div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
         <div class="feed-message" ng-repeat="m in vm.searchResult">
           <div class="message-icon">
-            <img class="photo-icon" ng-src="{{m.name.split(' ')[0] | profilePicture}}">
+            <!--<img class="photo-icon" ng-src="{{m.name.split(' ')[0] | profilePicture}}">-->
+            <img class="photo-icon" ng-src="{{'undefined' | profilePicture}}">
           </div>
           <div class="text-block text-message">
             <div class="message-header">

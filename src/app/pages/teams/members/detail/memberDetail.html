@@ -1,6 +1,6 @@
 <div class="message-container" ng-class="{'expanded': tabCtrl.navigationCollapsed}">
   <div class="message">
-    <div class="row">
+    <div class="row" style="height: 75px;">
       <div class="toggle-navigation-container detail-page">
         <a href class="collapse-navigation-link ion-navicon"
            ng-click="tabCtrl.navigationCollapsed=!tabCtrl.navigationCollapsed"></a>
@@ -11,8 +11,8 @@
     </div>
     <div class="person-info row">
       <div class="col-lg-4 col-md-12  no-padding">
-        <img ng-src="{{detailCtrl.member.name.split(' ')[0] | profilePicture}}" class="human-picture">
-
+        <!--<img ng-src="{{detailCtrl.member.name.split(' ')[0] | profilePicture}}" class="human-picture">-->
+        <img ng-src="{{'undefined' | profilePicture}}" class="human-picture">
         <div class="name">
           <h2 class="name-h">{{detailCtrl.member.name.split(' ')[0]}}</h2>
 
