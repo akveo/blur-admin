@@ -17,11 +17,11 @@
           <div class="col-sm-5">
             <div class="userpic">
               <div class="userpic-wrapper">
-                <img ng-src="{{ boxCtrl.picture }}" ng-click="boxCtrl.uploadPicture()">
+                <img ng-src="{{ boxCtrl.picture }}" ng-click="uploadPicture()">
               </div>
-              <i class="ion-ios-close-outline" ng-click="boxCtrl.removePicture()" ng-if="!boxCtrl.noPicture"></i>
-              <a href class="change-userpic" ng-click="boxCtrl.uploadPicture()">Change Profile Picture</a>
-              <input type="file" ng-show="false" id="uploadFile" ng-file-select="boxCtrl.onFileSelect($files)">
+              <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="!boxCtrl.noPicture"></i>
+              <a href class="change-userpic" ng-click="uploadPicture()">Change Profile Picture</a>
+              <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
             </div>
           </div>
 
@@ -30,7 +30,7 @@
           <label for="inputFirstName" class="col-sm-3 control-label">Name</label>
 
           <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputFirstName" placeholder="" ng-model="boxCtrl.member.firstname">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="" ng-model="boxCtrl.member.name">
           </div>
         </div>
         <div class="form-group row clearfix">
