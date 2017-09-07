@@ -19,20 +19,24 @@
       function _factory() {
         var isMenuCollapsed = shouldMenuBeCollapsed();
 
-        this.getMenuItems = function() {
+        this.getMenuItems = function () {
           var states = defineMenuItemStates();
-          var menuItems = states.filter(function(item) {
-            return item.level == 0;
-          });
-
-          menuItems.forEach(function(item) {
-            var children = states.filter(function(child) {
-              return child.level == 1 && child.name.indexOf(item.name) === 0;
+          var zeroLevels = states.filter(function (zeroLevelStateItem) {
+              return zeroLevelStateItem.level == 0;
             });
-            item.subMenu = children.length ? children : null;
-          });
-
-          return menuItems.concat(staticMenuItems);
+          zeroLevels.forEach(function (zeroLevel) {
+            var firstLevels = states.filter(function (firstLevelStateItem) {
+                return firstLevelStateItem.level == 1 && firstLevelStateItem.name.indexOf(zeroLevel.name) === 0;
+             });
+             firstLevels.forEach(function (firstLevel) {
+                 var secondLevel = states.filter(function (secondLevelStateItem) {
+                    return secondLevelStateItem.level == 2 && secondLevelStateItem.name.indexOf(firstLevel.name) === 0;
+              });
+              firstLevel.subMenu = secondLevel.length ? secondLevel : null;
+             });
+           zeroLevel.subMenu = firstLevels.length ? firstLevels : null;
+           });
+          return zeroLevels.concat(staticMenuItems);
         };
 
         this.shouldMenuBeCollapsed = shouldMenuBeCollapsed;
