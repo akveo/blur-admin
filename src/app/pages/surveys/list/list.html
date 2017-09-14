@@ -9,31 +9,39 @@
            </button>
 				</div>
 
-				<table ng-if="vm.surveys.length > 0" class="table table-bordered table-hover">
+				<table ng-if="vm.surveys.length > 0" class="table table-bordered table-hover table-condensed">
 					<thead>
 						<tr class="black-muted-bg" >
-							<th></td>
-							<th>Title</td>
-							<th>Last edit</td>
-							<th>Responses</td>
-							<th>Actions</td>
+							<td class="table-id">#</td>
+							<td>Title</td>
+							<td>Created</td>
+							<td>Last edit</td>
+							<td>Responses</td>
+							<td>Status</td>
+							<td>Actions</td>
 						</tr>
 					<thead>
 					<tbody>
-						<tr ng-repeat="survey in vm.surveys track by survey.id" >
+						<tr id="{{ survey.id }}" ng-repeat="survey in vm.surveys track by survey.id" class="editable-row" >
 							<td>
 								{{ $index }}
 							</td>
 							<td>
-								{{ survey.name }} <br />
-								Create at : {{ survey.createdAt | date:'shortDate' }}
+								{{ survey.name }}
+							</td>
+							<td>
+								{{ survey.createdAt | date:'shortDate' }}
 							</td>
 							<td>
 								{{ survey.updatedAt | date:'shortDate' }}
 							</td>
-							<td> {{ survey.responses || 0 }}
+							<td> {{ survey.responses || 0 }} </td>
+							<td> {{ survey.status }} </td>
 							<td>
-								Action ...
+								<button class="status-button btn btn-xs btn-primary" ng-click="vm.editSurvey(survey.id)">Edit</button>
+								<button class="status-button btn btn-xs btn-info" ng-if="survey.status == 'Draft'" ng-click="vm.goToSend(survey.id)">Send</button>
+								<button class="status-button btn btn-xs btn-info" ng-if="survey.status == 'Draft'" ng-click="vm.goToAnswers(survey.id)">Answers</button>
+								<button class="status-button btn btn-xs btn-danger" ng-click="vm.removeSurvey(survey.id)">Remove</button>
 							</td>
 						</tr>
 					</tbody>

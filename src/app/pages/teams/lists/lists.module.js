@@ -12,7 +12,7 @@
   function routeConfig($stateProvider,$urlRouterProvider) {
     $stateProvider
         .state('teams.lists', {
-          url: '/lists',
+          url: '/lists/:id',
           //abstract: true,
           templateUrl: 'app/pages/teams/lists/lists.html',
           controller: "ListsTabCtrl as vm",

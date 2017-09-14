@@ -14,8 +14,10 @@
     //vm.members = ($stateParams.label == "listing") ? membersList.getAllMessages() : membersList.getMembersByLabel($stateParams.label);
 
     function loadMembers() {
+      var params = ($stateParams.label && $stateParams.label != "listing") ? {"labels":$stateParams.label} : {}
+      console.log("params",params);
       MemberService
-        .list()
+        .list(params)
         .then(function (data){
           vm.members = data;
           $log.info("Got the members data",data);
@@ -23,6 +25,8 @@
           $log.error(error);
         });
     }
+
+    
 
     function activate(){
       vm.members = [];

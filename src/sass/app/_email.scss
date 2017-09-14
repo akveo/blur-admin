@@ -191,14 +191,14 @@
 
 .little-human {
   cursor: pointer;
-  transition: border-left 1.5s ease;
+  /*transition: border-left 1.5s ease;*/
   font-weight: 300;
   .little-human-picture {
     width: 45px;
     height: 45px;
     border-radius: 23px;
     margin: 7px 0px 7px 7px;
-    transition: all .2s ease-in-out;
+    /*transition: all .2s ease-in-out;*/
   }
   .name {
     font-size: 14px;

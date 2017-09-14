@@ -33,9 +33,14 @@
 			});
 
   /** @ngInject */
-  function CreateTabCtrl(SurveyService, $scope, $http, $compile, $timeout) {
+  function CreateTabCtrl(SurveyService, ListService, $scope, $http, $compile, $timeout, $stateParams, $log, toastr) {
 
   	$scope.editmode = true;
+
+    $scope.lists = [];
+    $scope.lists.selected = [];
+    $scope.$watch('lists.selected', $scope.updateLists);
+
   	$scope.survey = {};
   	$scope.survey.name = 'Page Title';
   	$scope.survey.description = 'Page Description';
@@ -69,12 +74,12 @@
 
     $scope.createEmptyElement = function(type,orderNo){
     			var item = {
-                    id: 1,
+                    id: null,
                     orderNo: 1,
                     value: null
                 };
                 return {
-                    id: $scope.survey.elements.length+1, // TODO : generate the ID
+                    id: null, // TODO : generate the ID
                     orderNo: orderNo,
                     text: "",
                     type: type,
@@ -91,7 +96,7 @@
     $scope.addNewItem=function(index){
 
                 var item = {
-                    id: $scope.survey.elements[index].length + 1,
+                    id: null,
                     orderNo: $scope.survey.elements[index].length + 1,
                     value: null
                 };
@@ -111,26 +116,125 @@
                 
             };
 
-     $scope.submitSurvey=function(){
+     $scope.saveSurvey=function(){
         var survey = $scope.survey 
-        SurveyService
+        if($stateParams.survey_id) {
+          SurveyService
+          .update(survey)
+          .then(
+            function (data){
+              console.log('Survey edited', data);
+              toastr.info('The survey was edited successfuly :)', 'Surveys', {
+                      "autoDismiss": true,
+                      "positionClass": "toast-bottom-right",
+                      "type": "success",
+                      "timeOut": "5000",
+                      "extendedTimeOut": "2000"
+                    })
+            },
+            function (error){
+              toastr.error('There were an error editing the survey', 'Surveys', {
+                      "autoDismiss": true,
+                      "positionClass": "toast-bottom-right",
+                      "type": "error",
+                      "timeOut": "5000",
+                      "extendedTimeOut": "2000"
+                    })
+            }
+          );
+        } else {
+          SurveyService
           .create(survey)
           .then(
             function (data){
               console.log('Survey created', data);
+              toastr.info('The survey was created successfuly :)', 'Surveys', {
+                      "autoDismiss": true,
+                      "positionClass": "toast-bottom-right",
+                      "type": "success",
+                      "timeOut": "5000",
+                      "extendedTimeOut": "2000"
+                    })
             },
             function (error){
-              console.log("Error creating the survey");
+              toastr.error('There were an error creating the survey', 'Surveys', {
+                      "autoDismiss": true,
+                      "positionClass": "toast-bottom-right",
+                      "type": "error",
+                      "timeOut": "5000",
+                      "extendedTimeOut": "2000"
+                    })
             }
           );
+        }
+        
+      };
+
+    $scope.submitSurvey=function(){
+        $scope.saveSurvey();
+        $("#sidebar").fadeIn();
+        $("#survey-actions").fadeOut();
+      };
+
+      $scope.sendSurvey=function(){
+        /*$scope.saveSurvey();
+        $("#sidebar").fadeIn();
+        $("#survey-actions").fadeOut();*/
+      };
+
+    $scope.cancelSending=function(){
+        $("#sidebar").fadeOut();
+        $("#survey-actions").fadeIn();
       };
 
     $scope.updateBuilder=function(){
     		var compiledeHTML = $compile("<div multiple-q></div>")($scope);
         	$("#newElem").html(compiledeHTML);
+          
+          if($scope.survey.elements.length>0)
+            $("#survey-actions").show();
+          else
+            $("#survey-actions").hide();
+
         	console.log($scope.survey.elements);
 
             };
+
+    $scope.loadSurvey =  function(id) {
+      SurveyService
+        .get(id)
+        .then(function (data){
+          $scope.survey = data[0];
+          $scope.updateBuilder();
+          $log.info("Got the survey data",$scope.survey);
+        }, function (error){
+          $log.error(error);
+        });
+    }
+
+    $scope.loadLists =  function() {
+      ListService
+        .list()
+        .then(function (data){
+          $scope.lists = data;
+          $log.info("Got the lists data",data);
+        }, function (error){
+          $log.error(error);
+        });
+    }
+
+    $scope.updateLists =  function() {
+      
+    }
+
+    $scope.activate=function(){
+      if($stateParams.survey_id) {
+        $scope.loadSurvey($stateParams.member_id);
+      } 
+      $scope.loadLists(); 
+    }
+
+    $scope.activate();
 
   }
 

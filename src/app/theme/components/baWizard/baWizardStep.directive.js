@@ -14,7 +14,7 @@
         form: '='
       },
       templateUrl:  'app/theme/components/baWizard/baWizardStep.html',
-      link: function($scope, $element, $attrs, wizard) {
+      link: function($scope, $element, $attrs, wizard, AnswerService) {
         $scope.selected = true;
 
         var tab = {
@@ -43,6 +43,7 @@
 
           $scope.form && $scope.form.$setSubmitted(true);
               if($scope.form && $scope.form.$invalid == false) {
+                
                 //console.log("inner", $scope.form.innerForm);
                 angular.forEach($scope.form.innerForm, function(val, key) {
                     if((key.indexOf("_") !== -1) && (key.indexOf("_comment") == -1)) {
@@ -57,7 +58,8 @@
                         "memberEvaluated" : res[1],
                         "memberAsked" : res[2]
                       }
-                      console.log(answer);
+                      console.log($scope);
+                      //AnswerService.create(answer);
                       /*$http.post(endpoint, answer).success(function(data) { 
                           console.log(data.data);
                           //return response.data;

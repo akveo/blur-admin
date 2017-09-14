@@ -13,7 +13,7 @@
     $stateProvider
         .state('teams.members', {
           url: '/members',
-          abstract: true,
+          //abstract: true,
           templateUrl: 'app/pages/teams/members/members.html',
           controller: "MembersTabCtrl",
           controllerAs: "tabCtrl",
@@ -28,7 +28,7 @@
           controller: "MembersListCtrl",
           controllerAs: "listCtrl"
         }).state('teams.members.detail', {
-          url: '/:label/:id',
+          url: '/:id',
           templateUrl: 'app/pages/teams/members/detail/memberDetail.html',
           title: 'Detail',
           controller: "MemberDetailCtrl",

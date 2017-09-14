@@ -15,8 +15,8 @@
     function list(params) {
       params = params || {};
 
-			var deferred = $q.defer();
-    	$http.get(endpoint)
+      var deferred = $q.defer();
+      $http.get(endpoint)
        .success(function(data) { 
           deferred.resolve(data);
        }).error(function(msg, code) {
@@ -29,22 +29,39 @@
       return $http.get(endpoint, params);
     }
 
+    function get(id) {
+
+      var deferred = $q.defer();
+      $http.get(endpoint)
+       .success(function(data) { 
+          deferred.resolve(data);
+       }).error(function(msg, code) {
+          deferred.reject(msg);
+       });
+
+     return deferred.promise;
+
+
+      return $http.get(endpoint, id);
+    }
+
     function create(survey) {
       return $http.post(endpoint, survey);
     }
 
-    function edit(survery) {
-     console.log("edit jSurvey Opject", survey);
+    function update(survey) {
+      return $http.put(endpoint + "/"+survey.id, survey);
     }
 
-    function remove(survery) {
-     console.log("remove Opject", survey);
+    function remove(id) {
+     return $http.delete(endpoint + "/"+id);
     }
 
     return {
       list:list,
+      get:get,
       create:create,
-      edit:edit,
+      update:update,
       remove:remove
     }
   }

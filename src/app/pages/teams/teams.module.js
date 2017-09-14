@@ -8,6 +8,7 @@
   angular.module('BlurAdmin.pages.teams', [
     'BlurAdmin.pages.teams.members',
     'BlurAdmin.pages.teams.lists',
+    'lr.upload',
   ])
       .config(routeConfig);
 

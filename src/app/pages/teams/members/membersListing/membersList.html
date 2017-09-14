@@ -24,7 +24,7 @@
   </div>
   <div class="messages">
     <table>
-      <tr ng-repeat="m in listCtrl.members track by m.id"
+      <tr id="m-{{m.id}}" ng-repeat="m in listCtrl.members track by m.id"
           class="side-message-navigation-item little-human shineHover {{m.tag}}">
         <td class="check-td">
           <div class="mail-checkbox">
@@ -35,8 +35,8 @@
           </div>
         </td>
         <td  class="photo-td" ui-sref="teams.members.detail({id: m.id, label: listCtrl.label})">
-          <!--<img ng-src="{{m.name.split(' ')[0] | profilePicture}}" class="little-human-picture">-->
-          <img ng-src="{{'undefined' | profilePicture}}" class="little-human-picture">
+          <img ng-src="{{m.id | profilePicture}}" class="little-human-picture">
+         
         </td>
         <td  ui-sref="teams.members.detail({id: m.id, label: listCtrl.label})">
           <div class="name-container">
@@ -54,7 +54,7 @@
         </td>
         <td>
           <button class="btn btn-primary editable-table-button btn-xs" ng-click="tabCtrl.showCompose(m.id)">Edit</button>
-        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeMember(m.id)">Delete</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="tabCtrl.removeMember(m.id)">Delete</button>
         </td>
       </tr>
     </table>

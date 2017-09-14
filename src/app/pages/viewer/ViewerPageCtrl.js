@@ -64,7 +64,7 @@
       
     }
 
-    vm.submit = function(form){
+    vm.test = function(form){
     //$scope.submitted = true;
     alert("Angular is Awesome!!!");
     console.log('submit', form);
