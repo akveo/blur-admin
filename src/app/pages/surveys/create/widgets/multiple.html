@@ -82,7 +82,10 @@
 					  <div class="form-group">
 					  	<label class="col-md-12">Question Tags</label>
 							<div class="col-md-12">
-								    	<input type="text" tag-input="primary" ng-model="element.tags" ng-list data-role="tagsinput" placeholder="Add Tag">
+
+								    	<tags-input track-by-expr="$index" class="bootstrap" ng-model="element.tags" use-strings="true">
+        
+    									</tags-input>
 								  </div>
 					  </div>	
 					  <!-- End Tags -->

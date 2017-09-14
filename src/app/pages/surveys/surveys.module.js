@@ -8,8 +8,7 @@
   angular.module('BlurAdmin.pages.surveys', [
     'BlurAdmin.pages.surveys.create',
     'BlurAdmin.pages.surveys.list',
-  ])
-      .config(routeConfig);
+  ]).config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {

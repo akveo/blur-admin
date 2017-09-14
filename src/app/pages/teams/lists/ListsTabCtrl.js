@@ -226,7 +226,7 @@
 
     }; 
 
-    vm.updateMembers = function (members, action, multi = false) {
+    vm.updateMembers = function (members, action, multi) {
       if (confirm("Are you sure?"))
            {
             console.log('updateMembers:members', members)

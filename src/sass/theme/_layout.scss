@@ -248,13 +248,13 @@ a {
     margin-top: -25px;
 }
 
-#surveys [contenteditable='true']:hover{
+#surveys  #survey-builder [contenteditable='true']:hover{
   cursor:pointer;
   border: 1px dashed;
   padding: 5px;
   position:relative;
 }
-#surveys [contenteditable='true']:after{
+#surveys  #survey-builder [contenteditable='true']:after{
   content: "\f040";
   font-family: FontAwesome;
   opacity: 0;
@@ -262,6 +262,75 @@ a {
   right: 10px;
   top: 5px;
 }
-#surveys [contenteditable='true']:hover:after{
+#surveys  #survey-builder [contenteditable='true']:hover:after{
   opacity: 1;
+}
+
+#surveys  #survey-sending .compose-container .ta-text.ta-editor {
+    background-color: #F5F5F5;
+}
+
+#surveys  #survey-sending input {
+    margin : 10px 0;
+}
+
+#surveys  #survey-sending .btn-group, .btn-group-vertical {
+    margin-right: 20px;
+}
+
+
+
+
+
+
+.bootstrap .tags {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.bootstrap .tags.focused {
+  border-color: #66afe9;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075), 0 0 8px rgba(102,175,233,0.6);
+}
+
+.bootstrap .tags .tag-item {
+  background: #428bca;
+  border: 1px solid #357ebd;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.bootstrap .tags .tag-item.selected {
+  background: #d9534f;
+  border: 1px solid #d43f3a;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.bootstrap .tags .tag-item button {
+  background: transparent;
+  color: #000;
+  opacity: .4;
+}
+
+.bootstrap .autocomplete {
+  border-radius: 4px;
+}
+
+.bootstrap .autocomplete .suggestion-item.selected {
+  color: #262626;
+  background-color: #e9e9e9;
+}
+
+.bootstrap .autocomplete .suggestion-item em {
+  font-weight: normal;
+  background-color: #ffff00;
+}
+
+.bootstrap .autocomplete .suggestion-item.selected em {
+  color: #262626;
+  background-color: #ffff00;
 }

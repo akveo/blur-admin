@@ -1,8 +1,8 @@
 <div id="surveys" class="widgets">
 
   <div class="row">
-    <div class="col-md-8 col-lg-8">
-        <div id="survey-builder" class="panel panel-default bootstrap-panel">
+    <div id="survey-builder" class="col-md-12 col-lg-12 {{ !display.survey ? 'slide-out-blurred-left' : '' }}">
+        <div class="panel panel-default bootstrap-panel">
           <div class="panel-heading"><h2 ng-model="survey.name" ng-attr-contenteditable="{{ editmode }}" class="panel-title pull-left">{{ survey.name }}</h2></div>
               <div class="panel-body">
                 <p ng-model="survey.description" ng-attr-contenteditable="{{ editmode }}"></p>
@@ -36,14 +36,14 @@
           </div>
         </div>
 
-        <div id="sidebar" class="col-md-4 col-lg-4" style="display:none;">
+        <div id="survey-sending" class="col-md-8 col-lg-8 {{ display.surveySending ? 'roll-in-blurred-left' : 'invisible' }}">
+          <div class="panel panel-default bootstrap-panel">
+            <div class="panel-heading"><h2 class="panel-title pull-left">Send your survey</h2></div>
+                <div class="panel-body">
 
-          <div id="survey-lists" class="panel panel-default bootstrap-panel">
-          <div class="panel-heading"><h2 class="panel-title pull-left">Send your survey</h2></div>
-              <div class="panel-body">
-          
-                <div class="form-group">
-                  <ui-select multiple ng-model="lists.selected"
+
+                  <div>
+                    <ui-select multiple ng-model="lists.selected"
                              ng-disabled="false"
                              search-enabled="true"
                              append-to-body="true"
@@ -55,32 +55,53 @@
                       {{multipleItem.name}}
                     </ui-select-choices>
                   </ui-select>
+                    <input type="text" class="form-control compose-input default-color"  placeholder="Subject" ng-model="boxCtrl.subject">
+
+                    <div class="control-group">
+                      <span class="control-label" style="display: block;float: left;margin: 7px;">360 Survey : </span>
+                      <div><ba-switcher switcher-style="primary" switcher-value="survey.s360"></ba-switcher></div>
+                      
+                    </div>
+
+                    <div class="compose-container">
+                      <text-angular-toolbar ta-toolbar-class="toolbarMain" name="toolbarMain" ta-toolbar="[['h1','h2','h3','bold','italics', 'underline', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],['userName', 'surveyLink']]"></text-angular-toolbar>
+                      <text-angular name="htmlcontent" ta-target-toolbars='toolbarMain,toolbarFooter' ng-model="boxCtrl.text"></text-angular>
+                    </div>
+                  </div>
+                  <div class="compose-footer clearfix">
+                    <button type="button" ng-click="sendSurvey()" class="btn btn-send">Send</button>
+                    <button type="button" ng-click="cancelSending()" class="btn btn-danger">Cancel</button>
+                    <text-angular-toolbar ta-toolbar-class="toolbarFooter" name="toolbarFooter" ta-toolbar="[['insertLink', 'insertImage', 'html', 'quote','insertVideo']]"></text-angular-toolbar>
+                    
+                  </div>
+
+
+
+
                 </div>
+          </div>
+        </div>
+
+        <div id="sidebar" class="col-md-4 col-lg-4 {{ display.sidebar ? 'roll-in-blurred-right' : 'invisible' }}">
+
+          <div id="survey-lists" class="panel panel-default bootstrap-panel">
+          <div class="panel-heading"><h2 class="panel-title pull-left">Memebrs this survey will be sent to</h2></div>
+              <div class="panel-body">
+          
+                
 
                 
                    
                    <div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
                     <div class="feed-message" ng-repeat="l in lists.selected">
-                        <!--<img class="photo-icon" ng-src="{{m.name.split(' ')[0] | profilePicture}}">-->
+                        <h3>{{l.name}}</h3>
                         <img class="photo-icon roll-in-blurred-right" ng-src="{{m | profilePicture}}" ng-repeat="m in l.members">
                     </div>
                   </div>
 
               
 
-                <div class="actions">
-                  <div class="btn-group">
-                    <button ng-click="sendSurvey()" class="btn btn-success btn-lg">
-                      Send the Survey
-                      </button>
-                  </div>
-
-                  <div class="btn-group">
-                    <button ng-click="cancelSending()" class="btn btn-danger btn-lg">
-                      Cancel
-                      </button>
-                  </div>
-                </div>
+              
               </div>
 
               </div> 
