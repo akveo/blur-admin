@@ -1,0 +1,174 @@
+<div class="row">
+  <div class="col-xlg-6 col-lg-6 col-md-6 col-xs-12 {{ vm.activeList.name ? 'slide-out-blurred-left' : '' }}"
+       ba-panel
+       ba-panel-title="Mailing LISTS"
+       ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
+
+        <div class="task-todo-container" ng-class="{'transparent': transparent}">
+          <input type="text" value="" class="form-control task-todo" placeholder="Add a new list.." ng-keyup="vm.addNewList($event)" ng-model="vm.newList.name"/>
+          <i ng-click="vm.addNewList('',true)" class="add-item-icon ion-plus-round"></i>
+          <div class="box-shadow-border"></div>
+          <ul class="todo-list" ui-sortable ng-model="vm.Lists">
+            <li ng-repeat="item in vm.Lists" ng-if="!item.deleted" ng-init="vm.activeItem=false"
+                ng-class="{checked: item.isChecked, active: vm.activeItem}"
+                ng-mouseenter="vm.activeItem=true" ng-mouseleave="vm.activeItem=false">
+              <div class="blur-container"><div class="blur-box"></div></div>
+              <i class="mark" style="background-color: {{::item.color}}"></i>
+              <label class="todo-checkbox custom-checkbox custom-input-success">
+                <input type="checkbox" ng-model="item.isChecked" ng-change="vm.updateListMembers(item)">
+                <span class="cut-with-dots">{{ item.name }}</span>
+              </label>
+              <i class="remove-todo ion-ios-close-empty" ng-click="vm.removeList($index)"></i>
+            </li>
+          </ul>
+        </div>
+
+
+  </div>
+
+  <div class="col-xlg-6 col-lg-6 col-md-6 col-xs-12"
+       ba-panel
+       ba-panel-title="{{vm.activeList.name}} members"
+       ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
+       
+       
+       <div id="members-control" class="mail-messages-control side-message-navigation-item">
+          <div class="toggle-navigation-container">
+            <a href class="collapse-navigation-link ion-navicon"
+               ng-click="tabCtrl.navigationCollapsed=!tabCtrl.navigationCollapsed"></a>
+          </div>
+          <label class="checkbox-inline custom-checkbox nowrap">
+            <input type="checkbox" id="members-check" ng-model="vm.selectAllMembers" ng-change="vm.selectAllListMembers()">
+            <span class="select-all-label">Select All</span>
+          </label>
+          <button type="button" class="btn  btn-icon refresh-button"><i class="ion-refresh"></i></button>
+          <div class="btn-group" uib-dropdown>
+            <button type="button" class="btn more-button" uib-dropdown-toggle>
+              More <span class="caret"></span>
+            </button>
+            <ul uib-dropdown-menu>
+              <li><a ng-click="vm.updateMembers(vm.listMembers, 'remove', true)">Remove all selected members</a></li>
+            </ul>
+          </div>
+        </div>
+
+      <div id="members" class="messages">
+        <table>
+          <tr ng-repeat="m in vm.listMembers"
+              class="side-message-navigation-item little-human shineHover">
+            <td class="check-td">
+              <div class="mail-checkbox">
+                <label class="checkbox-inline custom-checkbox nowrap">
+                  <input type="checkbox" ng-model="m.Selected" ng-change="vm.insertMemberList(m)">
+                  <span></span>
+                </label>
+              </div>
+            </td>
+            <td  class="photo-td"><img ng-src="{{m.id | profilePicture}}" class="little-human-picture"></td>
+            <td>
+              <div class="name-container">
+                <div><span class="name">{{m.name}}</span></div>
+                <div>{{m.email}}</div>
+              </div>
+            </td>
+            <td  ui-sref="components.mail.detail({id: m.id, label: listCtrl.label})">
+              <div class="additional-info">
+                <span class="subject"> {{m.position}}</span>
+              </div>
+            </td>
+            <td>
+              <button class="btn btn-danger btn-xs pull-left" ng-click="vm.updateMembers([m], 'remove')"><span class="glyphicon glyphicon-trash"></span></button>
+
+            </td>
+            
+          </tr>
+          <tr class="side-message-navigation-item {{ vm.errors.noMember ? 'visible' : 'invisible' }}"><td class="check-td"></td><td><span>This list contain no member ! Please start adding some on your right.</span></td></tr>
+           <tr class="side-message-navigation-item {{ vm.errors.noList ? 'visible' : 'invisible' }}"><td class="check-td"></td><td><span>No list is selected ! Please select one on your left.</span></td></tr>
+
+        </table>
+      </div>
+
+      
+
+
+
+
+
+
+  </div>
+   <div class="col-xlg-6 col-lg-6 col-md-6 col-xs-12 {{ vm.activeList.name ? 'roll-in-blurred-right' : 'invisible' }}"
+       ba-panel
+       ba-panel-title="Add new members"
+       ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
+        
+        <select class="form-control" selectpicker ng-model="vm.selectedLabel" ng-change="vm.getMemberByLabel()">
+              <option selected="true" value="">Search by tag ...</option>
+              <option ng-repeat="t in vm.tabs" value="{{t.label}}">{{t.name}}</option>
+            </select>
+
+        
+      <div id="results-control" class="mail-messages-control side-message-navigation-item">
+        <div class="toggle-navigation-container">
+          <a href class="collapse-navigation-link ion-navicon"
+             ng-click="tabCtrl.navigationCollapsed=!tabCtrl.navigationCollapsed"></a>
+        </div>
+        <label class="checkbox-inline custom-checkbox nowrap">
+          <input type="checkbox" id="results-check" ng-model="vm.selectAllResults" ng-change="vm.selectAllSearchResult()">
+          <span class="select-all-label">Select All</span>
+        </label>
+        <button type="button" class="btn  btn-icon refresh-button"><i class="ion-refresh"></i></button>
+        <div class="btn-group" uib-dropdown>
+          <button type="button" class="btn more-button" uib-dropdown-toggle>
+            More <span class="caret"></span>
+          </button>
+          <ul uib-dropdown-menu>
+            <li><a ng-click="vm.updateMembers(vm.searchResult, 'add', true)">Add all selected members</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="results" class="messages">
+        <table>
+          <tr ng-repeat="m in vm.searchResult"
+              class="side-message-navigation-item little-human shineHover">
+            <td class="check-td">
+              <div class="mail-checkbox">
+                <label class="checkbox-inline custom-checkbox nowrap">
+                  <input type="checkbox" ng-model="m.Selected" ng-change="vm.insertSearchResult(m)">
+                  <span></span>
+                </label>
+              </div>
+            </td>
+            <td  class="photo-td"><img ng-src="{{m.id | profilePicture}}" class="little-human-picture"></td>
+            <td>
+              <div class="name-container">
+                <div><span class="name">{{m.name}}</span></div>
+                <div>{{m.email}}</div>
+              </div>
+            </td>
+            <td  ui-sref="components.mail.detail({id: m.id, label: listCtrl.label})">
+              <div class="additional-info">
+                <span class="subject"> {{m.position}}</span>
+              </div>
+            </td>
+            <td>
+              <button class="btn btn-success btn-xs pull-left" ng-click="vm.updateMembers([m], 'add')"><span class="glyphicon glyphicon-plus"></span></button>
+            </td>
+            
+          </tr>
+
+         
+        </table>
+      </div>
+
+
+  </div>
+  <div class="col-xlg-12 col-lg-12 col-md-12 col-xs-12">
+        <div class="btn-group pull-right {{ vm.activeList.name ? 'visible' : 'invisible' }}">
+                    <button ng-click="vm.updateListMembers({})" class="btn btn-danger btn-lg">
+                      Go back to the lists selection 
+                      </button>
+        </div>
+  </div>
+  
+ 
+</div>

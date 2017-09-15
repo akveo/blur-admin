@@ -1,0 +1,57 @@
+<div class="message-container" ng-class="{'expanded': tabCtrl.navigationCollapsed}">
+  <div class="message">
+    <div class="row" style="height: 75px;">
+      <div class="toggle-navigation-container detail-page">
+        <a href class="collapse-navigation-link ion-navicon"
+           ng-click="tabCtrl.navigationCollapsed=!tabCtrl.navigationCollapsed"></a>
+      </div>
+      <button ui-sref="teams.members.label({label : detailCtrl.label})"  type="button" class="back-button btn btn-default btn-with-icon"><i
+          class="ion-chevron-left"></i>Back
+      </button>
+    </div>
+    <div class="person-info row">
+      <div class="col-lg-4 col-md-12  no-padding">
+        <!--<img ng-src="{{detailCtrl.member.name.split(' ')[0] | profilePicture}}" class="human-picture">-->
+        <img ng-src="{{'undefined' | profilePicture}}" class="human-picture">
+        <div class="name">
+          <h2 class="name-h">{{detailCtrl.member.name.split(' ')[0]}}</h2>
+
+          <h2 class="name-h second-name">{{detailCtrl.member.name.split(' ')[1]}}</h2>
+
+          <div>
+            <span class="mail-tag tag label {{detailCtrl.member.tag}}">{{detailCtrl.member.tag}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-xs-12 no-padding">
+        <div class="contact-info phone-email">
+          <div>
+            <span class="position">{{detailCtrl.member.position}}</span>
+          </div>
+          <div>
+            <i class="ion-email"></i>
+            <span class="email">{{detailCtrl.member.email}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-xs-12 no-padding">
+        <div class="contact-info position-address">
+          <span ng-repeat="l in detailCtrl.member.labels" class="tag label label-primary {{l}}">{{l}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+    </div>
+   
+    
+    <div class="line"></div>
+    
+
+    
+
+  </div>
+  <div ng-show="!detailCtrl.mail">
+    <h5 ng-class="text-center">Nothing to show</h5>
+  </div>
+</div>

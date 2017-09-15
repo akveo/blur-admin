@@ -1,0 +1,77 @@
+<div class="compose-header">
+  <span>
+    New member
+  </span>
+  <span class="header-controls">
+    <i ng-click="$dismiss()" class="ion-close-round"></i>
+  </span>
+</div>
+<div>
+  
+
+
+      <div class="col-md-12">
+        <div class="form-group row clearfix"></div>
+        <div class="form-group row clearfix">
+
+          <div class="col-sm-5">
+            <div class="userpic">
+              <div class="userpic-wrapper">
+                <img ng-src="{{ boxCtrl.picture }}" ng-click="uploadPicture()">
+              </div>
+              <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="!boxCtrl.noPicture"></i>
+              <a href class="change-userpic" ng-click="uploadPicture()">Change Profile Picture</a>
+              <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
+            </div>
+          </div>
+
+          <div class="col-md-7">
+        <div class="form-group row clearfix">
+          <label for="inputFirstName" class="col-sm-3 control-label">Name</label>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputFirstName" placeholder="" ng-model="boxCtrl.member.name">
+          </div>
+        </div>
+        <div class="form-group row clearfix">
+          <label for="inputLastName" class="col-sm-3 control-label">Email</label>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputLastName" placeholder="" ng-model="boxCtrl.member.email">
+          </div>
+        </div>
+        <div class="form-group row clearfix">
+          <label class="col-sm-3 control-label">Department</label>
+
+          <div class="col-sm-9">
+            <select class="form-control" multiple ng-model="boxCtrl.member.labels">
+              <option ng-repeat="t in boxCtrl.Labels" value="{{t.label}}">{{t.name}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row clearfix">
+          <label for="inputOccupation" class="col-sm-3 control-label">Occupation</label>
+
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="inputOccupation" placeholder="" ng-model="boxCtrl.member.position">
+          </div>
+        </div>
+      </div>
+
+  
+      </div>
+      <div class="col-md-12"></div>
+
+
+
+
+
+</div>
+<div class="compose-footer clearfix">
+  <button type="button" ng-click="boxCtrl.createMember()" class="btn btn-send">Save</button>
+
+  <div class="footer-controls">
+    <button type="button" ng-click="$dismiss()" class="btn btn-danger">Cancel</button>
+  </div>
+</div>

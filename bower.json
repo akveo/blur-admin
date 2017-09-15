@@ -54,7 +54,9 @@
     "textAngular": "~1.4.6",
     "angular-xeditable": "~0.5.0",
     "ng-js-tree": "~0.0.7",
-    "angular-ui-select": "^0.19.6"
+    "angular-ui-select": "^0.19.6",
+    "angular-upload": "^1.0.12",
+    "ng-tags-input": "^3.2.0"
   },
   "resolutions": {
     "angular": "~1.5.9",

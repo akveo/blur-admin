@@ -11,8 +11,9 @@
   /** @ngInject */
   function profilePicture(layoutPaths) {
     return function(input, ext) {
-      ext = ext || 'png';
-      return layoutPaths.images.profile + input + '.' + ext;
+      ext = ext || 'jpeg';
+      //return layoutPaths.images.profile + input + '.' + ext;
+      return layoutPaths.images.pictures + input + '.' + ext;
     };
   }
 

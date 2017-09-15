@@ -144,7 +144,7 @@
   float: left;
   padding: 0 15px;
   position: relative;
-  height: 550px;
+  min-height: 550px;
   transition: width 0.5s;
   width: calc(100% - 200px);
   border-bottom-right-radius: 5px;
@@ -191,14 +191,14 @@
 
 .little-human {
   cursor: pointer;
-  transition: border-left 1.5s ease;
+  /*transition: border-left 1.5s ease;*/
   font-weight: 300;
   .little-human-picture {
     width: 45px;
     height: 45px;
     border-radius: 23px;
     margin: 7px 0px 7px 7px;
-    transition: all .2s ease-in-out;
+    /*transition: all .2s ease-in-out;*/
   }
   .name {
     font-size: 14px;
@@ -247,31 +247,50 @@
   }
 }
 
+.mail-panel .mail-navigation-container .tag {
+  font-size: 20px;
+    font-weight: 300;
+    width: 159px;
+    text-transform: capitalize;
+}
+
 .mail-panel .tag {
   text-transform: lowercase;
   font-size: 11px;
   font-weight: $font-light;
-  width: 45px;
   cursor: pointer;
   display: inline-block;
+  margin-right: 3px;
   &.label {
     padding: .2em .5em;
     border-radius: 2px;
     line-height: 1.1;
   }
-  &.work {
+  &.tech {
     background-color: $primary;
   }
 
-  &.study {
+  &.product {
     background-color: $warning;
   }
 
-  &.family {
+  &.finance {
     background-color: $success;
   }
 
-  &.friend {
+  &.media {
+    background-color: $danger;
+  }
+
+  &.hr {
+    background-color: $danger;
+  }
+
+  &.shops {
+    background-color: $danger;
+  }
+
+  &.innovation {
     background-color: $danger;
   }
 }
@@ -667,7 +686,7 @@
 .compose-footer {
   padding: 2px 4px;
   background-color: $mail-box;
-  .btn-send {
+  .btn-send, .btn-danger {
     background-color: $primary-light;
     color: white;
     padding: 2px 10px;
@@ -682,7 +701,6 @@
 
 .footer-controls {
   float: right;
-  margin: 6px;
 }
 
 .compose-footer-icon {
@@ -741,11 +759,9 @@
 }
 
 .modal .modal-dialog.modal-compose {
-  max-width: 398px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  max-height: 474px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
 
   .form-control, .bootstrap-tagsinput input {
     @include placeholderStyle($dropdown-text, 1);

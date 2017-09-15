@@ -1,0 +1,77 @@
+<div id="surveys" class="row">
+	<div id="sidebar" class="col-md-4 col-lg-4">
+		<uib-accordion>
+		  <uib-accordion-group panel-class="bootstrap-panel accordion-panel panel-default saved-questions">
+		    <uib-accordion-heading>
+		      Saved Questions <i class="fa pull-right fa-floppy-o"></i>
+		    </uib-accordion-heading>
+		    <section class="col-md-12 col-lg-12 no-gutter">
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	First Question
+		      </button>
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	Second Question
+		      </button>
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	Third Question
+		      </button>
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	Last Question
+		      </button>
+		    </section>
+		  </uib-accordion-group> 
+		  
+		  <uib-accordion-group panel-class="bootstrap-panel accordion-panel panel-default">
+		    <uib-accordion-heading>
+		      Survey Builder <i class="fa pull-right fa-gavel"></i>
+		    </uib-accordion-heading>
+		    <section class="col-md-12 col-lg-12 no-gutter">
+		      <button ng-click="addElement('')" progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	<i class="fa fa-font"></i>Textbox
+		      </button>
+		      <button ng-click="addElement('multiple')" progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	<i class="fa fa-list"></i>Multiple Choices
+		      </button>
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	<i class="fa fa-star"></i>Star Rating
+		      </button>
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	<i class="fa fa-chevron-circle-down"></i>Drop Down
+		      </button>
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12 ">
+		      	<i class="fa fa-sliders"></i>Slider
+		      </button>
+		    </section>
+		  </uib-accordion-group>
+		  <uib-accordion-group panel-class="bootstrap-panel accordion-panel panel-default survey-template">
+		    <uib-accordion-heading>
+		      Survey Template <i class="fa pull-right fa-file-code-o"></i>
+		    </uib-accordion-heading>
+		    <section class="col-md-12 col-lg-12 no-gutter">
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	First Template
+		      </button>
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	Second Template
+		      </button>
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	Third Template
+		      </button>
+		      <button progress-button="progressFunction()" pb-style="flip-open" class="btn btn-default btn-with-icon col-md-12">
+		      	Last Template
+		      </button>
+		    </section>
+		  </uib-accordion-group>
+		  <uib-accordion-group panel-class="bootstrap-panel accordion-panel panel-default">
+		    <uib-accordion-heading>
+		      Options <i class="fa pull-right ion-settings"></i>
+		    </uib-accordion-heading>
+		    Some options in here ...
+		  </uib-accordion-group>
+		</uib-accordion>
+	</div>
+<script>
+ $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

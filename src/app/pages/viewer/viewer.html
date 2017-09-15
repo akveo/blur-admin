@@ -1,0 +1,43 @@
+<style>
+  aside, div.page-top , footer, div.content-top {display:none !important;}
+  .al-main {margin-left:0 !important;}
+</style>
+
+<div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="{{vm.survey.name}}" ba-panel-class="with-scroll">
+
+              <div class="section-block bold-text ng-scope"><p ng-bind-html="vm.survey.description"></p></div>
+
+              <div class="separator"></div>
+              <ba-wizard>
+                    <ba-wizard-step title="{{ m.name }}" ng-repeat="m in vm.survey.list.members" ng-if='m._id != vm.activeMemberId' ng-init="memberId = m._id" form="vm.forms[memberId]" >
+                    <form name="vm.forms[memberId]" novalidate>
+                      <ng-form name="innerForm">
+                        <div class="member-survey">
+                          <div class="separator"></div>
+                          <div id="{{e.id}}" class="form-group answer" ng-repeat="e in vm.survey.elements"
+                            ng-init="elementId = vm.survey.id+'_'+memberId+'_'+vm.activeMemberId+'_'+e._id" ng-class="{'has-error': innerForm[elementId].$invalid && (vm.forms[memberId].$submitted)}">
+                            <p>{{ e.text }}</p>
+                              <label ng-class="el.multiple ? 'custom-checkbox radio-checkbox  nowrap' : 'custom-radio radio-inline  nowrap'" ng-repeat="el in e.items">
+                                <input ng-attr-type="{{el.multiple? 'checkbox' : 'radio'}}" name="{{elementId}}"  ng-model="vm.innerForm[elementId].$viewValue" ng-value="el.value" ng-attr-required="{{el.required}}">
+                                <span>{{ el.value }}</span>
+                              </label>
+                              <br><br>
+                              <div class="form-group" ng-if="e.hasComment">
+                                <label for="{{ e._id }}_comment">{{e.commentLabel}}</label>
+                                <input type="text" class="form-control" name="{{ elementId }}_comment" ng-model="vm.innerForm[elementId].comment" placeholder="..." ng-attr-required="{{e.commentIsRequired}}">
+                              </div>
+                              <div class="separator"></div>
+                          </div>
+                        </div>
+                        </ng-form>
+                      </form>
+                    </ba-wizard-step>
+                    
+              </ba-wizard>      
+              
+
+            </div>
+        </div>
+</div>

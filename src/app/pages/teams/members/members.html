@@ -1,0 +1,32 @@
+<div class="row mail-client-container transparent">
+  <div class="col-md-12">
+    <div ba-panel ba-panel-class="mail-panel">
+      <div class="letter-layout">
+        <div class="mail-navigation-container" ng-class="{'expanded' : !tabCtrl.navigationCollapsed}">
+          <div class="text-center">
+            <button type="button" class="btn btn-default compose-button" ng-click="tabCtrl.showCompose('')">
+              New member
+            </button>
+          </div>
+          <div class="labels">
+            <div class="labels-title">
+
+            </div>
+
+            <div class="labels-container">
+              <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="label-item"
+               ui-sref="teams.members.label({label: t.label})" ng-click="tabCtrl.selectTab(t.label)">
+                <span class="tag label {{t.label}}">{{t.name}}</span>
+            
+              </div>
+            </div>
+          </div>
+          <div class="add-label-container">
+            <i class="ion-plus-round"></i><span class="label-input-stub">Add new label</span>
+          </div>
+        </div>
+        <ui-view></ui-view>
+      </div>
+    </div>
+  </div>
+</div>
