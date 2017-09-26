@@ -33,7 +33,7 @@
 			});
 
   /** @ngInject */
-  function CreateTabCtrl(SurveyService, ListService, $scope, $http, $compile, $timeout, $stateParams, $log, toastr) {
+  function CreateTabCtrl(SurveyService, ListService,MemberService, $scope, $http, $compile, $timeout, $stateParams, $log, toastr, $uibModal, $state) {
 
   	$scope.editmode = true;
 
@@ -45,15 +45,13 @@
   	$scope.survey.name = 'Page Title';
   	$scope.survey.description = 'Page Description';
   	$scope.survey.elements = [];
+    $scope.survey.type = "s_360";
 
     $scope.display = {};
     $scope.display.survey = true;
     $scope.display.sidebar = false;
     $scope.display.surveySending = false;
 
-    $scope.emailsTexts = []
-    $scope.emailsTexts["s_360"] = "<p>Dear {{MEMBER_NAME}},<br><br>You have been selected to participate in a 360 Feedback Survey.<br><br>The purpose of a 360 Feedback Survey is to provide feedback to our leaders that will enable them to develop and improve.<br><br>To gain access to the site, please click on the link below.<br><br>{{SURVEY_LINK}}<br><br>We appreciate your assistance in this process and request that you complete the 360 feedback by .<br><br>Please be sure to answer all questions as honestly and as accurately as you can - all information received is kept strictly confidential. Thank you for taking the time to participate in this survey.<br><br>If you have any questions regarding the survey process or experience any technical difficulties, please contact .<br><br>Thank you for your participation<br></p>"
-    $scope.emailsTexts["s_default"] = "Normal"
 
     $scope.progressFunction = function() {
       return $timeout(function() {}, 3000);
@@ -126,21 +124,38 @@
                 
             };
 
-     $scope.saveSurvey=function(){
-        var survey = $scope.survey 
+     $scope.saveSurvey=function(process){
+
+        if(!process)
+          $scope.survey.list = [];
+        var survey = $scope.survey;
+
         if($stateParams.survey_id) {
           SurveyService
           .update(survey)
           .then(
             function (data){
               console.log('Survey edited', data);
-              toastr.info('The survey was edited successfuly :)', 'Surveys', {
-                      "autoDismiss": true,
-                      "positionClass": "toast-bottom-right",
-                      "type": "success",
-                      "timeOut": "5000",
-                      "extendedTimeOut": "2000"
-                    })
+              if (process)
+                $uibModal.open({
+                  animation: true,
+                  templateUrl: 'app/pages/surveys/create/widgets/successModal.html',
+                  //size: size,
+                  /*resolve: {
+                    items: function () {
+                      return $scope.items;
+                    }
+                  }*/
+                });
+              else
+                toastr.info('The survey was edited successfuly :)', 'Surveys', {
+                        "autoDismiss": true,
+                        "positionClass": "toast-bottom-right",
+                        "type": "success",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "2000"
+                      })
+
             },
             function (error){
               toastr.error('There were an error editing the survey', 'Surveys', {
@@ -187,7 +202,34 @@
         $scope.display.surveySending = true;
       };
 
+      $scope.selectedListsChange=function(){
+        $log.info("selectedListsChange",$scope.lists.selected);
+        angular.forEach($scope.lists.selected, function(list) {
+            if(list.members.length > 0 && !list.members[0].name) {
+              var params = {"ids" : list.members};
+              MemberService
+              .list(params)
+              .then(
+                function (data){
+                  list.members = data;
+                },
+                function (error){
+                  console.log("Error getting the members");
+                }
+              );
+            }
+          });
+      }
+
       $scope.sendSurvey=function(){
+        $scope.survey.list = $scope.lists.selected;
+        $scope.survey.status = "Sending";
+        $log.info("sendSurvey",$scope.survey);
+        $state.transitionTo('surveys.list'/*, {id: item.id}*/);
+
+        $scope.saveSurvey(true);
+
+        
         /*$scope.saveSurvey();
         $("#sidebar").fadeIn();
         $("#survey-actions").fadeOut();*/
@@ -216,12 +258,9 @@
       SurveyService
         .get(id)
         .then(function (data){
-          $log.info("data[0]",data[0].elements);
-          angular.forEach(data[0].elements, function(elem) {
-            elem.tagsJoined = elem.tags.join();
-          });
+          $log.info("data[0]",data);
           
-          $scope.survey = data[0];
+          $scope.survey = data;
           $scope.updateBuilder();
           $log.info("Got the survey data",$scope.survey);
         }, function (error){
@@ -246,7 +285,7 @@
 
     $scope.activate=function(){
       if($stateParams.survey_id) {
-        $scope.loadSurvey($stateParams.member_id);
+        $scope.loadSurvey($stateParams.survey_id);
       } 
       $scope.loadLists(); 
     }

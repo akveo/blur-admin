@@ -1,7 +1,8 @@
 <div class="ba-wizard">
     <div class="ba-wizard-navigation-container">
-        <div ng-repeat="t in $baWizardController.tabs" class="ba-wizard-navigation {{$baWizardController.tabNum == $index ? 'active' : ''}}" ng-click="$baWizardController.selectTab($index)">
-            {{t.title}}
+        <div ng-repeat="t in $baWizardController.tabs" class="ba-wizard-navigation {{$baWizardController.tabNum == $index ? 'active heartbeat' : ''}}" ng-click="$baWizardController.selectTab($index)">
+            {{ $baWizardController.tabNum != $index ? t.title : ''}}
+            <img ng-if="$baWizardController.tabNum == $index" ng-src="{{t.mid | profilePicture}}" class="little-human-picture">
         </div>
     </div>
 

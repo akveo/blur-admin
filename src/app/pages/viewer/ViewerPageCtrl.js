@@ -14,55 +14,68 @@
 
     var vm = this;
 
-    function loadSurveys() {
+    function loadSurvey(id) {
       SurveyService
-        .list()
+        .get(id)
         .then(function (data){
-          vm.surveys = data;
+          vm.survey = data;
           $log.info("Got the survey data",data);
-          vm.survey = getSurvey();
           //building forms elements
-          vm.forms = [];
-          angular.forEach(vm.survey.elements, function(element, key) {
-             
-             angular.forEach(vm.survey.list.members, function(member, key) {
-              if(member._id != vm.activeMemberId) {
-                vm.forms[member._id] = {};
-                //vm.forms[member._id].$element_id = false;
-                /*var form = [];
-                form[element._id] = [];
-                vm.forms.push(form);
-                var input = [];
-                input[element._id] = false;
-                vm.forms[member._id].push(input);*/
-              }
+          
+          //angular.forEach(vm.survey.elements, function(element, key) { 
+          //  console.log("element",element);
+            angular.forEach(vm.survey.list, function(list, key) {  
+              console.log("list",list);
+              angular.forEach(list.members, function(member, key) {
+                //console.log("member",member); 
+                vm.forms[member.id] = {};
+                vm.forms[member.id].elements = vm.survey.elements;
+                vm.forms[member.id].question = {};
+                if(member.id != vm.activeMemberId) {
+                  vm.members.push(member);
+                  
+                } else
+                  vm.askedMember = member;
                 
                 //.push(k + ': ' + member);
+                });
+              vm.members.push(vm.askedMember);
+              //Thnak You message
+              vm.members.push({"id": "none", "name" : ": )"});
               });
-          });
-          console.log(vm.survey);
-          console.log(vm.forms);
+         // });
+          /*console.log("loadSurvey:vm.survey",vm.survey);
+          console.log("loadSurvey:vm.survey.list.members",vm.survey.list.members);
+          console.log("loadSurvey:vm.forms",vm.forms);*/
         }, function (error){
           $log.error(error);
         });
     }
 
-    function getSurvey() {
-        $log.info("getSurvey",$stateParams.survey_id);
-        return vm.surveys.filter(function(s){
-          return s.id == $stateParams.survey_id;
-        })[0];
-    }
+
 
     function activate(){
-      vm.surveys = [];
-      vm.survey = [];
+      vm.forms = [];
+      vm.survey = {};
+      vm.members = [];
+      vm.askedMember = {};
       vm.activeMemberId = $stateParams.member_id;
-      loadSurveys();
+      loadSurvey($stateParams.survey_id);
       console.log(vm.activeMemberId)
       
       
     }
+
+    vm.getInitials = function(string) {
+      var names = string.split(' '),
+          initials = names[0].substring(0, 1).toUpperCase();
+      
+      if (names.length > 1) {
+          initials += names[names.length - 1].substring(0, 1).toUpperCase();
+      }
+      //console.log("getInitials", string, initials)
+      return initials;
+    };
 
     vm.test = function(form){
     //$scope.submitted = true;

@@ -1,0 +1,40 @@
+<uib-tabset active="$tabSetStatus.activeTab">
+  <uib-tab heading="Question summaries">
+
+  		<div class="row">
+		  <div class="col-md-12">
+		    
+				<div class="progress">
+				  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{vm.analysis.completion}}" aria-valuemin="0" aria-valuemax="100" style="width: {{vm.analysis.completion}}%">
+				    {{vm.activeSurvey.completion}}% of question answred (Respondents : {{vm.analysis.respondents.length}} of {{vm.analysis.recipents}})
+				  </div>
+				</div>
+				<br>
+
+		    <div class="panel-group">
+
+		      <div class="panel panel-default bootstrap-panel" ng-repeat="e in vm.activeSurvey.elements">
+		        <div class="panel-heading">{{ e.text }}</div>
+		        <div class="panel-body">
+
+
+				            <div class="chartjs-canvas-holder-first-row" style="max-width: 300px;margin:0 auto;">
+				                 <canvas id="doughnut" chart-options="vm.doughnutOptions" class="chart chart-doughnut" 
+				                 chart-data="vm.analysis.data[e._id]" chart-labels="vm.analysis.labels[e._id]">
+				                </canvas>
+				            </div>
+				        
+		          
+
+		        </div>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+   
+  </uib-tab>
+  <uib-tab heading="Individual responses">
+    
+  </uib-tab>
+</uib-tabset>

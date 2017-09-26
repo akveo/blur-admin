@@ -16,7 +16,7 @@
       params = params || {};
 
 			var deferred = $q.defer();
-    	$http.get(endpoint)
+    	$http.get(endpoint, { params : params})
        .success(function(data) { 
           deferred.resolve(data);
        }).error(function(msg, code) {
@@ -30,33 +30,46 @@
     }
 
     function create(answer) {
-    	console.log("new Answer Object", answer);
-     // return $http.post(endpoint, answer);
-    }
-
-    function put(answer) {
-      return $http.put(endpoint + "/" + answer.id, answer);
+      return $http.post(endpoint, answer);
     }
 
     function get(id) {
       return $http.get(endpoint + "/" + id);
     }
 
-    function edit(answer) {
-     console.log("edit Answer Object", answer);
+    function update(answer) {
+     return $http.put(endpoint + "/"+answer.id, answer);
     }
 
     function remove(id) {
      return $http.delete(endpoint + "/" + id);
     }
 
+    function analyze(params) {
+      params = params || {};
+      endpoint = endpoint + "/analyze"
+
+      var deferred = $q.defer();
+      $http.get(endpoint, { params : params})
+       .success(function(data) { 
+          deferred.resolve(data);
+       }).error(function(msg, code) {
+          deferred.reject(msg);
+       });
+
+     return deferred.promise;
+
+
+      return $http.get(endpoint, params);
+    }
+
     return {
       list:list,
       create:create,
-      edit:edit,
+      update:update,
       get:get,
-      put:put,
-      remove:remove
+      remove:remove,
+      analyze:analyze
     }
   }
 })();

@@ -7,6 +7,26 @@
               <div class="panel-body">
                 <p ng-model="survey.description" ng-attr-contenteditable="{{ editmode }}"></p>
 
+                <hr />
+
+                <div class="control-group">
+                      <span class="control-label" style="display: inline-block;position: relative;;margin-right: 25px;">Survey type : </span>
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="surveyType" ng-model="survey.type" value="s_360">
+                        <span>360 Survey</span>
+                      </label>
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="surveyType" ng-model="survey.type" value="s_regular">
+                        <span>Regular Survey</span>
+                      </label>
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="surveyType" ng-model="survey.type" value="s_incognito">
+                        <span>Incognito Survey</span>
+                      </label>
+                      
+                    </div>
+                <hr />
+
                 <div id="newElem"></div>
 
               <div class="control-group col-sm-12 col-xs-12 text-center new-question-container">
@@ -44,6 +64,7 @@
 
                   <div>
                     <ui-select multiple ng-model="lists.selected"
+                             ng-change="selectedListsChange()"
                              ng-disabled="false"
                              search-enabled="true"
                              append-to-body="true"
@@ -55,17 +76,14 @@
                       {{multipleItem.name}}
                     </ui-select-choices>
                   </ui-select>
-                    <input type="text" class="form-control compose-input default-color"  placeholder="Subject" ng-model="boxCtrl.subject">
 
-                    <div class="control-group">
-                      <span class="control-label" style="display: block;float: left;margin: 7px;">360 Survey : </span>
-                      <div><ba-switcher switcher-style="primary" switcher-value="survey.s360"></ba-switcher></div>
-                      
-                    </div>
+                  <input type="text" class="form-control compose-input default-color"  placeholder="Subject" ng-model="survey.subject">
+
+                    
 
                     <div class="compose-container">
-                      <text-angular-toolbar ta-toolbar-class="toolbarMain" name="toolbarMain" ta-toolbar="[['h1','h2','h3','bold','italics', 'underline', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],['userName', 'surveyLink']]"></text-angular-toolbar>
-                      <text-angular name="htmlcontent" ta-target-toolbars='toolbarMain,toolbarFooter' ng-model="boxCtrl.text"></text-angular>
+                      <text-angular-toolbar ta-toolbar-class="toolbarMain" name="toolbarMain" ta-toolbar="[['h1','h2','h3','bold','italics', 'underline', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],['userName', 'surveyLink'],['360Model', 'regularModel', 'incognitoModel']]"></text-angular-toolbar>
+                      <text-angular name="htmlcontent" ta-target-toolbars='toolbarMain,toolbarFooter' ng-model="survey.text"></text-angular>
                     </div>
                   </div>
                   <div class="compose-footer clearfix">
@@ -95,7 +113,7 @@
                    <div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
                     <div class="feed-message" ng-repeat="l in lists.selected">
                         <h3>{{l.name}}</h3>
-                        <img class="photo-icon roll-in-blurred-right" ng-src="{{m | profilePicture}}" ng-repeat="m in l.members">
+                        <img class="photo-icon roll-in-blurred-right" ng-src="{{m.id | profilePicture}}" ng-repeat="m in l.members">
                     </div>
                   </div>
 

@@ -32,7 +32,7 @@
     function get(id) {
 
       var deferred = $q.defer();
-      $http.get(endpoint)
+      $http.get(endpoint + "/" + id)
        .success(function(data) { 
           deferred.resolve(data);
        }).error(function(msg, code) {
@@ -42,7 +42,7 @@
      return deferred.promise;
 
 
-      return $http.get(endpoint, id);
+      return $http.get(endpoint + "/" + id);
     }
 
     function create(survey) {

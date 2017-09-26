@@ -35,12 +35,18 @@
 							<td>
 								{{ survey.updatedAt | date:'shortDate' }}
 							</td>
-							<td> {{ survey.responses || 0 }} </td>
-							<td> {{ survey.status }} </td>
+							<td> 
+									<div class="progress">
+									  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{survey.completion}}" aria-valuemin="0" aria-valuemax="100" style="width: {{survey.completion}}%">
+									    <span class="sr-only">{{survey.completion}}% Complete</span>
+									  </div>
+									</div>
+							 </td>
+							<td> <button class="status-button btn btn-xs btn-{{survey.status=='Draft'?'warning':''}}{{survey.status=='Sending'?'info':''}}{{survey.status=='Sent'?'primary':''}}{{survey.status=='Done'?'success':''}}">{{ survey.status }}</button>  </td>
 							<td>
 								<button class="status-button btn btn-xs btn-primary" ng-click="vm.editSurvey(survey.id)">Edit</button>
 								<button class="status-button btn btn-xs btn-info" ng-if="survey.status == 'Draft'" ng-click="vm.goToSend(survey.id)">Send</button>
-								<button class="status-button btn btn-xs btn-info" ng-if="survey.status == 'Draft'" ng-click="vm.goToAnswers(survey.id)">Answers</button>
+								<button class="status-button btn btn-xs btn-info" ng-if="survey.status == 'Sent'" ng-click="vm.analyzeSurvey(survey)">Analyse</button>
 								<button class="status-button btn btn-xs btn-danger" ng-click="vm.removeSurvey(survey.id)">Remove</button>
 							</td>
 						</tr>
@@ -50,6 +56,20 @@
       </div>
 
     </div>
+
+
+    <div class="col-md-12" ng-show="vm.activeSurvey.id">
+
+    	<div
+          ba-panel
+          ba-panel-class="horizontal-tabs tabs-panel">
+        <div ng-include="'app/pages/surveys/list/surveyDetails.html'"></div>
+      </div>
+
+    </div>
+
+
+
   </div>
 
 <div>

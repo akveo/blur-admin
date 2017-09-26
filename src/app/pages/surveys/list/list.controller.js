@@ -5,7 +5,7 @@
       .controller('list', list);
 
   /** @ngInject */
-  function list( SurveyService, $scope, $rootScope, $log, $state, toastr) {
+  function list( SurveyService, AnswerService, $scope, $rootScope, $log, $state, toastr, baConfig) {
     var vm = this;
     $rootScope.$state = $state;
 
@@ -14,6 +14,7 @@
         .list()
         .then(function (data){
 					vm.surveys = data;
+          getSurveyCompletion();
 					$log.info("Got the survey data",data);
         }, function (error){
           $log.error(error);
@@ -61,11 +62,65 @@
             }
     }; 
 
+    function getSurveyCompletion() {
+      angular.forEach(vm.surveys, function(survey, key) {
+        var totalMembers = 0
+        var totalAnswers = survey.answers.length
+        var totalQuestions = survey.elements.length
+        var completion = 0
+
+        angular.forEach(survey.list, function(list, key) {
+            totalMembers = totalMembers + list.members.length
+          });
+
+        totalQuestions = survey.type == "s_360" ? totalQuestions * totalMembers : totalQuestions;
+
+        completion = (((totalAnswers) / (totalMembers * totalQuestions))*100).toFixed(0)
+
+        survey.completion = completion;
+        //console.log('totalAnswers / TOTAL', totalAnswers, totalMembers * totalQuestions);
+
+      });
+
+      //console.log('getSurveyCompletion', vm.surveys);
+    }
+
+    function analyzeSurvey(survey) {
+      var params = {"survey":survey.id}
+      AnswerService
+        .analyze(params)
+        .then(function (data){
+          vm.analysis = data;
+          vm.activeSurvey = survey;
+          $log.info("Got answers analysis",data);
+        }, function (error){
+          $log.error(error);
+        });
+    }
+
     function activate(){
 			vm.surveys = [];
+      vm.activeSurvey = {};
       vm.goToCreate = goToCreate;
+      vm.analyzeSurvey = analyzeSurvey;
       vm.editSurvey = editSurvey;
       vm.removeSurvey = removeSurvey;
+
+      var layoutColors = baConfig.colors;
+      vm.doughnutOptions = {
+        elements: {
+          arc: {
+            borderWidth: 0
+          }
+        },
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: {
+            fontColor: layoutColors.defaultText
+          }
+        }
+      };
 
       loadSurveys();
     }
