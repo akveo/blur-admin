@@ -5,7 +5,7 @@
     .directive('baWizardStep', baWizardStep);
 
   /** @ngInject */
-  function baWizardStep($http, AnswerService, $filter) {
+  function baWizardStep($http, AnswerService, SurveyService, $filter) {
     return {
       restrict: 'E',
       transclude: true,
@@ -43,6 +43,10 @@
           var elements = angular.fromJson($attrs.elements);
           var memberEvaluated = angular.fromJson($attrs.evaluated);
           var memberAsked = angular.fromJson($attrs.asked);
+          var survey = $attrs.survey;
+          var surveyName = $attrs.name;
+          var isLast = $attrs.last == "true" ? true : false;
+          var respondents = angular.fromJson($attrs.respondents);
 
           $scope.form && $scope.form.$setSubmitted(true);
               if($scope.form && $scope.form.$invalid == false) {
@@ -50,22 +54,24 @@
                 console.log("$attrs.elements", elements);
                 console.log("inner", $scope.form.innerForm);
 
-                angular.forEach($scope.form.innerForm, function(val, key) {
+                var counter = 0;
 
-                    if((key.indexOf("_") !== -1) && (key.indexOf("_comment") == -1) && (key.indexOf("_submitted") == -1) && (key.indexOf("_question") == -1)) {
+                angular.forEach($scope.form.innerForm, function(val, key) {
+                    if((key.indexOf("_") !== -1) && (key.indexOf("_comment") == -1) && (key.indexOf("_submitted") == -1) && (key.indexOf("_last") == -1)) {
                       var res = key.split("_");
-                      console.log("res", res);
+                      var elementId = res[3];
                       //console.log("val", val);
                       var commentKey = key + "_comment";
                       var submittedKey = key + "_submitted";
+                      var lastKey = key + "_last";
                       //console.log("key", key);
                       //console.log("commentKey", commentKey);
                       //console.log("submittedKey", submittedKey);
-                      var element = $filter('filter')(elements, {'_id':res[3]}) 
+                      var element = $filter('filter')(elements, {'_id':elementId}) 
                       var answer = {
                         "value" : val.$viewValue,
                         "comment" : ($scope.form.innerForm[commentKey]) ? $scope.form.innerForm[commentKey].$viewValue : '',
-                        "survey" : res[0],
+                        "survey" : survey,
                         "evaluated" : memberEvaluated,
                         "asked" : memberAsked,
                         "question": element[0]
@@ -78,6 +84,9 @@
                             .update(answer)
                             .then(
                                 function (data){
+                                  counter++;
+                                  if(counter == elements.length && isLast)
+                                    $scope.isLast(survey, surveyName, memberAsked.id, respondents);
                                   console.log("answer.update",data);
                                   $scope.form.innerForm[submittedKey].$viewValue = data.data.id;
                                 },
@@ -99,6 +108,9 @@
                                       .update(answer)
                                       .then(
                                           function (data){
+                                            counter++;
+                                            if(counter == elements.length && isLast)
+                                               $scope.isLast(survey, surveyName, memberAsked.id, respondents);
                                             console.log("answer.update",data);
                                             $scope.form.innerForm[submittedKey].$viewValue = data.data.id;
                                           },
@@ -111,6 +123,9 @@
                                       .create(answer)
                                       .then(
                                           function (data){
+                                            counter++;
+                                            if(counter == elements.length && isLast)
+                                              $scope.isLast(survey, surveyName, memberAsked.id, respondents);
                                             console.log("answer.create",data);
                                             $scope.form.innerForm[submittedKey].$viewValue = data.data.id;
                                           },
@@ -131,6 +146,23 @@
                 })
                 
               }  
+        }
+
+        $scope.isLast = function(survey, surveyName, member, respondents) { 
+          
+          respondents.push(member);
+          var surveyObj = {"id":survey, "name": surveyName, "respondents": respondents}
+          console.log("isLast", surveyObj);
+              SurveyService
+                .update(surveyObj)
+                .then(
+                   function (data){
+                       console.log("updated survey",data);
+                   },
+                   function (error){
+                        console.log("Error updating the survey");
+                   }
+           );          
         }
 
         function isComplete() {

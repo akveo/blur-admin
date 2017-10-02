@@ -47,10 +47,9 @@
 
     function analyze(params) {
       params = params || {};
-      endpoint = endpoint + "/analyze"
 
       var deferred = $q.defer();
-      $http.get(endpoint, { params : params})
+      $http.get(endpoint + "/analyze", { params : params})
        .success(function(data) { 
           deferred.resolve(data);
        }).error(function(msg, code) {
@@ -60,7 +59,7 @@
      return deferred.promise;
 
 
-      return $http.get(endpoint, params);
+      return $http.get(endpoint + "/analyze", params);
     }
 
     return {

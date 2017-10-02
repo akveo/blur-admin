@@ -236,6 +236,7 @@
                for (var i = 0; i < members.length; i++) {
                 if(multi == false || (multi == true && members[i].Selected == true)) {
                     var index = list.members.indexOf(members[i].id);
+                    console.log('index', index)  
                      //vm.listMembers = []; 
                      if (action == "add") {
                         if (index == -1)
@@ -248,7 +249,7 @@
                     
                     
                 }
-               
+             console.log('updateMembers:modified members', list.members)  
             vm.activeList.isChecked =  true;
 		        ListService
 		          .edit(list)

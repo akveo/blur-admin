@@ -71,7 +71,7 @@
         });
         // Configure all line charts
         ChartJsProvider.setOptions('Line', {
-            datasetFill: false
+            datasetFill: false,
         });
         // Configure all radar charts
         ChartJsProvider.setOptions('radar', {
@@ -88,8 +88,23 @@
         // Configure all bar charts
         ChartJsProvider.setOptions('bar', {
             tooltips: {
-                enabled: false
-            }
+                enabled: true
+            },
+            scales: {
+            
+            yAxes: [{
+            ticks: {
+            
+                   min: 0,
+                   max: 100,
+                   callback: function(value){return value+ "%"}
+                },  
+                scaleLabel: {
+                   display: true,
+                   labelString: "Percentage"
+                }
+            }]
+        }
         });
     }
 

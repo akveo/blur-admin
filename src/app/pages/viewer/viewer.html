@@ -3,26 +3,66 @@
   .al-main {margin-left:0 !important;}
 </style>
 
-<div class="row">
+<div class="row" ng-if="vm.alreadyAnswered">
+<div class="col-md-12"
+         ba-panel
+         ba-panel-title="Avito Surveys"
+         ba-panel-class="with-scroll">
+      <div >
+        <div class="alert bg-success">
+          <h4>Well done!</h4>
+          You have <strong>already</strong> answered this survey.
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row" ng-if="!vm.isMemberIlligible">
+<div class="col-md-12"
+         ba-panel
+         ba-panel-title="Avito Surveys"
+         ba-panel-class="with-scroll">
+      <div >
+        <div class="alert bg-danger">
+          <h4> :(  </h4>
+          You seems to be <strong>not</strong> invited to answer this survey.
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row" ng-if="vm.error">
+<div class="col-md-12"
+         ba-panel
+         ba-panel-title="Avito Surveys"
+         ba-panel-class="with-scroll">
+      <div >
+        <div class="alert bg-danger">
+          <h4> :(  </h4>
+          Something <strong>VERY VERY</strong> bad happened ! 
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row" ng-if="!vm.alreadyAnswered && vm.isMemberIlligible && !vm.error">
         <div class="col-md-12">
             <div ba-panel ba-panel-title="{{vm.survey.name}}" ba-panel-class="with-scroll">
 
               <div class="section-block bold-text ng-scope"><p ng-bind-html="vm.survey.description"></p></div>
 
               <div class="separator"></div>
-              <ba-wizard>
+              <ba-wizard ng-if="vm.survey.type == 's_360'">
+                    <ba-wizard-step title="{{ m.id != vm.activeMemberId ? vm.getInitials(m.name) : 'ME' }}" ng-repeat="m in vm.members track by $index" ng-init="memberId = m.id" form="vm.forms[memberId]" mid="{{ m.id }}" elements="{{vm.survey.elements}}" evaluated="{{m}}" asked="{{vm.askedMember}}" survey="{{vm.survey.id}}" name="{{vm.survey.name}}" respondents="{{vm.survey.respondents}}" last="{{ m.last }}">
+                    
 
-                    <ba-wizard-step title="{{ m.id != vm.activeMemberId ? vm.getInitials(m.name) : 'ME' }}" ng-repeat="m in vm.members track by $index" ng-init="memberId = m.id" form="vm.forms[memberId]" mid="{{ m.id }}" elements="{{vm.survey.elements}}" evaluated="{{m}}" asked="{{vm.askedMember}}">
-                    <form name="vm.forms[memberId]" novalidate ng-if="m.id != 'none'">
+                      <form name="vm.forms[memberId]" novalidate ng-if="memberId != 'none'">
                       <ng-form name="innerForm">
                         <div class="member-survey">
-                          <div class="separator"></div>
-                          <h3 class="member-full-name">{{ m.name }}</h3>
                           <div class="separator"></div>
                           <div id="{{e.id}}" class="form-group answer" ng-repeat="e in vm.survey.elements"
                             ng-init="elementId = vm.survey.id+'_'+memberId+'_'+vm.activeMemberId+'_'+e._id" ng-class="{'has-error': innerForm[elementId].$invalid && (vm.forms[memberId].$submitted)}">
                             <input type="hidden" name="{{ elementId }}_submitted" ng-model="vm.innerForm[elementId].submitted" ng-value="false"/>
-                            <!--<input type="hidden" name="{{ elementId }}_question" ng-model="vm.innerForm[elementId].question.$viewValue" ng-value="e"/>-->
                             <p>{{ e.text }}</p>
                               <label ng-class="el.multiple ? 'custom-checkbox radio-checkbox  nowrap' : 'custom-radio radio-inline  nowrap'" ng-repeat="el in e.items">
                                 <input ng-attr-type="{{el.multiple? 'checkbox' : 'radio'}}" name="{{elementId}}"  ng-model="vm.innerForm[elementId].$viewValue" ng-value="el.value" ng-attr-required="{{el.required}}">
@@ -38,6 +78,9 @@
                         </div>
                         </ng-form>
                       </form>
+
+
+
                       <form class="form-horizontal" name="vm.finishForm" novalidate ng-if="m.id == 'none'">
                         <div class="separator"></div>
                           <h3 class="member-full-name">Congratulations! You have successfully filled the form!</h3>
@@ -48,8 +91,44 @@
 
                    
                     
-              </ba-wizard>      
-              
+              </ba-wizard>  
+              <div ng-if="vm.survey.type != 's_360'">
+                <form name="regularForm" novalidate ng-if="vm.survey.type != 's_360'" ng-submit="vm.validateForm(regularForm)" ng-show="!vm.forms[vm.activeMemberId].$processed">
+                        <div class="member-survey">
+                          <h3 class="member-full-name" ng-if="vm.survey.type == 's_regular'">{{ vm.askedMember.name }}</h3>
+                          <div class="separator" ng-if="vm.survey.type == 's_regular'"></div>
+                          <div id="{{e.id}}" class="form-group answer" ng-repeat="e in vm.survey.elements"
+                            ng-init="elementId = e._id" ng-class="{'has-error': regularForm[elementId].$invalid && (vm.forms[vm.activeMemberId].$submitted)}">
+                            
+                            <!--<input type="hidden" name="{{ elementId }}_question" ng-model="vm.innerForm[elementId].question.$viewValue" ng-value="e"/>-->
+                            <p>{{ e.text }}</p>
+                              <label ng-class="el.multiple ? 'custom-checkbox radio-checkbox  nowrap' : 'custom-radio radio-inline  nowrap'" ng-repeat="el in e.items">
+                                <input ng-attr-type="{{el.multiple? 'checkbox' : 'radio'}}" name="{{elementId}}"  ng-model="vm.formData[elementId].value" ng-value="el.value" ng-attr-required="{{el.required}}">
+                                <span>{{ el.value }}</span>
+                              </label>
+                              <br><br>
+                              <div class="form-group" ng-if="e.hasComment">
+                                <label for="{{ e._id }}_comment">{{e.commentLabel}}</label>
+                                <input type="text" class="form-control" name="{{ elementId }}_comment" ng-model="vm.formData[elementId].comment" placeholder="..." ng-attr-required="{{e.commentIsRequired}}">
+                              </div>
+                              <div class="separator"></div>
+                          </div>
+                        </div>
+
+                        <nav>
+                          <ul class="pager ba-wizard-pager">
+                              <li class="next"> <button type="submit" class="btn btn-primary">Submit <span aria-hidden="true">→</span></button></li>
+                          </ul>
+                      </nav>
+              </form>
+
+              <form class="form-horizontal" name="vm.finishForm" novalidate ng-if="vm.forms[vm.activeMemberId].$processed">
+                        
+                          <h3 class="member-full-name">Congratulations! You have successfully filled the form!</h3>
+                          <div class="separator"></div>
+                            
+                      </form>  
+             </div> 
 
             </div>
         </div>

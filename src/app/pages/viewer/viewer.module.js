@@ -13,6 +13,10 @@
     $stateProvider
         .state('viewer', {
           url: '/viewer/:survey_id/:member_id',
+          params: {
+              survey_id: { squash: true, value: null },
+              member_id: { squash: true, value: null },
+          },
           title: 'Viewer',
           templateUrl: 'app/pages/viewer/viewer.html',
           controller: 'ViewerPageCtrl as vm',

@@ -30,7 +30,22 @@
 			      });
 			    }
 			  };
-			});
+			})
+      .directive('enforceMaxTags', function() {
+        return {
+          require: 'ngModel',
+          link: function(scope, element, attrs, ngCtrl) {
+            var maxTags = attrs.maxTags ? parseInt(attrs.maxTags, '10') : null;
+
+            ngCtrl.$parsers.push(function(value) {
+              if (value && maxTags && value.length > maxTags) {
+                value.splice(value.length - 1, 1);
+              }
+              return value;
+            });
+          }
+        };
+      });
 
   /** @ngInject */
   function CreateTabCtrl(SurveyService, ListService,MemberService, $scope, $http, $compile, $timeout, $stateParams, $log, toastr, $uibModal, $state) {
@@ -59,7 +74,7 @@
 
     $scope.panelFoldToggle = function(index) {
     	$scope.survey.elements[index].isUnfolded = !$scope.survey.elements[index].isUnfolded;
-    	console.log($scope.survey.elements[index].isUnfolded);
+    	console.log("panelFoldToggle index isUnfolded $scope.survey.elements", index, $scope.survey.elements[index].isUnfolded, $scope.survey.elements);
 	};
 
 	$scope.getTheFoldingClass = function() {
@@ -80,7 +95,7 @@
                             };
 
     $scope.createEmptyElement = function(type,orderNo){
-    			var item = {
+          var item = {
                     id: null,
                     orderNo: 1,
                     value: null
@@ -95,11 +110,28 @@
                     isUnfolded: false,
                     comment: false,
                     commentLabel: '',
-                    tags:[],
-                    tagsJoined:'',
+                    tag:'',
+                    //tagsJoined:'',
                     items: (type == 'multiple') ? [item] : [],
                 };
             }
+
+    $scope.copyElement = function(index){ 
+          //elem.id = null
+          var originalElem = $scope.survey.elements[index]
+          var newElem = $scope.createEmptyElement(originalElem.type, $scope.survey.elements.length + 1)
+          newElem.isUnfolded = false
+          newElem.text = originalElem.text
+          newElem.comment = originalElem.comment
+          newElem.commentLabel = originalElem.commentLabel
+          newElem.tag = originalElem.tag
+          newElem.items = originalElem.items  
+          //console.log("$scope.survey.elements", $scope.survey.elements)      
+          $scope.survey.elements.push(newElem);
+          $scope.updateBuilder();
+          console.log("$scope.survey.elements", $scope.survey.elements)  
+          
+        }
 
     $scope.addNewItem=function(index){
 
@@ -287,7 +319,22 @@
       if($stateParams.survey_id) {
         $scope.loadSurvey($stateParams.survey_id);
       } 
-      $scope.loadLists(); 
+      $scope.loadLists();
+
+      $scope.tags = [
+          "Share of expertise with the company" ,
+          "Acceptable work demands" ,
+          "Good relations with management" ,
+          "Team work" ,
+          "Happiness",
+          "Innovation",
+          "Leadership",
+          "Supportiveness",
+          "Determination",
+          "Trust",
+          "Spirituality / my life",
+          "Environnement respect"
+        ]; 
     }
 
     $scope.activate();

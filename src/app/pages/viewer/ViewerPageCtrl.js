@@ -9,7 +9,7 @@
     .controller('ViewerPageCtrl', ViewerPageCtrl);
 
   /** @ngInject */
-  function ViewerPageCtrl($scope, $stateParams, SurveyService, $log) {
+  function ViewerPageCtrl($scope, $stateParams, SurveyService, AnswerService, $log, $filter) {
     //alert('test');
 
     var vm = this;
@@ -20,10 +20,12 @@
         .then(function (data){
           vm.survey = data;
           $log.info("Got the survey data",data);
+
+          var alreadyAnswered = checkIfAlreadyAnswered();
+          var isMemberIlligible = checkIfIlligible();
           //building forms elements
           
-          //angular.forEach(vm.survey.elements, function(element, key) { 
-          //  console.log("element",element);
+          if (!alreadyAnswered && isMemberIlligible) {
             angular.forEach(vm.survey.list, function(list, key) {  
               console.log("list",list);
               angular.forEach(list.members, function(member, key) {
@@ -32,24 +34,56 @@
                 vm.forms[member.id].elements = vm.survey.elements;
                 vm.forms[member.id].question = {};
                 if(member.id != vm.activeMemberId) {
+                  member.last = false;
                   vm.members.push(member);
+
                   
-                } else
+                } else 
                   vm.askedMember = member;
                 
                 //.push(k + ': ' + member);
                 });
+              
+              });
+              vm.askedMember.last = true;
               vm.members.push(vm.askedMember);
               //Thnak You message
               vm.members.push({"id": "none", "name" : ": )"});
-              });
-         // });
-          /*console.log("loadSurvey:vm.survey",vm.survey);
-          console.log("loadSurvey:vm.survey.list.members",vm.survey.list.members);
-          console.log("loadSurvey:vm.forms",vm.forms);*/
+          } else {
+             $log.info("Already answered");
+             if (alreadyAnswered)
+                vm.alreadyAnswered = true;
+              else
+                vm.isMemberIlligible = false;
+          }
+            
+          
+            
+
         }, function (error){
+          vm.error = true;
           $log.error(error);
         });
+    }
+
+    function checkIfAlreadyAnswered() {
+      console.log("checkIfAlreadyAnswered", vm.survey.respondents.length, vm.survey.respondents.indexOf(vm.activeMemberId))
+      if (vm.survey.respondents.length > 0 && vm.survey.respondents.indexOf(vm.activeMemberId) !== -1)
+        return true
+      return false
+    }
+
+    function checkIfIlligible() {
+      var element = []
+      angular.forEach(vm.survey.list, function(list, key) {
+        if (element.length == 0)
+          element = $filter('filter')(list.members, {'id':vm.activeMemberId})
+      })
+      //console.log("checkIfIlligible", element, element.length)
+      if (element.length > 0)
+        return true;
+
+      return false; 
     }
 
 
@@ -58,12 +92,17 @@
       vm.forms = [];
       vm.survey = {};
       vm.members = [];
+      vm.alreadyAnswered = false;
+      vm.isMemberIlligible = true;
+      vm.error = false;
       vm.askedMember = {};
-      vm.activeMemberId = $stateParams.member_id;
-      loadSurvey($stateParams.survey_id);
-      console.log(vm.activeMemberId)
-      
-      
+      vm.formData = {}
+      if ($stateParams.member_id && $stateParams.survey_id) {
+        vm.activeMemberId = $stateParams.member_id;
+        loadSurvey($stateParams.survey_id);
+      } else
+        vm.error = true;
+
     }
 
     vm.getInitials = function(string) {
@@ -77,11 +116,76 @@
       return initials;
     };
 
-    vm.test = function(form){
-    //$scope.submitted = true;
-    alert("Angular is Awesome!!!");
-    console.log('submit', form);
-  };
+    vm.validateForm = function(form){
+      vm.forms[vm.activeMemberId].$submitted = true;
+      if (!form.$valid  ) {
+        //alert("Please fill in all required fields!");
+        console.log('error submitting', form);
+        return false;
+      }else{
+        console.log('submitting', vm.formData);
+        vm.sendAnswers(vm.formData)
+      }
+      console.log('submit');
+    };
+
+    vm.sendAnswers = function(formData) {
+      
+                console.log("formData", formData);
+                var counter = 0;
+
+                angular.forEach(formData, function(val, key) {
+
+                    if(key.indexOf("_") == -1) {
+                      var elementId = key;
+                      console.log("elementId", elementId);
+                      //console.log("val", val);
+                      var commentKey = key + "_comment";
+                      var submittedKey = key + "_submitted";
+                      //console.log("key", key);
+                      console.log("commentKey", commentKey);
+                      console.log("submittedKey", submittedKey);
+                      var element = $filter('filter')(vm.survey.elements, {'_id':elementId}) 
+                      var answer = {
+                        "value" : val.value,
+                        "comment" : (val.comment) ? val.comment : '',
+                        "survey" : vm.survey.id,
+                        "asked" : vm.askedMember,
+                        "question": element[0]
+                      }
+                      AnswerService
+                          .create(answer)
+                          .then(
+                              function (data){
+                                  counter++;
+                                  console.log("answer.create, counter, elements",data, counter, vm.survey.elements.length);
+                                  //trigger this when all the answers are sent
+                                  if(counter == vm.survey.elements.length) {
+                                      var respondents = vm.survey.respondents;
+                                      respondents.push(vm.askedMember.id);
+                                      vm.survey.respondents = respondents;
+                                      SurveyService
+                                          .update(vm.survey)
+                                          .then(
+                                              function (data){
+                                                  console.log("updated survey",data);
+                                                  vm.forms[vm.activeMemberId].$processed = true;
+                                              },
+                                              function (error){
+                                                   console.log("Error updating the survey");
+                                              }
+                                            );
+                                  }
+                                  
+                                },
+                              function (error){
+                                   console.log("Error creating the answer");
+                                 }
+                             );
+                      
+                    }
+                })
+    };
 
     activate();
     
