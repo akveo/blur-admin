@@ -50,7 +50,7 @@
         .create(vm.member)
         .then(function (data){
           vm.member = {}
-          $state.go('teams.members');
+          $state.go('main.teams.members');
           
           toastr.info('The member was created successfuly :)', 'Members', {
                       "autoDismiss": true,

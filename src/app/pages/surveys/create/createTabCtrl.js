@@ -257,7 +257,7 @@
         $scope.survey.list = $scope.lists.selected;
         $scope.survey.status = "Sending";
         $log.info("sendSurvey",$scope.survey);
-        $state.transitionTo('surveys.list'/*, {id: item.id}*/);
+        $state.transitionTo('main.surveys.list'/*, {id: item.id}*/);
 
         $scope.saveSurvey(true);
 

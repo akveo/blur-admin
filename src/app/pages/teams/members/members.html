@@ -15,7 +15,7 @@
 
             <div class="labels-container">
               <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="label-item"
-               ui-sref="teams.members.label({label: t.label})" ng-click="tabCtrl.selectTab(t.label)">
+               ui-sref="main.teams.members.label({label: t.label})" ng-click="tabCtrl.selectTab(t.label)">
                 <span class="tag label {{t.label}}">{{t.name}}</span>
             
               </div>

@@ -73,7 +73,8 @@
                 return {
                   name: s.name,
                   title: s.title,
-                  level: (s.name.match(/\./g) || []).length,
+                  //level: (s.name.match(/\./g) || []).length,
+                  level: ((s.name.match(/\./g) || []).length - 1),
                   order: meta.order,
                   icon: meta.icon,
                   stateRef: s.name,

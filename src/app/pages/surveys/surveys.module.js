@@ -13,7 +13,7 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('surveys', {
+        .state('main.surveys', {
           url: '/surveys',
           template : '<ui-view  autoscroll="true" autoscroll-body-top></ui-view>',
           title: 'Surveys',
@@ -21,7 +21,7 @@
           	icon: 'ion-gear-a',
             order: 1000,
           },
-        }).state('surveys.create', {
+        }).state('main.surveys.create', {
           url: '/create',
           templateUrl: 'app/pages/surveys/create/create.html',
           controller: "CreateTabCtrl",
@@ -29,12 +29,12 @@
           sidebarMeta: {
             order: 1000,
           },
-        }).state('surveys.edit', {
+        }).state('main.surveys.edit', {
           url: '/edit/:survey_id',
           templateUrl: 'app/pages/surveys/create/create.html',
           controller: "CreateTabCtrl",
           title: 'Edit a survey'
-        }).state('surveys.list', {
+        }).state('main.surveys.list', {
           url: '/list',
           templateUrl: 'app/pages/surveys/list/list.html',
           controller: "list as vm",

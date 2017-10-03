@@ -56,7 +56,8 @@
     "ng-js-tree": "~0.0.7",
     "angular-ui-select": "^0.19.6",
     "angular-upload": "^1.0.12",
-    "ng-tags-input": "^3.2.0"
+    "ng-tags-input": "^3.2.0",
+    "lodash": "^4.17.4"
   },
   "resolutions": {
     "angular": "~1.5.9",

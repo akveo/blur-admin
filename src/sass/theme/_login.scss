@@ -1,29 +1,20 @@
-@import "common.scss";
-@import "theme/_socicon.scss";
-@import "theme/_layout.scss";
-@import 'theme/buttons.scss';
-@import 'app/form.scss';
-html {
+.login {
   min-height: 520px;
-  height: 100%;
-}
-
-body {
   @include main-background();
   height: 100%;
 }
 
 $text-color: #ffffff;
-.form-control,
-.form-control:focus {
+.login .form-control,
+.login .form-control:focus {
   @include placeholderStyle($text-color, 0.9);
   background-color: rgba(0, 0, 0, .4);
   border-radius: 5px;
   color: $text-color;
 }
 
-.form-control[disabled],
-.form-control[readonly],
+.login .form-control[disabled],
+.login .form-control[readonly],
 fieldset[disabled] .form-control {
   @include placeholderStyle($text-color, 0.6);
 }
@@ -35,9 +26,9 @@ fieldset[disabled] .form-control {
   width: 100%;
 }
 
-.auth-block {
+.login .auth-block {
   width: 540px;
-  margin: 0 auto;
+  margin: 150px auto;
   border-radius: 5px;
   @include bg-translucent-dark(0.55);
   color: #fff;
@@ -68,7 +59,7 @@ fieldset[disabled] .form-control {
   }
 }
 
-.auth-input {
+.login .auth-input {
   width: 300px;
   margin-bottom: 24px;
   input {
@@ -81,7 +72,7 @@ fieldset[disabled] .form-control {
   }
 }
 
-a.forgot-pass {
+.login a.forgot-pass {
   display: block;
   text-align: right;
   margin-bottom: -20px;
@@ -90,14 +81,14 @@ a.forgot-pass {
   position: relative;
 }
 
-.auth-link {
+.login .auth-link {
   display: block;
   font-size: 16px;
   text-align: center;
   margin-bottom: 33px;
 }
 
-.auth-sep {
+.login .auth-sep {
   margin-top: 36px;
   margin-bottom: 24px;
   line-height: 20px;
@@ -126,7 +117,7 @@ a.forgot-pass {
   }
 }
 
-.al-share-auth {
+.login .al-share-auth {
   text-align: center;
   .al-share {
     float: none;
@@ -145,6 +136,6 @@ a.forgot-pass {
   }
 }
 
-.btn-auth {
+.login .btn-auth {
   color: #ffffff!important;
 }

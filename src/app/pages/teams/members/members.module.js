@@ -11,7 +11,7 @@
   /** @ngInject */
   function routeConfig($stateProvider,$urlRouterProvider) {
     $stateProvider
-        .state('teams.members', {
+        .state('main.teams.members', {
           url: '/members',
           //abstract: true,
           templateUrl: 'app/pages/teams/members/members.html',
@@ -21,13 +21,13 @@
           sidebarMeta: {
             order: 0,
           },
-        }).state('teams.members.label', {
+        }).state('main.teams.members.label', {
           url: '/:label',
           templateUrl: 'app/pages/teams/members/membersListing/membersList.html',
           title: 'Members',
           controller: "MembersListCtrl",
           controllerAs: "listCtrl"
-        }).state('teams.members.detail', {
+        }).state('main.teams.members.detail', {
           url: '/:id',
           templateUrl: 'app/pages/teams/members/detail/memberDetail.html',
           title: 'Detail',

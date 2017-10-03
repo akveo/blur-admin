@@ -169,7 +169,7 @@
 	  if (item && item.isChecked) {
 		  	vm.activeList = item;
         vm.errors.noList = false;
-        $state.transitionTo('teams.lists', {id: item.id}, {notify: false});
+        $state.transitionTo('main.teams.lists', {id: item.id}, {notify: false});
 			angular.forEach(vm.Lists, function(list){
 	      	 if(item.id != list.id)
 			   		list.isChecked = false;
@@ -201,7 +201,7 @@
       vm.activeList = {};
       vm.errors.noList = true;
       vm.listMembers = [];
-      $state.transitionTo('teams.lists', {notify: false});
+      $state.transitionTo('main.teams.lists', {notify: false});
     }
 	  	
 	  

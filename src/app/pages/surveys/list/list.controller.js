@@ -23,12 +23,12 @@
 
     function goToCreate() {
       $log.info("Go to create");
-      $state.go('surveys.create');
+      $state.go('main.surveys.create');
     }
 
     function editSurvey(id){
       $log.info("Edit");
-      $state.go('surveys.edit', {'survey_id': id})
+      $state.go('main.surveys.edit', {'survey_id': id})
     }; 
 
     function removeSurvey(id){
