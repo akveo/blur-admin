@@ -9,19 +9,23 @@
     'ui.router',
 
     'BlurAdmin.pages.dashboard',
-    'BlurAdmin.pages.ui',
-    'BlurAdmin.pages.components',
-    'BlurAdmin.pages.form',
-    'BlurAdmin.pages.tables',
-    'BlurAdmin.pages.charts',
-    'BlurAdmin.pages.maps',
+    'BlurAdmin.pages.main',
+    'BlurAdmin.pages.surveys',
+    'BlurAdmin.pages.teams',
+    'BlurAdmin.pages.viewer',
+    'BlurAdmin.pages.authSignIn',
+    'BlurAdmin.pages.authSignUp',
+    'BlurAdmin.pages.services',
+    'BlurAdmin.pages.config',
     'BlurAdmin.pages.profile',
-  ])
-      .config(routeConfig);
+  ]).config(routeConfig)
+  .factory('authInterceptor', authInterceptor);
 
   /** @ngInject */
-  function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('/dashboard');
+  function routeConfig($urlRouterProvider, baSidebarServiceProvider, $httpProvider) {
+    $urlRouterProvider.otherwise('/authSignIn');
+
+    $httpProvider.interceptors.push('authInterceptor');
 
     baSidebarServiceProvider.addStaticItem({
       title: 'Pages',
@@ -43,20 +47,46 @@
         blank: true
       }]
     });
-    baSidebarServiceProvider.addStaticItem({
-      title: 'Menu Level 1',
-      icon: 'ion-ios-more',
-      subMenu: [{
-        title: 'Menu Level 1.1',
-        disabled: true
-      }, {
-        title: 'Menu Level 1.2',
-        subMenu: [{
-          title: 'Menu Level 1.2.1',
-          disabled: true
-        }]
-      }]
-    });
   }
+
+
+  function authInterceptor($rootScope, $q, localStorage) {
+  console.log('authInterceptor')
+    return {
+        request: function (config) {
+            config.headers = config.headers || {};
+            
+            if (config.data !== undefined && config.url.indexOf('auth') != -1) {
+                    config.data.access_token = 'AlAoWLue33D1sBrKNHOohXdvYNh2Je9i'; //TODO : get this from the config
+            }
+            else if (localStorage.getObject('token')) {
+
+              if (config.data === undefined) {
+                  //Do nothing if data is not originally supplied from the calling method
+              }
+              else {
+                  config.data.access_token = localStorage.getObject('token');
+                  console.log()
+              }
+
+              if (config.method === 'GET') {
+                  /*if (config.params === undefined) {
+                      config.params = {};
+                  }
+                  config.params.test = localStorage.getObject('token');*/
+              }
+                //config.headers.Authorization = 'Bearer ' + $window.sessionStorage.token;
+            }
+            return config;
+        },
+        responseError: function (rejection) {
+            if (rejection.status === 401) {
+                console.log("not authorised");
+                localStorage.clear();
+            }
+            return $q.reject(rejection);
+        }
+    };
+};
 
 })();

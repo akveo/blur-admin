@@ -1,0 +1,39 @@
+<div class="side-message-navigation" ng-class="{'expanded': tabCtrl.navigationCollapsed}">
+  <div class="mail-messages-control side-message-navigation-item">
+     
+  </div>
+  <div class="messages">
+    <table>
+      <tr id="m-{{m.id}}" ng-repeat="m in listCtrl.members track by m.id"
+          class="side-message-navigation-item little-human shineHover {{m.tag}}">
+        <td class="check-td">
+          <div class="mail-checkbox">
+            
+          </div>
+        </td>
+        <td  class="photo-td" ui-sref="main.teams.members.detail({id: m.id, label: listCtrl.label})">
+          <img ng-src="{{m.id | profilePicture}}" class="little-human-picture">
+         
+        </td>
+        <td  ui-sref="main.teams.members.detail({id: m.id, label: listCtrl.label})">
+          <div class="name-container">
+            <div><span class="name">{{m.name}}</span></div>
+            <div><span ng-repeat="l in m.labels" class="tag label label-primary {{l}}">{{l}}</span></div>
+          </div>
+        </td>
+        <td  ui-sref="teams.members.detail({id: m.id, label: listCtrl.label})">
+          <div class="additional-info">
+            <span class="subject"> {{m.email}}</span>
+          </div>
+        </td>
+        <td>
+          <span>{{m.position}}</span>
+        </td>
+        <td>
+          <button class="btn btn-primary editable-table-button btn-xs" ng-click="tabCtrl.showCompose(m.id)">Edit</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="tabCtrl.removeMember(m.id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

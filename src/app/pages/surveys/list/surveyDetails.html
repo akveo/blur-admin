@@ -1,0 +1,249 @@
+<div id="analysis">
+<uib-tabset active="$tabSetStatus.activeTab">
+
+<uib-tab heading="Survey summary" ng-if="vm.activeSurvey.type != 's_360'">
+
+  <div class="row">
+		  <div class="col-md-12">
+		    
+				<div class="progress">
+				  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{vm.analysis.completion}}" aria-valuemin="0" aria-valuemax="100" style="width: {{vm.analysis.completion}}%">
+				    {{vm.activeSurvey.completion}}% of question answred (Respondents : {{vm.analysis.data.overall.respondents.length}} of {{vm.analysis.recipents}})
+				  </div>
+				</div>
+				<br>
+
+		    <div class="panel-group">
+
+		      <div class="panel panel-default bootstrap-panel">
+		        <div class="panel-heading">
+		        	{{ vm.activeSurvey.name }}
+		        	<button type="button" class="btn btn-default btn-with-icon pull-right" ng-click="vm.printPdf()" style="margin-top:-9px"><i class="ion-stats-bars"></i>Export as PDF</button>
+		        </div>
+		        <div class="panel-body">
+
+
+				            <div class="chartjs-canvas-holder-first-row" style="width: 100%;margin:0 auto;">
+				                
+
+				                <canvas id="bar" class="chart chart-bar"
+				                        chart-data="vm.regularAnalysis.overall.data" chart-labels="vm.regularAnalysis.overall.labels">
+				                </canvas>
+
+				            </div>
+				        
+		          
+
+		        </div>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+
+  </uib-tab>
+
+  <uib-tab heading="Survey summary" ng-if="vm.activeSurvey.type == 's_360'">
+
+  <div class="row">
+		  <div class="col-md-12">
+		    
+				<div class="progress">
+				  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{vm.analysis.completion}}" aria-valuemin="0" aria-valuemax="100" style="width: {{vm.analysis.completion}}%">
+				    {{vm.activeSurvey.completion}}% of question answred (Respondents : {{vm.analysis.data.overall.respondents.length}} of {{vm.analysis.recipents}})
+				  </div>
+				</div>
+				<br>
+
+		    <div class="panel-group">
+
+		      <div class="panel panel-default bootstrap-panel">
+		        <div class="panel-heading">
+		        	{{ vm.activeSurvey.name }}
+		        	<button type="button" class="btn btn-default btn-with-icon pull-right" ng-click="vm.printPdf()" style="margin-top:-9px"><i class="ion-stats-bars"></i>Export as PDF</button>
+		        </div>
+		        <div class="panel-body">
+
+
+				            <div class="chartjs-canvas-holder-first-row" style="width: 100%;margin:0 auto;">
+				                
+
+				                <canvas id="bar" class="chart chart-bar"
+				                        chart-data="vm.s360Analysis.overall.data" chart-labels="vm.s360Analysis.overall.labels" chart-options="vm.s360ChartOption">
+				                </canvas>
+
+				            </div>
+				        
+		          
+
+		        </div>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+
+  </uib-tab>
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+
+
+  <uib-tab heading="Lists summaries">
+
+  <div class="row">
+		  <div class="col-md-12">
+		    
+				<div class="progress">
+				  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{vm.analysis.completion}}" aria-valuemin="0" aria-valuemax="100" style="width: {{vm.analysis.completion}}%">
+				    {{vm.activeSurvey.completion}}% of question answred (Respondents : {{vm.analysis.data.overall.respondents.length}} of {{vm.analysis.recipents}})
+				  </div>
+				</div>
+				<br>
+
+		    <div class="panel-group">
+		      <div class="panel panel-default bootstrap-panel" ng-repeat="e in vm.activeSurvey.list">
+		        <div class="panel-heading">{{ e.name }}</div>
+		        <div class="panel-body">
+				            <div class="chartjs-canvas-holder-first-row" style="width: 100%;margin:0 auto;" ng-if="vm.activeSurvey.type != 's_360'">
+				                <canvas id="bar" class="chart chart-bar"
+				                        chart-data="vm.regularAnalysis.lists[e._id].data" chart-labels="vm.regularAnalysis.lists[e._id].labels">
+				                </canvas>
+				            </div>
+
+				            <div class="chartjs-canvas-holder-first-row" style="width: 100%;margin:0 auto;" ng-if="vm.activeSurvey.type == 's_360'">
+				                <canvas id="bar" class="chart chart-bar"
+				                        chart-data="vm.s360Analysis.lists[e._id].data" chart-labels="vm.s360Analysis.lists[e._id].labels" chart-options="vm.s360ChartOption">
+				                </canvas>
+				            </div>
+				        
+		          
+
+		        </div>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+
+  </uib-tab>
+
+  <uib-tab heading="Question summaries"  ng-if="vm.activeSurvey.type != 's_360'">
+  		
+  		<div class="row">
+		  <div class="col-md-12">
+		    
+				<div class="progress">
+				  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{vm.analysis.completion}}" aria-valuemin="0" aria-valuemax="100" style="width: {{vm.analysis.completion}}%">
+				    {{vm.activeSurvey.completion}}% of question answred (Respondents : {{vm.analysis.data.overall.respondents.length}} of {{vm.analysis.recipents}})
+				  </div>
+				</div>
+				<br>
+
+		    <div class="panel-group">
+
+		      <div class="panel panel-default bootstrap-panel" ng-repeat="e in vm.activeSurvey.elements">
+		        <div class="panel-heading">{{ e.text }}</div>
+		        <div class="panel-body">
+
+
+				            <div class="chartjs-canvas-holder-first-row" style="max-width: 300px;margin:0 auto;">
+				                 <canvas id="doughnut" class="chart chart-doughnut" 
+				                 chart-data="vm.analysis.data.overall.data[e._id]" chart-labels="vm.analysis.labels[e._id]">
+				                </canvas>
+				            </div>    
+
+		        </div>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+   
+  </uib-tab>
+
+
+
+<uib-tab heading="Individual report" ng-if="vm.activeSurvey.type == 's_360'">
+  	
+  	 <div class="form-group ">
+    <ui-select ng-model="vm.selectedMember"
+               class="btn-group bootstrap-select form-control"
+               ng-disabled="false"
+               append-to-body="true"
+               search-enabled="true"
+               ng-change="selectedMemberChange()">
+      <ui-select-match placeholder="Select With Search">
+        {{$select.selected.name}}
+      </ui-select-match>
+      <ui-select-choices
+          repeat="withSearchItem in vm.members | filter: $select.search">
+        <span ng-bind-html="withSearchItem.name"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+
+  		<div class="row">
+		  <div class="col-md-12">
+
+		    
+				            <div class="chartjs-canvas-holder-first-row" style="width: 100%;margin:0 auto;">
+				                <canvas id="bar" class="chart chart-bar"
+				                        chart-data="vm.s360Analysis.individual.data[vm.selectedMember.id]" chart-labels="vm.s360Analysis.individual.labels" chart-options="vm.s360ChartOption" chart-series="vm.series">
+				                </canvas>
+				            </div>
+
+		  </div>
+		</div>
+    
+  </uib-tab>
+
+
+
+  <uib-tab heading="Individual responses">
+  	<div class="form-group ">
+    <ui-select ng-model="vm.selectedMember"
+               class="btn-group bootstrap-select form-control"
+               ng-disabled="false"
+               append-to-body="true"
+               search-enabled="true"
+               ng-change="selectedMemberChange()">
+      <ui-select-match placeholder="Select With Search">
+        {{$select.selected.name}}
+      </ui-select-match>
+      <ui-select-choices
+          repeat="withSearchItem in vm.members | filter: $select.search">
+        <span ng-bind-html="withSearchItem.name"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+
+  		<div class="row">
+		  <div class="col-md-12">
+
+		    <div class="panel-group">
+
+		      <div class="panel panel-default bootstrap-panel" ng-repeat="answer in vm.selectedMember.answers | orderBy:'id':true">
+		        <div class="panel-heading">{{ answer.question.text }} <b ng-if="vm.activeSurvey.type == 's_360'">({{ answer.evaluated.name }})</b></div>
+		        <div class="panel-body">
+		        		{{ answer.value }}
+		        </div>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+    
+  </uib-tab>
+</uib-tabset>
+</div>

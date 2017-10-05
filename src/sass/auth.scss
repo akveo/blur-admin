@@ -3,7 +3,6 @@
 @import "theme/_layout.scss";
 @import 'theme/buttons.scss';
 @import 'app/form.scss';
-
 html {
   min-height: 520px;
   height: 100%;
@@ -15,14 +14,17 @@ body {
 }
 
 $text-color: #ffffff;
-
-.form-control, .form-control:focus {
+.form-control,
+.form-control:focus {
   @include placeholderStyle($text-color, 0.9);
   background-color: rgba(0, 0, 0, .4);
   border-radius: 5px;
   color: $text-color;
 }
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
   @include placeholderStyle($text-color, 0.6);
 }
 
@@ -57,12 +59,10 @@ $text-color: #ffffff;
       color: $primary-dark;
     }
   }
-
   .control-label {
     padding-top: 11px;
     color: $text-color;
   }
-
   .form-group {
     margin-bottom: 12px;
   }
@@ -105,18 +105,19 @@ a.forgot-pass {
   text-align: center;
   display: block;
   position: relative;
-  & > span {
+  &>span {
     display: table-cell;
     width: 30%;
     white-space: nowrap;
     padding: 0 24px;
     color: $text-color;
-    & > span {
+    &>span {
       margin-top: -12px;
       display: block;
     }
   }
-  &:before, &:after {
+  &:before,
+  &:after {
     border-top: solid 1px $text-color;
     content: "";
     height: 1px;

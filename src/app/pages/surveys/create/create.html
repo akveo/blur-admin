@@ -1,0 +1,135 @@
+<div id="surveys" class="widgets">
+
+  <div class="row">
+    <div id="survey-builder" class="col-md-12 col-lg-12 {{ !display.survey ? 'slide-out-blurred-left' : '' }}">
+        <div class="panel panel-default bootstrap-panel">
+          <div class="panel-heading"><h2 ng-model="survey.name" ng-attr-contenteditable="{{ editmode }}" class="panel-title pull-left">{{ survey.name }}</h2></div>
+              <div class="panel-body">
+                <p ng-model="survey.description" ng-attr-contenteditable="{{ editmode }}"></p>
+
+                <hr />
+
+                <div class="control-group">
+                      <span class="control-label" style="display: inline-block;position: relative;;margin-right: 25px;">Survey type : </span>
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="surveyType" ng-model="survey.type" value="s_360">
+                        <span>360 Survey</span>
+                      </label>
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="surveyType" ng-model="survey.type" value="s_regular">
+                        <span>Regular Survey</span>
+                      </label>
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="surveyType" ng-model="survey.type" value="s_incognito">
+                        <span>Incognito Survey</span>
+                      </label>
+                      
+                    </div>
+                <hr />
+
+                <div id="newElem"></div>
+
+              <div class="control-group col-sm-12 col-xs-12 text-center new-question-container">
+                <div class="btn-group" uib-dropdown dropdown-append-to-body>
+                  <button type="button" class="btn btn-primary btn-with-icon btn-lg" ng-click="addElement('multiple')" ><i class="ion-plus-round"></i>NEW QUESTION</button>
+                </div>
+                <hr />
+                <div id="survey-actions" style="display:none;">
+                  <div class="btn-group">
+                    <button ng-click="saveSurvey()" class="btn btn-info btn-lg">
+                      Save as draft
+                      </button>
+                  </div>
+
+                  <div class="btn-group">
+                    <button ng-click="submitSurvey()" class="btn btn-success btn-lg">
+                      Save and next
+                      </button>
+                  </div>
+                </div>
+              </div>
+              
+              <br/>
+              <br/>
+              <br/>
+          </div>
+          </div>
+        </div>
+
+        <div id="survey-sending" class="col-md-8 col-lg-8 {{ display.surveySending ? 'roll-in-blurred-left' : 'invisible' }}">
+          <div class="panel panel-default bootstrap-panel">
+            <div class="panel-heading"><h2 class="panel-title pull-left">Send your survey</h2></div>
+                <div class="panel-body">
+
+
+                  <div>
+                    <ui-select multiple ng-model="lists.selected"
+                             ng-change="selectedListsChange()"
+                             ng-disabled="false"
+                             search-enabled="true"
+                             append-to-body="true"
+                             class="form-control ">
+                    <ui-select-match placeholder="Choose a list">
+                      {{$item.name}}
+                    </ui-select-match>
+                    <ui-select-choices repeat="multipleItem in lists | filter: $select.search">
+                      {{multipleItem.name}}
+                    </ui-select-choices>
+                  </ui-select>
+
+                  <input type="text" class="form-control compose-input default-color"  placeholder="Subject" ng-model="survey.subject">
+
+                    
+
+                    <div class="compose-container">
+                      <text-angular-toolbar ta-toolbar-class="toolbarMain" name="toolbarMain" ta-toolbar="[['h1','h2','h3','bold','italics', 'underline', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],['userName', 'surveyLink'],['360Model', 'regularModel', 'incognitoModel']]"></text-angular-toolbar>
+                      <text-angular name="htmlcontent" ta-target-toolbars='toolbarMain,toolbarFooter' ng-model="survey.text"></text-angular>
+                    </div>
+                  </div>
+                  <div class="compose-footer clearfix">
+                    <button type="button" ng-click="sendSurvey()" class="btn btn-send">Send</button>
+                    <button type="button" ng-click="cancelSending()" class="btn btn-danger">Cancel</button>
+                    <text-angular-toolbar ta-toolbar-class="toolbarFooter" name="toolbarFooter" ta-toolbar="[['insertLink', 'insertImage', 'html', 'quote','insertVideo']]"></text-angular-toolbar>
+                    
+                  </div>
+
+
+
+
+                </div>
+          </div>
+        </div>
+
+        <div id="sidebar" class="col-md-4 col-lg-4 {{ display.sidebar ? 'roll-in-blurred-right' : 'invisible' }}">
+
+          <div id="survey-lists" class="panel panel-default bootstrap-panel">
+          <div class="panel-heading"><h2 class="panel-title pull-left">Memebrs this survey will be sent to</h2></div>
+              <div class="panel-body">
+          
+                
+
+                
+                   
+                   <div class="feed-messages-container" track-width="smallContainerWidth" min-width="360">
+                    <div class="feed-message" ng-repeat="l in lists.selected">
+                        <h3>{{l.name}}</h3>
+                        <img class="photo-icon roll-in-blurred-right" ng-src="{{m.id | profilePicture}}" ng-repeat="m in l.members">
+                    </div>
+                  </div>
+
+              
+
+              
+              </div>
+
+              </div> 
+          </div>
+
+        </div> 
+    </div>
+</div>
+<script>
+ $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

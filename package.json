@@ -44,5 +44,8 @@
   },
   "scripts": {
     "postinstall": "bower install"
+  },
+  "dependencies": {
+    "ng-tags-input": "^3.2.0"
   }
 }

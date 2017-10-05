@@ -1,0 +1,77 @@
+<div id="surveys" class="widgets">
+  <div class="row">
+    <div class="col-md-12">
+      <div ba-panel ba-panel-title="My surveys" ba-panel-class="with-scroll">
+
+				<div ng-if="vm.surveys.length <= 0">
+					<button ng-click="vm.goToCreate()" class="btn btn-success btn-lg">
+							New survey
+           </button>
+				</div>
+
+				<table ng-if="vm.surveys.length > 0" class="table table-bordered table-hover table-condensed">
+					<thead>
+						<tr class="black-muted-bg" >
+							<td class="table-id">#</td>
+							<td>Title</td>
+							<td>Created</td>
+							<td>Last edit</td>
+							<td>Responses</td>
+							<td>Status</td>
+							<td>Actions</td>
+						</tr>
+					<thead>
+					<tbody>
+						<tr id="{{ survey.id }}" ng-repeat="survey in vm.surveys track by survey.id" class="editable-row" >
+							<td>
+								{{ $index }}
+							</td>
+							<td>
+								{{ survey.name }}
+							</td>
+							<td>
+								{{ survey.createdAt | date:'shortDate' }}
+							</td>
+							<td>
+								{{ survey.updatedAt | date:'shortDate' }}
+							</td>
+							<td> 
+									<div class="progress">
+									  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{survey.completion}}" aria-valuemin="0" aria-valuemax="100" style="width: {{survey.completion}}%">
+									    <span class="sr-only">{{survey.completion}}% Complete</span>
+									  </div>
+									</div>
+							 </td>
+							<td> <button class="status-button btn btn-xs btn-{{survey.status=='Draft'?'warning':''}}{{survey.status=='Sending'?'info':''}}{{survey.status=='Sent'?'primary':''}}{{survey.status=='Done'?'success':''}}">{{ survey.status }}</button>  </td>
+							<td>
+								<button class="status-button btn btn-xs btn-warning" ng-click="vm.editSurvey(survey)" ng-if="survey.status == 'Draft'">Edit</button>
+								<button class="status-button btn btn-xs btn-info" ng-if="survey.status == 'Draft'" ng-click="vm.goToSend(survey.id)">Send</button>
+								<button class="status-button btn btn-xs btn-info" ng-if="survey.status=='Sent'" ng-click="vm.resendSurvey(survey)">Resend</button>
+								<button class="status-button btn btn-xs btn-success" ng-if="survey.status == 'Sent'" ng-click="vm.analyzeSurvey(survey)">Analyse</button>
+								<button class="status-button btn btn-xs btn-primary" ng-click="vm.duplicateSurvey(survey)">Duplicate</button>
+								<button ng-if="survey.status != 'Sending'" class="status-button btn btn-xs btn-danger" ng-click="vm.removeSurvey(survey)">Remove</button>
+							</td>
+						</tr>
+					</tbody>
+
+				</table>
+      </div>
+
+    </div>
+
+
+    <div class="col-md-12" ng-show="vm.activeSurvey.id">
+
+    	<div
+          ba-panel
+          ba-panel-class="horizontal-tabs tabs-panel">
+        <div ng-include="'app/pages/surveys/list/surveyDetails.html'"></div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+<div>
