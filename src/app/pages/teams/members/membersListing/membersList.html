@@ -1,26 +1,6 @@
 <div class="side-message-navigation" ng-class="{'expanded': tabCtrl.navigationCollapsed}">
   <div class="mail-messages-control side-message-navigation-item">
-    <div class="toggle-navigation-container">
-      <a href class="collapse-navigation-link ion-navicon"
-         ng-click="tabCtrl.navigationCollapsed=!tabCtrl.navigationCollapsed"></a>
-    </div>
-    <label class="checkbox-inline custom-checkbox nowrap">
-      <input type="checkbox" id="inlineCheckbox01" value="option1">
-      <span class="select-all-label">Select All</span>
-    </label>
-    <button type="button" class="btn  btn-icon refresh-button"><i class="ion-refresh"></i></button>
-    <div class="btn-group" uib-dropdown>
-      <button type="button" class="btn more-button" uib-dropdown-toggle>
-        More <span class="caret"></span>
-      </button>
-      <ul uib-dropdown-menu>
-        <li><a href>Action</a></li>
-        <li><a href>Another action</a></li>
-        <li><a href>Something else here</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href>Separated link</a></li>
-      </ul>
-    </div>
+     
   </div>
   <div class="messages">
     <table>
@@ -28,10 +8,7 @@
           class="side-message-navigation-item little-human shineHover {{m.tag}}">
         <td class="check-td">
           <div class="mail-checkbox">
-            <label class="checkbox-inline custom-checkbox nowrap">
-              <input type="checkbox">
-              <span></span>
-            </label>
+            
           </div>
         </td>
         <td  class="photo-td" ui-sref="main.teams.members.detail({id: m.id, label: listCtrl.label})">

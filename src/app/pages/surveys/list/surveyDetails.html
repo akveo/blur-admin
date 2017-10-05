@@ -1,8 +1,9 @@
 <div id="analysis">
 <uib-tabset active="$tabSetStatus.activeTab">
-  <uib-tab heading="Question summaries"  ng-if="vm.activeSurvey.type != 's_360'">
-  		<button type="button" ng-click="vm.printPdf()">Print PDF in new window</button>
-  		<div class="row">
+
+<uib-tab heading="Survey summary" ng-if="vm.activeSurvey.type != 's_360'">
+
+  <div class="row">
 		  <div class="col-md-12">
 		    
 				<div class="progress">
@@ -14,15 +15,21 @@
 
 		    <div class="panel-group">
 
-		      <div class="panel panel-default bootstrap-panel" ng-repeat="e in vm.activeSurvey.elements">
-		        <div class="panel-heading">{{ e.text }}</div>
+		      <div class="panel panel-default bootstrap-panel">
+		        <div class="panel-heading">
+		        	{{ vm.activeSurvey.name }}
+		        	<button type="button" class="btn btn-default btn-with-icon pull-right" ng-click="vm.printPdf()" style="margin-top:-9px"><i class="ion-stats-bars"></i>Export as PDF</button>
+		        </div>
 		        <div class="panel-body">
 
 
-				            <div class="chartjs-canvas-holder-first-row" style="max-width: 300px;margin:0 auto;">
-				                 <canvas id="doughnut" chart-options="vm.doughnutOptions" class="chart chart-doughnut" 
-				                 chart-data="vm.analysis.data.overall.data[e._id]" chart-labels="vm.analysis.labels[e._id]">
+				            <div class="chartjs-canvas-holder-first-row" style="width: 100%;margin:0 auto;">
+				                
+
+				                <canvas id="bar" class="chart chart-bar"
+				                        chart-data="vm.regularAnalysis.overall.data" chart-labels="vm.regularAnalysis.overall.labels">
 				                </canvas>
+
 				            </div>
 				        
 		          
@@ -33,7 +40,7 @@
 		    </div>
 		  </div>
 		</div>
-   
+
   </uib-tab>
 
   <uib-tab heading="Survey summary" ng-if="vm.activeSurvey.type == 's_360'">
@@ -51,7 +58,10 @@
 		    <div class="panel-group">
 
 		      <div class="panel panel-default bootstrap-panel">
-		        <div class="panel-heading">{{ vm.activeSurvey.name }}</div>
+		        <div class="panel-heading">
+		        	{{ vm.activeSurvey.name }}
+		        	<button type="button" class="btn btn-default btn-with-icon pull-right" ng-click="vm.printPdf()" style="margin-top:-9px"><i class="ion-stats-bars"></i>Export as PDF</button>
+		        </div>
 		        <div class="panel-body">
 
 
@@ -77,6 +87,18 @@
 
 
 
+  
+
+
+  
+
+
+
+
+  
+
+
+
   <uib-tab heading="Lists summaries">
 
   <div class="row">
@@ -95,7 +117,7 @@
 		        <div class="panel-body">
 				            <div class="chartjs-canvas-holder-first-row" style="width: 100%;margin:0 auto;" ng-if="vm.activeSurvey.type != 's_360'">
 				                <canvas id="bar" class="chart chart-bar"
-				                        chart-data="vm.listAnalysis[e._id].data" chart-labels="vm.listAnalysis[e._id].labels">
+				                        chart-data="vm.regularAnalysis.lists[e._id].data" chart-labels="vm.regularAnalysis.lists[e._id].labels">
 				                </canvas>
 				            </div>
 
@@ -114,6 +136,40 @@
 		  </div>
 		</div>
 
+  </uib-tab>
+
+  <uib-tab heading="Question summaries"  ng-if="vm.activeSurvey.type != 's_360'">
+  		
+  		<div class="row">
+		  <div class="col-md-12">
+		    
+				<div class="progress">
+				  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{vm.analysis.completion}}" aria-valuemin="0" aria-valuemax="100" style="width: {{vm.analysis.completion}}%">
+				    {{vm.activeSurvey.completion}}% of question answred (Respondents : {{vm.analysis.data.overall.respondents.length}} of {{vm.analysis.recipents}})
+				  </div>
+				</div>
+				<br>
+
+		    <div class="panel-group">
+
+		      <div class="panel panel-default bootstrap-panel" ng-repeat="e in vm.activeSurvey.elements">
+		        <div class="panel-heading">{{ e.text }}</div>
+		        <div class="panel-body">
+
+
+				            <div class="chartjs-canvas-holder-first-row" style="max-width: 300px;margin:0 auto;">
+				                 <canvas id="doughnut" class="chart chart-doughnut" 
+				                 chart-data="vm.analysis.data.overall.data[e._id]" chart-labels="vm.analysis.labels[e._id]">
+				                </canvas>
+				            </div>    
+
+		        </div>
+		      </div>
+
+		    </div>
+		  </div>
+		</div>
+   
   </uib-tab>
 
 

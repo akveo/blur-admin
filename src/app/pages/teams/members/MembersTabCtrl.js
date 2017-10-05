@@ -9,7 +9,7 @@
       .controller('MembersTabCtrl', MembersTabCtrl);
 
   /** @ngInject */
-  function MembersTabCtrl(composeModal, membersList, MemberService, $log) {
+  function MembersTabCtrl(composeModal, MemberService, $log, appConfig) {
 
     var vm = this;
     vm.navigationCollapsed = true;
@@ -19,20 +19,24 @@
         .get(id)
         .then(function (data){
           vm.member = data.data;
+          composeModal.open({
+            member : vm.member,
+            //actualIndex : vm.actualIndex
+          })
           $log.info("Got the member data",data.data);
         }, function (error){
           $log.error(error);
         });
-        //vm.member = membersList.getMemberById(id);
-        //vm.actualIndex = membersList.getIndexById(id);
-      } 
-      else 
-        vm.member = {};
 
-      composeModal.open({
-        member : vm.member,
-        //actualIndex : vm.actualIndex
-      })
+      } 
+      else {
+        vm.member = {};
+        composeModal.open({
+            member : vm.member,
+            //actualIndex : vm.actualIndex
+          })
+      }
+        
     };
 
     vm.removeMember = function(id) {
@@ -49,7 +53,7 @@
       
     }; 
 
-    vm.tabs = membersList.getTabs();
+    vm.tabs = appConfig.tabs;
   }
 
 })();

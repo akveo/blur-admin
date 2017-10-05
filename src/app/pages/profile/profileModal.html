@@ -1,0 +1,20 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+    <h4 class="modal-title" id="myModalLabel">Add Account</h4>
+  </div>
+  <form name="linkForm">
+    <div class="modal-body">
+      <p>Paste a link to your profile into the box below</p>
+
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Link to Profile" ng-model="link">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" ng-click="ok(link)">Save changes</button>
+    </div>
+  </form>
+</div>

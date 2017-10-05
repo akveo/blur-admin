@@ -44,10 +44,12 @@
 							 </td>
 							<td> <button class="status-button btn btn-xs btn-{{survey.status=='Draft'?'warning':''}}{{survey.status=='Sending'?'info':''}}{{survey.status=='Sent'?'primary':''}}{{survey.status=='Done'?'success':''}}">{{ survey.status }}</button>  </td>
 							<td>
-								<button class="status-button btn btn-xs btn-primary" ng-click="vm.editSurvey(survey.id)">Edit</button>
+								<button class="status-button btn btn-xs btn-warning" ng-click="vm.editSurvey(survey)" ng-if="survey.status == 'Draft'">Edit</button>
 								<button class="status-button btn btn-xs btn-info" ng-if="survey.status == 'Draft'" ng-click="vm.goToSend(survey.id)">Send</button>
-								<button class="status-button btn btn-xs btn-info" ng-if="survey.status == 'Sent'" ng-click="vm.analyzeSurvey(survey)">Analyse</button>
-								<button class="status-button btn btn-xs btn-danger" ng-click="vm.removeSurvey(survey.id)">Remove</button>
+								<button class="status-button btn btn-xs btn-info" ng-if="survey.status=='Sent'" ng-click="vm.resendSurvey(survey)">Resend</button>
+								<button class="status-button btn btn-xs btn-success" ng-if="survey.status == 'Sent'" ng-click="vm.analyzeSurvey(survey)">Analyse</button>
+								<button class="status-button btn btn-xs btn-primary" ng-click="vm.duplicateSurvey(survey)">Duplicate</button>
+								<button ng-if="survey.status != 'Sending'" class="status-button btn btn-xs btn-danger" ng-click="vm.removeSurvey(survey)">Remove</button>
 							</td>
 						</tr>
 					</tbody>

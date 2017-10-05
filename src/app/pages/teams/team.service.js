@@ -8,8 +8,8 @@
     .factory('MemberService', MemberService);
 
   /** @ngInject */
-  function MemberService($http, $q) {
-    var apiBaseUrl = "http://localhost:9000"
+  function MemberService($http, $q, appConfig) {
+    var apiBaseUrl = appConfig.apiBaseUrl
     var endpoint = apiBaseUrl + "/members";
 
     function list(params) {

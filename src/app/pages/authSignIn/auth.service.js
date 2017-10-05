@@ -8,8 +8,8 @@
     .factory('AuthService',AuthService);
 
   /** @ngInject */
-  function AuthService($http, $q) {
-    var apiBaseUrl = "http://localhost:9000"
+  function AuthService($http, $q, appConfig) {
+    var apiBaseUrl = appConfig.apiBaseUrl
     var endpoint = apiBaseUrl + "/auth";
 
     function login(params) {

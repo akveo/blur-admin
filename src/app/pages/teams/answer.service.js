@@ -8,8 +8,8 @@
     .factory('AnswerService', AnswerService);
 
   /** @ngInject */
-  function AnswerService($http, $q) {
-    var apiBaseUrl = "http://localhost:9000"
+  function AnswerService($http, $q, appConfig) {
+    var apiBaseUrl = appConfig.apiBaseUrl
     var endpoint = apiBaseUrl + "/answers";
 
     function list(params) {

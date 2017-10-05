@@ -9,14 +9,9 @@
     .controller('MemberDetailCtrl', MemberDetailCtrl);
 
   /** @ngInject */
-  function MemberDetailCtrl($stateParams, membersList, MemberService, $log) {
+  function MemberDetailCtrl($stateParams, MemberService, $log) {
     var vm = this;
-    //vm.member = membersList.getMemberById($stateParams.id);
-    //vm.label = $stateParams.label;
-
-    //var vm = this;
-    //vm.members = ($stateParams.label == "listing") ? membersList.getAllMessages() : membersList.getMembersByLabel($stateParams.label);
-
+    
     function loadMembers() {
       MemberService
         .list()

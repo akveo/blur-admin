@@ -48,7 +48,7 @@
       });
 
   /** @ngInject */
-  function CreateTabCtrl(SurveyService, ListService,MemberService, $scope, $http, $compile, $timeout, $stateParams, $log, toastr, $uibModal, $state) {
+  function CreateTabCtrl(SurveyService, ListService,MemberService, $scope, $http, $compile, $timeout, $stateParams, $log, toastr, $uibModal, $state, appConfig) {
 
   	$scope.editmode = true;
 
@@ -57,10 +57,10 @@
     $scope.$watch('lists.selected', $scope.updateLists);
 
   	$scope.survey = {};
-  	$scope.survey.name = 'Page Title';
-  	$scope.survey.description = 'Page Description';
+  	$scope.survey.name = appConfig.survey.defaultTitle;
+  	$scope.survey.description = appConfig.survey.defaultDescription;
   	$scope.survey.elements = [];
-    $scope.survey.type = "s_360";
+    $scope.survey.type = appConfig.survey.defaultType;
 
     $scope.display = {};
     $scope.display.survey = true;
@@ -169,34 +169,27 @@
             function (data){
               console.log('Survey edited', data);
               if (process)
-                $uibModal.open({
-                  animation: true,
-                  templateUrl: 'app/pages/surveys/create/widgets/successModal.html',
-                  //size: size,
-                  /*resolve: {
-                    items: function () {
-                      return $scope.items;
+                //send the survey
+                SurveyService
+                  .send(survey)
+                  .then(
+                    function (data){
+                      console.log('Survey is being sent', data);
+                        $uibModal.open({
+                          animation: true,
+                          templateUrl: 'app/pages/surveys/create/widgets/successModal.html',
+                        });
+                    },
+                    function (error){
+                      toastr.error('There were an error sending the survey', 'Surveys', $scope.errorToastrOptions)
                     }
-                  }*/
-                });
+                  );
               else
-                toastr.info('The survey was edited successfuly :)', 'Surveys', {
-                        "autoDismiss": true,
-                        "positionClass": "toast-bottom-right",
-                        "type": "success",
-                        "timeOut": "5000",
-                        "extendedTimeOut": "2000"
-                      })
+                toastr.info('The survey was edited successfuly :)', 'Surveys', $scope.successToastrOptions)
 
             },
             function (error){
-              toastr.error('There were an error editing the survey', 'Surveys', {
-                      "autoDismiss": true,
-                      "positionClass": "toast-bottom-right",
-                      "type": "error",
-                      "timeOut": "5000",
-                      "extendedTimeOut": "2000"
-                    })
+              toastr.error('There were an error editing the survey', 'Surveys', $scope.errorToastrOptions)
             }
           );
         } else {
@@ -205,22 +198,10 @@
           .then(
             function (data){
               console.log('Survey created', data);
-              toastr.info('The survey was created successfuly :)', 'Surveys', {
-                      "autoDismiss": true,
-                      "positionClass": "toast-bottom-right",
-                      "type": "success",
-                      "timeOut": "5000",
-                      "extendedTimeOut": "2000"
-                    })
+              toastr.info('The survey was created successfuly :)', 'Surveys', $scope.successToastrOptions)
             },
             function (error){
-              toastr.error('There were an error creating the survey', 'Surveys', {
-                      "autoDismiss": true,
-                      "positionClass": "toast-bottom-right",
-                      "type": "error",
-                      "timeOut": "5000",
-                      "extendedTimeOut": "2000"
-                    })
+              toastr.error('There were an error creating the survey', 'Surveys', $scope.errorToastrOptions)
             }
           );
         }
@@ -257,9 +238,9 @@
         $scope.survey.list = $scope.lists.selected;
         $scope.survey.status = "Sending";
         $log.info("sendSurvey",$scope.survey);
-        $state.transitionTo('main.surveys.list'/*, {id: item.id}*/);
 
         $scope.saveSurvey(true);
+        $state.transitionTo('main.surveys.list'/*, {id: item.id}*/);
 
         
         /*$scope.saveSurvey();
@@ -321,20 +302,22 @@
       } 
       $scope.loadLists();
 
-      $scope.tags = [
-          "Share of expertise with the company" ,
-          "Acceptable work demands" ,
-          "Good relations with management" ,
-          "Team work" ,
-          "Happiness",
-          "Innovation",
-          "Leadership",
-          "Supportiveness",
-          "Determination",
-          "Trust",
-          "Spirituality / my life",
-          "Environnement respect"
-        ]; 
+      $scope.errorToastrOptions = {
+                      "autoDismiss": true,
+                      "positionClass": "toast-bottom-right",
+                      "type": "error",
+                      "timeOut": "5000",
+                      "extendedTimeOut": "2000"
+                    };
+      $scope.successToastrOptions = {
+                      "autoDismiss": true,
+                      "positionClass": "toast-bottom-right",
+                      "type": "success",
+                      "timeOut": "5000",
+                      "extendedTimeOut": "2000"
+                    };
+
+      $scope.tags = appConfig.tags;
     }
 
     $scope.activate();

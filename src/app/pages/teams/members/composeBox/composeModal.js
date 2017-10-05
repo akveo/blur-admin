@@ -28,6 +28,10 @@
         });
       }
 
+      this.cancel = function () {
+        this.dismiss({$value: 'cancel'});
+      };
+
   }
 
 })();

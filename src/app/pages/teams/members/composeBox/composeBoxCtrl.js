@@ -9,13 +9,27 @@
     .controller('composeBoxCtrl', composeBoxCtrl);
 
   /** @ngInject */
-  function composeBoxCtrl($scope ,member, membersList,MemberService,fileReader, $filter, toastr, $state) {
+  function composeBoxCtrl($scope ,member,MemberService,fileReader, $filter, toastr, $state, composeModal, appConfig) {
     var vm = this;
+    vm.successToastrOption = {
+                        "autoDismiss": true,
+                        "positionClass": "toast-bottom-right",
+                        "type": "success",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "2000"
+                      }
+    vm.errorToastrOption = {
+                        "autoDismiss": true,
+                        "positionClass": "toast-bottom-right",
+                        "type": "error;",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "2000"
+                      }
     vm.member = member;
     //vm.actualIndex = actualIndex;
     //console.log("member",member)
     vm.picture = $filter('profilePicture')(member.id, "jpeg") ;//: $filter('appImage')('theme/no-photo.png');
-    vm.Labels = membersList.getTabs();
+    vm.Labels = appConfig.tabs;
 
     $scope.removePicture = function () {
       vm.picture = $filter('appImage')('theme/no-photo.png');
@@ -36,39 +50,41 @@
     };
 
     vm.updateMember = function () {
-      //vm.member.picture = vm.picture;
-      //vm.member.fileExt = "jpeg";
+      vm.member.picture = vm.picture.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
+      vm.member.fileExt = "jpeg";
 
-      console.log('composeBoxCtrl.updateMember', membersList.getIndexById(vm.member.id), vm.member);
+      MemberService
+          .put(vm.member)
+          .then(function (data){
+            vm.member = {}
+            vm.picture = $filter('profilePicture')('undefined', "jpeg") ;
+            $state.go('main.teams.members');
+            toastr.info('The member was updated successfuly :)', 'Members', vm.successToastrOption)
+          }, function (error){
+            $log.error(error);
+            toastr.error('There were an error updating the memeber', 'Members', vm.errorToastrOption)
+          });
     };
 
     vm.createMember = function () {
       vm.member.picture = vm.picture.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
       vm.member.fileExt = "jpeg";
 
-      MemberService
-        .create(vm.member)
-        .then(function (data){
-          vm.member = {}
-          $state.go('main.teams.members');
-          
-          toastr.info('The member was created successfuly :)', 'Members', {
-                      "autoDismiss": true,
-                      "positionClass": "toast-bottom-right",
-                      "type": "success",
-                      "timeOut": "5000",
-                      "extendedTimeOut": "2000"
-                    })
-        }, function (error){
-          $log.error(error);
-          toastr.error('There were an error creating the memeber', 'Members', {
-                      "autoDismiss": true,
-                      "positionClass": "toast-bottom-right",
-                      "type": "error",
-                      "timeOut": "5000",
-                      "extendedTimeOut": "2000"
-                    })
-        });
+      console.log(vm.member);
+      if(vm.member.id)
+        vm.updateMember()
+      else
+        MemberService
+          .create(vm.member)
+          .then(function (data){
+            vm.member = {}
+            vm.picture = $filter('profilePicture')('undefined', "jpeg") ;
+            $state.go('main.teams.members');
+            toastr.info('The member was created successfuly :)', 'Members', vm.successToastrOption)
+          }, function (error){
+            $log.error(error);
+            toastr.error('There were an error creating the memeber', 'Members', vm.errorToastrOption)
+          });
 
     };
   }

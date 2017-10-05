@@ -17,7 +17,7 @@
     'BlurAdmin.pages.authSignUp',
     'BlurAdmin.pages.services',
     'BlurAdmin.pages.config',
-    //'BlurAdmin.pages.main',
+    'BlurAdmin.pages.profile',
   ]).config(routeConfig)
   .factory('authInterceptor', authInterceptor);
 

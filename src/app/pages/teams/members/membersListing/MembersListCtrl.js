@@ -9,7 +9,7 @@
     .controller('MembersListCtrl', MembersListCtrl);
 
   /** @ngInject */
-  function MembersListCtrl($scope, $stateParams,MemberService, $log,  membersList) {
+  function MembersListCtrl($scope, $stateParams,MemberService, $log) {
     var vm = this;
     //vm.members = ($stateParams.label == "listing") ? membersList.getAllMessages() : membersList.getMembersByLabel($stateParams.label);
 
@@ -29,6 +29,7 @@
     
 
     function activate(){
+      console.log("activate");
       vm.members = [];
       loadMembers();
       

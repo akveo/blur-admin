@@ -20,12 +20,13 @@
 });
 
   /** @ngInject */
-  function ListsTabCtrl($scope, baConfig, membersList, ListService,MemberService, $log, $state,$stateParams) {
+  function ListsTabCtrl($scope, baConfig, ListService,MemberService, $log, $state,$stateParams,appConfig) {
   	var vm = this;
 
   	vm.searchResult = [];
 
     function loadLists() {
+      console.log("appConfig", appConfig)
       ListService
         .list()
         .then(function (data){
@@ -86,7 +87,7 @@
       return colors[i];
     }
 
-    vm.tabs = membersList.getTabs();
+    vm.tabs = appConfig.tabs;
 
     
 

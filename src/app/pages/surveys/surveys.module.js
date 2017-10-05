@@ -67,9 +67,18 @@
                     fontColor: layoutColors.defaultText,
                     showLabelBackdrop: false
                 }
-            }
+            },
+            tooltips: {
+                enabled: true
+            },
         });
-        // Configure all line charts
+        ChartJsProvider.setOptions('doughnut', {
+            legend: {
+                  display: true,
+                  position:'bottom'
+              }
+        });
+        // Configure all line charts 
         ChartJsProvider.setOptions('Line', {
             datasetFill: false,
         });

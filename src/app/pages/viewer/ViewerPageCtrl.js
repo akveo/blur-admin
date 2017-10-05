@@ -146,10 +146,12 @@
                       console.log("commentKey", commentKey);
                       console.log("submittedKey", submittedKey);
                       var element = $filter('filter')(vm.survey.elements, {'_id':elementId}) 
+                      var incognito = (vm.survey.type == 's_incognito') ? true : false
                       var answer = {
                         "value" : val.value,
                         "comment" : (val.comment) ? val.comment : '',
                         "survey" : vm.survey.id,
+                        "incognito" : incognito,
                         "asked" : vm.askedMember,
                         "question": element[0]
                       }

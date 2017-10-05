@@ -34,7 +34,7 @@
           controller: "MemberDetailCtrl",
           controllerAs: "detailCtrl"
         });
-    $urlRouterProvider.when('/teams/members','/teams/members/listing');
+    $urlRouterProvider.when('/main/teams/members','/main/teams/members/listing');
   }
 
 })();

@@ -8,8 +8,8 @@
     .factory('ListService', ListService);
 
   /** @ngInject */
-  function ListService($http, $q) {
-    var apiBaseUrl = "http://localhost:9000"
+  function ListService($http, $q, appConfig) {
+    var apiBaseUrl = appConfig.apiBaseUrl
     var endpoint = apiBaseUrl + "/lists";
 
     function list(params) {

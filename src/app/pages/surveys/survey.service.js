@@ -8,8 +8,8 @@
     .factory('SurveyService',SurveyService);
 
   /** @ngInject */
-  function SurveyService($http, $q) {
-    var apiBaseUrl = "http://localhost:9000"
+  function SurveyService($http, $q, appConfig) {
+    var apiBaseUrl = appConfig.apiBaseUrl
     var endpoint = apiBaseUrl + "/surveys";
 
     function list(params) {
@@ -49,6 +49,10 @@
       return $http.post(endpoint, survey);
     }
 
+    function send(survey) {
+      return $http.get(endpoint + "/" + survey.id + "/send");
+    }
+
     function update(survey) {
       return $http.put(endpoint + "/"+survey.id, survey);
     }
@@ -62,7 +66,8 @@
       get:get,
       create:create,
       update:update,
-      remove:remove
+      remove:remove,
+      send:send
     }
   }
 })();
