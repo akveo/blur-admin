@@ -9,24 +9,62 @@
     .controller('chartJs3DCtrl', chartJs3DCtrl);
 
   /** @ngInject */
-  function chartJs3DCtrl($scope) {
-    $scope.labels =["May", "Jun", "Jul", "Aug", "Sep"];
-    $scope.data = [
-      [65, 59, 90, 81, 56],
-      [28, 48, 40, 19, 88]
-    ];
-    $scope.series = ['Product A', 'Product B'];
+  function chartJs3DCtrl($scope, $http, $filter, $interval) {
+    var users;
+    var stories;
 
+    $scope.workInProgress = [];
 
-    $scope.changeData = function () {
-      $scope.data[0] = shuffle($scope.data[0]);
-      $scope.data[1] = shuffle($scope.data[1]);
-    };
+    function getPivotalStories() {
+      var projectId = '1993279';
 
-    function shuffle(o){
-      for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x){}
-      return o;
+      var version = 'v0.98';
+
+      var queryParams = [
+        'token=dbd3bfeb53beb6097fe299ab189e50b8',
+        'limit=200',
+        'filter=label:"' + version + '" state:started (label:"approved" OR label:"no approval required")'
+      ];
+
+      var url = 'https://www.pivotaltracker.com/services/v5/projects/' + projectId + '/stories';
+
+      return $http({
+        method: 'GET',
+        url: url + '?' + queryParams.join('&')
+      });
     }
+
+    function getPivotalUsers() {
+      var projectId = '1993279';
+
+      var auth = '?token=dbd3bfeb53beb6097fe299ab189e50b8';
+
+      var url = 'https://www.pivotaltracker.com/services/v5/projects/' + projectId + '/memberships';
+
+      $http({
+        method: 'GET',
+        url: url + auth
+      }).then(function (response) {
+        getPivotalStories().then(function (data) {
+          $scope.workInProgress = [];
+          users = response.data;
+          stories = data.data;
+
+          users.forEach(function (user) {
+            var items = $filter('filter')(stories, {owned_by_id: user.person.id});
+
+            items.forEach(function (ignore, index) {
+              items[index].owner = user.person;
+            });
+
+            $scope.workInProgress = $scope.workInProgress.concat(items);
+          });
+        });
+      });
+    }
+
+    $interval(getPivotalUsers, 120000);
+    getPivotalUsers();
   }
 
 })();

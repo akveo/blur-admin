@@ -9,7 +9,7 @@
     .controller('chartJs1DCtrl', chartJs1DCtrl);
 
   /** @ngInject */
-  function chartJs1DCtrl($scope, baConfig, $http, $q) {
+  function chartJs1DCtrl($scope, baConfig, $http, $interval) {
     var layoutColors = baConfig.colors;
     var stories = [];
 
@@ -43,43 +43,15 @@
       }
     };
 
-    $scope.changeData = function () {
-      console.log('click!')
-    };
-
-    function shuffle(o){
-      for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x){}
-      return o;
-    }
-
-    // function returnSessionsFromBrowserstackPromise(buildId) {
-    //   var headers = {
-    //     'Authorization': 'danneh1:5gXqwjkDjBtTiLVmvsLV'
-    //   };
-
-    //   // var url = 'https://www.browserstack.com/automate/builds/' + buildId + '/sessions.json';
-    //   var url = 'https://www.browserstack.com/automate/projects.json';
-
-    //   $http({
-    //     method: 'GET',
-    //     url: url
-    //   }).then(function(response){
-    //     console.log('response', response);
-    //   });
-    // }
-
-    // returnSessionsFromBrowserstackPromise('2f7a6dca052a67852693cd3bdef03356255e0745');
-
-
     function getPivotalStories() {
       var projectId = '1993279';
 
-      // var auth = '?token=dbd3bfeb53beb6097fe299ab189e50b8';
+      var version = 'v0.98';
 
       var queryParams = [
         'token=dbd3bfeb53beb6097fe299ab189e50b8',
         'limit=200',
-        'filter=label:"v0.98" (label:"approved" OR label:"no approval required")'
+        'filter=label:"' + version + '" (label:"approved" OR label:"no approval required")'
       ];
 
       var url = 'https://www.pivotaltracker.com/services/v5/projects/' + projectId + '/stories';
@@ -123,6 +95,7 @@
       });
     }
 
+    $interval(getPivotalStories, 120000);
     getPivotalStories();
   }
 
