@@ -12,7 +12,9 @@
   function chartJs1DCtrl($scope, baConfig, $http) {
     var layoutColors = baConfig.colors;
 
-    $http.defaults.headers.common.Authorization = 'Basic cmljaGFyZG1vaGFtbWVkMTpzanZKRnozTk5DektuU041alJ5SA==';
+    var headers = {
+      'Authorization': 'Basic cmljaGFyZG1vaGFtbWVkMTpzanZKRnozTk5DektuU041alJ5SA=='
+    };
 
     $scope.labels =["Sleeping", "Designing", "Coding", "Cycling"];
     $scope.data = [20, 40, 5, 35];
@@ -41,10 +43,16 @@
     }
 
     function returnSessionsFromBrowserstackPromise(buildId){
-      return $http.get('https://www.browserstack.com/automate/builds/' + buildId + '/sessions.json').then(function(){
-        
+      $http.get('https://www.browserstack.com/automate/builds/' + buildId + '/sessions.json', {
+        headers: {'Authorization': 'Basic cmljaGFyZG1vaGFtbWVkMTpzanZKRnozTk5DektuU041alJ5SA=='}
+      }).then(function(response){
+        console.log('response', response);
       });
     }
+
+    returnSessionsFromBrowserstackPromise('2f7a6dca052a67852693cd3bdef03356255e0745');
+
+
   }
 
 })();
