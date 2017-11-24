@@ -88,12 +88,12 @@
         method: 'GET',
         url: url + '?' + queryParams.join('&')
       }).then(function (response) {
-        console.log('response', response);
-
         stories = response.data;
+
         complete = 0;
         inProgress = 0;
         toDo = 0;
+
         frontEnd = 0;
         backEnd = 0;
         devOps = 0;
