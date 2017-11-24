@@ -1,63 +1,96 @@
-<dashboard-pie-chart></dashboard-pie-chart>
-
 <div class="row">
-  <div class="col-lg-6 col-md-12 col-sm-12"
-       ba-panel
-       ba-panel-title="Acquisition Channels"
-       ba-panel-class="medium-panel traffic-panel">
-    <traffic-chart></traffic-chart>
-  </div>
-  <div class="col-lg-6 col-md-12 col-sm-12"
-       ba-panel
-       ba-panel-title="Users by Country"
-       ba-panel-class="medium-panel">
-    <dashboard-map></dashboard-map>
-  </div>
-</div>
+  <div class="col-md-6" ng-controller="chartJs1DCtrl">
+      <div ba-panel ba-panel-title="Current Sprint" ba-panel-class="with-scroll ">
 
-<div class="row">
-  <div class="col-xlg-9 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <div class="row">
-      <div class="col-xlg-8 col-lg-12 col-md-12 col-sm-7 col-xs-12"
-           ba-panel
-           ba-panel-title="Revenue"
-           ba-panel-class="medium-panel">
-        <dashboard-line-chart></dashboard-line-chart>
+          <div class="row">
+              <div class="col-md-6">
+                      <canvas id="doughnut" chart-options="options" class="chart chart-doughnut"
+                      chart-data="progressData" chart-labels="progressLabels" chart-click="changeData">
+              </canvas>
+              </div>
+              <div class="col-md-6">
+                      <canvas id="pie" class="chart chart-pie"
+                      chart-options="options" chart-data="teamData" chart-labels="teamLabels"
+                       chart-click="changeData">
+               </canvas>
+              </div>
+          </div>
+
       </div>
-      <div class="col-xlg-4 col-lg-12 col-md-12 col-sm-5 col-xs-12"
-           ba-panel
-           ba-panel-class="popular-app medium-panel">
-        <popular-app></popular-app>
+  </div>
+  <!-- <div class="col-md-4" ng-controller="chartJs1DCtrl">
+      <div ba-panel ba-panel-title="Doughnut" ba-panel-class="with-scroll ">
+          
       </div>
-    </div>
+  </div> -->
+  <div class="col-md-3" ng-controller="chartJs2DCtrl">
+      <div ba-panel ba-panel-title="Polar" ba-panel-class="with-scroll ">
+          <div class="chartjs-canvas-holder-first-row">
+              <canvas id="polar-area" class="chart chart-polar-area"
+                      chart-data="data" chart-options="options" chart-labels="labels"
+                      chart-click="changeData">
+              </canvas>
+          </div>
+      </div>
   </div>
-  <div class="col-xlg-3 col-lg-6 col-md-6 col-sm-12 col-xs-12"
-       ba-panel
-       ba-panel-title="Feed"
-       ba-panel-class="large-panel with-scroll feed-panel">
-    <blur-feed></blur-feed>
+  <div class="col-md-3" ng-controller="chartJs3DCtrl">
+          <div ba-panel ba-panel-title="Polar" ba-panel-class="with-scroll ">
+              <div class="chartjs-canvas-holder-first-row">
+                  <canvas id="polar-area" class="chart chart-polar-area"
+                          chart-data="data" chart-options="options" chart-labels="labels"
+                          chart-click="changeData">
+                  </canvas>
+              </div>
+          </div>
+      </div>
+</div>
+<!-- 
+<div class="row ">
+  <div class="col-md-6" ng-controller="chartJsWaveCtrl">
+      <div ba-panel ba-panel-title="Animated Radar" ba-panel-class="col-eq-height">
+          <div class="chartjs-canvas-holder-second-row">
+              <canvas id="waveLine" class="chart chart-radar" chart-data="[data]" chart-labels="labels"></canvas>
+          </div>
+
+      </div>
+  </div>
+  <div class="col-md-6" ng-controller="chartJsWaveCtrl">
+      <div ba-panel ba-panel-title="Animated Bars" ba-panel-class="col-eq-height">
+          <div class="chartjs-canvas-holder-second-row">
+              <canvas id="waveBars" class="chart chart-bar" chart-data="[data]" chart-labels="labels"></canvas>
+          </div>
+      </div>
   </div>
 </div>
 
-<div class="row shift-up">
-  <div class="col-xlg-3 col-lg-6 col-md-6 col-xs-12"
-       ba-panel
-       ba-panel-title="To Do List"
-       ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
-    <dashboard-todo></dashboard-todo>
-  </div>
-  <div class="col-xlg-6 col-lg-6 col-md-6 col-xs-12"
-       ba-panel
-       ba-panel-title="Calendar"
-       ba-panel-class="xmedium-panel feed-comply-panel with-scroll calendar-panel">
-    <dashboard-calendar></dashboard-calendar>
-  </div>
-</div>
 
-<!--<div class="row">
-  <div class="col-lg-4 col-sm-6 col-xs-12">
-    <div ba-panel ba-panel-title="Weather" ba-panel-class="medium-panel with-scroll">
-      <blur-weather forecast="5"></blur-weather>
-    </div>
+<div class="row ">
+  <div class="col-lg-4 col-md-6" ng-controller="chartJs2DCtrl">
+      <div ba-panel ba-panel-title="Radar" ba-panel-class="with-scroll ">
+          <div class="chartjs-canvas-holder-third-row">
+              <canvas id="radar" class="chart chart-radar" chart-series="series" chart-data="data"
+                      chart-labels="labels" chart-click="changeData">
+              </canvas>
+          </div>
+      </div>
   </div>
-</div>-->
+  <div class="col-lg-4 col-md-6" ng-controller="chartJs2DCtrl">
+      <div ba-panel ba-panel-title="Line" ba-panel-class="with-scroll ">
+          <div class="chartjs-canvas-holder-third-row">
+              <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
+                      chart-series="series" chart-click="changeData"></canvas>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-4 col-md-12" ng-controller="chartJs2DCtrl">
+      <div ba-panel ba-panel-title="Bars" ba-panel-class="with-scroll ">
+          <div class="chartjs-canvas-holder-third-row">
+              <canvas id="bar" class="chart chart-bar"
+                      chart-data="data" chart-labels="labels" chart-series="series" chart-click="changeData" chart-update="updateC">
+              </canvas>
+          </div>
+      </div>
+  </div>
+</div> -->
+
+
