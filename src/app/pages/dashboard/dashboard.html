@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-6" ng-controller="chartJs1DCtrl">
+    <div class="col-md-8" ng-controller="chartJs1DCtrl">
         <div ba-panel ba-panel-title="Current Sprint" ba-panel-class="with-scroll ">
             <div class="row">
                 <div class="col-md-6">
@@ -16,23 +16,60 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-md-3" ng-controller="chartJs2DCtrl">
-        <div ba-panel ba-panel-title="Polar" ba-panel-class="with-scroll ">
-            <div class="chartjs-canvas-holder-first-row">
-                <canvas id="polar-area" class="chart chart-polar-area"
-                chart-data="data" chart-options="options" chart-labels="labels"
-                chart-click="changeData">
-                </canvas>
+        <div ba-panel ba-panel-title="Behat results" ba-panel-class="with-scroll">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <div style="background: red; border-radius: 8px; color: white; padding: 24px 48px; box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25)">
+                        <p style="margin-bottom: 24px;">Failed</p>
+                        <h1 style="text-align: right; margin-bottom: 0px;">{{behatResults.failed}}</h1>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div style="background: lightgreen; border-radius: 8px; padding: 24px 48px; box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25)">
+                        <p style="margin-bottom: 24px;">Passed</p>
+                        <h1 style="text-align: right; margin-bottom: 0px;">{{behatResults.passed}}</h1>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <hr style="margin: 30px 8%;"/>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <h4>Windows</h4>
+
+                    <div data-ng-repeat="(browser, results) in behatResults.windows" style="padding: 6px; border-radius: 4px; margin-bottom: 3px;" data-ng-style="results.percentage === 100 ? {background: 'green'} : {background: 'red'}">
+                        <ul style="margin-bottom: 0; padding-left: 24px;">
+                            <li>
+                                <span>{{results.name}}</span><span style="float: right;">{{results.percentage}}%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h4>Mac</h4>
+                    
+                    <div data-ng-repeat="(browser, results) in behatResults.mac" style="padding: 6px; border-radius: 4px; margin-bottom: 3px;" data-ng-style="results.percentage === 100 ? {background: 'green'} : {background: 'red'}">
+                        <ul style="margin-bottom: 0; padding-left: 24px;">
+                            <li>
+                                <span>{{results.name}}</span><span style="float: right;">{{results.percentage}}%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
             </div>
         </div>
     </div>
 
-    <div class="col-md-3" ng-controller="chartJs3DCtrl">
+    <div class="col-md-4" ng-controller="chartJs3DCtrl">
         <div ba-panel ba-panel-title="Work in progress" ba-panel-class="with-scroll ">
             <div class="item" data-ng-repeat="story in workInProgress track by $index" style="border-bottom: 1px solid #E6EAEE; margin-bottom: 6px;">
-                <div style="font-weight: 600;"><span>{{story.owner.name}}</span> <span style="float: right;">#{{story.id}}</span></div>
+                <div style="font-weight: 600;"><span data-ng-repeat="owner in story.owners" class="list-of-words">{{owner.name}}</span> <span style="float: right;">#{{story.id}}</span></div>
                 <p style="padding-top: 3px;">{{story.name}}</p>
             </div>
         </div>

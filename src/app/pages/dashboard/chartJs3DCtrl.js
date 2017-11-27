@@ -47,17 +47,24 @@
       }).then(function (response) {
         getPivotalStories().then(function (data) {
           $scope.workInProgress = [];
-          users = response.data;
+          users = {};
           stories = data.data;
 
-          users.forEach(function (user) {
+          response.data.forEach(function (user) {
             var items = $filter('filter')(stories, {owned_by_id: user.person.id});
 
-            items.forEach(function (ignore, index) {
-              items[index].owner = user.person;
+            users[user.person.id] = user.person;
+          });
+
+
+          stories.forEach(function (story, index) {
+            story.owners = [];
+
+            story.owner_ids.forEach(function (ownerId) {
+              story.owners.push(users[ownerId]);
             });
 
-            $scope.workInProgress = $scope.workInProgress.concat(items);
+            $scope.workInProgress.push(story);
           });
         });
       });

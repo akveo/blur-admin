@@ -95,8 +95,106 @@
       });
     }
 
+    function getBrowserStackData() {
+      var queryParams1 = [
+        'type=builds'
+      ];
+
+      var queryParams2 = [
+        'type=buildSessions'
+      ];
+
+      $http({
+        method: 'GET',
+        url: 'http://localhost:3001/browserstack_php.php' + '?' + queryParams1.join('&')
+      }).then(function (data) {
+        queryParams2.push('buildId=' + data.data.results[0].automation_build.hashed_id);
+
+        $http({
+          method: 'GET',
+          url: 'http://localhost:3001/browserstack_php.php' + '?' + queryParams2.join('&')
+        }).then(function (response) {
+          $scope.behatResults = {
+            failed: 0,
+            passed: 0,
+            windows: {
+              chrome: {
+                name: 'Chrome',
+                passed: 0,
+                failed: 0,
+                percentage: 0
+              },
+              firefox: {
+                name: 'Firefox',
+                passed: 0,
+                failed: 0,
+                percentage: 0
+              },
+              ie: {
+                name: 'Internet Explorer',
+                passed: 0,
+                failed: 0,
+                percentage: 0
+              },
+              edge: {
+                name: 'Microsoft Edge',
+                passed: 0,
+                failed: 0,
+                percentage: 0
+              }
+            },
+            mac: {
+              chrome: {
+                name: 'Chrome',
+                passed: 0,
+                failed: 0,
+                percentage: 0
+              },
+              firefox: {
+                name: 'Firefox',
+                passed: 0,
+                failed: 0,
+                percentage: 0
+              },
+              safari: {
+                name: 'Safari',
+                passed: 0,
+                failed: 0,
+                percentage: 0
+              }
+            }
+          };
+          function calcPercentage(browser) {
+            $scope.behatResults.windows[browser].percentage = (($scope.behatResults.windows[browser].passed / ($scope.behatResults.windows[browser].passed + $scope.behatResults.windows[browser].failed)) * 100).toFixed(2);
+          }
+
+          function browserTestLog(test, status) {
+            if (test.os === 'Windows') {
+              $scope.behatResults.windows[test.browser][status] += 1;
+
+              calcPercentage(test.browser);
+            }
+          }
+
+          response.data.results.forEach(function (test) {
+            var session = test.automation_session;
+
+            if ((session.status === 'done' && session.reason === 'UI_STOPPED') || session.status === 'passed') {
+              $scope.behatResults.passed += 1;
+              browserTestLog(session, 'passed')
+            } else if (session.status !== 'running') {
+              $scope.behatResults.failed += 1;
+              browserTestLog(session, 'failed')
+            }            
+          });
+        });
+      });
+    }
+
     $interval(getPivotalStories, 120000);
+    $interval(getBrowserStackData, 300000);
     getPivotalStories();
+    getBrowserStackData();
   }
 
 })();
