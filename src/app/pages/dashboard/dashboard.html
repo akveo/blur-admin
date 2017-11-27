@@ -4,14 +4,14 @@
             <div class="row">
                 <div class="col-md-6">
                     <canvas id="doughnut" chart-options="options" class="chart chart-doughnut"
-                        chart-data="progressData" chart-labels="progressLabels" chart-click="changeData">
+                        chart-data="progressData" chart-labels="progressLabels" chart-colors="progressColors" chart-click="changeData">
                     </canvas>
                 </div>
 
                 <div class="col-md-6">
                     <canvas id="pie" class="chart chart-pie"
                         chart-options="options" chart-data="teamData" chart-labels="teamLabels"
-                        chart-click="changeData">
+                        chart-click="changeData" chart-colors="teamColors">
                     </canvas>
                 </div>
             </div>
@@ -21,15 +21,15 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-5">
-                    <div style="background: red; border-radius: 8px; color: white; padding: 24px 48px; box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25)">
-                        <p style="margin-bottom: 24px;">Failed</p>
-                        <h1 style="text-align: right; margin-bottom: 0px;">{{behatResults.failed}}</h1>
+                    <div class="behat-box failed" data-ng-class="{'no-results': behatResults.failed === 0}">
+                        <p>Failed</p>
+                        <h1>{{behatResults.failed}}</h1>
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <div style="background: lightgreen; border-radius: 8px; padding: 24px 48px; box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25)">
-                        <p style="margin-bottom: 24px;">Passed</p>
-                        <h1 style="text-align: right; margin-bottom: 0px;">{{behatResults.passed}}</h1>
+                    <div class="behat-box passed" data-ng-class="{'no-results': behatResults.passed === 0}">
+                        <p>Passed</p>
+                        <h1>{{behatResults.passed}}</h1>
                     </div>
                 </div>
                 <div class="col-md-1"></div>
@@ -42,8 +42,8 @@
                 <div class="col-md-5">
                     <h4>Windows</h4>
 
-                    <div data-ng-repeat="(browser, results) in behatResults.windows" style="padding: 6px; border-radius: 4px; margin-bottom: 3px;" data-ng-style="results.percentage === 100 ? {background: 'green'} : {background: 'red'}">
-                        <ul style="margin-bottom: 0; padding-left: 24px;">
+                    <div class="browser-row" data-ng-repeat="(browser, results) in behatResults.windows" data-ng-class="results.percentage === 100 ? 'passed' : results.percentage === 0 ? 'no-results' : 'failed'">
+                        <ul>
                             <li>
                                 <span>{{results.name}}</span><span style="float: right;">{{results.percentage}}%</span>
                             </li>
@@ -53,8 +53,8 @@
                 <div class="col-md-5">
                     <h4>Mac</h4>
                     
-                    <div data-ng-repeat="(browser, results) in behatResults.mac" style="padding: 6px; border-radius: 4px; margin-bottom: 3px;" data-ng-style="results.percentage === 100 ? {background: 'green'} : {background: 'red'}">
-                        <ul style="margin-bottom: 0; padding-left: 24px;">
+                    <div class="browser-row" data-ng-repeat="(browser, results) in behatResults.mac" data-ng-class="results.percentage === 100 ? 'passed' : results.percentage === 0 ? 'no-results' : 'failed'">
+                        <ul>
                             <li>
                                 <span>{{results.name}}</span><span style="float: right;">{{results.percentage}}%</span>
                             </li>

@@ -24,9 +24,11 @@
 
     $scope.progressLabels = ["Complete", "In progress", "To do"];
     $scope.progressData = [complete, inProgress, toDo];
+    $scope.progressColors = ['#0BD680', '#FFC93C', '#DBDBDB'];
 
     $scope.teamLabels = ["Front end", "Back end", "Devops"];
     $scope.teamData = [frontEnd, backEnd, devOps];
+    $scope.teamColors = ['#0BD680', '#626EEF', '#FFC93C'];
 
     $scope.options = {
       elements: {
@@ -179,10 +181,10 @@
           response.data.results.forEach(function (test) {
             var session = test.automation_session;
 
-            if ((session.status === 'done' && session.reason === 'UI_STOPPED') || session.status === 'passed') {
+            if (session.status === 'passed') {
               $scope.behatResults.passed += 1;
               browserTestLog(session, 'passed')
-            } else if (session.status !== 'running') {
+            } else if (session.status === 'failed') {
               $scope.behatResults.failed += 1;
               browserTestLog(session, 'failed')
             }            
