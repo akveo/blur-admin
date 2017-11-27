@@ -15,6 +15,14 @@
 
     $scope.workInProgress = [];
 
+    function compare(a, b) {
+      if (a.owners[0].name < b.owners[0].name)
+        return -1;
+      if (a.owners[0].name > b.owners[0].name)
+        return 1;
+      return 0;
+    }
+
     function getPivotalStories() {
       var projectId = '1993279';
 
@@ -65,6 +73,7 @@
             });
 
             $scope.workInProgress.push(story);
+            $scope.workInProgress.sort(compare);
           });
         });
       });
