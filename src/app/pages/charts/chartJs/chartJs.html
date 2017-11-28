@@ -1,24 +1,29 @@
 <div class="row">
-    <div class="col-md-4" ng-controller="chartJs1DCtrl">
-        <div ba-panel ba-panel-title="Pie" ba-panel-class="with-scroll ">
-            <div class="chartjs-canvas-holder-first-row">
-                <canvas id="pie" class="chart chart-pie"
-                       chart-options="options" chart-data="data" chart-labels="labels"
-                        chart-click="changeData">
-                </canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4" ng-controller="chartJs1DCtrl">
-        <div ba-panel ba-panel-title="Doughnut" ba-panel-class="with-scroll ">
-            <div class="chartjs-canvas-holder-first-row">
-                <canvas id="doughnut" chart-options="options" class="chart chart-doughnut"
+    <div class="col-md-6" ng-controller="chartJs1DCtrl">
+        <div ba-panel ba-panel-title="Current Sprint" ba-panel-class="with-scroll ">
+
+            <div class="row">
+                <div class="col-md-6">
+                        <canvas id="doughnut" chart-options="options" class="chart chart-doughnut"
                         chart-data="data" chart-labels="labels" chart-click="changeData">
                 </canvas>
+                </div>
+                <div class="col-md-6">
+                        <canvas id="pie" class="chart chart-pie"
+                        chart-options="options" chart-data="data" chart-labels="labels"
+                         chart-click="changeData">
+                 </canvas>
+                </div>
             </div>
+
         </div>
     </div>
-    <div class="col-md-4" ng-controller="chartJs1DCtrl">
+    <!-- <div class="col-md-4" ng-controller="chartJs1DCtrl">
+        <div ba-panel ba-panel-title="Doughnut" ba-panel-class="with-scroll ">
+            
+        </div>
+    </div> -->
+    <div class="col-md-3" ng-controller="chartJs1DCtrl">
         <div ba-panel ba-panel-title="Polar" ba-panel-class="with-scroll ">
             <div class="chartjs-canvas-holder-first-row">
                 <canvas id="polar-area" class="chart chart-polar-area"
@@ -28,8 +33,18 @@
             </div>
         </div>
     </div>
+    <div class="col-md-3" ng-controller="chartJs1DCtrl">
+            <div ba-panel ba-panel-title="Polar" ba-panel-class="with-scroll ">
+                <div class="chartjs-canvas-holder-first-row">
+                    <canvas id="polar-area" class="chart chart-polar-area"
+                            chart-data="data" chart-options="options" chart-labels="labels"
+                            chart-click="changeData">
+                    </canvas>
+                </div>
+            </div>
+        </div>
 </div>
-
+<!-- 
 <div class="row ">
     <div class="col-md-6" ng-controller="chartJsWaveCtrl">
         <div ba-panel ba-panel-title="Animated Radar" ba-panel-class="col-eq-height">
@@ -76,6 +91,6 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 

@@ -1,63 +1,77 @@
-<dashboard-pie-chart></dashboard-pie-chart>
-
 <div class="row">
-  <div class="col-lg-6 col-md-12 col-sm-12"
-       ba-panel
-       ba-panel-title="Acquisition Channels"
-       ba-panel-class="medium-panel traffic-panel">
-    <traffic-chart></traffic-chart>
-  </div>
-  <div class="col-lg-6 col-md-12 col-sm-12"
-       ba-panel
-       ba-panel-title="Users by Country"
-       ba-panel-class="medium-panel">
-    <dashboard-map></dashboard-map>
-  </div>
-</div>
+    <div class="col-md-8" ng-controller="chartJs1DCtrl">
+        <div ba-panel ba-panel-title="Current Sprint" ba-panel-class="with-scroll ">
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="doughnut" chart-options="options" class="chart chart-doughnut"
+                        chart-data="progressData" chart-labels="progressLabels" chart-colors="progressColors" chart-click="changeData">
+                    </canvas>
+                </div>
 
-<div class="row">
-  <div class="col-xlg-9 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <div class="row">
-      <div class="col-xlg-8 col-lg-12 col-md-12 col-sm-7 col-xs-12"
-           ba-panel
-           ba-panel-title="Revenue"
-           ba-panel-class="medium-panel">
-        <dashboard-line-chart></dashboard-line-chart>
-      </div>
-      <div class="col-xlg-4 col-lg-12 col-md-12 col-sm-5 col-xs-12"
-           ba-panel
-           ba-panel-class="popular-app medium-panel">
-        <popular-app></popular-app>
-      </div>
+                <div class="col-md-6">
+                    <canvas id="pie" class="chart chart-pie"
+                        chart-options="options" chart-data="teamData" chart-labels="teamLabels"
+                        chart-click="changeData" chart-colors="teamColors">
+                    </canvas>
+                </div>
+            </div>
+        </div>
+
+        <div ba-panel ba-panel-title="Behat results" ba-panel-class="with-scroll">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <div class="behat-box failed" data-ng-class="{'no-results': behatResults.failed === 0}">
+                        <p>Failed</p>
+                        <h1>{{behatResults.failed}}</h1>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="behat-box passed" data-ng-class="{'no-results': behatResults.passed === 0}">
+                        <p>Passed</p>
+                        <h1>{{behatResults.passed}}</h1>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+
+            <hr style="margin: 30px 8%;"/>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <h4>Windows</h4>
+
+                    <div class="browser-row" data-ng-repeat="(browser, results) in behatResults.windows" data-ng-class="results.percentage === 100 ? 'passed' : results.percentage === 0 ? 'no-results' : 'failed'">
+                        <ul>
+                            <li>
+                                <span>{{results.name}}</span><span style="float: right;">{{results.percentage}}%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <h4>Mac</h4>
+                    
+                    <div class="browser-row" data-ng-repeat="(browser, results) in behatResults.mac" data-ng-class="results.percentage === 100 ? 'passed' : results.percentage === 0 ? 'no-results' : 'failed'">
+                        <ul>
+                            <li>
+                                <span>{{results.name}}</span><span style="float: right;">{{results.percentage}}%</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-xlg-3 col-lg-6 col-md-6 col-sm-12 col-xs-12"
-       ba-panel
-       ba-panel-title="Feed"
-       ba-panel-class="large-panel with-scroll feed-panel">
-    <blur-feed></blur-feed>
-  </div>
-</div>
 
-<div class="row shift-up">
-  <div class="col-xlg-3 col-lg-6 col-md-6 col-xs-12"
-       ba-panel
-       ba-panel-title="To Do List"
-       ba-panel-class="xmedium-panel feed-comply-panel with-scroll todo-panel">
-    <dashboard-todo></dashboard-todo>
-  </div>
-  <div class="col-xlg-6 col-lg-6 col-md-6 col-xs-12"
-       ba-panel
-       ba-panel-title="Calendar"
-       ba-panel-class="xmedium-panel feed-comply-panel with-scroll calendar-panel">
-    <dashboard-calendar></dashboard-calendar>
-  </div>
-</div>
-
-<!--<div class="row">
-  <div class="col-lg-4 col-sm-6 col-xs-12">
-    <div ba-panel ba-panel-title="Weather" ba-panel-class="medium-panel with-scroll">
-      <blur-weather forecast="5"></blur-weather>
+    <div class="col-md-4" ng-controller="chartJs3DCtrl">
+        <div ba-panel ba-panel-title="Work in progress" ba-panel-class="with-scroll ">
+            <div class="item" data-ng-repeat="story in workInProgress track by $index" style="border-bottom: 1px solid #E6EAEE; margin-bottom: 6px;">
+                <div style="font-weight: 600;"><span data-ng-repeat="owner in story.owners" class="list-of-words">{{owner.name}}</span> <span style="float: right;">#{{story.id}}</span></div>
+                <p style="padding-top: 3px;">{{story.name}}</p>
+            </div>
+        </div>
     </div>
-  </div>
-</div>-->
+</div>
