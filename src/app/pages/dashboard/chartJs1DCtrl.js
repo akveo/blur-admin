@@ -184,7 +184,7 @@
             if (session.status === 'passed') {
               $scope.behatResults.passed += 1;
               browserTestLog(session, 'passed')
-            } else if (session.status === 'failed') {
+            } else if ((session.status === 'failed') || (session.status === 'timeout')) {
               $scope.behatResults.failed += 1;
               browserTestLog(session, 'failed')
             }
