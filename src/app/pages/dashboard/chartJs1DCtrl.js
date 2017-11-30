@@ -184,7 +184,7 @@
             if (session.status === 'passed') {
               $scope.behatResults.passed += 1;
               browserTestLog(session, 'passed')
-            } else if ((session.status === 'failed') || (session.status === 'timeout')) {
+            } else if ((session.status === 'failed')) {
               $scope.behatResults.failed += 1;
               browserTestLog(session, 'failed')
             }
@@ -194,9 +194,9 @@
     }
 
     $interval(getPivotalStories, 120000);
-    $interval(getBrowserStackData, 300000);
+    // $interval(getBrowserStackData, 300000);
     getPivotalStories();
-    getBrowserStackData();
+    // getBrowserStackData();
   }
 
 })();
