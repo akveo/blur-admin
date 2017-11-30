@@ -20,7 +20,7 @@
     var frontEnd = 0;
     var backEnd = 0;
     var devOps = 0;
-    
+
 
     $scope.progressLabels = ["Complete", "In progress", "To do"];
     $scope.progressData = [complete, inProgress, toDo];
@@ -108,13 +108,13 @@
 
       $http({
         method: 'GET',
-        url: 'http://localhost:3001/browserstack_php.php' + '?' + queryParams1.join('&')
+        url: '/browserstack_php.php' + '?' + queryParams1.join('&')
       }).then(function (data) {
         queryParams2.push('buildId=' + data.data.results[0].automation_build.hashed_id);
 
         $http({
           method: 'GET',
-          url: 'http://localhost:3001/browserstack_php.php' + '?' + queryParams2.join('&')
+          url: '/browserstack_php.php' + '?' + queryParams2.join('&')
         }).then(function (response) {
           $scope.behatResults = {
             failed: 0,
@@ -187,7 +187,7 @@
             } else if (session.status === 'failed') {
               $scope.behatResults.failed += 1;
               browserTestLog(session, 'failed')
-            }            
+            }
           });
         });
       });
