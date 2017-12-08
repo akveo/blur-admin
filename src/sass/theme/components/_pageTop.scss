@@ -14,17 +14,22 @@
 }
 
 a.al-logo {
-  color: $sidebar-text;
+  color: white;
   display: block;
-  font-size: 24px;
+  font-size: 28px;
   font-family: $font-family;
   white-space: nowrap;
   float: left;
   outline: none !important;
   line-height: 60px;
+  position: relative;
+  right: 18px;
+  top: 3px;
 
-  span {
-    color: $primary;
+  .path2:before {
+    color: white;
+    position: relative;
+    right: 14px;
   }
 }
 

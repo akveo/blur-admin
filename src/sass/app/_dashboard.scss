@@ -21,3 +21,60 @@
 .blurCalendar{
   height: 475px;
 }
+
+.list-of-words:not(:nth-last-child(2)):after {
+  content: ", ";
+}
+
+.behat-box {
+  border-radius: 8px;
+  padding: 24px 48px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+
+  &.passed:not(.no-results) {
+    background: #0BD680;
+  }
+
+  &.failed:not(.no-results) {
+    background: #FF004E;
+    color: white;
+  }
+
+  &.no-results {
+    background: #DBDBDB;
+    opacity: 0.4;
+  }
+
+  p {
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    text-align: right;
+    margin-bottom: 0px;
+  }
+}
+
+.browser-row {
+  padding: 6px;
+  border-radius: 4px;
+  margin-bottom: 3px;
+
+  &.passed {
+    background: rgba(11, 214, 128, 0.12);
+  }
+
+  &.failed {
+    background: rgba(255, 0, 78, 0.12);
+  }
+
+  &.no-results {
+    background: #DBDBDB;
+    opacity: 0.4;
+  }
+
+  > ul {
+    margin-bottom: 0;
+    padding-left: 24px;
+  }
+}
