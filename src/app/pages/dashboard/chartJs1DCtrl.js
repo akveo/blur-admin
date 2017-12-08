@@ -48,7 +48,7 @@
     function getPivotalStories() {
       var projectId = '1993279';
 
-      var version = 'v0.98';
+      var version = 'v0.99';
 
       var queryParams = [
         'token=dbd3bfeb53beb6097fe299ab189e50b8',
