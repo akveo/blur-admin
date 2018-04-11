@@ -78,7 +78,7 @@ This will allow you to easily switch off some pages in the future if&nbsp;needed
 })();
 </code></pre>
 <p>3) Then let’s create empty html file called <code>my-new-page.html</code> inside of <code>src/app/pages/myNewPage</code>.</p>
-<p>4) Lastly let’s create ui router state for this page. To do this we need to modify module.js file we created on step&nbsp;2:</p>
+<p>4) Now let’s create ui router state for this page. To do this we need to modify module.js file we created on step&nbsp;2:</p>
 <pre><code class="lang-javascript">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
 <span class="meta">  'use strict'</span>;
 
@@ -100,6 +100,7 @@ This will allow you to easily switch off some pages in the future if&nbsp;needed
 
 })();
 </code></pre>
+<p>5) Lastly, add the page to the parent module.  Edit the <code>pages.module.js</code> file and add our new module to the dependency list, as well as to the sidebar definition object (for instance, under the item for "404 Page").</p>
 <p>That’s it! Your can now open your new page either from sidebar or through hash&nbsp;<span class="caps">URL</span>.</p>
 
         </div>
