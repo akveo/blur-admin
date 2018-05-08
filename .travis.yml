@@ -3,7 +3,7 @@ sudo: false
 language: node_js
 
 node_js:
-  - "4"
+  - "8"
 
 addons:
   apt:
@@ -14,9 +14,7 @@ addons:
 
 install:
   - npm config set spin false
-  - npm install -g npm@3
   - npm install -g gulp
-  - npm install -g bower
 
   - npm install
 
