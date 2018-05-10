@@ -27,7 +27,7 @@
     "angular": "~1.5.8",
     "angular-route": "~1.5.8",
     "angular-slimscroll": "~1.1.5",
-    "angular-smart-table": "~2.1.3",
+    "angular-smart-table": "^2.1.9",
     "angular-toastr": "~2.1.1",
     "angular-touch": "~1.5.8",
     "angular-ui-sortable": "~0.15.0",
@@ -54,7 +54,8 @@
     "textAngular": "~1.4.6",
     "angular-xeditable": "~0.5.0",
     "ng-js-tree": "~0.0.7",
-    "angular-ui-select": "^0.19.6"
+    "angular-ui-select": "^0.19.6",
+    "lodash": "^4.17.4"
   },
   "resolutions": {
     "angular": "~1.5.9",
@@ -99,6 +100,11 @@
         "fonts/fontawesome-webfont.ttf",
         "fonts/fontawesome-webfont.woff",
         "fonts/fontawesome-webfont.woff2"
+      ]
+    },
+    "angular-smart-table" : {
+      "main": [
+        "dist/smart-table.js"
       ]
     }
   }

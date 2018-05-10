@@ -2,11 +2,11 @@
  * @author a.demeshko
  * created on 12/18/15
  */
-(function () {
+(function() {
   'use strict';
 
   angular.module('BlurAdmin.pages.charts.morris', [])
-    .config(routeConfig).config(function(baConfigProvider){
+    .config(routeConfig).config(function(baConfigProvider) {
       var layoutColors = baConfigProvider.colors;
       Morris.Donut.prototype.defaults.backgroundColor = 'transparent';
       Morris.Donut.prototype.defaults.labelColor = layoutColors.defaultText;
@@ -17,14 +17,15 @@
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('charts.morris', {
-          url: '/morris',
-          templateUrl: 'app/pages/charts/morris/morris.html',
-          title: 'Morris',
-          sidebarMeta: {
-            order: 300,
-          }
-        });
+      .state('main.charts.morris', {
+        url: '/morris',
+        templateUrl: 'app/pages/charts/morris/morris.html',
+        title: 'Morris',
+        sidebarMeta: {
+          order: 300,
+        },
+        authenticate: true
+      });
   }
 
 })();

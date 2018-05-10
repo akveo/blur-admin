@@ -2,21 +2,22 @@
  * @author v.lugovsky
  * created on 16.12.2015
  */
-(function () {
+(function() {
   'use strict';
 
   angular.module('BlurAdmin.pages.profile', [])
-      .config(routeConfig);
+    .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('profile', {
-          url: '/profile',
-          title: 'Profile',
-          templateUrl: 'app/pages/profile/profile.html',
-          controller: 'ProfilePageCtrl',
-        });
+      .state('main.profile', {
+        url: '/profile',
+        title: 'Profile',
+        templateUrl: 'app/pages/profile/profile.html',
+        controller: 'ProfilePageCtrl',
+        authenticate: true
+      });
   }
 
 })();
