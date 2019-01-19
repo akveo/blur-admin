@@ -9,9 +9,19 @@
     <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Ramblings of an immor(t)al demigod">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900|Anonymous+Pro:400,700,400italic,700italic&amp;subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic">
     <link rel="stylesheet" href="/blur-admin/css/main.css">
-    <link rel="shortcut icon" href="/blur-admin/images/favicon.png">
+    <link rel="shortcut icon" href="/blur-admin/images/favicon.png"><!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K8MXX5F');</script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8MXX5F"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="container">
       <div class="nav-main">
         <div class="wrap"><a href="/blur-admin/" class="nav-home"><img src="/blur-admin/images/blur-admin-logo.png" width="36" height="36" class="nav-logo">&nbsp;<span class="blur-label">Blur</span>Admin</a>
@@ -57,15 +67,15 @@
           <div class="subHeader"></div><p>Sidebar is used to provide convenient way of navigation in the application. 
 Application support only one sidebar per angular application. 
 That means sidebar is basically a singletone object.
-Currently sidebar supports level 1 and 2 sub&nbsp;menus.</p>
+Currently sidebar supports level 1 and 2 sub<span class="widont">&nbsp;</span>menus.</p>
 <p>Sidebar can be created using <code>baSidebar</code> directive:</p>
-<pre><code class="lang-html"><span class="tag">&lt;<span class="name">ba-sidebar</span>&gt;</span><span class="tag">&lt;/<span class="name">ba-sidebar</span>&gt;</span>
+<pre><code class="lang-html"><span class="tag">&lt;<span class="title">ba-sidebar</span>&gt;</span><span class="tag">&lt;/<span class="title">ba-sidebar</span>&gt;</span>
 </code></pre>
 <p>For now it support only javascript configuration. Though it can be configured manually or via <code>ui-router</code> states.
-This methods can be used either together or one at a&nbsp;time.</p>
-<h2 id="manual-configuration">Manual&nbsp;configuration</h2>
+This methods can be used either together or one at a<span class="widont">&nbsp;</span>time.</p>
+<h2 id="manual-configuration">Manual configuration</h2>
 <p>For manual configuration you need to use <code>baSidebarServiceProvider</code> provider in angular <a href="https://docs.angularjs.org/guide/module#configuration-blocks">configuration block</a>.
-The provider has <code>addStaticItem</code> method, which receives menuItem object as an argument, which can have following&nbsp;properties:</p>
+The provider has <code>addStaticItem</code> method, which receives menuItem object as an argument, which can have following<span class="widont">&nbsp;</span>properties:</p>
 <table>
 <thead>
 <tr>
@@ -115,30 +125,30 @@ The provider has <code>addStaticItem</code> method, which receives menuItem obje
 </tbody>
 </table>
 
-<p>Sample manual&nbsp;configuration:</p>
+<p>Sample manual configuration:</p>
 <pre><code class="lang-javascript">    baSidebarServiceProvider.addStaticItem({
-      <span class="attr">title</span>: <span class="string">'Menu Level 1'</span>,
-      <span class="attr">icon</span>: <span class="string">'ion-ios-more'</span>
+      title: <span class="string">'Menu Level 1'</span>,
+      icon: <span class="string">'ion-ios-more'</span>
     });
 </code></pre>
-<h2 id="route-configuration">Route&nbsp;configuration</h2>
+<h2 id="route-configuration">Route configuration</h2>
 <p>By default sidebar iterates through all <strong>ui-router</strong> states you defined in your application and searches for <code>sidebarMeta</code> object in them.
-For each state, which has this property, sidebar element is&nbsp;created. </p>
+For each state, which has this property, sidebar element is<span class="widont">&nbsp;</span>created. </p>
 <p>States are being grouped hierarchically. 
-That means if there’s a parent abstract state for some state and they both have <code>sidebarMeta</code> property, it will be displayed as a sub item of that abstract state’s menu&nbsp;item.  </p>
-<p>Name of the item is taken from <code>state</code>‘s <code>title</code> property. Sample state configuration, which will add an item to&nbsp;sidebar:</p>
+That means if there’s a parent abstract state for some state and they both have <code>sidebarMeta</code> property, it will be displayed as a sub item of that abstract state’s menu<span class="widont">&nbsp;</span>item.  </p>
+<p>Name of the item is taken from <code>state</code>‘s <code>title</code> property. Sample state configuration, which will add an item to<span class="widont">&nbsp;</span>sidebar:</p>
 <pre><code class="lang-javascript">$stateProvider
         .state(<span class="string">'dashboard'</span>, {
-          <span class="attr">url</span>: <span class="string">'/dashboard'</span>,
-          <span class="attr">templateUrl</span>: <span class="string">'app/pages/dashboard/dashboard.html'</span>,
-          <span class="attr">title</span>: <span class="string">'Dashboard'</span>,
-          <span class="attr">sidebarMeta</span>: {
-            <span class="attr">icon</span>: <span class="string">'ion-android-home'</span>,
-            <span class="attr">order</span>: <span class="number">0</span>,
+          url: <span class="string">'/dashboard'</span>,
+          templateUrl: <span class="string">'app/pages/dashboard/dashboard.html'</span>,
+          title: <span class="string">'Dashboard'</span>,
+          sidebarMeta: {
+            icon: <span class="string">'ion-android-home'</span>,
+            order: <span class="number">0</span>,
           },
         });
 </code></pre>
-<p><code>sidebarMeta</code> object can have following&nbsp;properties:</p>
+<p><code>sidebarMeta</code> object can have following<span class="widont">&nbsp;</span>properties:</p>
 <table>
 <thead>
 <tr>
@@ -170,10 +180,5 @@ That means if there’s a parent abstract state for some state and they both hav
         <div class="right">© 2015–2016 Akveo LLC<br />Documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</div>
       </footer>
     </div><a href="https://github.com/akveo/blur-admin"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 1000;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-61945105-3', 'auto');
-      ga('send', 'pageview');
-    </script>
   </body>
 </html>
