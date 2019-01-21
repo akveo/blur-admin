@@ -18,7 +18,7 @@ As we want dark theme, we're taking `blur`.
 
 1) Copy `src/sass/theme/conf/colorScheme/_blur.scss` to `src/sass/theme/conf/colorScheme/_dark.scss`.
 
-2) Include your colorscheme file in `src/sass/theme/common.scs`.
+2) Include your colorscheme file in `src/sass/common.scs`.
 
 To do this, replace 
 ```scss
