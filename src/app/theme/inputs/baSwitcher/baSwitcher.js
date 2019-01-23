@@ -14,7 +14,9 @@
       templateUrl: 'app/theme/inputs/baSwitcher/baSwitcher.html',
       scope: {
         switcherStyle: '@',
-        switcherValue: '='
+        switcherValue: '=',
+        switcherChange: '=',
+        switcherData: '='
       }
     };
   }
