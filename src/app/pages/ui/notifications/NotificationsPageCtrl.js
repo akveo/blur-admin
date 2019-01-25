@@ -96,7 +96,10 @@
     };
 
     $scope.openToast = function () {
-      angular.extend(toastrConfig, $scope.options);
+      angular.extend(toastrConfig, $scope.options,{
+        timeOut: parseInt($scope.options.timeOut),
+        extendedTimeOut: parseInt($scope.options.extendedTimeOut)
+      });
       openedToasts.push(toastr[$scope.options.type]($scope.options.msg, $scope.options.title));
       var strOptions = {};
       for (var o in  $scope.options) if (o != 'msg' && o != 'title')strOptions[o] = $scope.options[o];

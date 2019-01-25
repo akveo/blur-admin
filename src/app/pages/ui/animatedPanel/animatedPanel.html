@@ -1,0 +1,67 @@
+<div class="row">
+<div class="col-md-12" animated-panel-dir>
+	<div ba-panel ba-panel-class="with-scroll" ba-panel-title="User Details" close="hide()">
+		<div class="">
+			<form class="form-horizontal" editable-form name="tenderBondForm" shown="true" >
+						<div class="col-md-6">
+							<div class="form-group" >
+							<span class='col-sm-4' >First Name</span>
+							<div class='col-md-8'>
+						<input type="text" class="form-control" ng-model="data.firstName" />
+						</div>
+    						</div>
+							<div class="form-group" >
+							<span class='col-sm-4' >Last Name</span>
+							<div class='col-md-8'>
+						<input type="text" class="form-control" ng-model="data.lastName" />
+						</div>
+    						</div>
+						</div>
+						<div class="col-md-6">
+						<div class="form-group" >
+							<span class='col-sm-4' >Email</span>
+							<div class='col-md-8'>
+						<input type="text" class="form-control" ng-model="data.email" />
+						</div>
+    						</div>
+						<div class="form-group" >
+							<span class='col-sm-4' >Age</span>
+							<div class='col-md-8'>
+						<input type="text" class="form-control" ng-model="data.age" />
+						</div>
+    						</div>
+							<div class="col-sm-12" >
+								<button class="btn btn-primary btn-md pull-right"
+									type="submit" >
+									<span class="ion-android-checkmark-circle"> Submit</button>
+							</div>
+						</div>
+					</form>
+		</div>
+	</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div ba-panel ba-panel-title="Users" ba-panel-class="with-scroll">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+	  <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="user in users">
+      <td>{{user.firstName}}</td>
+      <td >{{user.lastName}}</td>
+      <td >{{user.username}}</td>
+		<td><button class="btn btn-sm btn-primary" ng-click="showDetails(user)"> View Details</button></td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+</div>
+</div>
