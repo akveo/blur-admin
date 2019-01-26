@@ -57,6 +57,12 @@
         }]
       }]
     });
+
+    baSidebarServiceProvider.addStaticItem({
+      title: 'blank call sample',
+      fixedHref: 'reg.html',
+      blank: true
+    });
   }
 
 })();
