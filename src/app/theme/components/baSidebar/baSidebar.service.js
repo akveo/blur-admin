@@ -27,7 +27,7 @@
 
           menuItems.forEach(function(item) {
             var children = states.filter(function(child) {
-              return child.level == 1 && child.name.indexOf(item.name) === 0;
+              return child.level == 1 && child.name.split('.')[0] === item.name;
             });
             item.subMenu = children.length ? children : null;
           });
