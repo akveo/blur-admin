@@ -9,6 +9,19 @@ Customizable admin panel framework made with :heart: by [Akveo team](http://akve
 :-------------------------:|:-------------------------:
 ![Mint version demo](http://i.imgur.com/A3TMviJ.png)  |  ![Blur version demo](http://i.imgur.com/EAoiK2O.jpg)
 
+## Quick Setup
+| Steps (Takes about 1-2 minutes) |
+| :------------ |
+|1. Open Terminal|
+|2. Run command `sudo git clone https://github.com/akveo/blur-admin.git blur-admin`|
+|3. Move to directory with command `cd blur-admin`|
+|4. Run command `sudo npm install`|
+|5. Update Permissions temporarily with command `sudo chmod -R 777 ../blur-admin`|
+|6. Run command `bower update --allow-root`|
+|7. Update Permissions with command `sudo chmod -R 755 ../blur-admin`|
+|8. Start NODE server with command `sudo gulp serve`|
+|9. Open up web browser and navigate to http://localhost.com|
+
 ## Angular 2 version
 Here you can find Angular2 based version: [ng2-admin](https://github.com/akveo/ng2-admin).
 
