@@ -28,6 +28,7 @@
 
         function _onWindowClick($evt) {
           if (!baUtil.isDescendant(el[0], $evt.target) &&
+              $evt.originalEvent &&
               !$evt.originalEvent.$sidebarEventProcessed &&
               !baSidebarService.isMenuCollapsed() &&
               baSidebarService.canSidebarBeHidden()) {
