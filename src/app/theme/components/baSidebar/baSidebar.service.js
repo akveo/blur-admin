@@ -22,14 +22,24 @@
         this.getMenuItems = function() {
           var states = defineMenuItemStates();
           var menuItems = states.filter(function(item) {
-            return item.level == 0;
+            return item.level == 0 && !item.hide;
           });
 
           menuItems.forEach(function(item) {
             var children = states.filter(function(child) {
-              return child.level == 1 && child.name.indexOf(item.name) === 0;
+              return child.level == 1 && child.name.indexOf(item.name) === 0 && !child.hide;
             });
             item.subMenu = children.length ? children : null;
+
+            if (item.subMenu) {
+              item.subMenu.forEach(function (subItem) {
+                var grandChildren = states.filter(function (grandChild) {
+                  return grandChild.level == 2 && grandChild.name.indexOf(subItem.name) === 0 && !grandChild.hide;
+                });
+                subItem.subMenu = grandChildren.length ? grandChildren : null;
+
+              });
+            }
           });
 
           return menuItems.concat(staticMenuItems);
@@ -77,6 +87,7 @@
                   order: meta.order,
                   icon: meta.icon,
                   stateRef: s.name,
+                  hide: meta.hide,
                 };
               })
               .sort(function(a, b) {
