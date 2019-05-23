@@ -44,10 +44,10 @@
       }]
     });
     baSidebarServiceProvider.addStaticItem({
-      title: 'Menu Level 1',
+      title: 'Szervezetek',
       icon: 'ion-ios-more',
       subMenu: [{
-        title: 'Menu Level 1.1',
+        title: 'Szervezet 1',
         disabled: true
       }, {
         title: 'Menu Level 1.2',
