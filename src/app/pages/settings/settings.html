@@ -1,0 +1,22 @@
+<div ba-panel ba-panel-class="settings-page">
+    <div class="panel-content">
+        
+        <h3 class="with-line">Site Settings</h3>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label for="inputSiteName" class="col-sm-3 control-label">Site Name</label>
+                    
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputSiteName" placeholder="{{site.name}}" ng-model="site.name">
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        <button type="button" ng-click="update()" class="btn btn-primary btn-with-icon save-profile">
+            <i class="ion-android-checkmark-circle"></i>Update Settings
+        </button>
+    </div>
+</div>
