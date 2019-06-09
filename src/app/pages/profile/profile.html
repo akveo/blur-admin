@@ -1,18 +1,18 @@
 <div ba-panel ba-panel-class="profile-page">
   <div class="panel-content">
-    <div class="progress-info">Your profile is 70% Complete</div>
+    <div class="progress-info">Profil adataid 70%-a van kitöltve</div>
     <div class="progress">
       <div class="progress-bar progress-bar-primary progress-bar-striped active" role="progressbar"
            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
       </div>
     </div>
 
-    <h3 class="with-line">General Information</h3>
+    <h3 class="with-line">Általános információk</h3>
 
     <div class="row">
       <div class="col-md-6">
         <div class="form-group row clearfix">
-          <label for="inputFirstName" class="col-sm-3 control-label">Picture</label>
+          <label for="inputFirstName" class="col-sm-3 control-label">Kép</label>
 
           <div class="col-sm-9">
             <div class="userpic">
@@ -20,7 +20,7 @@
                 <img ng-src="{{ picture }}" ng-click="uploadPicture()">
               </div>
               <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="!noPicture"></i>
-              <a href class="change-userpic" ng-click="uploadPicture()">Change Profile Picture</a>
+              <a href class="change-userpic" ng-click="uploadPicture()">Profil kép megváltoztatása</a>
               <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
             </div>
           </div>
@@ -32,14 +32,14 @@
     <div class="row">
       <div class="col-md-6">
         <div class="form-group row clearfix">
-          <label for="inputFirstName" class="col-sm-3 control-label">First Name</label>
+          <label for="inputFirstName" class="col-sm-3 control-label">Vezetéknév</label>
 
           <div class="col-sm-9">
             <input type="text" class="form-control" id="inputFirstName" placeholder="" value="Anastasiya">
           </div>
         </div>
         <div class="form-group row clearfix">
-          <label for="inputLastName" class="col-sm-3 control-label">Last Name</label>
+          <label for="inputLastName" class="col-sm-3 control-label">Keresztnév</label>
 
           <div class="col-sm-9">
             <input type="text" class="form-control" id="inputLastName" placeholder="" value="">
@@ -70,12 +70,12 @@
       </div>
     </div>
 
-    <h3 class="with-line">Change Password</h3>
+    <h3 class="with-line">Jelszó változtatás</h3>
 
     <div class="row">
       <div class="col-md-6">
         <div class="form-group row clearfix">
-          <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+          <label for="inputPassword" class="col-sm-3 control-label">Jelszó</label>
 
           <div class="col-sm-9">
             <input type="password" class="form-control" id="inputPassword" placeholder="" value="12345678">
@@ -84,7 +84,7 @@
       </div>
       <div class="col-md-6">
         <div class="form-group row clearfix">
-          <label for="inputConfirmPassword" class="col-sm-3 control-label">Confirm Password</label>
+          <label for="inputConfirmPassword" class="col-sm-3 control-label">Jelszó még egyszer</label>
 
           <div class="col-sm-9">
             <input type="password" class="form-control" id="inputConfirmPassword" placeholder="">
@@ -93,7 +93,7 @@
       </div>
     </div>
 
-    <h3 class="with-line">Contact Information</h3>
+    <h3 class="with-line">Elérhetőségek</h3>
 
     <div class="row">
       <div class="col-md-6">
@@ -105,7 +105,7 @@
           </div>
         </div>
         <div class="form-group row clearfix">
-          <label for="inputPhone" class="col-sm-3 control-label">Phone</label>
+          <label for="inputPhone" class="col-sm-3 control-label">Telefon</label>
 
           <div class="col-sm-9">
             <input type="text" class="form-control" id="inputPhone" placeholder="" value="+1 (23) 456 7890">
@@ -114,7 +114,7 @@
       </div>
       <div class="col-md-6">
         <div class="form-group row clearfix">
-          <label class="col-sm-3 control-label">Office Location</label>
+          <label class="col-sm-3 control-label">Helység</label>
 
           <div class="col-sm-9">
             <select class="form-control" title="Standard Select" selectpicker>
@@ -135,7 +135,7 @@
       </div>
     </div>
 
-    <h3 class="with-line">Social Profiles</h3>
+    <h3 class="with-line">Közösségi oldalaim</h3>
 
     <div class="social-profiles row clearfix">
       <div class="col-md-3 col-sm-4" ng-repeat="item in socialProfiles">
@@ -153,26 +153,26 @@
       </div>
     </div>
 
-    <h3 class="with-line">Send Email Notifications</h3>
+    <h3 class="with-line">Értesítés email-ben</h3>
 
     <div class="notification row clearfix">
       <div class="col-sm-6">
         <div class="form-group row clearfix">
-          <label class="col-xs-8">When I receive a message</label>
+          <label class="col-xs-8">Ha üzenetet kapok</label>
 
           <div class="col-xs-4">
             <switch color="primary" ng-model="switches[0]"></switch>
           </div>
         </div>
         <div class="form-group row clearfix">
-          <label class="col-xs-8">When Someone sends me an invitation</label>
+          <label class="col-xs-8">Ha valaki meghívást küld</label>
 
           <div class="col-xs-4">
             <switch color="primary" ng-model="switches[1]"></switch>
           </div>
         </div>
         <div class="form-group row clearfix">
-          <label class="col-xs-8">When profile information changes</label>
+          <label class="col-xs-8">Ha profilom megváltozik</label>
 
           <div class="col-xs-4">
             <switch color="primary" ng-model="switches[2]"></switch>
@@ -188,7 +188,7 @@
           </div>
         </div>
         <div class="form-group row clearfix">
-          <label class="col-xs-8">Weekly Reports</label>
+          <label class="col-xs-8">Heti riport</label>
 
           <div class="col-xs-4">
             <switch color="primary" ng-model="switches[4]"></switch>
@@ -196,7 +196,7 @@
         </div>
 
         <div class="form-group row clearfix">
-          <label class="col-xs-8">Daily Reports</label>
+          <label class="col-xs-8">Napi riport</label>
 
           <div class="col-xs-4">
             <switch color="primary" ng-model="switches[5]"></switch>
@@ -205,7 +205,36 @@
       </div>
     </div>
     <button type="button" class="btn btn-primary btn-with-icon save-profile">
-      <i class="ion-android-checkmark-circle"></i>Update Profile
+      <i class="ion-android-checkmark-circle"></i>Profil frissítés
     </button>
+    <table class="table table-striped">
+    <thead>
+        <td>Id</td>
+        <td>Név</td>
+        <td>Becenév</td>
+        <td>Email cím</td>
+        <td>Jogosultság</td>
+        <td></td>
+    </thead>
+    <tr ng-repeat="user in userListCtrl.users">
+        <td>{{::user.id}}</td>
+        <td>{{::user.name}}</td>
+        <td>{{::user.nickName}}</td>
+        <td>{{::user.email}}</td>
+        <td>
+            {{::'COMMON.ROLE.' + user.role | translate}}
+        </td>
+        <td>
+            <a ui-sref="admin.userDetails({userId: user.id})">
+                Részletek
+            </a>
+        </td>
+<!--
+        <td ng-if="user.role === 'ROLE_USER'">
+            Jóváhagy
+        </td>
+-->
+    </tr>
+</table>
   </div>
 </div>
