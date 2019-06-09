@@ -53,3 +53,4 @@ build
 /src/release
 /release
 /bower_components
+/nbproject/private/
