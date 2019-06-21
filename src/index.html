@@ -85,6 +85,29 @@
 <!-- angular templates will be automatically converted in js and inserted here -->
 <!-- endinject -->
 <!-- endbuild -->
+<script>
+  window.onload = function () {
+      ___browserSync___.socket.on('browser:notify', function (data) {
+          if ("reload" in data.message) {
+              angular
+                      .element('main.ng-scope')
+                      .injector()
+                      .get('$templateCache')
+                      .remove(data.message.reload);
+              angular
+                      .element('main.ng-scope')
+                      .injector()
+                      .get('$templateCache')
+                      .remove(data.message.reload.substring(1));
+              angular
+                      .element('main.ng-scope')
+                      .injector()
+                      .get('$state')
+                      .reload();
+          }
+      });
+  }
+</script>
 
 </body>
 </html>
