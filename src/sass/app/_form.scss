@@ -337,14 +337,16 @@ label.custom-radio {
       & + span {
         &:before {
           content: "\f111";
+          font-weight: $font-bold;
+          padding-right: .87px;
         }
       }
     }
   }
   & > span {
     &:before {
-      border-radius: 16px;
-      font-size: 9px;
+      border-radius: 100%;
+      font-size: 11px;
     }
   }
 }
