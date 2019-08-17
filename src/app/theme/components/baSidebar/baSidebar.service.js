@@ -13,26 +13,51 @@
     };
 
     /** @ngInject */
-    this.$get = function($state, layoutSizes) {
-      return new _factory();
+    this.$get = function ($state, layoutSizes, baSidebarModel) {
+        return new _factory();
 
       function _factory() {
         var isMenuCollapsed = shouldMenuBeCollapsed();
 
-        this.getMenuItems = function() {
-          var states = defineMenuItemStates();
-          var menuItems = states.filter(function(item) {
-            return item.level == 0;
-          });
+        this.getMenuItems = function () {
+          var menuItems = baSidebarModel.getMenuItems();
+          if (!menuItems) {
+            menuItems = createMenu();
+            baSidebarModel.setMenuItems(menuItems);
+          }
+          return menuItems;
+        };
 
-          menuItems.forEach(function(item) {
-            var children = states.filter(function(child) {
-              return child.level == 1 && child.name.indexOf(item.name) === 0;
-            });
-            item.subMenu = children.length ? children : null;
-          });
+        this.addMenuItem = function (item) {
+          var menuItems = baSidebarModel.getMenuItems();
+          var parent = null;
+          _findParent(menuItems, item);
+          if (parent) {
+            _addToSubMenu(item);
+          } else {
+            menuItems.push(item);
+          }
 
-          return menuItems.concat(staticMenuItems);
+          baSidebarModel.setMenuItems(menuItems);
+
+          function _findParent(parents, item) {
+            parent = parents
+                .filter(function (p) {
+                  return item.name.indexOf(p.name) === 0;
+                })
+                .pop();
+            if (parent && parent.subMenu) {
+              _findParent(parent.subMenu, item);
+            }
+          }
+
+          function _addToSubMenu(item) {
+            if (parent.subMenu) {
+              parent.subMenu.push(item);
+            } else {
+              parent.subMenu = [item];
+            }
+          }
         };
 
         this.shouldMenuBeCollapsed = shouldMenuBeCollapsed;
@@ -62,6 +87,32 @@
             });
           }
         };
+
+        function createMenu() {
+          var parentLevel = 0;
+          var states = defineMenuItemStates();
+          var parents = states.filter(function(item) {
+            return item.level == parentLevel;
+          });
+
+          _bindMenuItems(parents, ++parentLevel);
+          return parents.concat(staticMenuItems);
+
+          function _bindMenuItems(parents, childLevel) {
+            var child = states.filter(function (item) {
+              return item.level == childLevel;
+            });
+            if (child.length) {
+              parents.forEach(function (p) {
+                var children = child.filter(function (c) {
+                  return c.name.indexOf(p.name) === 0;
+                });
+                p.subMenu = children.length ? children : null;
+              });
+              _bindMenuItems(child, ++childLevel)
+            }
+          }
+        }
 
         function defineMenuItemStates() {
           return $state.get()
