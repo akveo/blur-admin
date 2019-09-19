@@ -40,7 +40,7 @@ This will allow you to easily switch off some pages in the future if needed.
 
 3) Then let's create empty html file called `my-new-page.html` inside of `src/app/pages/myNewPage`.
 
-4) Lastly let's create ui router state for this page. To do this we need to modify module.js file we created on step 2:
+4) Now let's create ui router state for this page. To do this we need to modify module.js file we created on step 2:
 ```javascript
 (function () {
   'use strict';
@@ -56,12 +56,25 @@ This will allow you to easily switch off some pages in the future if needed.
           templateUrl: 'app/pages/myNewPage/my-new-page.html',
           title: 'My New Page',
           sidebarMeta: {
+            icon: 'ion-android-home', //as per your choice
             order: 800,
           },
         });
   }
 
 })();
+```
+
+5) Lastly go to `src/app/pages/pages.module.js` and add 'BlurAdmin.pages.myNewPage' as shown below:
+```javascript
+ angular.module('BlurAdmin.pages', [
+    'ui.router',
+
+    'BlurAdmin.pages.dashboard',
+    ...
+    ...
+    'BlurAdmin.pages.myNewPage',
+  ])
 ```
 
 That's it! Your can now open your new page either from sidebar or through hash URL.
