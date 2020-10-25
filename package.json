@@ -17,7 +17,7 @@
     "gulp-filter": "~4.0.0",
     "gulp-flatten": "~0.3.1",
     "gulp-gh-pages": "^0.5.4",
-    "gulp-inject": "~4.1.0",
+    "gulp-inject": "~5.0.5",
     "gulp-load-plugins": "~1.4.0",
     "gulp-minify-css": "~1.2.1",
     "gulp-minify-html": "~1.0.4",
