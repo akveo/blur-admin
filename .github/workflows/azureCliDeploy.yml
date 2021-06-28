@@ -20,7 +20,7 @@ jobs:
       - name: npm install, build
         run: |
           npm install
-          gulp serve:dist
+          gulp build
 
       # Azure CLI Upload to storage
       - uses: azure/login@v1
@@ -31,7 +31,7 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-            az storage blob upload-batch -d '$web' -s dist --account-name bluradmin --debug
+            az storage blob upload-batch -d '$web' -s release --account-name bluradmin --debug
 
       # Azure logout
       - name: logout
