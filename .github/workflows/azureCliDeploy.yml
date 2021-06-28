@@ -31,7 +31,7 @@ jobs:
         with:
           azcliversion: 2.0.72
           inlineScript: |
-            az storage blob upload-batch -d '$web' -s release --account-name bluradminmint --debug
+            az storage blob upload-batch -d '$web' -s release --account-name bluradmin --debug
 
       # Azure logout
       - name: logout
