@@ -11,15 +11,15 @@
   /** @ngInject */
   function config(baConfigProvider, colorHelper, $provide) {
     $provide.decorator('$uiViewScroll', uiViewScrollDecorator);
-    //baConfigProvider.changeTheme({blur: true});
-    //
-    //baConfigProvider.changeColors({
-    //  default: 'rgba(#000000, 0.2)',
-    //  defaultText: '#ffffff',
-    //  dashboard: {
-    //    white: '#ffffff',
-    //  },
-    //});
+    baConfigProvider.changeTheme({blur: true});
+
+    baConfigProvider.changeColors({
+     default: 'rgba(#000000, 0.2)',
+     defaultText: '#ffffff',
+     dashboard: {
+       white: '#ffffff',
+     },
+    });
   }
 
   /** @ngInject */
