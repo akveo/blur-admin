@@ -1,4 +1,4 @@
-name: Deploy to demo (azure storage)
+name: Deploy to demo-blur (azure storage)
 
 on:
   push:
