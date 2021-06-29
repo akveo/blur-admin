@@ -17,8 +17,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: demo-blur
-      - name: npm install, build
+      - name: npm install, gulp, build
         run: |
+          npm install -g bower
           npm install
           gulp build
 
