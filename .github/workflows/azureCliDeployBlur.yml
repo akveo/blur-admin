@@ -19,6 +19,9 @@ jobs:
           ref: demo-blur
       - name: npm install, gulp, build
         run: |
+          npm config set spin false
+          npm install -g npm@3
+          npm install -g gulp
           npm install -g bower
           npm install
           gulp build
