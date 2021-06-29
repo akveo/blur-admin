@@ -1,5 +1,5 @@
 {
-  "baseUrl": "/blur-admin-demo-mint/",
+  "baseUrl": "/blur-admin-mint/",
   "locals": {
     "url": "http://localhost:8080",
     "name": "The Wintersmith's blog",
