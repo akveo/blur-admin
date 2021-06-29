@@ -13,7 +13,7 @@ jobs:
       - name: Use Node.js 4.x
         uses: actions/setup-node@v1
         with:
-          node-version: '4.x'
+          node-version: '10.x'
       - uses: actions/checkout@v2
         with:
           ref: demo-blur
