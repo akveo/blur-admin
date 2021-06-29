@@ -1,4 +1,15 @@
 @import 'common';
 
+@import 'theme/bootstrap-overrides/panel';
+@import 'theme/bootstrap-overrides/tabs';
+
+@import 'theme/components/index';
+
+@import 'theme/dashboard/index';
+
+@import 'theme/index';
+
+@import 'app/index';
+
 // injector
 // endinjector

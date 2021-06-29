@@ -2,6 +2,7 @@
 
 var path = require('path');
 var gulp = require('gulp');
+var sass = require('gulp-sass');
 var conf = require('./conf');
 
 var browserSync = require('browser-sync');
@@ -34,7 +35,6 @@ var buildStyles = function () {
 
   var injectFiles = gulp.src([
     path.join(conf.paths.src, '/sass/**/_*.scss'),
-    '!' + path.join(conf.paths.src, '/sass/theme/conf/**/*.scss'),
     '!' + path.join(conf.paths.src, '/sass/404.scss'),
     '!' + path.join(conf.paths.src, '/sass/auth.scss')
   ], {read: false});
@@ -58,6 +58,7 @@ var buildStyles = function () {
     .pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
     .pipe($.sourcemaps.write())
+    .pipe(sass({outputStyle: 'compressed'}))
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app/')));
 };
 
