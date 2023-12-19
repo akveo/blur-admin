@@ -35,7 +35,7 @@
     "bootstrap": "~3.3.5",
     "bootstrap-select": "~1.12.1",
     "bootstrap-switch": "~3.3.2",
-    "bootstrap-tagsinput": "~0.7.1",
+    "bootstrap-tagsinput": "https://github.com/bootstrap-tagsinput/bootstrap-tagsinput.git#~0.7.1",
     "font-awesome": "fontawesome#~4.4.0",
     "fullcalendar": "~3.0.1",
     "highlight": "~8.8.0",
