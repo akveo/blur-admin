@@ -31,7 +31,7 @@
     "angular-toastr": "~2.1.1",
     "angular-touch": "~1.5.8",
     "angular-ui-sortable": "~0.15.0",
-    "animate.css": "~3.5.2",
+    "animate.css": "https://github.com/animate-css/animate.css.git#~3.5.2",
     "bootstrap": "~3.3.5",
     "bootstrap-select": "~1.12.1",
     "bootstrap-switch": "~3.3.2",
