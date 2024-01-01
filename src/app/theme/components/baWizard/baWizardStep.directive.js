@@ -38,7 +38,7 @@
         }
 
         function submit() {
-          $scope.form && $scope.form.$setSubmitted(true);
+          $scope.form?.$setSubmitted(true);
         }
 
         function isComplete() {

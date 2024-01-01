@@ -56,7 +56,7 @@
           return result;
 
           function _iterateSubItems(currentItem) {
-            currentItem.subMenu && currentItem.subMenu.forEach(function(subItem) {
+            currentItem.subMenu?.forEach(function(subItem) {
               subItem.stateRef && result.push(subItem.stateRef);
               _iterateSubItems(subItem);
             });

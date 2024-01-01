@@ -57,7 +57,7 @@
   function BaSidebarTogglingItemCtrl($scope, $element, $attrs, $state, baSidebarService) {
     var vm = this;
     var menuItem = vm.$$menuItem = $scope.$eval($attrs.baSidebarTogglingItem);
-    if (menuItem && menuItem.subMenu && menuItem.subMenu.length) {
+    if (menuItem?.subMenu && menuItem.subMenu.length) {
       vm.$$expandSubmenu = function() { console.warn('$$expandMenu should be overwritten by baUiSrefTogglingSubmenu') };
       vm.$$collapseSubmenu = function() { console.warn('$$collapseSubmenu should be overwritten by baUiSrefTogglingSubmenu') };
 
